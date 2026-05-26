@@ -1,0 +1,5 @@
+# https://personix.org/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://personix.org/sitemap.xml
