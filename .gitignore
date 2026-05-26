@@ -32,8 +32,5 @@ docs/whitepaper/build/
 release/audio/
 release/transcripts/
 
-# DRAFT verze pamfletů (jen pro recenzenty, ne pro public)
-release/*-DRAFT.*
-
 # Info graphics work-in-progress (historické experimenty)
 docs/pamphlet/Info Graphics/

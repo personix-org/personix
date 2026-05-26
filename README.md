@@ -14,9 +14,11 @@
 - ↓ [Download PDF](release/pamphlet-v6-en.pdf) — ~41 MB
 - ↓ [Download EPUB](release/pamphlet-v6-en.epub) — ~38 MB
 
-**Čeština**
-- ↓ [Stáhnout PDF](release/pamphlet-v6-cz.pdf) — ~41 MB
-- ↓ [Stáhnout EPUB](release/pamphlet-v6-cz.epub) — ~38 MB
+**Čeština** *(DRAFT — recenzní verze, watermarkovaná)*
+- ↓ [Stáhnout PDF](release/pamphlet-v6-cz-DRAFT.pdf) — ~41 MB
+- ↓ [Stáhnout EPUB](release/pamphlet-v6-cz-DRAFT.epub) — ~38 MB
+
+> Finální CZ vydání bude publikováno po dokončení recenzního kola. Recenzenti dostávají vlastní link emailem.
 
 ## 📄 Whitepaper — academic article
 
