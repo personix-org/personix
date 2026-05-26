@@ -1,0 +1,28 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds,babel}
+\begin{document}
+\begin{tikzpicture}[scale=0.8,
+    role/.style={draw, rounded corners, minimum width=1.3cm, minimum height=0.5cm, align=center, font=\scriptsize},
+    arr/.style={-{Stealth[length=3pt]}, thick}
+]
+\node[role, fill=black!8] (H) at (0,0) {\textbf{Holder}};
+\node[role, fill=black!8] (E) at (-2.5,2) {\textbf{Executor}};
+\node[role, fill=black!8] (A) at (2.5,2) {\textbf{Authority}};
+\node[role, fill=black!8] (V) at (0,-2) {\textbf{Verifier}};
+\node[role, fill=black!5, draw=gray] (N) at (0,-3.6) {RSN};
+
+\draw[arr] (E.south east) -- node[above,font=\tiny,sloped] {authorized} (H.north west);
+\draw[arr] (H.north east) -- node[below,font=\tiny,sloped] {submits} (A.south west);
+\draw[arr] (A.south) -- node[right,font=\tiny] {co-signs} (H.east);
+\draw[arr] (A.south east) -- node[right,font=\tiny,pos=0.3] {endorsed} (V.east);
+\draw[arr] (V) -- node[left,font=\tiny] {selected} (H);
+\draw[arr] (V) -- node[left,font=\tiny] {publishes} (N);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds,babel}
+\begin{document}
+\begin{tikzpicture}[scale=0.75,
+    layer/.style={draw, minimum width=3cm, minimum height=0.7cm, align=center, font=\scriptsize},
+    arr/.style={<->, thick, gray!60}
+]
+\node[layer, fill=black!8] (agg) at (0,3.3) {\textbf{Aggregation}\\Interpret.\ $\cdot$ Risk};
+\node[layer, fill=black!8] (claim) at (-1.8,1.8) {\textbf{Claims}\\Compose $\cdot$ Sign};
+\node[layer, fill=black!8] (verif) at (1.8,1.8) {\textbf{Verification}\\Ring $\cdot$ Select};
+\node[layer, fill=black!8] (did) at (0,0.3) {\textbf{DID Layer}\\Identity $\cdot$ Rules};
+
+\draw[arr] (agg.south west) -- (claim.north);
+\draw[arr] (agg.south east) -- (verif.north);
+\draw[arr] (claim.east) -- (verif.west);
+\draw[arr] (claim.south) -- (did.north west);
+\draw[arr] (verif.south) -- (did.north east);
+\end{tikzpicture}
+\end{document}

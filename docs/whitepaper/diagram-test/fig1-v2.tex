@@ -1,0 +1,27 @@
+\documentclass[border=2mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,babel}
+\begin{document}
+% Simulate twocolumn width: 8cm
+\begin{minipage}{8cm}\centering
+\begin{tikzpicture}[
+    layer/.style={draw, minimum height=0.7cm, align=center, font=\scriptsize, fill=black!8},
+    arr/.style={<->, thick, gray!60}
+]
+\node[layer, minimum width=5cm] (agg) at (0,2.8) {\textbf{Aggregation}\\Interpret.\ $\cdot$ Risk};
+\node[layer, minimum width=2.2cm] (claim) at (-1.55,1.4) {\textbf{Claims}\\Compose};
+\node[layer, minimum width=2.2cm] (verif) at (1.55,1.4) {\textbf{Verification}\\Selection};
+\node[layer, minimum width=5cm] (did) at (0,0) {\textbf{DID Layer}\\Identity $\cdot$ Rules $\cdot$ Scores};
+
+\draw[arr] (agg.south west) -- (claim.north);
+\draw[arr] (agg.south east) -- (verif.north);
+\draw[arr] (claim.east) -- (verif.west);
+\draw[arr] (claim.south) -- (did.north west);
+\draw[arr] (verif.south) -- (did.north east);
+\end{tikzpicture}
+\end{minipage}
+\end{document}

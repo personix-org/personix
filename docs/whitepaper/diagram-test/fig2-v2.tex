@@ -1,0 +1,31 @@
+\documentclass[border=2mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,babel}
+\begin{document}
+\begin{minipage}{8cm}\centering
+\begin{tikzpicture}[
+    role/.style={draw, rounded corners, minimum width=1.2cm, minimum height=0.5cm, align=center, font=\scriptsize, fill=black!8},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[role] (H) at (0,0) {\textbf{Holder}};
+\node[role] (E) at (-2.5,2.2) {\textbf{Executor}};
+\node[role] (A) at (2.5,2.2) {\textbf{Authority}};
+\node[role] (W) at (-2.5,-1.2) {\textbf{Witness}};
+\node[role] (V) at (2.5,-1.2) {\textbf{Verifier}};
+\node[role, fill=black!5, draw=gray] (N) at (0,-3) {RSN};
+
+\draw[arr] (E) -- node[lbl,sloped] {authorized} (H);
+\draw[arr] (H) -- node[lbl,sloped] {submits} (A);
+\draw[arr] (A) -- node[lbl] {co-signs} (H);
+\draw[arr] (H) -- node[lbl,sloped] {challenge} (W);
+\draw[arr] (W) -- node[lbl] {monitors} (V);
+\draw[arr] (V) -- node[lbl] {selected} (H);
+\draw[arr] (V) -- node[lbl] {publishes} (N);
+\end{tikzpicture}
+\end{minipage}
+\end{document}

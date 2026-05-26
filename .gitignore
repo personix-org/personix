@@ -1,0 +1,39 @@
+# Build outputs (regenerovat přes build skripty v docs/pamphlet/*/build.sh)
+# Finální verze jsou v release/, ne v build adresářích.
+docs/pamphlet/cs/build/
+docs/pamphlet/en/build/
+docs/whitepaper/build/
+
+# LaTeX intermediate
+*.aux
+*.log
+*.toc
+*.out
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# macOS
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
+.obsidian/
+*.swp
+*.swo
+
+# OS temp
+*~
+
+# Audio masters & work-in-progress (publikované versions jsou v release/)
+release/audio/
+release/transcripts/
+
+# DRAFT verze pamfletů (jen pro recenzenty, ne pro public)
+release/*-DRAFT.*
+
+# Info graphics work-in-progress (historické experimenty)
+docs/pamphlet/Info Graphics/

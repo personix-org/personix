@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=[];var x=false;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
+</script>
+
+<meta charset="utf-8">
+<title>Personix &mdash; speaker notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Fallback CDN for IM Fell English. Remove once /fonts/im-fell-english/*.woff2 is in place. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+  @font-face {
+    font-family: "IM Fell English Local";
+    src: url("fonts/im-fell-english/IMFellEnglish-Regular.woff2") format("woff2");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "IM Fell English Local";
+    src: url("fonts/im-fell-english/IMFellEnglish-Italic.woff2") format("woff2");
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+
+  :root {
+    --paper:       #f6e7c5;
+    --paper-deep:  #efdcb1;
+    --ink:         #2b2218;
+    --ink-soft:    #4a3d2c;
+    --ink-mute:    #7a6a52;
+    --sienna:      #b56a1d;
+    --dusty-blue:  #3f6b7a;
+    --red-clay:    #b64a3a;
+    --hairline:    rgba(43, 34, 24, 0.35);
+
+    --serif-title: "IM Fell English Local", "IM Fell English", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --serif-body:  "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --mono:        ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { background: var(--paper); margin: 0; }
+  body {
+    font-family: var(--serif-body);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Page-like container, prints one page per <section.page> */
+  .page {
+    max-width: 820px;
+    margin: 56px auto;
+    padding: 72px 78px;
+    background: var(--paper);
+    position: relative;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(43,34,24,0.035) 0 1px, transparent 1px),
+      radial-gradient(circle at 70% 60%, rgba(43,34,24,0.03)  0 1px, transparent 1px);
+    background-size: 7px 7px, 11px 11px;
+  }
+
+  /* ---- Document header / cover block ---- */
+  .doc-head {
+    margin-bottom: 64px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .doc-head .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .doc-head h1 {
+    font-family: var(--serif-title);
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 1.05;
+    margin: 18px 0 8px;
+    color: var(--ink);
+  }
+  .doc-head .lede {
+    font-family: var(--serif-body);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+  }
+  .doc-head .meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-top: 22px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---- Slide section ---- */
+  .slide {
+    margin-bottom: 72px;
+  }
+  .slide-head {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 4px;
+  }
+  .slide-head .n {
+    font-family: var(--serif-title);
+    font-style: italic;
+    font-size: 56px;
+    color: var(--sienna);
+    line-height: 0.9;
+  }
+  .slide-head h2 {
+    font-family: var(--serif-title);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.15;
+    margin: 0;
+    color: var(--ink);
+  }
+  .slide-head .timing {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding-top: 8px;
+  }
+
+  .rules { display: flex; flex-direction: column; gap: 6px; margin: 14px 0 22px 114px; }
+  .rules .r1 { height: 2px; background: var(--ink); width: 220px; }
+  .rules .r2 { height: 1px; background: var(--ink); width: 60px; opacity: 0.7; }
+
+  /* What's on the slide */
+  .on-slide {
+    margin-left: 114px;
+    margin-bottom: 22px;
+    padding: 18px 22px;
+    background: var(--paper-deep);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    font-family: var(--serif-body);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .on-slide .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .on-slide ul { margin: 6px 0 0 18px; padding: 0; }
+  .on-slide li { margin-bottom: 4px; }
+  .on-slide .quote-block {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* The spoken script */
+  .spoken {
+    margin-left: 114px;
+  }
+  .spoken .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sienna);
+    margin-bottom: 10px;
+  }
+  .spoken p {
+    margin: 0 0 14px;
+    font-size: 17px;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+  .spoken p .stage {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin: 6px 0 4px;
+  }
+  .spoken strong { color: var(--ink); }
+  .spoken em.beat { color: var(--sienna); font-style: italic; }
+
+  /* Q&A */
+  .qa-head {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--ink);
+  }
+  .qa-head .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .qa-head h2 {
+    font-family: var(--serif-title);
+    font-weight: 400;
+    font-size: 42px;
+    margin: 12px 0 4px;
+  }
+  .qa-head .sub {
+    font-family: var(--serif-body);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+  .qa-head + .rules { margin-left: 0; margin-bottom: 36px; }
+
+  .qa {
+    margin-bottom: 40px;
+  }
+  .qa .q {
+    font-family: var(--serif-title);
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .qa .q .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sienna);
+    margin-right: 10px;
+    vertical-align: 3px;
+  }
+  .qa .a {
+    margin-top: 10px;
+    padding-left: 18px;
+    border-left: 1px solid var(--hairline);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .qa .a p { margin: 0 0 10px; }
+  .qa .a p:last-child { margin-bottom: 0; }
+
+  /* Footer */
+  .doc-foot {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Print */
+  @page { size: A4; margin: 18mm 16mm; }
+  @media print {
+    html, body { background: var(--paper); }
+    .page { margin: 0; padding: 0; max-width: none; box-shadow: none; }
+    .slide { break-inside: avoid; }
+    .qa { break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<article class="page">
+
+  <!-- ========================== HEAD ========================== -->
+  <header class="doc-head">
+    <div class="eyebrow">Personix &nbsp;&middot;&nbsp; Speaker notes &nbsp;&middot;&nbsp; 7 slides &nbsp;&middot;&nbsp; 11&ndash;12 min</div>
+    <h1>The spoken script.</h1>
+    <div class="lede">
+      What Pavel says while the audience reads only a few words.<br>
+      The slide carries the symbol &mdash; the sentence is in the mouth.
+    </div>
+    <div class="meta">
+      PAVEL KUDRNA &nbsp;·&nbsp; PERSONIX.ORG &nbsp;·&nbsp; 2026
+    </div>
+  </header>
+
+  <!-- ========================== SLIDE 1 ========================== -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="n">i.</div>
+      <h2>Personix.</h2>
+      <div class="timing">~30 s + pause</div>
+    </div>
+    <div class="rules"><div class="r1"></div><div class="r2"></div></div>
+
+    <div class="on-slide">
+      <span class="tag">On the slide</span>
+      <div class="quote-block">
+        <strong style="font-style:normal">PERSONIX.</strong> &nbsp;·&nbsp;
+        An uncensorable, incorruptible, decentralized reputation network. &nbsp;·&nbsp;
+        An evolutionary successor to the state.
+      </div>
+    </div>
+
+    <div class="spoken">
+      <div class="tag">Spoken</div>
+      <p>
+        <span class="stage">&mdash; open the slide, let the wordmark land &mdash;</span>
+        Personix. An <strong>uncensorable, incorruptible, decentralized reputation network</strong>.
+        An evolutionary successor to the state.
+      </p>
+      <p>
+        That sentence will sound either banal or absurd, depending on which half of it you hear.
+        Today I want to convince you it's neither. It is an <em class="beat">engineering proposal</em> &mdash;
+        a successor to the institution Europe opened at Westphalia in 1648 and has been refining ever since.
+      </p>
+      <p>
+        <span class="stage">&mdash; 30-second pause, let it land &mdash;</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== SLIDE 2 ========================== -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="n">ii.</div>
+      <h2>Why now, and never before.</h2>
+      <div class="timing">~90 s</div>
+    </div>
+    <div class="rules"><div class="r1"></div><div class="r2"></div></div>
+
+    <div class="on-slide">
+      <span class="tag">On the slide</span>
+      <ul style="margin-bottom: 10px;">
+        <li>The state cannot keep pace with technological change &mdash; least of all with the exponential AI revolution. Its first instinct is to regulate, to ban, to make the problem disappear. For some, that opening is a gift &mdash; a respectable cover for authoritarian drift.</li>
+        <li>The state is an old tool, out of breath. We need its modern version: decentralized, dynamic, efficient.</li>
+        <li><em>But the new tool must preserve our freedoms and hold society together. Change the incentives that drive its offices, and let them modernize themselves. Solidarity by design, not by force. If we pull it off, it will be a small miracle.</em></li>
+      </ul>
+      <ul>
+        <li><strong>(i) Bitcoin proved bottom-up systems can resist state censorship and control.</strong> Since 2009. Inspiration, not a template &mdash; its real lesson is the balance between math and social incentives, not its buzzwords.</li>
+        <li><strong>(ii) Trust in institutions collapsing across the spectrum since 2020.</strong> Left and right, young and old. In sync, for the first time. &nbsp; <em>And fresh:</em> AI is eating jobs &mdash; reputation becomes the new currency. What a diploma can't pay for, trust can.</li>
+      </ul>
+      <ul style="margin-top: 10px; font-style: normal; list-style: none; padding: 0;">
+        <li><span style="font-family: var(--mono); font-size: 11px; color: var(--ink-mute);">EYEBROW</span> &nbsp; Westphalia 1648 &middot; Bismarck 1871 &mdash; an institution out of breath</li>
+        <li><span style="font-family: var(--mono); font-size: 11px; color: var(--ink-mute);">SUBTITLE</span> &nbsp; Because today we have the technology.</li>
+      </ul>
+    </div>
+
+    <div class="spoken">
+      <div class="tag">Spoken — Westphalian framing + two preconditions</div>
+      <p>
+        Two dates anchor this. <strong>Westphalia, 1648</strong> &mdash; the peace that ended the Thirty Years' War
+        and invented something called the sovereign territorial state, the container all of us still live inside.
+        <strong>Bismarck, 1871</strong> &mdash; the unification of Germany, and a decade later the first compulsory
+        social-insurance system in the world. He gave the state its <em class="beat">modern form</em>:
+        bureaucracy, statistics, social insurance, the office that knows your name.
+        The state I'm talking about is roughly <strong>150 years old</strong>, not four hundred.
+      </p>
+      <p>
+        For the last twenty years, it isn't keeping up. Not pandemics. Not AI. Not migration. Not the economy.
+        And the people inside it don't have the right incentives &mdash; whoever decides badly
+        gets <strong>more</strong> power, not less. That's not a human flaw. That's a <em class="beat">design flaw</em>.
+      </p>
+      <p>
+        The state cannot keep pace with technological change &mdash; least of all with the
+        exponential AI revolution. Its first instinct is to <strong>regulate, to ban, to make the problem
+        disappear</strong>. For some, that opening is a gift &mdash; a respectable cover for
+        <em class="beat">authoritarian drift</em>.
+      </p>
+      <p>
+        The state is an old tool, out of breath. We need its modern version:
+        <strong>decentralized, dynamic, efficient.</strong>
+      </p>
+      <p>
+        But &mdash; and this matters more than anything else I'll say today &mdash;
+        the new tool must <strong>preserve our freedoms and hold society together</strong>.
+        Change the incentives that drive its offices, and let them <em class="beat">modernize themselves</em>.
+        Solidarity by design, not by force.
+        If we pull it off, it will be a small miracle.
+      </p>
+      <p>
+        And here is what makes it possible at all. Five years ago, this pitch would have been
+        science fiction. Today it's engineering. <strong>Because today we have the technology.</strong>
+      </p>
+      <p>
+        <strong>First.</strong> Bitcoin. Live since 2009 &mdash; with no central issuer, no CEO,
+        nobody to arrest or to persuade. It proved that <strong>bottom-up systems</strong> can resist
+        state censorship and control. That is a technical fact, not an opinion.
+        I want to be careful here: Personix is <em class="beat">not Bitcoin with another name</em>.
+        Bitcoin is inspiration, not a template. Its real lesson is the balance between
+        math and social incentives &mdash; not its buzzwords.
+      </p>
+      <p>
+        <strong>Second.</strong> Trust in institutions is collapsing across the political spectrum.
+        Left, right, young, old &mdash; for the first time in modern history, in sync.
+        It is no longer a dispute about who should govern. It is a dispute about whether this institution
+        works at all. And you hear that answer in lines at notaries and in cafes on Letn&aacute; alike.
+      </p>
+      <p>
+        And on top of that, something <strong>fresh</strong>: AI is eating jobs faster than new ones appear.
+        Value is shifting from credentials to <strong>reputation</strong> &mdash; to the capacity a machine cannot copy:
+        who can be trusted, who finishes things, who doesn't cheat.
+        What a diploma can't pay for, trust can.
+        Reputation stops being a soft supplement to money. It becomes the currency itself.
+      </p>
+      <p>
+        Two structural shifts, one accelerant. Together they open doors that have been closed
+        for four centuries.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== SLIDE 3 ========================== -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="n">iii.</div>
+      <h2>The architecture.</h2>
+      <div class="timing">~90 s</div>
+    </div>
+    <div class="rules"><div class="r1"></div><div class="r2"></div></div>
+
+    <div class="on-slide">
+      <span class="tag">On the slide</span>
+      <div class="quote-block" style="margin-bottom: 6px;"><strong style="font-style:normal">The architecture.</strong> &nbsp; Math anchors the protocol.</div>
+      <ul>
+        <li><strong>1. DID layer.</strong> Sovereign identities. The substrate everything else attaches to.</li>
+        <li><strong>2. Claims.</strong> Structured statements about reality. Cryptographically signed, costly to write.</li>
+        <li><strong>3. Verifiers.</strong> Algorithmically and randomly selected. Stake their own reputation on accuracy.</li>
+        <li><strong>4. Aggregation.</strong> Competing services interpret raw data into scores and risk.</li>
+        <li><strong>5. Declared policy.</strong> Every actor publishes the rules they play by, in advance. Consensus emerges from the social network itself &mdash; the community calibrates what &ldquo;radical&rdquo; means, not a central decree.</li>
+      </ul>
+      <ul style="margin-top: 10px; font-style: normal; list-style: none; padding: 0;">
+        <li><span style="font-family: var(--mono); font-size: 11px; color: var(--ink-mute);">EYEBROW</span> &nbsp; How it works &middot; five primitives</li>
+      </ul>
+    </div>
+
+    <div class="spoken">
+      <div class="tag">Spoken — five primitives</div>
+      <p>
+        Before I show you what I'm asking for, I owe you the shape of the thing.
+        Personix is built on <strong>five primitives</strong>. They sit underneath everything else.
+      </p>
+      <p>
+        <strong>One. The DID layer.</strong> Every participant has a cryptographic identity
+        that nobody else controls. A passport that issues itself. It's the substrate
+        everything else attaches to &mdash; people, companies, neighbourhoods, registries.
+      </p>
+      <p>
+        <strong>Two. Claims.</strong> A claim is a structured statement about reality &mdash;
+        &laquo;this bricklayer finished this job on this date for this price.&raquo;
+        Cryptographically signed, attributable, and <em class="beat">costly to write</em>.
+        Cost prices noise out of the system. Junk doesn't get written, because writing junk hurts the writer.
+      </p>
+      <p>
+        <strong>Three. Verifiers.</strong> When a claim needs to be checked, the protocol picks the verifiers
+        algorithmically and at random. The verifier stakes <em class="beat">their own reputation</em>
+        on the accuracy of the answer. Get it right, your reputation grows. Get it wrong, it collapses.
+      </p>
+      <p>
+        <strong>Four. Aggregation.</strong> Raw claims aren't yet a score.
+        Aggregator services &mdash; competing with each other, none of them privileged &mdash;
+        interpret the data into reputation scores, risk profiles, recommendations.
+        Like Google for search results, except nobody owns the index.
+      </p>
+      <p>
+        <strong>Five &mdash; and this is the one that ties it all together. Declared policy.</strong>
+        Every actor in the network publishes, in advance, the rules they play by.
+        A bank declares what kinds of credit history it will accept. An employer declares what counts
+        as a relevant qualification. A municipality declares what behaviour it sanctions.
+      </p>
+      <p>
+        And here is the consequence I want you to sit with for a second.
+        <strong>Consensus doesn't come from a central decree.</strong> It emerges from the social network itself.
+        Your community already knows whether you're a radical, whether you're trustworthy,
+        whether you keep your word. The protocol doesn't decide that &mdash; it just makes the
+        signal <em class="beat">auditable</em>.
+      </p>
+      <p>
+        Math secures the record. Declared policy makes the rules legible.
+        That's the whole architecture. And it brings me to the obvious next question &mdash;
+        what stops the whole thing being captured? Which is the next slide.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== SLIDE 4 ========================== -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="n">iv.</div>
+      <h2>Incorruptibility.</h2>
+      <div class="timing">~90 s</div>
+    </div>
+    <div class="rules"><div class="r1"></div><div class="r2"></div></div>
+
+    <div class="on-slide">
+      <span class="tag">On the slide</span>
+      <div class="quote-block" style="margin-bottom: 6px;"><strong style="font-style:normal">Incorruptibility.</strong> &nbsp; Social incentives keep it honest.</div>
+      <ul>
+        <li><strong>1. Unpredictable target.</strong> Verifier selection is nondeterministic. You can't bribe in advance someone whose name nobody yet knows.</li>
+        <li><strong>2. Reputational leverage.</strong> Reputation accrues slowly and collapses catastrophically. The bribe is never large enough.</li>
+        <li><strong>3. Public promise.</strong> Declared rules turn private behavior into auditable commitment. Every breach is a publishable claim.</li>
+        <li><strong>4. Mesh topology.</strong> Capturing a hierarchy costs one bribe. Capturing a mesh costs more than any attacker has.</li>
+      </ul>
+      <ul style="margin-top: 10px; font-style: normal; list-style: none; padding: 0;">
+        <li><span style="font-family: var(--mono); font-size: 11px; color: var(--ink-mute);">EYEBROW</span> &nbsp; Why it can't be corrupted &middot; four forces</li>
+        <li><span style="font-family: var(--mono); font-size: 11px; color: var(--ink-mute);">CLOSING</span> &nbsp; <em>Two walls of the same room. The first keeps the state out. The second keeps the cartel out.</em></li>
+      </ul>
+    </div>
+
+    <div class="spoken">
+      <div class="tag">Spoken — four forces</div>
+      <p>
+        The obvious next question &mdash; the one I'd ask if I were sitting where you are &mdash;
+        is: <strong>what stops this from being captured?</strong> What stops a syndicate from buying its way in?
+      </p>
+      <p>
+        Four forces. None of them is decisive on its own. Together, they make capture
+        <em class="beat">more expensive than not.</em>
+      </p>
+      <p>
+        <strong>One. Unpredictable target.</strong> Verifier selection is nondeterministic.
+        You can't bribe in advance someone whose name nobody yet knows.
+        By the time you'd find out who the verifier is, the claim is already settled.
+      </p>
+      <p>
+        <strong>Two. Reputational leverage.</strong> Reputation in this system accrues slowly &mdash;
+        years of consistent honest behavior &mdash; and collapses catastrophically.
+        One provable lie and the asset is gone. So <em class="beat">the bribe is never large enough.</em>
+        Nobody trades a decade of compound reputation for a single payoff.
+      </p>
+      <p>
+        <strong>Three. Public promise.</strong> Because every actor has declared, on the DID layer,
+        the rules they play by, private behavior becomes auditable commitment.
+        If you said you'd verify a certain way and you didn't &mdash; <strong>that itself is a publishable claim</strong>
+        anybody can write against you.
+      </p>
+      <p>
+        <strong>Four. Mesh topology.</strong> This is the structural point.
+        Capturing a hierarchy &mdash; a state, a regulator, a single auditor &mdash; costs one bribe at the top.
+        Capturing a mesh, where authority is distributed across thousands of independent nodes
+        each watching the others, costs <em class="beat">more than any attacker has</em>.
+        That's not a slogan. It's a topological fact.
+      </p>
+      <p>
+        So you have two walls of the same room. <strong>The first keeps the state out</strong> &mdash;
+        the math, no central issuer, nothing to seize. <strong>The second keeps the cartel out</strong> &mdash;
+        the social incentives, the topology, the leverage.
+        Either wall on its own falls. Both together hold.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== SLIDE 5 ========================== -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="n">v.</div>
+      <h2>Roadmap.</h2>
+      <div class="timing">~90 s</div>
+    </div>
+    <div class="rules"><div class="r1"></div><div class="r2"></div></div>
+
+    <div class="on-slide">
+      <span class="tag">On the slide &mdash; five phases, the fifth visually open</span>
+      <ul>
+        <li>1. Pamphlet &amp; whitepaper &nbsp;&middot;&nbsp; done</li>
+        <li>2. Fundraising &amp; outreach &nbsp;&middot;&nbsp; this meeting</li>
+        <li>3. Print editions &amp; international distribution</li>
+        <li><strong>4. <span style="color: var(--sienna)">The heart &mdash; main goal:</span></strong> <em>Social simulation + reference implementation.</em> A controlled simulation under adversarial pressure. <em>Do honest incentives keep the network stable &mdash; and free?</em> .NET, MIT, clean protocol &mdash; not a product. <em>This is what the money goes into.</em></li>
+        <li><strong>5. The &laquo;real&raquo; application</strong> &mdash; open (red-clay dashed). State, city, region &mdash; whoever takes it and builds the real institution.</li>
+      </ul>
+    </div>
+
+    <div class="spoken">
+      <div class="tag">Spoken</div>
+      <p>
+        Five phases. Four of them are my commitment. The fifth is the door.
+      </p>
+      <p>
+        <strong>One, two and three</strong> are scaffolding. The pamphlet and the whitepaper are done,
+        version five, in Czech and English, on personix.org. Fundraising is this conversation.
+        And print editions &mdash; first Czech, then English, German, Spanish &mdash; because this thing
+        has to exist in <em class="beat">physical form</em>, the kind people hand each other across a table.
+        Not as a PDF they download and forget.
+      </p>
+      <p>
+        <strong>Four is the heart. This is what the money goes into &mdash; and I want to be precise about it.</strong>
+      </p>
+      <p>
+        This is <em class="beat">not a marketing pilot</em>. It is an <strong>adversarial simulation</strong>.
+        A controlled network where actors are pushed through every scenario that could break the thing in production:
+        attempts to capture verifiers, collusion rings, sybil attacks, signal poisoning, reputation laundering.
+        We don't wait for the failure modes to find us. We <em class="beat">go looking for them</em>.
+      </p>
+      <p>
+        The thing under test is one specific claim, and I want you to hear it sharply:
+        <strong>whether honest-actor incentives are a stabilizing force</strong> &mdash;
+        whether the network has an equilibrium, and whether it stays at it under stress.
+        That's a measurable property. Either the simulation shows it, or it doesn't.
+      </p>
+      <p>
+        And there is a second condition, just as important.
+        <strong>The equilibrium must stay free, not captured.</strong>
+        A reputation network that drifts into capture would be <em class="beat">worse than no network at all</em> &mdash;
+        a more efficient instrument of the very problem we set out to solve.
+        We need to see, in simulation, that this design <strong>doesn't drift</strong>.
+        That's the bar.
+      </p>
+      <p>
+        The reference implementation is the other half &mdash; .NET, MIT-licenced, clean protocol.
+        Not a product, not a SaaS, not my company. And crucially: <strong>it is the same codebase the simulation runs on</strong>.
+        What we ship is what we tested. No marketing-deck mechanics that aren't in the binary.
+      </p>
+      <p>
+        And <strong>five</strong> &mdash; here, deliberately, it's open. The &laquo;real&raquo; application.
+        A state, a city, a self-governing region. Whoever takes the reference and builds an
+        <em class="beat">actual institution</em> on top.
+        I'm extending that hand outward, toward states and toward the world.
+        If anyone takes it &mdash; Estonia, Switzerland, the Czech Republic &mdash; we all win.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== SLIDE 6 ========================== -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="n">vi.</div>
+      <h2>The deal.</h2>
+      <div class="timing">~90 s</div>
+    </div>
+    <div class="rules"><div class="r1"></div><div class="r2"></div></div>
+
+    <div class="on-slide">
+      <span class="tag">On the slide</span>
+      <p style="margin: 6px 0 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sienna);">The author</p>
+      <ul style="margin-top: 2px;">
+        <li><strong>Hands welcome &mdash; not just pledges.</strong> <em>I run this on my own savings. Help with the book, outreach, intros &mdash; any kind of help counts.</em></li>
+      </ul>
+      <p style="margin: 12px 0 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sienna);">The foundation</p>
+      <ul style="margin-top: 2px;">
+        <li><strong>Recurring pledges, not one lump.</strong> <em>Separate accounting. No tokenomics, no equity.</em></li>
+        <li><strong>Donor-elected supervisory board.</strong> <em>Voting weight = your trailing 12 months. Rules in the bylaws.</em></li>
+        <li><strong>Audits, reports &mdash; back to donors and the market.</strong> <em>That signal is how everyone sees whether the team stays efficient and honest. I keep execution.</em></li>
+      </ul>
+      <p style="margin: 14px 0 0; font-family: var(--serif-body); font-style: italic; font-size: 16px; color: var(--ink);">
+        <strong style="font-style:normal">Coda:</strong>
+        &laquo;The only return I offer: a hand in changing the world.&raquo;
+      </p>
+      <p style="margin: 6px 0 0; font-family: var(--serif-body); font-style: italic; font-size: 13px; color: var(--ink-mute);">
+        (No tokens, no tricks. No monetization path that wouldn't corrupt the protocol. Paid support may come later &mdash; once the foundation is built, documented, and ready.)
+      </p>
+    </div>
+
+    <div class="spoken">
+      <div class="tag">Spoken</div>
+      <p>
+        Now the concrete part. What I'm asking for, and what you get.
+        Two sections. The author, and the foundation.
+      </p>
+
+      <p style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sienna); margin-top: 22px;">The author</p>
+      <p>
+        Before I describe the foundation, one honest thing about where I'm standing today.
+        <strong>I run this on my own savings right now.</strong>
+        That's fine for a stretch. It's not fine forever.
+      </p>
+      <p>
+        So when I ask for help, I mean it broadly. Money is the cleanest form &mdash; but the Personix book
+        is in draft, and it needs editors, translators, distributors. Outreach to people who could care
+        &mdash; donors, allies, public voices &mdash; matters. Introductions to anyone who can move the needle
+        matter. If you can open a door, lend a name, or sharpen the writing, <em class="beat">that counts</em>.
+        Hands welcome &mdash; not just pledges.
+      </p>
+
+      <p style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sienna); margin-top: 22px;">The foundation</p>
+      <p>
+        Now, for those who can pledge. <strong>One. Recurring pledges, not one large lump.</strong>
+        Not because I wouldn't take a single big cheque &mdash; but because <em class="beat">it would look like capture</em>.
+        If Personix had one big benefactor, the public would ask whose project this really is.
+        And they'd be right to ask. So: monthly or quarterly pledges, from a broader circle.
+        Cash flow is <em class="beat">steady, not lumpy</em>, and the trust signal is <strong>communal</strong>.
+        Twenty people pledging every month carry more weight than one writing a single cheque.
+      </p>
+      <p>
+        Pledges go to the <strong>Personix Foundation</strong> &mdash; a registered non-profit
+        with separate accounting, transparent reporting, quarterly statements. No tokenomics,
+        no equity, no percentage. I take a <strong>salary like any other engineer</strong>. Full stop.
+      </p>
+      <p>
+        <strong>Two. The supervisory board is elected by donors.</strong>
+        And here is where the structure gets serious. The bylaws fix it like this:
+        your <em class="beat">voting weight</em> in the annual election is equal to
+        your <strong>trailing twelve months</strong> of pledges.
+      </p>
+      <p>
+        That detail isn't decoration. It rewards <strong>sustained commitment</strong> over one-shot dominance.
+        A patron who shows up once with a large cheque doesn't get to swing the board.
+        Someone who's been pledging every month for a year does.
+        That's how you keep the governance of the foundation aligned with the people who actually carry it.
+      </p>
+      <p>
+        <strong>Three. The board audits. The board reports.</strong>
+        The board has audit rights over the foundation &mdash; it sees the books, the contracts, the salaries.
+        And it <strong>publishes</strong>. Reports go to the donor base and to the wider market.
+        That report itself is the signal: it tells donors and outside observers whether the team
+        is staying <em class="beat">efficient and honest</em>.
+        Standard non-profit governance, applied seriously.
+      </p>
+      <p>
+        <strong>And one last thing. I keep execution.</strong>
+        The founder runs the team day-to-day. The board oversees and reports.
+        The donors hold the board accountable through the annual election.
+        Three powers, separated. Each one checks the next.
+        That's how a foundation built to <em class="beat">resist capture</em> is supposed to look.
+      </p>
+      <p>
+        And before I close, a note on <strong>monetization</strong> &mdash; because you'll ask.
+        I looked. There isn't a model that doesn't corrupt the protocol.
+        Equity gives one party leverage over neutrality.
+        Tokens turn the network into a casino.
+        Fees on the protocol create capture incentives.
+        So the answer is: <em class="beat">none of those</em>.
+      </p>
+      <p>
+        Later &mdash; once the protocol is built right and documented well &mdash;
+        there will be a place for <strong>paid integration support</strong>.
+        Businesses, NGOs, governments who want to plug their existing systems into the reputation network
+        will need help. That's a service business, downstream of the protocol, and it doesn't compromise it.
+        But that comes <em class="beat">after</em>. The foundation has to be solid first.
+      </p>
+      <p>
+        Which is why the only return I can honestly offer you today is this:
+        <strong>a hand in changing the world.</strong>
+        No tokens, no tricks. If that's not the return you want, this isn't your pitch &mdash;
+        and I'd rather you know that now than three years from now.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== SLIDE 7 ========================== -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="n">vii.</div>
+      <h2>Sign-off.</h2>
+      <div class="timing">~30 s</div>
+    </div>
+    <div class="rules"><div class="r1"></div><div class="r2"></div></div>
+
+    <div class="on-slide">
+      <span class="tag">On the slide</span>
+      <div class="quote-block">
+        Here is a tool.<br>
+        It can carry civilization past the age of excuses.<br>
+        <em>Do we have the courage?</em>
+      </div>
+      <ul style="margin-top: 10px; font-style: normal; list-style: none; padding: 0;">
+        <li><span style="font-family: var(--mono); font-size: 11px; color: var(--ink-mute);">CONTACT</span> &nbsp; personix@personix.org &nbsp;&middot;&nbsp; personix.org &nbsp;&middot;&nbsp; github.com/personix-org</li>
+      </ul>
+    </div>
+
+    <div class="spoken">
+      <div class="tag">Spoken — short exhale, eye contact</div>
+      <p>
+        Short exhale. The previous slides explained what Personix is and what I'm asking for.
+        This slide is the close &mdash; and it's <em class="beat">not a soft close</em>.
+      </p>
+      <p>
+        The tool exists. Or rather: the design exists, the protocol is documented,
+        the math is anchored, the first social simulation is being assembled.
+        What I am building, and what I am asking you to help build, is a tool that takes
+        <strong>one excuse off the table</strong> &mdash; the excuse that we cannot know who is honest,
+        who is competent, who is corrupt. Reputation, made legible across institutions.
+        That removes a layer of <em class="beat">plausible deniability</em> that civilization has been
+        hiding behind for at least four centuries.
+      </p>
+      <p>
+        Once that excuse is off the table, the question stops being epistemic and starts being moral.
+        We <strong>will know</strong> who is corrupt &mdash; and the question becomes whether we have the
+        courage to act on what we know. Whether the political class has the courage to be visible.
+        Whether the citizenry has the courage to hold them visible.
+      </p>
+      <p>
+        That is the question I am asking you here today.
+        Not &laquo;do you have the money&raquo; &mdash; that's a smaller question.
+        The real one: <strong>do we have the courage to build this?</strong>
+      </p>
+      <p>
+        Thank you. Contact details are on the slide. Get in touch.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== Q&A ========================== -->
+  <header class="qa-head">
+    <div class="eyebrow">Appendix &nbsp;·&nbsp; Q&amp;A &nbsp;·&nbsp; prepared replies</div>
+    <h2>The questions that will come.</h2>
+    <div class="sub">Short, sharp, from memory. Not to read &mdash; to pull from the muscles.</div>
+  </header>
+  <div class="rules"><div class="r1"></div><div class="r2"></div></div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q · 01</span>What is it built in?</h3>
+    <div class="a">
+      <p>
+        <strong>.NET.</strong> Deliberately. Most enterprise and state software in this country is written in .NET &mdash;
+        hundreds of developers who know enterprise patterns, regulation, bureaucracy.
+        Many of them are frustrated by what they had to build.
+      </p>
+      <p>
+        I have a place where that know-how makes sense &mdash; without the frustration.
+        It's not a trendy startup choice. It is an <strong>HR strategy</strong>.
+        The talent pool I want speaks this language.
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q · 02</span>Why you?</h3>
+    <div class="a">
+      <p>
+        I designed it. I'm putting my <strong>own skin in the market</strong>.
+        I take a salary like any other engineer &mdash; no equity, no tokenomics.
+      </p>
+      <p>
+        My ambition is to climb to the top of the food chain without <em class="beat">usurping power</em>,
+        and to be remembered. That's all.
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q · 03</span>Isn't this anarchist?</h3>
+    <div class="a">
+      <p>
+        Inside that network, the state becomes a <strong>subset</strong> &mdash; gradually smaller.
+        Violence is ruled out &mdash; people simply choose where they live. The better design wins.
+      </p>
+      <p>
+        Closer to a Swiss canton than Galt's Gulch. Probably <strong>stronger communal solidarity</strong>
+        than today's states, just not enforced at gunpoint.
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q · 04</span>What if China, Estonia, or the Caymans get there first?</h3>
+    <div class="a">
+      <p>
+        <strong>Exactly why now.</strong> If we don't start, we don't participate in writing the rules.
+      </p>
+      <p>
+        And then we don't decide what the institution our children live in looks like.
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q · 05</span>How do you fund fundamental research?</h3>
+    <div class="a">
+      <p>
+        Gradual smaller pledges &mdash; cash flow steady, not lumpy.
+        Personix Foundation, a supervisory board drawn from the top contributors, transparent reporting.
+      </p>
+      <p>
+        Phases 1&ndash;5 are budgeted &mdash; roughly <strong>10 &rarr; 50 people over 3 years</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q &middot; 06</span>I want to help, but I cannot make a financial pledge right now.</h3>
+    <div class="a">
+      <p>
+        Then help differently. The book needs editors, translators, distributors.
+        Outreach needs people with platforms and audiences.
+        The work needs people who can introduce us to others.
+      </p>
+      <p>
+        Reach out &mdash; <strong>pavel@personix.org</strong>. <em class="beat">Any kind of help counts.</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q &middot; 07</span>How does this sustain itself long-term &mdash; without equity, tokens, or fees on the protocol?</h3>
+    <div class="a">
+      <p>
+        Donations carry the build phase. Once the protocol is stable and adopted,
+        <strong>paid integration support</strong> becomes viable &mdash; helping businesses, NGOs,
+        and public institutions connect their systems to the reputation network.
+      </p>
+      <p>
+        That's a service business that lives <em class="beat">downstream of the protocol</em>,
+        doesn't compromise its neutrality, and gives the foundation a long-term revenue floor.
+      </p>
+      <p>
+        But none of it is monetized at the protocol level, and <strong>none of it is built before the foundation is ready</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q &middot; 08</span>What exactly do you simulate?</h3>
+    <div class="a">
+      <p>
+        Every adversarial pattern we know how to model: attempts to capture verifiers,
+        collusion rings, sybil attacks, signal poisoning, reputation laundering.
+      </p>
+      <p>
+        The point isn't to enumerate attacks &mdash; it's to test whether the equilibrium
+        <strong>holds and stays free under pressure</strong>.
+        If the simulation shows drift toward capture, the design is wrong and we redesign.
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <h3 class="q"><span class="label">Q &middot; 09</span>Why isn't the real-world deployment your project?</h3>
+    <div class="a">
+      <p>
+        In the Czech Republic &mdash; and most jurisdictions &mdash; arrogating exclusive state powers,
+        operating what amounts to a <strong>parallel registry of citizens' reputation</strong>,
+        can be classified as a criminal offence, including sedition.
+        The real-world deployment needs a legitimate institutional steward.
+      </p>
+      <p>
+        The protocol design ensures whoever picks it up has <em class="beat">standing
+        the protocol itself can't grant</em>.
+      </p>
+    </div>
+  </div>
+
+  <footer class="doc-foot">
+    <div>Personix &nbsp;&middot;&nbsp; Speaker notes &nbsp;&middot;&nbsp; v4 (EN, 7 slides)</div>
+    <div>personix.org</div>
+  </footer>
+
+</article>
+
+</body>
+</html>

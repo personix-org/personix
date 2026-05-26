@@ -1,0 +1,419 @@
+/* Personix public landing page — 1:1 mirror of the review page aesthetic.
+   Match the v5 pamphlet aesthetic:
+     - parchment paper as the page itself (no card-on-card)
+     - Palatino serif body, sans bold for headers
+     - subtle callouts (orange / teal / green / red square mark + thin top divider)
+     - typography over decoration; the cover does the visual lifting
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4ead4;
+    color: #2b211b;
+}
+
+body {
+    font-family: "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.review {
+    width: min(820px, 92%);
+    max-width: min(820px, 92%);
+    margin: 0 auto;
+    padding: 24px 0 64px;
+    color: #2b211b;
+}
+
+/* ── cover ──────────────────────────────────────────── */
+.review__cover {
+    margin: 0 0 28px;
+    text-align: center;
+}
+
+.review__cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(43, 33, 27, 0.15);
+}
+
+/* ── callouts ───────────────────────────────────────── */
+.review__callout {
+    margin: 0 0 1.75rem;
+    padding: 18px 22px 20px;
+    border-radius: 6px;
+    border: 1px solid;
+    background-color: var(--callout-bg);
+}
+
+.review__callout--accent {
+    --callout-bg: rgba(199, 144, 58, 0.07);
+    --callout-color: #b56a1d;
+    border-color: rgba(199, 144, 58, 0.32);
+}
+
+.review__callout--info {
+    --callout-bg: rgba(63, 107, 122, 0.06);
+    --callout-color: #3f6b7a;
+    border-color: rgba(63, 107, 122, 0.28);
+}
+
+.review__callout--success {
+    --callout-bg: rgba(95, 127, 79, 0.07);
+    --callout-color: #5f7f4f;
+    border-color: rgba(95, 127, 79, 0.30);
+}
+
+.review__callout--warning {
+    --callout-bg: rgba(182, 74, 58, 0.07);
+    --callout-color: #b64a3a;
+    border-color: rgba(182, 74, 58, 0.3);
+}
+
+.review__callout-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(43, 33, 27, 0.12);
+}
+
+.review__callout-mark {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: var(--callout-color);
+    border-radius: 1px;
+    flex-shrink: 0;
+}
+
+.review__callout-head h2 {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--callout-color);
+    letter-spacing: 0.005em;
+}
+
+.review__callout-note {
+    margin: 0 0 0.85rem;
+    color: #5b4d44;
+    font-size: 0.96rem;
+}
+
+.review__callout p {
+    margin: 0 0 0.85rem;
+}
+
+.review__callout p:last-child {
+    margin-bottom: 0;
+}
+
+.review__callout a {
+    color: #c56a3a;
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.18em;
+}
+
+.review__callout a:hover {
+    color: #d9804b;
+}
+
+/* ── downloads ──────────────────────────────────────── */
+.review__downloads {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0.2rem 1.5rem;
+}
+
+.review__downloads li {
+    margin: 0;
+}
+
+.review__downloads a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    padding: 0.4rem 0;
+    color: #c56a3a;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    transition: color .12s ease;
+}
+
+.review__downloads a:hover {
+    color: #d9804b;
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+}
+
+.review__dl-arrow {
+    font-weight: 700;
+    color: var(--callout-color, #c56a3a);
+    width: 1.1em;
+    display: inline-block;
+}
+
+.review__dl-text { color: inherit; }
+
+.review__dl-meta {
+    color: #8a7a6e;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-left: 0.15rem;
+}
+
+/* ── donate ─────────────────────────────────────────── */
+.review__donate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 0 0 1.25rem;
+}
+
+.review__donate-channel {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+}
+
+.review__donate-qr {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    border: 1px solid rgba(43, 33, 27, 0.15);
+    border-radius: 3px;
+    background: #fff;
+    padding: 4px;
+    box-sizing: content-box;
+}
+
+.review__donate-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.review__donate-label {
+    margin: 0 0 0.3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2b211b;
+}
+
+.review__donate-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.review__donate-addr {
+    flex: 1;
+    min-width: 0;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.7rem;
+    color: #5b4d44;
+    word-break: break-all;
+    line-height: 1.4;
+    user-select: all;
+}
+
+.review__donate-disclaimer {
+    margin: 0;
+    padding: 14px 16px;
+    background-color: rgba(182, 74, 58, 0.06);
+    border: 1px solid rgba(182, 74, 58, 0.25);
+    border-radius: 4px;
+    font-size: 0.92rem;
+    display: flow-root;
+}
+
+.review__donate-disclaimer p {
+    margin: 0 0 0.55rem;
+}
+
+.review__donate-disclaimer p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── author mugshot ────────────────────────────────── */
+.review__mugshot {
+    float: right;
+    width: 240px;
+    max-width: 45%;
+    margin: 0.2rem 0 0.5rem 1rem;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 3px 3px 0 rgba(43, 33, 27, 0.2);
+}
+
+.review__mugshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1.5px solid #2b211b;
+    border-radius: 4px;
+}
+
+@media (max-width: 520px) {
+    .review__mugshot {
+        float: none;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 0.85rem;
+    }
+}
+
+/* ── copy button ───────────────────────────────────── */
+.review__copy {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid rgba(43, 33, 27, 0.2);
+    border-radius: 3px;
+    color: #6e5e54;
+    cursor: pointer;
+    position: relative;
+    transition: color .12s ease, border-color .12s ease, background-color .12s ease;
+}
+
+.review__copy:hover {
+    color: #c56a3a;
+    border-color: rgba(197, 106, 58, 0.5);
+    background-color: rgba(197, 106, 58, 0.05);
+}
+
+.review__copy svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.review__copy .review__copy-icon-default { opacity: 1; }
+.review__copy .review__copy-icon-done { opacity: 0; }
+
+.review__copy.is-copied {
+    color: #5f7f4f;
+    border-color: rgba(95, 127, 79, 0.5);
+    background-color: rgba(95, 127, 79, 0.08);
+}
+
+.review__copy.is-copied .review__copy-icon-default { opacity: 0; }
+.review__copy.is-copied .review__copy-icon-done { opacity: 1; }
+
+/* ── anti-fraud / legit channels ──────────────────── */
+.review__legit-fraud {
+    margin: 0;
+    padding-top: 0.7rem;
+    border-top: 1px dashed rgba(43, 33, 27, 0.18);
+    color: #2b211b;
+}
+
+/* ── campaigns ──────────────────────────────────────── */
+.review__campaigns-empty {
+    padding: 14px 16px;
+    border: 1px dashed rgba(43, 33, 27, 0.22);
+    border-radius: 4px;
+    color: #6e5e54;
+    font-style: italic;
+    margin: 0 0 0.9rem;
+    text-align: center;
+}
+
+.review__campaigns-empty p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .review__donate-grid { grid-template-columns: 1fr; }
+}
+
+/* ── contact / footer ────────────────────────────── */
+.review__contact {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(43, 33, 27, 0.18);
+}
+
+.review__contact h2 {
+    margin: 0 0 0.7rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #6e5e54;
+}
+
+.review__contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+
+.review__contact li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.25rem 0;
+}
+
+.review__contact-key {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8a7a6e;
+    min-width: 4.5rem;
+}
+
+.review__contact a {
+    color: #c56a3a;
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+}
+
+.review__contact a:hover { color: #d9804b; }
+
+.review__license {
+    margin: 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(43, 33, 27, 0.10);
+    color: #8a7a6e;
+    font-size: 0.85rem;
+    line-height: 1.55;
+}
+
+.review__license a {
+    color: #6e5e54;
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.18em;
+}
+
+.review__license a:hover { color: #2b211b; }
+
+@media (max-width: 600px) {
+    .review { font-size: 16px; padding: 18px 0 48px; }
+}

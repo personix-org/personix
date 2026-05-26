@@ -1,0 +1,30 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds,babel}
+\begin{document}
+\begin{tikzpicture}[
+    person/.style={draw, rounded corners=2pt, minimum width=1.5cm, minimum height=0.5cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[person] (a) at (-2,0) {Strict\\(high)};
+\node[person] (b) at (0,0) {Pragmatic\\(medium)};
+\node[person] (c) at (2,0) {Forgiving\\(low)};
+\node[person, fill=black!10, minimum width=3cm] (cons) at (0,-1.2) {Network Consensus\\= stat.\ average};
+\node[person] (exp) at (-2,-2.4) {Barbaric\\expensive};
+\node[person, double] (prop) at (0,-2.4) {Proportional\\cheap};
+\node[person] (neg) at (2,-2.4) {Negligent\\expensive};
+
+\draw[arr] (a) -- (cons);
+\draw[arr] (b) -- (cons);
+\draw[arr] (c) -- (cons);
+\draw[arr] (cons) -- (exp);
+\draw[arr] (cons) -- (prop);
+\draw[arr] (cons) -- (neg);
+\end{tikzpicture}
+\end{document}

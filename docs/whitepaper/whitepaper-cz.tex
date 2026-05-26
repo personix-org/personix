@@ -1,0 +1,621 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+% === Core Packages ===
+\usepackage[margin=2cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[
+  Extension=.otf,
+  UprightFont=*-regular,
+  BoldFont=*-bold,
+  ItalicFont=*-italic,
+  BoldItalicFont=*-bolditalic,
+]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds,babel}
+
+% === Citation (IEEE style) ===
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{IEEEtranN}
+
+% === Hyperref ===
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+% === Settings ===
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.3em}
+
+% === Title ===
+\title{\textbf{Decentralizovaná reputační síť:\\Rámec pro přirozenou organizaci společnosti}}
+\author{Pavel Kudrna\\Prague, Czechia\\Draft v1 --- březen 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+% ABSTRAKT
+% ============================================================
+\begin{abstract}
+Pocit spravedlnosti --- přesvědčení, že křivdy jsou napraveny a zásluhy odměněny --- je nejsilnějším soudržným prvkem společnosti. Když centralizované instituce správy nemohou tento pocit zajistit, protože náklady na vymáhání práva překračují hodnotu samotného práva, společenská soudržnost eroduje. Současné institucionální struktury selhávají při řešení významné třídy sporů systematicky stejným způsobem, jakým centrální plánování selhává při alokaci zdrojů: informační asymetrií, chybějícími zpětnými vazbami a odpojením rozhodovatelů od důsledků jejich rozhodnutí. Tento článek představuje reputační sociální síť (Reputation Social Network, RSN): decentralizovanou, nezkorumpovatelnou, cenzuře odolnou komunikační vrstvu postavenou na decentralizovaných identifikátorech (Decentralized Identifiers, DID), která umožňuje pseudonymním účastníkům publikovat, ověřovat a konzumovat reputační informace o chování v reálném světě. Jádro mechanismu spočívá na třech konstrukčních principech: (1)~asymetrická nákladová struktura, kde čtení reputačních dat je levné, ale zápis vyžaduje ověřitelné úsilí; (2)~nedeterministický protokol výběru ověřovatelů založený na konzistentním hashování, který oceňuje radikální tvrzení prostřednictvím eskalujících iteračních nákladů; a (3)~tržně řízený model reputačních autorit, v němž soukromí ověřovatelé sázejí svou nashromážděnou reputaci na přesnost tvrzení, která endorsují. Výsledkem je architektura, která vytváří emergentní meritokracii bez centrální koordinace a umožňuje postupnou, reverzibilní migrační cestu od stávajících státem spravovaných systémů.
+\end{abstract}
+
+% ============================================================
+% 1. ÚVOD
+% ============================================================
+\section{Úvod}
+
+\subsection{Problém centralizované důvěry}
+
+Moderní správa věcí veřejných spočívá na základním předpokladu: že centralizované instituce dokáží zprostředkovat důvěru mezi cizími lidmi ve velkém měřítku. Soudy rozhodují spory. Rejstříky osvědčují vlastnictví. Regulační orgány vynucují standardy. Tyto instituce byly navrženy v době, kdy informace byly vzácné, komunikace pomalá a delegování pravomocí na centrální orgán bylo jediným proveditelným koordinačním mechanismem. Centralizovaná správa však selhává ze stejných strukturálních důvodů jako centrální plánování: informační asymetrie, chybějící zpětné vazby a odpojení rozhodovatelů od důsledků jejich rozhodnutí.
+
+Tento předpoklad selhává například tehdy, když náklady na institucionální zprostředkování převýší hodnotu sporu. Uvažme nájemce, který zjistí, že pronajatý byt postrádá zákonem požadovanou revizní zprávu elektroinstalace --- stav, který bezprostředně ohrožuje život. Nájemcovo právní oprávnění odstoupit od smlouvy je jednoznačné. Avšak náklady na vynucení tohoto práva prostřednictvím soudního systému převyšují peněžní hodnotu kauce a dlužného odškodného, a to i se započtením případného tabulkového odškodnění~\cite{czcourtfees}. Racionální odpovědí je ztrátu absorbovat a odejít.
+
+Nejedná se o patologický okrajový případ. Je to standardní zkušenost u významné třídy sporů, v nichž je újma reálná, ale finanční sázka spadá pod práh, při němž se institucionální vynucování stává ekonomicky racionálním. Výsledkem je systém, který strukturálně nadržuje nepoctivým aktérům: ti, kdo poškozují ostatní v objemech pod tímto prahem, mohou jednat beztrestně, protože náklady na vymáhání spravedlnosti nesou poškození.
+
+Uvedený příklad pochází z autorova právního prostředí --- českého kontinentálního systému. V jiných právních tradicích --- precedenčním common law, zvykovém právu, smíšených systémech --- selhává justice odlišnými způsoby a v jiné míře, podle kulturních a procedurálních specifik dané jurisdikce. Čtenář si patrně rozpomene na ekvivalentní příklad ze svého kontextu. Strukturálně univerzální je vzorec: spory, jejichž hodnota leží pod prahem ekonomicky racionálního vymáhání, končí absorbováním ztráty poškozenou stranou. Reputační síť neslibuje dokonalou spravedlnost --- pouze redukuje strukturální výhodu, kterou nepoctiví aktéři získávají, když je institucionální vymáhání ekonomicky neúnosné.
+
+\subsection{Proč stávající řešení nedostačují}
+
+\textbf{Rámce decentralizované identity (DID)}~\cite{did2022} poskytují kryptografické mechanismy pro sebevládní správu identity, ale zaměřují se primárně na ověřování identity bez řešení širší otázky behaviorální reputace.
+
+\textbf{Soulbound tokeny (SBT)}~\cite{weyl2022} zachycují poznatek, že reputace je nepřenositelná, ale spoléhají na blockchainovou infrastrukturu s omezeními škálovatelnosti a neřeší ekonomické pobídky řídící zadávání informací. Koncepty jako meritové tokeny (např. Liberland) sdílejí podobnou filosofii, ale zůstávají vázány na konkrétní jurisdikční rámce.
+
+\textbf{Decentralizované autonomní organizace (DAO)}~\cite{buterin2014} implementují správu prostřednictvím chytrých kontraktů, ale replikují plutokratickou dynamiku, kde vliv je úměrný kapitálu. Kvadratické hlasování~\cite{buterin2019} tento problém částečně zmírňuje, ale omezuje praktické přijetí. DAO navíc čelí fundamentálnímu \emph{oracle problému}: chytré kontrakty nemohou spolehlivě ověřovat stavy reálného světa bez důvěryhodného externího zdroje, a tento problém nemá obecné řešení v rámci blockchainové architektury.
+
+Žádný existující systém nekombinuje decentralizaci, odolnost vůči cenzuře, pseudonymitu, ověřitelné náklady vstupu a emergentní konsenzus.
+
+\subsection{Příspěvek tohoto článku}
+
+Článek předkládá následující příspěvky:
+\begin{enumerate}[nosep]
+\item Definice \textbf{reputační sociální sítě (RSN)}, decentralizovaného protokolu rozšiřujícího rámec DID o podporu bilaterální výměny reputačních informací.
+\item \textbf{Nedeterministický protokol výběru ověřovatelů} založený na konzistentním hashování~\cite{karger1997}.
+\item \textbf{Princip drahého radikalismu}, který oceňuje tvrzení podle jejich vzdálenosti od síťového konsenzu prostřednictvím tří kumulativních nákladových kanálů.
+\item \textbf{Model reputační autority} s asymetrickými pobídkami, kde náklady na endorsování nepravdy katastroficky převyšují výnosy z endorsování pravdy.
+\item \textbf{Postupná migrační cesta} prostřednictvím paralelní fiskální infrastruktury.
+\end{enumerate}
+
+% ============================================================
+% 2. KONSTRUKČNÍ PRINCIPY
+% ============================================================
+\section{Konstrukční principy}
+
+Architektura RSN je omezena pěti nepřekročitelnými konstrukčními principy.
+
+\textbf{Kontinuita a evoluce.} Systém koexistuje se stávajícími institucemi během přechodného období neurčité délky. Přechod musí být reverzibilní v každé fázi.
+
+\textbf{Dobrovolnost a odpovědnost.} Účast je dobrovolná, ale dobrovolnost je spojena s odpovědností: účastník, který převezme kontrolu nad institucionální funkcí, současně přebírá povinnosti, které ji doprovázejí.
+
+\textbf{Diverzita a kulturní neutralita.} Konsenzus vzniká z bilaterálních interakcí mezi účastníky, nikoli z přednastavených pravidel vnucených tvůrci systému.
+
+\textbf{Odolnost a rezistence vůči cenzuře.} Náklady na cenzurování sítě musí převýšit náklady na její tolerování. Pouze plný totalitarismus --- za zničující politické a ekonomické náklady --- může systém potlačit.
+
+\textbf{Konsenzus a vynucování.} Systém zahrnuje lidské sklony k malichernosti, zlovůli a touze po odplatě jako nosné prvky sociální architektury. Protiprávní jednání není zakázáno; je oceněno.
+
+% ============================================================
+% 3. PŘEHLED SYSTÉMU
+% ============================================================
+\section{Přehled systému}
+
+\subsection{Reputační sociální síť}
+
+RSN je decentralizovaná peer-to-peer komunikační vrstva, v níž účastníci vyměňují ověřitelné informace o chování v reálném světě. Její určující vlastnosti jsou: decentralizovaná a necenzurovatelná infrastruktura; pseudonymní účast prostřednictvím DID; asymetrická nákladová struktura (čtení je levné, zápis je drahý); kryptografická ověřitelnost; a \textbf{podpora standardů} pro strojově zpracovatelné informace šířené v síti, pro služby poskytované autoritami (tvorba tvrzení, endorsace, svědecká služba) a pro formát policy včetně pravidel vyhodnocování reputace protistrany a posuzování rizika nesouladu politik (deklarovaných i skutečných).
+
+\subsection{Architektonické komponenty}
+
+RSN sestává ze čtyř primárních komponent (obr.~\ref{fig:architecture}):
+\begin{enumerate}[nosep]
+\item \textbf{Vrstva DID.} Identity účastníků s deklarovanými pravidly, reputačními metadaty a síťovým směrováním.
+\item \textbf{Protokol tvrzení.} Strukturovaný formát pro publikování assertions o událostech reálného světa.
+\item \textbf{Ověřovací síť.} Decentralizovaný protokol pro přidělování ověřovatelů pomocí konzistentního hashování.
+\item \textbf{Vrstva agregace reputace.} Služby produkující lidsky čitelné reputační souhrny.
+\end{enumerate}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    layer/.style={draw, minimum height=0.7cm, align=center, font=\scriptsize, fill=black!8},
+    arr/.style={<->, thick, gray!60}
+]
+\node[layer, minimum width=5cm] (agg) at (0,2.8) {\textbf{Agregace}\\Interpretace $\cdot$ Riziko};
+\node[layer, minimum width=2.2cm] (claim) at (-1.55,1.4) {\textbf{Tvrzení}\\Kompozice};
+\node[layer, minimum width=2.2cm] (verif) at (1.55,1.4) {\textbf{Ověřování}\\Výběr};
+\node[layer, minimum width=5cm] (did) at (0,0) {\textbf{Vrstva DID}\\Identita $\cdot$ Pravidla $\cdot$ Skóre};
+
+\draw[arr] (agg.south west) -- (claim.north);
+\draw[arr] (agg.south east) -- (verif.north);
+\draw[arr] (claim.east) -- (verif.west);
+\draw[arr] (claim.south) -- (did.north west);
+\draw[arr] (verif.south) -- (did.north east);
+\end{tikzpicture}
+\caption{Architektura RSN --- čtyřvrstvá hierarchie.}
+\label{fig:architecture}
+\end{figure}
+
+\subsection{Role účastníků}
+
+Ověřovací transakce zahrnuje až šest různých DID rolí (obr.~\ref{fig:roles}): \textbf{Vydavatel} (Issuer, $DID_I$, vytváří a podává tvrzení), \textbf{Subjekt} (Subject, $DID_S$, DID, o kterém tvrzení hovoří --- může se shodovat s Vydavatelem), \textbf{Autorita} ($DID_A$, endorsuje tvrzení za poplatek; může nabízet i svědeckou službu --- \emph{volitelná}), \textbf{Svědek} ($DID_{W_{1..n}}$, incognito monitor poctivosti ověřovatele prostřednictvím challenge kódů --- \emph{volitelný}), \textbf{Ověřovatel} ($DID_V$, algoritmicky vybrán k publikaci tvrzení) a \textbf{RSN} (síť, kam jsou ověřená tvrzení publikována). Jakákoli role může být delegována na jiné DID (sekce~7.4). Autorita běžně spojuje endorsaci se svědeckou službou, ale obě funkce jsou logicky nezávislé.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    role/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8},
+    opt/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8, dashed},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    oarr/.style={-{Stealth[length=3pt]}, thick, dashed, gray},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[role] (I) at (0,2.4) {\textbf{Vydavatel}};
+\node[role] (S) at (-2.5,2.4) {\textbf{Subjekt}};
+\node[opt] (A) at (2.5,1.2) {\textbf{Autorita}};
+\node[opt] (W) at (-2.5,0) {\textbf{Svědek}};
+\node[role] (V) at (2.5,-0.6) {\textbf{Ověřovatel}};
+\node[role, fill=black!5, draw=gray] (N) at (0,-1.8) {RSN};
+
+\draw[arr] (I) -- node[lbl] {o kom} (S);
+\draw[oarr] (I) -- node[lbl,sloped] {endorsace} (A);
+\draw[oarr] (I) -- node[lbl,sloped] {challenge} (W);
+\draw[arr] (I) -- node[lbl,sloped] {požadavek} (V);
+\draw[oarr] (W) -- node[lbl] {monitoruje} (V);
+\draw[arr] (V) -- node[lbl] {publikuje} (N);
+\end{tikzpicture}
+\caption{Role DID v ověřovací transakci. Čárkovaně = volitelné (Autorita, Svědek).}
+\label{fig:roles}
+\end{figure}
+
+\subsection{Nezkorumpovatelnost: čtyři síly}
+
+Nezkorumpovatelnost RSN nevychází z jediného mechanismu, ale ze čtyř souběžně působících sil. Žádná z nich není sama o sobě dostatečná; teprve jejich kombinace činí pokus o korupci ekonomicky neracionálním.
+
+\textbf{Nepředvídatelný cíl.} Ověřovatel pro každé tvrzení je vybrán nedeterministicky prostřednictvím konzistentního hashování (sekce~5.3). Útočník nemůže předem cílit konkrétního ověřovatele k uplacení, protože identita ověřovatele je funkcí obsahu tvrzení a předchozích iterací, nikoli volby vydavatele.
+
+\textbf{Reputační páka --- pomalý růst, rychlá ztráta.} Reputaci lze získat pouze inkrementálně, prostřednictvím soustavného konzistentního chování. Lze ji však ztratit katastroficky jediným podvodem (sekce~6.2). Tato asymetrie znamená, že roky budované reputace mohou být zničeny jedinou nečestnou endorsací; optimální strategií zůstává odmítat podezřelá tvrzení.
+
+\textbf{Veřejný závazek.} Každý držitel DID veřejně deklaruje svou policy --- strojově čitelný soubor pravidel, podle kterých se zavazuje jednat. Odchylka deklarace od skutečného chování je detekovatelná a oceněna jako reputační prohřešek závažnější než původní porušení (sekce~7.3). Pokrytectví je tedy nákladnější než přímá nečestnost.
+
+\textbf{Mřížková asymetrie nákladů útoku.} Náklady na cenzurování nebo destabilizaci sítě rostou nelineárně s velikostí a hustotou sítě, zatímco náklady na její tolerování zůstávají konstantní. Aby se cenzura vyplatila, musel by ji centralizovaný aktér uplatnit napříč celou sítí --- což vyžaduje opatření neúměrná jakémukoli přínosu (sekce~10).
+
+% ============================================================
+% 4. MODEL DECENTRALIZOVANÉ IDENTITY
+% ============================================================
+\section{Model decentralizované identity}
+
+\subsection{DID se speciálními vlastnostmi}
+
+RSN rozšiřuje specifikaci W3C DID Core~\cite{did2022} o: \textbf{Deklarovaná pravidla} (strojově čitelné behaviorální závazky), \textbf{Reputační metadata} (agregované behaviorální skóre) a \textbf{Síťové směrování} (měnitelný onion gateway oddělený od stabilní pozice na kruhu).
+
+\subsection{Životní cyklus tvrzení}
+
+Tvrzení prochází šesti fázemi (obr.~\ref{fig:lifecycle}): kompozice, volitelná endorsace Autoritou, výběr ověřovatele přes konzistentní hashování, rozhodnutí o ověření (přijetí nebo odmítnutí s iterací), publikace a aktualizace reputace všech stran.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    stp/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\tiny, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[stp] (comp) at (0,0) {Sestavení\\tvrzení};
+\node[stp, dashed] (auth) at (2.0,0) {Endorsace\\Autoritou};
+\node[stp] (hash) at (4.0,0) {Hash \&\\mapování};
+\node[stp] (ver) at (2.0,-1.6) {Ověření};
+\node[stp, double] (pub) at (0,-1.6) {Publikováno};
+\node[stp] (rej) at (4.0,-1.6) {Odmítnuto\\další iter.};
+
+\draw[arr] (comp) -- (auth);
+\draw[arr] (auth) -- (hash);
+\draw[arr] (hash) -- (ver);
+\draw[arr] (ver) -- node[lbl] {\checkmark} (pub);
+\draw[arr] (ver) -- node[lbl] {$\times$} (rej);
+\draw[arr] (rej) -- ++(0,0.8) -| (hash);
+\end{tikzpicture}
+\caption{Životní cyklus tvrzení s iterační smyčkou.}
+\label{fig:lifecycle}
+\end{figure}
+
+\subsection{Vztah k W3C DID Core}
+
+Model identity RSN je vlastní nadmnožinou specifikace W3C DID Core~\cite{did2022}. Všechny RSN DID jsou platnými W3C DID. RSN-specifická rozšíření jsou kódována jako vlastnosti DID dokumentu definované ve vyhrazené specifikaci DID metody, kompatibilní se stávající infrastrukturou jako ION~\cite{buchner2021} a Ceramic~\cite{ceramic2023}.
+
+% ============================================================
+% 5. OVĚŘOVÁNÍ A PROPAGACE INFORMACÍ
+% ============================================================
+\section{Ověřování a propagace informací}
+
+\subsection{Náklady na vstup informací}
+
+Klíčovým ekonomickým principem RSN je asymetrie mezi čtením a zápisem. Čtení reputačních dat se blíží nulovým marginálním nákladům pro účastníky, kteří jsou součástí DID sítě a mají přístup k informacím odpovídající jejich reputaci --- nově příchozí si musí postupně zasloužit širší přístup (viz anti-leeching mechanismus). Zápis --- chápáno jako trvalé zhmotnění reputace do sítě, nikoli jako jednorázový technický akt --- vyžaduje ověřitelnou kumulativní investici ve třech dimenzích: \textbf{čas} (roky života strávené konzistentním chováním, splněnými závazky a vybudovanými vztahy), \textbf{energie} (úsilí vynaložené na čestné jednání, péči o partnerské vazby a dlouhodobou důvěryhodnost) a \textbf{peníze} (investice do vlastního jména --- profesního rozvoje, kvality dodávané práce, nápravy způsobených škod). Reputaci nelze zakoupit okamžitě --- je výsledkem celoživotní akumulace, kterou systém pouze zviditelňuje a činí přenositelnou napříč kontexty. Jednorázové technické náklady protokolu (kryptografické podpisy, poplatky ověřovatelům) jsou ve srovnání s touto investicí zanedbatelné.
+
+\subsection{Sociální graf a hloubka kontaktů}
+
+RSN je v první řadě sociální síť: každé DID si přidává do svých kontaktů známé, kteří toto propojení povolí. Ti mají vlastní kontakty a ti další. Do algoritmického vyhledávání ověřovatelů vstupuje konfigurovatelná hloubka $h$ navázaných kontaktů (např.\ $h=3$: přímé kontakty, jejich kontakty a kontakty kontaktů). Tato architektura nevyžaduje jeden globální blockchain pro celou planetu --- naopak přirozeně preferuje vznik komunit/clusterů s přesahy do dalších komunit. Každý účastník DID sítě musí mít publikovanou svou \textbf{policy} --- strojově čitelný soubor pravidel, na základě kterých vyhodnocuje příchozí požadavky a které musí dodržovat. Porušení vlastní deklarované policy je zaznamenáno v síti jako negativní artefakt.
+
+\subsection{Algoritmický výběr ověřovatelů}
+
+Ověřovací protokol využívá konzistentní hashování~\cite{karger1997} (obr.~\ref{fig:verifier}). Ověřování je placená služba: ověřovatelé pracují za poplatek, čímž vzniká trh, kde konkurence řídí ceny, rychlost a spolehlivost.
+
+\textbf{Krok 1.} Dokument tvrzení je zřetězen s výsledkem hashe z předchozí iterace (nebo $\varnothing$ při první iteraci) a hashován:
+\begin{equation}
+\text{pos} = f_h(\text{claim} \| \text{prev\_hash})
+\label{eq:hash}
+\end{equation}
+
+Algoritmus musí zahrnovat \emph{kompletní cestu} všech předchozích požadavků a odpovědí --- nikoli pouze hash předchozí iterace. Kompletní odpověď každého ověřovatele (přijetí, odmítnutí, kotovaná cena, důvod) je připojena k rostoucímu dokumentu a je ověřitelná kryptografickými podpisy v každém kroku.
+
+\textbf{Krok 2.} Hash je mapován na $N$ pozic na konzistentním hashovacím kruhu, rovnoměrně rozložených (např. pro $N=4$: $+0^{\circ}, +90^{\circ}, +180^{\circ}, +270^{\circ}$). Z každé pozice vyhledávání ve směru hodinových ručiček vybere nejbližší DID jako kandidáta na ověřovatele (obr.~\ref{fig:multipoint}). $N$ je proměnný parametr závislý na procentu aktivních DID, denní době nebo historické odezvě sítě.
+
+\textbf{Krok 3.} Ověřovatel přijme (publikuje, sází reputaci) nebo odmítne (vrací se ke kroku~1 s hashem odmítnutí). Když node neodpovídá navzdory deklarovanému online statusu, další požadavek musí zahrnovat všechny odpovědi od všech $N$ předchozích kandidátů.
+
+\textbf{Anti-leeching.} Cílové DID si mohou stanovit poplatky nebo přístupová omezení pro dotazy od nových DID s nízkou reputací. Tento graduální mechanismus (nikoli binární) nutí nováčky budovat reputaci prostřednictvím skutečné aktivity v síti.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!5},
+    dec/.style={draw, diamond, aspect=2.2, minimum width=0.9cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[box] (iss) at (0,0) {Vydavatel};
+\node[box] (hash) at (0,-1.1) {$f_h$(tvrzení $\|$\\předchozí\_hash)};
+\node[box] (ring) at (0,-2.2) {Mapování\\na kruh};
+\node[box, dashed] (spam) at (0,-3.2) {Anti-spam\\deposit};
+\node[dec] (check) at (0,-4.4) {Kontrola\\policy};
+\node[box] (rej) at (2,-5.6) {Další\\iterace};
+\node[box] (fee) at (0,-5.6) {Poplatek =\\$f$(data, rep., pol.)};
+\node[box, double] (pub) at (0,-6.8) {Publikováno};
+
+\draw[arr] (iss) -- (hash);
+\draw[arr] (hash) -- (ring);
+\draw[arr] (ring) -- (spam);
+\draw[arr] (spam) -- (check);
+\draw[arr] (check) -- node[lbl] {$\times$} (rej);
+\draw[arr] (check) -- node[lbl] {\checkmark} (fee);
+\draw[arr] (fee) -- (pub);
+\draw[arr] (rej.east) -- ++(0.5,0) |- (hash.east);
+\end{tikzpicture}
+\caption{Protokol výběru ověřovatelů. Anti-spam deposit je volitelný a může být vratný. Finální poplatek se platí pouze při přijetí.}
+\label{fig:verifier}
+\end{figure}
+
+Každé odmítnutí přidává k dokumentu tvrzení zamítavou odpověď ověřovatele (včetně důvodů a podmínek), čímž rozšiřuje jeho obsah. Z rozšířeného dokumentu se nedeterministicky vypočte nový hash, mapující na jinou pozici na kruhu a vybírající jiného ověřovatele. Dokumentace celé cesty je povinná --- vydavatel nemůže predikovat ani ovlivnit výběr dalšího ověřovatele. Pokud ověřovatel ignoruje požadavek navzdory své deklarované policy, svědci (jsou-li přítomni) toto zaznamenají a vydavatel může při finálním publikování přiložit svědecké důkazy o porušení.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.65]
+% Ring
+\draw[thick] (0,0) circle (2.2cm);
+% DID nodes on ring
+\foreach \a in {10,55,80,120,150,195,230,260,305,340} {
+  \fill[black!40] (\a:2.2) circle (1.5pt);
+}
+% Hash offset arrow pointing to initial position
+\draw[-{Stealth[length=3pt]}, thick, black!60] (0,0) -- node[font=\tiny,above,sloped,pos=0.6] {$f_h$} (37:2.2);
+\fill[black] (37:2.2) circle (2pt);
+\node[font=\tiny,anchor=south west] at (37:2.35) {$h_0$};
+% N=4 points offset from h0 by +0, +90, +180, +270
+\foreach \offset/\l in {0/P1,90/P2,180/P3,270/P4} {
+  \pgfmathsetmacro{\ang}{37+\offset}
+  \node[fill=black, circle, inner sep=1.5pt] (p\offset) at (\ang:2.2) {};
+  \node[font=\tiny,font=\bfseries] at (\ang:2.75) {\l};
+  % clockwise search arc
+  \draw[-{Stealth[length=2.5pt]}, thick, gray] (\ang:2.2) arc (\ang:\ang+30:2.2);
+}
+\node[font=\scriptsize, align=center] at (0,0) {Hashovací\\kruh};
+\node[font=\tiny, align=center] at (0,-3.2) {$h_0 = f_h(\text{tvrzení})$, poté $+0^{\circ},+90^{\circ},+180^{\circ},+270^{\circ}$\\Každý bod $\rightarrow$ vyhledávání po směru};
+\end{tikzpicture}
+\caption{Vícenásobný výběr ($N{=}4$). Hash $h_0$ určí offset; 4 body rovnoměrně rozložené od $h_0$.}
+\label{fig:multipoint}
+\end{figure}
+
+\subsection{Protokol svědka (Witness Protocol)}
+
+Role \textbf{svědka} (Witness) zajišťuje incognito odpovědnost za poctivost ověřovatele prostřednictvím kryptografického protokolu challenge kódů:
+
+\textbf{Krok W1.} Žadatel podepíše ověřovací požadavek a pošle ho $N_w$ svědkům --- kontaktům ze své sociální sítě nebo specializovaným poskytovatelům svědecké služby za poplatek.
+
+\textbf{Krok W2.} Každý svědek $w_i$ podepíše celý podepsaný požadavek, ponechá si originální podpis $\sigma_i$ a vypočte challenge kód $c_i = h(\sigma_i)$. Challenge kód je připojen k požadavku.
+
+\textbf{Krok W3.} Požadavek s $N_w$ challenge kódy je odeslán ověřovateli. Ověřovatel vidí kódy, ale \emph{nemůže určit}, kdo jsou svědci ani zda kódy odpovídají skutečným podpisům.
+
+\textbf{Krok W4 (poctivý ověřovatel).} Pokud ověřovatel odpoví v souladu se svou deklarovanou politikou, challenge kódy zůstávají neprůhledné. Svědci nemusí být odhaleni. Žádná doplňková data se nepublikují.
+
+\textbf{Krok W5 (porušení politiky).} Pokud ověřovatel poruší svou politiku (ignoruje požadavek, odpovídá nekonzistentně), žadatel drží originální podpisy svědků $\sigma_i$. Ty mohou být publikovány jako doprovodná data: kdokoli si může ověřit $c_i = h(\sigma_i)$, čímž prokáže přítomnost svědka. Žadatel může publikovat nezávisle --- ověřovatel již podepsal challenge kódy ve své odpovědi.
+
+\textbf{Vlastnost bluffu.} Žadatel může za některé nebo všechny challenge kódy substituovat náhodné hodnoty. Ověřovatel nemůže rozlišit skutečné kódy (podložené vysoce reputovanými autoritami) od šumu. Tato \emph{nejistota} je vynucovací mechanismus: každý požadavek nese riziko, že respektovaná autorita sleduje incognito. Náklady na udržování tohoto tlaku jsou téměř nulové (generování náhodných čísel), zatímco potenciální náklady nečestnosti pro ověřovatele jsou katastrofické. Poctivé chování je motivováno i bez skutečných svědků.
+
+\textbf{Autorita jako svědek.} Autorita, která endorsuje tvrzení, může spojit svou službu se svědeckou: ,,Endorsuji tvé tvrzení a zároveň budu incognito svědkem při ověřování.`` Jde o přirozený obchodní model --- Autorita již má kontext. Obě role jsou však logicky nezávislé.
+
+\subsection{Princip drahého radikalismu}
+
+Tři nákladové kanály se kumulují současně (obr.~\ref{fig:radicalism}):
+
+\textbf{Kanál 1: Iterační náklady.} Každé odmítnutí vynucuje novou iteraci spotřebovávající čas a zdroje. Lineární růst.
+
+\textbf{Kanál 2: Narůstání objemu dokumentu.} Každá iterace přidává kompletní odpověď ověřovatele do dokumentu tvrzení. Růst je lineární, ale se základním offsetem: počáteční datová zátěž (obsah tvrzení, endorsace autority, kryptografické podpisy) má již nenulovou velikost $B_0$. Celková velikost po $k$ iteracích: $S(k) = B_0 + k \cdot \Delta$, kde $\Delta$ je průměrná velikost odpovědi.
+
+\textbf{Kanál 3: Riziková přirážka ověřovatele.} Riziko je subjektivní. Ověřovatel posuzuje, zda deklarované politiky žádajícího DID jsou v rozporu s jeho vlastními obchodními, sociálními nebo politickými zájmy. Přirážka může eskalovat exponenciálně se subjektivní vzdáleností od ověřovatelova ``ideálu'': $P(d) = \alpha \cdot e^{\beta d}$, kde $d$ je subjektivní metrika vzdálenosti. Za osobní hranicí nepřijatelnosti může ověřovatel zcela odmítnout.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\columnwidth,
+    height=4.5cm,
+    xlabel={\footnotesize Radikalismus},
+    ylabel={\footnotesize Relativní náklady (log)},
+    ymode=log,
+    xmin=0, xmax=100,
+    ymin=1, ymax=10000,
+    grid=major,
+    grid style={gray!20},
+    legend style={at={(0.03,0.97)},anchor=north west,font=\tiny,draw=gray!50},
+    tick label style={font=\tiny},
+    label style={font=\footnotesize},
+]
+\addplot[black, thick, domain=0:100, samples=50] {1 + 0.3*x};
+\addlegendentry{Iterační náklady (lineární)}
+\addplot[black, thick, dashed, domain=0:100, samples=50] {1 + 0.15*x};
+\addlegendentry{Objem dokumentu (lineární)}
+\addplot[black, thick, dotted, line width=1.2pt, domain=0:100, samples=100] {exp(0.08*x)};
+\addlegendentry{Riziková přirážka (exponenciální)}
+\end{axis}
+\end{tikzpicture}
+\caption{Eskalace nákladů ve třech kanálech. Riziková přirážka dominuje při vysokém radikalismu.}
+\label{fig:radicalism}
+\end{figure}
+
+Zásadní je, že se nejedná o cenzuru. Žádné tvrzení není zakázáno. Systém oceňuje riziko (tabulka~\ref{tab:costs}).
+
+\begin{table}[ht]
+\centering
+\caption{Porovnání nákladů podle typu tvrzení.}
+\label{tab:costs}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Typ} & \textbf{Iter.} & \textbf{Dok.} & \textbf{Popl.} & \textbf{Celkem} \\
+\midrule
+Věrohodné & $k_{\min}$ & $B_0$ & $P_{\min}$ & Nízké \\
+Kontroverzní & $k_{\text{med}}$ & $B_0{+}k\Delta$ & $\alpha e^{\beta d}$ & Střední \\
+Radikální & $k_{\max}$ & $\gg B_0$ & $\gg P_{\min}$ & Velmi vysoké \\
+Podvodné & $\to\infty$ & --- & --- & Nepublikovatelné \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% 6. REPUTACE A HODNOCENÍ RIZIK
+% ============================================================
+\section{Reputace a hodnocení rizik}
+
+\subsection{Model akumulace reputace}
+
+Reputace vykazuje tři vlastnosti: \textbf{pomalá akumulace} (inkrementální růst prostřednictvím konzistentního chování), \textbf{rapidní destrukce} (jediný podvod může katastroficky snížit skóre) a \textbf{individuální vyhodnocení} (každá konzumující strana může aplikovat vlastní agregační funkci).
+
+\subsection{Reputační Autority}
+
+Reputační Autorita přezkoumává tvrzení a, je-li přesvědčena, spolupodepisuje je --- sází vlastní reputaci (obr.~\ref{fig:authority}). Asymetrie je záměrná: získávání reputace je pomalé (inkrementální růst $+\delta$ za poctivou endorsaci), zatímco její ztráta je katastrofická (řádově $-\Delta \gg \delta$ za nepravdivou endorsaci; ilustrativně např.\ $+2\,\%$ vs.\ $-70\,\%$). Optimální strategií je vždy odmítat podezřelá tvrzení. Konkrétní hodnoty $\delta$ a $\Delta$ jsou parametry systému.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=2cm, minimum height=0.6cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[box] (exam) at (0,0) {Autorita posuzuje\\Reputace: $R$};
+\node[box] (true) at (-2,-1.3) {Pravda: $R{\to}R{+}\delta$\\Více klientů};
+\node[box] (false) at (2,-1.3) {Lež: $R{\to}R{-}\Delta$\\Klienti odejdou};
+\node[box] (insight) at (0,-2.6) {Zisk: pomalý ($+\delta$)\\Ztráta: okamžitá ($-\Delta$)};
+
+\draw[arr] (exam) -- node[left,font=\tiny] {pravda} (true);
+\draw[arr] (exam) -- node[right,font=\tiny] {lež} (false);
+\draw[arr] (true) -- (insight);
+\draw[arr] (false) -- (insight);
+\end{tikzpicture}
+\caption{Reputační Autorita --- asymetrické pobídky.}
+\label{fig:authority}
+\end{figure}
+
+\subsection{Vícerozměrná reputace}
+
+Reputace není skalár, ale vektor napříč více dimenzemi: finanční spolehlivost, osobní integrita, profesní kompetence, občanská angažovanost a další (obr.~\ref{fig:reputation-radar}). Různí poskytovatelé hodnocení promítají tento vektor odlišně v závislosti na kontextu --- věřitel upřednostňuje finanční spolehlivost, zaměstnavatel profesní kompetenci, soused občanské chování. Neexistuje jediné ``správné'' reputační skóre; pouze perspektivy.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.55]
+\foreach \a/\l in {90/Finanční,162/Integrita,234/Profesní,306/Občanská,18/Sociální} {
+  \draw[gray!40] (0,0) -- (\a:2.5);
+  \node[font=\tiny, align=center] at (\a:3.1) {\l};
+  \foreach \r in {0.8,1.6,2.4} {
+    \fill[black!15] (\a:\r) circle (0.5pt);
+  }
+}
+\draw[thick, fill=black!10] (90:2.0) -- (162:1.2) -- (234:1.8) -- (306:0.9) -- (18:1.5) -- cycle;
+\draw[thick, dashed] (90:1.4) -- (162:2.1) -- (234:0.8) -- (306:2.0) -- (18:1.1) -- cycle;
+\node[font=\tiny] at (0,-3.3) {Plná: DID A \quad Čárkovaná: DID B};
+\end{tikzpicture}
+\caption{Vícerozměrné reputační vektory. Různé DID vykazují různé profily napříč dimenzemi.}
+\label{fig:reputation-radar}
+\end{figure}
+
+\subsection{Demokratizace hodnocení rizik}
+
+RSN demokratizuje systematické hodnocení rizik --- schopnost v současnosti soustředěnou ve finančních institucích, ale aplikovatelnou daleko za hranice bankovnictví. Průmyslové celky hodnotící spolehlivost dodavatelů, pojišťovny oceňující behaviorální riziko, due diligence pro fúze a akvizice, odhady životnosti zařízení ve výrobě --- všude, kde je třeba hodnotit riziko protistrany, RSN poskytuje decentralizovanou, tržně řízenou alternativu. Trh interpretačních služeb překládá surová vícerozměrná reputační data do prakticky využitelných souhrnů, čímž se hodnocení protistrany stává dostupným pro jakéhokoli účastníka za marginální náklady.
+
+% ============================================================
+% 7. KONSENZUS A ŘEŠENÍ SPORŮ
+% ============================================================
+\section{Konsenzus a řešení sporů}
+
+\subsection{Model decentralizované spravedlnosti}
+
+RSN přerámovává spravedlnost jako problém bilaterálního vyjednávání. Hrozba trvalého, ověřitelného reputačního poškození je účinnějším odstrašujícím prostředkem než soudní řízení, které si poškozená strana nemůže dovolit.
+
+\subsection{Emergentní konsenzus}
+
+Každý účastník udržuje osobní práh satisfakce. Agregátní konsenzus sítě emerguje jako statistický průměr tisíců bilaterálních vyjednávání (obr.~\ref{fig:consensus}). Reakce výrazně překračující konsenzus (barbarická) je drahá na publikaci. Reakce blízká konsenzu (proporcionální) je levná. Konsenzus není pravidlo --- je to cenový signál.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    person/.style={draw, rounded corners=2pt, minimum width=1.5cm, minimum height=0.5cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[person] (a) at (-2,0) {Přísný\\(vysoký)};
+\node[person] (b) at (0,0) {Pragmatik\\(střední)};
+\node[person] (c) at (2,0) {Shovívavý\\(nízký)};
+\node[person, fill=black!10, minimum width=3cm] (cons) at (0,-1.2) {Síťový konsenzus\\= stat.\ průměr};
+\node[person] (exp) at (-2,-2.4) {Barbarský\\drahý};
+\node[person, double] (prop) at (0,-2.4) {Proporční\\levný};
+\node[person] (neg) at (2,-2.4) {Nedbalý\\drahý};
+
+\draw[arr] (a) -- (cons);
+\draw[arr] (b) -- (cons);
+\draw[arr] (c) -- (cons);
+\draw[arr] (cons) -- (exp);
+\draw[arr] (cons) -- (prop);
+\draw[arr] (cons) -- (neg);
+\end{tikzpicture}
+\caption{Emergentní konsenzus z individuálních prahů satisfakce.}
+\label{fig:consensus}
+\end{figure}
+
+\subsection{Kalibrace trestů}
+
+Každý Držitel DID veřejně deklaruje reakce na konkrétní kategorie protiprávního jednání. Nepřiměřeně přísné nebo mírné deklarace přitahují negativní reputační signály. Proporcionální deklarace jsou přijímány bez třenic --- samokalibrovací systém trestů.
+
+Deklarace konsenzu jsou samy předmětem detekce pokrytectví: deklarativní přihlášení ke konsenzuální pozici při současném nekonzistentním chování představuje reputační prohřešek závažnější než samotná odchylka, neboť prokazuje záměrný podvod.
+
+\subsection{Delegace}
+
+Veškeré činnosti v rámci DID --- s jedinou výjimkou --- mohou být delegovány na jiné DID. \textbf{Roli Subjektu, tedy DID, o jehož chování tvrzení vypovídá, delegovat nelze; je nepřevoditelně vázána na nositele identity, kterého se tvrzení týká.} Ostatní aktivní role --- Vydavatel, Autorita, Svědek, Ověřovatel --- lze převést na určený delegátní DID, ať už jde o ověřování, podání tvrzení, účast na konsenzu nebo řešení sporů. Delegace je kdykoli odvolatelná. To umožňuje specializaci (např. profesionální ověřovací služby), přičemž Držitel si zachovává konečnou kontrolu a odpovědnost. Delegace se uplatňuje v celém systému a je nezbytná pro škálovatelnost.
+
+\subsection{Od individuální morálky k emergentní sociální smlouvě}
+
+Deklarovaná politika (policy) každého DID představuje formalizaci individuální morálky: co Držitel považuje za přijatelné, jak reaguje na konkrétní chování, co vyžaduje od protistran. Tyto politiky nejsou vnuceny tvůrcem systému --- jsou voleny každým účastníkem a vyjádřeny ve strojově čitelné formě.
+
+Tato formalizace umožňuje třístupňovou emergenci. Zaprvé, individuální morálka je kódována jako \textbf{politika} (policy) --- soubor deklarovaných pravidel, prahů a reakčních funkcí, k jejichž dodržování se DID zavazuje. Zadruhé, agregát všech politik napříč sítí produkuje \textbf{emergentní etiku} --- statisticky pozorovatelné normy, které žádný jednotlivý účastník nenavrhl, ale které vznikají z interakce tisíců individuálních morálních pozic~\cite{durkheim1893}. Zatřetí, tato emergentní etika, vyjádřená jako sdílené behaviorální normy vynucované prostřednictvím bilaterálních cenových signálů, představuje \textbf{měřitelnou sociální smlouvu} --- nikoli teoretický konstrukt, který nikdo nepodepsal~\cite{rawls1971}, ale empiricky pozorovatelný soubor pravidel podložený skutečným chováním.
+
+Tento proces odráží poznatky teorie morálních základů (Moral Foundations Theory)~\cite{haidt2012}: lidská morálka je intuitivní, pluralitní a kulturně proměnlivá. RSN nevyžaduje morální konsenzus jako vstup; produkuje behaviorální konsenzus jako výstup. Výsledná sociální smlouva není statická --- vyvíjí se s tím, jak účastníci vstupují, odcházejí a upravují své politiky v reakci na zpětnou vazbu sítě. Na rozdíl od klasické teorie společenské smlouvy je tato smlouva odvolatelná, pozorovatelná a vymahatelná bez suveréna.
+
+% ============================================================
+% 8. EKONOMICKÝ MODEL
+% ============================================================
+\section{Ekonomický model}
+
+Předcházející sekce popisovaly nástroj --- ověřovací mechanismy RSN, nákladovou strukturu a emergentní konsenzus. Tato sekce popisuje metodiku aplikace tohoto nástroje na fiskální a správní přechod. Nástroj je univerzální; níže popsaná metodika je jednou z možných aplikací.
+
+\subsection{Struktura pobídek}
+
+Reputace jako kapitál vytváří přímé pobídky pro poctivé chování. V běžném provozu účastníci budují reputaci přirozeně prostřednictvím každodenních transakcí a splněných závazků. Primárním výdajem jsou \emph{negativní} tvrzení --- zaznamenávání újmy způsobené jinými. Tato asymetrie motivuje užitečné, spolehlivé chování: poctivost nestojí nic navíc, zatímco škodlivost vytváří dokumentovanou stopu, za jejíž zachování budou ostatní platit. Pokrytectví --- deklarování pravidel bez jejich dodržování --- je nejnákladnějším režimem selhání, protože prokazuje záměrný podvod.
+
+\subsection{Paralelní fiskální systém}
+
+Tři komponenty umožňují konkurenční tlak: (1)~\textbf{Jednoduchá daň} --- jednotná proporcionální sazba bez výjimek, zpočátku marginálně pod efektivní sazbou stávajícího systému; (2)~\textbf{Elektronická evidence výdajů (ESR)} --- obrácení českého modelu EET tak, aby občané sledovali státní výdaje; (3)~\textbf{Občany řízené přidělování daní} --- v prvním roce řádově nižší jednotky procent, po deseti letech podle míry adopce kdekoli od nejnižších desítek procent až po kompletní migraci na občansky řízený systém. Konkrétní tempo závisí na rychlosti nástupu volnotržních alternativ ke státním službám a na ochotě státu spolupracovat na přechodu; funkce času nemusí být lineární a není žádný důvod předem omezovat horní hranici toho, kam může adopce dojít.
+
+% ============================================================
+% 9. MIGRAČNÍ CESTA
+% ============================================================
+\section{Migrační cesta}
+
+Migrace probíhá ve třech fázích (obr.~\ref{fig:migration}): \textbf{Fáze~1: Překrytí} (RSN jako informační vrstva, stát je jediným poskytovatelem), \textbf{Fáze~2: Konkurence} (RSN poskytuje funkční alternativy, duální využití) a \textbf{Fáze~3: Přechod} (RSN předčí státní ekvivalenty, dobrovolná migrace). Přechod je reverzibilní v každé fázi.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    phase/.style={draw, rounded corners=3pt, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[phase] (p1) at (0,0) {\textbf{Fáze 1}\\Překrytí};
+\node[phase] (p2) at (2.2,0) {\textbf{Fáze 2}\\Konkurence};
+\node[phase] (p3) at (4.4,0) {\textbf{Fáze 3}\\Přechod};
+
+\draw[arr] (p1) -- (p2);
+\draw[arr] (p2) -- (p3);
+\draw[arr, dashed, gray] (p3.south) -- ++(0,-0.6) -| node[below,font=\tiny,pos=0.25] {návrat} (p2.south);
+\end{tikzpicture}
+\caption{Třífázová migrace --- reverzibilní v každé fázi.}
+\label{fig:migration}
+\end{figure}
+
+Primárním tlakovým mechanismem je fiskální: když podmínění daňoví poplatníci dosáhnou ``ekonomicky signifikantní menšiny $X$'' --- skupiny dostatečně velké, aby represe proti ní způsobila nemalé ekonomické škody a občanská neposlušnost se stala věrohodnou hrozbou --- stát vstupuje do vyjednávání. Ilustrativně používáme $X \approx 15\,\%$ HDP, ale skutečný práh závisí na konkrétní ekonomice.
+
+% ============================================================
+% 10. BEZPEČNOSTNÍ ANALÝZA
+% ============================================================
+\section{Bezpečnostní analýza}
+
+Uvažujeme pět kategorií protivníků: jednotliví zlí aktéři, organizované skupiny, korporátní protivníci, státní protivníci a protivníci na úrovni protokolu.
+
+\textbf{Odolnost vůči Sybil útokům}~\cite{douceur2002}. Budování reputace vyžaduje soustavnou, ověřitelnou interakci. Náklady na úspěšný Sybil útok rostou lineárně s počtem falešných identit a kvadraticky s cílovou úrovní reputace. Provoz více DID paralelně je možný, ale záměrně nákladný --- každá identita musí nezávisle akumulovat reputaci prostřednictvím skutečné aktivity. Ve svobodných společnostech tyto náklady odrazují od zneužívání; v diktaturách se paralelní DID stávají nástrojem přežití umožňujícím kompartmentalizovaný odpor, koordinaci podzemních sítí a bezpečnější navigaci černým trhem.
+
+\textbf{Obrana proti koluzi.} Vzory vzájemného endorsování mezi uzavřenými skupinami jsou detekovatelné prostřednictvím analýzy sociálního grafu. Reputační agregační funkce diskontují tvrzení z těsně propojených zdrojů.
+
+\textbf{Státní protivník.} Onion směrování, absence centralizované infrastruktury a distribuce role Ověřovatele napříč účastnickou základnou zajišťují, že potlačení vyžaduje opatření neúměrná jakémukoli přínosu.
+
+\textbf{Soukromí vs.\ odpovědnost.} Pseudonymita --- střední řešení mezi anonymitou a odhalením identity --- umožňuje DID akumulovat smysluplnou reputaci bez odhalení reálné identity Držitele.
+
+% ============================================================
+% 11. ASPEKTY OCHRANY SOUKROMÍ
+% ============================================================
+\section{Aspekty ochrany soukromí}
+
+Model ochrany soukromí RSN je postaven na pseudonymitě. Držitel kontroluje míru odhalení identity: minimální (čistý pseudonym), selektivní (propojení konkrétních pověření) nebo plné (asociace s právní identitou). Publikovaná tvrzení jsou trvalá --- systém podporuje kontextovou opravu, nikoli výmaz. Držitel může opustit kompromitovaný DID a začít znovu, přičemž se vzdá nashromážděné reputace.
+
+% ============================================================
+% 12. SOUVISEJÍCÍ PRÁCE
+% ============================================================
+\section{Související práce}
+
+Specifikace W3C DID Core~\cite{did2022} a Ceramic Network~\cite{ceramic2023} poskytují základ identity. EigenTrust~\cite{kamvar2003} demonstroval distribuovanou agregaci reputace bez centrální autority. SBT~\cite{weyl2022} zavedly nepřenositelné sociální tokeny. RSN se liší důrazem na ekonomické náklady jako filtr kvality a mechanismem pro oceňování radikalismu.
+
+DAO~\cite{buterin2014} a kvadratické hlasování~\cite{buterin2019} prokázaly proveditelnost decentralizované správy. RSN odvozuje konsenzus z bilaterálních cenových vyjednávání namísto hlasování.
+
+Návrh čerpá z anarchokapitalistické teorie~\cite{rothbard1973,hoppe2001} pro soukromé poskytování služeb, ale odchyluje se ve dvou kritických ohledech: navrhuje design zahrnující zlovůli a touhu po odplatě namísto předpokladu racionality a navrhuje postupný přechod namísto revoluce. Koncept emergentních společenských smluv má předchůdce v Hayekově teorii spontánního řádu~\cite{hayek1973}.
+
+\textbf{Anarcho-agorismus.} RSN sdílí významný společný základ s agoristickou kontra-ekonomikou~\cite{konkin2006} --- zejména důraz na budování paralelních institucí a dobrovolnou směnu. Agorismus však obvykle předpokládá racionální vlastní zájem jako dostatečný koordinační mechanismus a často postrádá konkrétní migrační cestu od stávajících státních struktur. RSN explicitně zahrnuje neracionální behaviorální tendence a poskytuje mechanismus fiskálního tlaku pro postupný přechod.
+
+\textbf{Meritokracie.} RSN může představovat první funkční popis toho, jak může meritokracie~\cite{young1958} emergovat jako systémová vlastnost namísto sloganu. Tradiční meritokratické systémy selhávají, protože vyžadují centrální autoritu k definování a vynucování ``zásluh''. V RSN zásluhy emergují z bilaterálních hodnocení: ti, kdo dodávají hodnotu, akumulují reputaci; žádný výbor nerozhoduje, kdo má zásluhy.
+
+\textbf{Vlastnictví jako privilegium.} RSN se zásadně odchyluje od anarchokapitalistického a rakouského pojetí vlastnických práv jako přirozených a absolutních. V rámci RSN je vlastnictví \emph{privilegium} --- sociální uznání, které může být v krajních případech odňato komunitou, když účastník zásadně poruší sdílené normy (zrada, odmítnutí bránit komunitu v existenční krizi, systematické vykořisťování). Nejedná se o státní vyvlastnění, ale o odnětí sociálního uznání sítí bilaterálních vztahů.
+
+% ============================================================
+% 13. DISKUSE A OMEZENÍ
+% ============================================================
+\section{Diskuse a omezení}
+
+\textbf{Studený start.} Hodnota RSN závisí na síťových efektech; raní adoptéři čelí omezené hodnotě, dokud participace nedosáhne prahové hodnoty. Nicméně i od raných fází slouží DID síť jako užitečný doplňkový zdroj informací. Rané vyhodnocení reputace a autority se předpokládá postupně s narůstající sofistikovaností.
+
+\textbf{Anti-leeching a řízení přístupu.} Cílové DID mohou uvalovat graduální poplatky a přístupová omezení na dotazy od DID s nízkou reputací. Nejde o binární bránu, ale o plynulou škálu: čím nižší reputace dotazujícího DID, tím méně informací obdrží, déle čeká a více platí. Tento mechanismus motivuje skutečnou participaci oproti pasivní konzumaci.
+
+\textbf{Nerovnost přístupu.} Náklady na publikování tvrzení mohou filtrovat legitimní stížnosti ekonomicky znevýhodněných účastníků. Mitigace: každý účastník současně slouží jako potenciální ověřovatel (nebo tuto roli deleguje) a pobírá poplatky za ověřování. V dostatečném časovém horizontu by neradikální účastník měl dosáhnout přibližné finanční neutrality --- příjmy z ověřování přibližně kompenzují náklady na publikování. Jde o statistický předpoklad, nikoli garanci.
+
+\textbf{Nerovnost reputace.} Raní adoptéři akumulují výhody, které mohou vytvářet bariéry pro pozdější příchozí. Hodnocení reputace však provádějí třetí strany --- poskytovatelé hodnocení, kteří mohou ve svých agregačních algoritmech zmírňovat výhodu prvního hybatele. Být první s dobrou reputací je legitimní komparativní ekonomická výhoda --- a to je záměr.
+
+\textbf{Otevřené otázky.} Optimální nákladové funkce, standardy agregace, správa protokolu a interakce s~uměle generovanými syntetickými reputačními daty zůstávají oblastmi pro budoucí výzkum.
+
+Tento článek netvrdí, že RSN přinese optimální výsledky za všech okolností. Tvrdí, že RSN představuje \emph{proveditelnou} alternativu --- technicky implementovatelnou, ekonomicky sebeudržitelnou a sociálně kompatibilní s lidskými behaviorálními tendencemi tak, jaké skutečně jsou.
+
+% ============================================================
+% 14. ZÁVĚR
+% ============================================================
+\section{Závěr}
+
+Tento článek představil reputační sociální síť, decentralizovaný protokol umožňující pseudonymní, ověřitelnou výměnu reputačních informací. Princip drahého radikalismu zajišťuje, že podvodná tvrzení jsou vytlačena cenou bez cenzury. Navrhovaná migrační cesta umožňuje postupný, reverzibilní přechod od stávajících institucí. Design zahrnuje lidskou přirozenost takovou, jaká je --- včetně malichernosti, zlovůle a touhy po odplatě --- namísto toho, aby vyžadoval ideologickou transformaci. Výsledkem není utopie, ale systém, v němž je spravedlnost dostupná, reputace je zasloužená a náklady protiprávního jednání nese strana, která je způsobila.
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\bibliography{references-cz}
+
+\end{document}

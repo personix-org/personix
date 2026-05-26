@@ -1,0 +1,32 @@
+\documentclass[border=2mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,babel}
+\begin{document}
+\begin{minipage}{8cm}\centering
+\begin{tikzpicture}[
+    role/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8},
+    opt/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8, dashed},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    oarr/.style={-{Stealth[length=3pt]}, thick, dashed, gray},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[role] (I) at (0,2.4) {\textbf{Issuer}};
+\node[role] (S) at (-2.5,2.4) {\textbf{Subject}};
+\node[opt] (A) at (2.5,1.2) {\textbf{Authority}};
+\node[opt] (W) at (-2.5,0) {\textbf{Witness}};
+\node[role] (V) at (2.5,-0.6) {\textbf{Verifier}};
+\node[role, fill=black!5, draw=gray] (N) at (0,-1.8) {RSN};
+
+\draw[arr] (I) -- node[lbl] {about} (S);
+\draw[oarr] (I) -- node[lbl,sloped] {endorses} (A);
+\draw[oarr] (I) -- node[lbl,sloped] {challenge} (W);
+\draw[arr] (I) -- node[lbl,sloped] {request} (V);
+\draw[oarr] (W) -- node[lbl] {monitors} (V);
+\draw[arr] (V) -- node[lbl] {publishes} (N);
+\end{tikzpicture}
+\end{minipage}
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds,babel}
+\begin{document}
+\begin{tikzpicture}[scale=0.75,
+    stp/.style={draw, rounded corners=2pt, minimum width=1.4cm, minimum height=0.5cm, align=center, font=\tiny, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick}
+]
+\node[stp] (comp) at (0,0) {Compose\\claim};
+\node[stp, dashed] (auth) at (2.0,0) {Authority\\endorse};
+\node[stp] (hash) at (4.0,0) {Hash \&\\ring map};
+\node[stp] (ver) at (2.0,-1.5) {Verifier\\check};
+\node[stp, double] (pub) at (0,-1.5) {Published};
+\node[stp] (rej) at (4.0,-1.5) {Rejected\\cost $\uparrow$};
+
+\draw[arr] (comp) -- (auth);
+\draw[arr] (auth) -- (hash);
+\draw[arr] (hash) -- (ver);
+\draw[arr] (ver) -- node[above,font=\tiny] {\checkmark} (pub);
+\draw[arr] (ver) -- node[above,font=\tiny] {$\times$} (rej);
+\draw[arr] (rej) -- ++(0,0.75) -| (hash);
+\end{tikzpicture}
+\end{document}

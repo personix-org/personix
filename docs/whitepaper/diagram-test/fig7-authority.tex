@@ -1,0 +1,25 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds,babel}
+\begin{document}
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=2cm, minimum height=0.6cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[box] (exam) at (0,0) {Authority examines\\Reputation: 85\%};
+\node[box] (true) at (-2,-1.3) {True: 85\%$\to$87\%\\More clients};
+\node[box] (false) at (2,-1.3) {False: 85\%$\to$15\%\\Clients leave};
+\node[box] (insight) at (0,-2.6) {Gain: slow (+2\%)\\Loss: instant ($-$70\%)};
+
+\draw[arr] (exam) -- node[left,font=\tiny] {truth} (true);
+\draw[arr] (exam) -- node[right,font=\tiny] {lie} (false);
+\draw[arr] (true) -- (insight);
+\draw[arr] (false) -- (insight);
+\end{tikzpicture}
+\end{document}

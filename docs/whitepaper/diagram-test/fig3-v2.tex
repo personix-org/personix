@@ -1,0 +1,30 @@
+\documentclass[border=2mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,babel}
+\begin{document}
+\begin{minipage}{8cm}\centering
+\begin{tikzpicture}[
+    stp/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\tiny, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[stp] (comp) at (0,0) {Compose\\claim};
+\node[stp, dashed] (auth) at (2.0,0) {Authority\\endorse};
+\node[stp] (hash) at (4.0,0) {Hash \&\\ring map};
+\node[stp] (ver) at (2.0,-1.6) {Verifier\\check};
+\node[stp, double] (pub) at (0,-1.6) {Published};
+\node[stp] (rej) at (4.0,-1.6) {Rejected\\cost $\uparrow$};
+
+\draw[arr] (comp) -- (auth);
+\draw[arr] (auth) -- (hash);
+\draw[arr] (hash) -- (ver);
+\draw[arr] (ver) -- node[lbl] {\checkmark} (pub);
+\draw[arr] (ver) -- node[lbl] {$\times$} (rej);
+\draw[arr] (rej) -- ++(0,0.8) -| (hash);
+\end{tikzpicture}
+\end{minipage}
+\end{document}

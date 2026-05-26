@@ -1,0 +1,23 @@
+\documentclass[border=2mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage[czech]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,babel}
+\begin{document}
+\begin{minipage}{8cm}\centering
+\begin{tikzpicture}[
+    phase/.style={draw, rounded corners=3pt, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[phase] (p1) at (0,0) {\textbf{Fáze 1}\\Překrytí};
+\node[phase] (p2) at (2.2,0) {\textbf{Fáze 2}\\Konkurence};
+\node[phase] (p3) at (4.4,0) {\textbf{Fáze 3}\\Přechod};
+
+\draw[arr] (p1) -- (p2);
+\draw[arr] (p2) -- (p3);
+\draw[arr, dashed, gray] (p3.south) -- ++(0,-0.6) -| node[below,font=\tiny,pos=0.25] {fallback} (p2.south);
+\end{tikzpicture}
+\end{minipage}
+\end{document}
