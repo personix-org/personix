@@ -1,0 +1,14 @@
+# generated artefacts
+chapters/
+figures/
+*.pdf
+*.aux
+*.toc
+*.out
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# watermark mode (build.sh --watermark) intermediates
+pamphlet-draft.tex
+watermark.tex

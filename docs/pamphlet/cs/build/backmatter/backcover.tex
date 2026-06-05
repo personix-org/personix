@@ -1,0 +1,41 @@
+% --- Back cover ---
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font={\sffamily\bfseries\fontsize{48pt}{52pt}\selectfont}]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Nekompromisní změna};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Necenzurovatelná a nezkorumpovatelná decentralizovaná reputační síť};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Stát fungoval, když komunikace byla pomalá, rozhodnutí lokální
+      a autorita žila ve stejném městě, kterému vládla. Dnešní sítě obracejí
+      všechny tři předpoklady --- a instituce na nich postavené už nesedí
+      do světa, který spravují. Tato kniha popisuje nástroj, který sedí:
+      decentralizovanou reputační síť, ve které je identita vaše, pravda
+      veřejně auditovatelná a podplacení znamená reputační sebevraždu.
+
+      \smallskip
+      Není to manifest. Není to předpověď. Je to funkční plán toho, jak
+      lze nástupce státu postavit --- dobrovolně, jednu deklaraci po druhé.
+    };
+  % --- Footer ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Praha, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Licencováno pod Creative Commons Uveďte původ-Zachovejte licenci 4.0
+      Mezinárodní (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

@@ -1,7 +1,18 @@
-# Build outputs (regenerovat přes build skripty v docs/pamphlet/*/build.sh)
-# Finální verze jsou v release/, ne v build adresářích.
-docs/pamphlet/cs/build/
-docs/pamphlet/en/build/
+# Pamphlet build — verzujeme ZDROJE buildu (build.sh, pamphlet*.tex master,
+# frontmatter/backmatter/epub config, watermark.tex.template), ale NE generované
+# artefakty. Finální PDF/EPUB jsou v release/.
+docs/pamphlet/*/build/chapters/
+docs/pamphlet/*/build/chapters2col/
+docs/pamphlet/*/build/figures/
+docs/pamphlet/*/build/*.pdf
+docs/pamphlet/*/build/*.epub
+docs/pamphlet/*/build/watermark.tex
+docs/pamphlet/*/build/pamphlet-draft.tex
+docs/pamphlet/*/build/figbg.tex
+# Merged md (generované build skriptem z rozbitých komponent prechod/ a roles/)
+docs/pamphlet/*/**/.merged.md
+
+# Whitepaper build outputs (zdroj .tex je v docs/whitepaper/, ne v build/)
 docs/whitepaper/build/
 
 # LaTeX intermediate

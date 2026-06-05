@@ -1,0 +1,328 @@
+\documentclass[11pt,openany]{book}
+
+% --- Geometry: A5 landscape, asymmetric inner/outer for two-page spread ---
+\usepackage[
+  a5paper,landscape,
+  top=14mm,bottom=16mm,inner=15mm,outer=18mm,
+  headsep=4mm,footskip=10mm
+]{geometry}
+
+% --- Fonts (XeLaTeX, macOS system) ---
+\usepackage{fontspec}
+\setmainfont{Palatino}
+\setsansfont{Helvetica Neue}
+\setmonofont{Menlo}
+
+% --- Czech language (Babel, with Czech hyphenation patterns) ---
+% shorthands=off prevents babel-czech from making `-` and `"` active
+% characters, which collides with tikz [yshift=-26mm] etc.
+\usepackage[shorthands=off,main=czech]{babel}
+
+% --- Core packages ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{microtype}
+% v6: tighter emergencystretch — fewer "rivers" of whitespace in justified
+% paragraphs at the cost of slightly more hyphenation. With doublehyphendemerits
+% below, the engine still avoids stacked hyphens.
+\setlength{\emergencystretch}{1.5em}
+% v6: paragraph spacing — slightly tighter (was 0.45em). Combined with raggedbottom
+% the page no longer over-stretches when the page is half-full.
+\setlength{\parskip}{0.35em plus 0.15em minus 0.05em}
+% v6: outlaw widows and orphans entirely. Strongest possible penalty so TeX will
+% restripe pages rather than leave a single dangling line of a paragraph stranded
+% at the top of the next page or bottom of the previous one.
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+% v6: discourage hyphenation a little (default is 50), and forbid two consecutive
+% hyphenated lines. Reads more naturally in Palatino at this measure.
+\hyphenpenalty=300
+\exhyphenpenalty=300
+\doublehyphendemerits=10000
+% Czech compound terms used in glossary that babel-czech may not break.
+\hyphenation{
+  Com-part-men-tal-i-za-ce
+  Ne-cen-zu-ro-va-tel-nost
+  Ne-zko-rum-po-va-tel-nost
+  De-cen-tra-li-za-ce
+  Re-pu-tač-ní
+}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amssymb,amsmath}
+\usepackage{soul}
+% v6: DRAFT watermark — diagonal pale gray "DRAFT" stamp on every page
+% (including full-bleed figure pages). Removed before final/print build by
+% commenting this block out.
+\usepackage{eso-pic}
+\AddToShipoutPictureFG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[rotate=55, font=\sffamily\bfseries\fontsize{144pt}{144pt}\selectfont,
+          text=black, opacity=0.10]
+      at (current page.center) {DRAFT};
+  \end{tikzpicture}%
+}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!50!black,
+  citecolor=black,
+  pdftitle={Personix --- Nekompromisní změna},
+  pdfauthor={Pavel Kudrna},
+  pdfsubject={Necenzurovatelná a nezkorumpovatelná decentralizovaná reputační síť},
+  pdfkeywords={decentralizovaná identita, reputační síť, governance, DID}
+}
+
+% --- Pandoc helpers ---
+\usepackage{calc}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\real}[1]{#1}
+
+% --- Page style: page number in OUTER corner ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfootoffset[LE,RO]{8mm}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[LE,RO]{\thepage}%
+  \fancyfootoffset[LE,RO]{8mm}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+% --- Paper colour: gentle antique cream pastel ---
+\definecolor{papercream}{HTML}{F4ECD6}
+\pagecolor{papercream}
+
+% --- Callout boxes (Obsidian-style note/important/warning/danger/quote/example) ---
+\usepackage[framemethod=tikz]{mdframed}
+
+\definecolor{cbnote}{HTML}{3B82C4}
+\definecolor{cbimportant}{HTML}{C97A1F}
+\definecolor{cbwarning}{HTML}{A85F1F}
+\definecolor{cbdanger}{HTML}{B83838}
+\definecolor{cbquote}{HTML}{736B5E}
+\definecolor{cbexample}{HTML}{2F8F6A}
+\definecolor{cbidea}{HTML}{B58A1F}
+
+\usepackage{needspace}
+% v6 (revised): default callouts are ATOMIC again — splitting a 4–5 line
+% box can leave a title-only first half. Splitting is opt-in via the
+% cbXxxsplitbox environments (used for long callouts).
+% needspace=9 baselines ≈ title row + 5 body lines + padding.
+\mdfdefinestyle{calloutbase}{%
+  linewidth=0.7pt,
+  roundcorner=5pt,
+  innerleftmargin=14pt,innerrightmargin=14pt,
+  innertopmargin=10pt,innerbottommargin=11pt,
+  skipabove=10pt,skipbelow=10pt,
+  needspace=9\baselineskip,
+  nobreak=true,
+  splittopskip=32pt,splitbottomskip=54pt,
+}
+\newcommand{\cballowsplit}{\mdfsetup{nobreak=false}}
+\newcommand{\cbatomic}{\mdfsetup{nobreak=true}}
+\newcommand{\cbsplitfirst}[1]{%
+  \draw[line width=0.7pt, color=#1!50] (O) -- (P|-O);
+  \node[anchor=south east, font=\itshape\small,
+        text=#1!75, inner xsep=14pt, inner ysep=4pt]
+    at (P|-O) {pokračování na další straně};%
+}
+\newcommand{\cbsplitsecond}[1]{%
+  \draw[line width=0.7pt, color=#1!50] (P-|O) -- (P);
+  \node[anchor=north east, font=\itshape\small,
+        text=#1!75, inner xsep=14pt, inner ysep=4pt]
+    at (P) {pokračování z předchozí strany};%
+}
+\newcommand{\cbtitle}[3]{%
+  \noindent
+  \begin{minipage}{\linewidth}\raggedright%
+    \textcolor{#1}{\rule[-0.3ex]{2.6ex}{2.6ex}}\hspace{0.6em}%
+    {\sffamily\bfseries\color{#1}\large #3}%
+  \end{minipage}\par
+  \vspace{2pt}%
+  \noindent{\color{#1!40}\leavevmode\leaders\hrule height 0.4pt\hfill\kern0pt}\par
+  \vspace{4pt}%
+}
+\newenvironment{cbnotebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbnote!50,backgroundcolor=cbnote!5,
+    firstextra={\cbsplitfirst{cbnote}},secondextra={\cbsplitsecond{cbnote}}]\cbtitle{cbnote}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbimportantbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbimportant!50,backgroundcolor=cbimportant!5,
+    firstextra={\cbsplitfirst{cbimportant}},secondextra={\cbsplitsecond{cbimportant}}]\cbtitle{cbimportant}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbwarningbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+    firstextra={\cbsplitfirst{cbwarning}},secondextra={\cbsplitsecond{cbwarning}}]\cbtitle{cbwarning}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbdangerbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbdanger!50,backgroundcolor=cbdanger!5,
+    firstextra={\cbsplitfirst{cbdanger}},secondextra={\cbsplitsecond{cbdanger}}]\cbtitle{cbdanger}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbquotebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbquote!50,backgroundcolor=cbquote!5,
+    firstextra={\cbsplitfirst{cbquote}},secondextra={\cbsplitsecond{cbquote}}]\cbtitle{cbquote}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbexamplebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbexample!50,backgroundcolor=cbexample!5,
+    firstextra={\cbsplitfirst{cbexample}},secondextra={\cbsplitsecond{cbexample}}]\cbtitle{cbexample}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbideabox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbidea!50,backgroundcolor=cbidea!5,
+    firstextra={\cbsplitfirst{cbidea}},secondextra={\cbsplitsecond{cbidea}}]\cbtitle{cbidea}{}{#1}}
+  {\end{mdframed}}
+
+% Splittable variant of cbimportantbox — used for the oversized Incorruptibility
+% callout that genuinely needs to break across pages.
+\newenvironment{cbimportantsplitbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbimportant!50,backgroundcolor=cbimportant!5,
+    firstextra={\cbsplitfirst{cbimportant}},secondextra={\cbsplitsecond{cbimportant}},
+    nobreak=false]\cbtitle{cbimportant}{}{#1}}
+  {\end{mdframed}}
+
+% --- Chapter/section spacing tightened for compact layout ---
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries\sffamily}
+  {\thechapter.\hspace{0.6em}}{0pt}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{18pt}
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries\sffamily}
+  {\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}[block]
+  {\normalfont\large\bfseries\sffamily}
+  {\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+% v6: nečíslovat sekce/podsekce — pamflet, ne učebnice.
+% Kapitoly zůstávají číslované (1, 2, …); 1.1 / 1.2 / … zmizí.
+\setcounter{secnumdepth}{0}
+
+% --- Full-page figure helper ---
+% v6: graphic is deferred via \afterpage so the *current* text page is allowed
+% to fill before the figure consumes the next page.
+\usepackage{afterpage}
+\newcommand{\fullpagefigureNOW}[1]{%
+  \clearpage
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=center, inner sep=0pt] at (current page.center)
+      {\includegraphics[width=\paperwidth,height=\paperheight]{#1}};
+    \node[rotate=55, font=\sffamily\bfseries\fontsize{144pt}{144pt}\selectfont,
+          text=black, opacity=0.20] at (current page.center) {DRAFT};
+  \end{tikzpicture}%
+  \mbox{}%
+  \clearpage
+}
+% v6 default: defer via \afterpage so the in-progress text page may fill
+% to its natural end before the figure consumes the next page.
+\newcommand{\fullpagefigure}[1]{\afterpage{\fullpagefigureNOW{#1}}}
+% v6 escape hatch: immediate placement, no afterpage. Use this for runs of
+% consecutive figures (e.g. the DID drill-down block).
+\newcommand{\fullpagefigureimmediate}[1]{\fullpagefigureNOW{#1}}
+
+% v6: switch from \flushbottom (book class default) to \raggedbottom.
+\raggedbottom
+
+% --- Document metadata ---
+\title{Personix --- Nekompromisní změna}
+\author{Pavel Kudrna}
+\date{2026-05-21}
+
+% Continuous Arabic page numbering (no Roman frontmatter, no reset)
+\makeatletter
+\renewcommand\mainmatter{\clearpage\@mainmattertrue}
+\renewcommand\backmatter{\clearpage\@mainmatterfalse}
+\makeatother
+
+% =========================================================================
+\begin{document}
+
+\frontmatter
+\pagenumbering{arabic}
+\input{frontmatter/title.tex}
+\input{frontmatter/colophon.tex}
+\renewcommand{\contentsname}{Obsah}
+\tableofcontents
+\clearpage
+
+\mainmatter
+
+% --- 1. Úvod ---
+\chapter{Úvod}
+\input{chapters/intro-a-v4.tex}
+% \input{chapters/intro-b-v1.tex}
+% \input{chapters/intro-c-hybrid.tex}
+% \input{chapters/intro-d-empathy.tex}
+
+% --- 2. Nezbytné předpoklady změny ---
+\chapter{Nezbytné předpoklady změny}
+\input{chapters/prereq-01.tex}
+
+% --- 3. Nástroj ---
+\chapter{Nástroj}
+\input{chapters/tool-01-network.tex}
+% Approved DID drill-down graphics — consecutive block, use immediate variant
+% (afterpage queue interactions otherwise inject blank pages between them).
+\fullpagefigureimmediate{figures/v5-02c1-typy-dokumentu.png}
+\fullpagefigureimmediate{figures/v5-02d2-did-document.png}
+\fullpagefigureimmediate{figures/v5-02d3-claim-standard.png}
+\fullpagefigureimmediate{figures/v5-02d5-did-policy.png}
+\input{chapters/tool-02-uncensorability.tex}
+\input{chapters/tool-03-doubts.tex}
+\input{chapters/tool-04-voluntariness.tex}
+\input{chapters/tool-05-switch.tex}
+\input{chapters/tool-06-oracle.tex}
+
+% --- 4. Jak ověřování funguje ---
+\chapter{Jak ověřování funguje}
+\input{chapters/verif-01-consensus.tex}
+\input{chapters/verif-02-roles.tex}
+\input{chapters/verif-03-contract.tex}
+\input{chapters/verif-05-info-sharing.tex}
+
+% --- 5. Zločin a trest ---
+\chapter{Zločin a trest}
+\input{chapters/crime-01.tex}
+
+% --- 6. Sleduj stopu peněz ---
+\chapter{Sleduj stopu peněz}
+\input{chapters/money-01.tex}
+\input{chapters/money-03-transition.tex}
+
+% --- 7. Závěr ---
+\chapter{Závěr}
+\input{chapters/concl-c-fusion.tex}
+% \input{chapters/concl-a-v1.tex}
+% \input{chapters/concl-b-v4.tex}
+\fullpagefigure{figures/v5-zaverecna-citizens-take-back.png}
+
+% Support page
+\input{backmatter/donate.tex}
+
+\backmatter
+
+\chapter{Rejstřík pojmů}
+% v6: glossary table tightened (arraystretch 1.55 → 1.40, tabcolsep 8 → 6 pt)
+\begingroup
+\renewcommand{\arraystretch}{1.40}
+\setlength{\tabcolsep}{6pt}
+\input{chapters/glossary.tex}
+\endgroup
+
+\input{backmatter/production-notes.tex}
+\input{backmatter/backcover.tex}
+
+\end{document}
