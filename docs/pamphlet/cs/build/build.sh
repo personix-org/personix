@@ -38,6 +38,7 @@ cd "$BUILD_DIR"
 # ----- 0. Argument parsing -----
 CLEAN=0
 WATERMARK=0
+PRINT=0
 WATERMARK_TEXT="PRACOVNÍ VERZE — NEŠÍŘIT"
 WATERMARK_BANNER="Před redakční úpravou"
 while [ $# -gt 0 ]; do
@@ -47,6 +48,7 @@ while [ $# -gt 0 ]; do
     --watermark=*) WATERMARK=1; WATERMARK_TEXT="${1#*=}" ;;
     --watermark-text) shift; WATERMARK_TEXT="$1"; WATERMARK=1 ;;
     --watermark-banner) shift; WATERMARK_BANNER="$1"; WATERMARK=1 ;;
+    --print) PRINT=1 ;;   # tisková varianta → pamphlet-v6-cz-interior.pdf
     -h|--help) sed -n '2,20p' "$0"; exit 0 ;;
     *) echo "ERROR: unknown argument '$1'"; exit 1 ;;
   esac
@@ -310,7 +312,24 @@ for tex in glob.glob(os.path.join(build, 'chapters', '*.tex')) + [os.path.join(b
 PY
 
 # ----- 7. Compile -----
-if [ "$WATERMARK" = "1" ]; then
+if [ "$PRINT" = "1" ]; then
+  echo "[3c/5] per-figure background colours -> figbg.tex"
+  python3 figure-bgcolors.py figures > figbg.tex
+  echo "[3d/5] soft-edged (feathered) figures -> figures-bleed/"
+  python3 figure-bleed.py figures figures-bleed
+  echo "[4/5] tectonic compile (TISKOVÁ varianta — vnitřek knihy)"
+  tectonic pamphlet-print.tex
+  cp -f pamphlet-print.pdf pamphlet-v6-cz-interior.pdf
+  echo "[5/5] done"
+  echo
+  echo "BUILD OK (tiskový vnitřek): $BUILD_DIR/pamphlet-v6-cz-interior.pdf"
+  ls -lh pamphlet-v6-cz-interior.pdf
+  pdfinfo pamphlet-v6-cz-interior.pdf 2>/dev/null | grep -E 'Pages|Page size|Title|Author' || true
+  PAGES=$(pdfinfo pamphlet-v6-cz-interior.pdf 2>/dev/null | awk '/Pages/{print $2}')
+  if [ -n "$PAGES" ]; then
+    echo "  → $PAGES stran = $((PAGES/2)) listů (mod 4 = $((PAGES%4)) — musí být 0)"
+  fi
+elif [ "$WATERMARK" = "1" ]; then
   echo "[4/5] tectonic compile (PRACOVNÍ VERZE watermark mode)"
   python3 - "$BUILD_DIR/watermark.tex.template" "$BUILD_DIR/watermark.tex" \
           "$WATERMARK_TEXT" "$WATERMARK_BANNER" <<'PY'

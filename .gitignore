@@ -4,6 +4,7 @@
 docs/pamphlet/*/build/chapters/
 docs/pamphlet/*/build/chapters2col/
 docs/pamphlet/*/build/figures/
+docs/pamphlet/*/build/figures-bleed/
 docs/pamphlet/*/build/*.pdf
 docs/pamphlet/*/build/*.epub
 docs/pamphlet/*/build/watermark.tex

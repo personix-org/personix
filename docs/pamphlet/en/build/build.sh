@@ -364,6 +364,8 @@ PY
 if [ "$PRINT" = "1" ]; then
   echo "[3c/6] per-figure background colours -> figbg.tex"
   python3 figure-bgcolors.py figures > figbg.tex
+  echo "[3d/6] soft-edged (feathered) figures -> figures-bleed/"
+  python3 figure-bleed.py figures figures-bleed
   echo "[4/6] tectonic compile (PRINT variant)"
   tectonic pamphlet-print.tex
   OUT_PDF="pamphlet-v6-en-print.pdf"

@@ -1,0 +1,23 @@
+% --- Vnitřní textový titulní list (jen PRINT vnitřek) ---
+% Tištěná kniha rozděluje obálku a vnitřek do dvou PDF: grafická obálka
+% (přední + hřbet + zadní) se vyrábí zvlášť, takže knižní blok otevírá tímto
+% vysázeným titulním listem místo obrázku obálky.
+%   recto (tato strana): název / podnázev / autor
+%   verso (další strana): colophon = tiráž (přes colophon.tex)
+% Používá jen pamphlet-print.tex; screenový master si nechává grafickou obálku.
+\thispagestyle{empty}
+\vspace*{\stretch{2}}
+\begin{center}
+  {\sffamily\bfseries\fontsize{34}{40}\selectfont PERSONIX\par}
+  \vspace{2.2em}
+  {\rmfamily\large Necenzurovatelná a nezkorumpovatelná\\[0.25em]
+   decentralizovaná reputační síť\par}
+\end{center}
+\vspace*{\stretch{3}}
+\begin{center}
+  {\rmfamily\Large Pavel Kudrna\par}
+  \vspace{0.45em}
+  {\rmfamily\small Praha\quad\textbullet\quad 2026\par}
+\end{center}
+\vspace*{\stretch{1}}
+\clearpage

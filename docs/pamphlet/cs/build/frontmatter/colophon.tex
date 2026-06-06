@@ -3,7 +3,9 @@
 % stránku "Produkční poznámky" v zadní části knihy (těsně před zadním
 % přebalem), aby přední strana zůstala klidná a čtenářsky přívětivá.
 \thispagestyle{empty}
-\vspace*{\stretch{1}}
+% PRINT vnitřek: tiráž sedí dole na rubu titulu (knižní zvyk).
+% Screenový build ji nechává zhruba na středu (beze změny).
+\ifdefined\printmode\vspace*{\fill}\else\vspace*{\stretch{1}}\fi
 \begin{flushleft}\small\sffamily
 \textbf{Personix --- Nekompromisní změna}\\[0.3em]
 Necenzurovatelná a nezkorumpovatelná decentralizovaná reputační síť\\[1.4em]
@@ -25,5 +27,5 @@ jsou uvedeny v zadní části knihy.
 Pro odkaz na původní dílo, kompletní zdroj a aktuální verze:
 \href{https://personix.org}{personix.org}.
 \end{flushleft}
-\vspace*{\stretch{2}}
+\ifdefined\printmode\else\vspace*{\stretch{2}}\fi
 \clearpage
