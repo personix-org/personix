@@ -84,7 +84,15 @@ fi
 mkdir -p chapters figures frontmatter backmatter
 
 # ----- 4. WebP → PNG → resize → pngquant -----
-echo "[1/5] webp -> png -> resize -> pngquant"
+# PRINT: full resolution, no downscale / no lossy pngquant (300 DPI for the
+# printer). SCREEN: 1800 px + pngquant (small ebook). Print regenerates figures/
+# from scratch so a previous screen build's downscaled PNGs aren't reused.
+if [ "$PRINT" = "1" ]; then
+  echo "[1/5] webp -> png (PLNÉ rozlišení pro tisk, bez resize/pngquant)"
+  rm -f figures/v5-*.png
+else
+  echo "[1/5] webp -> png -> resize -> pngquant"
+fi
 if [ -n "$GFX_DIR" ]; then
   for f in "$GFX_DIR"/v5-*.webp; do
     [ -f "$f" ] || continue
@@ -100,8 +108,10 @@ if [ -n "$GFX_DIR" ]; then
     out="figures/${base}.png"
     if [ ! -f "$out" ] || [ "$src" -nt "$out" ]; then
       dwebp -quiet "$src" -o "$out"
-      sips -Z 1800 --setProperty formatOptions normal "$out" >/dev/null 2>&1 || true
-      pngquant --skip-if-larger --quality=65-85 --speed=3 --strip --force --output "$out" "$out" 2>/dev/null || true
+      if [ "$PRINT" != "1" ]; then
+        sips -Z 1800 --setProperty formatOptions normal "$out" >/dev/null 2>&1 || true
+        pngquant --skip-if-larger --quality=65-85 --speed=3 --strip --force --output "$out" "$out" 2>/dev/null || true
+      fi
     fi
   done
   # Cover landscape: pull from v5-cz directly (composite picks up automatically)

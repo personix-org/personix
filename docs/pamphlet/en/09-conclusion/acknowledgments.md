@@ -17,6 +17,6 @@ I thank the authors of [Farewell to Westphalia](https://logos.co/assets/Farewell
 
 ## Tools
 
-In preparing the text, structuring ideas, and iterating on formulations, I used assistance from Claude (Anthropic). All ideas, arguments, and conclusions are my own — AI served as a tool for refinement, not as a content co-author.
+In preparing the text, structuring ideas, and iterating on formulations, I used assistance from AI tools. All ideas, arguments, and conclusions are my own — AI served as a tool for refinement, not as a content co-author.
 
 Infographics were designed in collaboration with generative tools based on the author's specifications.

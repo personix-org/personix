@@ -69,6 +69,9 @@ mkdir -p chapters figures frontmatter backmatter
 
 # ----- 4. WebP → PNG → resize → pngquant (skip if PNG newer than source) -----
 echo "[1/5] webp -> png -> resize -> pngquant"
+# PRINT: regenerate figures/ from scratch at full resolution so a previous
+# screen build's downscaled PNGs aren't reused.
+[ "$PRINT" = "1" ] && rm -f figures/v5-*.png
 if [ -n "$GFX_DIR" ]; then
 for f in "$GFX_DIR"/v5-*.webp; do
   [ -f "$f" ] || continue
@@ -87,8 +90,11 @@ for f in "$GFX_DIR"/v5-*.webp; do
   out="figures/${base}.png"
   if [ ! -f "$out" ] || [ "$src" -nt "$out" ]; then
     dwebp -quiet "$src" -o "$out"
-    sips -Z 1800 --setProperty formatOptions normal "$out" >/dev/null 2>&1 || true
-    pngquant --skip-if-larger --quality=65-85 --speed=3 --strip --force --output "$out" "$out" 2>/dev/null || true
+    # PRINT keeps full resolution (300 DPI); SCREEN downscales + pngquant.
+    if [ "$PRINT" != "1" ]; then
+      sips -Z 1800 --setProperty formatOptions normal "$out" >/dev/null 2>&1 || true
+      pngquant --skip-if-larger --quality=65-85 --speed=3 --strip --force --output "$out" "$out" 2>/dev/null || true
+    fi
   fi
 done
 # Cover landscape: convert if user has placed it next to v5 graphics
