@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Megalkuvás nélküli változás};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Cenzúrázhatatlan és korrumpálhatatlan decentralizált reputációs hálózat};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Az állam akkor működött, amikor a kommunikáció lassú volt, a döntések
+      lokálisak, és az autoritás ugyanabban a városban élt, amelyet kormányzott.
+      A mai hálózatok mindhárom feltevést megfordítják --- és a rájuk épült
+      intézmények már nem illeszkednek a világhoz, amelyet kormányoznak. Ez a
+      könyv egy olyan eszközt ír le, amely illeszkedik: egy decentralizált
+      reputációs hálózatot, amelyben az identitás a tiéd marad, az igazság
+      nyilvánosan auditálható, és a megvesztegetés reputációs öngyilkosság.
+
+      \smallskip
+      Nem kiáltvány. Nem jóslat. Működő tervrajz arról, hogyan lehet felépíteni
+      az állam utódját --- önként, egyszerre egy deklarációval.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Prága, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Licenc: Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Málamiðlunarlaus breyting};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Óritskoðanlegt og óspillanlegt dreifstýrt orðsporsnet};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Ríkið virkaði þegar samskipti voru hæg, ákvarðanir voru staðbundnar og
+      valdið bjó í sama bæ og það stýrði. Net dagsins í dag snúa öllum þremur
+      forsendunum við --- og þær stofnanir sem byggðar eru á þeim falla ekki
+      lengur að þeim heimi sem þær stjórna. Þessi bók lýsir verkfæri sem fellur
+      að honum: dreifstýrðu orðsporsneti þar sem auðkennið er þitt til að halda,
+      sannleikurinn er opinberlega endurskoðanlegur og mútur eru orðsporslegt
+      sjálfsmorð.
+
+      \smallskip
+      Ekki stefnuyfirlýsing. Ekki spádómur. Virk teikning af því hvernig byggja
+      má arftaka ríkisins --- af sjálfsdáðum, ein yfirlýsing í einu.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Prag, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Gefið út undir Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

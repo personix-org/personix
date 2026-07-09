@@ -1,0 +1,61 @@
+% Support page — single A5 landscape page: QR codes (left) + disclaimer (right).
+\clearpage
+\thispagestyle{empty}
+
+\begin{center}
+{\Large\sffamily\bfseries Ủng hộ dự án\par}
+\vspace{0.5mm}
+{\itshape\footnotesize\color{black!60}Personix được tài trợ bởi những độc giả như bạn.\par}
+\end{center}
+
+\vspace{2mm}
+
+% --- Two columns: QR codes on the left, disclaimer on the right ---
+\noindent
+\begin{minipage}[t]{0.36\textwidth}
+\centering
+\vspace{0pt}
+\includegraphics[width=26mm]{figures/bitcoin-onchain-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin on-chain}\\[0.3mm]
+{\ttfamily\tiny bc1q7cctdz6r026dgy06ul94eygg49ujtxnrq5czaj}
+
+\vspace{4mm}
+
+\includegraphics[width=26mm]{figures/bitcoin-lightning-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin Lightning}\\[0.3mm]
+{\ttfamily\tiny LNURL1DP68GURN8GHJ7AMPD3KX2AR0VEEKZ\\AR0WD5XJTNRDAKJ7TNHV4KXCTTTDEHHWM30\\D3H82UNVWQHHXMNP0FA8JMTPVD5XJMN9XUE\\RX55QRQK\par}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.60\textwidth}
+\vspace{0pt}
+% needspace overridden to 4 baselines (vs. 9 default) so the disclaimer can
+% sit next to the QR codes on a single page even with the global parskip.
+\begin{mdframed}[
+  linewidth=0.7pt,roundcorner=5pt,
+  innerleftmargin=10pt,innerrightmargin=10pt,
+  innertopmargin=8pt,innerbottommargin=8pt,
+  skipabove=0pt,skipbelow=0pt,
+  linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+  nobreak=true,
+  needspace=4\baselineskip,
+]
+\cbtitle{cbwarning}{}{Tiền này đi về đâu \textnormal{\textmd{--- và không đi về đâu}}}
+\footnotesize
+Các mã QR là \textbf{các kênh cá nhân của tác giả} --- các khoản đóng góp đi thẳng đến Pavel Kudrna và tài trợ cho việc viết tiếp, thí nghiệm / mô phỏng xã hội, và công tác quảng bá.
+
+\smallskip
+Các kênh gây quỹ \emph{hợp pháp duy nhất} cho dự án này là:
+
+\smallskip
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+\item \textbf{Các ấn bản của cuốn sách này do tác giả phát hành} --- các mã QR trong các bản được tác giả cho phép.
+\item \href{https://personix.org}{\textbf{personix.org}} hoặc bản sao Tor onion được liên kết từ đó --- nơi \emph{Personix Foundation} quyên góp cho các hoạt động được mô tả ở đó. Quỹ của Foundation được giữ tách biệt với quỹ cá nhân của tác giả.
+\end{itemize}
+
+\smallskip
+\textbf{Bất cứ thứ gì được quảng cáo ở nơi khác} --- các địa chỉ bị thay thế trong các bản in lại, các tên miền nhái, mạng xã hội ``quyên góp cho Personix,'' các đợt gây quỹ không gắn với một trong hai kênh trên --- \textbf{gần như chắc chắn là lừa đảo}. Chúng tôi cố ý tránh xa thị trường tiền mã hóa và những người tham gia của nó.
+\end{mdframed}
+\end{minipage}
+
+\clearpage

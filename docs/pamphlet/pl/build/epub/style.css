@@ -1,0 +1,99 @@
+/* Personix EPUB stylesheet — paper-tone, callout-aware. */
+
+@page { margin: 5%; }
+
+body {
+  font-family: "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  line-height: 1.55;
+  color: #1a1410;
+  background: #f4ecd6;
+  text-align: left;
+  hyphens: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #1a1410;
+  line-height: 1.25;
+  margin-top: 1.6em;
+  margin-bottom: 0.4em;
+}
+
+h1 { font-size: 1.6em; font-weight: bold; page-break-before: always; }
+h2 { font-size: 1.3em; font-weight: bold; }
+h3 { font-size: 1.1em; font-weight: bold; }
+
+p { margin: 0 0 0.7em 0; }
+
+/* Inline graphics — keep them within page width, never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+  display: block;
+}
+
+/* Callouts (pandoc converts > [!type] Title \n body to nested blockquote) */
+blockquote {
+  border-left: 4px solid #C97A1F;
+  background: #fff8e8;
+  margin: 1em 0;
+  padding: 0.8em 1em;
+  border-radius: 4px;
+}
+blockquote p:first-child { margin-top: 0; }
+blockquote p:last-child  { margin-bottom: 0; }
+
+/* Type-specific tints (set by pandoc-callout filter or kept generic) */
+blockquote.note      { border-color: #3B82C4; background: #f0f6fc; }
+blockquote.important { border-color: #C97A1F; background: #fdf6ea; }
+blockquote.warning   { border-color: #A85F1F; background: #fbf1e3; }
+blockquote.danger    { border-color: #B83838; background: #fcefef; }
+blockquote.quote     { border-color: #736B5E; background: #f7f5f1; }
+blockquote.example   { border-color: #2F8F6A; background: #ecf6f1; }
+blockquote.idea      { border-color: #B58A1F; background: #fbf6e6; }
+
+/* Code / monospace — for QR addresses */
+code, pre, tt {
+  font-family: "Menlo", "Consolas", "Courier New", monospace;
+  font-size: 0.9em;
+  word-break: break-all;
+}
+
+/* Glossary table — clean two-column reference */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+th, td {
+  border-top: 1px solid #d0c8b0;
+  padding: 0.6em 0.4em;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #ebe1c4; font-family: "Helvetica Neue", sans-serif; }
+
+/* Cover */
+.cover { text-align: center; margin: 0; padding: 0; }
+.cover img { width: 100%; max-width: 100%; }
+
+/* Title block on the title page */
+.title-block {
+  text-align: center;
+  margin: 4em 0 2em;
+}
+.title-block h1 {
+  font-size: 2.4em;
+  margin-bottom: 0.2em;
+  page-break-before: avoid;
+}
+.title-block .subtitle {
+  font-style: italic;
+  font-size: 1.1em;
+  color: #5c4d3a;
+}
+.title-block .author {
+  margin-top: 2em;
+  font-family: "Helvetica Neue", sans-serif;
+}

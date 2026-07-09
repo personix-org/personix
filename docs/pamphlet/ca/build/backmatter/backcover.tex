@@ -1,0 +1,45 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Canvi sense concessions};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Una xarxa de reputació descentralitzada, incensurable i incorruptible};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      L'estat funcionava quan la comunicació era lenta, les decisions eren
+      locals i l'autoritat vivia a la mateixa ciutat que governava. Les xarxes
+      d'avui inverteixen totes tres premisses --- i les institucions
+      construïdes sobre elles ja no s'ajusten al món que governen. Aquest
+      llibre descriu una eina que sí que s'hi ajusta: una xarxa de reputació
+      descentralitzada en què la identitat és teva per conservar-la, la veritat
+      és auditable públicament i el suborn és un suïcidi reputacional.
+
+      \smallskip
+      No és un manifest. No és un pronòstic. És un plànol de treball de com es
+      pot construir el successor de l'estat --- voluntàriament, una declaració
+      cada cop.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Praga, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Sota llicència Creative Commons Reconeixement-CompartirIgual 4.0
+      Internacional (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

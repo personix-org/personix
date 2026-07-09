@@ -1,0 +1,43 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Brezkompromisna sprememba};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Necenzurljivo in nepodkupljivo decentralizirano reputacijsko omrežje};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Država je delovala, ko je bila komunikacija počasna, odločitve so bile
+      lokalne in avtoriteta je živela v istem mestu, ki mu je vladala. Današnja
+      omrežja obrnejo vse tri predpostavke --- in institucije, zgrajene na njih,
+      ne ustrezajo več svetu, ki mu vladajo. Ta knjiga opisuje orodje, ki ustreza:
+      decentralizirano reputacijsko omrežje, v katerem je identiteta vaša last,
+      resnica je javno preverljiva in podkupovanje je reputacijski samomor.
+
+      \smallskip
+      Ne manifest. Ne napoved. Delujoč načrt za to, kako je mogoče zgraditi
+      naslednika države --- prostovoljno, eno izjavo naenkrat.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Praga, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Licencirano pod Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

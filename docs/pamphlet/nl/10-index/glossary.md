@@ -1,0 +1,38 @@
+---
+title: "Glossary"
+part: "Appendix"
+lang: en
+version: v6
+---
+
+# Woordenlijst
+
+| Term | Nederlands | Betekenis |
+|------|-------|---------|
+| **Authority** | Autoriteit | Een vertrouwde entiteit (persoon, organisatie) die informatie verifieert en er haar reputatie op inzet. Kan gespecialiseerd zijn (onderzoekend, juridisch, technisch). |
+| **Claim** | Bewering | Algemeen: elke verifieerbare uitspraak. Hier: een in het reputatienetwerk gepubliceerde registratie — een bewering over een gebeurtenis, eigenschap of relatie die cryptografisch is ondertekend en geverifieerd. Bijv. “Ik ben inwoner van gemeente X” of “deze persoon heeft een contract geschonden.” |
+| **Compartmentalization** | Compartimentalisatie | Algemeen: het scheiden van informatie in geïsoleerde eenheden zodat het blootleggen van één eenheid de andere niet compromitteert. Een principe bekend uit inlichtingendiensten. Hier: parallelle DID-identiteiten in dictaturen — het compromitteren van één onthult de andere niet. |
+| **Consistent Hash Ring** | Consistente hashring | Een algoritmisch mechanisme voor het selecteren van verificateurs — een positie op de ring wordt bepaald door de hash van het DID-document binnen de sociale graaf. Zorgt voor een niet-deterministische en toch verifieerbare selectie. |
+| **DID** | DID (Gedecentraliseerde identiteit) | Een digitale identiteit die je zelf aanmaakt en beheert, zonder centrale autoriteit. Cryptografisch ondertekend met je privésleutel — niemand kan die intrekken of vervalsen. |
+| **DID Document** | DID-document | Een publiek beschikbaar gegevensbestand dat je DID-identiteit beschrijft — bevat publieke sleutels, netwerkadressen en metadata. Dient om je identiteit in het netwerk te verifiëren. |
+| **Due Diligence** | Due diligence | Algemeen: diepgaande verificatie van een tegenpartij voordat je een zakelijke of juridische relatie aangaat — het controleren van haar geschiedenis, financiën, reputatie en risico's. Hier: in het reputatienetwerk gebeurt ze sneller en automatischer dankzij de beschikbaarheid van geverifieerde registraties. |
+| **Economic Neutrality Principle** | Principe van economische neutraliteit | Eerlijk gedrag in het netwerk ligt economisch dicht bij nul — de publicatiekosten keren terug als verificatiebeloningen. Oneerlijk gedrag is een netto verlies. |
+| **Emergent** | Emergent | Spontaan ontstaand uit de interacties van eenvoudiger delen, zonder dat iemand het ontwerpt of aanstuurt. Een zwerm vogels vliegt zonder plan in formatie — de formatie emergeert uit eenvoudige regels die elk individu volgt. |
+| **Emergent Social Contract** | Emergent maatschappelijk contract | Gedragsregels die niet van bovenaf ontstaan (wet) maar van onderaf — uit herhaalde interacties en consensus binnen een gemeenschap. |
+| **ESR** | Electronic Spending Register | Een voorgesteld systeem voor transparante volging van publieke uitgaven — elke gerealiseerde staatsuitgave wordt gekoppeld aan een geplande betaling. Geïnspireerd op de Tsjechische EET, maar tegen de staat gekeerd. |
+| **Hash** | Hash (afdruk) | Algemeen: een eenrichtings-wiskundige functie die uit elke invoer een unieke “vingerafdruk” van vaste lengte produceert — als een vingerafdruk van het document. Dezelfde invoer levert altijd dezelfde uitvoer, maar de invoer kan niet uit de uitvoer worden afgeleid. Hier: gebruikt om een positie op de hashring te bepalen en de integriteit van een document te verifiëren. |
+| **Just-in-Time Funding** | Just-in-time financiering | Staatsfinanciering afhankelijk van transparantie — geld vloeit alleen wanneer de staat ESR aanvaardt en zijn uitgaven koppelt. Een hefboom om samenwerking af te dwingen. |
+| **Meritocracy** | Meritocratie | Algemeen: een systeem waarin aanzien wordt bepaald door werkelijke verdienste en bewezen vaardigheid, niet door formele titels, connecties of geërfd voorrecht. Hier: het reputatienetwerk begunstigt vanzelf wie aantoonbaar bijdraagt aan de gemeenschap — hun stem weegt zwaarder dankzij hun track record, niet dankzij een ambt. |
+| **Onion Gateway** | Onion gateway | Het netwerkadres van een DID-identiteit op het onion-netwerk. Los van het DID-document — het kan worden gewijzigd zonder de identiteit te verliezen (vergelijkbaar met het wijzigen van het IP-adres achter een domein). |
+| **Onion Routing** | Onion routing (Tor) | Een communicatieprotocol dat de oncensureerbaarheid van het netwerk waarborgt. Berichten worden in lagen versleuteld — elke node pelt één laag af maar kent het volledige pad niet. |
+| **Oracle Problem** | Orakelprobleem | Algemeen: hoe zorg je ervoor dat gegevens die een digitaal systeem binnenkomen getrouw overeenstemmen met wat er werkelijk in de fysieke wereld is gebeurd. De term komt uit het blockchaindomein. Hier: opgelost via autoriteiten die hun reputatie op het spel zetten als garantie dat een digitale registratie overeenstemt met de fysieke werkelijkheid. |
+| **Phenomenological** | Fenomenologisch | Algemeen: een benadering die verschijnselen bestudeert zoals ze zich in de directe ervaring manifesteren, door te observeren wat eruit volgt, zonder vooraf gegeven theorieën. Hier: vrijheid, het maatschappelijk contract en gedragsnormen zijn geobserveerde verschijnselen — gevolgen van duizenden micro-interacties tussen mensen, geen van bovenaf gedefinieerde principes. |
+| **Policy** | Policy (beleid) | Algemeen: een verzameling regels of principes die het gedrag in een gegeven context regelen. Hier: elke deelnemer in het DID-netwerk verklaart zijn beleid — hoe hij reageert op specifiek gedrag van anderen, welke regels hij volgt, en welke straffen hij evenredig acht. Het geheel van beleidslijnen vormt het emergente maatschappelijk contract. |
+| **Proxy** | Proxy | Algemeen: een plaatsvervanger of tussenpersoon — een systeem of entiteit die namens een ander handelt. Hier in twee contexten gebruikt: (1) ESR als een proxy die publieke uitgaven koppelt aan geplande betalingen; (2) waarnemers als een proxy tussen uitgever en verificateur in de waarnemerstruc. |
+| **Publisher** | Uitgever | Een netwerkdeelnemer die een registratie aanmaakt en publiceert (een bewering over een onrecht, herstel, enzovoort). Draagt de kosten van publicatie. |
+| **Reputation-Based Social Network (RSN)** | Reputatienetwerk | Een gedecentraliseerd sociaal netwerk waar deelnemers feedback uitwisselen over gedrag in de echte wereld. Registraties zijn duur om aan te maken, goedkoop om te lezen. |
+| **Reputation Signal** | Reputatiesignaal | Een individuele registratie in het netwerk — positief (herstel van schade, nakoming van een verplichting) of negatief (onrecht, contractbreuk). Cumulatief vormen signalen een reputatieprofiel. |
+| **Social Graph** | Sociale graaf | Het netwerk van je contacten en de contacten van je contacten. Het algoritme zoekt verificateurs op een instelbare diepte (bijvoorbeeld 3 niveaus). Geen globale blockchain — het netwerk vormt vanzelf gemeenschappen met overlappingen. |
+| **Tax Allocation** | Belastingtoewijzing | Een mechanisme waarmee de belastingbetaler beslist waar een deel van zijn belastingen naartoe gaat. Het toewijsbare percentage groeit jaar na jaar. |
+| **Track Record** | Track record | Algemeen: de geschiedenis van eerdere resultaten, successen en mislukkingen van een persoon of organisatie. Hier: de som van alle eerdere interacties van een gegeven DID-identiteit in het netwerk — geverifieerde claims, aanvaarde en afgewezen registraties — waaruit haar reputatie wordt afgeleid. |
+| **Verifier** | Verificateur | Een deelnemer die algoritmisch wordt geselecteerd om een registratie te verifiëren en te publiceren. Zet zijn goede naam in op de waarachtigheid van de informatie. |

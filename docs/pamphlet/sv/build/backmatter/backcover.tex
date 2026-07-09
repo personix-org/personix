@@ -1,0 +1,43 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Kompromisslös förändring};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Ett ocensurerbart och omutbart decentraliserat anseendenätverk};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Staten fungerade när kommunikationen var långsam, besluten var lokala och
+      auktoriteten bodde i samma stad som den styrde. Dagens nätverk inverterar
+      alla tre antagandena --- och de institutioner som byggts på dem passar
+      inte längre den värld de styr. Denna bok beskriver ett verktyg som passar:
+      ett decentraliserat anseendenätverk där identiteten är din att behålla,
+      sanningen är offentligt reviderbar, och mutor är anseendemässigt självmord.
+
+      \smallskip
+      Inget manifest. Ingen prognos. En fungerande ritning för hur statens
+      efterträdare kan byggas --- frivilligt, en deklaration i taget.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Prag, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Licensierad under Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

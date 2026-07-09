@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Ασυμβίβαστη Αλλαγή};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Ένα Μη Λογοκρίσιμο και Αδιάφθορο Αποκεντρωμένο Δίκτυο Φήμης};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Το κράτος λειτουργούσε όταν η επικοινωνία ήταν αργή, οι αποφάσεις ήταν
+      τοπικές, και η εξουσία ζούσε στην ίδια πόλη που κυβερνούσε. Τα σημερινά
+      δίκτυα αντιστρέφουν και τις τρεις παραδοχές --- και οι θεσμοί που χτίστηκαν
+      πάνω τους δεν ταιριάζουν πια στον κόσμο που κυβερνούν. Αυτό το βιβλίο
+      περιγράφει ένα εργαλείο που ταιριάζει: ένα αποκεντρωμένο δίκτυο φήμης όπου
+      η ταυτότητα είναι δική σου να την κρατήσεις, η αλήθεια είναι δημόσια
+      ελέγξιμη, και η δωροδοκία είναι αυτοκτονία για τη φήμη.
+
+      \smallskip
+      Ούτε μανιφέστο. Ούτε πρόβλεψη. Ένα λειτουργικό σχέδιο για το πώς μπορεί
+      να χτιστεί ο διάδοχος του κράτους --- εθελοντικά, μια δήλωση τη φορά.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Πράγα, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Αδειοδοτημένο υπό την άδεια Creative Commons Attribution-ShareAlike 4.0
+      International (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

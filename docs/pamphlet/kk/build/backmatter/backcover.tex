@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Ымырасыз өзгеріс};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Цензураланбайтын және сатып алынбайтын орталықсыздандырылған беделдік желі};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Мемлекет байланыс баяу, шешімдер жергілікті, ал билік өзі басқаратын
+      қаламен бір қалада өмір сүрген кезде жұмыс істеді. Бүгінгі желілер осы
+      үш болжамды да төңкереді --- ал оларға құрылған институттар өздері
+      басқаратын дүниеге енді сай келмейді. Бұл кітап сай келетін құралды
+      сипаттайды: сәйкестік өзіңізде қалатын, шындық жария түрде аудиттелетін,
+      ал парақорлық беделдік өзін-өзі жоюмен тең болатын орталықсыздандырылған
+      беделдік желіні.
+
+      \smallskip
+      Манифест емес. Болжам емес. Мемлекеттің мұрагерін қалай құруға болатынының
+      жұмыс сызбасы --- ерікті түрде, әр жолы бір мәлімдеме.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Praha, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0) лицензиясымен таратылады.
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

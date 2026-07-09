@@ -1,0 +1,61 @@
+% Support page — single A5 landscape page: QR codes (left) + disclaimer (right).
+\clearpage
+\thispagestyle{empty}
+
+\begin{center}
+{\Large\sffamily\bfseries Podrži projekt\par}
+\vspace{0.5mm}
+{\itshape\footnotesize\color{black!60}Personix financiraju čitatelji poput tebe.\par}
+\end{center}
+
+\vspace{2mm}
+
+% --- Two columns: QR codes on the left, disclaimer on the right ---
+\noindent
+\begin{minipage}[t]{0.36\textwidth}
+\centering
+\vspace{0pt}
+\includegraphics[width=26mm]{figures/bitcoin-onchain-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin on-chain}\\[0.3mm]
+{\ttfamily\tiny bc1q7cctdz6r026dgy06ul94eygg49ujtxnrq5czaj}
+
+\vspace{4mm}
+
+\includegraphics[width=26mm]{figures/bitcoin-lightning-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin Lightning}\\[0.3mm]
+{\ttfamily\tiny LNURL1DP68GURN8GHJ7AMPD3KX2AR0VEEKZ\\AR0WD5XJTNRDAKJ7TNHV4KXCTTTDEHHWM30\\D3H82UNVWQHHXMNP0FA8JMTPVD5XJMN9XUE\\RX55QRQK\par}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.60\textwidth}
+\vspace{0pt}
+% needspace overridden to 4 baselines (vs. 9 default) so the disclaimer can
+% sit next to the QR codes on a single page even with the global parskip.
+\begin{mdframed}[
+  linewidth=0.7pt,roundcorner=5pt,
+  innerleftmargin=10pt,innerrightmargin=10pt,
+  innertopmargin=8pt,innerbottommargin=8pt,
+  skipabove=0pt,skipbelow=0pt,
+  linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+  nobreak=true,
+  needspace=4\baselineskip,
+]
+\cbtitle{cbwarning}{}{Kamo ovaj novac ide \textnormal{\textmd{--- a kamo ne}}}
+\footnotesize
+QR kôdovi \textbf{autorovi su osobni kanali} --- prilozi idu izravno Pavlu Kudrni i financiraju daljnje pisanje, društveni eksperiment / simulaciju te outreach.
+
+\smallskip
+\emph{Jedini} legitimni kanali prikupljanja sredstava za ovaj projekt jesu:
+
+\smallskip
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+\item \textbf{Autorska izdanja ove knjige} --- QR kôdovi u primjercima koje je autor odobrio.
+\item \href{https://personix.org}{\textbf{personix.org}} ili njegov Tor onion mirror povezan odande --- gdje \emph{Zaklada Personix} prikuplja za aktivnosti ondje opisane. Sredstva zaklade drže se odvojeno od autorovih osobnih sredstava.
+\end{itemize}
+
+\smallskip
+\textbf{Sve što se oglašava drugdje} --- zamijenjene adrese u pretiscima, lažne domene nalik pravima, „prikupljanje za Personix" na društvenim mrežama, kampanje koje nisu vezane ni uz jedno od navedenoga --- \textbf{najvjerojatnije je prijevara}. Namjerno izbjegavamo tržište kriptovaluta i njegove sudionike.
+\end{mdframed}
+\end{minipage}
+
+\clearpage

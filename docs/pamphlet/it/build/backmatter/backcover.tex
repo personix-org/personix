@@ -1,0 +1,46 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Cambiamento senza compromessi};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Una rete di reputazione decentralizzata, incensurabile e incorruttibile};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Lo Stato funzionava quando la comunicazione era lenta, le decisioni erano
+      locali e l'autorità viveva nella stessa città che governava. Le reti di
+      oggi ribaltano tutti e tre questi presupposti --- e le istituzioni
+      costruite su di essi non si adattano più al mondo che governano. Questo
+      libro descrive uno strumento che invece vi si adatta: una rete di
+      reputazione decentralizzata in cui l'identità è tua e resta tua, la
+      verità è verificabile pubblicamente e la corruzione è un suicidio
+      reputazionale.
+
+      \smallskip
+      Non un manifesto. Non una previsione. Un progetto operativo su come si
+      può costruire il successore dello Stato --- volontariamente, una
+      dichiarazione alla volta.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Praga, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Distribuito sotto licenza Creative Commons Attribution-ShareAlike 4.0
+      International (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

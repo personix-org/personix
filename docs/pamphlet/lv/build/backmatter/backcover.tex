@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Bezkompromisa pārmaiņas};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Necenzējams un neuzpērkams decentralizēts reputācijas tīkls};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Valsts darbojās, kad komunikācija bija lēna, lēmumi bija lokāli un
+      autoritāte dzīvoja tajā pašā pilsētā, kuru pārvaldīja. Mūsdienu tīkli
+      apgriež otrādi visus trīs pieņēmumus --- un uz tiem uzbūvētās
+      institūcijas vairs neatbilst pasaulei, ko tās pārvalda. Šī grāmata
+      apraksta rīku, kas atbilst: decentralizētu reputācijas tīklu, kurā
+      identitāte pieder tev, patiesība ir publiski auditējama un kukuļošana
+      ir reputācijas pašnāvība.
+
+      \smallskip
+      Ne manifests. Ne prognoze. Darbspējīgs plāns tam, kā uzbūvēt valsts
+      pēcteci --- brīvprātīgi, pa vienai deklarācijai.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Prāga, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Licencēts saskaņā ar Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

@@ -1,0 +1,43 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {타협 없는 변화};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {검열 불가능하고 매수 불가능한 탈중앙화 평판 네트워크};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      국가는 소통이 느리고, 결정이 지역적이며, 권위가 자신이 다스리는 바로 그
+      고을에 살던 시절에 작동했다. 오늘날의 네트워크는 이 세 전제를 모두
+      뒤집었다 --- 그리고 그 위에 세워진 제도들은 더 이상 자신이 다스리는
+      세계에 들어맞지 않는다. 이 책은 들어맞는 도구를 서술한다.
+      신원은 당신이 간직하고, 진실은 공개적으로 감사 가능하며, 뇌물은
+      평판의 자살 행위인 탈중앙화 평판 네트워크다.
+
+      \smallskip
+      선언문이 아니다. 예측도 아니다. 국가의 후계자를 어떻게 세울 수 있는지에
+      대한 작동하는 청사진이다 --- 자발적으로, 한 번에 하나의 선언씩.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad 프라하, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      크리에이티브 커먼즈 저작자표시-동일조건변경허락 4.0 국제
+      (CC BY-SA 4.0)에 따라 이용을 허락함.
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

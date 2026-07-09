@@ -1,0 +1,28 @@
+% v6: trimmed colophon — only the identification block stays after the cover.
+% Reserved-elements notice, source availability and AI-assistance disclosure
+% have been moved to a "Production notes" page in the backmatter (printed
+% just before the back cover), keeping the front matter calm and readable.
+\thispagestyle{empty}
+% PRINT interior: imprint sits at the foot of the verso (book convention).
+% Screen build keeps it roughly centred (unchanged).
+\ifdefined\printmode\vspace*{\fill}\else\vspace*{\stretch{1}}\fi
+\begin{flushleft}\small\sffamily
+\textbf{Personix --- Changement sans compromis}\\[0.3em]
+Un réseau de réputation décentralisé, incensurable et incorruptible\\[1.4em]
+
+\textcopyright\ 2025--2026 Pavel Kudrna, Prague\\[0.4em]
+
+Version~6 (2026-05-21)\\
+Première ébauche juin--novembre 2025, réécrit avril--mai 2026.\\[1.4em]
+
+Composé en \LaTeX{} (Tectonic) avec Palatino et Helvetica\,Neue.\\
+A5 paysage (210\,$\times$\,148\,mm).\\[1.4em]
+
+Sous licence \textbf{Creative Commons Attribution-ShareAlike 4.0
+International (CC BY-SA 4.0)} ---
+\href{https://creativecommons.org/licenses/by-sa/4.0/}{creativecommons.org/licenses/by-sa/4.0/}.
+Les éléments réservés, le dépôt des sources et une note sur les outils
+de production sont indiqués à la fin du livre.
+\end{flushleft}
+\ifdefined\printmode\else\vspace*{\stretch{2}}\fi
+\clearpage

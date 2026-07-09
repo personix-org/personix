@@ -1,0 +1,46 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Changement sans compromis};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Un réseau de réputation décentralisé, incensurable et incorruptible};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      L'État fonctionnait quand la communication était lente, les décisions
+      locales, et l'autorité vivait dans la même ville que celle qu'elle
+      gouvernait. Les réseaux d'aujourd'hui inversent ces trois hypothèses
+      --- et les institutions bâties sur elles ne conviennent plus au monde
+      qu'elles gouvernent. Ce livre décrit un outil qui, lui, convient :
+      un réseau de réputation décentralisé où l'identité vous appartient,
+      où la vérité est publiquement vérifiable, et où la corruption est un
+      suicide réputationnel.
+
+      \smallskip
+      Pas un manifeste. Pas une prévision. Un plan opérationnel de la façon
+      dont le successeur de l'État peut être bâti --- volontairement, une
+      déclaration à la fois.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Prague, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Sous licence Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

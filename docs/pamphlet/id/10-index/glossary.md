@@ -1,0 +1,38 @@
+---
+title: "Glosarium"
+part: "Appendix"
+lang: en
+version: v6
+---
+
+# Glosarium
+
+| Istilah | Indonesia | Arti |
+|------|-------|---------|
+| **Authority** | Otoritas | Sebuah entitas tepercaya (orang, organisasi) yang memverifikasi informasi dan mempertaruhkan reputasinya untuk itu. Dapat berspesialisasi (penyelidikan, hukum, teknis). |
+| **Claim** | Klaim | Secara umum: pernyataan apa pun yang dapat diverifikasi. Di sini: sebuah catatan yang dipublikasikan ke jaringan reputasi — pernyataan tentang suatu peristiwa, properti, atau hubungan yang ditandatangani secara kriptografis dan diverifikasi. Mis. "Saya penduduk kota X" atau "orang ini melanggar kontrak." |
+| **Compartmentalization** | Kompartementalisasi | Secara umum: memisahkan informasi ke dalam unit-unit terisolasi sehingga terbongkarnya satu unit tidak membahayakan yang lain. Sebuah prinsip yang dikenal dari dinas intelijen. Di sini: identitas DID paralel dalam kediktatoran — terbongkarnya satu tidak membongkar yang lain. |
+| **Consistent Hash Ring** | Cincin hash | Sebuah mekanisme algoritmis untuk memilih verifikator — posisi pada cincin ditentukan oleh hash dokumen DID di dalam graf sosial. Memastikan pemilihan yang non-deterministik namun dapat diverifikasi. |
+| **DID** | DID (Identitas Terdesentralisasi) | Sebuah identitas digital yang Anda ciptakan dan kendalikan sendiri, tanpa otoritas pusat. Ditandatangani secara kriptografis dengan kunci privat Anda — tidak ada yang dapat mencabutnya atau memalsukannya. |
+| **DID Document** | Dokumen DID | Sebuah berkas data yang tersedia secara publik yang menggambarkan identitas DID Anda — memuat kunci publik, alamat jaringan, dan metadata. Digunakan untuk memverifikasi identitas Anda dalam jaringan. |
+| **Due Diligence** | Due diligence | Secara umum: verifikasi mendalam atas pihak lawan sebelum masuk ke dalam hubungan bisnis atau hukum — memeriksa riwayat, keuangan, reputasi, dan risikonya. Di sini: dalam jaringan reputasi, hal itu terjadi lebih cepat dan lebih otomatis berkat tersedianya catatan-catatan terverifikasi. |
+| **Economic Neutrality Principle** | Prinsip netralitas ekonomi | Perilaku jujur dalam jaringan secara ekonomi mendekati nol — biaya publikasi dikembalikan sebagai imbalan verifikasi. Perilaku tidak jujur adalah kerugian bersih. |
+| **Emergent** | Emergen | Muncul secara spontan dari interaksi bagian-bagian yang lebih sederhana, tanpa ada yang merancang atau mengarahkannya. Sekawanan burung terbang dalam formasi tanpa rencana — formasi itu emergen dari aturan-aturan sederhana yang diikuti setiap individu. |
+| **Emergent Social Contract** | Kontrak sosial emergen | Aturan perilaku yang muncul bukan dari atas (hukum) melainkan dari bawah — dari interaksi berulang dan konsensus dalam sebuah komunitas. |
+| **ESR** | Registri Belanja Elektronik | Sebuah sistem yang diusulkan untuk pelacakan transparan atas pengeluaran publik — setiap pengeluaran negara yang direalisasikan dicocokkan dengan pembayaran yang direncanakan. Terinspirasi oleh EET Ceko, tetapi diarahkan melawan negara. |
+| **Hash** | Hash (sidik) | Secara umum: sebuah fungsi matematis satu arah yang menghasilkan "sidik jari" berpanjang tetap yang unik dari masukan apa pun — seperti sidik jari sebuah dokumen. Masukan yang sama selalu menghasilkan keluaran yang sama, tetapi masukan tidak dapat diturunkan dari keluaran. Di sini: digunakan untuk menentukan posisi pada cincin hash dan untuk memverifikasi integritas dokumen. |
+| **Just-in-Time Funding** | Pendanaan just-in-time | Pendanaan negara yang bersyarat pada transparansi — uang mengalir hanya ketika negara menerima ESR dan mencocokkan pengeluarannya. Sebuah tuas untuk memaksa kerja sama. |
+| **Meritocracy** | Meritokrasi | Secara umum: sebuah sistem di mana kedudukan ditentukan oleh jasa yang sesungguhnya dan kemampuan yang terbukti, bukan gelar formal, koneksi, atau hak istimewa yang diwariskan. Di sini: jaringan reputasi secara alami menguntungkan mereka yang terbukti berkontribusi pada komunitas — suara mereka lebih berbobot karena track record, bukan karena jabatan. |
+| **Onion Gateway** | Onion gateway | Alamat jaringan sebuah identitas DID pada jaringan onion. Terpisah dari dokumen DID — ia dapat diubah tanpa kehilangan identitas (mirip mengubah alamat IP di balik sebuah domain). |
+| **Onion Routing** | Onion routing (Tor) | Sebuah protokol komunikasi yang memastikan ketidakmampuan jaringan untuk disensor. Pesan dienkripsi berlapis-lapis — setiap simpul mengupas satu lapisan tetapi tidak mengetahui seluruh jalurnya. |
+| **Oracle Problem** | Masalah oracle | Secara umum: bagaimana memastikan bahwa data yang masuk ke sistem digital sungguh-sungguh sesuai dengan apa yang benar-benar terjadi di dunia fisik. Istilah ini berasal dari ranah blockchain. Di sini: diselesaikan melalui otoritas yang mempertaruhkan reputasi mereka sebagai jaminan bahwa sebuah catatan digital sesuai dengan realitas fisik. |
+| **Phenomenological** | Fenomenologis | Secara umum: sebuah pendekatan yang mengkaji gejala sebagaimana ia mewujud dalam pengalaman langsung, dengan mengamati apa yang mengikutinya, tanpa teori yang ditetapkan lebih dulu. Di sini: kebebasan, kontrak sosial, dan norma perilaku adalah gejala yang teramati — konsekuensi dari ribuan mikrointeraksi antarmanusia, bukan prinsip yang didefinisikan dari atas. |
+| **Policy** | Policy (kebijakan) | Secara umum: seperangkat aturan atau prinsip yang mengatur perilaku dalam konteks tertentu. Di sini: setiap peserta dalam jaringan DID mendeklarasikan kebijakannya — bagaimana mereka menanggapi perilaku spesifik orang lain, aturan mana yang mereka ikuti, dan hukuman mana yang mereka anggap proporsional. Agregat kebijakan membentuk kontrak sosial yang emergen. |
+| **Proxy** | Proxy | Secara umum: seorang pengganti atau perantara — sebuah sistem atau entitas yang bertindak atas nama entitas lain. Digunakan di sini dalam dua konteks: (1) ESR sebagai proksi yang mencocokkan pengeluaran publik dengan pembayaran yang direncanakan; (2) para pengamat sebagai proksi antara pemublikasi dan verifikator dalam trik pengamat. |
+| **Publisher** | Pemublikasi | Seorang peserta jaringan yang membuat dan memublikasikan sebuah catatan (klaim tentang ketidakadilan, pemulihan, dan seterusnya). Menanggung biaya publikasi. |
+| **Reputation-Based Social Network (RSN)** | Jaringan reputasi | Sebuah jaringan sosial terdesentralisasi di mana para peserta bertukar umpan balik tentang perilaku di dunia nyata. Catatan mahal untuk dibuat, murah untuk dibaca. |
+| **Reputation Signal** | Sinyal reputasi | Sebuah catatan individual dalam jaringan — positif (pemulihan kerugian, pemenuhan kewajiban) atau negatif (ketidakadilan, pelanggaran kontrak). Secara kumulatif, sinyal-sinyal membentuk profil reputasi. |
+| **Social Graph** | Graf sosial | Jaringan kontak Anda dan kontak dari kontak Anda. Algoritma mencari verifikator pada kedalaman yang dapat dikonfigurasi (misalnya 3 tingkat). Tanpa blockchain global — jaringan secara alami membentuk komunitas dengan tumpang tindih. |
+| **Tax Allocation** | Alokasi pajak | Sebuah mekanisme yang dengannya pembayar pajak memutuskan ke mana sebagian pajak mereka pergi. Persentase yang dapat dialokasikan bertambah dari tahun ke tahun. |
+| **Track Record** | Track record | Secara umum: riwayat hasil, keberhasilan, dan kegagalan seseorang atau organisasi di masa lalu. Di sini: jumlah seluruh interaksi masa lalu dari suatu identitas DID dalam jaringan — klaim terverifikasi, catatan yang diterima dan ditolak — yang darinya reputasinya diturunkan. |
+| **Verifier** | Verifikator | Seorang peserta yang dipilih secara algoritmis untuk memverifikasi dan memublikasikan sebuah catatan. Mempertaruhkan nama baiknya atas kebenaran informasi. |

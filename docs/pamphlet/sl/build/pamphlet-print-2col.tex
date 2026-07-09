@@ -1,0 +1,325 @@
+% =========================================================================
+% TWO-COLUMN PRINT EXPERIMENT — derived from pamphlet-print.tex.
+%
+% Body text flows in two balanced columns (multicol); callouts, tables and
+% full-page figures are pulled OUT of the columns to full page width by the
+% transform step (transform-2col.py → chapters2col/). Built via ./make-2col.sh.
+%
+% NOT a committed deliverable yet — experimental. Same "safe frame" print
+% geometry as pamphlet-print.tex (bleed, shrunk images, inward page numbers,
+% font ×1.05).
+%
+% --- TUNABLE CONSTANTS ----------------------------------------------------
+%   Column gap   : \columnsep (space between the two text columns)
+%   Bleed        : 3 mm  (media 216×154 = A5 landscape trim + 3 mm/side)
+%   Image frame  : \figframelen (cream margin of full-page images, from TRIM)
+%   Font size    : Palatino Scale=1.05
+% -------------------------------------------------------------------------
+\documentclass[11pt,openany]{book}
+
+\def\printmode{}
+\def\twocolmode{}
+
+\newlength{\bleedlen}\setlength{\bleedlen}{3mm}
+\newlength{\figframelen}\setlength{\figframelen}{7mm}
+
+% --- Geometry: A5 landscape TRIM 210×148 + 3 mm bleed → media 216×154 mm ---
+\usepackage[
+  paperwidth=216mm,paperheight=154mm,
+  top=17mm,bottom=19mm,inner=18mm,outer=21mm,
+  headsep=4mm,footskip=10mm
+]{geometry}
+
+% --- Two-column body via multicol (balances columns; full-width breaks OK) ---
+\usepackage{multicol}
+\setlength{\columnsep}{7mm}
+\setlength{\columnseprule}{0pt}
+% Tolerate looser column balancing — multicol's default flush balancing on a
+% \raggedbottom page otherwise triggers a flood of harmless "Overfull \vbox
+% while \output is active" warnings.
+\setlength{\multicolsep}{12pt plus 4pt minus 3pt}
+% If fewer than ~6 lines remain after a full-width break (callout/table/figure),
+% multicol DEFERS the next column block to a fresh page instead of starting it
+% with a near-empty left column / orphaned heading in the right one. This is
+% Pavel's "push the start to the next page" rule, enforced automatically.
+\setlength{\premulticols}{6\baselineskip}
+\setlength{\postmulticols}{0pt}
+% Fill columns left-to-right rather than balancing to equal height. Balancing
+% was leaving the left column empty and dumping a short post-callout section
+% into the right column; ragged fill keeps the natural left-first flow.
+\raggedcolumns
+
+% --- Fonts ---
+\usepackage{fontspec}
+\setmainfont[Scale=1.05]{Palatino}
+\setsansfont[Scale=1.05]{Helvetica Neue}
+\setmonofont[Scale=1.05]{Menlo}
+
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}
+
+% --- Core packages ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{microtype}
+\setlength{\emergencystretch}{2.5em}
+\setlength{\parskip}{0.35em plus 0.15em minus 0.05em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\hyphenpenalty=300
+\exhyphenpenalty=300
+\doublehyphendemerits=10000
+\hyphenation{Com-part-men-tal-i-za-tion Phe-nom-e-no-log-i-cal Re-pu-ta-tion}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amssymb,amsmath}
+\usepackage{soul}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!50!black,
+  citecolor=black,
+  pdftitle={Personix --- Brezkompromisna sprememba},
+  pdfauthor={Pavel Kudrna},
+  pdfsubject={Necenzurljivo in nepodkupljivo decentralizirano reputacijsko omrežje},
+  pdfkeywords={decentralizirana identiteta, reputacijsko omrežje, upravljanje, DID}
+}
+
+% --- Pandoc helpers ---
+\usepackage{calc}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\real}[1]{#1}
+
+% --- Page style: page number in OUTER corner, pulled INWARD for print ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfootoffset[LE,RO]{3mm}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[LE,RO]{\thepage}%
+  \fancyfootoffset[LE,RO]{3mm}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+\definecolor{papercream}{HTML}{F4ECD6}
+\pagecolor{papercream}
+
+% --- Callout boxes ---
+\usepackage[framemethod=tikz]{mdframed}
+
+\definecolor{cbnote}{HTML}{3B82C4}
+\definecolor{cbimportant}{HTML}{C97A1F}
+\definecolor{cbwarning}{HTML}{A85F1F}
+\definecolor{cbdanger}{HTML}{B83838}
+\definecolor{cbquote}{HTML}{736B5E}
+\definecolor{cbexample}{HTML}{2F8F6A}
+\definecolor{cbidea}{HTML}{B58A1F}
+
+\usepackage{needspace}
+% 2col print: callouts are full-width (pulled out of multicol) and ATOMIC — a
+% callout that does not fit at the bottom of the page moves whole to the next
+% page rather than splitting title-from-body. Only genuinely page-tall callouts
+% opt into splitting via cbimportantsplitbox (with continues/continued markers).
+\mdfdefinestyle{calloutbase}{%
+  linewidth=0.7pt,
+  roundcorner=5pt,
+  innerleftmargin=14pt,innerrightmargin=14pt,
+  innertopmargin=10pt,innerbottommargin=11pt,
+  skipabove=10pt,skipbelow=10pt,
+  needspace=9\baselineskip,
+  nobreak=true,
+  splittopskip=32pt,splitbottomskip=54pt,
+}
+\newcommand{\cballowsplit}{\mdfsetup{nobreak=false}}
+\newcommand{\cbatomic}{\mdfsetup{nobreak=true}}
+\newcommand{\cbsplitfirst}[1]{%
+  \draw[line width=0.7pt, color=#1!50] (O) -- (P|-O);
+  \node[anchor=south east, font=\itshape\small,
+        text=#1!75, inner xsep=14pt, inner ysep=4pt]
+    at (P|-O) {continues overleaf};%
+}
+\newcommand{\cbsplitsecond}[1]{%
+  \draw[line width=0.7pt, color=#1!50] (P-|O) -- (P);
+  \node[anchor=north east, font=\itshape\small,
+        text=#1!75, inner xsep=14pt, inner ysep=4pt]
+    at (P) {continued from overleaf};%
+}
+\newcommand{\cbtitle}[3]{%
+  \noindent
+  \begin{minipage}{\linewidth}\raggedright%
+    \textcolor{#1}{\rule[-0.3ex]{2.6ex}{2.6ex}}\hspace{0.6em}%
+    {\sffamily\bfseries\color{#1}\large #3}%
+  \end{minipage}\par
+  \vspace{2pt}%
+  \noindent{\color{#1!40}\leavevmode\leaders\hrule height 0.4pt\hfill\kern0pt}\par
+  \vspace{4pt}%
+}
+\newenvironment{cbnotebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbnote!50,backgroundcolor=cbnote!5,
+    firstextra={\cbsplitfirst{cbnote}},secondextra={\cbsplitsecond{cbnote}}]\cbtitle{cbnote}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbimportantbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbimportant!50,backgroundcolor=cbimportant!5,
+    firstextra={\cbsplitfirst{cbimportant}},secondextra={\cbsplitsecond{cbimportant}}]\cbtitle{cbimportant}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbwarningbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+    firstextra={\cbsplitfirst{cbwarning}},secondextra={\cbsplitsecond{cbwarning}}]\cbtitle{cbwarning}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbdangerbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbdanger!50,backgroundcolor=cbdanger!5,
+    firstextra={\cbsplitfirst{cbdanger}},secondextra={\cbsplitsecond{cbdanger}}]\cbtitle{cbdanger}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbquotebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbquote!50,backgroundcolor=cbquote!5,
+    firstextra={\cbsplitfirst{cbquote}},secondextra={\cbsplitsecond{cbquote}}]\cbtitle{cbquote}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbexamplebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbexample!50,backgroundcolor=cbexample!5,
+    firstextra={\cbsplitfirst{cbexample}},secondextra={\cbsplitsecond{cbexample}}]\cbtitle{cbexample}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbideabox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbidea!50,backgroundcolor=cbidea!5,
+    firstextra={\cbsplitfirst{cbidea}},secondextra={\cbsplitsecond{cbidea}}]\cbtitle{cbidea}{}{#1}}
+  {\end{mdframed}}
+
+\newenvironment{cbimportantsplitbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbimportant!50,backgroundcolor=cbimportant!5,
+    firstextra={\cbsplitfirst{cbimportant}},secondextra={\cbsplitsecond{cbimportant}},
+    nobreak=false]\cbtitle{cbimportant}{}{#1}}
+  {\end{mdframed}}
+
+% --- Chapter/section spacing ---
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries\sffamily}
+  {}{0pt}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{18pt}
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries\sffamily}
+  {\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}[block]
+  {\normalfont\large\bfseries\sffamily}
+  {\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+\setcounter{secnumdepth}{-1}
+
+% --- Full-page figure helper (PRINT: safe frame) ---
+\usepackage{afterpage}
+\newcommand{\fullpagefigureNOW}[1]{%
+  \clearpage
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=center, inner sep=0pt] at (current page.center)
+      {\includegraphics[width=\dimexpr\paperwidth-2\bleedlen-2\figframelen\relax,keepaspectratio]{#1}};
+  \end{tikzpicture}%
+  \mbox{}%
+  \clearpage
+}
+% Now that callouts are atomic (never split), the figure can again be deferred
+% via \afterpage so the in-progress text page fills to its natural end before
+% the figure takes the next page — fewer half-empty text pages before figures.
+% Consecutive figure runs still use the immediate variant (master wires them).
+\newcommand{\fullpagefigure}[1]{\afterpage{\fullpagefigureNOW{#1}}}
+\newcommand{\fullpagefigureimmediate}[1]{\fullpagefigureNOW{#1}}
+
+\raggedbottom
+
+\title{Personix --- Brezkompromisna sprememba}
+\author{Pavel Kudrna}
+\date{2026-05-06}
+
+\makeatletter
+\renewcommand\mainmatter{\clearpage\@mainmattertrue}
+\renewcommand\backmatter{\clearpage\@mainmatterfalse}
+\makeatother
+
+% =========================================================================
+\begin{document}
+
+\frontmatter
+\pagenumbering{arabic}
+\input{frontmatter/title.tex}
+\input{frontmatter/colophon.tex}
+\tableofcontents
+\clearpage
+
+\mainmatter
+
+% Chapters are loaded from chapters2col/ — same content as chapters/ but with
+% \begin{multicols}{2} … \end{multicols} wrapping the text and full-width
+% breaks around callouts / tables / figures (inserted by transform-2col.py).
+
+% --- 1. Introduction ---
+\chapter{Uvod}
+\input{chapters2col/intro-a-v4.tex}
+
+% --- 2. Essential Prerequisites for Change ---
+\chapter{Nujni predpogoji za spremembo}
+\input{chapters2col/prereq-01.tex}
+
+% --- 3. The Tool ---
+\chapter{Orodje}
+\input{chapters2col/tool-01-network.tex}
+\fullpagefigureimmediate{figures/v5-02c1-typy-dokumentu.png}
+\fullpagefigureimmediate{figures/v5-02d2-did-document.png}
+\fullpagefigureimmediate{figures/v5-02d3-claim-standard.png}
+\fullpagefigureimmediate{figures/v5-02d5-did-policy.png}
+\input{chapters2col/tool-02-uncensorability.tex}
+\input{chapters2col/tool-03-doubts.tex}
+\input{chapters2col/tool-04-voluntariness.tex}
+\input{chapters2col/tool-05-switch.tex}
+\input{chapters2col/tool-06-oracle.tex}
+
+% --- 4. How Verification Works ---
+\chapter{Kako deluje preverjanje}
+\input{chapters2col/verif-01-consensus.tex}
+\input{chapters2col/verif-02-roles.tex}
+\input{chapters2col/verif-03-contract.tex}
+\input{chapters2col/verif-05-info-sharing.tex}
+
+% --- 5. Crime and Punishment ---
+\chapter{Zločin in kazen}
+\input{chapters2col/crime-01.tex}
+
+% --- 6. Follow the Money ---
+\chapter{Sledi denarju}
+\input{chapters2col/money-01.tex}
+\input{chapters2col/money-03-transition.tex}
+
+% --- 7. Conclusion ---
+\chapter{Sklep}
+\input{chapters2col/concl-c-fusion.tex}
+\input{chapters2col/concl-ack.tex}
+\fullpagefigure{figures/v5-zaverecna-citizens-take-back.png}
+
+\input{backmatter/donate.tex}
+
+\backmatter
+
+% Glossary: longtable → keep single-column (no multicol wrapper at all).
+\chapter{Glosar}
+\begingroup
+\renewcommand{\arraystretch}{1.40}
+\setlength{\tabcolsep}{6pt}
+\input{chapters/glossary.tex}
+\endgroup
+
+\input{backmatter/production-notes.tex}
+\input{backmatter/backcover.tex}
+
+\end{document}

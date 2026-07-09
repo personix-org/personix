@@ -1,0 +1,18 @@
+---
+title: "Personix — Uncompromising Change"
+subtitle: "An Uncensorable and Incorruptible Decentralized Reputation Network"
+author: "Pavel Kudrna"
+date: "2026-05-06"
+language: en
+publisher: "Personix"
+rights: "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). The Personix name and wordmark, the cover artwork, and the donation channels (QR codes, addresses) are reserved by the author and are not licensed under CC BY-SA."
+description: "The state worked when communication was slow, decisions were local, and authority lived in the same town it ruled. Today's networks invert all three assumptions — and the institutions built on them no longer fit the world they govern. This book describes a tool that does fit: a decentralized reputation network in which identity is yours to keep, truth is publicly auditable, and bribery is reputational suicide."
+keywords:
+  - decentralized identity
+  - reputation network
+  - governance
+  - DID
+cover-image: figures/v5-cover-landscape.png
+ibooks:
+  version: 5
+---

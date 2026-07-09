@@ -1,0 +1,31 @@
+% --- Cover (full-bleed via tikz overlay) ---
+% Cover already carries the title and author; no separate internal title page.
+% EN build: bez DRAFT overlay (CZ buildu zůstává).
+% Print build shrinks the cover to leave a cream frame (safe trim); screen build
+% keeps it full-bleed. \printmode is defined only by pamphlet-print.tex.
+\ifdefined\printmode
+  \def\covergfxwidth{\dimexpr\paperwidth-2\bleedlen-2\figframelen\relax}
+\else
+  \def\covergfxwidth{\paperwidth}
+\fi
+\thispagestyle{empty}
+\IfFileExists{figures/v5-cover-landscape.png}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=center, inner sep=0pt] at (current page.center)
+      {\includegraphics[width=\covergfxwidth,height=\paperheight,keepaspectratio]{figures/v5-cover-landscape.png}};
+  \end{tikzpicture}\mbox{}%
+}{\IfFileExists{figures/v5-cover-prebal.png}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=center, inner sep=0pt] at (current page.center)
+      {\includegraphics[width=\covergfxwidth,height=\paperheight,keepaspectratio]{figures/v5-cover-prebal.png}};
+  \end{tikzpicture}\mbox{}%
+}{%
+  \vspace*{\fill}\centering
+  {\Huge\bfseries KİMLİYİN SƏNİN\par QAYDALARIN SƏNİN\par}
+  \vspace{2em}
+  {\Large Senzura Edilə Bilməyən və Korrupsiyaya Uğramayan Mərkəzsizləşdirilmiş Reputasiya Şəbəkəsi\par}
+  \vspace*{\fill}
+  {\large Pavel Kudrna\par}
+  {\small Praqa, 2026\par}
+}}
+\clearpage

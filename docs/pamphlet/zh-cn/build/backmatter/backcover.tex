@@ -1,0 +1,41 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {不妥协的变革};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {一个不可审查、不可腐蚀的去中心化声誉网络};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      当通信缓慢、决策在地、权威就住在它所统治的同一座城镇里时,国家是奏效的。
+      今天的网络把这三个假设全都颠倒了——建立在其上的机构,再也不适合它们
+      所治理的世界。这本书描述了一件确实合身的工具:一个去中心化的声誉网络,
+      在其中身份归你所有,真相可被公开审计,而贿赂等于声誉上的自杀。
+
+      \smallskip
+      不是一份宣言。不是一个预测。而是一份可运作的蓝图,讲述国家的继任者
+      可以如何被建成——自愿地,一次一份宣告。
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad 布拉格,2026\par
+      \href{https://personix.org}{personix.org}\par
+      依据知识共享 署名-相同方式共享 4.0 国际许可协议
+      (CC BY-SA 4.0) 授权。
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

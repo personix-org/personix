@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {समझौता-रहित परिवर्तन};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {सेंसरशिप-रोधी और भ्रष्टाचार-रोधी विकेंद्रीकृत प्रतिष्ठा नेटवर्क};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      राज्य तब काम करता था जब संचार धीमा था, निर्णय स्थानीय थे, और सत्ता उसी
+      शहर में रहती थी जिस पर वह शासन करती थी। आज के नेटवर्क तीनों धारणाओं को
+      उलट देते हैं --- और उन पर निर्मित संस्थाएँ अब उस संसार से मेल नहीं खातीं
+      जिस पर वे शासन करती हैं। यह पुस्तक एक ऐसे उपकरण का वर्णन करती है जो मेल
+      खाता है: एक विकेंद्रीकृत प्रतिष्ठा नेटवर्क जिसमें पहचान आपकी अपनी रहती है,
+      सत्य सार्वजनिक रूप से लेखा-परीक्षण-योग्य है, और रिश्वतखोरी प्रतिष्ठा की
+      आत्महत्या है।
+
+      \smallskip
+      न कोई घोषणापत्र। न कोई भविष्यवाणी। इस बात का एक कार्यशील खाका कि राज्य
+      का उत्तराधिकारी कैसे बनाया जा सकता है --- स्वेच्छा से, एक-एक घोषणा करके।
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad प्राग, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0) के अंतर्गत लाइसेंस-प्राप्त।
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

@@ -1,0 +1,46 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Kompromissloser Wandel};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Ein unzensierbares und unbestechliches dezentrales Reputationsnetzwerk};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Der Staat funktionierte, als die Kommunikation langsam war, Entscheidungen
+      lokal fielen und die Autorität in derselben Stadt lebte, die sie regierte.
+      Die heutigen Netzwerke kehren alle drei Annahmen um --- und die auf ihnen
+      errichteten Institutionen passen nicht mehr zu der Welt, die sie regieren.
+      Dieses Buch beschreibt ein Werkzeug, das passt:
+      ein dezentrales Reputationsnetzwerk, in dem die Identität dir gehört,
+      die Wahrheit öffentlich prüfbar ist und Bestechung reputationeller
+      Selbstmord ist.
+
+      \smallskip
+      Kein Manifest. Keine Prognose. Ein funktionierender Bauplan dafür, wie sich
+      der Nachfolger des Staates errichten lässt --- freiwillig, eine Erklärung
+      nach der anderen.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Prag, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Lizenziert unter Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

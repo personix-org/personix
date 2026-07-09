@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Ödünsüz Değişim};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Sansürlenemez ve Yozlaştırılamaz Merkeziyetsiz Bir İtibar Ağı};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      Devlet, iletişim yavaşken, kararlar yerelken ve otorite yönettiği
+      kasabada yaşarken işe yaradı. Bugünün ağları bu üç varsayımı da tersine
+      çeviriyor --- ve üzerlerine kurulan kurumlar artık yönettikleri dünyaya
+      uymuyor. Bu kitap uyan bir aracı anlatıyor: kimliğin senin olduğu,
+      gerçeğin kamuya açık biçimde denetlenebildiği ve rüşvetin itibar
+      açısından intihar olduğu merkeziyetsiz bir itibar ağı.
+
+      \smallskip
+      Bir manifesto değil. Bir öngörü değil. Devletin ardılının nasıl inşa
+      edilebileceğine dair işleyen bir plan --- gönüllü olarak, her seferinde
+      bir bildirimle.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Prag, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0) lisansı altındadır.
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

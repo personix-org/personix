@@ -1,0 +1,38 @@
+---
+title: "Glossario"
+part: "Appendix"
+lang: en
+version: v6
+---
+
+# Glossario
+
+| Termine | Italiano | Significato |
+|------|-------|---------|
+| **Authority** | Autorità | Un'entità di fiducia (persona, organizzazione) che verifica le informazioni e vi mette in gioco la propria reputazione. Può essere specializzata (investigativa, giuridica, tecnica). |
+| **Claim** | Reclamo | In generale: qualsiasi affermazione verificabile. Qui: un record pubblicato nella rete di reputazione — un'asserzione su un evento, una proprietà o una relazione, firmata crittograficamente e verificata. Per es. "Sono residente del comune X" o "questa persona ha violato un contratto." |
+| **Compartmentalization** | Compartimentazione | In generale: separare le informazioni in unità isolate così che l'esposizione di un'unità non comprometta le altre. Un principio noto dai servizi di intelligence. Qui: identità DID parallele nelle dittature — la compromissione di una non rivela le altre. |
+| **Consistent Hash Ring** | Anello di hash consistente | Un meccanismo algoritmico per la selezione dei verificatori — una posizione sull'anello è determinata dall'hash del documento DID all'interno del grafo sociale. Garantisce una selezione non deterministica eppure verificabile. |
+| **DID** | DID (Identità decentralizzata) | Un'identità digitale che crei e controlli tu stesso, senza un'autorità centrale. Firmata crittograficamente con la tua chiave privata — nessuno può revocarla o falsificarla. |
+| **DID Document** | Documento DID | Un file di dati disponibile pubblicamente che descrive la tua identità DID — contiene chiavi pubbliche, indirizzi di rete e metadati. Serve a verificare la tua identità nella rete. |
+| **Due Diligence** | Due diligence | In generale: la verifica approfondita di una controparte prima di entrare in un rapporto commerciale o giuridico — controllo della sua storia, delle sue finanze, della sua reputazione e dei suoi rischi. Qui: nella rete di reputazione avviene più rapidamente e più automaticamente grazie alla disponibilità di record verificati. |
+| **Economic Neutrality Principle** | Principio di neutralità economica | Il comportamento onesto nella rete è economicamente prossimo allo zero — i costi di pubblicazione tornano come ricompense per la verifica. Il comportamento disonesto è una perdita netta. |
+| **Emergent** | Emergente | Che sorge spontaneamente dalle interazioni di parti più semplici, senza che nessuno lo progetti o lo diriga. Uno stormo di uccelli vola in formazione senza un piano — la formazione emerge dalle semplici regole seguite da ciascun individuo. |
+| **Emergent Social Contract** | Contratto sociale emergente | Regole di comportamento che sorgono non dall'alto (la legge) ma dal basso — da interazioni ripetute e dal consenso all'interno di una comunità. |
+| **ESR** | Registro Elettronico delle Spese | Un sistema proposto per il tracciamento trasparente delle spese pubbliche — ogni spesa statale realizzata è abbinata a un pagamento pianificato. Ispirato all'EET ceca, ma rivolto contro lo Stato. |
+| **Hash** | Hash (impronta) | In generale: una funzione matematica unidirezionale che produce un'"impronta" unica di lunghezza fissa a partire da qualsiasi input — come l'impronta digitale del documento. Lo stesso input produce sempre lo stesso output, ma l'input non può essere derivato dall'output. Qui: usato per determinare una posizione sull'anello di hash e per verificare l'integrità del documento. |
+| **Just-in-Time Funding** | Finanziamento just-in-time | Finanziamento dello Stato condizionato alla trasparenza — il denaro fluisce solo quando lo Stato accetta l'ESR e abbina le proprie spese. Una leva per costringere alla cooperazione. |
+| **Meritocracy** | Meritocrazia | In generale: un sistema in cui la posizione è determinata dal merito effettivo e dalla capacità dimostrata, non da titoli formali, conoscenze o privilegi ereditati. Qui: la rete di reputazione favorisce naturalmente chi contribuisce in modo dimostrabile alla comunità — la sua voce ha più peso per il track record, non per la carica. |
+| **Onion Gateway** | Onion gateway | L'indirizzo di rete di un'identità DID sulla rete onion. Separato dal documento DID — può essere cambiato senza perdere l'identità (simile a cambiare l'indirizzo IP dietro un dominio). |
+| **Onion Routing** | Onion routing (Tor) | Un protocollo di comunicazione che garantisce l'incensurabilità della rete. I messaggi sono cifrati a strati — ogni nodo toglie uno strato ma non conosce l'intero percorso. |
+| **Oracle Problem** | Problema dell'oracolo | In generale: come garantire che i dati che entrano in un sistema digitale corrispondano fedelmente a ciò che è realmente accaduto nel mondo fisico. Il termine ha origine nel dominio delle blockchain. Qui: affrontato attraverso le autorità che mettono in gioco la propria reputazione come garanzia che un record digitale corrisponda alla realtà fisica. |
+| **Phenomenological** | Fenomenologico | In generale: un approccio che studia i fenomeni così come si manifestano nell'esperienza diretta, osservando ciò che ne consegue, senza teorie pre-date. Qui: la libertà, il contratto sociale e le norme comportamentali sono fenomeni osservati — conseguenze di migliaia di micro-interazioni tra le persone, non principi definiti dall'alto. |
+| **Policy** | Policy (politica) | In generale: un insieme di regole o principi che governano il comportamento in un dato contesto. Qui: ogni partecipante alla rete DID dichiara la propria policy — come reagisce a comportamenti specifici degli altri, quali regole segue e quali pene considera proporzionate. L'aggregato delle policy forma il contratto sociale emergente. |
+| **Proxy** | Proxy | In generale: un sostituto o intermediario — un sistema o un'entità che agisce per conto di un altro. Usato qui in due contesti: (1) l'ESR come proxy che abbina le spese pubbliche ai pagamenti pianificati; (2) gli osservatori come proxy tra pubblicatore e verificatore nel trucco dell'osservatore. |
+| **Publisher** | Pubblicatore | Un partecipante alla rete che crea e pubblica un record (un reclamo su un'ingiustizia, una riparazione, e così via). Sostiene il costo della pubblicazione. |
+| **Reputation-Based Social Network (RSN)** | Rete sociale di reputazione | Una rete sociale decentralizzata in cui i partecipanti si scambiano feedback sul comportamento nel mondo reale. I record sono costosi da creare, economici da leggere. |
+| **Reputation Signal** | Segnale di reputazione | Un singolo record nella rete — positivo (riparazione di un danno, adempimento di un obbligo) o negativo (ingiustizia, inadempimento contrattuale). Cumulativamente, i segnali formano un profilo di reputazione. |
+| **Social Graph** | Grafo sociale | La rete dei tuoi contatti e dei contatti dei tuoi contatti. L'algoritmo cerca i verificatori a una profondità configurabile (per esempio 3 livelli). Nessuna blockchain globale — la rete forma naturalmente comunità con sovrapposizioni. |
+| **Tax Allocation** | Allocazione delle tasse | Un meccanismo tramite cui il contribuente decide dove va parte delle sue tasse. La percentuale allocabile cresce anno dopo anno. |
+| **Track Record** | Track record | In generale: la storia dei risultati passati, dei successi e dei fallimenti di una persona o di un'organizzazione. Qui: la somma di tutte le interazioni passate di una data identità DID nella rete — reclami verificati, record accettati e rifiutati — da cui si deriva la sua reputazione. |
+| **Verifier** | Verificatore | Un partecipante selezionato algoritmicamente per verificare e pubblicare un record. Mette in gioco il proprio buon nome sulla veridicità dell'informazione. |

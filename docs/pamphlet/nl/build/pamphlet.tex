@@ -1,0 +1,369 @@
+\documentclass[11pt,openany]{book}
+
+% --- Geometry: A5 landscape, asymmetric inner/outer for two-page spread ---
+\usepackage[
+  a5paper,landscape,
+  top=14mm,bottom=16mm,inner=15mm,outer=18mm,
+  headsep=4mm,footskip=10mm
+]{geometry}
+
+% --- Fonts (XeLaTeX, macOS system) ---
+\usepackage{fontspec}
+\input{font-setup.tex}
+
+% Palatino lacks some Unicode arrows used in the markdown (→, ↦). Map them to
+% math-mode arrows (rendered by the math font) so they typeset cleanly instead
+% of emitting "Missing character" warnings and dropping the glyph.
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}
+
+% --- Core packages ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{microtype}
+% v6: tighter emergencystretch — fewer "rivers" of whitespace in justified
+% paragraphs at the cost of slightly more hyphenation. With doublehyphendemerits
+% below, the engine still avoids stacked hyphens.
+\setlength{\emergencystretch}{1.5em}
+% v6: paragraph spacing — slightly tighter (was 0.45em). Combined with raggedbottom
+% the page no longer over-stretches when the page is half-full, and the indented
+% paragraph look stays consistent.
+\setlength{\parskip}{0.35em plus 0.15em minus 0.05em}
+% v6: outlaw widows and orphans entirely. Strongest possible penalty so TeX will
+% restripe pages rather than leave a single dangling line of a paragraph stranded
+% at the top of the next page (v5 page 69) or bottom of the previous one.
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+% v6: discourage hyphenation a little (default is 50), and forbid two consecutive
+% hyphenated lines. Reads more naturally in Palatino at this measure.
+\hyphenpenalty=300
+\exhyphenpenalty=300
+\doublehyphendemerits=10000
+% Hyphenation hints for compound technical terms used in the glossary table.
+\hyphenation{Com-part-men-tal-i-za-tion Phe-nom-e-no-log-i-cal Re-pu-ta-tion}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amssymb,amsmath}
+\usepackage{soul}
+% v6: DRAFT watermark — disabled in EN build (CZ build keeps it).
+% Pavel: EN verze stahovaná z webu (personix.org/r/...) je už finální a
+% nemá nést DRAFT stamp; česká je stále draft pro recenzenty, tam zůstává.
+% eso-pic je stále potřeba (\AddToShipoutPicture* se volá jinde v projektu? ne —
+% v EN pamfletu už nikde, takže nevoláme \usepackage{eso-pic} vůbec).
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!50!black,
+  citecolor=black,
+  pdftitle={Personix --- Uncompromising Change},
+  pdfauthor={Pavel Kudrna},
+  pdfsubject={An Uncensorable and Incorruptible Decentralized Reputation Network},
+  pdfkeywords={decentralized identity, reputation network, governance, DID}
+}
+
+% --- Pandoc helpers ---
+\usepackage{calc}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\real}[1]{#1}
+
+% --- Page style: page number in OUTER corner (LE = left even, RO = right odd) ---
+% Standard book convention; less intrusive than centred footer when overlaying graphics.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfootoffset[LE,RO]{8mm}  % push page number toward outer paper edge
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[LE,RO]{\thepage}%
+  \fancyfootoffset[LE,RO]{8mm}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+% --- Paper colour: gentle antique cream pastel ---
+% Slightly less yellow / more neutral than the graphics' own cream, so text
+% pages feel like old paper without competing with the warmer graphic cream.
+\definecolor{papercream}{HTML}{F4ECD6}
+\pagecolor{papercream}
+
+% --- Callout boxes (Obsidian-style note/important/warning/danger/quote/example) ---
+% Rounded full-frame style with a coloured title strip and an icon-style glyph.
+% Slight tinted background, generous padding, sans-serif title in box colour.
+\usepackage[framemethod=tikz]{mdframed}
+
+% Slightly muted, paper-friendly tones (less saturated than pure web colours)
+\definecolor{cbnote}{HTML}{3B82C4}       % slate blue
+\definecolor{cbimportant}{HTML}{C97A1F}  % amber
+\definecolor{cbwarning}{HTML}{A85F1F}    % burnt amber
+\definecolor{cbdanger}{HTML}{B83838}     % muted red
+\definecolor{cbquote}{HTML}{736B5E}      % warm grey
+\definecolor{cbexample}{HTML}{2F8F6A}    % muted green
+\definecolor{cbidea}{HTML}{B58A1F}       % mustard yellow (lightbulb)
+
+\usepackage{needspace}
+% v6 (revised): default callouts are ATOMIC again — splitting a 4–5 line
+% box can leave a title-only first half (Pavel's feedback re: Voluntariness
+% spread). Splitting is opt-in via the cbXxxsplitbox environments (used for
+% long callouts like Incorruptibility), where the title + multiple body
+% lines always fit on the first half.
+% needspace=9 baselines ≈ title row + 5 body lines + padding — covers
+% typical short callouts; if the bottom of the page has less, mdframed
+% defers the whole box. Combined with \raggedbottom this no longer over-
+% stretches the preceding page, but it does leave some bottoms shorter
+% than the figure-and-text rhythm — an acceptable trade-off when the
+% alternative is split-with-title-only.
+\mdfdefinestyle{calloutbase}{%
+  linewidth=0.7pt,
+  roundcorner=5pt,
+  innerleftmargin=14pt,innerrightmargin=14pt,
+  innertopmargin=10pt,innerbottommargin=11pt,
+  skipabove=10pt,skipbelow=10pt,
+  needspace=9\baselineskip,
+  nobreak=true,
+  splittopskip=32pt,splitbottomskip=54pt,
+}
+% v6: toggle helpers retained for backwards compat — \cbatomic forces a single
+% box to refuse breaking (use sparingly for very short emphatic callouts).
+\newcommand{\cballowsplit}{\mdfsetup{nobreak=false}}
+\newcommand{\cbatomic}{\mdfsetup{nobreak=true}}
+% Subdued "continues / continued" overlays + closing borders so each split
+% half looks like a fully framed box. mdframed defaults leave the seam open
+% (no bottomline on first half, no topline on second); we draw thin matching
+% lines manually.
+% In firstextra/secondextra: O = bottom-left, P = top-right of THAT half.
+\newcommand{\cbsplitfirst}[1]{%
+  % close the bottom edge of the top half
+  \draw[line width=0.7pt, color=#1!50] (O) -- (P|-O);
+  % v6: neutral "overleaf" marker — covers the case where the next page is a
+  % full-page figure and the callout actually resumes two pages later.
+  \node[anchor=south east, font=\itshape\small,
+        text=#1!75, inner xsep=14pt, inner ysep=4pt]
+    at (P|-O) {continues overleaf};%
+}
+\newcommand{\cbsplitsecond}[1]{%
+  % close the top edge of the bottom half
+  \draw[line width=0.7pt, color=#1!50] (P-|O) -- (P);
+  \node[anchor=north east, font=\itshape\small,
+        text=#1!75, inner xsep=14pt, inner ysep=4pt]
+    at (P) {continued from overleaf};%
+}
+% Title row: sans-serif, bold, in box colour, with a small dot leader.
+% Whole title (rule + glyph + text) lives inside a raggedright minipage so
+% long titles wrap cleanly. The horizontal divider below uses a leaders-based
+% \hrulefill rather than \rule{\linewidth} — the latter triggered a 17pt
+% overfull \hbox warning on every callout because of color-stack overhead.
+\newcommand{\cbtitle}[3]{%
+  \noindent
+  \begin{minipage}{\linewidth}\raggedright%
+    \textcolor{#1}{\rule[-0.3ex]{2.6ex}{2.6ex}}\hspace{0.6em}%
+    {\sffamily\bfseries\color{#1}\large #3}%
+  \end{minipage}\par
+  \vspace{2pt}%
+  \noindent{\color{#1!40}\leavevmode\leaders\hrule height 0.4pt\hfill\kern0pt}\par
+  \vspace{4pt}%
+}
+% Six concrete environments — each just supplies its colour pair to the macros above
+\newenvironment{cbnotebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbnote!50,backgroundcolor=cbnote!5,
+    firstextra={\cbsplitfirst{cbnote}},secondextra={\cbsplitsecond{cbnote}}]\cbtitle{cbnote}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbimportantbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbimportant!50,backgroundcolor=cbimportant!5,
+    firstextra={\cbsplitfirst{cbimportant}},secondextra={\cbsplitsecond{cbimportant}}]\cbtitle{cbimportant}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbwarningbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+    firstextra={\cbsplitfirst{cbwarning}},secondextra={\cbsplitsecond{cbwarning}}]\cbtitle{cbwarning}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbdangerbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbdanger!50,backgroundcolor=cbdanger!5,
+    firstextra={\cbsplitfirst{cbdanger}},secondextra={\cbsplitsecond{cbdanger}}]\cbtitle{cbdanger}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbquotebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbquote!50,backgroundcolor=cbquote!5,
+    firstextra={\cbsplitfirst{cbquote}},secondextra={\cbsplitsecond{cbquote}}]\cbtitle{cbquote}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbexamplebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbexample!50,backgroundcolor=cbexample!5,
+    firstextra={\cbsplitfirst{cbexample}},secondextra={\cbsplitsecond{cbexample}}]\cbtitle{cbexample}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbideabox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbidea!50,backgroundcolor=cbidea!5,
+    firstextra={\cbsplitfirst{cbidea}},secondextra={\cbsplitsecond{cbidea}}]\cbtitle{cbidea}{}{#1}}
+  {\end{mdframed}}
+
+% Splittable variant of cbimportantbox — used for the oversized Incorruptibility
+% callout that genuinely needs to break across pages. Same visual style as
+% cbimportantbox but with nobreak=false so mdframed splits the box cleanly.
+\newenvironment{cbimportantsplitbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbimportant!50,backgroundcolor=cbimportant!5,
+    firstextra={\cbsplitfirst{cbimportant}},secondextra={\cbsplitsecond{cbimportant}},
+    nobreak=false]\cbtitle{cbimportant}{}{#1}}
+  {\end{mdframed}}
+
+% --- Chapter/section spacing tightened for compact layout ---
+% Chapter heading sits at the top of a fresh page, large but no Huge "Chapter X"
+% vertical fill — text flows immediately under the heading.
+% EN: nečíslované kapitoly — pamflet, ne učebnice.
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries\sffamily}
+  {}{0pt}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{18pt}
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries\sffamily}
+  {\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}[block]
+  {\normalfont\large\bfseries\sffamily}
+  {\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+% EN: nečíslovat nic — pamflet, ne učebnice.
+% Hodnota -1 vypne číslování kapitol i sekcí; ovlivní i TOC (čísla zmizí
+% před názvy kapitol). CZ buildu beze změny — tam zůstávají číslované.
+\setcounter{secnumdepth}{-1}
+
+% --- Full-page figure helper ---
+% v6: graphic is deferred via \afterpage so the *current* text page is allowed
+% to fill before the figure consumes the next page. Without this trick,
+% \clearpage right after the paragraph end forced an early break — a 2- or
+% 3-line tail of the paragraph would be marooned on the page above the figure
+% with 80 % blank below (v5 pages 38, 40, 69, 112 …).
+%
+% Each graphic is full-bleed (the manual GIMP-filled WebP already has A5
+% landscape aspect ratio, so no letterbox). Page numbers are intentionally
+% omitted on figure pages — most graphics carry banner text along the bottom
+% edge that would clash with the numeral. The page counter still advances, so
+% continuous numbering is preserved in the surrounding text pages.
+\usepackage{afterpage}
+% v6: shared low-level macro — drops the figure on the current page.
+% (EN build: bez DRAFT overlay. V CZ buildu je tikz overlay zachovaný.)
+\newcommand{\fullpagefigureNOW}[1]{%
+  \clearpage
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=center, inner sep=0pt] at (current page.center)
+      {\includegraphics[width=\paperwidth,height=\paperheight]{#1}};
+  \end{tikzpicture}%
+  \mbox{}%
+  \clearpage
+}
+% v6 default: defer via \afterpage so the in-progress text page may fill
+% to its natural end before the figure consumes the next page.
+\newcommand{\fullpagefigure}[1]{\afterpage{\fullpagefigureNOW{#1}}}
+% v6 escape hatch: immediate placement, no afterpage. Use this for runs of
+% consecutive figures (e.g. the DID drill-down block) where afterpage queue
+% interactions otherwise inject blank pages between them.
+\newcommand{\fullpagefigureimmediate}[1]{\fullpagefigureNOW{#1}}
+
+% v6: switch from \flushbottom (book class default) to \raggedbottom.
+% Rationale: with the previous nobreak=true callouts, \flushbottom couldn't
+% absorb the resulting half-page voids and the pages still looked half-empty,
+% just with even spacing. Combined with splittable callouts + widow penalties,
+% \raggedbottom now produces text that fills naturally to where the next
+% break is sensible, and the slight unevenness of the bottom margin is the
+% classical book-typography signature of a well-set page.
+\raggedbottom
+
+% --- Document metadata ---
+\title{Personix --- Compromisloze verandering}
+\author{Pavel Kudrna}
+\date{2026-05-06}
+
+% --- Continuous Arabic page numbering (no Roman frontmatter, no reset) ---
+% Override book class \mainmatter / \backmatter so they don't restart the
+% page counter or switch numbering style.
+\makeatletter
+\renewcommand\mainmatter{\clearpage\@mainmattertrue}
+\renewcommand\backmatter{\clearpage\@mainmatterfalse}
+\makeatother
+
+% =========================================================================
+\begin{document}
+
+\frontmatter
+\pagenumbering{arabic}  % arabic numerals throughout — no Roman frontmatter
+\input{frontmatter/title.tex}
+\input{frontmatter/colophon.tex}
+\tableofcontents
+\clearpage
+
+\mainmatter
+
+% --- 1. Introduction ---
+\chapter{Inleiding}
+\input{chapters/intro-a-v4.tex}
+
+% --- 2. Essential Prerequisites for Change ---
+\chapter{Wezenlijke voorwaarden voor verandering}
+\input{chapters/prereq-01.tex}
+
+% --- 3. The Tool ---
+\chapter{Het instrument}
+\input{chapters/tool-01-network.tex}
+% Approved DID drill-down graphics that were never wired into the markdown.
+% Spec frontmatter maps chapter: 03-tool/01-network.md, status: approved.
+% Order: overview (02c1) -> DID document (02d2) -> claim standard (02d3) -> DID policy (02d5).
+% v6: consecutive block — use immediate variant (afterpage queue interactions
+% otherwise inject blank pages between them).
+\fullpagefigureimmediate{figures/v5-02c1-typy-dokumentu.png}
+\fullpagefigureimmediate{figures/v5-02d2-did-document.png}
+\fullpagefigureimmediate{figures/v5-02d3-claim-standard.png}
+\fullpagefigureimmediate{figures/v5-02d5-did-policy.png}
+\input{chapters/tool-02-uncensorability.tex}
+\input{chapters/tool-03-doubts.tex}
+\input{chapters/tool-04-voluntariness.tex}
+\input{chapters/tool-05-switch.tex}
+\input{chapters/tool-06-oracle.tex}
+
+% --- 4. How Verification Works ---
+\chapter{Hoe verificatie werkt}
+\input{chapters/verif-01-consensus.tex}
+\input{chapters/verif-02-roles.tex}
+\input{chapters/verif-03-contract.tex}
+\input{chapters/verif-05-info-sharing.tex}
+
+% --- 5. Crime and Punishment ---
+\chapter{Misdaad en straf}
+\input{chapters/crime-01.tex}
+
+% --- 6. Follow the Money ---
+\chapter{Volg het geld}
+\input{chapters/money-01.tex}
+\input{chapters/money-03-transition.tex}
+
+% --- 7. Conclusion ---
+\chapter{Conclusie}
+\input{chapters/concl-c-fusion.tex}
+\input{chapters/concl-ack.tex}
+\fullpagefigure{figures/v5-zaverecna-citizens-take-back.png}
+
+\input{backmatter/donate.tex}
+
+\backmatter
+
+\chapter{Woordenlijst}
+% v6: glossary table tightened (arraystretch 1.55 → 1.40, tabcolsep 8 → 6 pt)
+% so the 27 entries fit cleanly across 5 full pages instead of 5 full + 1 short
+% tail with only 2 leftover terms.
+\begingroup
+\renewcommand{\arraystretch}{1.40}
+\setlength{\tabcolsep}{6pt}
+\input{chapters/glossary.tex}
+\endgroup
+
+\input{backmatter/production-notes.tex}
+\input{backmatter/backcover.tex}
+
+\end{document}

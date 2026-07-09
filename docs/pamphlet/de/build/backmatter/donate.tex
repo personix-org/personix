@@ -1,0 +1,61 @@
+% Support page — single A5 landscape page: QR codes (left) + disclaimer (right).
+\clearpage
+\thispagestyle{empty}
+
+\begin{center}
+{\Large\sffamily\bfseries Unterstütze das Projekt\par}
+\vspace{0.5mm}
+{\itshape\footnotesize\color{black!60}Personix wird von Lesern wie dir finanziert.\par}
+\end{center}
+
+\vspace{2mm}
+
+% --- Two columns: QR codes on the left, disclaimer on the right ---
+\noindent
+\begin{minipage}[t]{0.36\textwidth}
+\centering
+\vspace{0pt}
+\includegraphics[width=26mm]{figures/bitcoin-onchain-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin on-chain}\\[0.3mm]
+{\ttfamily\tiny bc1q7cctdz6r026dgy06ul94eygg49ujtxnrq5czaj}
+
+\vspace{4mm}
+
+\includegraphics[width=26mm]{figures/bitcoin-lightning-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin Lightning}\\[0.3mm]
+{\ttfamily\tiny LNURL1DP68GURN8GHJ7AMPD3KX2AR0VEEKZ\\AR0WD5XJTNRDAKJ7TNHV4KXCTTTDEHHWM30\\D3H82UNVWQHHXMNP0FA8JMTPVD5XJMN9XUE\\RX55QRQK\par}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.60\textwidth}
+\vspace{0pt}
+% needspace overridden to 4 baselines (vs. 9 default) so the disclaimer can
+% sit next to the QR codes on a single page even with the global parskip.
+\begin{mdframed}[
+  linewidth=0.7pt,roundcorner=5pt,
+  innerleftmargin=10pt,innerrightmargin=10pt,
+  innertopmargin=8pt,innerbottommargin=8pt,
+  skipabove=0pt,skipbelow=0pt,
+  linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+  nobreak=true,
+  needspace=4\baselineskip,
+]
+\cbtitle{cbwarning}{}{Wohin dieses Geld geht \textnormal{\textmd{--- und wohin nicht}}}
+\footnotesize
+Die QR-Codes sind die \textbf{persönlichen Kanäle des Autors} --- Beiträge gehen direkt an Pavel Kudrna und finanzieren weiteres Schreiben, das soziale Experiment / die Simulation und die Öffentlichkeitsarbeit.
+
+\smallskip
+Die \emph{einzigen} legitimen Spendenkanäle für dieses Projekt sind:
+
+\smallskip
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+\item \textbf{Vom Autor autorisierte Ausgaben dieses Buches} --- QR-Codes in vom Autor autorisierten Exemplaren.
+\item \href{https://personix.org}{\textbf{personix.org}} oder der von dort verlinkte Tor-Onion-Spiegel --- wo die \emph{Personix Foundation} für die dort beschriebenen Aktivitäten sammelt. Die Mittel der Foundation werden von den persönlichen Mitteln des Autors getrennt gehalten.
+\end{itemize}
+
+\smallskip
+\textbf{Alles, was anderswo beworben wird} --- ausgetauschte Adressen in Nachdrucken, nachgemachte Domains, soziale Medien, die „für Personix sammeln", Spendenaktionen, die an keine der beiden oben genannten gebunden sind --- \textbf{ist höchstwahrscheinlich Betrug}. Wir meiden den Kryptowährungsmarkt und seine Teilnehmer bewusst.
+\end{mdframed}
+\end{minipage}
+
+\clearpage

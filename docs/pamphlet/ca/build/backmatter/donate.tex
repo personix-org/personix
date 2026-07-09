@@ -1,0 +1,61 @@
+% Support page — single A5 landscape page: QR codes (left) + disclaimer (right).
+\clearpage
+\thispagestyle{empty}
+
+\begin{center}
+{\Large\sffamily\bfseries Dóna suport al projecte\par}
+\vspace{0.5mm}
+{\itshape\footnotesize\color{black!60}Personix es finança amb lectors com tu.\par}
+\end{center}
+
+\vspace{2mm}
+
+% --- Two columns: QR codes on the left, disclaimer on the right ---
+\noindent
+\begin{minipage}[t]{0.36\textwidth}
+\centering
+\vspace{0pt}
+\includegraphics[width=26mm]{figures/bitcoin-onchain-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin on-chain}\\[0.3mm]
+{\ttfamily\tiny bc1q7cctdz6r026dgy06ul94eygg49ujtxnrq5czaj}
+
+\vspace{4mm}
+
+\includegraphics[width=26mm]{figures/bitcoin-lightning-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin Lightning}\\[0.3mm]
+{\ttfamily\tiny LNURL1DP68GURN8GHJ7AMPD3KX2AR0VEEKZ\\AR0WD5XJTNRDAKJ7TNHV4KXCTTTDEHHWM30\\D3H82UNVWQHHXMNP0FA8JMTPVD5XJMN9XUE\\RX55QRQK\par}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.60\textwidth}
+\vspace{0pt}
+% needspace overridden to 4 baselines (vs. 9 default) so the disclaimer can
+% sit next to the QR codes on a single page even with the global parskip.
+\begin{mdframed}[
+  linewidth=0.7pt,roundcorner=5pt,
+  innerleftmargin=10pt,innerrightmargin=10pt,
+  innertopmargin=8pt,innerbottommargin=8pt,
+  skipabove=0pt,skipbelow=0pt,
+  linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+  nobreak=true,
+  needspace=4\baselineskip,
+]
+\cbtitle{cbwarning}{}{On van aquests diners \textnormal{\textmd{--- i on no van}}}
+\footnotesize
+Els codis QR són els \textbf{canals personals de l'autor} --- les contribucions van directament a Pavel Kudrna i financen més escriptura, l'experiment / simulació social i la divulgació.
+
+\smallskip
+Els \emph{únics} canals legítims de captació de fons per a aquest projecte són:
+
+\smallskip
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+\item \textbf{Les edicions d'autor d'aquest llibre} --- codis QR en exemplars autoritzats per l'autor.
+\item \href{https://personix.org}{\textbf{personix.org}} o el seu mirall onion de Tor enllaçat des d'allà --- on la \emph{Fundació Personix} recull fons per a les activitats que s'hi descriuen. Els fons de la Fundació es mantenen separats dels fons personals de l'autor.
+\end{itemize}
+
+\smallskip
+\textbf{Qualsevol cosa anunciada en un altre lloc} --- adreces substituïdes en reimpressions, dominis semblants, «captacions per a Personix» a les xarxes socials, campanyes no lligades a cap de les anteriors --- \textbf{és molt probablement un frau}. Evitem deliberadament el mercat de les criptomonedes i els seus participants.
+\end{mdframed}
+\end{minipage}
+
+\clearpage

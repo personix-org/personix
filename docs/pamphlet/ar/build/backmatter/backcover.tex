@@ -1,0 +1,42 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {تغيير بلا تنازلات};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {شبكة سمعة لامركزية لا يمكن الرقابة عليها ولا إفسادها};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      نجحت الدولة حين كان التواصل بطيئًا، والقرارات محلية، والسلطة تعيش في المدينة
+      نفسها التي تحكمها. أما شبكات اليوم فتقلب هذه الفرضيات الثلاث جميعًا --- ولم تعد
+      المؤسسات المبنية عليها تلائم العالم الذي تحكمه. يصف هذا الكتاب أداة تلائمه:
+      شبكة سمعة لامركزية تبقى فيها الهوية مِلكك، والحقيقة قابلة للتدقيق علنًا،
+      والرشوة انتحار سمعي.
+
+      \smallskip
+      ليس بيانًا حماسيًا. ولا تنبؤًا. بل مخططًا عمليًا لكيفية بناء خليفة الدولة ---
+      طوعًا، إعلانًا تلو إعلان.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad براغ، 2026\par
+      \href{https://personix.org}{personix.org}\par
+      مرخّص بموجب Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

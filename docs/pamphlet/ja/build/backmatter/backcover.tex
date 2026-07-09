@@ -1,0 +1,43 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {妥協なき変革};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {検閲不能かつ買収不能な分散型評判ネットワーク};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      国家は、通信が遅く、決定がローカルで、権威が自らの治める町と同じ町に
+      住んでいたときには機能した。今日のネットワークはその三つの前提を
+      すべて反転させる --- そしてそれらの上に築かれた諸制度は、もはや
+      自らが統治する世界に合わなくなっている。この本は、実際に合うツールを
+      記述する。アイデンティティは自分のものとして保て、真実は公に監査可能で、
+      賄賂は評判上の自殺行為となる、分散型評判ネットワークである。
+
+      \smallskip
+      マニフェストではない。予測でもない。国家の後継をどう築けるかについての
+      実用的な設計図である --- 自発的に、一つの宣言から。
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad プラハ、2026\par
+      \href{https://personix.org}{personix.org}\par
+      クリエイティブ・コモンズ 表示-継承 4.0 国際
+      （CC BY-SA 4.0）のもとでライセンスされる。
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

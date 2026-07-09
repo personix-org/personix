@@ -1,0 +1,43 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {การเปลี่ยนแปลงที่ไม่ยอมประนีประนอม};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {เครือข่ายชื่อเสียงแบบกระจายศูนย์ที่ปิดกั้นไม่ได้และซื้อไม่ได้};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      รัฐทำงานได้ในเวลาที่การสื่อสารเชื่องช้า การตัดสินใจเป็นเรื่องท้องถิ่น และ
+      อำนาจอาศัยอยู่ในเมืองเดียวกับที่มันปกครอง เครือข่ายในทุกวันนี้พลิกกลับ
+      สมมติฐานทั้งสามข้อ --- และสถาบันที่สร้างบนสมมติฐานเหล่านั้นก็ไม่เข้ากับ
+      โลกที่มันปกครองอีกต่อไป หนังสือเล่มนี้บรรยายเครื่องมือที่เข้ากันได้ คือ
+      เครือข่ายชื่อเสียงแบบกระจายศูนย์ที่ตัวตนเป็นของคุณให้เก็บไว้เอง
+      ความจริงตรวจสอบได้ต่อสาธารณะ และการติดสินบนคือการฆ่าตัวตายทางชื่อเสียง
+
+      \smallskip
+      ไม่ใช่แถลงการณ์ ไม่ใช่คำพยากรณ์ เป็นพิมพ์เขียวที่ใช้งานได้จริงว่าผู้สืบทอด
+      ของรัฐจะสร้างขึ้นได้อย่างไร --- โดยสมัครใจ ทีละคำประกาศ
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad กรุงปราก, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      อนุญาตให้ใช้ภายใต้ Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0)
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

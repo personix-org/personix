@@ -1,0 +1,45 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Mudança Sem Concessões};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Uma Rede de Reputação Descentralizada Incensurável e Incorruptível};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      O estado funcionava quando a comunicação era lenta, as decisões eram
+      locais e a autoridade vivia na mesma cidade que governava. As redes de
+      hoje invertem os três pressupostos --- e as instituições construídas
+      sobre eles já não se ajustam ao mundo que governam. Este livro descreve
+      uma ferramenta que se ajusta: uma rede de reputação descentralizada em
+      que a identidade é sua para guardar, a verdade é publicamente auditável
+      e o suborno é um suicídio reputacional.
+
+      \smallskip
+      Não um manifesto. Não uma previsão. Um plano de trabalho de como o
+      sucessor do estado pode ser construído --- voluntariamente, uma
+      declaração de cada vez.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Praga, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Licenciado sob Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

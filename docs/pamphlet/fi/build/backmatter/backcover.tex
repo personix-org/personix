@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Uncompromising Change};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {An Uncensorable and Incorruptible Decentralized Reputation Network};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      The state worked when communication was slow, decisions were local, and
+      authority lived in the same town it ruled. Today's networks invert all
+      three assumptions --- and the institutions built on them no longer fit
+      the world they govern. This book describes a tool that does fit:
+      a decentralized reputation network in which identity is yours to keep,
+      truth is publicly auditable, and bribery is reputational suicide.
+
+      \smallskip
+      Not a manifesto. Not a forecast. A working blueprint for how the
+      successor to the state can be built --- voluntarily, one declaration
+      at a time.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Praha, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Licensed under Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

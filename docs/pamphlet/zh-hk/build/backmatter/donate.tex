@@ -1,0 +1,61 @@
+% Support page — single A5 landscape page: QR codes (left) + disclaimer (right).
+\clearpage
+\thispagestyle{empty}
+
+\begin{center}
+{\Large\sffamily\bfseries Support the Project\par}
+\vspace{0.5mm}
+{\itshape\footnotesize\color{black!60}Personix is funded by readers like you.\par}
+\end{center}
+
+\vspace{2mm}
+
+% --- Two columns: QR codes on the left, disclaimer on the right ---
+\noindent
+\begin{minipage}[t]{0.36\textwidth}
+\centering
+\vspace{0pt}
+\includegraphics[width=26mm]{figures/bitcoin-onchain-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin on-chain}\\[0.3mm]
+{\ttfamily\tiny bc1q7cctdz6r026dgy06ul94eygg49ujtxnrq5czaj}
+
+\vspace{4mm}
+
+\includegraphics[width=26mm]{figures/bitcoin-lightning-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin Lightning}\\[0.3mm]
+{\ttfamily\tiny LNURL1DP68GURN8GHJ7AMPD3KX2AR0VEEKZ\\AR0WD5XJTNRDAKJ7TNHV4KXCTTTDEHHWM30\\D3H82UNVWQHHXMNP0FA8JMTPVD5XJMN9XUE\\RX55QRQK\par}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.60\textwidth}
+\vspace{0pt}
+% needspace overridden to 4 baselines (vs. 9 default) so the disclaimer can
+% sit next to the QR codes on a single page even with the global parskip.
+\begin{mdframed}[
+  linewidth=0.7pt,roundcorner=5pt,
+  innerleftmargin=10pt,innerrightmargin=10pt,
+  innertopmargin=8pt,innerbottommargin=8pt,
+  skipabove=0pt,skipbelow=0pt,
+  linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+  nobreak=true,
+  needspace=4\baselineskip,
+]
+\cbtitle{cbwarning}{}{Where this money goes \textnormal{\textmd{--- and where it does not}}}
+\footnotesize
+The QR codes are the \textbf{author's personal channels} --- contributions go directly to Pavel Kudrna and fund further writing, the social experiment / simulation, and outreach.
+
+\smallskip
+The \emph{only} legitimate fundraising channels for this project are:
+
+\smallskip
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+\item \textbf{Author's editions of this book} --- QR codes in copies authorised by the author.
+\item \href{https://personix.org}{\textbf{personix.org}} or its Tor onion mirror linked from there --- where the \emph{Personix Foundation} collects for the activities described there. Foundation funds are kept separate from the author's personal funds.
+\end{itemize}
+
+\smallskip
+\textbf{Anything advertised elsewhere} --- substituted addresses in reprints, lookalike domains, social media ``raising for Personix,'' fundraisers not tied to either of the above --- \textbf{is most likely fraud}. We deliberately avoid the cryptocurrency market and its participants.
+\end{mdframed}
+\end{minipage}
+
+\clearpage

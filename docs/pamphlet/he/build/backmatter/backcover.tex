@@ -1,0 +1,44 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {שינוי ללא פשרות};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {רשת מוניטין מבוזרת שאי אפשר לצנזר ואי אפשר לשחד};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      המדינה עבדה כשהתקשורת הייתה אטית, ההחלטות היו מקומיות, והסמכות
+      חיה באותה עיר שבה שלטה. רשתות ימינו הופכות את כל שלוש
+      ההנחות --- והמוסדות הבנויים עליהן כבר אינם מתאימים
+      לעולם שבו הם שולטים. הספר הזה מתאר כלי שכן מתאים:
+      רשת מוניטין מבוזרת שבה הזהות שלך לשמור,
+      האמת ניתנת לביקורת פומבית, והשוחד הוא התאבדות מבחינת המוניטין.
+
+      \smallskip
+      לא מניפסט. לא תחזית. שרטוט עבודה לכך כיצד אפשר לבנות
+      את יורשת המדינה --- מרצון, הצהרה אחת
+      בכל פעם.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad פראג, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      מופץ תחת רישיון Creative Commons Attribution-ShareAlike 4.0 International
+      (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

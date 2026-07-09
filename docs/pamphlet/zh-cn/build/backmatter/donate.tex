@@ -1,0 +1,61 @@
+% Support page — single A5 landscape page: QR codes (left) + disclaimer (right).
+\clearpage
+\thispagestyle{empty}
+
+\begin{center}
+{\Large\sffamily\bfseries 支持这个项目\par}
+\vspace{0.5mm}
+{\itshape\footnotesize\color{black!60}Personix 由像你一样的读者资助。\par}
+\end{center}
+
+\vspace{2mm}
+
+% --- Two columns: QR codes on the left, disclaimer on the right ---
+\noindent
+\begin{minipage}[t]{0.36\textwidth}
+\centering
+\vspace{0pt}
+\includegraphics[width=26mm]{figures/bitcoin-onchain-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin 链上}\\[0.3mm]
+{\ttfamily\tiny bc1q7cctdz6r026dgy06ul94eygg49ujtxnrq5czaj}
+
+\vspace{4mm}
+
+\includegraphics[width=26mm]{figures/bitcoin-lightning-qr.png}\\[0.8mm]
+{\sffamily\bfseries\footnotesize Bitcoin Lightning}\\[0.3mm]
+{\ttfamily\tiny LNURL1DP68GURN8GHJ7AMPD3KX2AR0VEEKZ\\AR0WD5XJTNRDAKJ7TNHV4KXCTTTDEHHWM30\\D3H82UNVWQHHXMNP0FA8JMTPVD5XJMN9XUE\\RX55QRQK\par}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.60\textwidth}
+\vspace{0pt}
+% needspace overridden to 4 baselines (vs. 9 default) so the disclaimer can
+% sit next to the QR codes on a single page even with the global parskip.
+\begin{mdframed}[
+  linewidth=0.7pt,roundcorner=5pt,
+  innerleftmargin=10pt,innerrightmargin=10pt,
+  innertopmargin=8pt,innerbottommargin=8pt,
+  skipabove=0pt,skipbelow=0pt,
+  linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+  nobreak=true,
+  needspace=4\baselineskip,
+]
+\cbtitle{cbwarning}{}{这笔钱去往何处 \textnormal{\textmd{--- 以及不去往何处}}}
+\footnotesize
+这些二维码是\textbf{作者的个人渠道}——捐款直接进入 Pavel Kudrna,资助进一步的写作、社会实验/模拟以及对外推广。
+
+\smallskip
+本项目\emph{唯一}正当的筹款渠道是:
+
+\smallskip
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+\item \textbf{本书由作者授权的版本}——由作者授权的副本中所含的二维码。
+\item \href{https://personix.org}{\textbf{personix.org}} 或从那里链接的 Tor 洋葱镜像——\emph{Personix 基金会}在那里为其所述的各项活动筹款。基金会的资金与作者的个人资金分开保管。
+\end{itemize}
+
+\smallskip
+\textbf{在其他任何地方宣传的东西}——再版中被替换的地址、以假乱真的域名、社交媒体上的"为 Personix 募款"、与上述两者都无关的筹款——\textbf{极有可能是诈骗}。我们刻意回避加密货币市场及其参与者。
+\end{mdframed}
+\end{minipage}
+
+\clearpage

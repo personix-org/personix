@@ -1,0 +1,45 @@
+% --- Back cover ---
+% Large PERSONIX wordmark, no logo image. Cream paper inherited globally.
+% Absolute (tikz overlay) positioning so the footer sticks to the bottom.
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % --- Wordmark ---
+  \node[anchor=north, font=\sffamily\bfseries\fontsize{48}{52}\selectfont]
+    at ([yshift=-26mm]current page.north) {PERSONIX};
+  \node[anchor=north, font=\rmfamily\itshape\large]
+    at ([yshift=-44mm]current page.north) {Cambio sin concesiones};
+  \node[anchor=north, font=\rmfamily\small,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=-54mm]current page.north)
+    {Una red de reputación descentralizada, incensurable e incorruptible};
+  % --- Body ---
+  \node[anchor=north, text width=\paperwidth-50mm, align=justify, font=\small]
+    at ([yshift=-72mm]current page.north)
+    {%
+      El Estado funcionaba cuando la comunicación era lenta, las decisiones eran
+      locales, y la autoridad vivía en la misma ciudad que gobernaba. Las redes
+      de hoy invierten los tres supuestos, y las instituciones construidas sobre
+      ellos ya no encajan en el mundo que gobiernan. Este libro describe una
+      herramienta que sí encaja: una red de reputación descentralizada en la que
+      la identidad es tuya y la conservas, la verdad es públicamente auditable, y
+      el soborno es un suicidio reputacional.
+
+      \smallskip
+      No es un manifiesto. No es un pronóstico. Es un plano de trabajo de cómo
+      puede construirse el sucesor del Estado, de forma voluntaria, una
+      declaración cada vez.
+    };
+  % --- Footer (anchored to the bottom of the page) ---
+  \node[anchor=south, font=\sffamily\footnotesize,
+        text width=\paperwidth-50mm, align=center]
+    at ([yshift=12mm]current page.south)
+    {%
+      Pavel Kudrna\quad\textbullet\quad Praga, 2026\par
+      \href{https://personix.org}{personix.org}\par
+      Publicado bajo licencia Creative Commons Attribution-ShareAlike 4.0
+      International (CC BY-SA 4.0).
+    };
+\end{tikzpicture}%
+\mbox{}%
+\clearpage

@@ -1,0 +1,358 @@
+% =========================================================================
+% PRINT VARIANT of pamphlet.tex — for the printer (PDF for offset/digital).
+%
+% This is a SEPARATE copy of pamphlet.tex on purpose: the screen master stays
+% untouched. The *content* is shared — both masters \input the same generated
+% chapters/ and frontmatter/backmatter — so editing the markdown propagates to
+% both. Only the PRINT-SPECIFIC preamble differs (this file's top block).
+%
+% If you ever change the chapter structure or preamble in pamphlet.tex, port
+% the relevant change here too. Built via: ./build.sh --print
+%
+% Printer strategy chosen: "safe frame" (varianta B) — nothing runs to the cut
+% edge. Full-page images are shrunk and centred on the cream background, so an
+% imperfect trim always cuts into cream, never into the image. Page numbers are
+% pulled inward. A 3 mm bleed is still added to the media box (cream fills it),
+% so the PDF is also safe if the printer's workflow expects bleed.
+%
+% --- TUNABLE PRINT CONSTANTS (adjust to the printer's spec) ---------------
+%   Bleed        : 3 mm  → media box = A5 landscape trim (210×148) + 3 mm/side
+%                          = 216 × 154 mm. Set in \geometry below + \bleedlen.
+%   Image frame  : \figframelen (cream margin of full-page images, from TRIM)
+%   Page-number  : footer offset 3 mm (screen uses 8 mm → pulled 5 mm inward)
+%   Font size    : Palatino Scale=1.05 (≈ 11.5 pt — "a touch larger" per printer)
+% -------------------------------------------------------------------------
+% openright: chapters start on a recto (right-hand) page, as a book is normally
+% typeset. LaTeX auto-inserts a blank verso (vakát) before a chapter that would
+% otherwise land on a verso — counted into the page total below.
+\documentclass[11pt,openright]{book}
+
+% Marker so shared \input files (e.g. frontmatter/title.tex) can branch on the
+% print build without the screen master needing any change.
+\def\printmode{}
+
+% Bleed + image-frame lengths (used by \geometry comment + \fullpagefigure).
+\newlength{\bleedlen}\setlength{\bleedlen}{3mm}
+\newlength{\figframelen}\setlength{\figframelen}{5mm}
+
+% --- Geometry: A5 landscape TRIM 210×148 + 3 mm bleed → media 216×154 mm ---
+% Margins = screen margins (top14/bottom16/inner15/outer18) + 3 mm bleed, so
+% the text block sits exactly as far from the TRIM edge as in the screen build.
+\usepackage[
+  paperwidth=216mm,paperheight=154mm,
+  top=17mm,bottom=19mm,inner=18mm,outer=21mm,
+  headsep=4mm,footskip=10mm
+]{geometry}
+
+% --- Fonts (XeLaTeX, macOS system) ---
+% Print: Palatino scaled to 1.05 (≈ 11.5 pt) — printer found 11 pt a touch small.
+\usepackage{fontspec}
+\setmainfont[Scale=1.05]{Palatino}
+\setsansfont[Scale=1.05]{Helvetica Neue}
+\setmonofont[Scale=1.05]{Menlo}
+
+% Palatino lacks some Unicode arrows used in the markdown (→, ↦). Map them to
+% math-mode arrows (rendered by the math font) so they typeset cleanly instead
+% of emitting "Missing character" warnings and dropping the glyph.
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}
+
+% --- Core packages ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{microtype}
+\setlength{\emergencystretch}{1.5em}
+\setlength{\parskip}{0.35em plus 0.15em minus 0.05em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\hyphenpenalty=300
+\exhyphenpenalty=300
+\doublehyphendemerits=10000
+\hyphenation{Com-part-men-tal-i-za-tion Phe-nom-e-no-log-i-cal Re-pu-ta-tion}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amssymb,amsmath}
+\usepackage{soul}
+\usepackage{xstring}  % parse figure basename to look up its per-figure bg colour
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!50!black,
+  citecolor=black,
+  pdftitle={Personix --- Brezkompromisna sprememba},
+  pdfauthor={Pavel Kudrna},
+  pdfsubject={Necenzurljivo in nepodkupljivo decentralizirano reputacijsko omrežje},
+  pdfkeywords={decentralizirana identiteta, reputacijsko omrežje, upravljanje, DID}
+}
+
+% --- Pandoc helpers ---
+\usepackage{calc}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\real}[1]{#1}
+
+% --- Page style: page number in OUTER corner, pulled INWARD for print ---
+% Screen build offsets the numeral 8 mm toward the outer edge; print pulls it
+% 5 mm back (→ 3 mm) so the trim never clips it.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfootoffset[LE,RO]{3mm}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[LE,RO]{\thepage}%
+  \fancyfootoffset[LE,RO]{3mm}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+% --- Paper colour: gentle antique cream pastel (fills bleed too) ---
+\definecolor{papercream}{HTML}{F4ECD6}
+\pagecolor{papercream}
+% Per-figure background colours (generated by figure-bgcolors.py during build).
+% Lets each full-page figure's safe frame match the image's own background
+% instead of the global papercream. Absent for plain `tectonic pamphlet-print`
+% runs — \fullpagefigureNOW falls back to papercream then.
+\IfFileExists{figbg.tex}{\input{figbg.tex}}{}
+
+% --- Callout boxes (Obsidian-style note/important/warning/danger/quote/example) ---
+\usepackage[framemethod=tikz]{mdframed}
+
+\definecolor{cbnote}{HTML}{3B82C4}
+\definecolor{cbimportant}{HTML}{C97A1F}
+\definecolor{cbwarning}{HTML}{A85F1F}
+\definecolor{cbdanger}{HTML}{B83838}
+\definecolor{cbquote}{HTML}{736B5E}
+\definecolor{cbexample}{HTML}{2F8F6A}
+\definecolor{cbidea}{HTML}{B58A1F}
+
+\usepackage{needspace}
+\mdfdefinestyle{calloutbase}{%
+  linewidth=0.7pt,
+  roundcorner=5pt,
+  innerleftmargin=14pt,innerrightmargin=14pt,
+  innertopmargin=10pt,innerbottommargin=11pt,
+  skipabove=10pt,skipbelow=10pt,
+  needspace=9\baselineskip,
+  nobreak=true,
+  splittopskip=32pt,splitbottomskip=54pt,
+}
+\newcommand{\cballowsplit}{\mdfsetup{nobreak=false}}
+\newcommand{\cbatomic}{\mdfsetup{nobreak=true}}
+\newcommand{\cbsplitfirst}[1]{%
+  \draw[line width=0.7pt, color=#1!50] (O) -- (P|-O);
+  \node[anchor=south east, font=\itshape\small,
+        text=#1!75, inner xsep=14pt, inner ysep=4pt]
+    at (P|-O) {continues overleaf};%
+}
+\newcommand{\cbsplitsecond}[1]{%
+  \draw[line width=0.7pt, color=#1!50] (P-|O) -- (P);
+  \node[anchor=north east, font=\itshape\small,
+        text=#1!75, inner xsep=14pt, inner ysep=4pt]
+    at (P) {continued from overleaf};%
+}
+\newcommand{\cbtitle}[3]{%
+  \noindent
+  \begin{minipage}{\linewidth}\raggedright%
+    \textcolor{#1}{\rule[-0.3ex]{2.6ex}{2.6ex}}\hspace{0.6em}%
+    {\sffamily\bfseries\color{#1}\large #3}%
+  \end{minipage}\par
+  \vspace{2pt}%
+  \noindent{\color{#1!40}\leavevmode\leaders\hrule height 0.4pt\hfill\kern0pt}\par
+  \vspace{4pt}%
+}
+\newenvironment{cbnotebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbnote!50,backgroundcolor=cbnote!5,
+    firstextra={\cbsplitfirst{cbnote}},secondextra={\cbsplitsecond{cbnote}}]\cbtitle{cbnote}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbimportantbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbimportant!50,backgroundcolor=cbimportant!5,
+    firstextra={\cbsplitfirst{cbimportant}},secondextra={\cbsplitsecond{cbimportant}}]\cbtitle{cbimportant}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbwarningbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbwarning!50,backgroundcolor=cbwarning!5,
+    firstextra={\cbsplitfirst{cbwarning}},secondextra={\cbsplitsecond{cbwarning}}]\cbtitle{cbwarning}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbdangerbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbdanger!50,backgroundcolor=cbdanger!5,
+    firstextra={\cbsplitfirst{cbdanger}},secondextra={\cbsplitsecond{cbdanger}}]\cbtitle{cbdanger}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbquotebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbquote!50,backgroundcolor=cbquote!5,
+    firstextra={\cbsplitfirst{cbquote}},secondextra={\cbsplitsecond{cbquote}}]\cbtitle{cbquote}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbexamplebox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbexample!50,backgroundcolor=cbexample!5,
+    firstextra={\cbsplitfirst{cbexample}},secondextra={\cbsplitsecond{cbexample}}]\cbtitle{cbexample}{}{#1}}
+  {\end{mdframed}}
+\newenvironment{cbideabox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbidea!50,backgroundcolor=cbidea!5,
+    firstextra={\cbsplitfirst{cbidea}},secondextra={\cbsplitsecond{cbidea}}]\cbtitle{cbidea}{}{#1}}
+  {\end{mdframed}}
+
+\newenvironment{cbimportantsplitbox}[1]
+  {\begin{mdframed}[style=calloutbase,linecolor=cbimportant!50,backgroundcolor=cbimportant!5,
+    firstextra={\cbsplitfirst{cbimportant}},secondextra={\cbsplitsecond{cbimportant}},
+    nobreak=false]\cbtitle{cbimportant}{}{#1}}
+  {\end{mdframed}}
+
+% --- Chapter/section spacing tightened for compact layout ---
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries\sffamily}
+  {}{0pt}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{18pt}
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries\sffamily}
+  {\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}[block]
+  {\normalfont\large\bfseries\sffamily}
+  {\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+\setcounter{secnumdepth}{-1}
+
+% --- Full-page figure helper (PRINT: safe frame, not full-bleed) ---
+% Image is shrunk to leave a cream frame of \figframelen from the TRIM edge on
+% the long side; aspect ratio preserved and centred on the page, so the trim
+% always cuts cream. The safe-frame page colour is tinted to THIS figure's own
+% background (figbg@<basename>, from figbg.tex) so the frame blends with the
+% image instead of clashing with the cooler global papercream; restored to
+% papercream afterwards for the text pages. Page numbers omitted on figure
+% pages (graphics carry their own banner text); the counter still advances.
+% PRINT (spadačka + soft edge): full-page graphic keeps its ratio, is shrunk to
+% leave a ≥5 mm margin to the trim on every side, centred. The margin (and the
+% 3 mm bleed) is tinted to that figure's CONTACT-EDGE colour (figbg@<basename>),
+% and the figure's own edge is feathered into that tint (figures-bleed/ version),
+% so the join blends with no seam. Content stays crisp; papercream restored after.
+\usepackage{afterpage}
+\newcommand{\fullpagefigureNOW}[1]{%
+  \clearpage
+  \thispagestyle{empty}%
+  \StrBehind{#1}{/}[\fpffile]%
+  \StrBefore{\fpffile}{.png}[\fpfbase]%
+  \ifcsname figbgset@\fpfbase\endcsname
+    \edef\fpfcol{figbg@\fpfbase}%
+    \expandafter\pagecolor\expandafter{\fpfcol}%
+  \else
+    \pagecolor{papercream}%
+  \fi
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=center, inner sep=0pt] at (current page.center)
+      {\IfFileExists{figures-bleed/\fpffile}%
+        {\includegraphics[width=\dimexpr\paperwidth-2\bleedlen-2\figframelen\relax,height=\dimexpr\paperheight-2\bleedlen-2\figframelen\relax,keepaspectratio]{figures-bleed/\fpffile}}%
+        {\includegraphics[width=\dimexpr\paperwidth-2\bleedlen-2\figframelen\relax,height=\dimexpr\paperheight-2\bleedlen-2\figframelen\relax,keepaspectratio]{#1}}};
+  \end{tikzpicture}%
+  \mbox{}%
+  \clearpage
+  \pagecolor{papercream}% restore for following text pages
+}
+\newcommand{\fullpagefigure}[1]{\afterpage{\fullpagefigureNOW{#1}}}
+\newcommand{\fullpagefigureimmediate}[1]{\fullpagefigureNOW{#1}}
+
+\raggedbottom
+
+% --- Document metadata ---
+\title{Personix --- Brezkompromisna sprememba}
+\author{Pavel Kudrna}
+\date{2026-05-06}
+
+\makeatletter
+\renewcommand\mainmatter{\clearpage\@mainmattertrue}
+\renewcommand\backmatter{\clearpage\@mainmatterfalse}
+\makeatother
+
+% =========================================================================
+\begin{document}
+
+\frontmatter
+\pagenumbering{arabic}
+% PRINT interior: graphic cover lives in the separate cover PDF, so the book
+% block opens with a typeset title page (recto) + tiráž/imprint on its verso.
+\input{frontmatter/title-print.tex}
+\input{frontmatter/colophon.tex}
+\cleardoublepage  % TOC starts on a recto
+\tableofcontents
+\clearpage
+
+\mainmatter
+
+% --- 1. Introduction ---
+\chapter{Uvod}
+\input{chapters/intro-a-v4.tex}
+
+% --- 2. Essential Prerequisites for Change ---
+\chapter{Nujni predpogoji za spremembo}
+\input{chapters/prereq-01.tex}
+
+% --- 3. The Tool ---
+\chapter{Orodje}
+\input{chapters/tool-01-network.tex}
+\fullpagefigureimmediate{figures/v5-02c1-typy-dokumentu.png}
+\fullpagefigureimmediate{figures/v5-02d2-did-document.png}
+\fullpagefigureimmediate{figures/v5-02d3-claim-standard.png}
+\fullpagefigureimmediate{figures/v5-02d5-did-policy.png}
+\input{chapters/tool-02-uncensorability.tex}
+\input{chapters/tool-03-doubts.tex}
+\input{chapters/tool-04-voluntariness.tex}
+\input{chapters/tool-05-switch.tex}
+\input{chapters/tool-06-oracle.tex}
+
+% --- 4. How Verification Works ---
+\chapter{Kako deluje preverjanje}
+\input{chapters/verif-01-consensus.tex}
+\input{chapters/verif-02-roles.tex}
+\input{chapters/verif-03-contract.tex}
+\input{chapters/verif-05-info-sharing.tex}
+
+% --- 5. Crime and Punishment ---
+\chapter{Zločin in kazen}
+\input{chapters/crime-01.tex}
+
+% --- 6. Follow the Money ---
+\chapter{Sledi denarju}
+\input{chapters/money-01.tex}
+\input{chapters/money-03-transition.tex}
+
+% --- 7. Conclusion ---
+\chapter{Sklep}
+\input{chapters/concl-c-fusion.tex}
+\input{chapters/concl-ack.tex}
+\fullpagefigure{figures/v5-zaverecna-citizens-take-back.png}
+
+\input{backmatter/donate.tex}
+
+\backmatter
+
+\chapter{Glosar}
+\begingroup
+\renewcommand{\arraystretch}{1.40}
+\setlength{\tabcolsep}{6pt}
+\input{chapters/glossary.tex}
+\endgroup
+
+\input{backmatter/production-notes.tex}
+% Graphic back cover is produced in the SEPARATE cover PDF (front+spine+back),
+% so it is NOT part of the interior book block.
+
+% --- Vakáty: pad the interior to a multiple of 4 pages ---------------------
+% The book block must have a page count divisible by 4 for binding. After the
+% first compile we know the count; \vakat adds one blank (unnumbered) leaf-page.
+% Set \vakatcount to (4 - pages mod 4) mod 4.  (filled in after first compile)
+\newcommand{\vakat}{\clearpage\thispagestyle{empty}\null\clearpage}
+\newcounter{vakatcount}\setcounter{vakatcount}{1}  % 159 -> 160 pp = 80 leaves (÷4 OK)
+\loop\ifnum\value{vakatcount}>0
+  \vakat\addtocounter{vakatcount}{-1}
+\repeat
+
+\end{document}

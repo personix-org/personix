@@ -1,0 +1,23 @@
+% --- Internal text title page (PRINT interior only) ---
+% The printed book splits cover and interior into two PDFs: the graphic cover
+% (front + spine + back) is produced separately, so the interior book block
+% opens with this typeset title page instead of the cover image.
+%   recto (this page): title / subtitle / author
+%   verso (next page): colophon = tiráž (imprint), via colophon.tex
+% Used only by pamphlet-print.tex; the screen master keeps the graphic cover.
+\thispagestyle{empty}
+\vspace*{\stretch{2}}
+\begin{center}
+  {\sffamily\bfseries\fontsize{34}{40}\selectfont PERSONIX\par}
+  \vspace{2.2em}
+  {\rmfamily\large Нецензурируема и неподкупна\\[0.25em]
+   децентрализирана репутационна мрежа\par}
+\end{center}
+\vspace*{\stretch{3}}
+\begin{center}
+  {\rmfamily\Large Pavel Kudrna\par}
+  \vspace{0.45em}
+  {\rmfamily\small Прага\quad\textbullet\quad 2026\par}
+\end{center}
+\vspace*{\stretch{1}}
+\clearpage
