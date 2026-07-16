@@ -293,18 +293,6 @@
   "bbox": [
    707,
    326,
-   1150,
-   472
-  ],
-  "angle": 0,
-  "joined": false
- },
- {
-  "text": "I'll keep two for the things only I can speak to. The rest — handle them for me.",
-  "role": "caption",
-  "bbox": [
-   1121,
-   383,
    1281,
    477
   ],

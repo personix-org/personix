@@ -101,7 +101,7 @@
   "bbox": [
    1300,
    1009,
-   1606,
+   1862,
    1176
   ],
   "angle": 0,
@@ -271,18 +271,6 @@
    959,
    2181,
    1077
-  ],
-  "angle": 0,
-  "joined": false
- },
- {
-  "text": "someone is keeping a record of what i do here? i don't know — so i behave.",
-  "role": "caption",
-  "bbox": [
-   1574,
-   1011,
-   1862,
-   1072
   ],
   "angle": 0,
   "joined": false

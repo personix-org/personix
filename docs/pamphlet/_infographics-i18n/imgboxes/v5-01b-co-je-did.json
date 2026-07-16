@@ -161,8 +161,8 @@
   "bbox": [
    198,
    319,
-   685,
-   377
+   690,
+   450
   ],
   "angle": 0,
   "joined": false
@@ -297,18 +297,6 @@
    1519
   ],
   "angle": -16.7,
-  "joined": false
- },
- {
-  "text": "PRIVATE KEY — signs on your behalf. Only you hold this. Never share.",
-  "role": "caption",
-  "bbox": [
-   363,
-   369,
-   690,
-   450
-  ],
-  "angle": 0,
   "joined": false
  }
 ]

@@ -1,0 +1,18 @@
+{
+  "_comment": "Ruční barva podkladu pro hrstku boxů, kde automat nedosáhne. Klíč = obrázek → původní anglický text → RGB. Tyhle rámečky jsou obtažené natěsno kolem SVĚTLÉHO štítku (cedule, plaketa, štítek kazety), takže do výřezu spadne i tmavé okolí a početnější třída = okolí, ne podklad. Preferovat světlou třídu globálně nelze — jinde jsou legitimně tmavé podklady se světlým písmem a sebralo by to barvu písma. Barvy odečtené ze světlé třídy daného výřezu a zkontrolované okem.",
+  "v5-04b-centralizace-vs-decentralizace": {
+    "RECENT": [205, 176, 140]
+  },
+  "v5-06-prepinac-svoboda-totalita": {
+    "SNEEZED IN PUBLIC": [214, 210, 202]
+  },
+  "v5-06b-kulturni-variace": {
+    "NORTH AMERICA — 2 RECORDS / YEAR — HIGH PRIVACY": [242, 223, 192]
+  },
+  "v5-08c-role-issuer": {
+    "AUDIO CASSETTE": [249, 245, 236]
+  },
+  "v5-11b-esr-detail": {
+    "PENDING": [226, 199, 152]
+  }
+}

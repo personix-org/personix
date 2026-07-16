@@ -21,45 +21,123 @@ DARK = (26, 20, 15, 255)      # titulkový podklad (plná krytí — originál m
 LIGHT = (250, 245, 235, 255)  # barva písma
 PAD = 8                       # rezerva boxu kolem textu
 
-# ADAPTIVNÍ PODKLAD: místo tmavého boxu vezmi barvu okolí, ať titulek splyne s grafikou.
-# Vzorkuje se PRSTENEC KOLEM boxu — uvnitř je originální text, ten by medián zkreslil.
-# Když je okolí členité (kresba, přechod), barva se stejně netrefí → zůstane tmavý box.
+# ADAPTIVNÍ PODKLAD: místo tmavého boxu vezmi barvu podkladu, ať titulek splyne s grafikou.
+#
+# Vzorkuje se VNITŘEK boxu. Originální text tam sice je, ale zabírá menšinu plochy —
+# a dominantní barva je přesně ta statistika, kterou menšina nepřeváží. Vnitřek navíc
+# vrací barvu přímo pod titulkem. (Dřív se bral prstenec kolem boxu, aby se text
+# „obešel" — jenže prstenec zavadí o obrys bubliny nebo kresbu a barvu to zkreslí víc
+# než text uvnitř. Změřeno na 1618 boxech: vnitřek trefí 89 %, prstenec 79 %.)
+#
+# Dominanta, ne medián: pár procent cizích pixelů medián s rozptylovým prahem přehodilo
+# na tmavý box, i když pod ním byla čistá bílá. Gate = jaký podíl plochy dominanta
+# pokrývá; na kresbě žádná barva nepřeváží → přiznaný tmavý box.
 ADAPTIVE = os.environ.get("ADAPTIVE", "1") != "0"
-RING = 10          # šířka vzorkovaného prstence vně boxu
-VAR_MAX = 72       # nad tímto rozptylem okolí považuj podklad za členitý → tmavý box
+RING = 10          # šířka prstence vně boxu (záloha, když vnitřek nevyjde)
+TOL = 28           # tolerance kolem barvy podkladu (co ještě počítat jako „stejná barva")
+# Práh posazený do MEZERY v rozdělení (pět nejhorších boxů má 0,14–0,18, pak skok na 0,23;
+# medián je 0,70). Kdyby seděl uprostřed masy, o barvě rozhoduje šum a dvě stejné cedule
+# vedle sebe vyjdou každá jinak. Takhle propadne jen skutečná kresba — 5 boxů z 1618.
+COVER_MIN = 0.20   # pod touhle jednolitostí je podklad členitý → tmavý box
 LUMA_MID = 140     # jas, pod kterým sázíme světlé písmo (a nad ním tmavé)
 
-def _stats(base, x0, y0, x1, y1):
-    """Medián barvy a rozptyl v prstenci kolem boxu (bez vnitřku, kde je originál)."""
+def _inside_px(base, x0, y0, x1, y1, ang=0):
+    """Pixely vnitřku boxu (originální text je menšina, podklad neovlivní).
+
+    U natočeného rámečku se musí vzorkovat natočený obdélník, ne jeho vodorovný
+    obal — do toho spadne kus okolní kresby (u svislé cedule na koši třeba celá
+    drátěná mřížka) a podklad by z toho vyšel úplně mimo.
+    """
+    W, H = base.size
+    if ang:
+        cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+        w, h = x1 - x0, y1 - y0
+        d = int(math.hypot(w, h)) + 4
+        sq = base.crop((int(cx - d/2), int(cy - d/2), int(cx + d/2), int(cy + d/2)))
+        sq = sq.rotate(ang, resample=Image.BICUBIC)   # srovnej rámeček do vodorovna
+        m = sq.width / 2
+        box = (int(m - w/2), int(m - h/2), int(m + w/2), int(m + h/2))
+        if box[2] - box[0] < 3 or box[3] - box[1] < 3: return []
+        return list(sq.crop(box).convert("RGB").getdata())
+    a, b = max(0, int(x0)), max(0, int(y0))
+    c, d = min(W, int(x1)), min(H, int(y1))
+    if c - a < 3 or d - b < 3: return []
+    return list(base.crop((a, b, c, d)).convert("RGB").getdata())
+
+def _ring_px(base, x0, y0, x1, y1):
+    """Pixely prstence kolem boxu — záloha, když vnitřek nepřeváží (těsný box)."""
     W, H = base.size
     ox0, oy0 = max(0, int(x0) - RING), max(0, int(y0) - RING)
     ox1, oy1 = min(W, int(x1) + RING), min(H, int(y1) + RING)
-    if ox1 - ox0 < 3 or oy1 - oy0 < 3: return None, 999
+    if ox1 - ox0 < 3 or oy1 - oy0 < 3: return []
     outer = base.crop((ox0, oy0, ox1, oy1)).convert("RGB")
     px = list(outer.getdata())
     iw, ih = outer.size
-    # vyřízni vnitřek (originální text) — ber jen prstenec
     ix0, iy0 = int(x0) - ox0, int(y0) - oy0
     ix1, iy1 = int(x1) - ox0, int(y1) - oy0
-    ring = [px[y*iw + x] for y in range(ih) for x in range(iw)
+    return [px[y*iw + x] for y in range(ih) for x in range(iw)
             if not (ix0 <= x < ix1 and iy0 <= y < iy1)]
-    if len(ring) < 12: return None, 999
-    ring.sort(key=lambda c: c[0]*0.299 + c[1]*0.587 + c[2]*0.114)
-    med = ring[len(ring)//2]
-    lum = [c[0]*0.299 + c[1]*0.587 + c[2]*0.114 for c in ring]
-    mean = sum(lum) / len(lum)
-    var = (sum((l - mean)**2 for l in lum) / len(lum)) ** 0.5
-    return med, var
 
-def plate(base, x0, y0, x1, y1):
+def _dominant(px):
+    """(barva podkladu, jak je jednolitý 0–1) — text z výřezu odfiltruje prahem.
+
+    Hledat jeden nejčastější odstín nestačí: podklad bývá stínovaný (sloup, pás),
+    takže se v histogramu roztříští na desítky odstínů a žádný nepřeváží. Text je
+    ale vůči podkladu vždycky vysoce kontrastní, takže stačí rozdělit pixely jasem
+    na dvě třídy (Otsu) a vzít tu početnější — ta je podklad i s texturou.
+    Jednolitost = jak málo ta třída sama kolísá; kresba kolísá hodně → tmavý box.
+    """
+    if len(px) < 12: return None, 0.0
+    lum = [c[0]*0.299 + c[1]*0.587 + c[2]*0.114 for c in px]
+    hist = [0]*256
+    for l in lum: hist[int(l)] += 1
+    tot = len(lum); sm = sum(i*hist[i] for i in range(256))
+    best, thr, wB, sB = -1.0, 128, 0, 0.0
+    for t in range(256):
+        wB += hist[t]
+        if wB == 0: continue
+        wF = tot - wB
+        if wF == 0: break
+        sB += t * hist[t]
+        mB, mF = sB/wB, (sm - sB)/wF
+        var = wB * wF * (mB - mF) ** 2      # mezitřídní rozptyl
+        if var > best: best, thr = var, t
+    bg = [c for c, l in zip(px, lum) if l > thr]
+    if len(bg) < len(px) / 2:               # početnější třída je podklad
+        bg = [c for c, l in zip(px, lum) if l <= thr]
+    if len(bg) < 8: return None, 0.0
+    # Barvu ber z MEDIÁNU té třídy a započítej jen pixely kolem něj: samotná třída
+    # do sebe nabere i obrys cedule a stín, a průměr přes ně by barvu stáhl jinam.
+    med = tuple(sorted(c[i] for c in bg)[len(bg)//2] for i in range(3))
+    near = [c for c in px if all(abs(c[i] - med[i]) <= TOL for i in range(3))]
+    if len(near) < 8: return None, 0.0
+    col = tuple(int(sum(c[i] for c in near) / len(near)) for i in range(3))
+    return col, len(near) / len(px)         # jednolitost = podíl plochy držící podklad
+
+def _ink(col):
+    """Barva písma podle jasu podkladu."""
+    lum = col[0]*0.299 + col[1]*0.587 + col[2]*0.114
+    return (20, 16, 12, 255) if lum >= LUMA_MID else LIGHT
+
+# Ruční barvy pro hrstku boxů, kde automat nedosáhne (viz komentář v plate_overrides.json).
+try:
+    OVERRIDES = json.load(open(f"{BK}/plate_overrides.json"))
+except Exception:
+    OVERRIDES = {}
+
+def plate(base, x0, y0, x1, y1, ang=0, img=None, text=None):
     """Vrať (barva podkladu, barva písma) pro titulek na této pozici."""
     if not ADAPTIVE: return DARK, LIGHT
-    med, var = _stats(base, x0, y0, x1, y1)
-    if med is None or var > VAR_MAX:
-        return DARK, LIGHT          # členité okolí → přiznaný tmavý titulek
-    lum = med[0]*0.299 + med[1]*0.587 + med[2]*0.114
-    ink = (20, 16, 12, 255) if lum >= LUMA_MID else LIGHT
-    return (med[0], med[1], med[2], 255), ink
+    ov = OVERRIDES.get(img, {}).get(text) if img else None
+    if ov:
+        col = tuple(ov)
+        return col + (255,), _ink(col)
+    col, cover = _dominant(_inside_px(base, x0, y0, x1, y1, ang))
+    if col is None or cover < COVER_MIN:   # box natěsno kolem textu → zkus okolí
+        col, cover = _dominant(_ring_px(base, x0, y0, x1, y1))
+    if col is None or cover < COVER_MIN:
+        return DARK, LIGHT                 # členitý podklad → přiznaný tmavý titulek
+    return (col[0], col[1], col[2], 255), _ink(col)
 
 SYS = "/System/Library/Fonts"
 FONTS = {
@@ -176,6 +254,20 @@ def wrap(d, text, f, maxw, lang):
 
 MIN_SZ = 6    # dolní mez čitelnosti; delší jazyky se vejdou zmenšením písma, box se NEMĚNÍ
 
+def ink_extent(d, lines, f, lh):
+    """Svislé hranice SKUTEČNÉHO tisku bloku řádků (ne nominální obálky písma).
+
+    Nominální výška řádku je u některých písem hodně vedle skutečných glyfů —
+    arabština a hebrejština sedí v řádku níž a přetečou dolů, i když podle
+    čísel se vejdou. Proto se měří i sází podle inkoustu, ne podle obálky.
+    """
+    tops, bots = [], []
+    for i, ln in enumerate(lines):
+        bb = d.textbbox((0, i*lh), ln, font=f)
+        tops.append(bb[1]); bots.append(bb[3])
+    if not tops: return 0, 0
+    return min(tops), max(bots)
+
 def fit_box(d, text, lang, bw, bh):
     """Najdi největší písmo, aby se (zalomený) text vešel do rámečku.
     Rámeček je daný ručně a NEMĚNÍ se — přizpůsobuje se písmo (nutný kompromis
@@ -187,7 +279,9 @@ def fit_box(d, text, lang, bw, bh):
         if any(measure(d, l, f, lang) > bw for l in lines): continue
         for lead in (1.18, 1.08, 1.0):     # postupně stahuj řádkování, ať smíš zůstat větší
             lh = max(1, int(sz * lead))
-            if lh * len(lines) <= bh:
+            if lh * len(lines) > bh: continue
+            top, bot = ink_extent(d, lines, f, lh)
+            if bot - top <= bh:            # musí se vejít i SKUTEČNÝ tisk, nejen obálka
                 return f, lines, lh, lh*len(lines)
     f = font(lang, MIN_SZ)
     lines = wrap(d, text, f, bw, lang)
@@ -221,7 +315,11 @@ def draw_rect(base, b, txt, lang, phase, colors=(DARK, LIGHT)):
     if phase == "bg":
         td.rounded_rectangle([0, 0, TW-1, TH-1], radius=min(12, TH//2), fill=PLATE)
     else:
-        ty = (TH - lh*len(lines)) / 2
+        # Centruj podle SKUTEČNÉHO tisku, ne podle nominální obálky písma: u arabštiny
+        # a hebrejštiny sedí glyfy v řádku níž, takže centrování podle obálky vysadí
+        # ink pod spodní hranu rámečku (a u boxů dole i mimo obrázek).
+        top, bot = ink_extent(td, lines, f, lh)
+        ty = (TH - (bot - top)) / 2 - top
         for i, ln in enumerate(lines):
             tw = measure(td, ln, f, lang)
             draw_line(td, ((TW - tw)/2, ty + i*lh), ln, f, lang, INK)
@@ -311,10 +409,12 @@ def render(img_name, lang, trans):
         if b.get("path"):
             xs = [p[0] for p in b["path"]]; ys = [p[1] for p in b["path"]]
             th = int(b.get("thickness", 60))
-            colors.append(plate(base, min(xs)-th/2, min(ys)-th/2, max(xs)+th/2, max(ys)+th/2))
+            colors.append(plate(base, min(xs)-th/2, min(ys)-th/2, max(xs)+th/2, max(ys)+th/2,
+                                0, img_name, b["text"]))
         else:
             x0, y0, x1, y1 = b["bbox"]
-            colors.append(plate(base, min(x0,x1), min(y0,y1), max(x0,x1), max(y0,y1)))
+            colors.append(plate(base, min(x0,x1), min(y0,y1), max(x0,x1), max(y0,y1),
+                                b.get("angle", 0) or 0, img_name, b["text"]))
     # DVĚ FÁZE: nejdřív všechny podklady, pak všechny texty.
     # Jinak by box souseda (rámečky se často dotýkají) přebil už vysazený text.
     for phase in ("bg", "tx"):
