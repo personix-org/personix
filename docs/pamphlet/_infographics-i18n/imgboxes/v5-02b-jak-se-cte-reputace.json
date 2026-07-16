@@ -1,0 +1,206 @@
+[
+ {
+  "text": "HOW TO READ REPUTATION",
+  "role": "title",
+  "bbox": [
+   34,
+   30,
+   2509,
+   205
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "INFORMED DECISION",
+  "role": "label",
+  "bbox": [
+   210,
+   224,
+   1081,
+   350
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION CARD",
+  "role": "label",
+  "bbox": [
+   661,
+   371,
+   924,
+   477
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Paid invoices on time",
+  "role": "body",
+  "bbox": [
+   569,
+   564,
+   870,
+   614
+  ],
+  "angle": 1,
+  "joined": false
+ },
+ {
+  "text": "Honored warranty 2024",
+  "role": "body",
+  "bbox": [
+   572,
+   617,
+   909,
+   665
+  ],
+  "angle": 2.1,
+  "joined": false
+ },
+ {
+  "text": "Late payment 2023 — resolved",
+  "role": "body",
+  "bbox": [
+   567,
+   671,
+   920,
+   715
+  ],
+  "angle": 3.2,
+  "joined": false
+ },
+ {
+  "text": "VIEW: Trade credit reliability",
+  "role": "label",
+  "bbox": [
+   557,
+   731,
+   873,
+   777
+  ],
+  "angle": 2.1,
+  "joined": false
+ },
+ {
+  "text": "She knows who she is dealing with.",
+  "role": "caption",
+  "bbox": [
+   236,
+   1513,
+   1057,
+   1594
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BLIND TRUST",
+  "role": "label",
+  "bbox": [
+   1616,
+   232,
+   2203,
+   364
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Looks fine, I guess?",
+  "role": "body",
+  "bbox": [
+   1761,
+   422,
+   1997,
+   548
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNPAID INVOICES",
+  "role": "label",
+  "bbox": [
+   1884,
+   1269,
+   2041,
+   1321
+  ],
+  "angle": -20.9,
+  "joined": false
+ },
+ {
+  "text": "LATE PAYMENTS",
+  "role": "label",
+  "bbox": [
+   2259,
+   1102,
+   2386,
+   1173
+  ],
+  "angle": 18.4,
+  "joined": false
+ },
+ {
+  "text": "He has no idea who he is dealing with.",
+  "role": "caption",
+  "bbox": [
+   1437,
+   1507,
+   2359,
+   1597
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BEFORE YOU EXTEND CREDIT. BEFORE YOU SIGN. BEFORE YOU TRUST.",
+  "role": "tagline",
+  "bbox": [
+   31,
+   1592,
+   2511,
+   1701
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "contract",
+  "role": "custom",
+  "bbox": [
+   1809,
+   1031,
+   1935,
+   1077
+  ],
+  "angle": -31.8,
+  "joined": false
+ },
+ {
+  "text": "CONTRACT",
+  "role": "label",
+  "bbox": [
+   546,
+   998,
+   642,
+   1044
+  ],
+  "angle": -17,
+  "joined": false
+ },
+ {
+  "text": "INVOICE",
+  "role": "label",
+  "bbox": [
+   520,
+   1088,
+   582,
+   1130
+  ],
+  "angle": -26,
+  "joined": false
+ }
+]

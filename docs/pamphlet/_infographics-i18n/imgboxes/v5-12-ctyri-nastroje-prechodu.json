@@ -1,0 +1,434 @@
+[
+ {
+  "text": "FOUR TOOLS OF EVOLUTIONARY TRANSITION",
+  "role": "title",
+  "bbox": [
+   87,
+   37,
+   2394,
+   166
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the system rebuilt from inside — without breaking it.",
+  "role": "caption",
+  "bbox": [
+   469,
+   166,
+   1996,
+   233
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SIMPLE TAX",
+  "role": "label",
+  "bbox": [
+   199,
+   292,
+   478,
+   359
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ESR — ELECTRONIC SPENDING REPORTING",
+  "role": "label",
+  "bbox": [
+   699,
+   287,
+   1182,
+   406
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CITIZEN TAX ALLOCATION",
+  "role": "label",
+  "bbox": [
+   1271,
+   298,
+   1799,
+   349
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NEGOTIATION PLATFORM",
+  "role": "label",
+  "bbox": [
+   1874,
+   298,
+   2395,
+   359
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FLAT % RATE",
+  "role": "label",
+  "bbox": [
+   303,
+   511,
+   469,
+   555
+  ],
+  "angle": 8.1,
+  "joined": false
+ },
+ {
+  "text": "PLAN",
+  "role": "label",
+  "bbox": [
+   743,
+   469,
+   853,
+   510
+  ],
+  "angle": -8,
+  "joined": false
+ },
+ {
+  "text": "REALITY",
+  "role": "label",
+  "bbox": [
+   965,
+   447,
+   1123,
+   486
+  ],
+  "angle": -8.3,
+  "joined": false
+ },
+ {
+  "text": "LEDGER",
+  "role": "label",
+  "bbox": [
+   751,
+   525,
+   845,
+   556
+  ],
+  "angle": -4.7,
+  "joined": false
+ },
+ {
+  "text": "REALITY",
+  "role": "label",
+  "bbox": [
+   982,
+   502,
+   1096,
+   538
+  ],
+  "angle": -8.3,
+  "joined": false
+ },
+ {
+  "text": "5% → 15% → 40%",
+  "role": "label",
+  "bbox": [
+   1292,
+   402,
+   1767,
+   458
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YEAR 1 → YEAR 5 → YEAR 10",
+  "role": "label",
+  "bbox": [
+   1286,
+   454,
+   1778,
+   503
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EDUCATION",
+  "role": "label",
+  "bbox": [
+   1276,
+   513,
+   1463,
+   562
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "30%",
+  "role": "label",
+  "bbox": [
+   1708,
+   560,
+   1783,
+   598
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HEALTHCARE",
+  "role": "label",
+  "bbox": [
+   1277,
+   600,
+   1490,
+   645
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "25%",
+  "role": "label",
+  "bbox": [
+   1706,
+   632,
+   1785,
+   681
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DEFENSE",
+  "role": "label",
+  "bbox": [
+   1276,
+   677,
+   1425,
+   724
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "10%",
+  "role": "label",
+  "bbox": [
+   1710,
+   712,
+   1788,
+   771
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "INFRASTRUCTURE",
+  "role": "label",
+  "bbox": [
+   1274,
+   763,
+   1566,
+   805
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "20%",
+  "role": "label",
+  "bbox": [
+   1708,
+   801,
+   1788,
+   848
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SOCIAL SERVICES",
+  "role": "label",
+  "bbox": [
+   1271,
+   848,
+   1562,
+   890
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "15%",
+  "role": "label",
+  "bbox": [
+   1711,
+   887,
+   1787,
+   942
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "10% of GDP — critical mass",
+  "role": "label",
+  "bbox": [
+   2236,
+   625,
+   2412,
+   748
+  ],
+  "angle": -7.9,
+  "joined": false
+ },
+ {
+  "text": "one rate. no breaks. cross-checkable.",
+  "role": "caption",
+  "bbox": [
+   141,
+   989,
+   541,
+   1095
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every expenditure recorded — every record public — every detail open.",
+  "role": "caption",
+  "bbox": [
+   664,
+   969,
+   1205,
+   1111
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "study the records — then move the sliders.",
+  "role": "caption",
+  "bbox": [
+   1319,
+   981,
+   1752,
+   1084
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "money flows only when transparency conditions are met.",
+  "role": "caption",
+  "bbox": [
+   1892,
+   967,
+   2357,
+   1106
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "today",
+  "role": "label",
+  "bbox": [
+   57,
+   1147,
+   208,
+   1207
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "evolution under way",
+  "role": "label",
+  "bbox": [
+   1033,
+   1140,
+   1475,
+   1207
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "in a decade",
+  "role": "label",
+  "bbox": [
+   1887,
+   1140,
+   2152,
+   1198
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "95%",
+  "role": "label",
+  "bbox": [
+   721,
+   1232,
+   835,
+   1289
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "expanding",
+  "role": "label",
+  "bbox": [
+   1799,
+   1237,
+   2027,
+   1282
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's it is — only the tools are now in citizen. no revolution. just better incentives.",
+  "role": "label",
+  "bbox": [
+   1701,
+   1395,
+   2089,
+   1631
+  ],
+  "angle": -3.5,
+  "joined": false
+ },
+ {
+  "text": "Evolution, not revolution.",
+  "role": "tagline",
+  "bbox": [
+   526,
+   1401,
+   1639,
+   1537
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "four tools that change the system from inside.",
+  "role": "tagline",
+  "bbox": [
+   525,
+   1547,
+   1636,
+   1619
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

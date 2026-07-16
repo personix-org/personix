@@ -1,0 +1,266 @@
+[
+ {
+  "text": "THE PROVIDER — RUNS A CLAIM-SIGNING SERVICE",
+  "role": "title",
+  "bbox": [
+   36,
+   32,
+   2475,
+   152
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PUBLISHED STANDARDS · PUBLISHED PRICES",
+  "role": "caption",
+  "bbox": [
+   53,
+   145,
+   1250,
+   214
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PROVIDER",
+  "role": "label",
+  "bbox": [
+   1099,
+   291,
+   1424,
+   369
+  ],
+  "angle": 1.9,
+  "joined": false
+ },
+ {
+  "text": "STANDARDS",
+  "role": "label",
+  "bbox": [
+   844,
+   419,
+   1214,
+   496
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "What real-world evidence I require",
+  "role": "label",
+  "bbox": [
+   874,
+   496,
+   1185,
+   577
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— eyewitness accounts",
+  "role": "body",
+  "bbox": [
+   834,
+   594,
+   1193,
+   631
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— photographs and receipts",
+  "role": "body",
+  "bbox": [
+   836,
+   635,
+   1242,
+   673
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— signed statements from third parties",
+  "role": "body",
+  "bbox": [
+   836,
+   678,
+   1235,
+   758
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— official records",
+  "role": "body",
+  "bbox": [
+   832,
+   764,
+   1224,
+   816
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PRICES",
+  "role": "label",
+  "bbox": [
+   1395,
+   431,
+   1618,
+   506
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Based on your reputation",
+  "role": "label",
+  "bbox": [
+   1316,
+   501,
+   1689,
+   565
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— good standing: from 50",
+  "role": "body",
+  "bbox": [
+   1305,
+   580,
+   1692,
+   625
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— neutral: from 90",
+  "role": "body",
+  "bbox": [
+   1298,
+   629,
+   1690,
+   665
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— low reputation: from 180",
+  "role": "body",
+  "bbox": [
+   1288,
+   673,
+   1703,
+   723
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— rush service: ×2",
+  "role": "body",
+  "bbox": [
+   1300,
+   727,
+   1639,
+   773
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PREPAID PLAN — FIELD INVESTIGATOR INCLUDED",
+  "role": "label",
+  "bbox": [
+   1109,
+   1351,
+   1281,
+   1410
+  ],
+  "angle": 32.2,
+  "joined": false
+ },
+ {
+  "text": "This is what happened to me. I need a signed claim about it.",
+  "role": "body",
+  "bbox": [
+   119,
+   1016,
+   476,
+   1218
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "We won't leave you hanging. Bring witnesses, photos, anything you've got. And under your prepaid plan I'll send a field investigator out to the scene — we'll piece it together.",
+  "role": "body",
+  "bbox": [
+   1037,
+   834,
+   1682,
+   1087
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "He sets the rules in advance, sells subscriptions, dispatches investigators — and lives or dies by his reputation.",
+  "role": "body",
+  "bbox": [
+   1890,
+   168,
+   2437,
+   362
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Bound by what they publicly declare. Reputation does the rest.",
+  "role": "tagline",
+  "bbox": [
+   298,
+   1511,
+   2236,
+   1602
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* The provider also has their own policy — when they accept, when they reject, how they refund. It is published, but it is not the main story here.",
+  "role": "caption",
+  "bbox": [
+   62,
+   1611,
+   2488,
+   1684
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SAMPLE CLAIM",
+  "role": "label",
+  "bbox": [
+   1498,
+   1248,
+   1602,
+   1310
+  ],
+  "angle": 32,
+  "joined": false
+ }
+]

@@ -1,0 +1,110 @@
+[
+ {
+  "text": "TWO PATHS — THE STATE CLOSES, THE NETWORK OPENS",
+  "role": "title",
+  "bbox": [
+   31,
+   30,
+   2487,
+   156
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE REPUTATION NETWORK",
+  "role": "label",
+  "bbox": [
+   273,
+   218,
+   1027,
+   300
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE STATE",
+  "role": "label",
+  "bbox": [
+   1799,
+   231,
+   2107,
+   297
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STATE BUDGET",
+  "role": "label",
+  "bbox": [
+   1904,
+   870,
+   2012,
+   929
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DOING NOTHING IS CHOOSING THE RIGHT DOOR.",
+  "role": "label",
+  "bbox": [
+   1051,
+   421,
+   1443,
+   600
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Every regime ends the same. The only choice is to step left.",
+  "role": "caption",
+  "bbox": [
+   662,
+   1450,
+   1880,
+   1543
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the gate is still closing. the other door is still open.",
+  "role": "body",
+  "bbox": [
+   2005,
+   1157,
+   2258,
+   1283
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "pick one — or the choice picks you.",
+  "role": "body",
+  "bbox": [
+   2217,
+   1400,
+   2413,
+   1524
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE STATE CLOSES BY DEFAULT. THE NETWORK OPENS BY CHOICE.",
+  "role": "title",
+  "bbox": [
+   53,
+   1567,
+   2480,
+   1673
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

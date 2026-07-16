@@ -1,0 +1,62 @@
+[
+ {
+  "text": "TAKE BACK YOUR TIME",
+  "role": "title",
+  "bbox": [
+   20,
+   13,
+   744,
+   83
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the citizens chase the parasites out of public life.",
+  "role": "tagline",
+  "bbox": [
+   23,
+   78,
+   691,
+   116
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the network's armoury",
+  "role": "label",
+  "bbox": [
+   138,
+   270,
+   345,
+   303
+  ],
+  "angle": -20.6,
+  "joined": false
+ },
+ {
+  "text": "Defend the time they would steal.",
+  "role": "title",
+  "bbox": [
+   12,
+   783,
+   665,
+   844
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "what was taken by deceit is taken back by hand.",
+  "role": "caption",
+  "bbox": [
+   672,
+   805,
+   1245,
+   841
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

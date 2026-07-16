@@ -1,0 +1,158 @@
+[
+ {
+  "text": "PREREQUISITE 3 OF 5: RESILIENCE",
+  "role": "title",
+  "bbox": [
+   27,
+   8,
+   1612,
+   119
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHERE IS THIS PERSON?",
+  "role": "caption",
+  "bbox": [
+   380,
+   494,
+   647,
+   594
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "He cannot search from the outside.",
+  "role": "caption",
+  "bbox": [
+   196,
+   1507,
+   1047,
+   1574
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "INTERNET",
+  "role": "label",
+  "bbox": [
+   1302,
+   966,
+   1492,
+   1031
+  ],
+  "angle": -5.6,
+  "joined": false
+ },
+ {
+  "text": "ECONOMY",
+  "role": "label",
+  "bbox": [
+   1759,
+   407,
+   2067,
+   486
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OH.",
+  "role": "caption",
+  "bbox": [
+   2065,
+   705,
+   2159,
+   781
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MUST HAVE KEY. MUST EARN REPUTATION.",
+  "role": "label",
+  "bbox": [
+   614,
+   1107,
+   846,
+   1229
+  ],
+  "angle": 4.7,
+  "joined": false
+ },
+ {
+  "text": "HE CAN'T REACH IN. HE CAN'T CUT OUT.",
+  "role": "caption",
+  "bbox": [
+   1522,
+   1282,
+   1718,
+   1454
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Pull the plug — crush yourself.",
+  "role": "caption",
+  "bbox": [
+   1568,
+   1499,
+   2313,
+   1577
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NO PERMISSION TO ASK FOR. NO PLUG TO PULL.",
+  "role": "tagline",
+  "bbox": [
+   253,
+   1586,
+   2272,
+   1697
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "onion",
+  "role": "custom",
+  "bbox": [
+   250,
+   217,
+   513,
+   309
+  ],
+  "angle": -25.6,
+  "joined": false
+ },
+ {
+  "text": "tor",
+  "role": "custom",
+  "bbox": [
+   549,
+   153,
+   726,
+   232
+  ],
+  "angle": -2.4,
+  "joined": false
+ },
+ {
+  "text": "mixnet",
+  "role": "custom",
+  "bbox": [
+   760,
+   213,
+   1085,
+   311
+  ],
+  "angle": 21.9,
+  "joined": false
+ }
+]

@@ -1,0 +1,386 @@
+[
+ {
+  "text": "LEFT SHORE — ‘THE OLD SYSTEM’",
+  "role": "label",
+  "bbox": [
+   67,
+   45,
+   779,
+   107
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "GDP",
+  "role": "label",
+  "bbox": [
+   1025,
+   48,
+   1123,
+   101
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NATIONAL DEBT",
+  "role": "label",
+  "bbox": [
+   1328,
+   41,
+   1615,
+   98
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RIGHT SHORE — ‘THE NEW SYSTEM’",
+  "role": "label",
+  "bbox": [
+   1742,
+   46,
+   2478,
+   103
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST 3 — YEAR 5",
+  "role": "label",
+  "bbox": [
+   1149,
+   507,
+   1390,
+   559
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YEAR  YEAR  YEAR  10%",
+  "role": "label",
+  "bbox": [
+   910,
+   271,
+   1254,
+   309
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YEAR  YEAR  YEAR  10+",
+  "role": "label",
+  "bbox": [
+   1300,
+   273,
+   1641,
+   317
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "50 %",
+  "role": "label",
+  "bbox": [
+   1171,
+   568,
+   1250,
+   608
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "50 %",
+  "role": "label",
+  "bbox": [
+   1283,
+   563,
+   1371,
+   615
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST 2 — YEAR 2",
+  "role": "label",
+  "bbox": [
+   838,
+   589,
+   1058,
+   629
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "80 %",
+  "role": "label",
+  "bbox": [
+   879,
+   639,
+   956,
+   684
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "20 %",
+  "role": "label",
+  "bbox": [
+   989,
+   697,
+   1054,
+   730
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST 4 — YEAR 8",
+  "role": "label",
+  "bbox": [
+   1491,
+   610,
+   1723,
+   649
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "25 %",
+  "role": "label",
+  "bbox": [
+   1503,
+   658,
+   1575,
+   703
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "75 %",
+  "role": "label",
+  "bbox": [
+   1603,
+   663,
+   1697,
+   711
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST 1 — YEAR 0",
+  "role": "label",
+  "bbox": [
+   516,
+   737,
+   738,
+   776
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "95 %",
+  "role": "label",
+  "bbox": [
+   562,
+   782,
+   655,
+   830
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5 %",
+  "role": "label",
+  "bbox": [
+   684,
+   838,
+   736,
+   874
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST 5 — YEAR 10+",
+  "role": "label",
+  "bbox": [
+   1821,
+   739,
+   2045,
+   771
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5 %",
+  "role": "label",
+  "bbox": [
+   1828,
+   783,
+   1883,
+   835
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "95 %",
+  "role": "label",
+  "bbox": [
+   1919,
+   787,
+   2000,
+   837
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID",
+  "role": "label",
+  "bbox": [
+   473,
+   905,
+   518,
+   933
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID",
+  "role": "label",
+  "bbox": [
+   555,
+   905,
+   600,
+   936
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CRITICAL MASS — STATE ACCEPTS ESR UNDER ECONOMIC PRESSURE.",
+  "role": "label",
+  "bbox": [
+   1015,
+   1019,
+   1555,
+   1107
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REVERSE",
+  "role": "label",
+  "bbox": [
+   1218,
+   1150,
+   1340,
+   1186
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Launch. Early adopters. Waiting list forms.",
+  "role": "caption",
+  "bbox": [
+   506,
+   1217,
+   753,
+   1330
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Growing. Participant list swells.",
+  "role": "caption",
+  "bbox": [
+   843,
+   1217,
+   1006,
+   1337
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Design error? We can go back. Reversibility preserved.",
+  "role": "caption",
+  "bbox": [
+   1120,
+   1212,
+   1438,
+   1335
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "75% new system — State is a subset. Overlap preserved.",
+  "role": "caption",
+  "bbox": [
+   1512,
+   1212,
+   1776,
+   1346
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Old system = small subset of the new. Reversibility intact.",
+  "role": "caption",
+  "bbox": [
+   1826,
+   1213,
+   2088,
+   1330
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OLD SYSTEM",
+  "role": "label",
+  "bbox": [
+   194,
+   1414,
+   552,
+   1516
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "> Gradual transition. Reversibility in case of error. A direction that cannot be stopped.",
+  "role": "tagline",
+  "bbox": [
+   64,
+   1587,
+   2480,
+   1675
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

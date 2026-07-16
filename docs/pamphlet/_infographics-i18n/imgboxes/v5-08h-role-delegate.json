@@ -1,0 +1,398 @@
+[
+ {
+  "text": "THE DELEGATE — A CLAIM-SERVICE YOU SUBSCRIBE TO",
+  "role": "title",
+  "bbox": [
+   60,
+   34,
+   2473,
+   154
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DELEGATE WHAT YOU CAN'T HANDLE YOURSELF · KEEP WHAT MATTERS TO YOU",
+  "role": "tagline",
+  "bbox": [
+   98,
+   147,
+   2435,
+   223
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DELEGATE",
+  "role": "label",
+  "bbox": [
+   1161,
+   288,
+   1446,
+   352
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY YEARLY PUBLISHING RIGHTS",
+  "role": "label",
+  "bbox": [
+   356,
+   1155,
+   614,
+   1216
+  ],
+  "angle": -12.8,
+  "joined": false
+ },
+ {
+  "text": "(granted by the community)",
+  "role": "label",
+  "bbox": [
+   372,
+   1213,
+   611,
+   1246
+  ],
+  "angle": -12.5,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 1",
+  "role": "label",
+  "bbox": [
+   413,
+   1263,
+   504,
+   1290
+  ],
+  "angle": -14.7,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 2",
+  "role": "label",
+  "bbox": [
+   504,
+   1234,
+   605,
+   1267
+  ],
+  "angle": -16.8,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 3",
+  "role": "label",
+  "bbox": [
+   585,
+   1210,
+   690,
+   1246
+  ],
+  "angle": -17.1,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 1",
+  "role": "label",
+  "bbox": [
+   457,
+   1276,
+   548,
+   1303
+  ],
+  "angle": -14.7,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 3",
+  "role": "label",
+  "bbox": [
+   506,
+   1285,
+   611,
+   1321
+  ],
+  "angle": -17.1,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 3",
+  "role": "label",
+  "bbox": [
+   544,
+   1246,
+   649,
+   1282
+  ],
+  "angle": -17.1,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 4",
+  "role": "label",
+  "bbox": [
+   593,
+   1258,
+   681,
+   1293
+  ],
+  "angle": -20.2,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 5",
+  "role": "label",
+  "bbox": [
+   621,
+   1232,
+   715,
+   1263
+  ],
+  "angle": -18.3,
+  "joined": false
+ },
+ {
+  "text": "RIGHT 5",
+  "role": "label",
+  "bbox": [
+   673,
+   1245,
+   767,
+   1276
+  ],
+  "angle": -18.3,
+  "joined": false
+ },
+ {
+  "text": "KEEP — for what matters most to me",
+  "role": "label",
+  "bbox": [
+   808,
+   1181,
+   1009,
+   1236
+  ],
+  "angle": -12.6,
+  "joined": false
+ },
+ {
+  "text": "DELEGATE — within their scope",
+  "role": "label",
+  "bbox": [
+   1087,
+   1115,
+   1257,
+   1172
+  ],
+  "angle": -15.9,
+  "joined": false
+ },
+ {
+  "text": "REVOCABLE AT ANY TIME",
+  "role": "label",
+  "bbox": [
+   854,
+   1422,
+   1025,
+   1489
+  ],
+  "angle": 10,
+  "joined": false
+ },
+ {
+  "text": "DELEGATE'S REPUTATION",
+  "role": "label",
+  "bbox": [
+   2131,
+   436,
+   2322,
+   505
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT THE DELEGATE DOES",
+  "role": "label",
+  "bbox": [
+   151,
+   314,
+   640,
+   362
+  ],
+  "angle": 3.1,
+  "joined": false
+ },
+ {
+  "text": "1. Receives a portion of your yearly publishing rights",
+  "role": "body",
+  "bbox": [
+   153,
+   362,
+   568,
+   449
+  ],
+  "angle": 2.1,
+  "joined": false
+ },
+ {
+  "text": "2. Activates claims for you when events fall within an agreed scope",
+  "role": "body",
+  "bbox": [
+   151,
+   455,
+   650,
+   528
+  ],
+  "angle": 1.7,
+  "joined": false
+ },
+ {
+  "text": "3. Spares you from publishing every minor 'what if'",
+  "role": "body",
+  "bbox": [
+   146,
+   527,
+   629,
+   610
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "4. Stakes their own reputation on each claim they sign",
+  "role": "body",
+  "bbox": [
+   151,
+   610,
+   619,
+   682
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5. Returns the rights to you the moment you revoke",
+  "role": "body",
+  "bbox": [
+   149,
+   687,
+   569,
+   763
+  ],
+  "angle": -1.2,
+  "joined": false
+ },
+ {
+  "text": "I'll keep two for the things only I can speak to. The rest — handle them for me.",
+  "role": "caption",
+  "bbox": [
+   707,
+   326,
+   1150,
+   472
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I'll keep two for the things only I can speak to. The rest — handle them for me.",
+  "role": "caption",
+  "bbox": [
+   1121,
+   383,
+   1281,
+   477
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Within scope, on your behalf, with my own reputation alongside yours.",
+  "role": "caption",
+  "bbox": [
+   1536,
+   316,
+   2031,
+   481
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Like insurance for your reputational rights.",
+  "role": "caption",
+  "bbox": [
+   521,
+   759,
+   664,
+   887
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Outsource what you can't handle yourself. Stay in the loop. Pull the rights back any time.",
+  "role": "tagline",
+  "bbox": [
+   67,
+   1535,
+   2468,
+   1619
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* If the delegate acts outside the agreed scope, both their reputation and yours are publicly affected.",
+  "role": "caption",
+  "bbox": [
+   160,
+   1623,
+   2387,
+   1706
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DELEGATION POLICY",
+  "role": "label",
+  "bbox": [
+   958,
+   1211,
+   1297,
+   1259
+  ],
+  "angle": -18.3,
+  "joined": false
+ },
+ {
+  "text": "I will publish claims on your behalf if events fall within the scope below.",
+  "role": "body",
+  "bbox": [
+   1029,
+   1237,
+   1350,
+   1340
+  ],
+  "angle": -20.7,
+  "joined": false
+ },
+ {
+  "text": "SCOPE: fraud · contract disputes · neighbourhood matters",
+  "role": "label",
+  "bbox": [
+   1127,
+   1302,
+   1474,
+   1402
+  ],
+  "angle": -25,
+  "joined": false
+ }
+]

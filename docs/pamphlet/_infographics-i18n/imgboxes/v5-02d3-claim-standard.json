@@ -1,0 +1,506 @@
+[
+ {
+  "text": "WHAT IS A CLAIM STANDARD?",
+  "role": "title",
+  "bbox": [
+   62,
+   65,
+   1109,
+   170
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EXAMPLES OF THE CLAIM STANDARD ARTEFACT",
+  "role": "caption",
+  "bbox": [
+   69,
+   194,
+   1099,
+   258
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the standard is the empty form — a claim is the form filled in. Let me show you both side by side.",
+  "role": "body",
+  "bbox": [
+   1656,
+   95,
+   2218,
+   234
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE STANDARD — THE EMPTY FORM",
+  "role": "label",
+  "bbox": [
+   323,
+   445,
+   1132,
+   514
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SUBJECT DID",
+  "role": "label",
+  "bbox": [
+   540,
+   547,
+   832,
+   609
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the DID this claim is about",
+  "role": "body",
+  "bbox": [
+   543,
+   605,
+   1006,
+   650
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER DID",
+  "role": "label",
+  "bbox": [
+   537,
+   688,
+   805,
+   753
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the DID signing the claim",
+  "role": "body",
+  "bbox": [
+   542,
+   753,
+   984,
+   808
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHEN AND WHERE",
+  "role": "label",
+  "bbox": [
+   538,
+   848,
+   1008,
+   913
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "a date and a place",
+  "role": "body",
+  "bbox": [
+   537,
+   915,
+   893,
+   958
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "APPROVED EVIDENCE TYPES",
+  "role": "label",
+  "bbox": [
+   533,
+   985,
+   1149,
+   1056
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "only these kinds of evidence count",
+  "role": "body",
+  "bbox": [
+   540,
+   1063,
+   1135,
+   1111
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OUTCOME SCALE",
+  "role": "label",
+  "bbox": [
+   535,
+   1135,
+   905,
+   1209
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "pick exactly one rung — no free text",
+  "role": "body",
+  "bbox": [
+   531,
+   1209,
+   1144,
+   1264
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "none / mild / moderate / severe",
+  "role": "label",
+  "bbox": [
+   408,
+   1147,
+   525,
+   1273
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "A CLAIM — THE FORM FILLED IN",
+  "role": "label",
+  "bbox": [
+   1441,
+   439,
+   2153,
+   512
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "did:nwo:alice-9f2b…",
+  "role": "body",
+  "bbox": [
+   1629,
+   604,
+   2100,
+   660
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "did:nwo:magistrates-04…",
+  "role": "body",
+  "bbox": [
+   1634,
+   748,
+   2232,
+   815
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3 March, market square",
+  "role": "body",
+  "bbox": [
+   1629,
+   899,
+   2213,
+   961
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "photograph ✓ — witness oath ✓ — physician's note ✓",
+  "role": "body",
+  "bbox": [
+   1634,
+   1042,
+   2236,
+   1130
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "moderate — rung 2 of 4",
+  "role": "body",
+  "bbox": [
+   1637,
+   1211,
+   2237,
+   1271
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every field on the left has exactly one filled-in counterpart on the right — that is what makes two claims of the same kind comparable.",
+  "role": "caption",
+  "bbox": [
+   315,
+   1281,
+   2272,
+   1345
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I stake my reputation that this was processed by the standard.",
+  "role": "body",
+  "bbox": [
+   1359,
+   1424,
+   1642,
+   1536
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ASSAULT v3",
+  "role": "label",
+  "bbox": [
+   1713,
+   1431,
+   1828,
+   1476
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ASSAULT v3",
+  "role": "label",
+  "bbox": [
+   1739,
+   1553,
+   1801,
+   1592
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DEBT v2",
+  "role": "label",
+  "bbox": [
+   1888,
+   1436,
+   1957,
+   1470
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DEBT v2",
+  "role": "label",
+  "bbox": [
+   1899,
+   1556,
+   1948,
+   1589
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MEDICAL AID v4",
+  "role": "label",
+  "bbox": [
+   2016,
+   1439,
+   2141,
+   1470
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MEDICAL AID v4",
+  "role": "label",
+  "bbox": [
+   2053,
+   1551,
+   2107,
+   1594
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CRAFTSMANSHIP v1",
+  "role": "label",
+  "bbox": [
+   2167,
+   1433,
+   2296,
+   1469
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CRAFTSMANSHIP v1",
+  "role": "label",
+  "bbox": [
+   2206,
+   1555,
+   2258,
+   1591
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TESTIMONY v5",
+  "role": "label",
+  "bbox": [
+   2334,
+   1431,
+   2451,
+   1469
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TESTIMONY v5",
+  "role": "label",
+  "bbox": [
+   2366,
+   1558,
+   2413,
+   1584
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the authority's seal on a filled-in claim is a pledge: the process was truly followed.",
+  "role": "caption",
+  "bbox": [
+   191,
+   1457,
+   887,
+   1565
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE STANDARD IS THE FORM — A CLAIM IS THE FORM FILLED IN AND PLEDGED.",
+  "role": "tagline",
+  "bbox": [
+   279,
+   1611,
+   2287,
+   1690
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SUBJECT DID",
+  "role": "label",
+  "bbox": [
+   1630,
+   535,
+   1921,
+   604
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER DID",
+  "role": "label",
+  "bbox": [
+   1632,
+   693,
+   1892,
+   755
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHEN AND WHERE",
+  "role": "label",
+  "bbox": [
+   1639,
+   846,
+   2043,
+   901
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "APPROVED EVIDENCE TYPES",
+  "role": "label",
+  "bbox": [
+   1637,
+   992,
+   2234,
+   1047
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "APPROVED EVIDENCE TYPES",
+  "role": "label",
+  "bbox": [
+   1639,
+   1147,
+   2009,
+   1204
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WITNESS",
+  "role": "label",
+  "bbox": [
+   1476,
+   1005,
+   1533,
+   1027
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Reputation Ledger",
+  "role": "label",
+  "bbox": [
+   933,
+   1490,
+   1008,
+   1529
+  ],
+  "angle": 5,
+  "joined": false
+ }
+]

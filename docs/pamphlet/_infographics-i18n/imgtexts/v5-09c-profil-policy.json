@@ -1,0 +1,19 @@
+{
+  "file": "v5-09c-profil-policy.webp",
+  "texts": [
+    {"role": "title", "text": "POLICIES MEET. ATTITUDES FORM."},
+    {"role": "tagline", "text": "DECLARED RULES SET TODAY'S PRICE — DISCOUNT FOR ALIGNMENT, MALUS FOR DIVERGENCE"},
+    {"role": "label", "text": "WHEN POLICIES ALIGN"},
+    {"role": "label", "text": "WHEN POLICIES DIVERGE"},
+    {"role": "label", "text": "MY RULES"},
+    {"role": "label", "text": "OVERLAP — 85%"},
+    {"role": "label", "text": "OVERLAP — 30%"},
+    {"role": "label", "text": "+10% LOYALTY DISCOUNT"},
+    {"role": "label", "text": "−25% RADICAL MALUS"},
+    {"role": "caption", "text": "We see things the same way. Let's trade."},
+    {"role": "caption", "text": "We can still trade — but the price reflects the gap."},
+    {"role": "caption", "text": "Same goods, two prices. Declarations — not reputation — decide it."},
+    {"role": "tagline", "text": "When two policies meet in trade, their alignment becomes the price modifier."},
+    {"role": "caption", "text": "* This is not about reputation. It is about what each person publicly declared — and is now expected to keep."}
+  ]
+}

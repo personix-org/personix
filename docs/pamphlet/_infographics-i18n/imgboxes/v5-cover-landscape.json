@@ -1,0 +1,50 @@
+[
+ {
+  "text": "PERSONIX",
+  "role": "title",
+  "bbox": [
+   870,
+   26,
+   1603,
+   188
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "mirrors of the reputation network reveal even the polished misery within.",
+  "role": "caption",
+  "bbox": [
+   1077,
+   422,
+   1407,
+   718
+  ],
+  "angle": -5,
+  "joined": false
+ },
+ {
+  "text": "An Uncensorable and Incorruptible Decentralized Reputation Network",
+  "role": "title",
+  "bbox": [
+   67,
+   1513,
+   2389,
+   1603
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "an evolutionary successor to the state",
+  "role": "tagline",
+  "bbox": [
+   701,
+   1605,
+   1770,
+   1677
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

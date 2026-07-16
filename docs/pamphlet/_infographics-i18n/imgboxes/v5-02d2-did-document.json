@@ -1,0 +1,242 @@
+[
+ {
+  "text": "WHAT IS INSIDE A DID DOCUMENT?",
+  "role": "title",
+  "bbox": [
+   40,
+   41,
+   2500,
+   181
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EXAMPLES OF THE DID DOCUMENT ARTEFACT",
+  "role": "caption",
+  "bbox": [
+   67,
+   198,
+   1118,
+   284
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "your DID document is your identity card on the network — here is what it carries.",
+  "role": "body",
+  "bbox": [
+   1524,
+   229,
+   2210,
+   323
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FIELDS YOU WILL FIND INSIDE",
+  "role": "label",
+  "bbox": [
+   836,
+   482,
+   1746,
+   557
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "KEYS AND SIGNING RULES",
+  "role": "label",
+  "bbox": [
+   1090,
+   597,
+   1790,
+   657
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "each key grants one power — edit this document, issue a claim, act as an authority, manage a policy, or delegate recovery. Powers can be handed to another DID, and revoked again later.",
+  "role": "body",
+  "bbox": [
+   1090,
+   653,
+   2432,
+   727
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REVOKED",
+  "role": "label",
+  "bbox": [
+   583,
+   849,
+   765,
+   894
+  ],
+  "angle": -40.3,
+  "joined": false
+ },
+ {
+  "text": "NETWORK ADDRESSES",
+  "role": "label",
+  "bbox": [
+   1085,
+   775,
+   1716,
+   837
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "where the network can reach you — changeable without rewriting your identity",
+  "role": "body",
+  "bbox": [
+   1090,
+   837,
+   2354,
+   892
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CREATED AND VERSIONED",
+  "role": "label",
+  "bbox": [
+   1089,
+   916,
+   1795,
+   990
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "when this identity first appeared, and which revision you are reading now",
+  "role": "body",
+  "bbox": [
+   1082,
+   990,
+   2279,
+   1041
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LINKED IDENTITIES",
+  "role": "label",
+  "bbox": [
+   1090,
+   1067,
+   1646,
+   1134
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "a summary of DIDs you are connected to — a convenience view, technically stored elsewhere",
+  "role": "body",
+  "bbox": [
+   1087,
+   1134,
+   2306,
+   1215
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SUCCESSION MARKER",
+  "role": "label",
+  "bbox": [
+   1092,
+   1224,
+   1735,
+   1289
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "if your identity is lost or stolen, an authority can mark this DID ended and point to your successor",
+  "role": "body",
+  "bbox": [
+   1094,
+   1287,
+   2411,
+   1377
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the DID holder writes each new version — but every version must pass verification before the network publishes it.",
+  "role": "caption",
+  "bbox": [
+   819,
+   1399,
+   1801,
+   1509
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIED",
+  "role": "label",
+  "bbox": [
+   2146,
+   1473,
+   2275,
+   1511
+  ],
+  "angle": -23.3,
+  "joined": false
+ },
+ {
+  "text": "VERIFIED",
+  "role": "label",
+  "bbox": [
+   2229,
+   1521,
+   2354,
+   1561
+  ],
+  "angle": -21.4,
+  "joined": false
+ },
+ {
+  "text": "you write it — the network verifies it. You cannot just publish yourself into existence.",
+  "role": "caption",
+  "bbox": [
+   593,
+   1542,
+   1954,
+   1592
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YOU AUTHOR YOUR IDENTITY — THE NETWORK CONFIRMS IT.",
+  "role": "tagline",
+  "bbox": [
+   19,
+   1604,
+   2521,
+   1697
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

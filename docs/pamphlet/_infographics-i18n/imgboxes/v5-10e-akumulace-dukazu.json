@@ -1,0 +1,254 @@
+[
+ {
+  "text": "HOW EVIDENCE ACCUMULATES",
+  "role": "title",
+  "bbox": [
+   507,
+   43,
+   2052,
+   151
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“one isolated claim”",
+  "role": "label",
+  "bbox": [
+   206,
+   177,
+   738,
+   265
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“a pattern”",
+  "role": "label",
+  "bbox": [
+   1092,
+   181,
+   1417,
+   260
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“overwhelming weight”",
+  "role": "label",
+  "bbox": [
+   1723,
+   175,
+   2339,
+   263
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "one claim alone — too thin to act on. neither side condemned.",
+  "role": "caption",
+  "bbox": [
+   139,
+   929,
+   815,
+   1022
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "five independent sources — a pattern emerges.",
+  "role": "caption",
+  "bbox": [
+   1011,
+   913,
+   1513,
+   1022
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "twenty independent sources — overwhelming weight.",
+  "role": "caption",
+  "bbox": [
+   1740,
+   917,
+   2304,
+   1025
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "A",
+  "role": "label",
+  "bbox": [
+   101,
+   1068,
+   136,
+   1106
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "B",
+  "role": "label",
+  "bbox": [
+   934,
+   1066,
+   977,
+   1104
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the noise trick”",
+  "role": "label",
+  "bbox": [
+   308,
+   1058,
+   652,
+   1121
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the grudge”",
+  "role": "label",
+  "bbox": [
+   1130,
+   1056,
+   1422,
+   1133
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no evidence.",
+  "role": "caption",
+  "bbox": [
+   105,
+   1178,
+   220,
+   1242
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no evidence.",
+  "role": "caption",
+  "bbox": [
+   193,
+   1109,
+   323,
+   1166
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "we see nothing.",
+  "role": "caption",
+  "bbox": [
+   738,
+   1147,
+   841,
+   1219
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "what's his deal?",
+  "role": "caption",
+  "bbox": [
+   965,
+   1126,
+   1077,
+   1188
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "he is the problem.",
+  "role": "caption",
+  "bbox": [
+   1496,
+   1113,
+   1613,
+   1180
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SLANDER",
+  "role": "label",
+  "bbox": [
+   634,
+   1394,
+   862,
+   1454
+  ],
+  "angle": -13.9,
+  "joined": false
+ },
+ {
+  "text": "broadcasting the same claim with no evidence — when the community sees nothing, it is slander, and it costs the accuser.",
+  "role": "caption",
+  "bbox": [
+   88,
+   1507,
+   879,
+   1633
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "one accuser pointing at everyone — the pattern is the accuser, not the accused.",
+  "role": "caption",
+  "bbox": [
+   953,
+   1507,
+   1651,
+   1605
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's world. it is — only the motives are honest now. no revolution. just better incentives.",
+  "role": "caption",
+  "bbox": [
+   1795,
+   1437,
+   2449,
+   1578
+  ],
+  "angle": -3.4,
+  "joined": false
+ },
+ {
+  "text": "Independence is everything. One voice repeated is noise. Many voices from different places are a signal.",
+  "role": "tagline",
+  "bbox": [
+   69,
+   1616,
+   2463,
+   1684
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

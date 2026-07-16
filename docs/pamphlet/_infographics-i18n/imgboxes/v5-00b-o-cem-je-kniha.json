@@ -1,0 +1,62 @@
+[
+ {
+  "text": "Identity",
+  "role": "label",
+  "bbox": [
+   488,
+   170,
+   722,
+   247
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Reputation",
+  "role": "label",
+  "bbox": [
+   449,
+   375,
+   637,
+   420
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Community",
+  "role": "label",
+  "bbox": [
+   443,
+   477,
+   567,
+   513
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE STATE",
+  "role": "label",
+  "bbox": [
+   2074,
+   198,
+   2682,
+   291
+  ],
+  "angle": -6.6,
+  "joined": false
+ },
+ {
+  "text": "There's more under the hood. Stay with me.",
+  "role": "tagline",
+  "bbox": [
+   354,
+   1298,
+   2589,
+   1443
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

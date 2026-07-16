@@ -1,0 +1,266 @@
+[
+ {
+  "text": "AFTER THE HARM — WHAT WILL YOU DO?",
+  "role": "title",
+  "bbox": [
+   272,
+   38,
+   2222,
+   139
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "turned away. forced. voluntary. three ways the village answers.",
+  "role": "title",
+  "bbox": [
+   380,
+   141,
+   2157,
+   201
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "what happened",
+  "role": "label",
+  "bbox": [
+   299,
+   232,
+   681,
+   292
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the work is not done — come back and finish it!",
+  "role": "caption",
+  "bbox": [
+   141,
+   318,
+   504,
+   396
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "not my problem.",
+  "role": "caption",
+  "bbox": [
+   731,
+   323,
+   877,
+   389
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“I try to ignore it — turned away everywhere”",
+  "role": "label",
+  "bbox": [
+   1257,
+   244,
+   2203,
+   299
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BAKER",
+  "role": "label",
+  "bbox": [
+   1235,
+   304,
+   1323,
+   339
+  ],
+  "angle": 7.5,
+  "joined": false
+ },
+ {
+  "text": "go elsewhere.",
+  "role": "caption",
+  "bbox": [
+   1333,
+   320,
+   1525,
+   370
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no remedy — every shop turns him away — exile from economic life",
+  "role": "caption",
+  "bbox": [
+   1250,
+   619,
+   2194,
+   672
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the rational choice is always the cheapest: FIX IT YOURSELF.",
+  "role": "label",
+  "bbox": [
+   510,
+   773,
+   1476,
+   849
+  ],
+  "angle": -84.8,
+  "joined": false
+ },
+ {
+  "text": "“I make it right — but only under the crowd's stare”",
+  "role": "label",
+  "bbox": [
+   1202,
+   697,
+   2222,
+   756
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SURCHARGE — for the next year you pay double when you buy from us.",
+  "role": "caption",
+  "bbox": [
+   1868,
+   776,
+   2060,
+   881
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SURCHARGE",
+  "role": "label",
+  "bbox": [
+   1897,
+   918,
+   1985,
+   944
+  ],
+  "angle": 10.4,
+  "joined": false
+ },
+ {
+  "text": "so you remember.",
+  "role": "caption",
+  "bbox": [
+   1973,
+   1022,
+   2212,
+   1065
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "now what?",
+  "role": "label",
+  "bbox": [
+   349,
+   921,
+   629,
+   978
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "what now?",
+  "role": "caption",
+  "bbox": [
+   512,
+   1036,
+   698,
+   1093
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "forced remedy under the crowd's stare — repaid, but the village marks his price up — the lesson must stick.",
+  "role": "caption",
+  "bbox": [
+   1259,
+   1101,
+   2170,
+   1177
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“I come on my own — and admit it to all”",
+  "role": "label",
+  "bbox": [
+   1309,
+   1186,
+   2136,
+   1248
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I have made it right.”",
+  "role": "caption",
+  "bbox": [
+   1732,
+   1263,
+   1967,
+   1296
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "good — but we'll keep an eye on you.",
+  "role": "caption",
+  "bbox": [
+   2002,
+   1265,
+   2220,
+   1323
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's world. it is — only the costs are now visible to everyone. no revolution. just better incentives.",
+  "role": "caption",
+  "bbox": [
+   2244,
+   1415,
+   2499,
+   1647
+  ],
+  "angle": -7.1,
+  "joined": false
+ },
+ {
+  "text": "voluntary, early remedy — accepted publicly — reputation recovers, with caution",
+  "role": "caption",
+  "bbox": [
+   1214,
+   1615,
+   2208,
+   1660
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

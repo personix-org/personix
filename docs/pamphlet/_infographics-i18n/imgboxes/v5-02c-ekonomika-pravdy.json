@@ -1,0 +1,710 @@
+[
+ {
+  "text": "THE ECONOMICS OF TRUTH",
+  "role": "title",
+  "bbox": [
+   712,
+   9,
+   1872,
+   124
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNPOPULAR BUT ACCEPTABLE",
+  "role": "label",
+  "bbox": [
+   275,
+   459,
+   979,
+   537
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONE COMMUNITY. DIFFERENT POSITIONS.",
+  "role": "caption",
+  "bbox": [
+   1044,
+   390,
+   1659,
+   436
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "IN CONSENSUS",
+  "role": "label",
+  "bbox": [
+   1156,
+   464,
+   1520,
+   529
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OUTSIDE CONSENSUS",
+  "role": "label",
+  "bbox": [
+   1812,
+   464,
+   2340,
+   532
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE SUBMISSION",
+  "role": "label",
+  "bbox": [
+   22,
+   561,
+   251,
+   672
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE DRAW",
+  "role": "label",
+  "bbox": [
+   17,
+   816,
+   239,
+   901
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE REFUND",
+  "role": "label",
+  "bbox": [
+   31,
+   1162,
+   258,
+   1234
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE LEDGER",
+  "role": "label",
+  "bbox": [
+   33,
+   1309,
+   236,
+   1399
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIM",
+  "role": "label",
+  "bbox": [
+   1067,
+   618,
+   1176,
+   661
+  ],
+  "angle": -15.3,
+  "joined": false
+ },
+ {
+  "text": "POLICY",
+  "role": "label",
+  "bbox": [
+   695,
+   607,
+   798,
+   644
+  ],
+  "angle": 12.9,
+  "joined": false
+ },
+ {
+  "text": "STANDARD",
+  "role": "label",
+  "bbox": [
+   360,
+   631,
+   469,
+   663
+  ],
+  "angle": -14.5,
+  "joined": false
+ },
+ {
+  "text": "FRINGE POLICY",
+  "role": "label",
+  "bbox": [
+   1822,
+   609,
+   1924,
+   670
+  ],
+  "angle": -11.1,
+  "joined": false
+ },
+ {
+  "text": "RADICAL STANDARD",
+  "role": "label",
+  "bbox": [
+   2215,
+   621,
+   2337,
+   685
+  ],
+  "angle": 13.3,
+  "joined": false
+ },
+ {
+  "text": "RANDOM DRAW",
+  "role": "label",
+  "bbox": [
+   253,
+   1072,
+   377,
+   1135
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POLICY",
+  "role": "label",
+  "bbox": [
+   1428,
+   604,
+   1529,
+   646
+  ],
+  "angle": 19.4,
+  "joined": false
+ },
+ {
+  "text": "uniform probability",
+  "role": "caption",
+  "bbox": [
+   307,
+   828,
+   448,
+   891
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPT",
+  "role": "label",
+  "bbox": [
+   818,
+   1010,
+   922,
+   1053
+  ],
+  "angle": -17.8,
+  "joined": false
+ },
+ {
+  "text": "REJECT",
+  "role": "label",
+  "bbox": [
+   461,
+   1015,
+   559,
+   1056
+  ],
+  "angle": -16.6,
+  "joined": false
+ },
+ {
+  "text": "REJECT",
+  "role": "label",
+  "bbox": [
+   625,
+   1022,
+   729,
+   1065
+  ],
+  "angle": -13.8,
+  "joined": false
+ },
+ {
+  "text": "REJECT",
+  "role": "label",
+  "bbox": [
+   1759,
+   1019,
+   1864,
+   1059
+  ],
+  "angle": -7.6,
+  "joined": false
+ },
+ {
+  "text": "REJECT",
+  "role": "label",
+  "bbox": [
+   1905,
+   1017,
+   2009,
+   1059
+  ],
+  "angle": -12,
+  "joined": false
+ },
+ {
+  "text": "REJECT",
+  "role": "label",
+  "bbox": [
+   2060,
+   1015,
+   2160,
+   1058
+  ],
+  "angle": -15.8,
+  "joined": false
+ },
+ {
+  "text": "REJECT",
+  "role": "label",
+  "bbox": [
+   2224,
+   1020,
+   2320,
+   1063
+  ],
+  "angle": -11.7,
+  "joined": false
+ },
+ {
+  "text": "I  II  III  IV",
+  "role": "label",
+  "bbox": [
+   2373,
+   846,
+   2497,
+   877
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I  II  III",
+  "role": "label",
+  "bbox": [
+   898,
+   841,
+   1001,
+   882
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "GIVE UP",
+  "role": "label",
+  "bbox": [
+   2320,
+   920,
+   2419,
+   959
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ABANDONED",
+  "role": "label",
+  "bbox": [
+   2362,
+   1108,
+   2504,
+   1145
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "outside my view",
+  "role": "body",
+  "bbox": [
+   1758,
+   819,
+   1864,
+   879
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I disagree fundamentally",
+  "role": "body",
+  "bbox": [
+   1889,
+   819,
+   2045,
+   872
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I will not endorse this",
+  "role": "body",
+  "bbox": [
+   2062,
+   816,
+   2195,
+   870
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no price buys my signature",
+  "role": "body",
+  "bbox": [
+   2207,
+   816,
+   2354,
+   877
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "base fee — first draw accepts",
+  "role": "caption",
+  "bbox": [
+   1134,
+   1106,
+   1484,
+   1159
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "draws are fair — drawn verifiers charge a risk premium",
+  "role": "caption",
+  "bbox": [
+   369,
+   1121,
+   996,
+   1152
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the draws keep happening — no drawn verifier will sign",
+  "role": "caption",
+  "bbox": [
+   1718,
+   1116,
+   2354,
+   1159
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "over many submissions, long run",
+  "role": "caption",
+  "bbox": [
+   248,
+   1263,
+   388,
+   1349
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "full refund on average",
+  "role": "caption",
+  "bbox": [
+   1170,
+   1232,
+   1442,
+   1306
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "mostly refunded, some lost over time",
+  "role": "caption",
+  "bbox": [
+   413,
+   1239,
+   892,
+   1270
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "deposit forfeit most of the time",
+  "role": "caption",
+  "bbox": [
+   2089,
+   1226,
+   2393,
+   1273
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "higher fee then",
+  "role": "body",
+  "bbox": [
+   685,
+   821,
+   789,
+   887
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "paid",
+  "role": "label",
+  "bbox": [
+   541,
+   1384,
+   601,
+   1417
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "paid",
+  "role": "label",
+  "bbox": [
+   1185,
+   1350,
+   1266,
+   1381
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "paid",
+  "role": "label",
+  "bbox": [
+   1937,
+   1359,
+   2000,
+   1395
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "got back",
+  "role": "label",
+  "bbox": [
+   702,
+   1355,
+   816,
+   1395
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "got back",
+  "role": "label",
+  "bbox": [
+   1356,
+   1330,
+   1421,
+   1384
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "got back",
+  "role": "label",
+  "bbox": [
+   2079,
+   1386,
+   2195,
+   1424
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE ALGORITHM PICKS FAIRLY. PEOPLE PRICE WHAT THEY BELIEVE.",
+  "role": "body",
+  "bbox": [
+   697,
+   1486,
+   1151,
+   1566
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNIFORM DRAW. NON-UNIFORM RESPONSE. THE FURTHER FROM CONSENSUS, THE HIGHER THE PRICE.",
+  "role": "tagline",
+  "bbox": [
+   51,
+   1611,
+   2485,
+   1688
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RANDOM DRAW",
+  "role": "label",
+  "bbox": [
+   1030,
+   1062,
+   1158,
+   1127
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RANDOM DRAW",
+  "role": "label",
+  "bbox": [
+   1570,
+   1066,
+   1715,
+   1136
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SLIGHTLY MORE EXPENSIVE",
+  "role": "label",
+  "bbox": [
+   483,
+   1281,
+   825,
+   1327
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNAFFORDABLE",
+  "role": "label",
+  "bbox": [
+   1934,
+   1267,
+   2162,
+   1317
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "community strip",
+  "role": "custom",
+  "bbox": [
+   19,
+   178,
+   246,
+   290
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "deposit forfeit most of the time",
+  "role": "caption",
+  "bbox": [
+   2294,
+   1322,
+   2504,
+   1404
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Accept with note",
+  "role": "custom",
+  "bbox": [
+   1340,
+   862,
+   1453,
+   921
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "not my view",
+  "role": "label",
+  "bbox": [
+   518,
+   830,
+   594,
+   876
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "retry tally",
+  "role": "label",
+  "bbox": [
+   898,
+   818,
+   1002,
+   845
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "retry tally",
+  "role": "label",
+  "bbox": [
+   2380,
+   818,
+   2484,
+   845
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BOTTOM OBSERVER STRIP",
+  "role": "label",
+  "bbox": [
+   36,
+   1476,
+   206,
+   1600
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

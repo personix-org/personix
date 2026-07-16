@@ -1,0 +1,405 @@
+[
+ {
+  "text": "PUBLISHING COSTS TIME, ENERGY, AND MONEY",
+  "role": "title",
+  "bbox": [
+   323,
+   22,
+   2210,
+   119
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WRITING INTO THE NETWORK IS NEVER FREE — READING IS",
+  "role": "tagline",
+  "bbox": [
+   540,
+   115,
+   2012,
+   169
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TIME",
+  "role": "label",
+  "bbox": [
+   256,
+   258,
+   430,
+   315
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "you wait while the algorithm picks a verifier and the verifier reads your record.",
+  "role": "caption",
+  "bbox": [
+   89,
+   789,
+   581,
+   920
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ENERGY",
+  "role": "label",
+  "bbox": [
+   829,
+   258,
+   1126,
+   325
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "signing, hashing, verifying — every step is real computation and real electricity.",
+  "role": "caption",
+  "bbox": [
+   727,
+   796,
+   1209,
+   920
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MONEY",
+  "role": "label",
+  "bbox": [
+   1536,
+   258,
+   1823,
+   322
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FEE PAID TO VERIFIER",
+  "role": "label",
+  "bbox": [
+   1355,
+   590,
+   1470,
+   727
+  ],
+  "angle": -6.1,
+  "joined": false
+ },
+ {
+  "text": "POLICY DEVIATION",
+  "role": "label",
+  "bbox": [
+   1819,
+   351,
+   1986,
+   437
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DATA VOLUME",
+  "role": "label",
+  "bbox": [
+   1837,
+   459,
+   1971,
+   537
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER REPUTATION",
+  "role": "label",
+  "bbox": [
+   1813,
+   566,
+   1993,
+   645
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY REPUTATION",
+  "role": "label",
+  "bbox": [
+   1807,
+   667,
+   1991,
+   746
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the further your claim sits from the verifier's policy, the larger the record, and the less trusted the issuer or their authority — the higher the fee.",
+  "role": "caption",
+  "bbox": [
+   1321,
+   798,
+   2017,
+   922
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EACH RETRY COSTS MORE",
+  "role": "label",
+  "bbox": [
+   89,
+   1039,
+   394,
+   1147
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the verifier's response folds into the chronology — see THE ISSUER'S CHOICE and HOW THE ALGORITHM PICKS A VERIFIER",
+  "role": "label",
+  "bbox": [
+   650,
+   980,
+   1364,
+   1056
+  ],
+  "angle": -5.9,
+  "joined": false
+ },
+ {
+  "text": "every rejection or re-throw adds to the chronology the algorithm eats — and the next attempt is more expensive in all three channels.",
+  "role": "caption",
+  "bbox": [
+   177,
+   1285,
+   2012,
+   1338
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "READING IS CHEAP",
+  "role": "label",
+  "bbox": [
+   62,
+   1438,
+   480,
+   1501
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "anyone may read reputation and records — only writing costs. The asymmetry is the design.",
+  "role": "caption",
+  "bbox": [
+   475,
+   1547,
+   1823,
+   1600
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "noise is expensive. Signal is valuable. That is why the network charges for writing, not for reading.",
+  "role": "body",
+  "bbox": [
+   2069,
+   763,
+   2457,
+   936
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT HAPPENS NEXT",
+  "role": "label",
+  "bbox": [
+   2096,
+   221,
+   2473,
+   298
+  ],
+  "angle": 2.2,
+  "joined": false
+ },
+ {
+  "text": "The three-step verification chain — see HOW THE ALGORITHM PICKS A VERIFIER, HOW THE VERIFIER ANSWERS, THE ISSUER'S CHOICE",
+  "role": "body",
+  "bbox": [
+   2132,
+   302,
+   2476,
+   527
+  ],
+  "angle": 3,
+  "joined": false
+ },
+ {
+  "text": "Why expensive writing protects reputation — later in the chapter",
+  "role": "body",
+  "bbox": [
+   2126,
+   524,
+   2454,
+   665
+  ],
+  "angle": 4.2,
+  "joined": false
+ },
+ {
+  "text": "WRITING COSTS — READING DOES NOT. THE ASYMMETRY IS THE POINT.",
+  "role": "title",
+  "bbox": [
+   40,
+   1612,
+   2046,
+   1688
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "hashed",
+  "role": "custom",
+  "bbox": [
+   786,
+   565,
+   875,
+   598
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "cost over iterations",
+  "role": "custom",
+  "bbox": [
+   40,
+   935,
+   552,
+   1002
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "reading asymmetry",
+  "role": "custom",
+  "bbox": [
+   48,
+   1351,
+   526,
+   1408
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "free to query",
+  "role": "custom",
+  "bbox": [
+   1335,
+   1428,
+   1574,
+   1492
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ledger",
+  "role": "custom",
+  "bbox": [
+   1219,
+   1416,
+   1302,
+   1454
+  ],
+  "angle": 17.1,
+  "joined": false
+ },
+ {
+  "text": "1",
+  "role": "custom",
+  "bbox": [
+   624,
+   1237,
+   662,
+   1277
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "2",
+  "role": "custom",
+  "bbox": [
+   1083,
+   1186,
+   1123,
+   1222
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3",
+  "role": "custom",
+  "bbox": [
+   1549,
+   1120,
+   1589,
+   1162
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THREE CHANNELS — ALL THREE ARE REAL",
+  "role": "label",
+  "path": [
+   [
+    953,
+    230
+   ],
+   [
+    1083,
+    204
+   ],
+   [
+    1226,
+    187
+   ],
+   [
+    1335,
+    190
+   ],
+   [
+    1448,
+    202
+   ],
+   [
+    1587,
+    223
+   ]
+  ],
+  "thickness": 60
+ }
+]

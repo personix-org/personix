@@ -1,0 +1,554 @@
+[
+ {
+  "text": "WHAT IS A DID POLICY?",
+  "role": "title",
+  "bbox": [
+   48,
+   46,
+   1102,
+   161
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EXAMPLES OF THE DID POLICY ARTEFACT",
+  "role": "caption",
+  "bbox": [
+   53,
+   185,
+   1065,
+   264
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "my policy is not about how a claim is written — that is the standard's job. My policy is how I decide whether to care about the claim at all: do I trust who signed it, do I trust the authority behind their standard, and is the matter even worth my attention?",
+  "role": "body",
+  "bbox": [
+   1537,
+   70,
+   2440,
+   240
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE STANDARD — INHERITED DEFAULTS",
+  "role": "label",
+  "bbox": [
+   291,
+   353,
+   1149,
+   407
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER REPUTATION FLOOR",
+  "role": "label",
+  "bbox": [
+   476,
+   546,
+   690,
+   668
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I accept issuers with reputation above five of ten",
+  "role": "body",
+  "bbox": [
+   714,
+   553,
+   1128,
+   646
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY TRUST LIST",
+  "role": "label",
+  "bbox": [
+   473,
+   697,
+   690,
+   797
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I accept standards from any authority whose own reputation is above four of ten",
+  "role": "body",
+  "bbox": [
+   721,
+   684,
+   1156,
+   807
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SUBSTANCE FILTER",
+  "role": "label",
+  "bbox": [
+   473,
+   852,
+   681,
+   947
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I process any claim whose matter weighs above the 'trifling' mark",
+  "role": "body",
+  "bbox": [
+   710,
+   837,
+   1144,
+   964
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ANTI-SPAM PRICING CURVE",
+  "role": "label",
+  "bbox": [
+   476,
+   1010,
+   719,
+   1114
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "submitting to me is cheap for substantive, rare claims — and grows fast for petty or repeated ones",
+  "role": "body",
+  "bbox": [
+   721,
+   983,
+   1173,
+   1134
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COMBINED WEIGHTING",
+  "role": "label",
+  "bbox": [
+   476,
+   1163,
+   690,
+   1274
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "issuer-rep and authority-rep multiply; petty-substance halves the result",
+  "role": "body",
+  "bbox": [
+   717,
+   1157,
+   1181,
+   1274
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY POLICY — DERIVED FROM IT",
+  "role": "label",
+  "bbox": [
+   1489,
+   344,
+   2167,
+   413
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "KEPT",
+  "role": "label",
+  "bbox": [
+   1756,
+   490,
+   1845,
+   535
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EDITED",
+  "role": "label",
+  "bbox": [
+   1871,
+   495,
+   1985,
+   535
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REMOVED",
+  "role": "label",
+  "bbox": [
+   2002,
+   488,
+   2153,
+   537
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ADDED",
+  "role": "label",
+  "bbox": [
+   2167,
+   494,
+   2272,
+   533
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "tightened — I require seven of ten",
+  "role": "body",
+  "bbox": [
+   1752,
+   578,
+   2249,
+   636
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I fully trust magistrates and physicians; I halve the weight of claims under the municipal watch; I refuse anything under the harbour police altogether",
+  "role": "body",
+  "bbox": [
+   1754,
+   653,
+   2318,
+   803
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER REPUTATION FLOOR",
+  "role": "label",
+  "bbox": [
+   1457,
+   550,
+   1749,
+   640
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY TRUST LIST",
+  "role": "label",
+  "bbox": [
+   1450,
+   674,
+   1654,
+   774
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SUBSTANCE FILTER",
+  "role": "label",
+  "bbox": [
+   1450,
+   813,
+   1682,
+   899
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ANTI-SPAM PRICING CURVE",
+  "role": "label",
+  "bbox": [
+   1451,
+   908,
+   1716,
+   999
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COMBINED WEIGHTING",
+  "role": "label",
+  "bbox": [
+   1453,
+   1006,
+   1675,
+   1092
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EXPONENTIAL COST ON REPEATED CLAIMS",
+  "role": "label",
+  "bbox": [
+   1451,
+   1106,
+   1754,
+   1224
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "QUIET HOURS",
+  "role": "label",
+  "bbox": [
+   1458,
+   1247,
+   1690,
+   1307
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "added — each new claim from the same issuer about me in a year costs ten times the last",
+  "role": "body",
+  "bbox": [
+   1761,
+   1114,
+   2236,
+   1228
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "petty nuisance claims cost me nothing to ignore — I simply do not read them",
+  "role": "body",
+  "bbox": [
+   1752,
+   817,
+   2287,
+   898
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "kept — the default curve is fine for me",
+  "role": "body",
+  "bbox": [
+   1749,
+   927,
+   2301,
+   980
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "removed — I use my own formula",
+  "role": "body",
+  "bbox": [
+   1737,
+   1027,
+   2241,
+   1083
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "added — I refuse to read any claim filed between midnight and dawn",
+  "role": "body",
+  "bbox": [
+   1742,
+   1230,
+   2236,
+   1318
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "policy does not rewrite the standard — it judges the people and the matter. Keep, modify, remove, add — four simple moves on top of a shared starting point.",
+  "role": "caption",
+  "bbox": [
+   272,
+   1311,
+   1211,
+   1354
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFICATION — my policy filters both incoming claims and my own drafts before I issue them. Issuance is verification on the way out.",
+  "role": "body",
+  "bbox": [
+   506,
+   1463,
+   1221,
+   1593
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CONSENSUS — my policy is my vote when the community negotiates shared rules.",
+  "role": "body",
+  "bbox": [
+   1381,
+   1475,
+   2022,
+   1585
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YOUR POLICY JUDGES THE MESSENGER — NOT THE FORM.",
+  "role": "tagline",
+  "bbox": [
+   504,
+   1604,
+   2041,
+   1727
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "rule name",
+  "role": "custom",
+  "bbox": [
+   1455,
+   486,
+   1639,
+   537
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "tick",
+  "role": "custom",
+  "bbox": [
+   1759,
+   527,
+   1852,
+   555
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "action word",
+  "role": "custom",
+  "bbox": [
+   1854,
+   524,
+   1993,
+   558
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "action word",
+  "role": "custom",
+  "bbox": [
+   2002,
+   529,
+   2150,
+   561
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "action word",
+  "role": "custom",
+  "bbox": [
+   2153,
+   525,
+   2292,
+   558
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RULE NAME",
+  "role": "label",
+  "bbox": [
+   490,
+   496,
+   654,
+   527
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VS.",
+  "role": "label",
+  "bbox": [
+   331,
+   628,
+   376,
+   657
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "petty",
+  "role": "label",
+  "bbox": [
+   294,
+   904,
+   344,
+   930
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "grave",
+  "role": "label",
+  "bbox": [
+   393,
+   881,
+   447,
+   906
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

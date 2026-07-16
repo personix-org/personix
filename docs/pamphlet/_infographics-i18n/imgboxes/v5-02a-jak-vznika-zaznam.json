@@ -1,0 +1,290 @@
+[
+ {
+  "text": "STAGE 1 — PUBLISH A CLAIM",
+  "role": "title",
+  "bbox": [
+   140,
+   46,
+   571,
+   321
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STAGE 2 — QUALITY FILTER",
+  "role": "title",
+  "bbox": [
+   748,
+   41,
+   1162,
+   316
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STAGE 3 — RECURSIVE VERIFICATION",
+  "role": "title",
+  "bbox": [
+   1305,
+   38,
+   1893,
+   331
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STAGE 4 — PERMANENT RECORD",
+  "role": "title",
+  "bbox": [
+   1993,
+   50,
+   2487,
+   335
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIM",
+  "role": "label",
+  "bbox": [
+   401,
+   786,
+   517,
+   825
+  ],
+  "angle": -32.6,
+  "joined": false
+ },
+ {
+  "text": "EVIDENCE",
+  "role": "label",
+  "bbox": [
+   258,
+   959,
+   416,
+   1005
+  ],
+  "angle": -33.5,
+  "joined": false
+ },
+ {
+  "text": "EVIDENCE",
+  "role": "label",
+  "bbox": [
+   226,
+   879,
+   371,
+   915
+  ],
+  "angle": -33.3,
+  "joined": false
+ },
+ {
+  "text": "TIME",
+  "role": "label",
+  "bbox": [
+   880,
+   429,
+   1033,
+   509
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ENERGY",
+  "role": "label",
+  "bbox": [
+   869,
+   688,
+   1049,
+   755
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MONEY",
+  "role": "label",
+  "bbox": [
+   866,
+   953,
+   1049,
+   1023
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SPAM / TRIVIAL",
+  "role": "label",
+  "bbox": [
+   849,
+   1358,
+   1056,
+   1489
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPTED",
+  "role": "label",
+  "bbox": [
+   1788,
+   418,
+   1995,
+   497
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REJECTED",
+  "role": "label",
+  "bbox": [
+   1670,
+   899,
+   1772,
+   933
+  ],
+  "angle": -11,
+  "joined": false
+ },
+ {
+  "text": "ACCEPTED",
+  "role": "label",
+  "bbox": [
+   1650,
+   678,
+   1764,
+   716
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RETRY",
+  "role": "label",
+  "bbox": [
+   1178,
+   1230,
+   1376,
+   1304
+  ],
+  "angle": 47.6,
+  "joined": false
+ },
+ {
+  "text": "GIVE UP",
+  "role": "label",
+  "bbox": [
+   1828,
+   1144,
+   2022,
+   1216
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ABANDONED",
+  "role": "label",
+  "bbox": [
+   1895,
+   1369,
+   2113,
+   1438
+  ],
+  "angle": -81.8,
+  "joined": false
+ },
+ {
+  "text": "Permanent.  Verifiable.  Public.",
+  "role": "caption",
+  "bbox": [
+   2107,
+   1305,
+   2393,
+   1486
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EXPENSIVE TO FAKE. CHEAP TO VERIFY.",
+  "role": "tagline",
+  "bbox": [
+   29,
+   1520,
+   2497,
+   1699
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIM",
+  "role": "label",
+  "bbox": [
+   1522,
+   897,
+   1630,
+   936
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "claim (now) heavier (now added metadata)",
+  "role": "custom",
+  "bbox": [
+   1332,
+   1378,
+   1795,
+   1496
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIM",
+  "role": "label",
+  "bbox": [
+   1905,
+   1252,
+   1982,
+   1297
+  ],
+  "angle": 26.3,
+  "joined": false
+ },
+ {
+  "text": "retry back",
+  "role": "custom",
+  "bbox": [
+   1575,
+   1033,
+   1737,
+   1132
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPTED",
+  "role": "label",
+  "bbox": [
+   1666,
+   713,
+   1780,
+   751
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

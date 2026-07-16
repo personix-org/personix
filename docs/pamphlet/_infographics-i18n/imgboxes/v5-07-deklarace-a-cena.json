@@ -1,0 +1,410 @@
+[
+ {
+  "text": "THE CURE FOR HYPOCRISY",
+  "role": "title",
+  "bbox": [
+   636,
+   18,
+   1892,
+   133
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DECLARE YOUR RULES — LIVE BY THEM, OR THE MARKET PRICES YOU OUT",
+  "role": "caption",
+  "bbox": [
+   373,
+   128,
+   2187,
+   206
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I DECLARE MY POLICY",
+  "role": "label",
+  "bbox": [
+   234,
+   224,
+   640,
+   285
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT I EXPECT FROM OTHERS",
+  "role": "label",
+  "bbox": [
+   186,
+   431,
+   425,
+   510
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT I BIND MYSELF TO",
+  "role": "label",
+  "bbox": [
+   475,
+   419,
+   695,
+   512
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "honesty in claims.",
+  "role": "body",
+  "bbox": [
+   181,
+   529,
+   432,
+   579
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "contracts kept.",
+  "role": "body",
+  "bbox": [
+   184,
+   580,
+   401,
+   618
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "disputes in the open.",
+  "role": "body",
+  "bbox": [
+   186,
+   627,
+   406,
+   709
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the rules I ask of you are the rules I live by.",
+  "role": "caption",
+  "bbox": [
+   241,
+   723,
+   645,
+   797
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "everyone can read my standards.",
+  "role": "caption",
+  "bbox": [
+   167,
+   1325,
+   717,
+   1374
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "honesty in claims.",
+  "role": "body",
+  "bbox": [
+   454,
+   525,
+   712,
+   579
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "contracts kept.",
+  "role": "body",
+  "bbox": [
+   468,
+   584,
+   679,
+   622
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "disputes in the open.",
+  "role": "body",
+  "bbox": [
+   459,
+   627,
+   676,
+   697
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no gatekeepers, no secrets.",
+  "role": "caption",
+  "bbox": [
+   215,
+   1371,
+   666,
+   1414
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE WORLD WATCHES",
+  "role": "label",
+  "bbox": [
+   1065,
+   237,
+   1467,
+   284
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HIS RECORD",
+  "role": "label",
+  "bbox": [
+   1145,
+   342,
+   1259,
+   406
+  ],
+  "angle": 10.2,
+  "joined": false
+ },
+ {
+  "text": "the world writes down what he actually does.",
+  "role": "caption",
+  "bbox": [
+   901,
+   1319,
+   1658,
+   1371
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every day, a little more evidence on his ledger.",
+  "role": "caption",
+  "bbox": [
+   893,
+   1372,
+   1634,
+   1419
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AT THE SHOP — YOU PAY FOR YOUR OWN RECORD",
+  "role": "label",
+  "bbox": [
+   1701,
+   227,
+   2502,
+   284
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BAKERY",
+  "role": "label",
+  "bbox": [
+   2009,
+   327,
+   2335,
+   408
+  ],
+  "angle": -5.2,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION LOOKUP",
+  "role": "label",
+  "bbox": [
+   2225,
+   827,
+   2320,
+   879
+  ],
+  "angle": 8.1,
+  "joined": false
+ },
+ {
+  "text": "BREAD — BASE 5 COINS",
+  "role": "label",
+  "bbox": [
+   2040,
+   1000,
+   2258,
+   1041
+  ],
+  "angle": 8.8,
+  "joined": false
+ },
+ {
+  "text": "HYPOCRISY SURCHARGE +10 COINS",
+  "role": "label",
+  "bbox": [
+   2034,
+   1034,
+   2263,
+   1092
+  ],
+  "angle": 7.7,
+  "joined": false
+ },
+ {
+  "text": "TOTAL 15 COINS",
+  "role": "label",
+  "bbox": [
+   2045,
+   1100,
+   2253,
+   1143
+  ],
+  "angle": 9.4,
+  "joined": false
+ },
+ {
+  "text": "ordinary service — surcharge set by his own record.",
+  "role": "caption",
+  "bbox": [
+   2029,
+   1144,
+   2256,
+   1208
+  ],
+  "angle": 11.2,
+  "joined": false
+ },
+ {
+  "text": "even a loaf of bread costs more when your words and your deeds drift apart.",
+  "role": "body",
+  "bbox": [
+   1703,
+   434,
+   1979,
+   603
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no judge, no court — the market reads your ledger and quotes the price.",
+  "role": "body",
+  "bbox": [
+   2230,
+   465,
+   2500,
+   620
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "hypocrisy is not punished by authority — it is priced by the market.",
+  "role": "caption",
+  "bbox": [
+   1699,
+   1323,
+   2514,
+   1371
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every ordinary service you buy carries a surcharge shaped by your own record.",
+  "role": "caption",
+  "bbox": [
+   1782,
+   1373,
+   2430,
+   1435
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COULD WE CALL THIS THE SOCIAL CONTRACT — REDRAWN?",
+  "role": "caption",
+  "bbox": [
+   590,
+   1442,
+   1942,
+   1507
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no authority forces the ethic — the price does.",
+  "role": "caption",
+  "bbox": [
+   886,
+   1519,
+   1637,
+   1559
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "soft pressure, every day, toward the shared average we can all live with.",
+  "role": "caption",
+  "bbox": [
+   683,
+   1554,
+   1833,
+   1605
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WALK YOUR TALK — OR PAY FOR IT. HYPOCRISY IS THE MOST EXPENSIVE REPUTATION.",
+  "role": "tagline",
+  "bbox": [
+   34,
+   1612,
+   2516,
+   1686
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HIS RECORD",
+  "role": "label",
+  "bbox": [
+   2008,
+   578,
+   2060,
+   622
+  ],
+  "angle": 20,
+  "joined": false
+ }
+]

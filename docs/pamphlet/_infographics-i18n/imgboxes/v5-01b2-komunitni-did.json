@@ -1,0 +1,230 @@
+[
+ {
+  "text": "THE COMMUNITY CAN OPEN ONE FOR YOU",
+  "role": "title",
+  "bbox": [
+   44,
+   33,
+   2502,
+   187
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "1. YOU DO HARM",
+  "role": "label",
+  "bbox": [
+   77,
+   1504,
+   393,
+   1583
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "2. COMMUNITY FILES",
+  "role": "label",
+  "bbox": [
+   859,
+   1483,
+   1266,
+   1583
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3. YOU CAN'T ESCAPE",
+  "role": "label",
+  "bbox": [
+   1686,
+   1490,
+   2079,
+   1576
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "He has no DID of his own. He never signed up.",
+  "role": "caption",
+  "bbox": [
+   183,
+   1309,
+   729,
+   1441
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COMMUNITY DID — WRONGDOER #47",
+  "role": "label",
+  "bbox": [
+   1226,
+   618,
+   1501,
+   717
+  ],
+  "angle": 16.2,
+  "joined": false
+ },
+ {
+  "text": "Opened by the community. No private key held by subject.",
+  "role": "body",
+  "bbox": [
+   1286,
+   218,
+   1641,
+   305
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FRAUD: Stole a neighbour's purse — filed by Local Community Court",
+  "role": "body",
+  "bbox": [
+   1238,
+   844,
+   1493,
+   969
+  ],
+  "angle": 15.5,
+  "joined": false
+ },
+ {
+  "text": "FLIGHT: Refused to answer — filed by Neighbourhood Witnesses",
+  "role": "body",
+  "bbox": [
+   1249,
+   1071,
+   1503,
+   1209
+  ],
+  "angle": 14.1,
+  "joined": false
+ },
+ {
+  "text": "You didn't open a DID, so the community opens one ABOUT you. Negative claims attach here.",
+  "role": "caption",
+  "bbox": [
+   883,
+   1313,
+   1643,
+   1463
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY NEW DID — WRONGDOER'S OWN",
+  "role": "label",
+  "bbox": [
+   1739,
+   632,
+   1929,
+   699
+  ],
+  "angle": -11.5,
+  "joined": false
+ },
+ {
+  "text": "CITIZENSHIP: Czech Republic",
+  "role": "body",
+  "bbox": [
+   1775,
+   720,
+   1938,
+   776
+  ],
+  "angle": -10.5,
+  "joined": false
+ },
+ {
+  "text": "You can open your own — but the community will link the two. Reputation follows the person, not the key.",
+  "role": "caption",
+  "bbox": [
+   1681,
+   1313,
+   2113,
+   1489
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The network remembers the person, not just the key.",
+  "role": "caption",
+  "bbox": [
+   1792,
+   1092,
+   2089,
+   1268
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "You can opt out of opening a DID. You cannot opt out of your reputation.",
+  "role": "tagline",
+  "bbox": [
+   63,
+   1586,
+   2465,
+   1688
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COMMUNITY DID — WRONGDOER #47",
+  "role": "label",
+  "bbox": [
+   1742,
+   237,
+   1943,
+   313
+  ],
+  "angle": -21,
+  "joined": false
+ },
+ {
+  "text": "FLIGHT: Refused to answer — filed by Neighbourhood Witnesses",
+  "role": "body",
+  "bbox": [
+   2195,
+   455,
+   2414,
+   595
+  ],
+  "angle": 4.6,
+  "joined": false
+ },
+ {
+  "text": "generate",
+  "role": "custom",
+  "bbox": [
+   1826,
+   877,
+   1947,
+   918
+  ],
+  "angle": -15.6,
+  "joined": false
+ },
+ {
+  "text": "LINK: Same person as COMMUNITY DID — WRONGDOER #47 — filed by Observer Network",
+  "role": "body",
+  "bbox": [
+   2146,
+   252,
+   2403,
+   393
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

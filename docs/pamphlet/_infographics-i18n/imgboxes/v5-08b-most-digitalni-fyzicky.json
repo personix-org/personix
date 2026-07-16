@@ -1,0 +1,182 @@
+[
+ {
+  "text": "BRIDGING THE DIGITAL AND PHYSICAL WORLDS",
+  "role": "title",
+  "bbox": [
+   67,
+   43,
+   2473,
+   172
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE AUTHORITY CARRIES REALITY ACROSS",
+  "role": "caption",
+  "bbox": [
+   499,
+   182,
+   2057,
+   285
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PHYSICAL WORLD",
+  "role": "label",
+  "bbox": [
+   504,
+   960,
+   709,
+   1070
+  ],
+  "angle": -11.9,
+  "joined": false
+ },
+ {
+  "text": "DIGITAL WORLD",
+  "role": "label",
+  "bbox": [
+   2131,
+   1188,
+   2353,
+   1322
+  ],
+  "angle": 6.7,
+  "joined": false
+ },
+ {
+  "text": "VERIFIED RECORD",
+  "role": "label",
+  "bbox": [
+   1260,
+   619,
+   1358,
+   667
+  ],
+  "angle": 66.6,
+  "joined": false
+ },
+ {
+  "text": "VERIFIED RECORD",
+  "role": "label",
+  "bbox": [
+   1467,
+   628,
+   1565,
+   676
+  ],
+  "angle": -24.6,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION 94%",
+  "role": "label",
+  "bbox": [
+   2046,
+   349,
+   2442,
+   463
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Real things happen here — out in the world.",
+  "role": "body",
+  "bbox": [
+   721,
+   1189,
+   1254,
+   1325
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "And only the verified version crosses over.",
+  "role": "body",
+  "bbox": [
+   1484,
+   341,
+   1862,
+   520
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The authority's reputation makes the digital record trustworthy.",
+  "role": "tagline",
+  "bbox": [
+   285,
+   1447,
+   2294,
+   1549
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* The system does not try to solve the oracle problem — it accepts that authorities are the bridge, and aligns with how trust already works in the real world.",
+  "role": "caption",
+  "bbox": [
+   71,
+   1564,
+   2470,
+   1621
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* If the bridge is wrong about reality, the authority pays — with their reputation.",
+  "role": "caption",
+  "bbox": [
+   67,
+   1619,
+   1324,
+   1669
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID records",
+  "role": "custom",
+  "bbox": [
+   1605,
+   1192,
+   1696,
+   1256
+  ],
+  "angle": -8.5,
+  "joined": false
+ },
+ {
+  "text": "contract",
+  "role": "custom",
+  "bbox": [
+   624,
+   503,
+   721,
+   532
+  ],
+  "angle": -10.5,
+  "joined": false
+ },
+ {
+  "text": "DID records",
+  "role": "label",
+  "bbox": [
+   1786,
+   1190,
+   1875,
+   1258
+  ],
+  "angle": 9,
+  "joined": false
+ }
+]

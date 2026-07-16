@@ -1,0 +1,122 @@
+[
+ {
+  "text": "THE STATE",
+  "role": "label",
+  "bbox": [
+   317,
+   191,
+   947,
+   305
+  ],
+  "angle": -8.8,
+  "joined": false
+ },
+ {
+  "text": "COMPLAINTS OFFICE",
+  "role": "label",
+  "bbox": [
+   765,
+   364,
+   1032,
+   465
+  ],
+  "angle": -6.1,
+  "joined": false
+ },
+ {
+  "text": "COURTS",
+  "role": "label",
+  "bbox": [
+   1240,
+   314,
+   1470,
+   404
+  ],
+  "angle": -7,
+  "joined": false
+ },
+ {
+  "text": "STATE AUDIT",
+  "role": "label",
+  "bbox": [
+   1674,
+   247,
+   2023,
+   329
+  ],
+  "angle": -7.4,
+  "joined": false
+ },
+ {
+  "text": "I've been waiting 3 years.",
+  "role": "caption",
+  "bbox": [
+   862,
+   548,
+   1045,
+   633
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NEXT HEARING: 2029.",
+  "role": "label",
+  "bbox": [
+   1265,
+   796,
+   1438,
+   869
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I refuse to accept it.",
+  "role": "tagline",
+  "bbox": [
+   954,
+   1315,
+   1991,
+   1445
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BOARD SEAT — STATE ENTERPRISE",
+  "role": "label",
+  "bbox": [
+   1790,
+   444,
+   1922,
+   536
+  ],
+  "angle": -4.3,
+  "joined": false
+ },
+ {
+  "text": "NO MATERIAL FINDINGS. ALL IN ORDER.",
+  "role": "caption",
+  "bbox": [
+   1753,
+   762,
+   1948,
+   823
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "years",
+  "role": "custom",
+  "bbox": [
+   1198,
+   513,
+   1287,
+   556
+  ],
+  "angle": 6.8,
+  "joined": false
+ }
+]

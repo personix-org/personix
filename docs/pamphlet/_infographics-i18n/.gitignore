@@ -1,0 +1,8 @@
+# Generated / large — regenerated from sources by render.py, never committed
+venv/
+out/
+mask/
+trans_raw/
+*.log
+gallery-*.html
+__pycache__/

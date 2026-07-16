@@ -1,0 +1,189 @@
+[
+ {
+  "text": "PREREQUISITE 4 OF 5: CONSENSUS",
+  "role": "title",
+  "bbox": [
+   840,
+   1499,
+   1688,
+   1581
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "You may differ. Just not too far.",
+  "role": "caption",
+  "bbox": [
+   822,
+   194,
+   1730,
+   279
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RADICAL",
+  "role": "label",
+  "bbox": [
+   960,
+   795,
+   1114,
+   855
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CONSENSUS",
+  "role": "label",
+  "bbox": [
+   1139,
+   535,
+   1418,
+   628
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RADICAL",
+  "role": "label",
+  "bbox": [
+   1450,
+   793,
+   1614,
+   860
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY POLICY",
+  "role": "label",
+  "bbox": [
+   314,
+   1017,
+   591,
+   1099
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COMMUNITY POLICIES",
+  "role": "label",
+  "bbox": [
+   1838,
+   995,
+   2306,
+   1077
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FREE SOCIETY",
+  "role": "label",
+  "bbox": [
+   439,
+   1497,
+   769,
+   1577
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITARIAN SOCIETY",
+  "role": "label",
+  "bbox": [
+   1701,
+   1501,
+   2214,
+   1579
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The tolerance zone stretches with the freedom of the culture.",
+  "role": "caption",
+  "bbox": [
+   904,
+   1342,
+   1636,
+   1477
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CONSENSUS IS A TOLERANCE ZONE, NOT A UNANIMOUS AGREEMENT.",
+  "role": "tagline",
+  "bbox": [
+   48,
+   1584,
+   2518,
+   1704
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "No fraud. Contracts honored. No violence.",
+  "role": "body",
+  "bbox": [
+   391,
+   823,
+   599,
+   1000
+  ],
+  "angle": -6.6,
+  "joined": false
+ },
+ {
+  "text": "STAY IN RANGE — NOT A RADICAL.",
+  "role": "tagline",
+  "path": [
+   [
+    612,
+    141
+   ],
+   [
+    810,
+    122
+   ],
+   [
+    985,
+    110
+   ],
+   [
+    1233,
+    108
+   ],
+   [
+    1395,
+    103
+   ],
+   [
+    1572,
+    110
+   ],
+   [
+    1756,
+    127
+   ],
+   [
+    1869,
+    132
+   ],
+   [
+    1921,
+    136
+   ]
+  ],
+  "thickness": 78
+ }
+]

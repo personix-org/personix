@@ -1,0 +1,314 @@
+[
+ {
+  "text": "YOUR IDENTITY, YOUR KEYS, YOUR RULES",
+  "role": "title",
+  "bbox": [
+   31,
+   13,
+   2509,
+   177
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YOU CREATE IT YOURSELF",
+  "role": "label",
+  "bbox": [
+   261,
+   218,
+   951,
+   315
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YOUR DID DOCUMENT",
+  "role": "label",
+  "bbox": [
+   1252,
+   218,
+   1850,
+   313
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIMS — VERIFIED FACTS ABOUT YOU",
+  "role": "label",
+  "bbox": [
+   1952,
+   216,
+   2477,
+   363
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CITIZENSHIP: Czech Republic — verified by Municipal Notary",
+  "role": "body",
+  "bbox": [
+   1969,
+   380,
+   2444,
+   520
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EDUCATION: MSc Computer Science — verified by University Alumni Network",
+  "role": "body",
+  "bbox": [
+   1975,
+   551,
+   2451,
+   684
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PROPERTY: Owner of apartment #42 — verified by Local Community Registry",
+  "role": "body",
+  "bbox": [
+   1969,
+   717,
+   2455,
+   869
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PASSIVE WITNESS: Ignored a wrongdoing — policy not honoured — filed by Neighbourhood Witnesses",
+  "role": "body",
+  "bbox": [
+   1976,
+   898,
+   2453,
+   1063
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FRAUD: Cheated a neighbour out of savings — filed by Local Community Court",
+  "role": "body",
+  "bbox": [
+   1978,
+   1096,
+   2453,
+   1265
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Claims are verified statements. The good and the bad. Authorities stake their reputation on them.",
+  "role": "caption",
+  "bbox": [
+   1959,
+   1272,
+   2461,
+   1393
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STATE ID — REVOCABLE: the state can cancel it anytime.",
+  "role": "caption",
+  "bbox": [
+   458,
+   1442,
+   1011,
+   1545
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID — IRREVOCABLE: only your private key can sign changes.",
+  "role": "caption",
+  "bbox": [
+   1732,
+   1443,
+   2439,
+   1560
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Your identity. Your keys. Your rules. No permission needed.",
+  "role": "tagline",
+  "bbox": [
+   118,
+   1580,
+   2415,
+   1686
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PRIVATE KEY — signs on your behalf. Only you hold this. Never share.",
+  "role": "caption",
+  "bbox": [
+   198,
+   319,
+   685,
+   377
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PUBLIC KEY — verifies your signatures. Visible to the network.",
+  "role": "caption",
+  "bbox": [
+   767,
+   319,
+   1127,
+   453
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID DOCUMENT",
+  "role": "label",
+  "bbox": [
+   1327,
+   405,
+   1746,
+   480
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PUBLIC KEY: [cryptographic hash]",
+  "role": "body",
+  "bbox": [
+   1286,
+   507,
+   1647,
+   617
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NETWORK ADDRESS: [onion gateway]",
+  "role": "body",
+  "bbox": [
+   1288,
+   630,
+   1677,
+   745
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFICATION POLICY: My rules for interactions",
+  "role": "body",
+  "bbox": [
+   1286,
+   767,
+   1700,
+   866
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIMS: see right",
+  "role": "body",
+  "bbox": [
+   1279,
+   895,
+   1467,
+   1006
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "This is your public identity. Anyone can read it. Only YOUR private key can sign changes to it.",
+  "role": "caption",
+  "bbox": [
+   1158,
+   1206,
+   1568,
+   1385
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "No state can revoke this.",
+  "role": "caption",
+  "bbox": [
+   1614,
+   1314,
+   1833,
+   1399
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "No registration office. No government form. No company approval. You generate it yourself.",
+  "role": "caption",
+  "bbox": [
+   707,
+   1209,
+   1127,
+   1397
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "GENERATE",
+  "role": "label",
+  "bbox": [
+   717,
+   937,
+   887,
+   1000
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CANCEL",
+  "role": "label",
+  "bbox": [
+   200,
+   1467,
+   327,
+   1519
+  ],
+  "angle": -16.7,
+  "joined": false
+ },
+ {
+  "text": "PRIVATE KEY — signs on your behalf. Only you hold this. Never share.",
+  "role": "caption",
+  "bbox": [
+   363,
+   369,
+   690,
+   450
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

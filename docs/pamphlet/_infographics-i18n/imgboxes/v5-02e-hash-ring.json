@@ -1,0 +1,481 @@
+[
+ {
+  "text": "HOW THE ALGORITHM PICKS A VERIFIER",
+  "role": "title",
+  "bbox": [
+   894,
+   43,
+   2478,
+   124
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "A FAIR COIN THROWN ACROSS YOUR COMMUNITY",
+  "role": "caption",
+  "bbox": [
+   1211,
+   146,
+   2497,
+   201
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONE ARTEFACT TO PUBLISH",
+  "role": "label",
+  "bbox": [
+   162,
+   179,
+   404,
+   253
+  ],
+  "angle": -6.1,
+  "joined": false
+ },
+ {
+  "text": "CLAIM",
+  "role": "label",
+  "bbox": [
+   76,
+   404,
+   155,
+   440
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POLICY",
+  "role": "label",
+  "bbox": [
+   172,
+   406,
+   244,
+   433
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIM STANDARD",
+  "role": "label",
+  "bbox": [
+   242,
+   408,
+   349,
+   454
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POLICY STANDARD",
+  "role": "label",
+  "bbox": [
+   346,
+   408,
+   444,
+   452
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID DOCUMENT CHANGE",
+  "role": "label",
+  "bbox": [
+   442,
+   394,
+   545,
+   469
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "pick exactly one artefact per call",
+  "role": "caption",
+  "bbox": [
+   83,
+   487,
+   487,
+   549
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CHRONOLOGICAL LIST OF PRIOR VERIFIER RESPONSES",
+  "role": "label",
+  "bbox": [
+   798,
+   167,
+   1175,
+   256
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "empty on the first call — grows with every rejection",
+  "role": "caption",
+  "bbox": [
+   807,
+   504,
+   1132,
+   574
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every kind of record is fed through the same hash — no side channel lets anyone route information around a verifier.",
+  "role": "caption",
+  "bbox": [
+   65,
+   557,
+   463,
+   662
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "some authorities exist only to randomise the verifier — that alone is a service worth reputation.",
+  "role": "body",
+  "bbox": [
+   52,
+   717,
+   308,
+   850
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the publish path goes: issuer → authority → verifier. No record may skip the authority step.",
+  "role": "caption",
+  "bbox": [
+   34,
+   922,
+   512,
+   1004
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HASH: 7A3F…",
+  "role": "label",
+  "bbox": [
+   808,
+   829,
+   1058,
+   887
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "your verifier",
+  "role": "label",
+  "bbox": [
+   1470,
+   1128,
+   1594,
+   1187
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YOUR COMMUNITY AND ITS VICINITY",
+  "role": "label",
+  "bbox": [
+   1446,
+   301,
+   2069,
+   394
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every face has the same chance — the hash lands uniformly at random",
+  "role": "caption",
+  "bbox": [
+   2050,
+   253,
+   2473,
+   315
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "you cannot choose your verifier — the algorithm throws the coin, and everyone here has an equal chance.",
+  "role": "body",
+  "bbox": [
+   2200,
+   934,
+   2471,
+   1073
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT HAPPENS NEXT",
+  "role": "label",
+  "bbox": [
+   2212,
+   1215,
+   2494,
+   1274
+  ],
+  "angle": 4.4,
+  "joined": false
+ },
+ {
+  "text": "The verifier answers with a price — or rejects with a reason — see HOW THE VERIFIER ANSWERS",
+  "role": "body",
+  "bbox": [
+   2232,
+   1282,
+   2482,
+   1399
+  ],
+  "angle": 4.6,
+  "joined": false
+ },
+ {
+  "text": "The issuer decides what to do with that answer — see THE ISSUER'S CHOICE",
+  "role": "body",
+  "bbox": [
+   2215,
+   1396,
+   2468,
+   1473
+  ],
+  "angle": 4.6,
+  "joined": false
+ },
+ {
+  "text": "Each retry adds to the cost — as shown earlier on PUBLISHING COST",
+  "role": "body",
+  "bbox": [
+   2208,
+   1479,
+   2449,
+   1568
+  ],
+  "angle": 4.9,
+  "joined": false
+ },
+ {
+  "text": "THE ALGORITHM PICKS — YOU DO NOT.",
+  "role": "tagline",
+  "bbox": [
+   1312,
+   1585,
+   2499,
+   1681
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CAN YOU BRUTE-FORCE IT?",
+  "role": "label",
+  "bbox": [
+   96,
+   1015,
+   447,
+   1064
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I could grind thousands of drafts until one lands on the verifier I want…",
+  "role": "body",
+  "bbox": [
+   268,
+   1065,
+   667,
+   1127
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the hash is deterministic but pre-image-resistant — each small edit throws the pick somewhere unrelated.",
+  "role": "caption",
+  "bbox": [
+   58,
+   1285,
+   643,
+   1349
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BUT THE AUTHORITY SEALS THE REST",
+  "role": "label",
+  "bbox": [
+   101,
+   1353,
+   590,
+   1399
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY-SIGNED EVIDENCE ABOUT OTHERS",
+  "role": "label",
+  "bbox": [
+   251,
+   1402,
+   526,
+   1468
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "…but I cannot predict what the authority will sign — and I cannot tell whether she is in league with me or not.",
+  "role": "body",
+  "bbox": [
+   543,
+   1409,
+   812,
+   1543
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "because the hash eats authority-signed evidence too, the issuer cannot forecast his own hash. For the community, the question becomes: do we trust this authority — and this issuer-with-this-authority — at all?",
+  "role": "caption",
+  "bbox": [
+   868,
+   1461,
+   1250,
+   1664
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every kind of record is fed through the same hash — no side channel lets anyone route information around a verifier.",
+  "role": "caption",
+  "bbox": [
+   776,
+   610,
+   1092,
+   773
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "slightly different",
+  "role": "custom",
+  "bbox": [
+   702,
+   1101,
+   841,
+   1169
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "wildly different",
+  "role": "custom",
+  "bbox": [
+   695,
+   1174,
+   838,
+   1241
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "completely different",
+  "role": "custom",
+  "bbox": [
+   700,
+   1249,
+   850,
+   1316
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "chronological responses",
+  "role": "custom",
+  "path": [
+   [
+    669,
+    161
+   ],
+   [
+    733,
+    125
+   ],
+   [
+    798,
+    97
+   ],
+   [
+    846,
+    94
+   ]
+  ],
+  "thickness": 60
+ },
+ {
+  "text": "DID",
+  "role": "label",
+  "bbox": [
+   468,
+   336,
+   516,
+   364
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "A",
+  "role": "custom",
+  "bbox": [
+   58,
+   1029,
+   91,
+   1071
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "B",
+  "role": "custom",
+  "bbox": [
+   60,
+   1363,
+   89,
+   1399
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

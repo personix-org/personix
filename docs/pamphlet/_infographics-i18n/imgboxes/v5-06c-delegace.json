@@ -1,0 +1,338 @@
+[
+ {
+  "text": "DELEGATION OF PUBLICATION RIGHTS",
+  "role": "title",
+  "bbox": [
+   56,
+   44,
+   1934,
+   131
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YOU LEND THE KEY TO AN AUTHORITY THAT SERVES YOU — AND PULL IT BACK IN AN INSTANT",
+  "role": "caption",
+  "bbox": [
+   49,
+   155,
+   1931,
+   193
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I lend the key — the string stays with me.",
+  "role": "body",
+  "bbox": [
+   170,
+   271,
+   531,
+   347
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I can lend more than one key at a time — a background automation can re-issue a fresh one whenever one of mine gets drawn.",
+  "role": "caption",
+  "bbox": [
+   600,
+   974,
+   1054,
+   1165
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "delegation — the authority acts on my behalf, within rules I approve.",
+  "role": "label",
+  "bbox": [
+   647,
+   430,
+   1200,
+   543
+  ],
+  "angle": 5.6,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY — SERVICE PROVIDER",
+  "role": "label",
+  "bbox": [
+   1195,
+   276,
+   1892,
+   369
+  ],
+  "angle": -2.9,
+  "joined": false
+ },
+ {
+  "text": "policy · standard · party · chamber",
+  "role": "label",
+  "bbox": [
+   1251,
+   357,
+   1830,
+   435
+  ],
+  "angle": -1,
+  "joined": false
+ },
+ {
+  "text": "POLICY",
+  "role": "label",
+  "bbox": [
+   1400,
+   775,
+   1487,
+   801
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONE TUG — THE KEY COMES HOME",
+  "role": "label",
+  "bbox": [
+   2012,
+   558,
+   2450,
+   584
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SPENT",
+  "role": "label",
+  "bbox": [
+   351,
+   1288,
+   471,
+   1344
+  ],
+  "angle": -15.3,
+  "joined": false
+ },
+ {
+  "text": "after that, the citizen must issue a new key to keep standing with the authority — an automation can do this in the background.",
+  "role": "caption",
+  "bbox": [
+   70,
+   1516,
+   979,
+   1606
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the string never leaves your hand — that is the whole trick.",
+  "role": "body",
+  "bbox": [
+   2005,
+   642,
+   2457,
+   739
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "KINDS OF AUTHORITIES THAT CAN HOLD THE KEY",
+  "role": "label",
+  "bbox": [
+   705,
+   1260,
+   1003,
+   1449
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PROFESSIONAL CHAMBER",
+  "role": "label",
+  "bbox": [
+   1584,
+   1435,
+   1805,
+   1494
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COOPERATIVE",
+  "role": "label",
+  "bbox": [
+   1871,
+   1428,
+   2073,
+   1498
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "one pull on the string ends the arrangement.",
+  "role": "caption",
+  "bbox": [
+   1226,
+   1562,
+   1889,
+   1601
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STRING OF RECALL",
+  "role": "label",
+  "bbox": [
+   660,
+   604,
+   813,
+   669
+  ],
+  "angle": -25,
+  "joined": false
+ },
+ {
+  "text": "revocable only until the key is drawn.",
+  "role": "caption",
+  "bbox": [
+   423,
+   1446,
+   772,
+   1520
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONE KEY DRAWN AT RANDOM — THE KEY IS SPENT",
+  "role": "label",
+  "bbox": [
+   134,
+   1415,
+   452,
+   1472
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the authority serves its members — not the other way around.",
+  "role": "caption",
+  "bbox": [
+   1080,
+   1519,
+   2065,
+   1567
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LEND THE KEY — KEEP THE STRING. DELEGATION IS NEVER SURRENDER.",
+  "role": "tagline",
+  "bbox": [
+   72,
+   1615,
+   2478,
+   1684
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY RIGHT TO PUBLISH — 1 RECORD",
+  "role": "label",
+  "bbox": [
+   766,
+   832,
+   919,
+   916
+  ],
+  "angle": -36.2,
+  "joined": false
+ },
+ {
+  "text": "MY RIGHT TO PUBLISH — 1 RECORD",
+  "role": "label",
+  "bbox": [
+   1150,
+   862,
+   1243,
+   958
+  ],
+  "angle": 6.4,
+  "joined": false
+ },
+ {
+  "text": "DELEGATED KEYS — POOL",
+  "role": "label",
+  "bbox": [
+   1563,
+   1004,
+   1783,
+   1073
+  ],
+  "angle": 5.2,
+  "joined": false
+ },
+ {
+  "text": "DRAWN AT RANDOM WHEN THE AUTHORITY ACTS",
+  "role": "label",
+  "bbox": [
+   1696,
+   803,
+   1917,
+   905
+  ],
+  "angle": 4.4,
+  "joined": false
+ },
+ {
+  "text": "DRAWN AT RANDOM WHEN THE AUTHORITY ACTS",
+  "role": "label",
+  "bbox": [
+   1865,
+   1051,
+   2053,
+   1123
+  ],
+  "angle": 43.4,
+  "joined": false
+ },
+ {
+  "text": "POLITICAL PARTY",
+  "role": "label",
+  "bbox": [
+   1066,
+   1428,
+   1222,
+   1470
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STANDARDS BODY",
+  "role": "label",
+  "bbox": [
+   1328,
+   1428,
+   1512,
+   1470
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

@@ -1,0 +1,33 @@
+{
+  "file": "v5-08h-role-delegate.webp",
+  "texts": [
+    {"role": "title", "text": "THE DELEGATE — A CLAIM-SERVICE YOU SUBSCRIBE TO"},
+    {"role": "tagline", "text": "DELEGATE WHAT YOU CAN'T HANDLE YOURSELF · KEEP WHAT MATTERS TO YOU"},
+    {"role": "label", "text": "DELEGATE"},
+    {"role": "label", "text": "DELEGATION POLICY"},
+    {"role": "body", "text": "I will publish claims on your behalf if events fall within the scope below."},
+    {"role": "label", "text": "SCOPE: fraud · contract disputes · neighbourhood matters"},
+    {"role": "label", "text": "MY YEARLY PUBLISHING RIGHTS"},
+    {"role": "label", "text": "(granted by the community)"},
+    {"role": "label", "text": "RIGHT 1"},
+    {"role": "label", "text": "RIGHT 2"},
+    {"role": "label", "text": "RIGHT 3"},
+    {"role": "label", "text": "RIGHT 4"},
+    {"role": "label", "text": "RIGHT 5"},
+    {"role": "label", "text": "KEEP — for what matters most to me"},
+    {"role": "label", "text": "DELEGATE — within their scope"},
+    {"role": "label", "text": "REVOCABLE AT ANY TIME"},
+    {"role": "label", "text": "DELEGATE'S REPUTATION"},
+    {"role": "label", "text": "WHAT THE DELEGATE DOES"},
+    {"role": "body", "text": "1. Receives a portion of your yearly publishing rights"},
+    {"role": "body", "text": "2. Activates claims for you when events fall within an agreed scope"},
+    {"role": "body", "text": "3. Spares you from publishing every minor 'what if'"},
+    {"role": "body", "text": "4. Stakes their own reputation on each claim they sign"},
+    {"role": "body", "text": "5. Returns the rights to you the moment you revoke"},
+    {"role": "caption", "text": "I'll keep two for the things only I can speak to. The rest — handle them for me."},
+    {"role": "caption", "text": "Within scope, on your behalf, with my own reputation alongside yours."},
+    {"role": "caption", "text": "Like insurance for your reputational rights."},
+    {"role": "tagline", "text": "Outsource what you can't handle yourself. Stay in the loop. Pull the rights back any time."},
+    {"role": "caption", "text": "* If the delegate acts outside the agreed scope, both their reputation and yours are publicly affected."}
+  ]
+}

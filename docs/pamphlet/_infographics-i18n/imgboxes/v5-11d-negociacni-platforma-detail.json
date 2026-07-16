@@ -1,0 +1,325 @@
+[
+ {
+  "text": "NEGOTIATION PLATFORM — THE CLOSED HOPPER",
+  "role": "title",
+  "bbox": [
+   67,
+   45,
+   2280,
+   146
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the citizens hold the key. the state opens when conditions are met.",
+  "role": "caption",
+  "bbox": [
+   71,
+   151,
+   1752,
+   222
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the queue grows.",
+  "role": "caption",
+  "bbox": [
+   110,
+   328,
+   382,
+   382
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "0%",
+  "role": "label",
+  "bbox": [
+   1983,
+   574,
+   2038,
+   626
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5%",
+  "role": "label",
+  "bbox": [
+   1966,
+   404,
+   2021,
+   445
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "10%",
+  "role": "label",
+  "bbox": [
+   2110,
+   306,
+   2184,
+   346
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "15%",
+  "role": "label",
+  "bbox": [
+   2246,
+   406,
+   2332,
+   445
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "20%",
+  "role": "label",
+  "bbox": [
+   2237,
+   576,
+   2316,
+   624
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "critical mass — 10% of GDP",
+  "role": "label",
+  "bbox": [
+   2031,
+   616,
+   2243,
+   691
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every tablet is a vote on the lock.",
+  "role": "caption",
+  "bbox": [
+   782,
+   770,
+   984,
+   896
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "opens when — the state accepts ESR matching for this department.",
+  "role": "label",
+  "bbox": [
+   1061,
+   684,
+   1546,
+   831
+  ],
+  "angle": -4.4,
+  "joined": false
+ },
+ {
+  "text": "demanding funding!",
+  "role": "label",
+  "bbox": [
+   1646,
+   769,
+   1813,
+   850
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "demand funding!",
+  "role": "label",
+  "bbox": [
+   1231,
+   1097,
+   1357,
+   1180
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "a small fraction of GDP is enough — at critical mass, withholding becomes a real threat.",
+  "role": "caption",
+  "bbox": [
+   1869,
+   817,
+   2452,
+   960
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Ministry of Defense",
+  "role": "label",
+  "bbox": [
+   901,
+   1152,
+   1027,
+   1228
+  ],
+  "angle": 16.6,
+  "joined": false
+ },
+ {
+  "text": "Ministry of Interior",
+  "role": "label",
+  "bbox": [
+   1558,
+   1153,
+   1678,
+   1232
+  ],
+  "angle": -15.9,
+  "joined": false
+ },
+ {
+  "text": "Ministry of Health",
+  "role": "label",
+  "bbox": [
+   1701,
+   1101,
+   1818,
+   1188
+  ],
+  "angle": -14.7,
+  "joined": false
+ },
+ {
+  "text": "after critical mass —",
+  "role": "label",
+  "bbox": [
+   1974,
+   1008,
+   2363,
+   1061
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the state opens its books for simple, defensible payments first.",
+  "role": "body",
+  "bbox": [
+   1957,
+   1089,
+   2444,
+   1171
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "corruption-linked categories stay locked the longest.",
+  "role": "body",
+  "bbox": [
+   1964,
+   1183,
+   2414,
+   1269
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "each unlock takes more pressure — and is itself recorded.",
+  "role": "body",
+  "bbox": [
+   1955,
+   1283,
+   2440,
+   1374
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's world. it is — only the key is now in many hands. no revolution. just better incentives.",
+  "role": "label",
+  "bbox": [
+   2193,
+   1427,
+   2482,
+   1650
+  ],
+  "angle": -8.9,
+  "joined": false
+ },
+ {
+  "text": "Money flows when there is transparency. The citizens hold the key.",
+  "role": "tagline",
+  "bbox": [
+   64,
+   1502,
+   2151,
+   1598
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no force. no revolution. just enough tablets to make withholding credible.",
+  "role": "tagline",
+  "bbox": [
+   67,
+   1609,
+   1923,
+   1666
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ECONOMIC WEIGHT — % of GDP",
+  "role": "label",
+  "path": [
+   [
+    1893,
+    274
+   ],
+   [
+    1955,
+    226
+   ],
+   [
+    2077,
+    169
+   ],
+   [
+    2187,
+    176
+   ],
+   [
+    2263,
+    187
+   ],
+   [
+    2349,
+    226
+   ],
+   [
+    2413,
+    278
+   ]
+  ],
+  "thickness": 60
+ }
+]

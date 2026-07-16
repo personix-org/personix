@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Box editor — texty infografik</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.4 -apple-system, Segoe UI, sans-serif; background:#1d1f21; color:#e8e8e8; }
+  #top { display:flex; align-items:center; gap:10px; padding:8px 14px; background:#111; border-bottom:1px solid #333; position:sticky; top:0; z-index:50; flex-wrap:wrap; }
+  #top select, #top button { font-size:13px; padding:5px 9px; background:#2a2d31; color:#e8e8e8; border:1px solid #444; border-radius:6px; cursor:pointer; }
+  #top button:hover { background:#3a3d41; }
+  #top button.mode { border-color:#666; }
+  #top button.mode.on { background:#2a4d6a; border-color:#4af; color:#cef; }
+  #top .grow { flex:1; }
+  #prog { font-size:12px; color:#9ad; }
+  #save { font-size:12px; color:#6c6; min-width:80px; }
+  #wrap { display:flex; height:calc(100vh - 47px); }
+  #side { width:290px; background:#191b1d; border-right:1px solid #333; overflow-y:auto; padding:8px; flex-shrink:0; }
+  #side h3 { margin:8px 4px 6px; font-size:12px; text-transform:uppercase; color:#888; letter-spacing:.5px; }
+  .tx { padding:6px 8px; margin:3px 0; border-radius:6px; cursor:pointer; border:1px solid #333; background:#222; }
+  .tx:hover { background:#2a2d31; }
+  .tx.active { border-color:#4a90d9; background:#22303f; }
+  .tx .row1 { display:flex; gap:6px; align-items:flex-start; }
+  .tx .sw { width:12px; height:12px; border-radius:3px; flex-shrink:0; margin-top:2px; }
+  .tx .t { flex:1; word-break:break-word; }
+  .tx .cnt { font-size:11px; color:#888; }
+  .tx .cnt.has { color:#6c6; }
+  .tx .cnt.multi { color:#fc6; }
+  .tx .cnt.path { color:#4af; }
+  .tx .join { margin-top:5px; font-size:11px; display:flex; gap:6px; }
+  .tx .join button { flex:1; padding:3px; font-size:11px; background:#2a2d31; color:#bbb; border:1px solid #444; border-radius:5px; cursor:pointer; }
+  .tx .join button.on { background:#3a4d3a; color:#8e8; border-color:#4a6; }
+  #addwrap { display:flex; gap:4px; margin:6px 4px; }
+  #addwrap input { flex:1; padding:5px; background:#222; border:1px solid #444; color:#eee; border-radius:5px; }
+  #stage { flex:1; overflow:auto; background:#0d0d0d; position:relative; }
+  #canvas { position:relative; margin:16px; display:inline-block; }
+  #canvas img { display:block; user-select:none; -webkit-user-drag:none; }
+  #svg { position:absolute; top:0; left:0; pointer-events:none; overflow:visible; }
+  #svg .pt { pointer-events:auto; cursor:move; }
+  .box { position:absolute; border:2px solid; cursor:move; }
+  .box .lbl { position:absolute; top:-19px; left:-2px; font-size:11px; font-weight:700; padding:1px 5px; color:#fff; white-space:nowrap; border-radius:3px 3px 0 0; }
+  .box.sel { border-width:3px; box-shadow:0 0 0 1px #fff; }
+  .box .h { position:absolute; width:12px; height:12px; background:#fff; border:1px solid #333; border-radius:50%; }
+  .box .h.se { right:-6px; bottom:-6px; cursor:nwse-resize; }
+  .box .h.ne { right:-6px; top:-6px; cursor:nesw-resize; }
+  .box .h.sw { left:-6px; bottom:-6px; cursor:nesw-resize; }
+  .box .h.nw { left:-6px; top:-6px; cursor:nwse-resize; }
+  .box .rot { position:absolute; left:50%; top:-30px; width:14px; height:14px; margin-left:-7px; background:#4af; border:2px solid #fff; border-radius:50%; cursor:grab; }
+  .box .rotstem { position:absolute; left:50%; top:-18px; width:1px; height:18px; background:#4af; margin-left:-1px; }
+  #hint { padding:6px 10px; font-size:12px; color:#aaa; background:#191b1d; border-top:1px solid #333; }
+  kbd { background:#333; border-radius:3px; padding:1px 5px; font-size:11px; }
+</style>
+</head>
+<body>
+<div id="top">
+  <button id="prev">◀</button>
+  <select id="pick"></select>
+  <button id="next">▶</button>
+  <button id="mRect" class="mode on">▭ Obdélník</button>
+  <button id="mPath" class="mode">〰️ Cesta (ohýbaný text)</button>
+  <span id="prog"></span>
+  <span class="grow"></span>
+  <span id="save">–</span>
+</div>
+<div id="wrap">
+  <div id="side">
+    <h3>Texty (klikni → kresli)</h3>
+    <div id="list"></div>
+    <div id="addwrap"><input id="addtx" placeholder="+ vlastní text na obrázku"><button id="addbtn">+</button></div>
+    <h3>Ovládání</h3>
+    <div style="font-size:12px;color:#999;padding:0 4px 8px">
+      <b>Obdélník:</b> klikni text → táhni rámeček. Posun tažením, rohy zvětší, <b style="color:#4af">modré kolečko natočí</b>, <kbd>Del</kbd> smaže.<br><br>
+      <b style="color:#4af">〰️ Cesta (ohýbaný text):</b> přepni nahoře, klikni text vlevo, pak <b>klikej body podél oblouku</b> (3–6 stačí). <kbd>Enter</kbd> nebo dvojklik ukončí. Titulek se do toho tvaru vysází.<br>
+      Tloušťku (výšku písma) měníš <kbd>↑</kbd><kbd>↓</kbd> u vybrané cesty. Body přetáhneš myší.<br><br>
+      Oprava textu rámečku: klikni rámeček → text vlevo → <kbd>R</kbd>.<br>
+      Kopírování <kbd>⌘C</kbd>/<kbd>⌘V</kbd>. Ukládá se samo. <kbd>N</kbd>/<kbd>P</kbd> další/předchozí.
+    </div>
+  </div>
+  <div id="stage"><div id="canvas"><img id="img"><svg id="svg"></svg></div></div>
+</div>
+<div id="hint"></div>
+<script>
+const PAL=["#e63232","#2a8ce6","#1eaa5a","#dc8c14","#a03cc8","#00aaaa","#d22878","#5a6e28","#5059dc","#c85a3c","#7828a0","#28b48c","#e65a1e","#3ca0d2","#aa6e1e"];
+const SVGNS="http://www.w3.org/2000/svg";
+let cur=null, data=null, active=-1, boxes=[], scale=1, sel=-1, saveT=null, clip=null;
+let mode='rect', draftPts=null;   // mode: 'rect' | 'path'
+const $=s=>document.querySelector(s);
+const R=v=>Math.round(v);
+const isPath=b=>!!b.path;
+
+async function loadList(){
+  const l=await (await fetch('/api/list')).json();
+  const pick=$('#pick'); pick.innerHTML='';
+  l.forEach((it,i)=>{
+    const o=document.createElement('option'); o.value=it.name;
+    o.textContent=`${i+1}. ${it.name}  ${it.done?'✓ '+it.nboxes:'○ nezačato'}`;
+    pick.appendChild(o);
+  });
+  $('#prog').textContent=`${l.filter(x=>x.done).length}/${l.length} označeno`;
+  window._list=l;
+}
+async function load(name){
+  cur=name; sel=-1; active=-1; draftPts=null;
+  data=await (await fetch('/api/data/'+name)).json();
+  boxes=data.boxes.map(b=> b.path
+    ? {text:b.text, role:b.role||'', path:b.path.map(p=>p.slice()), thickness:b.thickness||60}
+    : {text:b.text, role:b.role||'', bbox:b.bbox.slice(), angle:b.angle||0, joined:!!b.joined});
+  const img=$('#img');
+  img.onload=()=>{ layout(); render(); };
+  img.src='/api/img/'+name+'?t='+Date.now();
+  $('#pick').value=name;
+  renderList();
+}
+function layout(){
+  const img=$('#img'), maxW=Math.min(window.innerWidth-330, 1600);
+  scale=Math.min(1, maxW/data.w);
+  const w=data.w*scale, h=data.h*scale;
+  img.style.width=w+'px'; img.style.height=h+'px';
+  const c=$('#canvas'); c.style.width=w+'px'; c.style.height=h+'px';
+  const s=$('#svg'); s.setAttribute('width',w); s.setAttribute('height',h);
+}
+function renderList(){
+  const list=$('#list'); list.innerHTML='';
+  data.texts.forEach((t,i)=>{
+    const mine=boxes.filter(b=>b.text===t.text);
+    const n=mine.length, np=mine.filter(isPath).length;
+    const d=document.createElement('div'); d.className='tx'+(active===i?' active':'');
+    let joinHtml='';
+    if(n>1 && np===0){
+      const j=mine[0].joined;
+      joinHtml=`<div class="join">
+        <button data-join="1" class="${j?'on':''}">🔗 spojený</button>
+        <button data-join="0" class="${j?'':'on'}">⧉ výskyty</button></div>`;
+    }
+    const cls = np? 'path' : (n>1?'multi':(n?'has':''));
+    const lab = np? `${np}× 〰️cesta` : (n? n+'×' : '—');
+    d.innerHTML=`<div class="row1"><span class="sw" style="background:${PAL[i%PAL.length]}"></span>
+      <span class="t">${esc(t.text)}<br><span class="cnt ${cls}">${t.role} · ${lab}</span></span></div>${joinHtml}`;
+    d.querySelector('.row1').onclick=()=>{ active=i; renderList(); hint(); };
+    d.querySelectorAll('[data-join]').forEach(btn=>btn.onclick=(e)=>{
+      e.stopPropagation(); const val=btn.dataset.join==='1';
+      boxes.forEach(b=>{ if(b.text===t.text && !isPath(b)) b.joined=val; });
+      save(); renderList();
+    });
+    list.appendChild(d);
+  });
+}
+function colorOf(text){
+  const i=data.texts.findIndex(t=>t.text===text);
+  return i>=0?PAL[i%PAL.length]:'#888';
+}
+function render(){
+  const c=$('#canvas'); [...c.querySelectorAll('.box')].forEach(e=>e.remove());
+  const svg=$('#svg'); svg.innerHTML='';
+  boxes.forEach((b,i)=>{
+    const col=colorOf(b.text);
+    if(isPath(b)){
+      const pts=b.path.map(p=>`${p[0]*scale},${p[1]*scale}`).join(' ');
+      const pl=document.createElementNS(SVGNS,'polyline');
+      pl.setAttribute('points',pts); pl.setAttribute('stroke',col);
+      pl.setAttribute('stroke-width',Math.max(2,b.thickness*scale));
+      pl.setAttribute('stroke-opacity',sel===i?0.55:0.35);
+      pl.setAttribute('fill','none'); pl.setAttribute('stroke-linecap','round');
+      pl.setAttribute('stroke-linejoin','round');
+      pl.style.pointerEvents='auto'; pl.style.cursor='move';
+      pl.dataset.i=i;
+      svg.appendChild(pl);
+      // osa
+      const ln=document.createElementNS(SVGNS,'polyline');
+      ln.setAttribute('points',pts); ln.setAttribute('stroke','#fff');
+      ln.setAttribute('stroke-width',sel===i?2:1); ln.setAttribute('stroke-opacity',0.7);
+      ln.setAttribute('fill','none'); svg.appendChild(ln);
+      // popisek
+      const tx=document.createElementNS(SVGNS,'text');
+      tx.setAttribute('x',b.path[0][0]*scale); tx.setAttribute('y',b.path[0][1]*scale-b.thickness*scale/2-6);
+      tx.setAttribute('fill',col); tx.setAttribute('font-size','12'); tx.setAttribute('font-weight','700');
+      tx.textContent=b.text.slice(0,20)+' 〰️'; svg.appendChild(tx);
+      if(sel===i) b.path.forEach((p,pi)=>{
+        const ci=document.createElementNS(SVGNS,'circle');
+        ci.setAttribute('cx',p[0]*scale); ci.setAttribute('cy',p[1]*scale); ci.setAttribute('r',7);
+        ci.setAttribute('fill','#fff'); ci.setAttribute('stroke',col); ci.setAttribute('stroke-width',2);
+        ci.setAttribute('class','pt'); ci.dataset.i=i; ci.dataset.p=pi;
+        svg.appendChild(ci);
+      });
+      return;
+    }
+    const [x0,y0,x1,y1]=b.bbox;
+    const d=document.createElement('div'); d.className='box'+(sel===i?' sel':'');
+    d.style.left=(x0*scale)+'px'; d.style.top=(y0*scale)+'px';
+    d.style.width=((x1-x0)*scale)+'px'; d.style.height=((y1-y0)*scale)+'px';
+    d.style.borderColor=col;
+    if(b.angle) d.style.transform=`rotate(${b.angle}deg)`;
+    d.style.transformOrigin='center';
+    let inner=`<span class="lbl" style="background:${col}">${esc(b.text.slice(0,22))}${b.joined?' 🔗':''}</span>`;
+    if(sel===i){
+      ['nw','ne','sw','se'].forEach(h=>inner+=`<div class="h ${h}" data-h="${h}"></div>`);
+      inner+=`<div class="rotstem"></div><div class="rot" data-rot="1"></div>`;
+    }
+    d.innerHTML=inner; d.dataset.i=i;
+    c.appendChild(d);
+  });
+  // rozpracovaná cesta
+  if(draftPts && draftPts.length){
+    const col=active>=0?colorOf(data.texts[active].text):'#4af';
+    const pts=draftPts.map(p=>`${p[0]*scale},${p[1]*scale}`).join(' ');
+    const pl=document.createElementNS(SVGNS,'polyline');
+    pl.setAttribute('points',pts); pl.setAttribute('stroke',col); pl.setAttribute('stroke-width',3);
+    pl.setAttribute('fill','none'); pl.setAttribute('stroke-dasharray','6 4'); svg.appendChild(pl);
+    draftPts.forEach(p=>{
+      const ci=document.createElementNS(SVGNS,'circle');
+      ci.setAttribute('cx',p[0]*scale); ci.setAttribute('cy',p[1]*scale); ci.setAttribute('r',5);
+      ci.setAttribute('fill',col); svg.appendChild(ci);
+    });
+  }
+}
+function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function hint(){
+  let h;
+  if(mode==='path'){
+    h = active<0 ? '〰️ CESTA: nejdřív klikni text vlevo.'
+      : draftPts&&draftPts.length ? `〰️ „${data.texts[active].text.slice(0,40)}" — klikej body podél oblouku (${draftPts.length}). Enter/dvojklik = hotovo.`
+      : `〰️ „${data.texts[active].text.slice(0,40)}" — klikej body podél zakřiveného textu.`;
+  } else {
+    h = active<0 ? 'Klikni text vlevo, pak táhni rámeček.'
+      : `Aktivní: „${data.texts[active].text.slice(0,45)}" — táhni rámeček.`;
+  }
+  if(sel>=0 && isPath(boxes[sel])) h += `  |  vybraná cesta: tloušťka ${boxes[sel].thickness}px (↑↓ změní)`;
+  $('#hint').textContent=h;
+}
+function save(){
+  $('#save').textContent='ukládám…';
+  clearTimeout(saveT);
+  saveT=setTimeout(async()=>{
+    await fetch('/api/save/'+cur,{method:'POST',body:JSON.stringify(boxes)});
+    $('#save').textContent='✓ uloženo';
+    const it=window._list.find(x=>x.name===cur); if(it){it.done=boxes.length>0;it.nboxes=boxes.length;}
+    $('#prog').textContent=`${window._list.filter(x=>x.done).length}/${window._list.length} označeno`;
+  },250);
+}
+function center(b){ return [(b.bbox[0]+b.bbox[2])/2, (b.bbox[1]+b.bbox[3])/2]; }
+function toLocal(mx,my,b){
+  const [cx,cy]=center(b), a=-b.angle*Math.PI/180;
+  const dx=mx-cx, dy=my-cy;
+  return [cx+dx*Math.cos(a)-dy*Math.sin(a), cy+dx*Math.sin(a)+dy*Math.cos(a)];
+}
+function setMode(m){
+  mode=m; draftPts=null;
+  $('#mRect').classList.toggle('on',m==='rect');
+  $('#mPath').classList.toggle('on',m==='path');
+  render(); hint();
+}
+function finishPath(){
+  if(draftPts && draftPts.length>=2 && active>=0){
+    boxes.push({text:data.texts[active].text, role:data.texts[active].role||'',
+                path:draftPts.map(p=>[R(p[0]),R(p[1])]), thickness:60});
+    sel=boxes.length-1; save(); renderList();
+  }
+  draftPts=null; render(); hint();
+}
+
+let drag=null;
+const canvas=$('#canvas');
+canvas.addEventListener('mousedown',e=>{
+  const rect=$('#img').getBoundingClientRect();
+  const mx=(e.clientX-rect.left)/scale, my=(e.clientY-rect.top)/scale;
+  // bod cesty
+  if(e.target.dataset && e.target.dataset.p!==undefined){
+    drag={mode:'pt', i:+e.target.dataset.i, p:+e.target.dataset.p};
+    sel=drag.i; render(); e.preventDefault(); return;
+  }
+  // klik na cestu (výběr/posun celé)
+  if(e.target.tagName==='polyline' && e.target.dataset.i!==undefined){
+    sel=+e.target.dataset.i;
+    drag={mode:'movepath', i:sel, ox:mx, oy:my, orig:boxes[sel].path.map(p=>p.slice())};
+    renderList(); render(); hint(); e.preventDefault(); return;
+  }
+  const boxEl=e.target.closest('.box');
+  if(boxEl){
+    const i=+boxEl.dataset.i; sel=i; renderList(); render(); hint();
+    if(e.target.dataset.rot){ drag={mode:'rotate',i}; }
+    else if(e.target.dataset.h){ drag={mode:'resize',i,h:e.target.dataset.h}; }
+    else { drag={mode:'move',i,ox:mx,oy:my,orig:boxes[i].bbox.slice()}; }
+    e.preventDefault(); return;
+  }
+  if(active<0){ hint(); return; }
+  if(mode==='path'){
+    if(!draftPts) draftPts=[];
+    draftPts.push([mx,my]); render(); hint(); e.preventDefault(); return;
+  }
+  drag={mode:'create',x0:mx,y0:my};
+  const d=document.createElement('div'); d.className='box'; d.id='draft';
+  d.style.borderColor=colorOf(data.texts[active].text);
+  canvas.appendChild(d);
+  e.preventDefault();
+});
+canvas.addEventListener('dblclick',e=>{ if(mode==='path'&&draftPts&&draftPts.length>=2){ draftPts.pop(); finishPath(); } });
+window.addEventListener('mousemove',e=>{
+  if(!drag) return;
+  const rect=$('#img').getBoundingClientRect();
+  const mx=Math.max(0,Math.min(data.w,(e.clientX-rect.left)/scale));
+  const my=Math.max(0,Math.min(data.h,(e.clientY-rect.top)/scale));
+  if(drag.mode==='create'){
+    const x0=Math.min(drag.x0,mx),y0=Math.min(drag.y0,my),x1=Math.max(drag.x0,mx),y1=Math.max(drag.y0,my);
+    const d=$('#draft'); if(d){d.style.left=(x0*scale)+'px';d.style.top=(y0*scale)+'px';d.style.width=((x1-x0)*scale)+'px';d.style.height=((y1-y0)*scale)+'px';}
+  } else if(drag.mode==='move'){
+    const dx=mx-drag.ox, dy=my-drag.oy, o=drag.orig;
+    boxes[drag.i].bbox=[o[0]+dx,o[1]+dy,o[2]+dx,o[3]+dy].map(R); render();
+  } else if(drag.mode==='resize'){
+    const b=boxes[drag.i], [lx,ly]=toLocal(mx,my,b), h=drag.h, bb=b.bbox;
+    if(h.includes('w')) bb[0]=R(lx); if(h.includes('n')) bb[1]=R(ly);
+    if(h.includes('e')) bb[2]=R(lx); if(h.includes('s')) bb[3]=R(ly);
+    render();
+  } else if(drag.mode==='rotate'){
+    const b=boxes[drag.i], [cx,cy]=center(b);
+    let ang=Math.atan2(my-cy,mx-cx)*180/Math.PI+90;
+    if(e.shiftKey) ang=Math.round(ang/5)*5;
+    b.angle=R(ang*10)/10; render();
+  } else if(drag.mode==='pt'){
+    boxes[drag.i].path[drag.p]=[R(mx),R(my)]; render();
+  } else if(drag.mode==='movepath'){
+    const dx=mx-drag.ox, dy=my-drag.oy;
+    boxes[drag.i].path=drag.orig.map(p=>[R(p[0]+dx),R(p[1]+dy)]); render();
+  }
+});
+window.addEventListener('mouseup',e=>{
+  if(!drag) return;
+  if(drag.mode==='create'){
+    const d=$('#draft'); if(d) d.remove();
+    const rect=$('#img').getBoundingClientRect();
+    const mx=(e.clientX-rect.left)/scale, my=(e.clientY-rect.top)/scale;
+    const x0=R(Math.min(drag.x0,mx)),y0=R(Math.min(drag.y0,my)),x1=R(Math.max(drag.x0,mx)),y1=R(Math.max(drag.y0,my));
+    if(x1-x0>6 && y1-y0>6){
+      const ex=boxes.filter(b=>b.text===data.texts[active].text && !isPath(b));
+      boxes.push({text:data.texts[active].text, role:data.texts[active].role||'', bbox:[x0,y0,x1,y1], angle:0, joined:ex.length?ex[0].joined:false});
+      sel=boxes.length-1; save(); renderList(); render();
+    }
+  } else if(['move','resize','pt','movepath'].includes(drag.mode)){
+    const b=boxes[drag.i];
+    if(!isPath(b)){ const bb=b.bbox; b.bbox=[Math.min(bb[0],bb[2]),Math.min(bb[1],bb[3]),Math.max(bb[0],bb[2]),Math.max(bb[1],bb[3])]; }
+    save();
+  } else if(drag.mode==='rotate'){ save(); }
+  drag=null;
+});
+document.addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT') return;
+  const mod=e.metaKey||e.ctrlKey;
+  if(e.key==='Enter'&&mode==='path'&&draftPts){ finishPath(); e.preventDefault(); return; }
+  if(e.key==='Escape'){ draftPts=null; render(); hint(); return; }
+  if(sel>=0&&isPath(boxes[sel])&&(e.key==='ArrowUp'||e.key==='ArrowDown')){
+    boxes[sel].thickness=Math.max(8, boxes[sel].thickness+(e.key==='ArrowUp'?6:-6));
+    save(); render(); hint(); e.preventDefault(); return;
+  }
+  if(mod&&(e.key==='c'||e.key==='C')&&sel>=0&&!isPath(boxes[sel])){ clip=JSON.parse(JSON.stringify(boxes[sel])); $('#save').textContent='📋 zkopírováno'; e.preventDefault(); }
+  else if(mod&&(e.key==='v'||e.key==='V')&&clip){
+    const nb=JSON.parse(JSON.stringify(clip)); nb.bbox=nb.bbox.map(v=>v+35);
+    boxes.push(nb); sel=boxes.length-1; save(); renderList(); render(); e.preventDefault();
+  }
+  else if((e.key==='r'||e.key==='R')&&sel>=0&&active>=0){
+    boxes[sel].text=data.texts[active].text; boxes[sel].role=data.texts[active].role||'';
+    $('#save').textContent='✎ text změněn'; save(); renderList(); render(); e.preventDefault();
+  }
+  else if((e.key==='Delete'||e.key==='Backspace')&&sel>=0){ boxes.splice(sel,1); sel=-1; save(); renderList(); render(); hint(); e.preventDefault(); }
+  else if(e.key==='n'||e.key==='N') nav(1);
+  else if(e.key==='p'||e.key==='P') nav(-1);
+});
+function nav(dir){
+  const opts=[...$('#pick').options], idx=opts.findIndex(o=>o.value===cur);
+  const ni=idx+dir; if(ni>=0&&ni<opts.length) load(opts[ni].value);
+}
+$('#prev').onclick=()=>nav(-1); $('#next').onclick=()=>nav(1);
+$('#pick').onchange=e=>load(e.target.value);
+$('#mRect').onclick=()=>setMode('rect');
+$('#mPath').onclick=()=>setMode('path');
+$('#addbtn').onclick=()=>{
+  const v=$('#addtx').value.trim(); if(!v) return;
+  data.texts.push({role:'custom',text:v}); $('#addtx').value=''; active=data.texts.length-1; renderList(); hint();
+};
+$('#addtx').addEventListener('keydown',e=>{if(e.key==='Enter')$('#addbtn').click();});
+window.addEventListener('resize',()=>{ if(data){layout();render();} });
+(async()=>{ await loadList(); const first=$('#pick').options[0]; if(first) load(first.value); hint(); })();
+</script>
+</body>
+</html>

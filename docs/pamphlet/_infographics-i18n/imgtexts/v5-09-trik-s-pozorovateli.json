@@ -1,0 +1,28 @@
+{
+  "file": "v5-09-trik-s-pozorovateli.webp",
+  "texts": [
+    {"role": "title", "text": "THE BLUFF THAT KEEPS THE VERIFIER HONEST"},
+    {"role": "caption", "text": "A REAL OBSERVER AND A RANDOM BLUFF LOOK IDENTICAL FROM THE VERIFIER'S DESK"},
+    {"role": "label", "text": "ISSUER — KAMILA"},
+    {"role": "label", "text": "REAL OBSERVER"},
+    {"role": "label", "text": "VERIFIER"},
+    {"role": "caption", "text": "someone is keeping a record of what i do here? i don't know — so i behave."},
+    {"role": "label", "text": "CLAIM"},
+    {"role": "label", "text": "CHALLENGE CODE — HASH OF TIMESTAMPED RECORD"},
+    {"role": "label", "text": "SIGNED CHALLENGE"},
+    {"role": "label", "text": "ACCEPTED"},
+    {"role": "body", "text": "the verifier cannot tell a real record from a bluff. honest behaviour is the only safe bet."},
+    {"role": "label", "text": "ISSUER — BLUFFING"},
+    {"role": "label", "text": "NO OBSERVER"},
+    {"role": "label", "text": "VERIFIER — SAME BEHAVIOUR"},
+    {"role": "caption", "text": "someone is keeping a record of what i do here? i don't know — so i behave."},
+    {"role": "caption", "text": "the verifier can't tell them apart."},
+    {"role": "caption", "text": "who can tell the difference?"},
+    {"role": "label", "text": "RANDOM NUMBER"},
+    {"role": "label", "text": "RANDOM NUMBER"},
+    {"role": "label", "text": "LOOKS THE SAME. COST: ZERO."},
+    {"role": "body", "text": "cost of honesty pressure: near zero — random numbers are free."},
+    {"role": "body", "text": "cost of getting caught silencing a claim: catastrophic — reputation destroyed."},
+    {"role": "tagline", "text": "UNCERTAINTY IS CHEAPER THAN SURVEILLANCE."}
+  ]
+}

@@ -1,0 +1,405 @@
+[
+ {
+  "text": "FOLLOW THE MONEY — THE STORY SO FAR",
+  "role": "title",
+  "bbox": [
+   353,
+   36,
+   2172,
+   124
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT WE HAVE",
+  "role": "label",
+  "bbox": [
+   91,
+   170,
+   389,
+   224
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE QUESTION NOW",
+  "role": "label",
+  "bbox": [
+   1300,
+   167,
+   1708,
+   227
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TAXPAYER MONEY",
+  "role": "label",
+  "bbox": [
+   1740,
+   327,
+   1967,
+   423
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHY SQUEEZE? — 10 RED FLAGS",
+  "role": "label",
+  "bbox": [
+   2232,
+   380,
+   2414,
+   442
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNAUDITED CONTRACTS",
+  "role": "body",
+  "bbox": [
+   2249,
+   451,
+   2420,
+   476
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MISSING RECEIPTS",
+  "role": "body",
+  "bbox": [
+   2253,
+   478,
+   2392,
+   506
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "IGNORED COMPLAINTS",
+  "role": "body",
+  "bbox": [
+   2253,
+   511,
+   2413,
+   530
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CRONY APPOINTMENTS",
+  "role": "body",
+  "bbox": [
+   2256,
+   535,
+   2425,
+   564
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "INFLATED INVOICES",
+  "role": "body",
+  "bbox": [
+   2249,
+   566,
+   2396,
+   588
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SILENT VERIFIERS",
+  "role": "body",
+  "bbox": [
+   2253,
+   595,
+   2387,
+   619
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "…AND FOUR MORE.",
+  "role": "body",
+  "bbox": [
+   2251,
+   640,
+   2392,
+   672
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "when in doubt — squeeze the flow.",
+  "role": "caption",
+  "bbox": [
+   1412,
+   423,
+   1661,
+   488
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the five blocks together make the network.",
+  "role": "caption",
+  "bbox": [
+   129,
+   550,
+   452,
+   617
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "JUSTICE",
+  "role": "label",
+  "bbox": [
+   485,
+   525,
+   679,
+   590
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the foundation is built.",
+  "role": "caption",
+  "bbox": [
+   1023,
+   566,
+   1231,
+   635
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FOLLOW THE MONEY",
+  "role": "label",
+  "bbox": [
+   1666,
+   564,
+   1792,
+   624
+  ],
+  "angle": -8.4,
+  "joined": false
+ },
+ {
+  "text": "OPEN",
+  "role": "label",
+  "bbox": [
+   1909,
+   538,
+   1962,
+   569
+  ],
+  "angle": -5.3,
+  "joined": false
+ },
+ {
+  "text": "SQUEEZE",
+  "role": "label",
+  "bbox": [
+   1934,
+   566,
+   2008,
+   597
+  ],
+  "angle": 81.9,
+  "joined": false
+ },
+ {
+  "text": "SHUT",
+  "role": "label",
+  "bbox": [
+   1911,
+   633,
+   1967,
+   660
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HONESTY",
+  "role": "label",
+  "bbox": [
+   447,
+   721,
+   679,
+   789
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OBSERVER TRICK",
+  "role": "label",
+  "bbox": [
+   449,
+   860,
+   686,
+   908
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this is UNDEMOCRATIC!",
+  "role": "caption",
+  "bbox": [
+   1164,
+   695,
+   1414,
+   772
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "but it has always worked this way.",
+  "role": "caption",
+  "bbox": [
+   1455,
+   672,
+   1701,
+   746
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "you're not even elected.",
+  "role": "caption",
+  "bbox": [
+   1668,
+   784,
+   1799,
+   881
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFICATION",
+  "role": "label",
+  "bbox": [
+   420,
+   911,
+   746,
+   985
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE TOOL",
+  "role": "label",
+  "bbox": [
+   452,
+   1111,
+   696,
+   1176
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PREREQUISITES",
+  "role": "label",
+  "bbox": [
+   402,
+   1297,
+   752,
+   1365
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FEEDING TROUGH — STATE BUDGET",
+  "role": "label",
+  "bbox": [
+   1839,
+   1275,
+   2329,
+   1433
+  ],
+  "angle": 11.1,
+  "joined": false
+ },
+ {
+  "text": "We have the network. We know how it works. Now: when in doubt, squeeze the hopper.",
+  "role": "tagline",
+  "bbox": [
+   79,
+   1548,
+   2475,
+   1620
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the state's power rests on money. follow it.",
+  "role": "tagline",
+  "bbox": [
+   810,
+   1616,
+   1723,
+   1676
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "A DECENTRALIZED REPUTATION NETWORK — UNCORRUPTIBLE, UNCENSORABLE",
+  "role": "label",
+  "path": [
+   [
+    242,
+    393
+   ],
+   [
+    353,
+    317
+   ],
+   [
+    518,
+    281
+   ],
+   [
+    690,
+    266
+   ],
+   [
+    825,
+    302
+   ],
+   [
+    1011,
+    414
+   ]
+  ],
+  "thickness": 96
+ }
+]

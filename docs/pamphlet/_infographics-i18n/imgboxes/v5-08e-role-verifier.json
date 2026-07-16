@@ -1,0 +1,446 @@
+[
+ {
+  "text": "THE VERIFIER — JUDGES THE CLAIM AGAINST PUBLISHED POLICY",
+  "role": "title",
+  "bbox": [
+   43,
+   33,
+   2471,
+   169
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FOUR GATES, IN ORDER. CHEAP FILTERS FIRST.",
+  "role": "caption",
+  "bbox": [
+   48,
+   163,
+   1192,
+   242
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFICATION GATES — IN ORDER",
+  "role": "label",
+  "bbox": [
+   647,
+   337,
+   1228,
+   408
+  ],
+  "angle": 2.6,
+  "joined": false
+ },
+ {
+  "text": "1. POLICY GATING",
+  "role": "label",
+  "bbox": [
+   488,
+   399,
+   705,
+   485
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Do I verify this kind of claim at all?",
+  "role": "label",
+  "bbox": [
+   488,
+   492,
+   752,
+   580
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "2. AUTHORITY TRUST",
+  "role": "label",
+  "bbox": [
+   757,
+   421,
+   1003,
+   516
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Is the authority above my threshold?",
+  "role": "label",
+  "bbox": [
+   752,
+   519,
+   1016,
+   598
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3. ISSUER REPUTATION",
+  "role": "label",
+  "bbox": [
+   1061,
+   433,
+   1286,
+   525
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Does the issuer meet my reputation bar?",
+  "role": "label",
+  "bbox": [
+   1039,
+   535,
+   1317,
+   609
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "4. CONTENT CHECK",
+  "role": "label",
+  "bbox": [
+   1355,
+   430,
+   1565,
+   526
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Signatures, consistency, deviation from policy",
+  "role": "label",
+  "bbox": [
+   1324,
+   530,
+   1603,
+   640
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Cheap filters first. Expensive content check last.",
+  "role": "caption",
+  "bbox": [
+   1598,
+   1441,
+   2012,
+   1522
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POLICY:",
+  "role": "label",
+  "bbox": [
+   963,
+   1137,
+   1087,
+   1185
+  ],
+  "angle": 18.2,
+  "joined": false
+ },
+ {
+  "text": "— GATE 1: I VERIFY TYPE X",
+  "role": "body",
+  "bbox": [
+   949,
+   1214,
+   1283,
+   1255
+  ],
+  "angle": 16.1,
+  "joined": false
+ },
+ {
+  "text": "— GATE 2: AUTHORITY ≥ T₁",
+  "role": "body",
+  "bbox": [
+   931,
+   1254,
+   1280,
+   1297
+  ],
+  "angle": 15.2,
+  "joined": false
+ },
+ {
+  "text": "— GATE 3: ISSUER REP ≥ T₂",
+  "role": "body",
+  "bbox": [
+   921,
+   1296,
+   1261,
+   1346
+  ],
+  "angle": 16.8,
+  "joined": false
+ },
+ {
+  "text": "— GATE 4: CONTENT MATCHES Y",
+  "role": "body",
+  "bbox": [
+   919,
+   1337,
+   1263,
+   1387
+  ],
+  "angle": 16.2,
+  "joined": false
+ },
+ {
+  "text": "CHOSEN BY THE HASH",
+  "role": "label",
+  "bbox": [
+   1255,
+   983,
+   1338,
+   1052
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPTED",
+  "role": "label",
+  "bbox": [
+   1588,
+   1276,
+   1755,
+   1313
+  ],
+  "angle": -64.7,
+  "joined": false
+ },
+ {
+  "text": "REJECTED",
+  "role": "label",
+  "bbox": [
+   527,
+   909,
+   648,
+   943
+  ],
+  "angle": -67,
+  "joined": false
+ },
+ {
+  "text": "REJECTED",
+  "role": "label",
+  "bbox": [
+   770,
+   980,
+   891,
+   1014
+  ],
+  "angle": -67,
+  "joined": false
+ },
+ {
+  "text": "REJECTED",
+  "role": "label",
+  "bbox": [
+   1044,
+   1032,
+   1165,
+   1066
+  ],
+  "angle": -67,
+  "joined": false
+ },
+ {
+  "text": "REJECTED",
+  "role": "label",
+  "bbox": [
+   1730,
+   1306,
+   1898,
+   1348
+  ],
+  "angle": -67,
+  "joined": false
+ },
+ {
+  "text": "FEE ∝ RISK",
+  "role": "label",
+  "bbox": [
+   2165,
+   1040,
+   2421,
+   1126
+  ],
+  "angle": 11.1,
+  "joined": false
+ },
+ {
+  "text": "more risk → bigger fee",
+  "role": "label",
+  "bbox": [
+   1988,
+   1312,
+   2355,
+   1363
+  ],
+  "angle": 13.6,
+  "joined": false
+ },
+ {
+  "text": "VERIFIER REPUTATION",
+  "role": "label",
+  "bbox": [
+   1740,
+   341,
+   1955,
+   440
+  ],
+  "angle": 4.2,
+  "joined": false
+ },
+ {
+  "text": "DEVIATE FROM POLICY → REPUTATION FALLS → NO FUTURE PICKS",
+  "role": "label",
+  "bbox": [
+   1769,
+   510,
+   2013,
+   624
+  ],
+  "angle": 12.4,
+  "joined": false
+ },
+ {
+  "text": "CANNOT BE: issuer, authority, observer, or subject.",
+  "role": "label",
+  "bbox": [
+   1288,
+   223,
+   1572,
+   384
+  ],
+  "angle": 1.3,
+  "joined": false
+ },
+ {
+  "text": "WHAT THE VERIFIER DOES",
+  "role": "label",
+  "bbox": [
+   2043,
+   197,
+   2495,
+   261
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "1. Filters by his published policy gates (in order)",
+  "role": "body",
+  "bbox": [
+   2057,
+   276,
+   2485,
+   369
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "2. Checks authority trust, then issuer reputation",
+  "role": "body",
+  "bbox": [
+   2064,
+   381,
+   2483,
+   498
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3. Evaluates the claim's content only if the gates pass",
+  "role": "body",
+  "bbox": [
+   2067,
+   500,
+   2456,
+   646
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "4. Charges a fee proportional to the risk",
+  "role": "body",
+  "bbox": [
+   2057,
+   651,
+   2488,
+   754
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5. Stakes his own reputation on every decision",
+  "role": "body",
+  "bbox": [
+   2129,
+   773,
+   2444,
+   926
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "He doesn't get to be creative. He must do what his policy says.",
+  "role": "body",
+  "bbox": [
+   96,
+   376,
+   435,
+   575
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "His own rules. Public. He cannot quietly change them.",
+  "role": "body",
+  "bbox": [
+   132,
+   1282,
+   482,
+   1511
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The verifier is bound by the rules he himself published — and by the reputation he stands to lose.",
+  "role": "tagline",
+  "bbox": [
+   67,
+   1598,
+   2475,
+   1740
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

@@ -1,0 +1,254 @@
+[
+ {
+  "text": "THE SUBJECT — THE ONE THE CLAIM IS ABOUT",
+  "role": "title",
+  "bbox": [
+   34,
+   36,
+   928,
+   91
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RECEIVES IT · CAN'T SILENCE IT · CAN ANSWER IT",
+  "role": "caption",
+  "bbox": [
+   37,
+   86,
+   837,
+   123
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FOR YOU",
+  "role": "label",
+  "bbox": [
+   394,
+   516,
+   473,
+   594
+  ],
+  "angle": -2.6,
+  "joined": false
+ },
+ {
+  "text": "NEW CLAIM ABOUT YOU",
+  "role": "label",
+  "bbox": [
+   445,
+   240,
+   533,
+   276
+  ],
+  "angle": -24.6,
+  "joined": false
+ },
+ {
+  "text": "CLAIM SUMMARY",
+  "role": "label",
+  "bbox": [
+   559,
+   487,
+   685,
+   512
+  ],
+  "angle": 2.2,
+  "joined": false
+ },
+ {
+  "text": "Fraud — contract breached. Reputation: −15.",
+  "role": "body",
+  "bbox": [
+   566,
+   515,
+   701,
+   559
+  ],
+  "angle": 2.2,
+  "joined": false
+ },
+ {
+  "text": "TRUSTED",
+  "role": "label",
+  "bbox": [
+   633,
+   195,
+   716,
+   226
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NEUTRAL",
+  "role": "label",
+  "bbox": [
+   631,
+   302,
+   709,
+   325
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DOUBTED",
+  "role": "label",
+  "bbox": [
+   634,
+   398,
+   715,
+   428
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "automatically updated",
+  "role": "label",
+  "bbox": [
+   836,
+   325,
+   971,
+   377
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RESPOND HERE",
+  "role": "label",
+  "bbox": [
+   66,
+   301,
+   155,
+   361
+  ],
+  "angle": 5.4,
+  "joined": false
+ },
+ {
+  "text": "WHAT THE SUBJECT CAN DO",
+  "role": "label",
+  "bbox": [
+   1000,
+   285,
+   1205,
+   318
+  ],
+  "angle": -7.2,
+  "joined": false
+ },
+ {
+  "text": "1. Receives a notification when a claim concerns them",
+  "role": "body",
+  "bbox": [
+   1005,
+   329,
+   1207,
+   378
+  ],
+  "angle": -1.3,
+  "joined": false
+ },
+ {
+  "text": "2. Cannot silence the claim — there is no veto",
+  "role": "body",
+  "bbox": [
+   1003,
+   378,
+   1199,
+   425
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3. Can publish a counter-claim of their own",
+  "role": "body",
+  "bbox": [
+   1002,
+   430,
+   1209,
+   481
+  ],
+  "angle": 2.2,
+  "joined": false
+ },
+ {
+  "text": "4. Their reputation updates automatically",
+  "role": "body",
+  "bbox": [
+   1005,
+   487,
+   1194,
+   531
+  ],
+  "angle": 7,
+  "joined": false
+ },
+ {
+  "text": "5. Their answer joins the public record",
+  "role": "body",
+  "bbox": [
+   1003,
+   526,
+   1167,
+   579
+  ],
+  "angle": 7.9,
+  "joined": false
+ },
+ {
+  "text": "I can't stop this — but I can answer it.",
+  "role": "body",
+  "bbox": [
+   731,
+   160,
+   945,
+   219
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "No one is silenced. No one is shielded. The record holds both sides.",
+  "role": "body",
+  "bbox": [
+   987,
+   172,
+   1215,
+   245
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The subject has no veto — only the right to answer.",
+  "role": "tagline",
+  "bbox": [
+   251,
+   758,
+   1014,
+   796
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* A counter-claim is itself a claim — the subject's reputation is on the line for what they say in reply.",
+  "role": "caption",
+  "bbox": [
+   100,
+   805,
+   1177,
+   869
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

@@ -1,0 +1,134 @@
+[
+ {
+  "text": "TAX OFFICE",
+  "role": "label",
+  "bbox": [
+   140,
+   437,
+   475,
+   518
+  ],
+  "angle": 5,
+  "joined": false
+ },
+ {
+  "text": "COURTS",
+  "role": "label",
+  "bbox": [
+   710,
+   479,
+   924,
+   551
+  ],
+  "angle": 3.6,
+  "joined": false
+ },
+ {
+  "text": "PARLIAMENT",
+  "role": "label",
+  "bbox": [
+   1096,
+   529,
+   1345,
+   585
+  ],
+  "angle": 3.9,
+  "joined": false
+ },
+ {
+  "text": "Come in. The plans are laid out.",
+  "role": "tagline",
+  "bbox": [
+   698,
+   1307,
+   2253,
+   1490
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION NETWORK — OPEN",
+  "role": "label",
+  "bbox": [
+   1700,
+   234,
+   2028,
+   402
+  ],
+  "angle": -8.2,
+  "joined": false
+ },
+ {
+  "text": "DID",
+  "role": "label",
+  "bbox": [
+   2406,
+   489,
+   2479,
+   544
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COMMUNITY",
+  "role": "label",
+  "bbox": [
+   2383,
+   601,
+   2513,
+   666
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIER",
+  "role": "label",
+  "bbox": [
+   2347,
+   705,
+   2456,
+   762
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIER",
+  "role": "label",
+  "bbox": [
+   2609,
+   936,
+   2711,
+   992
+  ],
+  "angle": 9.5,
+  "joined": false
+ },
+ {
+  "text": "COMMUNITY",
+  "role": "label",
+  "bbox": [
+   2461,
+   912,
+   2591,
+   970
+  ],
+  "angle": 12.9,
+  "joined": false
+ },
+ {
+  "text": "DID",
+  "role": "label",
+  "bbox": [
+   2351,
+   898,
+   2424,
+   947
+  ],
+  "angle": 13.1,
+  "joined": false
+ }
+]

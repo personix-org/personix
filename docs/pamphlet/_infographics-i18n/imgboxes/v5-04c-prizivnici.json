@@ -1,0 +1,554 @@
+[
+ {
+  "text": "THE NETWORK REWARDS PARTICIPATION",
+  "role": "title",
+  "bbox": [
+   365,
+   8,
+   2206,
+   116
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION IS BUILT OVER A LIFETIME — NOT BOUGHT, NOT BORROWED",
+  "role": "tagline",
+  "bbox": [
+   454,
+   118,
+   2105,
+   173
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE PARTICIPANT — A LIFETIME OF REAL WORK",
+  "role": "label",
+  "bbox": [
+   64,
+   199,
+   1085,
+   266
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TIME",
+  "role": "label",
+  "bbox": [
+   191,
+   396,
+   261,
+   431
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TIME",
+  "role": "label",
+  "bbox": [
+   738,
+   384,
+   808,
+   422
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TIME",
+  "role": "label",
+  "bbox": [
+   1273,
+   291,
+   1360,
+   336
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ENERGY",
+  "role": "label",
+  "bbox": [
+   280,
+   393,
+   385,
+   431
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ENERGY",
+  "role": "label",
+  "bbox": [
+   824,
+   384,
+   932,
+   429
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ENERGY",
+  "role": "label",
+  "bbox": [
+   1362,
+   290,
+   1472,
+   328
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MONEY",
+  "role": "label",
+  "bbox": [
+   399,
+   395,
+   497,
+   438
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MONEY",
+  "role": "label",
+  "bbox": [
+   941,
+   386,
+   1046,
+   426
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MONEY",
+  "role": "label",
+  "bbox": [
+   1476,
+   290,
+   1575,
+   324
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AGE 20 — NEWCOMER",
+  "role": "label",
+  "bbox": [
+   162,
+   553,
+   521,
+   606
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "reputation 5%",
+  "role": "caption",
+  "bbox": [
+   308,
+   617,
+   521,
+   658
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LIMITED — HIGH COSTS, LONG WAITS",
+  "role": "label",
+  "bbox": [
+   112,
+   995,
+   573,
+   1036
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "0 projects completed",
+  "role": "caption",
+  "bbox": [
+   318,
+   696,
+   442,
+   759
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AGE 28 — ACTIVE PARTICIPANT",
+  "role": "label",
+  "bbox": [
+   640,
+   555,
+   1132,
+   604
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "delivered contract",
+  "role": "caption",
+  "bbox": [
+   812,
+   890,
+   925,
+   947
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "resolved dispute",
+  "role": "caption",
+  "bbox": [
+   929,
+   893,
+   1022,
+   952
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "community contribution",
+  "role": "caption",
+  "bbox": [
+   1034,
+   897,
+   1168,
+   943
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "reputation 30%",
+  "role": "caption",
+  "bbox": [
+   827,
+   620,
+   1051,
+   656
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BASIC — STANDARD COSTS, NORMAL SPEED",
+  "role": "label",
+  "bbox": [
+   614,
+   993,
+   1149,
+   1046
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AGE 40 — CONTRIBUTOR",
+  "role": "label",
+  "bbox": [
+   1236,
+   551,
+   1629,
+   604
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "8 projects delivered",
+  "role": "caption",
+  "bbox": [
+   1381,
+   881,
+   1498,
+   947
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "reputation 70%",
+  "role": "caption",
+  "bbox": [
+   1379,
+   618,
+   1589,
+   663
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FULL — LOW COSTS, INSTANT ACCESS",
+  "role": "label",
+  "bbox": [
+   1190,
+   991,
+   1644,
+   1038
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AGE 55 — AUTHORITY",
+  "role": "label",
+  "bbox": [
+   1754,
+   546,
+   2120,
+   608
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "15+ projects delivered",
+  "role": "caption",
+  "bbox": [
+   1885,
+   690,
+   2033,
+   756
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "reputation 95%",
+  "role": "caption",
+  "bbox": [
+   1866,
+   618,
+   2076,
+   654
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY — YOU VERIFY OTHERS, THE NETWORK PAYS YOU",
+  "role": "label",
+  "bbox": [
+   1725,
+   985,
+   2167,
+   1055
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "time builds the curve — your own effort can make it steeper.",
+  "role": "body",
+  "bbox": [
+   2179,
+   230,
+   2480,
+   352
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every stage costs time, energy and money — together, not separately.",
+  "role": "caption",
+  "bbox": [
+   499,
+   1060,
+   1415,
+   1110
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the door opens as the ledger of your deeds fills.",
+  "role": "caption",
+  "bbox": [
+   1654,
+   1064,
+   2299,
+   1114
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE FREE-RIDER — READS, NEVER PUBLISHES",
+  "role": "label",
+  "bbox": [
+   76,
+   1120,
+   1097,
+   1194
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "reads everyone else's records.",
+  "role": "caption",
+  "bbox": [
+   483,
+   1568,
+   917,
+   1622
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY CONTRIBUTIONS",
+  "role": "label",
+  "bbox": [
+   1145,
+   1281,
+   1386,
+   1331
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "publishes nothing of his own.",
+  "role": "caption",
+  "bbox": [
+   1066,
+   1574,
+   1472,
+   1618
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LIMITED ACCESS — THE CEILING DOES NOT LIFT",
+  "role": "label",
+  "bbox": [
+   1599,
+   1152,
+   2181,
+   1195
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no deeds, no rise — year after year, same bar.",
+  "role": "caption",
+  "bbox": [
+   1580,
+   1567,
+   2182,
+   1611
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the network gives back to those who give in.",
+  "role": "body",
+  "bbox": [
+   2225,
+   1126,
+   2482,
+   1245
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TIME, ENERGY AND MONEY — INVESTED IN REAL WORK — IS THE ONLY CURRENCY THE NETWORK RESPECTS.",
+  "role": "title",
+  "bbox": [
+   72,
+   1630,
+   2490,
+   1694
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TIME",
+  "role": "label",
+  "bbox": [
+   1794,
+   475,
+   1873,
+   511
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ENERGY",
+  "role": "label",
+  "bbox": [
+   1885,
+   471,
+   1991,
+   514
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MONEY",
+  "role": "label",
+  "bbox": [
+   1995,
+   475,
+   2089,
+   514
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "harder work can shorten the climb.",
+  "role": "caption",
+  "bbox": [
+   1214,
+   364,
+   1690,
+   448
+  ],
+  "angle": -9,
+  "joined": false
+ },
+ {
+  "text": "reputation 5%",
+  "role": "label",
+  "bbox": [
+   1915,
+   1240,
+   2106,
+   1270
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

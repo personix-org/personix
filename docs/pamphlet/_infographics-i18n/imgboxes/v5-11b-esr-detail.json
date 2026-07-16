@@ -1,0 +1,302 @@
+[
+ {
+  "text": "ESR — ELECTRONIC SPENDING REPORTING",
+  "role": "title",
+  "bbox": [
+   359,
+   31,
+   2196,
+   141
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every state expenditure recorded — every record public — every detail open to scrutiny.",
+  "role": "caption",
+  "bbox": [
+   285,
+   156,
+   2218,
+   206
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "who submits",
+  "role": "label",
+  "bbox": [
+   112,
+   267,
+   287,
+   301
+  ],
+  "angle": -9.1,
+  "joined": false
+ },
+ {
+  "text": "any record can be submitted by: – the official who processed the payment – the recipient who got paid",
+  "role": "body",
+  "bbox": [
+   81,
+   311,
+   322,
+   552
+  ],
+  "angle": -7.9,
+  "joined": false
+ },
+ {
+  "text": "open to anyone who wants to look.",
+  "role": "caption",
+  "bbox": [
+   1837,
+   236,
+   2114,
+   318
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PUBLIC LEDGER OF STATE EXPENDITURE — open record",
+  "role": "label",
+  "bbox": [
+   648,
+   294,
+   1948,
+   378
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "category: legal advisory\ncontractor: law firm XYZ s.r.o.\namount: 14M EUR\ncommitted: 2026-01-14    paid: 2026-01-19",
+  "role": "body",
+  "bbox": [
+   557,
+   386,
+   1210,
+   541
+  ],
+  "angle": -1,
+  "joined": false
+ },
+ {
+  "text": "PAID",
+  "role": "label",
+  "bbox": [
+   1071,
+   408,
+   1218,
+   465
+  ],
+  "angle": -6.1,
+  "joined": false
+ },
+ {
+  "text": "context: external opinion on the new procurement reform bill — three drafts produced, one workshop with ministry, no public hearing held — final draft delivered after legislative deadline.",
+  "role": "body",
+  "bbox": [
+   509,
+   537,
+   1224,
+   698
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "category: road design consulting\ncontractor: Consultancy T\namount: 9M EUR\ncommitted: 2026-02-03    paid: —",
+  "role": "body",
+  "bbox": [
+   471,
+   714,
+   1228,
+   858
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PENDING",
+  "role": "label",
+  "bbox": [
+   1034,
+   732,
+   1200,
+   796
+  ],
+  "angle": -10.1,
+  "joined": false
+ },
+ {
+  "text": "context: feasibility study for the D-X motorway extension — same firm wrote three previous studies on this route — outcome: recommendation to proceed at +18% over earlier estimate.",
+  "role": "body",
+  "bbox": [
+   457,
+   851,
+   1218,
+   999
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "category: licence plate issuance\nrecipient: regional office Z\namount: 45 EUR per plate\ncommitted: 2026-02-19    paid: 2026-02-19",
+  "role": "body",
+  "bbox": [
+   1304,
+   401,
+   2026,
+   557
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PAID",
+  "role": "label",
+  "bbox": [
+   1856,
+   430,
+   1992,
+   494
+  ],
+  "angle": -15.3,
+  "joined": false
+ },
+ {
+  "text": "context: standard administrative fee per issued plate — fee covers materials and processing — total volume 12 400 plates this quarter.",
+  "role": "body",
+  "bbox": [
+   1316,
+   549,
+   2040,
+   674
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "category: hospital equipment\ncontractor: MedSupply a.s.\namount: 8.2M EUR\ncommitted: 2026-03-08    paid: —",
+  "role": "body",
+  "bbox": [
+   1316,
+   688,
+   2093,
+   848
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OVERDUE",
+  "role": "label",
+  "bbox": [
+   1885,
+   741,
+   2072,
+   794
+  ],
+  "angle": -9.1,
+  "joined": false
+ },
+ {
+  "text": "context: MRI scanner installation at regional hospital — public tender, three bidders — chosen bid 2% below median, delivery within 60 days — invoice 90 days past due.",
+  "role": "body",
+  "bbox": [
+   1324,
+   841,
+   2107,
+   992
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "spam filter — refundable deposit",
+  "role": "label",
+  "bbox": [
+   81,
+   1142,
+   865,
+   1216
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "deposit returned when the record proves accurate.",
+  "role": "body",
+  "bbox": [
+   707,
+   1230,
+   951,
+   1338
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "parties transform into analysis providers",
+  "role": "label",
+  "bbox": [
+   1307,
+   1156,
+   2246,
+   1212
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the descriptions are the raw material — parties earn their keep by reading them carefully, the cross-references and produces all printed bulletin.",
+  "role": "body",
+  "bbox": [
+   1584,
+   1221,
+   2043,
+   1343
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's world. it is — only the books are now open to all. no revolution. just better incentives.",
+  "role": "label",
+  "bbox": [
+   2218,
+   1452,
+   2487,
+   1645
+  ],
+  "angle": -9.8,
+  "joined": false
+ },
+ {
+  "text": "Every crown of public money — recorded, public, scrutinisable.",
+  "role": "tagline",
+  "bbox": [
+   299,
+   1535,
+   2206,
+   1612
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the value is not in catching cheats — it is in opening the books.",
+  "role": "tagline",
+  "bbox": [
+   545,
+   1611,
+   1964,
+   1681
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

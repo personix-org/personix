@@ -1,0 +1,326 @@
+[
+ {
+  "text": "HOW THE VERIFIER ANSWERS",
+  "role": "title",
+  "bbox": [
+   62,
+   60,
+   1324,
+   160
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPT WITH A PRICE — OR REJECT WITH A REASON",
+  "role": "caption",
+  "bbox": [
+   81,
+   193,
+   1300,
+   265
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER'S REPUTATION",
+  "role": "label",
+  "bbox": [
+   193,
+   493,
+   375,
+   564
+  ],
+  "angle": -7.9,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY'S REPUTATION",
+  "role": "label",
+  "bbox": [
+   894,
+   475,
+   1091,
+   568
+  ],
+  "angle": 8.3,
+  "joined": false
+ },
+ {
+  "text": "MY OWN POLICY",
+  "role": "label",
+  "bbox": [
+   160,
+   788,
+   299,
+   887
+  ],
+  "angle": -10.4,
+  "joined": false
+ },
+ {
+  "text": "THE DOCUMENT'S CONTENT",
+  "role": "label",
+  "bbox": [
+   918,
+   784,
+   1145,
+   879
+  ],
+  "angle": 9.6,
+  "joined": false
+ },
+ {
+  "text": "the verifier weighs four things before answering.",
+  "role": "caption",
+  "bbox": [
+   426,
+   294,
+   839,
+   397
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPT — WITH A PRICE",
+  "role": "label",
+  "bbox": [
+   1615,
+   129,
+   2249,
+   199
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FEE",
+  "role": "label",
+  "bbox": [
+   1954,
+   426,
+   2064,
+   509
+  ],
+  "angle": 17.5,
+  "joined": false
+ },
+ {
+  "text": "POLICY DEVIATION",
+  "role": "label",
+  "bbox": [
+   2258,
+   277,
+   2433,
+   373
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DATA VOLUME",
+  "role": "label",
+  "bbox": [
+   2263,
+   414,
+   2428,
+   509
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER REPUTATION",
+  "role": "label",
+  "bbox": [
+   2236,
+   547,
+   2439,
+   643
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the verifier agrees to publish — but the price reflects how far the claim sits from their policy, how much data it carries, and how trusted the issuer is.",
+  "role": "caption",
+  "bbox": [
+   1414,
+   702,
+   2442,
+   791
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REJECT — WITH A REASON",
+  "role": "label",
+  "bbox": [
+   318,
+   1059,
+   989,
+   1135
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REJECTED",
+  "role": "label",
+  "bbox": [
+   169,
+   1296,
+   337,
+   1345
+  ],
+  "angle": -25,
+  "joined": false
+ },
+ {
+  "text": "the issuer's reputation is too low for me",
+  "role": "body",
+  "bbox": [
+   426,
+   1189,
+   1039,
+   1253
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the authority behind this record is not one I trust",
+  "role": "body",
+  "bbox": [
+   428,
+   1261,
+   1178,
+   1320
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the issuer's policy is too far from mine to bridge",
+  "role": "body",
+  "bbox": [
+   425,
+   1332,
+   1154,
+   1382
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the document itself fails my policy's rules",
+  "role": "body",
+  "bbox": [
+   426,
+   1402,
+   1063,
+   1449
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the verifier writes down WHY — their response feeds back into the next attempt.",
+  "role": "caption",
+  "bbox": [
+   96,
+   1509,
+   1223,
+   1564
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the verifier's response is added to the chronological list — as shown on HOW THE ALGORITHM PICKS A VERIFIER",
+  "role": "label",
+  "bbox": [
+   1410,
+   840,
+   2060,
+   909
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "whatever the verifier says, their answer becomes input to the next call.",
+  "role": "caption",
+  "bbox": [
+   1467,
+   930,
+   1993,
+   1010
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every verifier answers in one of these two ways — accept with a price, or reject with a reason.",
+  "role": "body",
+  "bbox": [
+   1491,
+   1050,
+   2019,
+   1179
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT HAPPENS NEXT",
+  "role": "label",
+  "bbox": [
+   2151,
+   824,
+   2480,
+   880
+  ],
+  "angle": 4.4,
+  "joined": false
+ },
+ {
+  "text": "The issuer decides what to do with this answer — see THE ISSUER'S CHOICE",
+  "role": "body",
+  "bbox": [
+   2173,
+   887,
+   2492,
+   977
+  ],
+  "angle": 3.9,
+  "joined": false
+ },
+ {
+  "text": "Each answer shifts the cost of the next attempt — as shown earlier on PUBLISHING COST",
+  "role": "body",
+  "bbox": [
+   2168,
+   971,
+   2478,
+   1092
+  ],
+  "angle": 5.4,
+  "joined": false
+ },
+ {
+  "text": "THE VERIFIER EITHER SETS A PRICE — OR TELLS YOU WHY NOT.",
+  "role": "tagline",
+  "bbox": [
+   45,
+   1597,
+   1837,
+   1684
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

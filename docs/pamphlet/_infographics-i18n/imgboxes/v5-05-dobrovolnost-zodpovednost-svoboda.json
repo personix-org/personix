@@ -1,0 +1,182 @@
+[
+ {
+  "text": "VOLUNTARINESS → RESPONSIBILITY → FREEDOM",
+  "role": "title",
+  "bbox": [
+   34,
+   34,
+   2490,
+   154
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THREE STEPS — FROM ONE PERSON'S CHOICE TO A WHOLE SOCIETY'S PATTERN",
+  "role": "tagline",
+  "bbox": [
+   167,
+   154,
+   2384,
+   231
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VOLUNTARINESS",
+  "role": "label",
+  "bbox": [
+   117,
+   266,
+   741,
+   364
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I decide for myself.",
+  "role": "body",
+  "bbox": [
+   538,
+   419,
+   714,
+   517
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the individual decides — no one compels her.",
+  "role": "caption",
+  "bbox": [
+   46,
+   1459,
+   805,
+   1519
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "and no one owes her a positive duty either.",
+  "role": "caption",
+  "bbox": [
+   71,
+   1522,
+   777,
+   1565
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RESPONSIBILITY",
+  "role": "label",
+  "bbox": [
+   956,
+   261,
+   1577,
+   358
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FEEDBACK",
+  "role": "label",
+  "bbox": [
+   1099,
+   425,
+   1310,
+   482
+  ],
+  "angle": -0.6,
+  "joined": false
+ },
+ {
+  "text": "the mirror answers — automatically, without a judge.",
+  "role": "body",
+  "bbox": [
+   1438,
+   440,
+   1670,
+   660
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "my choices ripple out — and the ripples come back.",
+  "role": "caption",
+  "bbox": [
+   862,
+   1469,
+   1708,
+   1524
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the consequences speak for themselves.",
+  "role": "caption",
+  "bbox": [
+   936,
+   1512,
+   1606,
+   1565
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FREEDOM",
+  "role": "label",
+  "bbox": [
+   1914,
+   268,
+   2284,
+   353
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no one drew this map — it drew itself.",
+  "role": "caption",
+  "bbox": [
+   1787,
+   1451,
+   2420,
+   1496
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "freedom is the statistical shape of how neighbours treat each other.",
+  "role": "caption",
+  "bbox": [
+   1794,
+   1494,
+   2425,
+   1586
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FREEDOM IS NOT A GIFT FROM ABOVE — IT IS THE PATTERN WE MAKE TOGETHER.",
+  "role": "title",
+  "bbox": [
+   24,
+   1589,
+   2521,
+   1675
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

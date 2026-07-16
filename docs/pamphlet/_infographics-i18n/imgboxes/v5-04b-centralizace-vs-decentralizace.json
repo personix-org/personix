@@ -1,0 +1,482 @@
+[
+ {
+  "text": "REPUTATION IS THE COUNTERWEIGHT TO ECONOMIC FORCE",
+  "role": "title",
+  "bbox": [
+   31,
+   9,
+   2509,
+   116
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE RICH MAN BUYS INFLUENCE — THE COMMUNITY REMEMBERS IT",
+  "role": "tagline",
+  "bbox": [
+   475,
+   111,
+   2067,
+   175
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LATER",
+  "role": "label",
+  "bbox": [
+   1187,
+   814,
+   1343,
+   874
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE ATTACK — INFILTRATE AND BUY OFF",
+  "role": "label",
+  "bbox": [
+   22,
+   192,
+   905,
+   255
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EIGHT PUPPETS PLANTED + THREE NEIGHBOURS BOUGHT OFF",
+  "role": "label",
+  "bbox": [
+   1692,
+   209,
+   2499,
+   247
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "economic force can slip strings into any community — and buy a few real voices along the way.",
+  "role": "caption",
+  "bbox": [
+   50,
+   751,
+   1422,
+   809
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "at first, it looks like the rich man just widened his circle of friends.",
+  "role": "caption",
+  "bbox": [
+   1436,
+   749,
+   2442,
+   814
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE DEFENCE — LONG MEMORY, DISTRIBUTED ACCOUNTING",
+  "role": "label",
+  "bbox": [
+   41,
+   888,
+   1218,
+   943
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR",
+  "role": "label",
+  "bbox": [
+   576,
+   984,
+   679,
+   1046
+  ],
+  "angle": -12.6,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR",
+  "role": "label",
+  "bbox": [
+   999,
+   990,
+   1101,
+   1045
+  ],
+  "angle": -12.1,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR",
+  "role": "label",
+  "bbox": [
+   607,
+   1252,
+   702,
+   1313
+  ],
+  "angle": -11.3,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR",
+  "role": "label",
+  "bbox": [
+   930,
+   1248,
+   1034,
+   1306
+  ],
+  "angle": -13.3,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR",
+  "role": "label",
+  "bbox": [
+   1179,
+   1093,
+   1289,
+   1153
+  ],
+  "angle": -13.2,
+  "joined": false
+ },
+ {
+  "text": "TAINTED BY PUPPET-MASTER",
+  "role": "label",
+  "bbox": [
+   511,
+   1425,
+   791,
+   1475
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TAINTED BY PUPPET-MASTER",
+  "role": "label",
+  "bbox": [
+   855,
+   1432,
+   1138,
+   1475
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the whole history is re-read through the exposure — not just the latest claim.",
+  "role": "caption",
+  "bbox": [
+   696,
+   1163,
+   1126,
+   1232
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SOLD HIS VOICE",
+  "role": "label",
+  "bbox": [
+   751,
+   1251,
+   798,
+   1306
+  ],
+  "angle": 15.6,
+  "joined": false
+ },
+ {
+  "text": "RAN THE PUPPETS",
+  "role": "label",
+  "bbox": [
+   452,
+   1017,
+   507,
+   1086
+  ],
+  "angle": -14.9,
+  "joined": false
+ },
+ {
+  "text": "RAN THE PUPPETS",
+  "role": "label",
+  "bbox": [
+   471,
+   1129,
+   512,
+   1181
+  ],
+  "angle": 8.9,
+  "joined": false
+ },
+ {
+  "text": "RAN THE PUPPETS",
+  "role": "label",
+  "bbox": [
+   497,
+   1335,
+   561,
+   1418
+  ],
+  "angle": 9.3,
+  "joined": false
+ },
+ {
+  "text": "PUPPETEER'S OWN DID — PERMANENTLY MARKED",
+  "role": "label",
+  "bbox": [
+   46,
+   981,
+   227,
+   1114
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no undo, no forgetting — the backfire does not fade.",
+  "role": "caption",
+  "bbox": [
+   60,
+   1523,
+   416,
+   1595
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RECENT",
+  "role": "label",
+  "bbox": [
+   1747,
+   1071,
+   1852,
+   1116
+  ],
+  "angle": 11.4,
+  "joined": false
+ },
+ {
+  "text": "OLDER",
+  "role": "label",
+  "bbox": [
+   1976,
+   1090,
+   2064,
+   1135
+  ],
+  "angle": 15,
+  "joined": false
+ },
+ {
+  "text": "OLDEST",
+  "role": "label",
+  "bbox": [
+   2201,
+   1113,
+   2299,
+   1154
+  ],
+  "angle": 12.2,
+  "joined": false
+ },
+ {
+  "text": "FROM A NEIGHBOUR",
+  "role": "label",
+  "bbox": [
+   1289,
+   1037,
+   1502,
+   1077
+  ],
+  "angle": -19.7,
+  "joined": false
+ },
+ {
+  "text": "still on record.",
+  "role": "label",
+  "bbox": [
+   1216,
+   948,
+   1404,
+   994
+  ],
+  "angle": -11.8,
+  "joined": false
+ },
+ {
+  "text": "still on record.",
+  "role": "label",
+  "bbox": [
+   736,
+   972,
+   954,
+   1016
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EVERY NEIGHBOUR KEEPS THEIR OWN MEMORY — NO CENTRAL BOOK, NO FORGETTING",
+  "role": "label",
+  "bbox": [
+   1372,
+   901,
+   2483,
+   939
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "claims come from peer DIDs — the community stamps the puppets AND the neighbours who sold their voice.",
+  "role": "caption",
+  "bbox": [
+   476,
+   1484,
+   1274,
+   1562
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "economic force met long memory — and long memory won.",
+  "role": "caption",
+  "bbox": [
+   480,
+   1558,
+   1279,
+   1598
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "money buys a moment — the neighbours remember for years.",
+  "role": "body",
+  "bbox": [
+   1905,
+   1491,
+   2224,
+   1587
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no central book — just many small memories, and they overlap.",
+  "role": "body",
+  "bbox": [
+   1654,
+   1390,
+   2065,
+   1453
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR — from a neighbour",
+  "role": "label",
+  "bbox": [
+   1479,
+   1245,
+   1563,
+   1322
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR — from a neighbour",
+  "role": "label",
+  "bbox": [
+   1481,
+   1319,
+   1553,
+   1390
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR — from a neighbour",
+  "role": "label",
+  "bbox": [
+   1507,
+   1409,
+   1592,
+   1495
+  ],
+  "angle": -21,
+  "joined": false
+ },
+ {
+  "text": "UNFAIR — from a neighbour",
+  "role": "label",
+  "bbox": [
+   1549,
+   1491,
+   1637,
+   1571
+  ],
+  "angle": -20,
+  "joined": false
+ },
+ {
+  "text": "ECONOMIC POWER REACHES IN — THE BACKFIRE COMES HOME, AND IT DOES NOT WASH OFF.",
+  "role": "title",
+  "bbox": [
+   31,
+   1611,
+   2511,
+   1703
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FROM A NEIGHBOUR",
+  "role": "label",
+  "bbox": [
+   1524,
+   1150,
+   1655,
+   1202
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "still on record.",
+  "role": "caption",
+  "bbox": [
+   1786,
+   1315,
+   1945,
+   1352
+  ],
+  "angle": 8,
+  "joined": false
+ }
+]

@@ -1,0 +1,272 @@
+[
+ {
+  "text": "WHAT GETS PUBLISHED IN THE NETWORK",
+  "role": "title",
+  "bbox": [
+   36,
+   31,
+   2497,
+   195
+  ]
+ },
+ {
+  "text": "five things can be published — every one has versions.",
+  "role": "body",
+  "bbox": [
+   164,
+   236,
+   659,
+   401
+  ]
+ },
+ {
+  "text": "DID DOCUMENT",
+  "role": "label",
+  "bbox": [
+   834,
+   500,
+   1211,
+   564
+  ]
+ },
+ {
+  "text": "your identity record on the network — keys, metadata, network address.",
+  "role": "body",
+  "bbox": [
+   782,
+   576,
+   1244,
+   717
+  ]
+ },
+ {
+  "text": "MANAGED BY: the DID holder",
+  "role": "caption",
+  "bbox": [
+   805,
+   736,
+   1228,
+   789
+  ]
+ },
+ {
+  "text": "CLAIM STANDARD",
+  "role": "label",
+  "bbox": [
+   1413,
+   504,
+   1802,
+   552
+  ]
+ },
+ {
+  "text": "the schema a claim must follow — what counts as valid evidence.",
+  "role": "body",
+  "bbox": [
+   1401,
+   582,
+   1821,
+   707
+  ]
+ },
+ {
+  "text": "MANAGED BY: an authority with reputation in the domain",
+  "role": "caption",
+  "bbox": [
+   1384,
+   714,
+   1833,
+   806
+  ]
+ },
+ {
+  "text": "POLICY STANDARD",
+  "role": "label",
+  "bbox": [
+   1992,
+   502,
+   2408,
+   559
+  ]
+ },
+ {
+  "text": "the schema a policy must follow — the shape of acceptance rules.",
+  "role": "body",
+  "bbox": [
+   1975,
+   582,
+   2429,
+   709
+  ]
+ },
+ {
+  "text": "DID POLICY",
+  "role": "label",
+  "bbox": [
+   2046,
+   1185,
+   2338,
+   1232
+  ]
+ },
+ {
+  "text": "a DID's declared rules — used in verification, consensus, and issuance.",
+  "role": "body",
+  "bbox": [
+   1987,
+   1264,
+   2419,
+   1396
+  ]
+ },
+ {
+  "text": "MANAGED BY: the DID holder (one policy per DID)",
+  "role": "caption",
+  "bbox": [
+   1987,
+   1411,
+   2431,
+   1505
+  ]
+ },
+ {
+  "text": "CLAIM",
+  "role": "label",
+  "bbox": [
+   1481,
+   1163,
+   1739,
+   1221
+  ]
+ },
+ {
+  "text": "a statement about a subject, following a claim standard — published by an issuer, co-signed by the standard's authority if both issuer and verifier request it.",
+  "role": "body",
+  "bbox": [
+   1382,
+   1240,
+   1845,
+   1414
+  ]
+ },
+ {
+  "text": "MANAGED BY: issuer publishes — subject is the target",
+  "role": "caption",
+  "bbox": [
+   1384,
+   1419,
+   1836,
+   1501
+  ]
+ },
+ {
+  "text": "claims come in two kinds — positive (+) and negative (−).",
+  "role": "caption",
+  "bbox": [
+   1404,
+   1513,
+   1831,
+   1597
+  ]
+ },
+ {
+  "text": "derived from",
+  "role": "label",
+  "bbox": [
+   1621,
+   846,
+   1829,
+   907
+  ]
+ },
+ {
+  "text": "derived from",
+  "role": "label",
+  "bbox": [
+   2214,
+   834,
+   2426,
+   905
+  ]
+ },
+ {
+  "text": "v1",
+  "role": "label",
+  "bbox": [
+   1167,
+   246,
+   1240,
+   306
+  ]
+ },
+ {
+  "text": "v2",
+  "role": "label",
+  "bbox": [
+   1764,
+   239,
+   1831,
+   314
+  ]
+ },
+ {
+  "text": "v3",
+  "role": "label",
+  "bbox": [
+   2350,
+   243,
+   2424,
+   304
+  ]
+ },
+ {
+  "text": "v4",
+  "role": "label",
+  "bbox": [
+   1764,
+   948,
+   1829,
+   1015
+  ]
+ },
+ {
+  "text": "v5",
+  "role": "label",
+  "bbox": [
+   2350,
+   948,
+   2420,
+   1020
+  ]
+ },
+ {
+  "text": "MANAGED BY: an authority with reputation in the domain",
+  "role": "caption",
+  "bbox": [
+   1975,
+   717,
+   2415,
+   805
+  ]
+ },
+ {
+  "text": "every artefact is versioned — the badges show current revisions.",
+  "role": "caption",
+  "bbox": [
+   22,
+   436,
+   290,
+   674
+  ]
+ },
+ {
+  "text": "EVERY ARTEFACT IS VERSIONED. EVERY VERSION IS PUBLIC.",
+  "role": "tagline",
+  "bbox": [
+   17,
+   1581,
+   2513,
+   1697
+  ]
+ }
+]

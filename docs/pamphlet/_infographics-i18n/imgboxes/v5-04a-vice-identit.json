@@ -1,0 +1,506 @@
+[
+ {
+  "text": "THE SAME EFFORT — A WASTEFUL PLAN B IN FREEDOM, A LIFELINE UNDER TYRANNY",
+  "role": "title",
+  "bbox": [
+   36,
+   21,
+   2499,
+   118
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PARALLEL IDENTITIES COST THE SAME — BUT BUY DIFFERENT THINGS",
+  "role": "tagline",
+  "bbox": [
+   562,
+   116,
+   1974,
+   169
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "IN FREEDOM — A COSTLY PLAN B",
+  "role": "label",
+  "bbox": [
+   107,
+   206,
+   776,
+   279
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FERTILIZER",
+  "role": "label",
+  "bbox": [
+   482,
+   522,
+   568,
+   555
+  ],
+  "angle": 22.4,
+  "joined": false
+ },
+ {
+  "text": "a second identity — just in case things go wrong.",
+  "role": "body",
+  "bbox": [
+   552,
+   305,
+   795,
+   398
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID-A",
+  "role": "label",
+  "bbox": [
+   139,
+   861,
+   237,
+   911
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID-B",
+  "role": "label",
+  "bbox": [
+   401,
+   864,
+   495,
+   916
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID-C",
+  "role": "label",
+  "bbox": [
+   648,
+   866,
+   745,
+   914
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "year 1 — time, energy, money spent — 5% reputation",
+  "role": "caption",
+  "bbox": [
+   86,
+   943,
+   285,
+   1067
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "year 3 — the same costs again, paid independently — 20% reputation",
+  "role": "caption",
+  "bbox": [
+   325,
+   943,
+   573,
+   1069
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "year 0 — everything starts over — 0% reputation",
+  "role": "caption",
+  "bbox": [
+   593,
+   945,
+   824,
+   1070
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SEED → SPROUT → SAPLING → YOUNG TREE → MATURE TREE",
+  "role": "label",
+  "bbox": [
+   81,
+   635,
+   824,
+   679
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5 to 15 years — no shortcuts, no mature tree for sale",
+  "role": "caption",
+  "bbox": [
+   131,
+   681,
+   769,
+   724
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "three gardens, triple the cost — and you still only have two hands.",
+  "role": "caption",
+  "bbox": [
+   55,
+   1066,
+   839,
+   1116
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OR — A CLEAN SLATE AFTER A PERSONAL MISSTEP",
+  "role": "label",
+  "bbox": [
+   76,
+   1133,
+   817,
+   1188
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OLD DID — REPUTATION BURNED",
+  "role": "label",
+  "bbox": [
+   103,
+   1446,
+   528,
+   1501
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BURNED",
+  "role": "label",
+  "bbox": [
+   141,
+   1382,
+   245,
+   1425
+  ],
+  "angle": -14.7,
+  "joined": false
+ },
+ {
+  "text": "DID-FRESH-START",
+  "role": "label",
+  "bbox": [
+   538,
+   1443,
+   820,
+   1491
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "works only if the mess stayed your own — if others were harmed enough to chase you down, their claims will follow you into the new pot too.",
+  "role": "caption",
+  "bbox": [
+   52,
+   1494,
+   831,
+   1584
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONE CLAIM AND THE PLAN B IS GONE",
+  "role": "label",
+  "bbox": [
+   882,
+   206,
+   1639,
+   268
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE CLAIM",
+  "role": "label",
+  "bbox": [
+   1176,
+   798,
+   1293,
+   886
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE REAL PERSON",
+  "role": "label",
+  "bbox": [
+   1352,
+   318,
+   1506,
+   404
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EXPOSED",
+  "role": "label",
+  "bbox": [
+   951,
+   1368,
+   1081,
+   1412
+  ],
+  "angle": -15.8,
+  "joined": false
+ },
+ {
+  "text": "EXPOSED",
+  "role": "label",
+  "bbox": [
+   1209,
+   1360,
+   1327,
+   1410
+  ],
+  "angle": -15.5,
+  "joined": false
+ },
+ {
+  "text": "EXPOSED",
+  "role": "label",
+  "bbox": [
+   1460,
+   1367,
+   1581,
+   1410
+  ],
+  "angle": -15.6,
+  "joined": false
+ },
+ {
+  "text": "a single claim ties every pot to the same gardener — years of time, energy and money erased in an afternoon.",
+  "role": "caption",
+  "bbox": [
+   910,
+   1512,
+   1637,
+   1584
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "one thread — and the whole plan unravels.",
+  "role": "body",
+  "bbox": [
+   1436,
+   445,
+   1623,
+   550
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNDER TYRANNY — ONE FOR THE STATE, OTHERS FOR FREE ASSOCIATION",
+  "role": "label",
+  "bbox": [
+   1701,
+   201,
+   2475,
+   310
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "(the state either bans identities outright or requires them under its own control)",
+  "role": "caption",
+  "bbox": [
+   1721,
+   308,
+   2470,
+   377
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OFFICIAL DID — REGISTERED & MONITORED",
+  "role": "label",
+  "bbox": [
+   2110,
+   714,
+   2296,
+   812
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE ONE THE STATE SEES",
+  "role": "label",
+  "bbox": [
+   1900,
+   380,
+   2255,
+   432
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ALSO MINE — BUT HIDDEN FROM THE STATE",
+  "role": "label",
+  "bbox": [
+   2076,
+   872,
+   2359,
+   991
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "outward compliance — one identity handed over for monitoring.",
+  "role": "caption",
+  "bbox": [
+   1708,
+   887,
+   1978,
+   994
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID-A — UNDERGROUND PRESS",
+  "role": "label",
+  "bbox": [
+   1716,
+   1410,
+   1931,
+   1520
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID-B — RAIDED",
+  "role": "label",
+  "bbox": [
+   1997,
+   1412,
+   2170,
+   1496
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID-C — RESISTANCE CELL — INTACT",
+  "role": "label",
+  "bbox": [
+   2215,
+   1417,
+   2454,
+   1524
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE ONES THE STATE MUST NEVER SEE",
+  "role": "label",
+  "bbox": [
+   1830,
+   1080,
+   2359,
+   1135
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the brick walls between cells do the work the state forbids — lose one, the others carry on; when the regime falls, public life resumes.",
+  "role": "caption",
+  "bbox": [
+   1708,
+   1524,
+   2478,
+   1582
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "one mask for the regime — the rest for a life still worth living.",
+  "role": "body",
+  "bbox": [
+   2303,
+   404,
+   2480,
+   568
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "IN FREEDOM, ABUSE IS EXPENSIVE. UNDER TYRANNY, SURVIVAL IS POSSIBLE.",
+  "role": "title",
+  "bbox": [
+   88,
+   1605,
+   2463,
+   1682
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE CLAIM",
+  "role": "label",
+  "bbox": [
+   1256,
+   671,
+   1318,
+   706
+  ],
+  "angle": 15,
+  "joined": false
+ },
+ {
+  "text": "OFFICIAL DID",
+  "role": "label",
+  "bbox": [
+   1979,
+   557,
+   2064,
+   586
+  ],
+  "angle": 10,
+  "joined": false
+ }
+]

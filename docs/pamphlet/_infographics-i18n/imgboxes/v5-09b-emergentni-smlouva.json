@@ -1,0 +1,302 @@
+[
+ {
+  "text": "HOW ETHICS EMERGE FROM INDIVIDUAL POLICIES",
+  "role": "title",
+  "bbox": [
+   55,
+   38,
+   2504,
+   143
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FROM POLICIES TO NORMS",
+  "role": "label",
+  "bbox": [
+   767,
+   289,
+   1505,
+   361
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "INDIVIDUAL POLICIES — what each person stands for",
+  "role": "label",
+  "bbox": [
+   562,
+   1326,
+   1653,
+   1383
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BILATERAL INTERACTIONS — where policies meet",
+  "role": "label",
+  "bbox": [
+   586,
+   963,
+   1596,
+   1020
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EMERGENT NORMS — what most agreed on, not what anyone wrote",
+  "role": "label",
+  "bbox": [
+   310,
+   664,
+   1950,
+   724
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Zero tolerance for violent crime",
+  "role": "label",
+  "bbox": [
+   361,
+   1164,
+   507,
+   1293
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "No kidnapping, ever",
+  "role": "label",
+  "bbox": [
+   559,
+   1175,
+   693,
+   1279
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I don't trade with proven fraudsters",
+  "role": "label",
+  "bbox": [
+   743,
+   1169,
+   875,
+   1290
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "No bribery",
+  "role": "label",
+  "bbox": [
+   942,
+   1178,
+   1040,
+   1247
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I honour contracts",
+  "role": "label",
+  "bbox": [
+   1106,
+   1168,
+   1230,
+   1250
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I resolve disputes within 30 days",
+  "role": "label",
+  "bbox": [
+   1269,
+   1173,
+   1400,
+   1298
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Protect intellectual property",
+  "role": "label",
+  "bbox": [
+   1448,
+   1183,
+   1577,
+   1269
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Fair wages for all",
+  "role": "label",
+  "bbox": [
+   1618,
+   1180,
+   1740,
+   1245
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NO VIOLENT CRIME — 99% agree",
+  "role": "label",
+  "bbox": [
+   425,
+   447,
+   860,
+   561
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NO FRAUD — 78% agree",
+  "role": "label",
+  "bbox": [
+   886,
+   444,
+   1140,
+   569
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HONOUR CONTRACTS — 60% agree",
+  "role": "label",
+  "bbox": [
+   1168,
+   435,
+   1439,
+   604
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FAIR WAGES — 25% agree",
+  "role": "label",
+  "bbox": [
+   1472,
+   440,
+   1751,
+   583
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TRADITIONAL SOCIAL CONTRACT",
+  "role": "label",
+  "bbox": [
+   2175,
+   660,
+   2408,
+   793
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NOBODY SIGNED THIS",
+  "role": "label",
+  "bbox": [
+   2219,
+   843,
+   2379,
+   954
+  ],
+  "angle": -15.7,
+  "joined": false
+ },
+ {
+  "text": "for comparison —",
+  "role": "caption",
+  "bbox": [
+   2141,
+   1063,
+   2449,
+   1109
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the emergent norms above are empirically observable",
+  "role": "caption",
+  "bbox": [
+   2148,
+   1109,
+   2442,
+   1269
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Nobody wrote these rules. They emerged from how we actually treat each other.",
+  "role": "caption",
+  "bbox": [
+   1639,
+   752,
+   1988,
+   893
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Ethics are not designed. They emerge from how we actually treat each other.",
+  "role": "tagline",
+  "bbox": [
+   119,
+   1513,
+   2420,
+   1606
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* Each individual policy is a reflection of that person's morality — shaped by pressure to adapt to their community and environment.",
+  "role": "caption",
+  "bbox": [
+   71,
+   1629,
+   2475,
+   1695
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the closer to direct ham, the stronger agreement",
+  "role": "custom",
+  "bbox": [
+   1890,
+   362,
+   2139,
+   547
+  ],
+  "angle": -9.2,
+  "joined": false
+ }
+]

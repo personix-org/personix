@@ -1,0 +1,30 @@
+{
+  "file": "v5-11b-esr-detail",
+  "texts": [
+    {"role": "title", "text": "ESR — ELECTRONIC SPENDING REPORTING"},
+    {"role": "caption", "text": "every state expenditure recorded — every record public — every detail open to scrutiny."},
+    {"role": "label", "text": "who submits"},
+    {"role": "body", "text": "any record can be submitted by: – the official who processed the payment – the recipient who got paid"},
+    {"role": "caption", "text": "open to anyone who wants to look."},
+    {"role": "label", "text": "PUBLIC LEDGER OF STATE EXPENDITURE — open record"},
+    {"role": "body", "text": "category: legal advisory\ncontractor: law firm XYZ s.r.o.\namount: 14M EUR\ncommitted: 2026-01-14    paid: 2026-01-19"},
+    {"role": "label", "text": "PAID"},
+    {"role": "body", "text": "context: external opinion on the new procurement reform bill — three drafts produced, one workshop with ministry, no public hearing held — final draft delivered after legislative deadline."},
+    {"role": "body", "text": "category: road design consulting\ncontractor: Consultancy T\namount: 9M EUR\ncommitted: 2026-02-03    paid: —"},
+    {"role": "label", "text": "PENDING"},
+    {"role": "body", "text": "context: feasibility study for the D-X motorway extension — same firm wrote three previous studies on this route — outcome: recommendation to proceed at +18% over earlier estimate."},
+    {"role": "body", "text": "category: licence plate issuance\nrecipient: regional office Z\namount: 45 EUR per plate\ncommitted: 2026-02-19    paid: 2026-02-19"},
+    {"role": "label", "text": "PAID"},
+    {"role": "body", "text": "context: standard administrative fee per issued plate — fee covers materials and processing — total volume 12 400 plates this quarter."},
+    {"role": "body", "text": "category: hospital equipment\ncontractor: MedSupply a.s.\namount: 8.2M EUR\ncommitted: 2026-03-08    paid: —"},
+    {"role": "label", "text": "OVERDUE"},
+    {"role": "body", "text": "context: MRI scanner installation at regional hospital — public tender, three bidders — chosen bid 2% below median, delivery within 60 days — invoice 90 days past due."},
+    {"role": "label", "text": "spam filter — refundable deposit"},
+    {"role": "body", "text": "deposit returned when the record proves accurate."},
+    {"role": "label", "text": "parties transform into analysis providers"},
+    {"role": "body", "text": "the descriptions are the raw material — parties earn their keep by reading them carefully, the cross-references and produces all printed bulletin."},
+    {"role": "label", "text": "this looks like today's world. it is — only the books are now open to all. no revolution. just better incentives."},
+    {"role": "tagline", "text": "Every crown of public money — recorded, public, scrutinisable."},
+    {"role": "tagline", "text": "the value is not in catching cheats — it is in opening the books."}
+  ]
+}

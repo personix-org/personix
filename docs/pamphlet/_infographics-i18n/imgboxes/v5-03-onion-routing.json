@@ -1,0 +1,518 @@
+[
+ {
+  "text": "HOW YOUR MESSAGES STAY UNTRACKABLE",
+  "role": "title",
+  "bbox": [
+   420,
+   23,
+   2114,
+   113
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TWO LINES OF DEFENCE AT ONCE — LAYERS AND NOISE",
+  "role": "tagline",
+  "bbox": [
+   641,
+   106,
+   1897,
+   168
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CONTENT: WRAPPED IN LAYERS",
+  "role": "label",
+  "bbox": [
+   31,
+   195,
+   750,
+   255
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "(the technique behind Tor — ‘onion routing')",
+  "role": "caption",
+  "bbox": [
+   50,
+   266,
+   753,
+   310
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SENDER",
+  "role": "label",
+  "bbox": [
+   86,
+   639,
+   277,
+   692
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RECIPIENT",
+  "role": "label",
+  "bbox": [
+   2263,
+   639,
+   2457,
+   697
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "four locks, four keys — one per node.",
+  "role": "caption",
+  "bbox": [
+   332,
+   596,
+   729,
+   701
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE RELAY CHAIN",
+  "role": "label",
+  "bbox": [
+   1319,
+   212,
+   1629,
+   255
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "KNOWS: SENDER ONLY",
+  "role": "label",
+  "bbox": [
+   798,
+   567,
+   1052,
+   663
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "KNOWS: NEIGHBOURS ONLY",
+  "role": "label",
+  "bbox": [
+   1171,
+   560,
+   1415,
+   677
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "KNOWS: RECIPIENT ONLY",
+  "role": "label",
+  "bbox": [
+   1890,
+   570,
+   2177,
+   666
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "KNOWS: NEIGHBOURS ONLY",
+  "role": "label",
+  "bbox": [
+   1515,
+   565,
+   1776,
+   687
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no single node sees both ends of the conversation.",
+  "role": "caption",
+  "bbox": [
+   1092,
+   682,
+   1890,
+   732
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TIMING: HIDDEN IN A RIVER OF DECOYS",
+  "role": "label",
+  "bbox": [
+   26,
+   764,
+   879,
+   821
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "(the technique behind a ‘mixnet' — e.g. Nym, Loopix)",
+  "role": "caption",
+  "bbox": [
+   48,
+   838,
+   863,
+   888
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DECOY",
+  "role": "label",
+  "bbox": [
+   598,
+   1148,
+   721,
+   1191
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REAL",
+  "role": "label",
+  "bbox": [
+   953,
+   1146,
+   1054,
+   1193
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MIX-NODE — SHUFFLES + DELAYS",
+  "role": "label",
+  "bbox": [
+   1132,
+   1196,
+   1685,
+   1246
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "a hundred envelopes an hour — which one matters?",
+  "role": "body",
+  "bbox": [
+   1233,
+   1313,
+   1591,
+   1452
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the observer sees the flow but cannot tell REAL from DECOY.",
+  "role": "caption",
+  "bbox": [
+   1101,
+   1476,
+   1642,
+   1583
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the community pays a small cost — constant cover traffic — in exchange for untrackability.",
+  "role": "caption",
+  "bbox": [
+   1666,
+   795,
+   2468,
+   897
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HIDES WHO ↔ WHO?",
+  "role": "label",
+  "bbox": [
+   303,
+   1298,
+   492,
+   1361
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HIDES WHEN?",
+  "role": "label",
+  "bbox": [
+   521,
+   1299,
+   738,
+   1366
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LAYERS ONLY",
+  "role": "label",
+  "bbox": [
+   76,
+   1363,
+   306,
+   1418
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NOISE ONLY",
+  "role": "label",
+  "bbox": [
+   77,
+   1437,
+   301,
+   1482
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LAYERS + NOISE",
+  "role": "label",
+  "bbox": [
+   46,
+   1499,
+   306,
+   1557
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "(onion routing + mixnet — the combination we need)",
+  "role": "caption",
+  "bbox": [
+   57,
+   1568,
+   784,
+   1614
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YES",
+  "role": "label",
+  "bbox": [
+   396,
+   1365,
+   485,
+   1416
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YES",
+  "role": "label",
+  "bbox": [
+   401,
+   1500,
+   487,
+   1559
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YES",
+  "role": "label",
+  "bbox": [
+   612,
+   1435,
+   695,
+   1488
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YES",
+  "role": "label",
+  "bbox": [
+   609,
+   1500,
+   693,
+   1554
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NO",
+  "role": "label",
+  "bbox": [
+   408,
+   1428,
+   482,
+   1490
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NO",
+  "role": "label",
+  "bbox": [
+   616,
+   1366,
+   691,
+   1420
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the real message swims in a river of decoys — and wears four coats.",
+  "role": "body",
+  "bbox": [
+   1732,
+   1341,
+   2045,
+   1511
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CONTENT HIDDEN BY LAYERS — TIMING HIDDEN BY NOISE.",
+  "role": "title",
+  "bbox": [
+   423,
+   1616,
+   2162,
+   1764
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE TWO SHIELDS TOGETHER",
+  "role": "label",
+  "bbox": [
+   62,
+   1235,
+   674,
+   1275
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MATRIX",
+  "role": "label",
+  "bbox": [
+   130,
+   1318,
+   247,
+   1345
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RIVER",
+  "role": "label",
+  "bbox": [
+   872,
+   911,
+   970,
+   940
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "(only on a few):",
+  "role": "caption",
+  "bbox": [
+   260,
+   1140,
+   500,
+   1183
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST",
+  "role": "label",
+  "bbox": [
+   876,
+   378,
+   978,
+   417
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST",
+  "role": "label",
+  "bbox": [
+   1238,
+   378,
+   1340,
+   417
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST",
+  "role": "label",
+  "bbox": [
+   1593,
+   378,
+   1697,
+   417
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POST",
+  "role": "label",
+  "bbox": [
+   1966,
+   378,
+   2068,
+   417
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

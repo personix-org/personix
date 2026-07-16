@@ -1,0 +1,292 @@
+[
+ {
+  "text": "WHY THE NETWORK IS UNCENSORABLE",
+  "role": "title",
+  "bbox": [
+   816,
+   9,
+   2173,
+   112
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MESSAGE",
+  "role": "label",
+  "bbox": [
+   1399,
+   657,
+   1559,
+   712
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Who sent it?",
+  "role": "body",
+  "bbox": [
+   95,
+   276,
+   307,
+   427
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "To whom?",
+  "role": "body",
+  "bbox": [
+   378,
+   259,
+   618,
+   336
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "What is inside?",
+  "role": "body",
+  "bbox": [
+   679,
+   278,
+   891,
+   413
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CENTRALISM CHOICE",
+  "role": "label",
+  "bbox": [
+   1979,
+   223,
+   2296,
+   362
+  ],
+  "angle": -2.9,
+  "joined": false
+ },
+ {
+  "text": "GDP UP",
+  "role": "custom",
+  "bbox": [
+   2587,
+   193,
+   2752,
+   255
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "There is no place where one could look.",
+  "role": "caption",
+  "bbox": [
+   868,
+   1346,
+   2060,
+   1485
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Censor`s frustration",
+  "role": "custom",
+  "bbox": [
+   127,
+   56,
+   786,
+   138
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NODE A encrypts",
+  "role": "label",
+  "path": [
+   [
+    1305,
+    863
+   ],
+   [
+    1399,
+    906
+   ],
+   [
+    1517,
+    908
+   ],
+   [
+    1618,
+    863
+   ],
+   [
+    1611,
+    865
+   ]
+  ],
+  "thickness": 60
+ },
+ {
+  "text": "NODE B encrypts",
+  "role": "custom",
+  "path": [
+   [
+    1323,
+    993
+   ],
+   [
+    1404,
+    1015
+   ],
+   [
+    1474,
+    1023
+   ],
+   [
+    1537,
+    1019
+   ],
+   [
+    1624,
+    993
+   ]
+  ],
+  "thickness": 60
+ },
+ {
+  "text": "NODE C encrypty",
+  "role": "custom",
+  "path": [
+   [
+    1315,
+    1100
+   ],
+   [
+    1426,
+    1128
+   ],
+   [
+    1521,
+    1140
+   ],
+   [
+    1630,
+    1104
+   ]
+  ],
+  "thickness": 60
+ },
+ {
+  "text": "NODE D encrypts",
+  "role": "custom",
+  "path": [
+   [
+    1309,
+    1201
+   ],
+   [
+    1418,
+    1247
+   ],
+   [
+    1527,
+    1243
+   ],
+   [
+    1632,
+    1213
+   ]
+  ],
+  "thickness": 60
+ },
+ {
+  "text": "ACCEPT IT.",
+  "role": "label",
+  "path": [
+   [
+    2375,
+    619
+   ],
+   [
+    2472,
+    577
+   ],
+   [
+    2551,
+    532
+   ],
+   [
+    2609,
+    490
+   ]
+  ],
+  "thickness": 60
+ },
+ {
+  "text": "TOTAL SURVEILLANCE.",
+  "role": "label",
+  "path": [
+   [
+    2361,
+    795
+   ],
+   [
+    2500,
+    835
+   ],
+   [
+    2613,
+    883
+   ],
+   [
+    2708,
+    944
+   ]
+  ],
+  "thickness": 96
+ },
+ {
+  "text": "A",
+  "role": "custom",
+  "bbox": [
+   2290,
+   589,
+   2353,
+   661
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "B",
+  "role": "custom",
+  "bbox": [
+   2276,
+   750,
+   2351,
+   823
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "state`s dilema",
+  "role": "custom",
+  "bbox": [
+   2280,
+   62,
+   2767,
+   136
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

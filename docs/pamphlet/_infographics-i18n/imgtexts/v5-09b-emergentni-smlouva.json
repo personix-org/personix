@@ -1,0 +1,29 @@
+{
+  "file": "v5-09b-emergentni-smlouva.webp",
+  "texts": [
+    {"role": "title", "text": "HOW ETHICS EMERGE FROM INDIVIDUAL POLICIES"},
+    {"role": "label", "text": "FROM POLICIES TO NORMS"},
+    {"role": "label", "text": "INDIVIDUAL POLICIES — what each person stands for"},
+    {"role": "label", "text": "BILATERAL INTERACTIONS — where policies meet"},
+    {"role": "label", "text": "EMERGENT NORMS — what most agreed on, not what anyone wrote"},
+    {"role": "label", "text": "Zero tolerance for violent crime"},
+    {"role": "label", "text": "No kidnapping, ever"},
+    {"role": "label", "text": "I don't trade with proven fraudsters"},
+    {"role": "label", "text": "No bribery"},
+    {"role": "label", "text": "I honour contracts"},
+    {"role": "label", "text": "I resolve disputes within 30 days"},
+    {"role": "label", "text": "Protect intellectual property"},
+    {"role": "label", "text": "Fair wages for all"},
+    {"role": "label", "text": "NO VIOLENT CRIME — 99% agree"},
+    {"role": "label", "text": "NO FRAUD — 78% agree"},
+    {"role": "label", "text": "HONOUR CONTRACTS — 60% agree"},
+    {"role": "label", "text": "FAIR WAGES — 25% agree"},
+    {"role": "label", "text": "TRADITIONAL SOCIAL CONTRACT"},
+    {"role": "label", "text": "NOBODY SIGNED THIS"},
+    {"role": "caption", "text": "for comparison —"},
+    {"role": "caption", "text": "the emergent norms above are empirically observable"},
+    {"role": "caption", "text": "Nobody wrote these rules. They emerged from how we actually treat each other."},
+    {"role": "tagline", "text": "Ethics are not designed. They emerge from how we actually treat each other."},
+    {"role": "caption", "text": "* Each individual policy is a reflection of that person's morality — shaped by pressure to adapt to their community and environment."}
+  ]
+}

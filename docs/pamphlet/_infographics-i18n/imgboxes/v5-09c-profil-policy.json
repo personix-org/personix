@@ -1,0 +1,350 @@
+[
+ {
+  "text": "POLICIES MEET. ATTITUDES FORM.",
+  "role": "title",
+  "bbox": [
+   337,
+   41,
+   2200,
+   156
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DECLARED RULES SET TODAY'S PRICE — DISCOUNT FOR ALIGNMENT, MALUS FOR DIVERGENCE",
+  "role": "tagline",
+  "bbox": [
+   69,
+   163,
+   2470,
+   244
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHEN POLICIES ALIGN",
+  "role": "label",
+  "bbox": [
+   193,
+   325,
+   930,
+   426
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHEN POLICIES DIVERGE",
+  "role": "label",
+  "bbox": [
+   1598,
+   334,
+   2373,
+   423
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY RULES",
+  "role": "label",
+  "bbox": [
+   158,
+   1046,
+   384,
+   1099
+  ],
+  "angle": -6,
+  "joined": false
+ },
+ {
+  "text": "MY RULES",
+  "role": "label",
+  "bbox": [
+   1452,
+   1071,
+   1678,
+   1124
+  ],
+  "angle": -6,
+  "joined": false
+ },
+ {
+  "text": "MY RULES",
+  "role": "label",
+  "bbox": [
+   843,
+   1031,
+   1069,
+   1084
+  ],
+  "angle": 4.9,
+  "joined": false
+ },
+ {
+  "text": "MY RULES",
+  "role": "label",
+  "bbox": [
+   2164,
+   1057,
+   2390,
+   1110
+  ],
+  "angle": 4.9,
+  "joined": false
+ },
+ {
+  "text": "OVERLAP — 85%",
+  "role": "label",
+  "bbox": [
+   514,
+   1193,
+   738,
+   1226
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OVERLAP — 30%",
+  "role": "label",
+  "bbox": [
+   1807,
+   1188,
+   2029,
+   1235
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "+10% LOYALTY DISCOUNT",
+  "role": "label",
+  "bbox": [
+   686,
+   1327,
+   817,
+   1406
+  ],
+  "angle": 37.9,
+  "joined": false
+ },
+ {
+  "text": "−25% RADICAL MALUS",
+  "role": "label",
+  "bbox": [
+   1989,
+   1334,
+   2099,
+   1416
+  ],
+  "angle": 42.7,
+  "joined": false
+ },
+ {
+  "text": "We see things the same way. Let's trade.",
+  "role": "caption",
+  "bbox": [
+   495,
+   603,
+   769,
+   749
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "We can still trade — but the price reflects the gap.",
+  "role": "caption",
+  "bbox": [
+   1759,
+   580,
+   2100,
+   727
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Same goods, two prices. Declarations — not reputation — decide it.",
+  "role": "caption",
+  "bbox": [
+   1314,
+   334,
+   1560,
+   479
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "When two policies meet in trade, their alignment becomes the price modifier.",
+  "role": "tagline",
+  "bbox": [
+   72,
+   1516,
+   2464,
+   1602
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* This is not about reputation. It is about what each person publicly declared — and is now expected to keep.",
+  "role": "caption",
+  "bbox": [
+   79,
+   1619,
+   2457,
+   1688
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "- no trade with proven fraudsters.",
+  "role": "custom",
+  "bbox": [
+   155,
+   1108,
+   425,
+   1175
+  ],
+  "angle": -7.1,
+  "joined": false
+ },
+ {
+  "text": "- disputes resolved in 30 days.",
+  "role": "custom",
+  "bbox": [
+   163,
+   1178,
+   429,
+   1258
+  ],
+  "angle": -8.6,
+  "joined": false
+ },
+ {
+  "text": "- late payment: one tolerated, no second.",
+  "role": "custom",
+  "bbox": [
+   180,
+   1240,
+   426,
+   1321
+  ],
+  "angle": -7,
+  "joined": false
+ },
+ {
+  "text": "- no trade with proven fraudsters.",
+  "role": "custom",
+  "bbox": [
+   828,
+   1098,
+   1098,
+   1165
+  ],
+  "angle": 8.5,
+  "joined": false
+ },
+ {
+  "text": "- disputes resolved in 30 days.",
+  "role": "custom",
+  "bbox": [
+   819,
+   1158,
+   1085,
+   1238
+  ],
+  "angle": 8.3,
+  "joined": false
+ },
+ {
+  "text": "- late paymewnt: only with proof of cause",
+  "role": "custom",
+  "bbox": [
+   819,
+   1236,
+   1065,
+   1331
+  ],
+  "angle": 7.9,
+  "joined": false
+ },
+ {
+  "text": "- no bribery",
+  "role": "custom",
+  "bbox": [
+   1448,
+   1148,
+   1627,
+   1184
+  ],
+  "angle": -6.1,
+  "joined": false
+ },
+ {
+  "text": "- fair wages for all.",
+  "role": "custom",
+  "bbox": [
+   1450,
+   1170,
+   1701,
+   1227
+  ],
+  "angle": -3.8,
+  "joined": false
+ },
+ {
+  "text": "- no deal without arbitration clause.",
+  "role": "custom",
+  "bbox": [
+   1458,
+   1218,
+   1713,
+   1303
+  ],
+  "angle": -7.7,
+  "joined": false
+ },
+ {
+  "text": "- bribery accepted as `gift culture`",
+  "role": "custom",
+  "bbox": [
+   2131,
+   1120,
+   2389,
+   1184
+  ],
+  "angle": 5.3,
+  "joined": false
+ },
+ {
+  "text": "- wages set by tradition.",
+  "role": "custom",
+  "bbox": [
+   2120,
+   1194,
+   2354,
+   1259
+  ],
+  "angle": 6.2,
+  "joined": false
+ },
+ {
+  "text": "-disputes settled within the family.",
+  "role": "custom",
+  "bbox": [
+   2115,
+   1261,
+   2384,
+   1335
+  ],
+  "angle": 6.7,
+  "joined": false
+ }
+]

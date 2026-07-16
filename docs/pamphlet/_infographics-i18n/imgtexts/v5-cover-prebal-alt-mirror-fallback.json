@@ -1,0 +1,12 @@
+{
+  "file": "v5-cover-prebal-alt-mirror-fallback",
+  "texts": [
+    {"role": "title", "text": "PERSONIX"},
+    {"role": "caption", "text": "the mirrors —"},
+    {"role": "body", "text": "are the reputation network."},
+    {"role": "body", "text": "they reflect what reputation says, not what the polish hides."},
+    {"role": "label", "text": "FOR THE DISOBEDIENT"},
+    {"role": "title", "text": "An Uncensorable and Incorruptible Decentralized Reputation Network"},
+    {"role": "tagline", "text": "an evolutionary successor to the state"}
+  ]
+}

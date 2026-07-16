@@ -1,0 +1,290 @@
+[
+ {
+  "text": "WHO INVESTIGATES, WHO ENFORCES?",
+  "role": "title",
+  "bbox": [
+   375,
+   64,
+   2151,
+   169
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the harm”",
+  "role": "label",
+  "bbox": [
+   509,
+   224,
+   767,
+   303
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the investigator”",
+  "role": "label",
+  "bbox": [
+   844,
+   227,
+   1243,
+   308
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the record”",
+  "role": "label",
+  "bbox": [
+   1271,
+   230,
+   1555,
+   303
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the enforcer”",
+  "role": "label",
+  "bbox": [
+   1641,
+   234,
+   1967,
+   304
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“accountability”",
+  "role": "label",
+  "bbox": [
+   2064,
+   230,
+   2435,
+   311
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "my contractor defrauded me.",
+  "role": "caption",
+  "bbox": [
+   525,
+   359,
+   786,
+   464
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LICENSED INVESTIGATOR",
+  "role": "label",
+  "bbox": [
+   959,
+   375,
+   1157,
+   442
+  ],
+  "angle": -8.8,
+  "joined": false
+ },
+ {
+  "text": "96%",
+  "role": "label",
+  "bbox": [
+   1075,
+   432,
+   1149,
+   484
+  ],
+  "angle": -8.6,
+  "joined": false
+ },
+ {
+  "text": "ENFORCEMENT SERVICES",
+  "role": "label",
+  "bbox": [
+   1730,
+   371,
+   1931,
+   445
+  ],
+  "angle": -7.5,
+  "joined": false
+ },
+ {
+  "text": "91%",
+  "role": "label",
+  "bbox": [
+   1847,
+   435,
+   1926,
+   478
+  ],
+  "angle": -7.4,
+  "joined": false
+ },
+ {
+  "text": "if the enforcer fails or overreaches — clients switch.",
+  "role": "caption",
+  "bbox": [
+   2077,
+   359,
+   2413,
+   507
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPTED",
+  "role": "label",
+  "bbox": [
+   1359,
+   652,
+   1458,
+   684
+  ],
+  "angle": 9,
+  "joined": false
+ },
+ {
+  "text": "INVESTIGATION REPORT",
+  "role": "label",
+  "bbox": [
+   1087,
+   803,
+   1240,
+   870
+  ],
+  "angle": 10.3,
+  "joined": false
+ },
+ {
+  "text": "WITNESS STATEMENT",
+  "role": "label",
+  "bbox": [
+   1087,
+   1046,
+   1213,
+   1103
+  ],
+  "angle": 14.3,
+  "joined": false
+ },
+ {
+  "text": "PAID LIKE INSURANCE — MONTHLY PREMIUM",
+  "role": "label",
+  "bbox": [
+   1617,
+   805,
+   1734,
+   941
+  ],
+  "angle": -6.3,
+  "joined": false
+ },
+ {
+  "text": "COMMUNITY POLICY",
+  "role": "label",
+  "bbox": [
+   1861,
+   840,
+   1985,
+   896
+  ],
+  "angle": 8.2,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's world. it is — only the motives are honest now. no revolution. just better incentives.",
+  "role": "caption",
+  "bbox": [
+   112,
+   1152,
+   528,
+   1462
+  ],
+  "angle": -9.7,
+  "joined": false
+ },
+ {
+  "text": "“professional evidence collection — reputation is their business model.”",
+  "role": "caption",
+  "bbox": [
+   807,
+   1266,
+   1204,
+   1453
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the record enters the network — the perpetrator's reputation drops.”",
+  "role": "caption",
+  "bbox": [
+   1245,
+   1259,
+   1580,
+   1465
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“acts on pre-agreed rules — like insurance.”",
+  "role": "caption",
+  "bbox": [
+   1605,
+   1254,
+   2005,
+   1359
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the enforcer's reputation is his livelihood — fail and lose clients.”",
+  "role": "caption",
+  "bbox": [
+   2019,
+   1250,
+   2466,
+   1408
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DELEGATION IS REVOCABLE. Any DID activity can be delegated to another DID — and taken back at any time.",
+  "role": "tagline",
+  "bbox": [
+   62,
+   1530,
+   2480,
+   1605
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "you don't enforce punishment yourself. you delegate. and the delegate answers to you.",
+  "role": "tagline",
+  "bbox": [
+   375,
+   1609,
+   2193,
+   1671
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

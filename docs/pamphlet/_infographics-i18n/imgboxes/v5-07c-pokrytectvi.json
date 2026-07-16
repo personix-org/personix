@@ -1,0 +1,314 @@
+[
+ {
+  "text": "HYPOCRISY IS THE MOST EXPENSIVE BEHAVIOR",
+  "role": "title",
+  "bbox": [
+   52,
+   41,
+   2482,
+   146
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE NETWORK QUIETLY COMPARES YOUR WORDS WITH YOUR RECORD — THE GAP IS VISIBLE TO EVERYONE",
+  "role": "caption",
+  "bbox": [
+   58,
+   150,
+   2483,
+   217
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I AM A GOOD CITIZEN",
+  "role": "body",
+  "bbox": [
+   736,
+   273,
+   956,
+   437
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FRAUD — 12 MARCH — PROVEN",
+  "role": "label",
+  "bbox": [
+   213,
+   1030,
+   382,
+   1169
+  ],
+  "angle": 29.5,
+  "joined": false
+ },
+ {
+  "text": "BROKEN CONTRACT — 4 FEB",
+  "role": "label",
+  "bbox": [
+   123,
+   1197,
+   294,
+   1314
+  ],
+  "angle": -29.7,
+  "joined": false
+ },
+ {
+  "text": "UNPAID DEBT — 22 JAN",
+  "role": "label",
+  "bbox": [
+   198,
+   1310,
+   351,
+   1427
+  ],
+  "angle": -45.4,
+  "joined": false
+ },
+ {
+  "text": "HIS RECORD",
+  "role": "label",
+  "bbox": [
+   1510,
+   256,
+   1694,
+   306
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "what the network sees.",
+  "role": "caption",
+  "bbox": [
+   1494,
+   308,
+   1692,
+   378
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "what the crowd does not — yet.",
+  "role": "caption",
+  "bbox": [
+   1489,
+   377,
+   1711,
+   452
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACTUAL RECORD",
+  "role": "label",
+  "bbox": [
+   1381,
+   423,
+   1469,
+   476
+  ],
+  "angle": 9.4,
+  "joined": false
+ },
+ {
+  "text": "declaration and record do not match.",
+  "role": "caption",
+  "bbox": [
+   999,
+   574,
+   1563,
+   628
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HOW CAN WE KNOW YOU SPEAK THE TRUTH?",
+  "role": "body",
+  "bbox": [
+   915,
+   670,
+   1206,
+   802
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LET'S CHECK HIS PERSONIX RECORDS.",
+  "role": "body",
+  "bbox": [
+   1360,
+   670,
+   1605,
+   811
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE NEW WAY — CHECK THE NETWORK",
+  "role": "caption",
+  "bbox": [
+   1333,
+   1430,
+   1687,
+   1509
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NEGATIVE",
+  "role": "label",
+  "bbox": [
+   1761,
+   509,
+   1961,
+   561
+  ],
+  "angle": -54.8,
+  "joined": false
+ },
+ {
+  "text": "NEUTRAL",
+  "role": "label",
+  "bbox": [
+   2000,
+   403,
+   2182,
+   453
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POSITIVE",
+  "role": "label",
+  "bbox": [
+   2229,
+   507,
+   2395,
+   563
+  ],
+  "angle": 54.3,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION",
+  "role": "label",
+  "bbox": [
+   1905,
+   267,
+   2277,
+   353
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FALLING",
+  "role": "label",
+  "bbox": [
+   1811,
+   627,
+   1967,
+   672
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WAS HERE",
+  "role": "label",
+  "bbox": [
+   2217,
+   625,
+   2387,
+   675
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no judge, no court — the meter reads the gap.",
+  "role": "caption",
+  "bbox": [
+   1751,
+   752,
+   2425,
+   787
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the longer the gap, the deeper the fall.",
+  "role": "caption",
+  "bbox": [
+   1809,
+   782,
+   2387,
+   826
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the network does not shout — it just stops trusting you.",
+  "role": "body",
+  "bbox": [
+   1728,
+   883,
+   2036,
+   1014
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "his record, right here — declaration does not match deed.",
+  "role": "body",
+  "bbox": [
+   2107,
+   876,
+   2471,
+   1009
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DECLARE IT AND BREAK IT? THE GAP IS THE MOST EXPENSIVE BEHAVIOR.",
+  "role": "tagline",
+  "bbox": [
+   41,
+   1605,
+   2519,
+   1702
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I AM A GOOD CITIZEN",
+  "role": "body",
+  "bbox": [
+   1070,
+   389,
+   1157,
+   475
+  ],
+  "angle": -10.9,
+  "joined": false
+ }
+]

@@ -1,0 +1,434 @@
+[
+ {
+  "text": "CITIZENSHIP WITHOUT AN ID CARD",
+  "role": "title",
+  "bbox": [
+   260,
+   36,
+   2267,
+   167
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "from a state permit to community recognition.",
+  "role": "caption",
+  "bbox": [
+   518,
+   167,
+   2024,
+   255
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the old way” of institutional state-issued ID model",
+  "role": "label",
+  "bbox": [
+   91,
+   255,
+   1231,
+   337
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“the new way” of DID with claim cards model",
+  "role": "label",
+  "bbox": [
+   1398,
+   268,
+   2402,
+   342
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the state decides who you are.",
+  "role": "label",
+  "bbox": [
+   509,
+   389,
+   875,
+   490
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "approval.",
+  "role": "label",
+  "bbox": [
+   1080,
+   366,
+   1211,
+   404
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIM CARDS",
+  "role": "label",
+  "bbox": [
+   2193,
+   337,
+   2394,
+   365
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CITIZEN — Czech",
+  "role": "label",
+  "bbox": [
+   1864,
+   365,
+   2052,
+   401
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "verified by: municipal notary",
+  "role": "body",
+  "bbox": [
+   1866,
+   406,
+   2069,
+   452
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "rep 94%",
+  "role": "label",
+  "bbox": [
+   2003,
+   452,
+   2103,
+   490
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RESIDENT — Prague 6",
+  "role": "label",
+  "bbox": [
+   2157,
+   377,
+   2408,
+   409
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "verified by: local community assembly",
+  "role": "body",
+  "bbox": [
+   2163,
+   421,
+   2392,
+   469
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "rep 91%",
+  "role": "label",
+  "bbox": [
+   2327,
+   475,
+   2430,
+   499
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CITIZEN ID CARD",
+  "role": "label",
+  "bbox": [
+   526,
+   621,
+   852,
+   657
+  ],
+  "angle": -8.3,
+  "joined": false
+ },
+ {
+  "text": "Name JAN NOVÁK",
+  "role": "body",
+  "bbox": [
+   672,
+   681,
+   801,
+   710
+  ],
+  "angle": -7.6,
+  "joined": false
+ },
+ {
+  "text": "Birth number 11234 7878",
+  "role": "body",
+  "bbox": [
+   679,
+   734,
+   802,
+   757
+  ],
+  "angle": -8.2,
+  "joined": false
+ },
+ {
+  "text": "GRADUATE — MSc Engineering",
+  "role": "label",
+  "bbox": [
+   2138,
+   528,
+   2456,
+   564
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "verified by: university alumni network",
+  "role": "body",
+  "bbox": [
+   2143,
+   566,
+   2423,
+   614
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "rep 88%",
+  "role": "label",
+  "bbox": [
+   2354,
+   612,
+   2451,
+   640
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID",
+  "role": "label",
+  "bbox": [
+   1813,
+   588,
+   1883,
+   624
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PROPERTY — apartment owner",
+  "role": "label",
+  "bbox": [
+   2138,
+   672,
+   2461,
+   709
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "verified by: community property registry",
+  "role": "body",
+  "bbox": [
+   2145,
+   700,
+   2440,
+   764
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "rep 95%",
+  "role": "label",
+  "bbox": [
+   2359,
+   764,
+   2459,
+   791
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REVOCABLE.",
+  "role": "label",
+  "bbox": [
+   991,
+   817,
+   1169,
+   855
+  ],
+  "angle": -6.7,
+  "joined": false
+ },
+ {
+  "text": "EMPLOYER — senior developer at FirmX",
+  "role": "label",
+  "bbox": [
+   2119,
+   822,
+   2372,
+   875
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "verified by: employer DID",
+  "role": "body",
+  "bbox": [
+   2122,
+   877,
+   2382,
+   906
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "rep 87%",
+  "role": "label",
+  "bbox": [
+   2296,
+   908,
+   2392,
+   937
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "identity = state permission — revocable — community has no say.",
+  "role": "caption",
+  "bbox": [
+   77,
+   966,
+   1228,
+   1037
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "no single authority controls all claims — each is independent — each verifier stakes their reputation.",
+  "role": "caption",
+  "bbox": [
+   1347,
+   966,
+   2425,
+   1063
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "“who belongs?”",
+  "role": "label",
+  "bbox": [
+   1042,
+   1066,
+   1486,
+   1138
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "APPROVED",
+  "role": "label",
+  "bbox": [
+   652,
+   1357,
+   752,
+   1381
+  ],
+  "angle": -25.3,
+  "joined": false
+ },
+ {
+  "text": "the politician decides — community has no voice.",
+  "role": "caption",
+  "bbox": [
+   224,
+   1470,
+   1108,
+   1525
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the community decides — through reputation signals — distributed, no single voice.",
+  "role": "caption",
+  "bbox": [
+   1396,
+   1439,
+   2210,
+   1528
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's world. It is — only the verifiers are now many. no revolution. just better incentives.",
+  "role": "label",
+  "bbox": [
+   2232,
+   1437,
+   2497,
+   1641
+  ],
+  "angle": -9.2,
+  "joined": false
+ },
+ {
+  "text": "Your citizenship is not a government permit. It is your community's recognition.",
+  "role": "tagline",
+  "bbox": [
+   67,
+   1543,
+   2218,
+   1621
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the state stamp is replaced by a chain of independent verifiers — each with skin in the game.",
+  "role": "tagline",
+  "bbox": [
+   172,
+   1617,
+   2098,
+   1672
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

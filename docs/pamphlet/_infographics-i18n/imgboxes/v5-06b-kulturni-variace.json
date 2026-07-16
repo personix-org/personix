@@ -1,0 +1,160 @@
+[
+ {
+  "text": "EACH COMMUNITY CONFIGURES ITSELF",
+  "role": "title",
+  "bbox": [
+   124,
+   40,
+   2407,
+   132
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE NETWORK DOES NOT DISCRIMINATE — EVERY REGION SETS ITS OWN DIAL",
+  "role": "caption",
+  "bbox": [
+   232,
+   157,
+   2302,
+   202
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NORTH AMERICA — 2 RECORDS / YEAR — HIGH PRIVACY",
+  "role": "label",
+  "bbox": [
+   81,
+   761,
+   695,
+   796
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LATIN AMERICA — 5 RECORDS / YEAR — BALANCED",
+  "role": "label",
+  "bbox": [
+   75,
+   1517,
+   639,
+   1544
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EUROPE — 3 RECORDS / YEAR — MORE PRIVACY",
+  "role": "label",
+  "bbox": [
+   1403,
+   761,
+   1930,
+   791
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AFRICA — 4 RECORDS / YEAR — COMMUNITY-LED",
+  "role": "label",
+  "bbox": [
+   1164,
+   1531,
+   1710,
+   1559
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EAST ASIA — 8 RECORDS / YEAR — STRICTER OVERSIGHT",
+  "role": "label",
+  "bbox": [
+   1889,
+   1150,
+   2505,
+   1172
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "same network — five different neighbourhoods.",
+  "role": "body",
+  "bbox": [
+   1865,
+   1428,
+   2145,
+   1545
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONE NETWORK, MANY DIALS — EACH COMMUNITY DECIDES FOR ITSELF.",
+  "role": "tagline",
+  "bbox": [
+   76,
+   1622,
+   2183,
+   1680
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COMMUNITIES WATCH EACH OTHER — THE BEST SETTINGS SPREAD OVER TIME",
+  "role": "caption",
+  "path": [
+   [
+    856,
+    866
+   ],
+   [
+    1016,
+    838
+   ],
+   [
+    1211,
+    847
+   ],
+   [
+    1424,
+    864
+   ]
+  ],
+  "thickness": 72
+ },
+ {
+  "text": "the map does not judge — the network carries every setting equally.",
+  "role": "caption",
+  "path": [
+   [
+    905,
+    936
+   ],
+   [
+    1023,
+    924
+   ],
+   [
+    1188,
+    926
+   ],
+   [
+    1300,
+    933
+   ],
+   [
+    1384,
+    950
+   ]
+  ],
+  "thickness": 66
+ }
+]

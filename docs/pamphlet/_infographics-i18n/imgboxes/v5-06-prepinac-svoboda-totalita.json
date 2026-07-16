@@ -1,0 +1,611 @@
+[
+ {
+  "text": "THE FREEDOM-TOTALITARIANISM SWITCH",
+  "role": "title",
+  "bbox": [
+   57,
+   50,
+   2468,
+   137
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONE SINGLE PARAMETER — HOW MUCH I CHOOSE TO TRACK — TIPS A WHOLE SOCIETY BETWEEN FREEDOM AND TYRANNY",
+  "role": "tagline",
+  "bbox": [
+   60,
+   157,
+   2469,
+   198
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "not many knobs — one. the network itself is neutral; my policy is not.",
+  "role": "caption",
+  "bbox": [
+   60,
+   222,
+   1204,
+   266
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONLY CRIMES",
+  "role": "label",
+  "bbox": [
+   1002,
+   1245,
+   1054,
+   1277
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HOW SEVERE",
+  "role": "label",
+  "bbox": [
+   1216,
+   1293,
+   1358,
+   1315
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "GRAVE ONLY",
+  "role": "label",
+  "bbox": [
+   1199,
+   1245,
+   1244,
+   1277
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HOW MANY PER YEAR",
+  "role": "label",
+  "bbox": [
+   1419,
+   1293,
+   1533,
+   1344
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the big dial is just the sum of these three.",
+  "role": "caption",
+  "bbox": [
+   1443,
+   1019,
+   1590,
+   1100
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every reader turns their own dial — the network has no common one.",
+  "role": "body",
+  "bbox": [
+   1381,
+   242,
+   1628,
+   342
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YOUR OWN DIAL — YOUR OWN POLICY",
+  "role": "label",
+  "bbox": [
+   1156,
+   1387,
+   1433,
+   1448
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "each node decides which claims to count, how severe they must be, and how many in a year is 'too many'.",
+  "role": "caption",
+  "bbox": [
+   1082,
+   1477,
+   1491,
+   1560
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FRAUD",
+  "role": "label",
+  "bbox": [
+   160,
+   1172,
+   302,
+   1235
+  ],
+  "angle": -10.3,
+  "joined": false
+ },
+ {
+  "text": "ASSAULT",
+  "role": "label",
+  "bbox": [
+   394,
+   1123,
+   556,
+   1181
+  ],
+  "angle": -7,
+  "joined": false
+ },
+ {
+  "text": "THEFT",
+  "role": "label",
+  "bbox": [
+   652,
+   1099,
+   784,
+   1152
+  ],
+  "angle": -4,
+  "joined": false
+ },
+ {
+  "text": "people live unwatched, talk freely, and breathe without looking up.",
+  "role": "caption",
+  "bbox": [
+   147,
+   1551,
+   818,
+   1578
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RIGHT — MANY, TRIVIAL, SUFFOCATING",
+  "role": "label",
+  "bbox": [
+   1728,
+   305,
+   2401,
+   355
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "a sneeze, a purchase, a walk home after dark: all of it goes on the record, forever.",
+  "role": "caption",
+  "bbox": [
+   1639,
+   1513,
+   2495,
+   1554
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "nothing is private — the eye never blinks, and neighbours stop speaking.",
+  "role": "caption",
+  "bbox": [
+   1701,
+   1551,
+   2431,
+   1578
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FREEDOM IS WHAT I REFUSE TO COUNT — TOTALITARIANISM IS WHAT I AGREE TO TRACK.",
+  "role": "title",
+  "bbox": [
+   66,
+   1613,
+   2471,
+   1659
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "LEFT — FEW, HEAVY, SERIOUS",
+  "role": "label",
+  "bbox": [
+   201,
+   298,
+   721,
+   362
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "only grave matters get carved into the record — because carving is hard.",
+  "role": "caption",
+  "bbox": [
+   86,
+   1477,
+   870,
+   1519
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "everything else stays private: a bad day, a silly joke, a late arrival — none of it is anyone's file.",
+  "role": "caption",
+  "bbox": [
+   89,
+   1512,
+   929,
+   1551
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PARKED 2 MIN LATE",
+  "role": "label",
+  "bbox": [
+   1706,
+   1399,
+   1823,
+   1446
+  ],
+  "angle": 32.2,
+  "joined": false
+ },
+ {
+  "text": "PARKED 2 MIN LATE",
+  "role": "label",
+  "bbox": [
+   1715,
+   998,
+   1810,
+   1032
+  ],
+  "angle": 32.2,
+  "joined": false
+ },
+ {
+  "text": "PARKED 2 MIN LATE",
+  "role": "label",
+  "bbox": [
+   2202,
+   569,
+   2300,
+   615
+  ],
+  "angle": -20.7,
+  "joined": false
+ },
+ {
+  "text": "SNEEZED IN PUBLIC",
+  "role": "label",
+  "bbox": [
+   1981,
+   903,
+   2064,
+   952
+  ],
+  "angle": 28.3,
+  "joined": false
+ },
+ {
+  "text": "WHICH KINDS I COUNT",
+  "role": "label",
+  "bbox": [
+   1009,
+   1288,
+   1181,
+   1347
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "A FEW",
+  "role": "label",
+  "bbox": [
+   1381,
+   1231,
+   1446,
+   1274
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EVERY HOUR",
+  "role": "label",
+  "bbox": [
+   1513,
+   1242,
+   1577,
+   1297
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "every yawn becomes a file — because counting is cheap.",
+  "role": "caption",
+  "bbox": [
+   1703,
+   1488,
+   2368,
+   1519
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE ONE KNOB THAT DECIDES EVERYTHING",
+  "role": "label",
+  "path": [
+   [
+    984,
+    746
+   ],
+   [
+    1092,
+    627
+   ],
+   [
+    1250,
+    582
+   ],
+   [
+    1379,
+    579
+   ],
+   [
+    1482,
+    642
+   ],
+   [
+    1567,
+    747
+   ]
+  ],
+  "thickness": 60
+ },
+ {
+  "text": "I COUNT ONLY SEVERE CLAIMS — FREEDOM",
+  "role": "label",
+  "path": [
+   [
+    1138,
+    954
+   ],
+   [
+    1121,
+    907
+   ],
+   [
+    1128,
+    804
+   ],
+   [
+    1197,
+    752
+   ],
+   [
+    1255,
+    720
+   ]
+  ],
+  "thickness": 78
+ },
+ {
+  "text": "I COUNT EVERY TRIVIALITY — TOTALITARIANISM",
+  "role": "label",
+  "path": [
+   [
+    1300,
+    708
+   ],
+   [
+    1369,
+    740
+   ],
+   [
+    1405,
+    775
+   ],
+   [
+    1429,
+    861
+   ],
+   [
+    1422,
+    928
+   ],
+   [
+    1384,
+    981
+   ]
+  ],
+  "thickness": 72
+ },
+ {
+  "text": "what left into my judgement of others",
+  "role": "custom",
+  "path": [
+   [
+    1082,
+    728
+   ],
+   [
+    1163,
+    663
+   ],
+   [
+    1279,
+    635
+   ],
+   [
+    1395,
+    654
+   ],
+   [
+    1470,
+    725
+   ]
+  ],
+  "thickness": 60
+ },
+ {
+  "text": "WHICH KINDS I COUNT",
+  "role": "label",
+  "path": [
+   [
+    1016,
+    1203
+   ],
+   [
+    1065,
+    1160
+   ],
+   [
+    1113,
+    1160
+   ],
+   [
+    1159,
+    1181
+   ],
+   [
+    1166,
+    1200
+   ]
+  ],
+  "thickness": 30
+ },
+ {
+  "text": "ANYTHING",
+  "role": "label",
+  "path": [
+   [
+    1235,
+    1169
+   ],
+   [
+    1281,
+    1158
+   ],
+   [
+    1331,
+    1169
+   ]
+  ],
+  "thickness": 30
+ },
+ {
+  "text": "HOW MANY PER YEAR",
+  "role": "label",
+  "path": [
+   [
+    1407,
+    1205
+   ],
+   [
+    1441,
+    1165
+   ],
+   [
+    1489,
+    1155
+   ],
+   [
+    1532,
+    1170
+   ],
+   [
+    1553,
+    1194
+   ]
+  ],
+  "thickness": 30
+ },
+ {
+  "text": "EVERY YAWN",
+  "role": "label",
+  "bbox": [
+   1137,
+   1243,
+   1185,
+   1277
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SNEEZED IN PUBLIC",
+  "role": "label",
+  "bbox": [
+   2195,
+   700,
+   2296,
+   778
+  ],
+  "angle": 12,
+  "joined": false
+ },
+ {
+  "text": "LAUGHED AT 22:01",
+  "role": "label",
+  "bbox": [
+   2357,
+   971,
+   2427,
+   1014
+  ],
+  "angle": 13,
+  "joined": false
+ },
+ {
+  "text": "LAUGHED AT 26.01",
+  "role": "label",
+  "bbox": [
+   2099,
+   1388,
+   2175,
+   1448
+  ],
+  "angle": -30,
+  "joined": false
+ },
+ {
+  "text": "WALKED AN UNAPPROVED ROUTE",
+  "role": "label",
+  "bbox": [
+   2193,
+   1382,
+   2280,
+   1445
+  ],
+  "angle": -23,
+  "joined": false
+ }
+]

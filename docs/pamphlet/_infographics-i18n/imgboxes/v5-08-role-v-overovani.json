@@ -1,0 +1,422 @@
+[
+ {
+  "text": "A NEGATIVE CLAIM FLOWS THROUGH THE SYSTEM",
+  "role": "title",
+  "bbox": [
+   170,
+   16,
+   2375,
+   126
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FOLLOW ONE DOCUMENT — SEE WHAT EACH ROLE DOES TO IT",
+  "role": "caption",
+  "bbox": [
+   566,
+   120,
+   1976,
+   183
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER",
+  "role": "label",
+  "bbox": [
+   229,
+   283,
+   420,
+   338
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I write what happened.",
+  "role": "body",
+  "bbox": [
+   342,
+   400,
+   518,
+   470
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER WRITES AND LAUNCHES.",
+  "role": "label",
+  "bbox": [
+   136,
+   969,
+   573,
+   1010
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY — THE ONE WHO SEALS",
+  "role": "label",
+  "bbox": [
+   638,
+   291,
+   1230,
+   340
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I stake my name on this record.",
+  "role": "body",
+  "bbox": [
+   600,
+   391,
+   831,
+   470
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THUMP!",
+  "role": "label",
+  "bbox": [
+   735,
+   509,
+   884,
+   553
+  ],
+  "angle": -26.1,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY ALWAYS SEALS.",
+  "role": "label",
+  "bbox": [
+   672,
+   969,
+   1059,
+   1007
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OBSERVER — KEEPS A RECORD",
+  "role": "label",
+  "bbox": [
+   1068,
+   995,
+   1572,
+   1043
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I keep a record of what the verifier does.",
+  "role": "body",
+  "bbox": [
+   899,
+   1093,
+   1128,
+   1205
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OBSERVER MAY WATCH — OR NOT.",
+  "role": "label",
+  "bbox": [
+   1070,
+   1543,
+   1536,
+   1593
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the authority seals what happened.",
+  "role": "caption",
+  "bbox": [
+   1180,
+   398,
+   1470,
+   476
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the observer watches how the verifier handles it.",
+  "role": "caption",
+  "bbox": [
+   1144,
+   489,
+   1522,
+   584
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHORITY ALWAYS — OBSERVER OPTIONAL.",
+  "role": "label",
+  "bbox": [
+   1164,
+   594,
+   1489,
+   673
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIER — CHOSEN BY THE ALGORITHM",
+  "role": "label",
+  "bbox": [
+   1508,
+   283,
+   1928,
+   350
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CANNOT VERIFY OWN CLAIMS.",
+  "role": "label",
+  "bbox": [
+   1543,
+   353,
+   1897,
+   398
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I check against policy.",
+  "role": "body",
+  "bbox": [
+   1629,
+   403,
+   1770,
+   518
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIER PROCESSES.",
+  "role": "label",
+  "bbox": [
+   1610,
+   966,
+   1914,
+   1003
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FALLING",
+  "role": "label",
+  "bbox": [
+   2021,
+   598,
+   2153,
+   649
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WAS HERE",
+  "role": "label",
+  "bbox": [
+   2351,
+   587,
+   2449,
+   666
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SUBJECT",
+  "role": "label",
+  "bbox": [
+   2129,
+   285,
+   2329,
+   340
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "they found out?!",
+  "role": "body",
+  "bbox": [
+   1990,
+   1093,
+   2177,
+   1165
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SUBJECT",
+  "role": "label",
+  "bbox": [
+   1967,
+   1005,
+   2162,
+   1050
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CAUGHT ENJOYING THE SPOILS.",
+  "role": "label",
+  "bbox": [
+   1758,
+   1181,
+   2026,
+   1256
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SPOILS",
+  "role": "label",
+  "bbox": [
+   1787,
+   1342,
+   1875,
+   1382
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SPOILS",
+  "role": "label",
+  "bbox": [
+   1862,
+   1330,
+   1943,
+   1363
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "watch one document move.",
+  "role": "body",
+  "bbox": [
+   267,
+   1058,
+   440,
+   1166
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "five roles — one document in motion.",
+  "role": "body",
+  "bbox": [
+   557,
+   1046,
+   781,
+   1159
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FIVE ROLES, ONE DOCUMENT IN MOTION — NOBODY CAN VERIFY THEMSELVES.",
+  "role": "tagline",
+  "bbox": [
+   246,
+   1610,
+   2280,
+   1697
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "optional side-port hangs off bottom",
+  "role": "custom",
+  "bbox": [
+   1178,
+   843,
+   1491,
+   922
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "policy",
+  "role": "custom",
+  "bbox": [
+   1766,
+   530,
+   1826,
+   557
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "negative claim",
+  "role": "custom",
+  "bbox": [
+   2244,
+   908,
+   2342,
+   956
+  ],
+  "angle": -12.5,
+  "joined": false
+ },
+ {
+  "text": "timestamp",
+  "role": "custom",
+  "bbox": [
+   898,
+   1252,
+   1070,
+   1298
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "negative claim",
+  "role": "custom",
+  "bbox": [
+   862,
+   715,
+   957,
+   760
+  ],
+  "angle": 14.3,
+  "joined": false
+ }
+]

@@ -1,0 +1,362 @@
+[
+ {
+  "text": "WHAT KINDS OF CLAIMS CAN APPEAR?",
+  "role": "title",
+  "bbox": [
+   24,
+   25,
+   2504,
+   161
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EXAMPLES OF THE CLAIM ARTEFACT",
+  "role": "caption",
+  "bbox": [
+   43,
+   157,
+   1082,
+   230
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "a claim is a statement about someone — here are the kinds people publish.",
+  "role": "body",
+  "bbox": [
+   1364,
+   171,
+   1924,
+   249
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NEGATIVE CLAIMS",
+  "role": "label",
+  "bbox": [
+   201,
+   266,
+   868,
+   340
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "POSITIVE CLAIMS",
+  "role": "label",
+  "bbox": [
+   1697,
+   264,
+   2337,
+   353
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ASSAULT",
+  "role": "label",
+  "bbox": [
+   323,
+   431,
+   590,
+   500
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "physically attacked another person",
+  "role": "body",
+  "bbox": [
+   323,
+   496,
+   891,
+   553
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THEFT",
+  "role": "label",
+  "bbox": [
+   335,
+   594,
+   526,
+   665
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "took someone's property without consent",
+  "role": "body",
+  "bbox": [
+   334,
+   666,
+   867,
+   733
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FRAUD",
+  "role": "label",
+  "bbox": [
+   325,
+   773,
+   533,
+   849
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "deceived someone for personal gain",
+  "role": "body",
+  "bbox": [
+   328,
+   849,
+   887,
+   904
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BROKEN CONTRACT",
+  "role": "label",
+  "bbox": [
+   322,
+   945,
+   879,
+   1021
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "failed to honour an agreed obligation",
+  "role": "body",
+  "bbox": [
+   323,
+   1017,
+   896,
+   1067
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DEFAMATION",
+  "role": "label",
+  "bbox": [
+   330,
+   1117,
+   693,
+   1193
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "spread a damaging untruth",
+  "role": "body",
+  "bbox": [
+   332,
+   1193,
+   777,
+   1239
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ABANDONMENT",
+  "role": "label",
+  "bbox": [
+   325,
+   1284,
+   770,
+   1354
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "left dependants or duties unattended",
+  "role": "body",
+  "bbox": [
+   332,
+   1354,
+   894,
+   1404
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HARM REMEDIED",
+  "role": "label",
+  "bbox": [
+   1806,
+   439,
+   2291,
+   500
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "repaired damage caused earlier",
+  "role": "body",
+  "bbox": [
+   1806,
+   505,
+   2332,
+   563
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DEBT SETTLED",
+  "role": "label",
+  "bbox": [
+   1811,
+   615,
+   2215,
+   661
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "paid what was owed in full",
+  "role": "body",
+  "bbox": [
+   1813,
+   673,
+   2253,
+   725
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AID GIVEN",
+  "role": "label",
+  "bbox": [
+   1804,
+   782,
+   2117,
+   835
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "helped another at personal cost",
+  "role": "body",
+  "bbox": [
+   1816,
+   842,
+   2337,
+   900
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIED EXPERTISE",
+  "role": "label",
+  "bbox": [
+   1807,
+   957,
+   2361,
+   1028
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "proven skill in a craft or field",
+  "role": "body",
+  "bbox": [
+   1809,
+   1015,
+   2279,
+   1072
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OUTSTANDING SERVICE",
+  "role": "label",
+  "bbox": [
+   1809,
+   1114,
+   2358,
+   1196
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "long-standing contribution to the community",
+  "role": "body",
+  "bbox": [
+   1813,
+   1196,
+   2275,
+   1277
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "examples only — every claim follows a claim standard, and any standard can add more.",
+  "role": "caption",
+  "bbox": [
+   1359,
+   1385,
+   2478,
+   1442
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "you do not have to join — but if your behaviour impacts others, someone can publish a claim about it.",
+  "role": "caption",
+  "bbox": [
+   396,
+   1503,
+   2182,
+   1568
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIMS ARE HOW BEHAVIOUR ENTERS THE NETWORK.",
+  "role": "tagline",
+  "bbox": [
+   267,
+   1588,
+   2306,
+   1684
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

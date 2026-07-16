@@ -1,0 +1,13 @@
+{
+  "file": "v5-cover-prebal",
+  "texts": [
+    {"role": "title", "text": "PERSONIX"},
+    {"role": "label", "text": "Courthouse"},
+    {"role": "label", "text": "Parliament"},
+    {"role": "label", "text": "Police Station"},
+    {"role": "label", "text": "BAKERY"},
+    {"role": "label", "text": "CAFE"},
+    {"role": "title", "text": "YOUR IDENTITY YOUR RULES"},
+    {"role": "tagline", "text": "An Uncensorable and Incorruptible Decentralized Reputation Network"}
+  ]
+}

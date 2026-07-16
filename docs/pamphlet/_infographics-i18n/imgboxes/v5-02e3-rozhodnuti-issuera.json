@@ -1,0 +1,350 @@
+[
+ {
+  "text": "THE ISSUER'S CHOICE",
+  "role": "title",
+  "bbox": [
+   129,
+   67,
+   1183,
+   181
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT TO DO WITH THE VERIFIER'S ANSWER",
+  "role": "tagline",
+  "bbox": [
+   174,
+   201,
+   1120,
+   285
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE VERIFIER'S ANSWER",
+  "role": "label",
+  "bbox": [
+   551,
+   937,
+   948,
+   998
+  ],
+  "angle": -20.7,
+  "joined": false
+ },
+ {
+  "text": "whatever the verifier said, the issuer now has ONE answer on the table.",
+  "role": "caption",
+  "bbox": [
+   341,
+   304,
+   925,
+   420
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THREE WAYS OUT",
+  "role": "label",
+  "bbox": [
+   1783,
+   53,
+   2091,
+   114
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TAKE THE DEAL",
+  "role": "label",
+  "bbox": [
+   1364,
+   136,
+   1758,
+   203
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ONLY IF ACCEPTED",
+  "role": "label",
+  "bbox": [
+   2322,
+   108,
+   2454,
+   179
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the issuer pays the fee — the record is published into the network. Only available if the verifier accepted.",
+  "role": "caption",
+  "bbox": [
+   1429,
+   526,
+   2342,
+   605
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TRY AGAIN",
+  "role": "label",
+  "bbox": [
+   1407,
+   653,
+   1694,
+   719
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "each new attempt costs more",
+  "role": "label",
+  "bbox": [
+   2299,
+   884,
+   2435,
+   977
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the response is bundled into the chronology — the algorithm throws again. Works whether the verifier accepted at a price the issuer dislikes, or rejected outright.",
+  "role": "caption",
+  "bbox": [
+   1359,
+   1015,
+   2482,
+   1106
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WALK AWAY",
+  "role": "label",
+  "bbox": [
+   1458,
+   1114,
+   1794,
+   1183
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "time and energy already spent do not come back",
+  "role": "label",
+  "bbox": [
+   1721,
+   1219,
+   1952,
+   1329
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the issuer discards the draft. Nothing is published — but nothing more is paid either.",
+  "role": "caption",
+  "bbox": [
+   1357,
+   1494,
+   1952,
+   1579
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "loop back to HOW THE ALGORITHM PICKS A VERIFIER — shown earlier",
+  "role": "label",
+  "bbox": [
+   255,
+   1382,
+   929,
+   1473
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "only the retry path loops — accept and walk-away both end the story.",
+  "role": "caption",
+  "bbox": [
+   182,
+   1497,
+   1085,
+   1543
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the verifier decides how — the issuer decides whether. Publishing is a mutual yes.",
+  "role": "body",
+  "bbox": [
+   1979,
+   1175,
+   2181,
+   1408
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT HAPPENS NEXT",
+  "role": "label",
+  "bbox": [
+   2210,
+   1117,
+   2495,
+   1175
+  ],
+  "angle": 3.2,
+  "joined": false
+ },
+ {
+  "text": "Each retry shifts the cost of the next attempt — as shown earlier on PUBLISHING COST",
+  "role": "body",
+  "bbox": [
+   2212,
+   1180,
+   2489,
+   1270
+  ],
+  "angle": 4.3,
+  "joined": false
+ },
+ {
+  "text": "The verifier's answer itself — as shown earlier on HOW THE VERIFIER ANSWERS",
+  "role": "body",
+  "bbox": [
+   2210,
+   1266,
+   2492,
+   1351
+  ],
+  "angle": 3,
+  "joined": false
+ },
+ {
+  "text": "THE VERIFIER PROPOSES — THE ISSUER DISPOSES.",
+  "role": "title",
+  "bbox": [
+   45,
+   1595,
+   1321,
+   1669
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DID-network",
+  "role": "custom",
+  "bbox": [
+   1488,
+   230,
+   1721,
+   294
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "mini grinding machine",
+  "role": "custom",
+  "bbox": [
+   2079,
+   639,
+   2299,
+   716
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "1",
+  "role": "custom",
+  "bbox": [
+   1715,
+   819,
+   1746,
+   854
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "2",
+  "role": "custom",
+  "bbox": [
+   1849,
+   783,
+   1888,
+   818
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3",
+  "role": "custom",
+  "bbox": [
+   1868,
+   728,
+   1907,
+   758
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPT",
+  "role": "label",
+  "bbox": [
+   524,
+   836,
+   604,
+   882
+  ],
+  "angle": -5,
+  "joined": false
+ },
+ {
+  "text": "REJECTED",
+  "role": "label",
+  "bbox": [
+   670,
+   848,
+   760,
+   880
+  ],
+  "angle": -5,
+  "joined": false
+ },
+ {
+  "text": "FEE",
+  "role": "label",
+  "bbox": [
+   431,
+   926,
+   486,
+   960
+  ],
+  "angle": -20,
+  "joined": false
+ }
+]

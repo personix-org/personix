@@ -1,0 +1,290 @@
+[
+ {
+  "text": "THE BLUFF THAT KEEPS THE VERIFIER HONEST",
+  "role": "title",
+  "bbox": [
+   267,
+   27,
+   2322,
+   126
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "A REAL OBSERVER AND A RANDOM BLUFF LOOK IDENTICAL FROM THE VERIFIER'S DESK",
+  "role": "caption",
+  "bbox": [
+   377,
+   130,
+   2178,
+   172
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REAL OBSERVER",
+  "role": "label",
+  "bbox": [
+   1047,
+   211,
+   1384,
+   264
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CLAIM",
+  "role": "label",
+  "bbox": [
+   555,
+   506,
+   660,
+   544
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CHALLENGE CODE — HASH OF TIMESTAMPED RECORD",
+  "role": "label",
+  "bbox": [
+   1527,
+   376,
+   1749,
+   506
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SIGNED CHALLENGE",
+  "role": "label",
+  "bbox": [
+   1556,
+   663,
+   1727,
+   744
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "someone is keeping a record of what i do here? i don't know — so i behave.",
+  "role": "caption",
+  "bbox": [
+   1797,
+   295,
+   2150,
+   443
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ACCEPTED",
+  "role": "label",
+  "bbox": [
+   2045,
+   664,
+   2184,
+   705
+  ],
+  "angle": 24.6,
+  "joined": false
+ },
+ {
+  "text": "someone is keeping a record of what i do here? i don't know — so i behave.",
+  "role": "caption",
+  "bbox": [
+   1300,
+   1009,
+   1606,
+   1176
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the verifier cannot tell a real record from a bluff. honest behaviour is the only safe bet.",
+  "role": "body",
+  "bbox": [
+   1374,
+   801,
+   2184,
+   898
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "who can tell the difference?",
+  "role": "caption",
+  "bbox": [
+   2246,
+   1010,
+   2478,
+   1088
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "cost of honesty pressure: near zero — random numbers are free.",
+  "role": "body",
+  "bbox": [
+   71,
+   1499,
+   1267,
+   1542
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "cost of getting caught silencing a claim: catastrophic — reputation destroyed.",
+  "role": "body",
+  "bbox": [
+   71,
+   1542,
+   1267,
+   1586
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "UNCERTAINTY IS CHEAPER THAN SURVEILLANCE.",
+  "role": "tagline",
+  "bbox": [
+   69,
+   1604,
+   1457,
+   1679
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER — BLUFFING",
+  "role": "label",
+  "bbox": [
+   189,
+   943,
+   586,
+   998
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER — KAMILA",
+  "role": "label",
+  "bbox": [
+   196,
+   204,
+   552,
+   257
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NO OBSERVER",
+  "role": "label",
+  "bbox": [
+   893,
+   938,
+   1185,
+   993
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RANDOM NUMBER",
+  "role": "label",
+  "bbox": [
+   474,
+   1153,
+   732,
+   1194
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RANDOM NUMBER",
+  "role": "label",
+  "bbox": [
+   370,
+   1285,
+   607,
+   1333
+  ],
+  "angle": -34.7,
+  "joined": false
+ },
+ {
+  "text": "LOOKS THE SAME. COST: ZERO.",
+  "role": "label",
+  "bbox": [
+   765,
+   1360,
+   1040,
+   1465
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIER",
+  "role": "label",
+  "bbox": [
+   1997,
+   206,
+   2193,
+   261
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIER — SAME BEHAVIOUR",
+  "role": "label",
+  "bbox": [
+   1300,
+   940,
+   1883,
+   997
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the verifier can't tell them apart.",
+  "role": "caption",
+  "bbox": [
+   1997,
+   959,
+   2181,
+   1077
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "someone is keeping a record of what i do here? i don't know — so i behave.",
+  "role": "caption",
+  "bbox": [
+   1574,
+   1011,
+   1862,
+   1072
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

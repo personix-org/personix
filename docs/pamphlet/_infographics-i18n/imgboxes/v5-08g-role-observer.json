@@ -1,0 +1,350 @@
+[
+ {
+  "text": "THE OBSERVER — A PROXY THAT RELAYS THE CLAIM AND WATCHES THE ROUND-TRIP",
+  "role": "title",
+  "bbox": [
+   34,
+   32,
+   2490,
+   116
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE VERIFIER TALKS TO HER. THE VERIFIER NEVER LEARNS WHO SHE IS — OR IF ANYONE IS WATCHING AT ALL.",
+  "role": "tagline",
+  "bbox": [
+   31,
+   118,
+   1572,
+   188
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OUTBOUND — CLAIM →",
+  "role": "label",
+  "bbox": [
+   889,
+   1046,
+   1307,
+   1088
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "← RETURN — RESPONSE",
+  "role": "label",
+  "bbox": [
+   860,
+   1249,
+   1324,
+   1298
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ISSUER",
+  "role": "label",
+  "bbox": [
+   170,
+   493,
+   328,
+   551
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SIGNED — TIMESTAMPED RECORD",
+  "role": "label",
+  "bbox": [
+   793,
+   458,
+   1009,
+   574
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "OBSERVER REPUTATION",
+  "role": "label",
+  "bbox": [
+   782,
+   351,
+   1001,
+   440
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY REPUTATION SAYS THE CLAIM WENT THROUGH.",
+  "role": "caption",
+  "bbox": [
+   980,
+   244,
+   1431,
+   332
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WATCHES THE ROUND-TRIP.",
+  "role": "label",
+  "bbox": [
+   1322,
+   1345,
+   1539,
+   1424
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "An authority may play this role directly.",
+  "role": "caption",
+  "bbox": [
+   934,
+   1443,
+   1226,
+   1532
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "VERIFIER",
+  "role": "label",
+  "bbox": [
+   1689,
+   1101,
+   1916,
+   1161
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "is there a real observer behind this code — or is it just noise?",
+  "role": "caption",
+  "bbox": [
+   1682,
+   426,
+   2040,
+   552
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SEES THE CODE — DOESN'T SEE WHO.",
+  "role": "label",
+  "bbox": [
+   1680,
+   1520,
+   1964,
+   1611
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT THE OBSERVER DOES",
+  "role": "label",
+  "bbox": [
+   2158,
+   411,
+   2497,
+   521
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "1. Receives the claim from the issuer",
+  "role": "body",
+  "bbox": [
+   2163,
+   535,
+   2502,
+   636
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "2. Stamps it with her own seal; the stamp is the timestamped record",
+  "role": "body",
+  "bbox": [
+   2162,
+   640,
+   2488,
+   813
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3. Forwards it to the verifier on behalf of the issuer",
+  "role": "body",
+  "bbox": [
+   2163,
+   827,
+   2488,
+   968
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "4. Watches whether the response comes back, and what it says",
+  "role": "body",
+  "bbox": [
+   2158,
+   972,
+   2525,
+   1101
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5. Publishes her signature only if the verifier misbehaves — her reputation is the guarantee",
+  "role": "body",
+  "bbox": [
+   2158,
+   1113,
+   2511,
+   1341
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "She doesn't decide the claim. She decides whether the verifier can pretend it never arrived.",
+  "role": "caption",
+  "bbox": [
+   1756,
+   144,
+   2213,
+   318
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "waiting",
+  "role": "custom",
+  "bbox": [
+   1279,
+   932,
+   1433,
+   977
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FALSE RECORD = REPUTATION LOSS.",
+  "role": "label",
+  "bbox": [
+   707,
+   697,
+   875,
+   796
+  ],
+  "angle": 23.9,
+  "joined": false
+ },
+ {
+  "text": "* Symmetrically, the verifier may route the response through their own observer — same trick, opposite direction.",
+  "role": "caption",
+  "bbox": [
+   2165,
+   1587,
+   2535,
+   1690
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* There can be zero to N observers behind any request. The verifier sees only opaque codes and never knows whether a real observer is watching or whether it is just noise. That uncertainty is the incentive to behave.",
+  "role": "caption",
+  "bbox": [
+   2155,
+   1419,
+   2525,
+   1587
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "footnotes",
+  "role": "custom",
+  "bbox": [
+   2155,
+   1388,
+   2444,
+   1438
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Observer DID - verified but anonymous to the verifier",
+  "role": "custom",
+  "bbox": [
+   1257,
+   437,
+   1517,
+   605
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Anonymous to the public, accountable to the network. The verifier sees the code, never the observer.",
+  "role": "custom",
+  "bbox": [
+   62,
+   1612,
+   1971,
+   1678
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "0x9F4A...",
+  "role": "label",
+  "bbox": [
+   893,
+   973,
+   976,
+   999
+  ],
+  "angle": -7,
+  "joined": false
+ },
+ {
+  "text": "0x9F4A...",
+  "role": "label",
+  "bbox": [
+   1818,
+   770,
+   1904,
+   800
+  ],
+  "angle": 61,
+  "joined": false
+ }
+]

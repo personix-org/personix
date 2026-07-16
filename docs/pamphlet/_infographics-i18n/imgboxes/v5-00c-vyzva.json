@@ -1,0 +1,74 @@
+[
+ {
+  "text": "I know it's heavy. Will you help carry it?",
+  "role": "caption",
+  "bbox": [
+   2265,
+   151,
+   2723,
+   396
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "A better world is worth the weight.",
+  "role": "tagline",
+  "bbox": [
+   431,
+   1264,
+   2562,
+   1443
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "tax office",
+  "role": "custom",
+  "bbox": [
+   1395,
+   670,
+   1580,
+   745
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "tax form, national debt: growing",
+  "role": "custom",
+  "bbox": [
+   1800,
+   185,
+   1969,
+   316
+  ],
+  "angle": 17,
+  "joined": false
+ },
+ {
+  "text": "pension book",
+  "role": "custom",
+  "bbox": [
+   1635,
+   259,
+   1770,
+   342
+  ],
+  "angle": -26,
+  "joined": false
+ },
+ {
+  "text": "broken promise",
+  "role": "custom",
+  "bbox": [
+   1670,
+   363,
+   1826,
+   423
+  ],
+  "angle": -28.6,
+  "joined": false
+ }
+]

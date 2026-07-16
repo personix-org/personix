@@ -1,0 +1,158 @@
+[
+ {
+  "text": "PREREQUISITE 5 OF 5: INCORRUPTIBILITY",
+  "role": "title",
+  "bbox": [
+   239,
+   15,
+   2285,
+   136
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MINISTRIES",
+  "role": "label",
+  "bbox": [
+   500,
+   758,
+   782,
+   829
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MUNICIPALITIES & INSTITUTIONS",
+  "role": "label",
+  "bbox": [
+   285,
+   1089,
+   991,
+   1154
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CITIZENS · TAXES",
+  "role": "label",
+  "bbox": [
+   454,
+   1179,
+   828,
+   1232
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COST: A FEW BAGS",
+  "role": "label",
+  "bbox": [
+   958,
+   467,
+   1196,
+   561
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Bribe a few upper floors — the base pays anyway.",
+  "role": "caption",
+  "bbox": [
+   203,
+   1512,
+   1124,
+   1580
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WE SAW THAT.",
+  "role": "body",
+  "bbox": [
+   2053,
+   618,
+   2198,
+   700
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SAME BRIBE. DIFFERENT MATH.",
+  "role": "body",
+  "bbox": [
+   1896,
+   1057,
+   2244,
+   1168
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "COST: EVERYTHING YOU HAVE — AND STILL NOT ENOUGH",
+  "role": "label",
+  "bbox": [
+   1615,
+   1152,
+   1855,
+   1258
+  ],
+  "angle": 10.3,
+  "joined": false
+ },
+ {
+  "text": "Bribe one — he loses his reputation forever. Bribe all — you go broke first.",
+  "role": "caption",
+  "bbox": [
+   1274,
+   1512,
+   2490,
+   1566
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CORRUPTION HAS A PRICE. IN THE MESH IT IS TOO HIGH.",
+  "role": "tagline",
+  "bbox": [
+   67,
+   1594,
+   2468,
+   1693
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "voting",
+  "role": "custom",
+  "bbox": [
+   436,
+   321,
+   511,
+   357
+  ],
+  "angle": -13.4,
+  "joined": false
+ },
+ {
+  "text": "voting",
+  "role": "custom",
+  "bbox": [
+   772,
+   319,
+   843,
+   352
+  ],
+  "angle": 12.6,
+  "joined": false
+ }
+]

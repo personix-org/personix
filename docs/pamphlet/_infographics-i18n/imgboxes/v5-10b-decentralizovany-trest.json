@@ -1,0 +1,230 @@
+[
+ {
+  "text": "PUNISHMENT WITHOUT A CENTRAL AUTHORITY",
+  "role": "title",
+  "bbox": [
+   119,
+   40,
+   2428,
+   144
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I DECIDE FOR ALL.",
+  "role": "caption",
+  "bbox": [
+   537,
+   184,
+   719,
+   273
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "I REFUSE TRADE WITH PROVEN FRAUDSTERS",
+  "role": "caption",
+  "bbox": [
+   1546,
+   240,
+   1751,
+   381
+  ],
+  "angle": -13.9,
+  "joined": false
+ },
+ {
+  "text": "BREACH OF CONTRACT = NO RECOGNITION",
+  "role": "caption",
+  "bbox": [
+   1847,
+   203,
+   2069,
+   320
+  ],
+  "angle": 4.6,
+  "joined": false
+ },
+ {
+  "text": "PROPORTIONAL RESPONSE TO PROPORTIONAL HARM",
+  "role": "caption",
+  "bbox": [
+   2151,
+   274,
+   2402,
+   412
+  ],
+  "angle": 14.9,
+  "joined": false
+ },
+ {
+  "text": "TAKE A NUMBER.",
+  "role": "caption",
+  "bbox": [
+   334,
+   1011,
+   497,
+   1087
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "NOW SERVING",
+  "role": "label",
+  "bbox": [
+   633,
+   1013,
+   807,
+   1051
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "#12",
+  "role": "label",
+  "bbox": [
+   669,
+   1051,
+   770,
+   1099
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EST. WAIT 4 YEARS",
+  "role": "label",
+  "bbox": [
+   846,
+   1121,
+   973,
+   1195
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SHOP",
+  "role": "label",
+  "bbox": [
+   1691,
+   803,
+   1755,
+   831
+  ],
+  "angle": -20.8,
+  "joined": false
+ },
+ {
+  "text": "CONTRACT",
+  "role": "label",
+  "bbox": [
+   2227,
+   819,
+   2311,
+   850
+  ],
+  "angle": -18.1,
+  "joined": false
+ },
+ {
+  "text": "PAID BY THE COMMUNITY",
+  "role": "label",
+  "bbox": [
+   2356,
+   810,
+   2441,
+   872
+  ],
+  "angle": 7,
+  "joined": false
+ },
+ {
+  "text": "one decides for all — the victim waits — the perpetrator knows it.",
+  "role": "body",
+  "bbox": [
+   212,
+   1443,
+   1032,
+   1553
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TOO HARSH",
+  "role": "label",
+  "bbox": [
+   1132,
+   1422,
+   1209,
+   1477
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TOO LENIENT",
+  "role": "label",
+  "bbox": [
+   1317,
+   1427,
+   1410,
+   1476
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "PROPORTIONAL — THE CHEAPEST POSITION",
+  "role": "label",
+  "bbox": [
+   1104,
+   1526,
+   1429,
+   1607
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the community declares policy — the perpetrator faces it from all sides — the authority enforces what was agreed.",
+  "role": "body",
+  "bbox": [
+   1560,
+   1421,
+   2389,
+   1576
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Atonement is cheaper than punishment.",
+  "role": "tagline",
+  "bbox": [
+   53,
+   1609,
+   1204,
+   1683
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Punishment is cheaper than ignorance.",
+  "role": "tagline",
+  "bbox": [
+   1353,
+   1605,
+   2473,
+   1669
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

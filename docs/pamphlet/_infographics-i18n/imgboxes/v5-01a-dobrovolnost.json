@@ -1,0 +1,62 @@
+[
+ {
+  "text": "It's not for me.",
+  "role": "caption",
+  "bbox": [
+   386,
+   404,
+   738,
+   487
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Voluntary — until responsibility catches up with you.",
+  "role": "tagline",
+  "bbox": [
+   301,
+   1315,
+   2652,
+   1469
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Give it back! I'll report you to the state!",
+  "role": "caption",
+  "bbox": [
+   1879,
+   314,
+   2194,
+   513
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "You don't have to enter — unless you give them a reason to remember you.",
+  "role": "caption",
+  "bbox": [
+   2271,
+   286,
+   2823,
+   483
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION NETWORK",
+  "role": "label",
+  "bbox": [
+   1017,
+   117,
+   1898,
+   242
+  ],
+  "angle": 2.2,
+  "joined": false
+ }
+]

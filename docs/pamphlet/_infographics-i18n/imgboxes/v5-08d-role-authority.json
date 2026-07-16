@@ -1,0 +1,302 @@
+[
+ {
+  "text": "THE GUIDE — HELPS YOU NAVIGATE BY YOUR VALUES",
+  "role": "title",
+  "bbox": [
+   48,
+   43,
+   2490,
+   165
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DEEP ANALYSIS BEHIND · SIMPLE GUIDANCE IN FRONT",
+  "role": "caption",
+  "bbox": [
+   48,
+   167,
+   1419,
+   244
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "GUIDE",
+  "role": "label",
+  "bbox": [
+   280,
+   327,
+   543,
+   416
+  ],
+  "angle": -4.2,
+  "joined": false
+ },
+ {
+  "text": "MY ANALYSIS",
+  "role": "label",
+  "bbox": [
+   691,
+   482,
+   1059,
+   559
+  ],
+  "angle": 3.1,
+  "joined": false
+ },
+ {
+  "text": "Working notes — not for clients",
+  "role": "label",
+  "bbox": [
+   667,
+   559,
+   1078,
+   604
+  ],
+  "angle": 2.1,
+  "joined": false
+ },
+ {
+  "text": "FOR YOU — WHAT IT MEANS",
+  "role": "label",
+  "bbox": [
+   1178,
+   836,
+   1443,
+   915
+  ],
+  "angle": -1.5,
+  "joined": false
+ },
+ {
+  "text": "Aggregated to maximize your benefit",
+  "role": "label",
+  "bbox": [
+   1171,
+   908,
+   1450,
+   936
+  ],
+  "angle": -2.4,
+  "joined": false
+ },
+ {
+  "text": "— shift spending here, save there",
+  "role": "body",
+  "bbox": [
+   1202,
+   939,
+   1438,
+   1003
+  ],
+  "angle": -0.9,
+  "joined": false
+ },
+ {
+  "text": "— support providers who pass my tests",
+  "role": "body",
+  "bbox": [
+   1199,
+   1001,
+   1438,
+   1061
+  ],
+  "angle": -1.2,
+  "joined": false
+ },
+ {
+  "text": "— adopt this policy template",
+  "role": "body",
+  "bbox": [
+   1200,
+   1059,
+   1462,
+   1130
+  ],
+  "angle": -1.6,
+  "joined": false
+ },
+ {
+  "text": "for example: who can be a guide",
+  "role": "label",
+  "bbox": [
+   131,
+   1049,
+   439,
+   1131
+  ],
+  "angle": -7.7,
+  "joined": false
+ },
+ {
+  "text": "— a political party or movement publishing a policy template",
+  "role": "body",
+  "bbox": [
+   129,
+   1135,
+   476,
+   1199
+  ],
+  "angle": -6.4,
+  "joined": false
+ },
+ {
+  "text": "— an independent audit firm publishing aggregated findings",
+  "role": "body",
+  "bbox": [
+   140,
+   1201,
+   494,
+   1270
+  ],
+  "angle": -7.7,
+  "joined": false
+ },
+ {
+  "text": "— a service-comparator agency",
+  "role": "body",
+  "bbox": [
+   147,
+   1268,
+   494,
+   1312
+  ],
+  "angle": -7.3,
+  "joined": false
+ },
+ {
+  "text": "— a reputation aggregator (economic · business · neighbourhood · road safety)",
+  "role": "body",
+  "bbox": [
+   153,
+   1317,
+   492,
+   1415
+  ],
+  "angle": -9.4,
+  "joined": false
+ },
+ {
+  "text": "— a journalist-reviewer or consumer review service",
+  "role": "body",
+  "bbox": [
+   168,
+   1410,
+   495,
+   1495
+  ],
+  "angle": -10.7,
+  "joined": false
+ },
+ {
+  "text": "I do the complex work. You get the simple recommendation — only if you share my values.",
+  "role": "body",
+  "bbox": [
+   1132,
+   451,
+   1596,
+   571
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "And what exactly do I get for my money — which analyses and which overviews?",
+  "role": "body",
+  "bbox": [
+   722,
+   1219,
+   994,
+   1360
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "She aggregates the complex world into recommendations. Followers vote with their attention — leave any time, switch to another.",
+  "role": "body",
+  "bbox": [
+   1577,
+   198,
+   2059,
+   370
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "FOLLOWER OF THIS GUIDE — RENEWABLE YEARLY",
+  "role": "label",
+  "bbox": [
+   84,
+   688,
+   251,
+   780
+  ],
+  "angle": -10.5,
+  "joined": false
+ },
+ {
+  "text": "Bound by what they publicly stand for. Your trust is their currency.",
+  "role": "tagline",
+  "bbox": [
+   34,
+   1597,
+   1345,
+   1678
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* You can leave any time and switch to a different guide. Your trust is not locked in.",
+  "role": "caption",
+  "bbox": [
+   1376,
+   1598,
+   2416,
+   1645
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* The guide may also sign some claims of their own — published, but not the main story here.",
+  "role": "caption",
+  "bbox": [
+   1378,
+   1645,
+   2492,
+   1690
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "public spending - redirected",
+  "role": "custom",
+  "bbox": [
+   471,
+   587,
+   686,
+   668
+  ],
+  "angle": 0.8,
+  "joined": false
+ },
+ {
+  "text": "providers",
+  "role": "custom",
+  "bbox": [
+   1214,
+   668,
+   1293,
+   690
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

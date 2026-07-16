@@ -1,0 +1,290 @@
+[
+ {
+  "text": "THE ISSUER — WHO WRITES THE CLAIM",
+  "role": "title",
+  "bbox": [
+   52,
+   48,
+   1764,
+   153
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AUTHOR · SIGNER · STAKES THEIR OWN REPUTATION",
+  "role": "caption",
+  "bbox": [
+   52,
+   153,
+   1654,
+   232
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MY CLAIM",
+  "role": "label",
+  "bbox": [
+   456,
+   1232,
+   648,
+   1290
+  ],
+  "angle": 196.2,
+  "joined": false
+ },
+ {
+  "text": "I saw this happen. I am willing to stand behind it.",
+  "role": "body",
+  "bbox": [
+   483,
+   1199,
+   724,
+   1239
+  ],
+  "angle": 195,
+  "joined": false
+ },
+ {
+  "text": "signed with my DID",
+  "role": "label",
+  "bbox": [
+   798,
+   1280,
+   941,
+   1349
+  ],
+  "angle": 15,
+  "joined": false
+ },
+ {
+  "text": "TO: AN AUTHORITY OF MY CHOICE",
+  "role": "label",
+  "bbox": [
+   949,
+   960,
+   1221,
+   1133
+  ],
+  "angle": 8.4,
+  "joined": false
+ },
+ {
+  "text": "NEXT STEP",
+  "role": "label",
+  "bbox": [
+   1112,
+   1210,
+   1260,
+   1262
+  ],
+  "angle": 21.5,
+  "joined": false
+ },
+ {
+  "text": "ask an authority to assess the evidence and sign the claim",
+  "role": "label",
+  "bbox": [
+   1053,
+   1243,
+   1266,
+   1338
+  ],
+  "angle": 24.6,
+  "joined": false
+ },
+ {
+  "text": "MY REPUTATION",
+  "role": "label",
+  "bbox": [
+   832,
+   292,
+   1126,
+   344
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "If this is false, my needle drops.",
+  "role": "label",
+  "bbox": [
+   1032,
+   623,
+   1365,
+   724
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "WHAT THE ISSUER DOES",
+  "role": "label",
+  "bbox": [
+   144,
+   308,
+   729,
+   370
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "1. Writes the claim in their own words",
+  "role": "body",
+  "bbox": [
+   143,
+   394,
+   684,
+   488
+  ],
+  "angle": -1.7,
+  "joined": false
+ },
+ {
+  "text": "2. Gathers real-world evidence to back it up",
+  "role": "body",
+  "bbox": [
+   141,
+   488,
+   719,
+   599
+  ],
+  "angle": -4.4,
+  "joined": false
+ },
+ {
+  "text": "3. Signs with their own DID and ships to their chosen authority",
+  "role": "body",
+  "bbox": [
+   150,
+   595,
+   690,
+   754
+  ],
+  "angle": -4.2,
+  "joined": false
+ },
+ {
+  "text": "4. Pays the publication cost",
+  "role": "body",
+  "bbox": [
+   141,
+   746,
+   689,
+   814
+  ],
+  "angle": -8.3,
+  "joined": false
+ },
+ {
+  "text": "5. Lives with the consequences if they lie",
+  "role": "body",
+  "bbox": [
+   143,
+   805,
+   745,
+   908
+  ],
+  "angle": -9.4,
+  "joined": false
+ },
+ {
+  "text": "My name goes on this. I had better be sure — and bring proof.",
+  "role": "body",
+  "bbox": [
+   1307,
+   284,
+   1778,
+   447
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Anyone can speak. Lies cost the speaker.",
+  "role": "body",
+  "bbox": [
+   1957,
+   114,
+   2427,
+   225
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The issuer is the author. Their name is on it.",
+  "role": "tagline",
+  "bbox": [
+   574,
+   1513,
+   1979,
+   1603
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* Anyone with a DID can be an issuer. The bar is courage and accountability, not a license.",
+  "role": "caption",
+  "bbox": [
+   280,
+   1621,
+   2335,
+   1695
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "i am willing to stand behind it",
+  "role": "custom",
+  "bbox": [
+   545,
+   1151,
+   774,
+   1218
+  ],
+  "angle": 195.1,
+  "joined": false
+ },
+ {
+  "text": "signature",
+  "role": "custom",
+  "bbox": [
+   669,
+   1127,
+   808,
+   1170
+  ],
+  "angle": 191.7,
+  "joined": false
+ },
+ {
+  "text": "witness statement",
+  "role": "custom",
+  "bbox": [
+   1586,
+   1114,
+   1740,
+   1176
+  ],
+  "angle": 182.5,
+  "joined": false
+ },
+ {
+  "text": "AUDIO CASSETTE",
+  "role": "label",
+  "bbox": [
+   1708,
+   1305,
+   1828,
+   1348
+  ],
+  "angle": -15,
+  "joined": false
+ }
+]

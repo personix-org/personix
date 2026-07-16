@@ -1,0 +1,1418 @@
+0	THE STATE
+1	COMPLAINTS OFFICE
+2	COURTS
+3	STATE AUDIT
+4	I've been waiting 3 years.
+5	NEXT HEARING: 2029.
+6	I refuse to accept it.
+7	BOARD SEAT — STATE ENTERPRISE
+8	NO MATERIAL FINDINGS. ALL IN ORDER.
+9	years
+10	Identity
+11	Reputation
+12	Community
+13	There's more under the hood. Stay with me.
+14	I know it's heavy. Will you help carry it?
+15	A better world is worth the weight.
+16	tax office
+17	tax form, national debt: growing
+18	pension book
+19	broken promise
+20	TAX OFFICE
+21	PARLIAMENT
+22	Come in. The plans are laid out.
+23	REPUTATION NETWORK — OPEN
+24	DID
+25	COMMUNITY
+26	VERIFIER
+27	PREREQUISITES FOR CHANGE
+28	VOLUNTARINESS
+29	ORGANIZATION
+30	Without these five pillars, every change is just burning time.
+31	RESILIENCE
+32	CONSENSUS
+33	INCORRUPTIBILITY
+34	I decide for myself.
+35	Together, not under anyone.
+36	Cannot be censored.
+37	Compromise through pressure.
+38	Cannot buy everyone.
+39	It's not for me.
+40	Voluntary — until responsibility catches up with you.
+41	Give it back! I'll report you to the state!
+42	You don't have to enter — unless you give them a reason to remember you.
+43	REPUTATION NETWORK
+44	YOUR IDENTITY, YOUR KEYS, YOUR RULES
+45	YOU CREATE IT YOURSELF
+46	YOUR DID DOCUMENT
+47	CLAIMS — VERIFIED FACTS ABOUT YOU
+48	CITIZENSHIP: Czech Republic — verified by Municipal Notary
+49	EDUCATION: MSc Computer Science — verified by University Alumni Network
+50	PROPERTY: Owner of apartment #42 — verified by Local Community Registry
+51	PASSIVE WITNESS: Ignored a wrongdoing — policy not honoured — filed by Neighbourhood Witnesses
+52	FRAUD: Cheated a neighbour out of savings — filed by Local Community Court
+53	Claims are verified statements. The good and the bad. Authorities stake their reputation on them.
+54	STATE ID — REVOCABLE: the state can cancel it anytime.
+55	DID — IRREVOCABLE: only your private key can sign changes.
+56	Your identity. Your keys. Your rules. No permission needed.
+57	PRIVATE KEY — signs on your behalf. Only you hold this. Never share.
+58	PUBLIC KEY — verifies your signatures. Visible to the network.
+59	DID DOCUMENT
+60	PUBLIC KEY: [cryptographic hash]
+61	NETWORK ADDRESS: [onion gateway]
+62	VERIFICATION POLICY: My rules for interactions
+63	CLAIMS: see right
+64	This is your public identity. Anyone can read it. Only YOUR private key can sign changes to it.
+65	No state can revoke this.
+66	No registration office. No government form. No company approval. You generate it yourself.
+67	GENERATE
+68	CANCEL
+69	THE COMMUNITY CAN OPEN ONE FOR YOU
+70	1. YOU DO HARM
+71	2. COMMUNITY FILES
+72	3. YOU CAN'T ESCAPE
+73	He has no DID of his own. He never signed up.
+74	COMMUNITY DID — WRONGDOER #47
+75	Opened by the community. No private key held by subject.
+76	FRAUD: Stole a neighbour's purse — filed by Local Community Court
+77	FLIGHT: Refused to answer — filed by Neighbourhood Witnesses
+78	You didn't open a DID, so the community opens one ABOUT you. Negative claims attach here.
+79	MY NEW DID — WRONGDOER'S OWN
+80	CITIZENSHIP: Czech Republic
+81	You can open your own — but the community will link the two. Reputation follows the person, not the key.
+82	The network remembers the person, not just the key.
+83	You can opt out of opening a DID. You cannot opt out of your reputation.
+84	generate
+85	LINK: Same person as COMMUNITY DID — WRONGDOER #47 — filed by Observer Network
+86	PREREQUISITE 2 OF 5: ORGANIZATION
+87	EXEMPLARY PUNISHMENT.
+88	GUILTY
+89	Alone, you are easy prey.
+90	Together, you are untouchable.
+91	Not one of us stands alone.
+92	The baton swings at one. It hesitates in the middle of many.
+93	An individual cannot break the system. A community can.
+94	PREREQUISITE 3 OF 5: RESILIENCE
+95	WHERE IS THIS PERSON?
+96	He cannot search from the outside.
+97	INTERNET
+98	ECONOMY
+99	OH.
+100	MUST HAVE KEY. MUST EARN REPUTATION.
+101	HE CAN'T REACH IN. HE CAN'T CUT OUT.
+102	Pull the plug — crush yourself.
+103	NO PERMISSION TO ASK FOR. NO PLUG TO PULL.
+104	onion
+105	tor
+106	mixnet
+107	PREREQUISITE 4 OF 5: CONSENSUS
+108	You may differ. Just not too far.
+109	RADICAL
+110	MY POLICY
+111	COMMUNITY POLICIES
+112	FREE SOCIETY
+113	AUTHORITARIAN SOCIETY
+114	The tolerance zone stretches with the freedom of the culture.
+115	CONSENSUS IS A TOLERANCE ZONE, NOT A UNANIMOUS AGREEMENT.
+116	No fraud. Contracts honored. No violence.
+117	STAY IN RANGE — NOT A RADICAL.
+118	PREREQUISITE 5 OF 5: INCORRUPTIBILITY
+119	MINISTRIES
+120	MUNICIPALITIES & INSTITUTIONS
+121	CITIZENS · TAXES
+122	COST: A FEW BAGS
+123	Bribe a few upper floors — the base pays anyway.
+124	WE SAW THAT.
+125	SAME BRIBE. DIFFERENT MATH.
+126	COST: EVERYTHING YOU HAVE — AND STILL NOT ENOUGH
+127	Bribe one — he loses his reputation forever. Bribe all — you go broke first.
+128	CORRUPTION HAS A PRICE. IN THE MESH IT IS TOO HIGH.
+129	voting
+130	STAGE 1 — PUBLISH A CLAIM
+131	STAGE 2 — QUALITY FILTER
+132	STAGE 3 — RECURSIVE VERIFICATION
+133	STAGE 4 — PERMANENT RECORD
+134	CLAIM
+135	EVIDENCE
+136	TIME
+137	ENERGY
+138	MONEY
+139	SPAM / TRIVIAL
+140	ACCEPTED
+141	REJECTED
+142	RETRY
+143	GIVE UP
+144	ABANDONED
+145	Permanent.  Verifiable.  Public.
+146	EXPENSIVE TO FAKE. CHEAP TO VERIFY.
+147	claim (now) heavier (now added metadata)
+148	retry back
+149	HOW TO READ REPUTATION
+150	INFORMED DECISION
+151	REPUTATION CARD
+152	Paid invoices on time
+153	Honored warranty 2024
+154	Late payment 2023 — resolved
+155	VIEW: Trade credit reliability
+156	She knows who she is dealing with.
+157	BLIND TRUST
+158	Looks fine, I guess?
+159	UNPAID INVOICES
+160	LATE PAYMENTS
+161	He has no idea who he is dealing with.
+162	BEFORE YOU EXTEND CREDIT. BEFORE YOU SIGN. BEFORE YOU TRUST.
+163	contract
+164	CONTRACT
+165	INVOICE
+166	THE ECONOMICS OF TRUTH
+167	UNPOPULAR BUT ACCEPTABLE
+168	ONE COMMUNITY. DIFFERENT POSITIONS.
+169	IN CONSENSUS
+170	OUTSIDE CONSENSUS
+171	THE SUBMISSION
+172	THE DRAW
+173	THE REFUND
+174	THE LEDGER
+175	POLICY
+176	STANDARD
+177	FRINGE POLICY
+178	RADICAL STANDARD
+179	RANDOM DRAW
+180	uniform probability
+181	ACCEPT
+182	REJECT
+183	I  II  III  IV
+184	I  II  III
+185	outside my view
+186	I disagree fundamentally
+187	I will not endorse this
+188	no price buys my signature
+189	base fee — first draw accepts
+190	draws are fair — drawn verifiers charge a risk premium
+191	the draws keep happening — no drawn verifier will sign
+192	over many submissions, long run
+193	full refund on average
+194	mostly refunded, some lost over time
+195	deposit forfeit most of the time
+196	higher fee then
+197	paid
+198	got back
+199	THE ALGORITHM PICKS FAIRLY. PEOPLE PRICE WHAT THEY BELIEVE.
+200	UNIFORM DRAW. NON-UNIFORM RESPONSE. THE FURTHER FROM CONSENSUS, THE HIGHER THE PRICE.
+201	SLIGHTLY MORE EXPENSIVE
+202	UNAFFORDABLE
+203	community strip
+204	Accept with note
+205	not my view
+206	retry tally
+207	BOTTOM OBSERVER STRIP
+208	WHAT GETS PUBLISHED IN THE NETWORK
+209	five things can be published — every one has versions.
+210	your identity record on the network — keys, metadata, network address.
+211	MANAGED BY: the DID holder
+212	CLAIM STANDARD
+213	the schema a claim must follow — what counts as valid evidence.
+214	MANAGED BY: an authority with reputation in the domain
+215	POLICY STANDARD
+216	the schema a policy must follow — the shape of acceptance rules.
+217	DID POLICY
+218	a DID's declared rules — used in verification, consensus, and issuance.
+219	MANAGED BY: the DID holder (one policy per DID)
+220	a statement about a subject, following a claim standard — published by an issuer, co-signed by the standard's authority if both issuer and verifier request it.
+221	MANAGED BY: issuer publishes — subject is the target
+222	claims come in two kinds — positive (+) and negative (−).
+223	derived from
+224	v1
+225	v2
+226	v3
+227	v4
+228	v5
+229	every artefact is versioned — the badges show current revisions.
+230	EVERY ARTEFACT IS VERSIONED. EVERY VERSION IS PUBLIC.
+231	WHAT KINDS OF CLAIMS CAN APPEAR?
+232	EXAMPLES OF THE CLAIM ARTEFACT
+233	a claim is a statement about someone — here are the kinds people publish.
+234	NEGATIVE CLAIMS
+235	POSITIVE CLAIMS
+236	ASSAULT
+237	physically attacked another person
+238	THEFT
+239	took someone's property without consent
+240	FRAUD
+241	deceived someone for personal gain
+242	BROKEN CONTRACT
+243	failed to honour an agreed obligation
+244	DEFAMATION
+245	spread a damaging untruth
+246	ABANDONMENT
+247	left dependants or duties unattended
+248	HARM REMEDIED
+249	repaired damage caused earlier
+250	DEBT SETTLED
+251	paid what was owed in full
+252	AID GIVEN
+253	helped another at personal cost
+254	VERIFIED EXPERTISE
+255	proven skill in a craft or field
+256	OUTSTANDING SERVICE
+257	long-standing contribution to the community
+258	examples only — every claim follows a claim standard, and any standard can add more.
+259	you do not have to join — but if your behaviour impacts others, someone can publish a claim about it.
+260	CLAIMS ARE HOW BEHAVIOUR ENTERS THE NETWORK.
+261	WHAT IS INSIDE A DID DOCUMENT?
+262	EXAMPLES OF THE DID DOCUMENT ARTEFACT
+263	your DID document is your identity card on the network — here is what it carries.
+264	FIELDS YOU WILL FIND INSIDE
+265	KEYS AND SIGNING RULES
+266	each key grants one power — edit this document, issue a claim, act as an authority, manage a policy, or delegate recovery. Powers can be handed to another DID, and revoked again later.
+267	REVOKED
+268	NETWORK ADDRESSES
+269	where the network can reach you — changeable without rewriting your identity
+270	CREATED AND VERSIONED
+271	when this identity first appeared, and which revision you are reading now
+272	LINKED IDENTITIES
+273	a summary of DIDs you are connected to — a convenience view, technically stored elsewhere
+274	SUCCESSION MARKER
+275	if your identity is lost or stolen, an authority can mark this DID ended and point to your successor
+276	the DID holder writes each new version — but every version must pass verification before the network publishes it.
+277	VERIFIED
+278	you write it — the network verifies it. You cannot just publish yourself into existence.
+279	YOU AUTHOR YOUR IDENTITY — THE NETWORK CONFIRMS IT.
+280	WHAT IS A CLAIM STANDARD?
+281	EXAMPLES OF THE CLAIM STANDARD ARTEFACT
+282	the standard is the empty form — a claim is the form filled in. Let me show you both side by side.
+283	THE STANDARD — THE EMPTY FORM
+284	SUBJECT DID
+285	the DID this claim is about
+286	ISSUER DID
+287	the DID signing the claim
+288	WHEN AND WHERE
+289	a date and a place
+290	APPROVED EVIDENCE TYPES
+291	only these kinds of evidence count
+292	OUTCOME SCALE
+293	pick exactly one rung — no free text
+294	none / mild / moderate / severe
+295	A CLAIM — THE FORM FILLED IN
+296	did:nwo:alice-9f2b…
+297	did:nwo:magistrates-04…
+298	3 March, market square
+299	photograph ✓ — witness oath ✓ — physician's note ✓
+300	moderate — rung 2 of 4
+301	every field on the left has exactly one filled-in counterpart on the right — that is what makes two claims of the same kind comparable.
+302	I stake my reputation that this was processed by the standard.
+303	ASSAULT v3
+304	DEBT v2
+305	MEDICAL AID v4
+306	CRAFTSMANSHIP v1
+307	TESTIMONY v5
+308	the authority's seal on a filled-in claim is a pledge: the process was truly followed.
+309	THE STANDARD IS THE FORM — A CLAIM IS THE FORM FILLED IN AND PLEDGED.
+310	WITNESS
+311	Reputation Ledger
+312	WHAT IS A DID POLICY?
+313	EXAMPLES OF THE DID POLICY ARTEFACT
+314	my policy is not about how a claim is written — that is the standard's job. My policy is how I decide whether to care about the claim at all: do I trust who signed it, do I trust the authority behind their standard, and is the matter even worth my attention?
+315	THE STANDARD — INHERITED DEFAULTS
+316	ISSUER REPUTATION FLOOR
+317	I accept issuers with reputation above five of ten
+318	AUTHORITY TRUST LIST
+319	I accept standards from any authority whose own reputation is above four of ten
+320	SUBSTANCE FILTER
+321	I process any claim whose matter weighs above the 'trifling' mark
+322	ANTI-SPAM PRICING CURVE
+323	submitting to me is cheap for substantive, rare claims — and grows fast for petty or repeated ones
+324	COMBINED WEIGHTING
+325	issuer-rep and authority-rep multiply; petty-substance halves the result
+326	MY POLICY — DERIVED FROM IT
+327	KEPT
+328	EDITED
+329	REMOVED
+330	ADDED
+331	tightened — I require seven of ten
+332	I fully trust magistrates and physicians; I halve the weight of claims under the municipal watch; I refuse anything under the harbour police altogether
+333	EXPONENTIAL COST ON REPEATED CLAIMS
+334	QUIET HOURS
+335	added — each new claim from the same issuer about me in a year costs ten times the last
+336	petty nuisance claims cost me nothing to ignore — I simply do not read them
+337	kept — the default curve is fine for me
+338	removed — I use my own formula
+339	added — I refuse to read any claim filed between midnight and dawn
+340	policy does not rewrite the standard — it judges the people and the matter. Keep, modify, remove, add — four simple moves on top of a shared starting point.
+341	VERIFICATION — my policy filters both incoming claims and my own drafts before I issue them. Issuance is verification on the way out.
+342	CONSENSUS — my policy is my vote when the community negotiates shared rules.
+343	YOUR POLICY JUDGES THE MESSENGER — NOT THE FORM.
+344	rule name
+345	tick
+346	action word
+347	RULE NAME
+348	VS.
+349	petty
+350	grave
+351	HOW THE ALGORITHM PICKS A VERIFIER
+352	A FAIR COIN THROWN ACROSS YOUR COMMUNITY
+353	ONE ARTEFACT TO PUBLISH
+354	DID DOCUMENT CHANGE
+355	pick exactly one artefact per call
+356	CHRONOLOGICAL LIST OF PRIOR VERIFIER RESPONSES
+357	empty on the first call — grows with every rejection
+358	every kind of record is fed through the same hash — no side channel lets anyone route information around a verifier.
+359	some authorities exist only to randomise the verifier — that alone is a service worth reputation.
+360	the publish path goes: issuer → authority → verifier. No record may skip the authority step.
+361	HASH: 7A3F…
+362	your verifier
+363	YOUR COMMUNITY AND ITS VICINITY
+364	every face has the same chance — the hash lands uniformly at random
+365	you cannot choose your verifier — the algorithm throws the coin, and everyone here has an equal chance.
+366	WHAT HAPPENS NEXT
+367	The verifier answers with a price — or rejects with a reason — see HOW THE VERIFIER ANSWERS
+368	The issuer decides what to do with that answer — see THE ISSUER'S CHOICE
+369	Each retry adds to the cost — as shown earlier on PUBLISHING COST
+370	THE ALGORITHM PICKS — YOU DO NOT.
+371	CAN YOU BRUTE-FORCE IT?
+372	I could grind thousands of drafts until one lands on the verifier I want…
+373	the hash is deterministic but pre-image-resistant — each small edit throws the pick somewhere unrelated.
+374	BUT THE AUTHORITY SEALS THE REST
+375	AUTHORITY-SIGNED EVIDENCE ABOUT OTHERS
+376	…but I cannot predict what the authority will sign — and I cannot tell whether she is in league with me or not.
+377	because the hash eats authority-signed evidence too, the issuer cannot forecast his own hash. For the community, the question becomes: do we trust this authority — and this issuer-with-this-authority — at all?
+378	slightly different
+379	wildly different
+380	completely different
+381	chronological responses
+382	A
+383	B
+384	HOW THE VERIFIER ANSWERS
+385	ACCEPT WITH A PRICE — OR REJECT WITH A REASON
+386	ISSUER'S REPUTATION
+387	AUTHORITY'S REPUTATION
+388	MY OWN POLICY
+389	THE DOCUMENT'S CONTENT
+390	the verifier weighs four things before answering.
+391	ACCEPT — WITH A PRICE
+392	FEE
+393	POLICY DEVIATION
+394	DATA VOLUME
+395	ISSUER REPUTATION
+396	the verifier agrees to publish — but the price reflects how far the claim sits from their policy, how much data it carries, and how trusted the issuer is.
+397	REJECT — WITH A REASON
+398	the issuer's reputation is too low for me
+399	the authority behind this record is not one I trust
+400	the issuer's policy is too far from mine to bridge
+401	the document itself fails my policy's rules
+402	the verifier writes down WHY — their response feeds back into the next attempt.
+403	the verifier's response is added to the chronological list — as shown on HOW THE ALGORITHM PICKS A VERIFIER
+404	whatever the verifier says, their answer becomes input to the next call.
+405	every verifier answers in one of these two ways — accept with a price, or reject with a reason.
+406	The issuer decides what to do with this answer — see THE ISSUER'S CHOICE
+407	Each answer shifts the cost of the next attempt — as shown earlier on PUBLISHING COST
+408	THE VERIFIER EITHER SETS A PRICE — OR TELLS YOU WHY NOT.
+409	THE ISSUER'S CHOICE
+410	WHAT TO DO WITH THE VERIFIER'S ANSWER
+411	THE VERIFIER'S ANSWER
+412	whatever the verifier said, the issuer now has ONE answer on the table.
+413	THREE WAYS OUT
+414	TAKE THE DEAL
+415	ONLY IF ACCEPTED
+416	the issuer pays the fee — the record is published into the network. Only available if the verifier accepted.
+417	TRY AGAIN
+418	each new attempt costs more
+419	the response is bundled into the chronology — the algorithm throws again. Works whether the verifier accepted at a price the issuer dislikes, or rejected outright.
+420	WALK AWAY
+421	time and energy already spent do not come back
+422	the issuer discards the draft. Nothing is published — but nothing more is paid either.
+423	loop back to HOW THE ALGORITHM PICKS A VERIFIER — shown earlier
+424	only the retry path loops — accept and walk-away both end the story.
+425	the verifier decides how — the issuer decides whether. Publishing is a mutual yes.
+426	Each retry shifts the cost of the next attempt — as shown earlier on PUBLISHING COST
+427	The verifier's answer itself — as shown earlier on HOW THE VERIFIER ANSWERS
+428	THE VERIFIER PROPOSES — THE ISSUER DISPOSES.
+429	DID-network
+430	mini grinding machine
+431	1
+432	2
+433	3
+434	IF AI DOES THE THINKING — WHAT IS LEFT FOR YOU?
+435	AI AGENTS TAKE OVER THE REPETITIVE WORK
+436	DRAFTING
+437	BOOKKEEPING
+438	STANDARD FLOW
+439	STANDARDISED COMPANY FLOWS
+440	one by one, the repetitive cognitive work is being handed over to agents.
+441	SO WHAT REMAINS FOR A HUMAN?
+442	THE IDEA
+443	BAKER
+444	CARPENTER
+445	RUNS AN AI WORKSHOP
+446	anyone can pick the same idea.
+447	what makes one baker, one carpenter, one AI workshop different from the next?
+448	REPUTATION — WHAT TELLS TWO APART
+449	KEEPS HIS WORD
+450	TALKS TO THE CUSTOMER
+451	STANDS BEHIND HIS AI
+452	10 YEARS, NO COMPLAINTS
+453	the human touch still closes the deal.
+454	someone must answer for what the agent does — and that responsibility cannot be handed off.
+455	Even I cannot build this for you — it has to be you.
+456	without reputation, every baker looks the same — and the biggest brand eats them all.
+457	could this be the decentralised path that keeps AI on a leash — the thing that stops any one player from owning the whole market?
+458	AI AUTOMATES THE WORK — REPUTATION KEEPS YOU HUMAN.
+459	?
+460	PUBLISHING COSTS TIME, ENERGY, AND MONEY
+461	WRITING INTO THE NETWORK IS NEVER FREE — READING IS
+462	you wait while the algorithm picks a verifier and the verifier reads your record.
+463	signing, hashing, verifying — every step is real computation and real electricity.
+464	FEE PAID TO VERIFIER
+465	AUTHORITY REPUTATION
+466	the further your claim sits from the verifier's policy, the larger the record, and the less trusted the issuer or their authority — the higher the fee.
+467	EACH RETRY COSTS MORE
+468	the verifier's response folds into the chronology — see THE ISSUER'S CHOICE and HOW THE ALGORITHM PICKS A VERIFIER
+469	every rejection or re-throw adds to the chronology the algorithm eats — and the next attempt is more expensive in all three channels.
+470	READING IS CHEAP
+471	anyone may read reputation and records — only writing costs. The asymmetry is the design.
+472	noise is expensive. Signal is valuable. That is why the network charges for writing, not for reading.
+473	The three-step verification chain — see HOW THE ALGORITHM PICKS A VERIFIER, HOW THE VERIFIER ANSWERS, THE ISSUER'S CHOICE
+474	Why expensive writing protects reputation — later in the chapter
+475	WRITING COSTS — READING DOES NOT. THE ASYMMETRY IS THE POINT.
+476	hashed
+477	cost over iterations
+478	reading asymmetry
+479	free to query
+480	ledger
+481	THREE CHANNELS — ALL THREE ARE REAL
+482	WHY THE NETWORK IS UNCENSORABLE
+483	MESSAGE
+484	Who sent it?
+485	To whom?
+486	What is inside?
+487	CENTRALISM CHOICE
+488	GDP UP
+489	There is no place where one could look.
+490	Censor`s frustration
+491	NODE A encrypts
+492	NODE B encrypts
+493	NODE C encrypty
+494	NODE D encrypts
+495	ACCEPT IT.
+496	TOTAL SURVEILLANCE.
+497	state`s dilema
+498	HOW YOUR MESSAGES STAY UNTRACKABLE
+499	TWO LINES OF DEFENCE AT ONCE — LAYERS AND NOISE
+500	CONTENT: WRAPPED IN LAYERS
+501	(the technique behind Tor — ‘onion routing')
+502	SENDER
+503	RECIPIENT
+504	four locks, four keys — one per node.
+505	THE RELAY CHAIN
+506	KNOWS: SENDER ONLY
+507	KNOWS: NEIGHBOURS ONLY
+508	KNOWS: RECIPIENT ONLY
+509	no single node sees both ends of the conversation.
+510	TIMING: HIDDEN IN A RIVER OF DECOYS
+511	(the technique behind a ‘mixnet' — e.g. Nym, Loopix)
+512	DECOY
+513	REAL
+514	MIX-NODE — SHUFFLES + DELAYS
+515	a hundred envelopes an hour — which one matters?
+516	the observer sees the flow but cannot tell REAL from DECOY.
+517	the community pays a small cost — constant cover traffic — in exchange for untrackability.
+518	HIDES WHO ↔ WHO?
+519	HIDES WHEN?
+520	LAYERS ONLY
+521	NOISE ONLY
+522	LAYERS + NOISE
+523	(onion routing + mixnet — the combination we need)
+524	YES
+525	NO
+526	the real message swims in a river of decoys — and wears four coats.
+527	CONTENT HIDDEN BY LAYERS — TIMING HIDDEN BY NOISE.
+528	THE TWO SHIELDS TOGETHER
+529	MATRIX
+530	RIVER
+531	(only on a few):
+532	POST
+533	TWO PATHS — THE STATE CLOSES, THE NETWORK OPENS
+534	THE REPUTATION NETWORK
+535	STATE BUDGET
+536	DOING NOTHING IS CHOOSING THE RIGHT DOOR.
+537	Every regime ends the same. The only choice is to step left.
+538	the gate is still closing. the other door is still open.
+539	pick one — or the choice picks you.
+540	THE STATE CLOSES BY DEFAULT. THE NETWORK OPENS BY CHOICE.
+541	THE SAME EFFORT — A WASTEFUL PLAN B IN FREEDOM, A LIFELINE UNDER TYRANNY
+542	PARALLEL IDENTITIES COST THE SAME — BUT BUY DIFFERENT THINGS
+543	IN FREEDOM — A COSTLY PLAN B
+544	FERTILIZER
+545	a second identity — just in case things go wrong.
+546	DID-A
+547	DID-B
+548	DID-C
+549	year 1 — time, energy, money spent — 5% reputation
+550	year 3 — the same costs again, paid independently — 20% reputation
+551	year 0 — everything starts over — 0% reputation
+552	SEED → SPROUT → SAPLING → YOUNG TREE → MATURE TREE
+553	5 to 15 years — no shortcuts, no mature tree for sale
+554	three gardens, triple the cost — and you still only have two hands.
+555	OR — A CLEAN SLATE AFTER A PERSONAL MISSTEP
+556	OLD DID — REPUTATION BURNED
+557	BURNED
+558	DID-FRESH-START
+559	works only if the mess stayed your own — if others were harmed enough to chase you down, their claims will follow you into the new pot too.
+560	ONE CLAIM AND THE PLAN B IS GONE
+561	THE CLAIM
+562	THE REAL PERSON
+563	EXPOSED
+564	a single claim ties every pot to the same gardener — years of time, energy and money erased in an afternoon.
+565	one thread — and the whole plan unravels.
+566	UNDER TYRANNY — ONE FOR THE STATE, OTHERS FOR FREE ASSOCIATION
+567	(the state either bans identities outright or requires them under its own control)
+568	OFFICIAL DID — REGISTERED & MONITORED
+569	THE ONE THE STATE SEES
+570	ALSO MINE — BUT HIDDEN FROM THE STATE
+571	outward compliance — one identity handed over for monitoring.
+572	DID-A — UNDERGROUND PRESS
+573	DID-B — RAIDED
+574	DID-C — RESISTANCE CELL — INTACT
+575	THE ONES THE STATE MUST NEVER SEE
+576	the brick walls between cells do the work the state forbids — lose one, the others carry on; when the regime falls, public life resumes.
+577	one mask for the regime — the rest for a life still worth living.
+578	IN FREEDOM, ABUSE IS EXPENSIVE. UNDER TYRANNY, SURVIVAL IS POSSIBLE.
+579	OFFICIAL DID
+580	REPUTATION IS THE COUNTERWEIGHT TO ECONOMIC FORCE
+581	THE RICH MAN BUYS INFLUENCE — THE COMMUNITY REMEMBERS IT
+582	LATER
+583	THE ATTACK — INFILTRATE AND BUY OFF
+584	EIGHT PUPPETS PLANTED + THREE NEIGHBOURS BOUGHT OFF
+585	economic force can slip strings into any community — and buy a few real voices along the way.
+586	at first, it looks like the rich man just widened his circle of friends.
+587	THE DEFENCE — LONG MEMORY, DISTRIBUTED ACCOUNTING
+588	UNFAIR
+589	TAINTED BY PUPPET-MASTER
+590	the whole history is re-read through the exposure — not just the latest claim.
+591	SOLD HIS VOICE
+592	RAN THE PUPPETS
+593	PUPPETEER'S OWN DID — PERMANENTLY MARKED
+594	no undo, no forgetting — the backfire does not fade.
+595	RECENT
+596	OLDER
+597	OLDEST
+598	FROM A NEIGHBOUR
+599	still on record.
+600	EVERY NEIGHBOUR KEEPS THEIR OWN MEMORY — NO CENTRAL BOOK, NO FORGETTING
+601	claims come from peer DIDs — the community stamps the puppets AND the neighbours who sold their voice.
+602	economic force met long memory — and long memory won.
+603	money buys a moment — the neighbours remember for years.
+604	no central book — just many small memories, and they overlap.
+605	UNFAIR — from a neighbour
+606	ECONOMIC POWER REACHES IN — THE BACKFIRE COMES HOME, AND IT DOES NOT WASH OFF.
+607	THE NETWORK REWARDS PARTICIPATION
+608	REPUTATION IS BUILT OVER A LIFETIME — NOT BOUGHT, NOT BORROWED
+609	THE PARTICIPANT — A LIFETIME OF REAL WORK
+610	AGE 20 — NEWCOMER
+611	reputation 5%
+612	LIMITED — HIGH COSTS, LONG WAITS
+613	0 projects completed
+614	AGE 28 — ACTIVE PARTICIPANT
+615	delivered contract
+616	resolved dispute
+617	community contribution
+618	reputation 30%
+619	BASIC — STANDARD COSTS, NORMAL SPEED
+620	AGE 40 — CONTRIBUTOR
+621	8 projects delivered
+622	reputation 70%
+623	FULL — LOW COSTS, INSTANT ACCESS
+624	AGE 55 — AUTHORITY
+625	15+ projects delivered
+626	reputation 95%
+627	AUTHORITY — YOU VERIFY OTHERS, THE NETWORK PAYS YOU
+628	time builds the curve — your own effort can make it steeper.
+629	every stage costs time, energy and money — together, not separately.
+630	the door opens as the ledger of your deeds fills.
+631	THE FREE-RIDER — READS, NEVER PUBLISHES
+632	reads everyone else's records.
+633	MY CONTRIBUTIONS
+634	publishes nothing of his own.
+635	LIMITED ACCESS — THE CEILING DOES NOT LIFT
+636	no deeds, no rise — year after year, same bar.
+637	the network gives back to those who give in.
+638	TIME, ENERGY AND MONEY — INVESTED IN REAL WORK — IS THE ONLY CURRENCY THE NETWORK RESPECTS.
+639	harder work can shorten the climb.
+640	VOLUNTARINESS → RESPONSIBILITY → FREEDOM
+641	THREE STEPS — FROM ONE PERSON'S CHOICE TO A WHOLE SOCIETY'S PATTERN
+642	the individual decides — no one compels her.
+643	and no one owes her a positive duty either.
+644	RESPONSIBILITY
+645	FEEDBACK
+646	the mirror answers — automatically, without a judge.
+647	my choices ripple out — and the ripples come back.
+648	the consequences speak for themselves.
+649	FREEDOM
+650	no one drew this map — it drew itself.
+651	freedom is the statistical shape of how neighbours treat each other.
+652	FREEDOM IS NOT A GIFT FROM ABOVE — IT IS THE PATTERN WE MAKE TOGETHER.
+653	THE FREEDOM-TOTALITARIANISM SWITCH
+654	ONE SINGLE PARAMETER — HOW MUCH I CHOOSE TO TRACK — TIPS A WHOLE SOCIETY BETWEEN FREEDOM AND TYRANNY
+655	not many knobs — one. the network itself is neutral; my policy is not.
+656	ONLY CRIMES
+657	HOW SEVERE
+658	GRAVE ONLY
+659	HOW MANY PER YEAR
+660	the big dial is just the sum of these three.
+661	every reader turns their own dial — the network has no common one.
+662	YOUR OWN DIAL — YOUR OWN POLICY
+663	each node decides which claims to count, how severe they must be, and how many in a year is 'too many'.
+664	people live unwatched, talk freely, and breathe without looking up.
+665	RIGHT — MANY, TRIVIAL, SUFFOCATING
+666	a sneeze, a purchase, a walk home after dark: all of it goes on the record, forever.
+667	nothing is private — the eye never blinks, and neighbours stop speaking.
+668	FREEDOM IS WHAT I REFUSE TO COUNT — TOTALITARIANISM IS WHAT I AGREE TO TRACK.
+669	LEFT — FEW, HEAVY, SERIOUS
+670	only grave matters get carved into the record — because carving is hard.
+671	everything else stays private: a bad day, a silly joke, a late arrival — none of it is anyone's file.
+672	PARKED 2 MIN LATE
+673	SNEEZED IN PUBLIC
+674	WHICH KINDS I COUNT
+675	A FEW
+676	EVERY HOUR
+677	every yawn becomes a file — because counting is cheap.
+678	THE ONE KNOB THAT DECIDES EVERYTHING
+679	I COUNT ONLY SEVERE CLAIMS — FREEDOM
+680	I COUNT EVERY TRIVIALITY — TOTALITARIANISM
+681	what left into my judgement of others
+682	ANYTHING
+683	EVERY YAWN
+684	LAUGHED AT 22:01
+685	LAUGHED AT 26.01
+686	WALKED AN UNAPPROVED ROUTE
+687	EACH COMMUNITY CONFIGURES ITSELF
+688	THE NETWORK DOES NOT DISCRIMINATE — EVERY REGION SETS ITS OWN DIAL
+689	NORTH AMERICA — 2 RECORDS / YEAR — HIGH PRIVACY
+690	LATIN AMERICA — 5 RECORDS / YEAR — BALANCED
+691	EUROPE — 3 RECORDS / YEAR — MORE PRIVACY
+692	AFRICA — 4 RECORDS / YEAR — COMMUNITY-LED
+693	EAST ASIA — 8 RECORDS / YEAR — STRICTER OVERSIGHT
+694	same network — five different neighbourhoods.
+695	ONE NETWORK, MANY DIALS — EACH COMMUNITY DECIDES FOR ITSELF.
+696	COMMUNITIES WATCH EACH OTHER — THE BEST SETTINGS SPREAD OVER TIME
+697	the map does not judge — the network carries every setting equally.
+698	DELEGATION OF PUBLICATION RIGHTS
+699	YOU LEND THE KEY TO AN AUTHORITY THAT SERVES YOU — AND PULL IT BACK IN AN INSTANT
+700	I lend the key — the string stays with me.
+701	I can lend more than one key at a time — a background automation can re-issue a fresh one whenever one of mine gets drawn.
+702	delegation — the authority acts on my behalf, within rules I approve.
+703	AUTHORITY — SERVICE PROVIDER
+704	policy · standard · party · chamber
+705	ONE TUG — THE KEY COMES HOME
+706	SPENT
+707	after that, the citizen must issue a new key to keep standing with the authority — an automation can do this in the background.
+708	the string never leaves your hand — that is the whole trick.
+709	KINDS OF AUTHORITIES THAT CAN HOLD THE KEY
+710	PROFESSIONAL CHAMBER
+711	COOPERATIVE
+712	one pull on the string ends the arrangement.
+713	STRING OF RECALL
+714	revocable only until the key is drawn.
+715	ONE KEY DRAWN AT RANDOM — THE KEY IS SPENT
+716	the authority serves its members — not the other way around.
+717	LEND THE KEY — KEEP THE STRING. DELEGATION IS NEVER SURRENDER.
+718	MY RIGHT TO PUBLISH — 1 RECORD
+719	DELEGATED KEYS — POOL
+720	DRAWN AT RANDOM WHEN THE AUTHORITY ACTS
+721	POLITICAL PARTY
+722	STANDARDS BODY
+723	THE CURE FOR HYPOCRISY
+724	DECLARE YOUR RULES — LIVE BY THEM, OR THE MARKET PRICES YOU OUT
+725	I DECLARE MY POLICY
+726	WHAT I EXPECT FROM OTHERS
+727	WHAT I BIND MYSELF TO
+728	honesty in claims.
+729	contracts kept.
+730	disputes in the open.
+731	the rules I ask of you are the rules I live by.
+732	everyone can read my standards.
+733	no gatekeepers, no secrets.
+734	THE WORLD WATCHES
+735	HIS RECORD
+736	the world writes down what he actually does.
+737	every day, a little more evidence on his ledger.
+738	AT THE SHOP — YOU PAY FOR YOUR OWN RECORD
+739	BAKERY
+740	REPUTATION LOOKUP
+741	BREAD — BASE 5 COINS
+742	HYPOCRISY SURCHARGE +10 COINS
+743	TOTAL 15 COINS
+744	ordinary service — surcharge set by his own record.
+745	even a loaf of bread costs more when your words and your deeds drift apart.
+746	no judge, no court — the market reads your ledger and quotes the price.
+747	hypocrisy is not punished by authority — it is priced by the market.
+748	every ordinary service you buy carries a surcharge shaped by your own record.
+749	COULD WE CALL THIS THE SOCIAL CONTRACT — REDRAWN?
+750	no authority forces the ethic — the price does.
+751	soft pressure, every day, toward the shared average we can all live with.
+752	WALK YOUR TALK — OR PAY FOR IT. HYPOCRISY IS THE MOST EXPENSIVE REPUTATION.
+753	HYPOCRISY IS THE MOST EXPENSIVE BEHAVIOR
+754	THE NETWORK QUIETLY COMPARES YOUR WORDS WITH YOUR RECORD — THE GAP IS VISIBLE TO EVERYONE
+755	I AM A GOOD CITIZEN
+756	FRAUD — 12 MARCH — PROVEN
+757	BROKEN CONTRACT — 4 FEB
+758	UNPAID DEBT — 22 JAN
+759	what the network sees.
+760	what the crowd does not — yet.
+761	ACTUAL RECORD
+762	declaration and record do not match.
+763	HOW CAN WE KNOW YOU SPEAK THE TRUTH?
+764	LET'S CHECK HIS PERSONIX RECORDS.
+765	THE NEW WAY — CHECK THE NETWORK
+766	NEGATIVE
+767	NEUTRAL
+768	POSITIVE
+769	REPUTATION
+770	FALLING
+771	WAS HERE
+772	no judge, no court — the meter reads the gap.
+773	the longer the gap, the deeper the fall.
+774	the network does not shout — it just stops trusting you.
+775	his record, right here — declaration does not match deed.
+776	DECLARE IT AND BREAK IT? THE GAP IS THE MOST EXPENSIVE BEHAVIOR.
+777	A NEGATIVE CLAIM FLOWS THROUGH THE SYSTEM
+778	FOLLOW ONE DOCUMENT — SEE WHAT EACH ROLE DOES TO IT
+779	ISSUER
+780	I write what happened.
+781	ISSUER WRITES AND LAUNCHES.
+782	AUTHORITY — THE ONE WHO SEALS
+783	I stake my name on this record.
+784	THUMP!
+785	AUTHORITY ALWAYS SEALS.
+786	OBSERVER — KEEPS A RECORD
+787	I keep a record of what the verifier does.
+788	OBSERVER MAY WATCH — OR NOT.
+789	the authority seals what happened.
+790	the observer watches how the verifier handles it.
+791	AUTHORITY ALWAYS — OBSERVER OPTIONAL.
+792	VERIFIER — CHOSEN BY THE ALGORITHM
+793	CANNOT VERIFY OWN CLAIMS.
+794	I check against policy.
+795	VERIFIER PROCESSES.
+796	SUBJECT
+797	they found out?!
+798	CAUGHT ENJOYING THE SPOILS.
+799	SPOILS
+800	watch one document move.
+801	five roles — one document in motion.
+802	FIVE ROLES, ONE DOCUMENT IN MOTION — NOBODY CAN VERIFY THEMSELVES.
+803	optional side-port hangs off bottom
+804	policy
+805	negative claim
+806	timestamp
+807	THE PROVIDER — RUNS A CLAIM-SIGNING SERVICE
+808	PUBLISHED STANDARDS · PUBLISHED PRICES
+809	PROVIDER
+810	STANDARDS
+811	What real-world evidence I require
+812	— eyewitness accounts
+813	— photographs and receipts
+814	— signed statements from third parties
+815	— official records
+816	PRICES
+817	Based on your reputation
+818	— good standing: from 50
+819	— neutral: from 90
+820	— low reputation: from 180
+821	— rush service: ×2
+822	PREPAID PLAN — FIELD INVESTIGATOR INCLUDED
+823	This is what happened to me. I need a signed claim about it.
+824	We won't leave you hanging. Bring witnesses, photos, anything you've got. And under your prepaid plan I'll send a field investigator out to the scene — we'll piece it together.
+825	He sets the rules in advance, sells subscriptions, dispatches investigators — and lives or dies by his reputation.
+826	Bound by what they publicly declare. Reputation does the rest.
+827	* The provider also has their own policy — when they accept, when they reject, how they refund. It is published, but it is not the main story here.
+828	SAMPLE CLAIM
+829	BRIDGING THE DIGITAL AND PHYSICAL WORLDS
+830	THE AUTHORITY CARRIES REALITY ACROSS
+831	PHYSICAL WORLD
+832	DIGITAL WORLD
+833	VERIFIED RECORD
+834	REPUTATION 94%
+835	Real things happen here — out in the world.
+836	And only the verified version crosses over.
+837	The authority's reputation makes the digital record trustworthy.
+838	* The system does not try to solve the oracle problem — it accepts that authorities are the bridge, and aligns with how trust already works in the real world.
+839	* If the bridge is wrong about reality, the authority pays — with their reputation.
+840	DID records
+841	THE ISSUER — WHO WRITES THE CLAIM
+842	AUTHOR · SIGNER · STAKES THEIR OWN REPUTATION
+843	MY CLAIM
+844	I saw this happen. I am willing to stand behind it.
+845	signed with my DID
+846	TO: AN AUTHORITY OF MY CHOICE
+847	NEXT STEP
+848	ask an authority to assess the evidence and sign the claim
+849	MY REPUTATION
+850	If this is false, my needle drops.
+851	WHAT THE ISSUER DOES
+852	1. Writes the claim in their own words
+853	2. Gathers real-world evidence to back it up
+854	3. Signs with their own DID and ships to their chosen authority
+855	4. Pays the publication cost
+856	5. Lives with the consequences if they lie
+857	My name goes on this. I had better be sure — and bring proof.
+858	Anyone can speak. Lies cost the speaker.
+859	The issuer is the author. Their name is on it.
+860	* Anyone with a DID can be an issuer. The bar is courage and accountability, not a license.
+861	i am willing to stand behind it
+862	signature
+863	witness statement
+864	AUDIO CASSETTE
+865	THE GUIDE — HELPS YOU NAVIGATE BY YOUR VALUES
+866	DEEP ANALYSIS BEHIND · SIMPLE GUIDANCE IN FRONT
+867	GUIDE
+868	MY ANALYSIS
+869	Working notes — not for clients
+870	FOR YOU — WHAT IT MEANS
+871	Aggregated to maximize your benefit
+872	— shift spending here, save there
+873	— support providers who pass my tests
+874	— adopt this policy template
+875	for example: who can be a guide
+876	— a political party or movement publishing a policy template
+877	— an independent audit firm publishing aggregated findings
+878	— a service-comparator agency
+879	— a reputation aggregator (economic · business · neighbourhood · road safety)
+880	— a journalist-reviewer or consumer review service
+881	I do the complex work. You get the simple recommendation — only if you share my values.
+882	And what exactly do I get for my money — which analyses and which overviews?
+883	She aggregates the complex world into recommendations. Followers vote with their attention — leave any time, switch to another.
+884	FOLLOWER OF THIS GUIDE — RENEWABLE YEARLY
+885	Bound by what they publicly stand for. Your trust is their currency.
+886	* You can leave any time and switch to a different guide. Your trust is not locked in.
+887	* The guide may also sign some claims of their own — published, but not the main story here.
+888	public spending - redirected
+889	providers
+890	THE VERIFIER — JUDGES THE CLAIM AGAINST PUBLISHED POLICY
+891	FOUR GATES, IN ORDER. CHEAP FILTERS FIRST.
+892	VERIFICATION GATES — IN ORDER
+893	1. POLICY GATING
+894	Do I verify this kind of claim at all?
+895	2. AUTHORITY TRUST
+896	Is the authority above my threshold?
+897	3. ISSUER REPUTATION
+898	Does the issuer meet my reputation bar?
+899	4. CONTENT CHECK
+900	Signatures, consistency, deviation from policy
+901	Cheap filters first. Expensive content check last.
+902	POLICY:
+903	— GATE 1: I VERIFY TYPE X
+904	— GATE 2: AUTHORITY ≥ T₁
+905	— GATE 3: ISSUER REP ≥ T₂
+906	— GATE 4: CONTENT MATCHES Y
+907	CHOSEN BY THE HASH
+908	FEE ∝ RISK
+909	more risk → bigger fee
+910	VERIFIER REPUTATION
+911	DEVIATE FROM POLICY → REPUTATION FALLS → NO FUTURE PICKS
+912	CANNOT BE: issuer, authority, observer, or subject.
+913	WHAT THE VERIFIER DOES
+914	1. Filters by his published policy gates (in order)
+915	2. Checks authority trust, then issuer reputation
+916	3. Evaluates the claim's content only if the gates pass
+917	4. Charges a fee proportional to the risk
+918	5. Stakes his own reputation on every decision
+919	He doesn't get to be creative. He must do what his policy says.
+920	His own rules. Public. He cannot quietly change them.
+921	The verifier is bound by the rules he himself published — and by the reputation he stands to lose.
+922	THE SUBJECT — THE ONE THE CLAIM IS ABOUT
+923	RECEIVES IT · CAN'T SILENCE IT · CAN ANSWER IT
+924	FOR YOU
+925	NEW CLAIM ABOUT YOU
+926	CLAIM SUMMARY
+927	Fraud — contract breached. Reputation: −15.
+928	TRUSTED
+929	DOUBTED
+930	automatically updated
+931	RESPOND HERE
+932	WHAT THE SUBJECT CAN DO
+933	1. Receives a notification when a claim concerns them
+934	2. Cannot silence the claim — there is no veto
+935	3. Can publish a counter-claim of their own
+936	4. Their reputation updates automatically
+937	5. Their answer joins the public record
+938	I can't stop this — but I can answer it.
+939	No one is silenced. No one is shielded. The record holds both sides.
+940	The subject has no veto — only the right to answer.
+941	* A counter-claim is itself a claim — the subject's reputation is on the line for what they say in reply.
+942	THE OBSERVER — A PROXY THAT RELAYS THE CLAIM AND WATCHES THE ROUND-TRIP
+943	THE VERIFIER TALKS TO HER. THE VERIFIER NEVER LEARNS WHO SHE IS — OR IF ANYONE IS WATCHING AT ALL.
+944	OUTBOUND — CLAIM →
+945	← RETURN — RESPONSE
+946	SIGNED — TIMESTAMPED RECORD
+947	OBSERVER REPUTATION
+948	MY REPUTATION SAYS THE CLAIM WENT THROUGH.
+949	WATCHES THE ROUND-TRIP.
+950	An authority may play this role directly.
+951	is there a real observer behind this code — or is it just noise?
+952	SEES THE CODE — DOESN'T SEE WHO.
+953	WHAT THE OBSERVER DOES
+954	1. Receives the claim from the issuer
+955	2. Stamps it with her own seal; the stamp is the timestamped record
+956	3. Forwards it to the verifier on behalf of the issuer
+957	4. Watches whether the response comes back, and what it says
+958	5. Publishes her signature only if the verifier misbehaves — her reputation is the guarantee
+959	She doesn't decide the claim. She decides whether the verifier can pretend it never arrived.
+960	waiting
+961	FALSE RECORD = REPUTATION LOSS.
+962	* Symmetrically, the verifier may route the response through their own observer — same trick, opposite direction.
+963	* There can be zero to N observers behind any request. The verifier sees only opaque codes and never knows whether a real observer is watching or whether it is just noise. That uncertainty is the incentive to behave.
+964	footnotes
+965	Observer DID - verified but anonymous to the verifier
+966	Anonymous to the public, accountable to the network. The verifier sees the code, never the observer.
+967	0x9F4A...
+968	THE DELEGATE — A CLAIM-SERVICE YOU SUBSCRIBE TO
+969	DELEGATE WHAT YOU CAN'T HANDLE YOURSELF · KEEP WHAT MATTERS TO YOU
+970	DELEGATE
+971	MY YEARLY PUBLISHING RIGHTS
+972	(granted by the community)
+973	RIGHT 1
+974	RIGHT 2
+975	RIGHT 3
+976	RIGHT 4
+977	RIGHT 5
+978	KEEP — for what matters most to me
+979	DELEGATE — within their scope
+980	REVOCABLE AT ANY TIME
+981	DELEGATE'S REPUTATION
+982	WHAT THE DELEGATE DOES
+983	1. Receives a portion of your yearly publishing rights
+984	2. Activates claims for you when events fall within an agreed scope
+985	3. Spares you from publishing every minor 'what if'
+986	4. Stakes their own reputation on each claim they sign
+987	5. Returns the rights to you the moment you revoke
+988	I'll keep two for the things only I can speak to. The rest — handle them for me.
+989	Within scope, on your behalf, with my own reputation alongside yours.
+990	Like insurance for your reputational rights.
+991	Outsource what you can't handle yourself. Stay in the loop. Pull the rights back any time.
+992	* If the delegate acts outside the agreed scope, both their reputation and yours are publicly affected.
+993	DELEGATION POLICY
+994	I will publish claims on your behalf if events fall within the scope below.
+995	SCOPE: fraud · contract disputes · neighbourhood matters
+996	THE BLUFF THAT KEEPS THE VERIFIER HONEST
+997	A REAL OBSERVER AND A RANDOM BLUFF LOOK IDENTICAL FROM THE VERIFIER'S DESK
+998	REAL OBSERVER
+999	CHALLENGE CODE — HASH OF TIMESTAMPED RECORD
+1000	SIGNED CHALLENGE
+1001	someone is keeping a record of what i do here? i don't know — so i behave.
+1002	the verifier cannot tell a real record from a bluff. honest behaviour is the only safe bet.
+1003	who can tell the difference?
+1004	cost of honesty pressure: near zero — random numbers are free.
+1005	cost of getting caught silencing a claim: catastrophic — reputation destroyed.
+1006	UNCERTAINTY IS CHEAPER THAN SURVEILLANCE.
+1007	ISSUER — BLUFFING
+1008	ISSUER — KAMILA
+1009	NO OBSERVER
+1010	RANDOM NUMBER
+1011	LOOKS THE SAME. COST: ZERO.
+1012	VERIFIER — SAME BEHAVIOUR
+1013	the verifier can't tell them apart.
+1014	HOW ETHICS EMERGE FROM INDIVIDUAL POLICIES
+1015	FROM POLICIES TO NORMS
+1016	INDIVIDUAL POLICIES — what each person stands for
+1017	BILATERAL INTERACTIONS — where policies meet
+1018	EMERGENT NORMS — what most agreed on, not what anyone wrote
+1019	Zero tolerance for violent crime
+1020	No kidnapping, ever
+1021	I don't trade with proven fraudsters
+1022	No bribery
+1023	I honour contracts
+1024	I resolve disputes within 30 days
+1025	Protect intellectual property
+1026	Fair wages for all
+1027	NO VIOLENT CRIME — 99% agree
+1028	NO FRAUD — 78% agree
+1029	HONOUR CONTRACTS — 60% agree
+1030	FAIR WAGES — 25% agree
+1031	TRADITIONAL SOCIAL CONTRACT
+1032	NOBODY SIGNED THIS
+1033	for comparison —
+1034	the emergent norms above are empirically observable
+1035	Nobody wrote these rules. They emerged from how we actually treat each other.
+1036	Ethics are not designed. They emerge from how we actually treat each other.
+1037	* Each individual policy is a reflection of that person's morality — shaped by pressure to adapt to their community and environment.
+1038	the closer to direct ham, the stronger agreement
+1039	POLICIES MEET. ATTITUDES FORM.
+1040	DECLARED RULES SET TODAY'S PRICE — DISCOUNT FOR ALIGNMENT, MALUS FOR DIVERGENCE
+1041	WHEN POLICIES ALIGN
+1042	WHEN POLICIES DIVERGE
+1043	MY RULES
+1044	OVERLAP — 85%
+1045	OVERLAP — 30%
+1046	+10% LOYALTY DISCOUNT
+1047	−25% RADICAL MALUS
+1048	We see things the same way. Let's trade.
+1049	We can still trade — but the price reflects the gap.
+1050	Same goods, two prices. Declarations — not reputation — decide it.
+1051	When two policies meet in trade, their alignment becomes the price modifier.
+1052	* This is not about reputation. It is about what each person publicly declared — and is now expected to keep.
+1053	- no trade with proven fraudsters.
+1054	- disputes resolved in 30 days.
+1055	- late payment: one tolerated, no second.
+1056	- late paymewnt: only with proof of cause
+1057	- no bribery
+1058	- fair wages for all.
+1059	- no deal without arbitration clause.
+1060	- bribery accepted as `gift culture`
+1061	- wages set by tradition.
+1062	-disputes settled within the family.
+1063	ONE TRAP. ONE WAY OUT.
+1064	THE INSIDER ALWAYS WINS THE CONTRACT — UNTIL THE NETWORK LETS PEOPLE BUY DIRECTLY, NO PERMISSION NEEDED.
+1065	MODERN GOVERNMENT
+1066	IT FOR EVERYONE
+1067	Invest in the future!
+1068	you have no required certificate. you do not fit the rules.
+1069	tools are just a means. the money is what matters — that battle I have already won.
+1070	build it for one tenth of the price. take it or leave it.
+1071	what?! my own work — at a tenth of the price?!
+1072	The public agrees a new public IT system is needed, paid from the budget, paid from taxes.
+1073	Behind closed doors, the procurement clerk and the insider design the tender to fit one company. An envelope changes hands.
+1074	The clerk shrugs. His pocket bulges with bribes.
+1075	The contract is awarded. The insider has the licence — but no skill, and no respect for the work.
+1076	The insider visits the neighbor. The 'kind offer' is the smallest crumb.
+1077	1. TRADITIONAL
+1078	the complaint
+1079	silence
+1080	the closed door
+1081	at the lawyer
+1082	we will look into it, please leave it with us.
+1083	DEADLINES PASSED
+1084	office hours over
+1085	principles are admirable. justice you will not get — and it will cost you a fortune.
+1086	the office WILL BE certainly fined — paid from the public budget
+1087	the fine funds the next rigged tender
+1088	corruption keeps its job, and gets a raise
+1089	Complaint, silence, deadlines, lawyer.
+1090	The trap is built into the rules themselves.
+1091	Where regulation is a moat network is a bridge.
+1092	— this is where the new world begins —
+1093	2. REPUTATION NETWORK
+1094	delivery first
+1095	publishing my app
+1096	demand finds it
+1097	TOMÁŠ'S APP
+1098	tap here to support the maker
+1099	they're using it!
+1100	a decent living
+1101	DIRECT SERVICE — NO PERMISSION NEEDED
+1102	MAKER TIPS
+1103	He delivers first. People find the app and use it.
+1104	Each grateful user pays a little. A decent living. No central authority to bribe.
+1105	Reputation is the new Delivery is the proof.
+1106	Two paths. The trap is in the rules. The way out is to bypass the rules altogether.
+1107	* When the rules are written by the insider, complaining inside the rules is the trap — even the fines feed back into the next rigged tender. The reputation network is the way out: citizens find the product, pay the maker directly, and the community confers the only licence that matters — trust earned by delivery.
+1108	PUNISHMENT WITHOUT A CENTRAL AUTHORITY
+1109	I DECIDE FOR ALL.
+1110	I REFUSE TRADE WITH PROVEN FRAUDSTERS
+1111	BREACH OF CONTRACT = NO RECOGNITION
+1112	PROPORTIONAL RESPONSE TO PROPORTIONAL HARM
+1113	TAKE A NUMBER.
+1114	NOW SERVING
+1115	#12
+1116	EST. WAIT 4 YEARS
+1117	SHOP
+1118	PAID BY THE COMMUNITY
+1119	one decides for all — the victim waits — the perpetrator knows it.
+1120	TOO HARSH
+1121	TOO LENIENT
+1122	PROPORTIONAL — THE CHEAPEST POSITION
+1123	the community declares policy — the perpetrator faces it from all sides — the authority enforces what was agreed.
+1124	Atonement is cheaper than punishment.
+1125	Punishment is cheaper than ignorance.
+1126	FOLLOW THE MONEY — THE STORY SO FAR
+1127	WHAT WE HAVE
+1128	THE QUESTION NOW
+1129	TAXPAYER MONEY
+1130	WHY SQUEEZE? — 10 RED FLAGS
+1131	UNAUDITED CONTRACTS
+1132	MISSING RECEIPTS
+1133	IGNORED COMPLAINTS
+1134	CRONY APPOINTMENTS
+1135	INFLATED INVOICES
+1136	SILENT VERIFIERS
+1137	…AND FOUR MORE.
+1138	when in doubt — squeeze the flow.
+1139	the five blocks together make the network.
+1140	JUSTICE
+1141	the foundation is built.
+1142	FOLLOW THE MONEY
+1143	OPEN
+1144	SQUEEZE
+1145	SHUT
+1146	HONESTY
+1147	OBSERVER TRICK
+1148	this is UNDEMOCRATIC!
+1149	but it has always worked this way.
+1150	you're not even elected.
+1151	VERIFICATION
+1152	THE TOOL
+1153	PREREQUISITES
+1154	FEEDING TROUGH — STATE BUDGET
+1155	We have the network. We know how it works. Now: when in doubt, squeeze the hopper.
+1156	the state's power rests on money. follow it.
+1157	A DECENTRALIZED REPUTATION NETWORK — UNCORRUPTIBLE, UNCENSORABLE
+1158	WHO INVESTIGATES, WHO ENFORCES?
+1159	“the harm”
+1160	“the investigator”
+1161	“the record”
+1162	“the enforcer”
+1163	“accountability”
+1164	my contractor defrauded me.
+1165	LICENSED INVESTIGATOR
+1166	96%
+1167	ENFORCEMENT SERVICES
+1168	91%
+1169	if the enforcer fails or overreaches — clients switch.
+1170	INVESTIGATION REPORT
+1171	WITNESS STATEMENT
+1172	PAID LIKE INSURANCE — MONTHLY PREMIUM
+1173	COMMUNITY POLICY
+1174	this looks like today's world. it is — only the motives are honest now. no revolution. just better incentives.
+1175	“professional evidence collection — reputation is their business model.”
+1176	“the record enters the network — the perpetrator's reputation drops.”
+1177	“acts on pre-agreed rules — like insurance.”
+1178	“the enforcer's reputation is his livelihood — fail and lose clients.”
+1179	DELEGATION IS REVOCABLE. Any DID activity can be delegated to another DID — and taken back at any time.
+1180	you don't enforce punishment yourself. you delegate. and the delegate answers to you.
+1181	HOW EVIDENCE ACCUMULATES
+1182	“one isolated claim”
+1183	“a pattern”
+1184	“overwhelming weight”
+1185	one claim alone — too thin to act on. neither side condemned.
+1186	five independent sources — a pattern emerges.
+1187	twenty independent sources — overwhelming weight.
+1188	“the noise trick”
+1189	“the grudge”
+1190	no evidence.
+1191	we see nothing.
+1192	what's his deal?
+1193	he is the problem.
+1194	SLANDER
+1195	broadcasting the same claim with no evidence — when the community sees nothing, it is slander, and it costs the accuser.
+1196	one accuser pointing at everyone — the pattern is the accuser, not the accused.
+1197	Independence is everything. One voice repeated is noise. Many voices from different places are a signal.
+1198	AFTER THE HARM — WHAT WILL YOU DO?
+1199	turned away. forced. voluntary. three ways the village answers.
+1200	what happened
+1201	the work is not done — come back and finish it!
+1202	not my problem.
+1203	“I try to ignore it — turned away everywhere”
+1204	go elsewhere.
+1205	no remedy — every shop turns him away — exile from economic life
+1206	the rational choice is always the cheapest: FIX IT YOURSELF.
+1207	“I make it right — but only under the crowd's stare”
+1208	SURCHARGE — for the next year you pay double when you buy from us.
+1209	SURCHARGE
+1210	so you remember.
+1211	now what?
+1212	what now?
+1213	forced remedy under the crowd's stare — repaid, but the village marks his price up — the lesson must stick.
+1214	“I come on my own — and admit it to all”
+1215	I have made it right.”
+1216	good — but we'll keep an eye on you.
+1217	this looks like today's world. it is — only the costs are now visible to everyone. no revolution. just better incentives.
+1218	voluntary, early remedy — accepted publicly — reputation recovers, with caution
+1219	FOLLOW THE MONEY — THE STATE'S WEAK POINT
+1220	STATE
+1221	someone is secretly stealing your time.
+1222	Not worth it.
+1223	Too expensive.
+1224	4 years? Forget it.
+1225	INFLATION
+1226	the alternative is forming
+1227	FEEDING TROUGH
+1228	this looks like today's world. it is — only the troughs are now visible from outside. no revolution, just better incentives.
+1229	Why reform from within when we can dry up the troughs?
+1230	this is the diagnosis. the leverage point is the supply line — the answer follows.
+1231	ESR — ELECTRONIC SPENDING REPORTING
+1232	every state expenditure recorded — every record public — every detail open to scrutiny.
+1233	who submits
+1234	any record can be submitted by: – the official who processed the payment – the recipient who got paid
+1235	open to anyone who wants to look.
+1236	PUBLIC LEDGER OF STATE EXPENDITURE — open record
+1237	category: legal advisory
+contractor: law firm XYZ s.r.o.
+amount: 14M EUR
+committed: 2026-01-14    paid: 2026-01-19
+1238	PAID
+1239	context: external opinion on the new procurement reform bill — three drafts produced, one workshop with ministry, no public hearing held — final draft delivered after legislative deadline.
+1240	category: road design consulting
+contractor: Consultancy T
+amount: 9M EUR
+committed: 2026-02-03    paid: —
+1241	PENDING
+1242	context: feasibility study for the D-X motorway extension — same firm wrote three previous studies on this route — outcome: recommendation to proceed at +18% over earlier estimate.
+1243	category: licence plate issuance
+recipient: regional office Z
+amount: 45 EUR per plate
+committed: 2026-02-19    paid: 2026-02-19
+1244	context: standard administrative fee per issued plate — fee covers materials and processing — total volume 12 400 plates this quarter.
+1245	category: hospital equipment
+contractor: MedSupply a.s.
+amount: 8.2M EUR
+committed: 2026-03-08    paid: —
+1246	OVERDUE
+1247	context: MRI scanner installation at regional hospital — public tender, three bidders — chosen bid 2% below median, delivery within 60 days — invoice 90 days past due.
+1248	spam filter — refundable deposit
+1249	deposit returned when the record proves accurate.
+1250	parties transform into analysis providers
+1251	the descriptions are the raw material — parties earn their keep by reading them carefully, the cross-references and produces all printed bulletin.
+1252	this looks like today's world. it is — only the books are now open to all. no revolution. just better incentives.
+1253	Every crown of public money — recorded, public, scrutinisable.
+1254	the value is not in catching cheats — it is in opening the books.
+1255	CITIZEN TAX ALLOCATION — YOU DECIDE WHERE YOUR TAXES GO
+1256	study the ESR records. then move the sliders.
+1257	ESR ANALYSIS REPORT
+1258	by: a trusted analyst — chosen by you
+1259	rep 4.7/5
+1260	ministry of defense: – 7 contracts in 2 years to one supplier – no public hearings on procurement reform – 90-day payment lag on 60% of invoices
+1261	RECOMMEND CUT.
+1262	the allocable share grows
+1263	5%
+1264	15%
+1265	40%
+1266	YEAR 1
+1267	YEAR 5
+1268	YEAR 10
+1269	EDUCATION
+1270	30%
+1271	HEALTHCARE
+1272	25%
+1273	DEFENSE
+1274	10%
+1275	personnel
+1276	equipment
+1277	3%
+1278	R&D
+1279	2%
+1280	click any row to drill in — allocate at any depth.
+1281	after reading the report — defense down.
+1282	INFRASTRUCTURE
+1283	20%
+1284	SOCIAL SERVICES
+1285	or delegate this
+1286	don't want to allocate yourself? delegate to: – your party's analyst – a trusted neighbour – anyone you choose — and revoke any time.
+1287	this looks like today's world. it is — only the slider is now in your hand. no revolution. just better incentives.
+1288	From 5% today to 40% in a decade. You decide.
+1289	the records are open. the analysis is yours. so is the slider.
+1290	NEGOTIATION PLATFORM — THE CLOSED HOPPER
+1291	the citizens hold the key. the state opens when conditions are met.
+1292	the queue grows.
+1293	0%
+1294	critical mass — 10% of GDP
+1295	every tablet is a vote on the lock.
+1296	opens when — the state accepts ESR matching for this department.
+1297	demanding funding!
+1298	demand funding!
+1299	a small fraction of GDP is enough — at critical mass, withholding becomes a real threat.
+1300	Ministry of Defense
+1301	Ministry of Interior
+1302	Ministry of Health
+1303	after critical mass —
+1304	the state opens its books for simple, defensible payments first.
+1305	corruption-linked categories stay locked the longest.
+1306	each unlock takes more pressure — and is itself recorded.
+1307	this looks like today's world. it is — only the key is now in many hands. no revolution. just better incentives.
+1308	Money flows when there is transparency. The citizens hold the key.
+1309	no force. no revolution. just enough tablets to make withholding credible.
+1310	ECONOMIC WEIGHT — % of GDP
+1311	FOUR TOOLS OF EVOLUTIONARY TRANSITION
+1312	the system rebuilt from inside — without breaking it.
+1313	SIMPLE TAX
+1314	CITIZEN TAX ALLOCATION
+1315	NEGOTIATION PLATFORM
+1316	FLAT % RATE
+1317	PLAN
+1318	REALITY
+1319	LEDGER
+1320	5% → 15% → 40%
+1321	YEAR 1 → YEAR 5 → YEAR 10
+1322	10% of GDP — critical mass
+1323	one rate. no breaks. cross-checkable.
+1324	every expenditure recorded — every record public — every detail open.
+1325	study the records — then move the sliders.
+1326	money flows only when transparency conditions are met.
+1327	today
+1328	evolution under way
+1329	in a decade
+1330	95%
+1331	expanding
+1332	this looks like today's it is — only the tools are now in citizen. no revolution. just better incentives.
+1333	Evolution, not revolution.
+1334	four tools that change the system from inside.
+1335	CITIZENSHIP WITHOUT AN ID CARD
+1336	from a state permit to community recognition.
+1337	“the old way” of institutional state-issued ID model
+1338	“the new way” of DID with claim cards model
+1339	the state decides who you are.
+1340	approval.
+1341	CLAIM CARDS
+1342	CITIZEN — Czech
+1343	verified by: municipal notary
+1344	rep 94%
+1345	RESIDENT — Prague 6
+1346	verified by: local community assembly
+1347	rep 91%
+1348	CITIZEN ID CARD
+1349	Name JAN NOVÁK
+1350	Birth number 11234 7878
+1351	GRADUATE — MSc Engineering
+1352	verified by: university alumni network
+1353	rep 88%
+1354	PROPERTY — apartment owner
+1355	verified by: community property registry
+1356	rep 95%
+1357	REVOCABLE.
+1358	EMPLOYER — senior developer at FirmX
+1359	verified by: employer DID
+1360	rep 87%
+1361	identity = state permission — revocable — community has no say.
+1362	no single authority controls all claims — each is independent — each verifier stakes their reputation.
+1363	“who belongs?”
+1364	APPROVED
+1365	the politician decides — community has no voice.
+1366	the community decides — through reputation signals — distributed, no single voice.
+1367	this looks like today's world. It is — only the verifiers are now many. no revolution. just better incentives.
+1368	Your citizenship is not a government permit. It is your community's recognition.
+1369	the state stamp is replaced by a chain of independent verifiers — each with skin in the game.
+1370	LEFT SHORE — ‘THE OLD SYSTEM’
+1371	GDP
+1372	NATIONAL DEBT
+1373	RIGHT SHORE — ‘THE NEW SYSTEM’
+1374	POST 3 — YEAR 5
+1375	YEAR  YEAR  YEAR  10%
+1376	YEAR  YEAR  YEAR  10+
+1377	50 %
+1378	POST 2 — YEAR 2
+1379	80 %
+1380	20 %
+1381	POST 4 — YEAR 8
+1382	25 %
+1383	75 %
+1384	POST 1 — YEAR 0
+1385	95 %
+1386	5 %
+1387	POST 5 — YEAR 10+
+1388	CRITICAL MASS — STATE ACCEPTS ESR UNDER ECONOMIC PRESSURE.
+1389	REVERSE
+1390	Launch. Early adopters. Waiting list forms.
+1391	Growing. Participant list swells.
+1392	Design error? We can go back. Reversibility preserved.
+1393	75% new system — State is a subset. Overlap preserved.
+1394	Old system = small subset of the new. Reversibility intact.
+1395	OLD SYSTEM
+1396	> Gradual transition. Reversibility in case of error. A direction that cannot be stopped.
+1397	PERSONIX
+1398	mirrors of the reputation network reveal even the polished misery within.
+1399	An Uncensorable and Incorruptible Decentralized Reputation Network
+1400	an evolutionary successor to the state
+1401	TAKE BACK YOUR TIME
+1402	the citizens chase the parasites out of public life.
+1403	the network's armoury
+1404	Defend the time they would steal.
+1405	what was taken by deceit is taken back by hand.

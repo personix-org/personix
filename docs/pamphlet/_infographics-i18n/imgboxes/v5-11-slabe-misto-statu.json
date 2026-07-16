@@ -1,0 +1,182 @@
+[
+ {
+  "text": "FOLLOW THE MONEY — THE STATE'S WEAK POINT",
+  "role": "title",
+  "bbox": [
+   64,
+   43,
+   2459,
+   150
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STATE",
+  "role": "label",
+  "bbox": [
+   808,
+   270,
+   1109,
+   346
+  ],
+  "angle": -4.6,
+  "joined": false
+ },
+ {
+  "text": "someone is secretly stealing your time.",
+  "role": "caption",
+  "bbox": [
+   1544,
+   201,
+   1990,
+   328
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Not worth it.",
+  "role": "caption",
+  "bbox": [
+   79,
+   784,
+   196,
+   841
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Too expensive.",
+  "role": "caption",
+  "bbox": [
+   229,
+   788,
+   356,
+   855
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "4 years? Forget it.",
+  "role": "caption",
+  "bbox": [
+   390,
+   798,
+   509,
+   862
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "INFLATION",
+  "role": "label",
+  "bbox": [
+   1699,
+   710,
+   1840,
+   761
+  ],
+  "angle": 6.1,
+  "joined": false
+ },
+ {
+  "text": "the alternative is forming",
+  "role": "label",
+  "bbox": [
+   2029,
+   772,
+   2239,
+   848
+  ],
+  "angle": -5.6,
+  "joined": false
+ },
+ {
+  "text": "MONEY",
+  "role": "label",
+  "bbox": [
+   1290,
+   1011,
+   1443,
+   1077
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "JUSTICE",
+  "role": "label",
+  "bbox": [
+   420,
+   1250,
+   616,
+   1324
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STATE BUDGET",
+  "role": "label",
+  "bbox": [
+   917,
+   1335,
+   1405,
+   1405
+  ],
+  "angle": 5.4,
+  "joined": false
+ },
+ {
+  "text": "FEEDING TROUGH",
+  "role": "label",
+  "bbox": [
+   1014,
+   1415,
+   1296,
+   1479
+  ],
+  "angle": 7.4,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's world. it is — only the troughs are now visible from outside. no revolution, just better incentives.",
+  "role": "caption",
+  "bbox": [
+   2189,
+   1452,
+   2482,
+   1657
+  ],
+  "angle": -7.4,
+  "joined": false
+ },
+ {
+  "text": "Why reform from within when we can dry up the troughs?",
+  "role": "tagline",
+  "bbox": [
+   67,
+   1514,
+   2174,
+   1614
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this is the diagnosis. the leverage point is the supply line — the answer follows.",
+  "role": "tagline",
+  "bbox": [
+   64,
+   1611,
+   2139,
+   1674
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

@@ -1,0 +1,470 @@
+[
+ {
+  "text": "CITIZEN TAX ALLOCATION — YOU DECIDE WHERE YOUR TAXES GO",
+  "role": "title",
+  "bbox": [
+   58,
+   33,
+   2463,
+   129
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "study the ESR records. then move the sliders.",
+  "role": "caption",
+  "bbox": [
+   645,
+   144,
+   1923,
+   237
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ESR ANALYSIS REPORT",
+  "role": "label",
+  "bbox": [
+   122,
+   318,
+   626,
+   385
+  ],
+  "angle": -5.4,
+  "joined": false
+ },
+ {
+  "text": "by: a trusted analyst — chosen by you",
+  "role": "caption",
+  "bbox": [
+   134,
+   394,
+   637,
+   447
+  ],
+  "angle": -7.4,
+  "joined": false
+ },
+ {
+  "text": "rep 4.7/5",
+  "role": "label",
+  "bbox": [
+   724,
+   445,
+   810,
+   533
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "ministry of defense: – 7 contracts in 2 years to one supplier – no public hearings on procurement reform – 90-day payment lag on 60% of invoices",
+  "role": "body",
+  "bbox": [
+   153,
+   454,
+   579,
+   738
+  ],
+  "angle": -6.2,
+  "joined": false
+ },
+ {
+  "text": "RECOMMEND CUT.",
+  "role": "label",
+  "bbox": [
+   273,
+   728,
+   597,
+   790
+  ],
+  "angle": -13.2,
+  "joined": false
+ },
+ {
+  "text": "the allocable share grows",
+  "role": "label",
+  "bbox": [
+   1983,
+   284,
+   2451,
+   337
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5%",
+  "role": "label",
+  "bbox": [
+   2012,
+   495,
+   2071,
+   543
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "15%",
+  "role": "label",
+  "bbox": [
+   2153,
+   457,
+   2237,
+   504
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "40%",
+  "role": "label",
+  "bbox": [
+   2341,
+   354,
+   2420,
+   397
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YEAR 1",
+  "role": "label",
+  "bbox": [
+   1986,
+   592,
+   2095,
+   640
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YEAR 5",
+  "role": "label",
+  "bbox": [
+   2148,
+   595,
+   2265,
+   638
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "YEAR 10",
+  "role": "label",
+  "bbox": [
+   2303,
+   588,
+   2444,
+   640
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EDUCATION",
+  "role": "label",
+  "bbox": [
+   1011,
+   371,
+   1338,
+   445
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "30%",
+  "role": "label",
+  "bbox": [
+   1761,
+   371,
+   1875,
+   432
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "HEALTHCARE",
+  "role": "label",
+  "bbox": [
+   1015,
+   499,
+   1352,
+   571
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "25%",
+  "role": "label",
+  "bbox": [
+   1763,
+   499,
+   1876,
+   569
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DEFENSE",
+  "role": "label",
+  "bbox": [
+   1020,
+   635,
+   1261,
+   710
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "10%",
+  "role": "label",
+  "bbox": [
+   1341,
+   690,
+   1433,
+   734
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "10%",
+  "role": "label",
+  "bbox": [
+   1761,
+   629,
+   1880,
+   700
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5%",
+  "role": "label",
+  "bbox": [
+   1513,
+   696,
+   1579,
+   741
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "5%",
+  "role": "label",
+  "bbox": [
+   1790,
+   750,
+   1876,
+   825
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "personnel",
+  "role": "label",
+  "bbox": [
+   1121,
+   760,
+   1386,
+   825
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "equipment",
+  "role": "label",
+  "bbox": [
+   1123,
+   887,
+   1408,
+   949
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "3%",
+  "role": "label",
+  "bbox": [
+   1792,
+   887,
+   1873,
+   960
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "R&D",
+  "role": "label",
+  "bbox": [
+   1121,
+   1015,
+   1273,
+   1078
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "2%",
+  "role": "label",
+  "bbox": [
+   1783,
+   1008,
+   1876,
+   1080
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "click any row to drill in — allocate at any depth.",
+  "role": "caption",
+  "bbox": [
+   1928,
+   752,
+   2145,
+   936
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "after reading the report — defense down.",
+  "role": "caption",
+  "bbox": [
+   746,
+   1032,
+   879,
+   1273
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "INFRASTRUCTURE",
+  "role": "label",
+  "bbox": [
+   982,
+   1144,
+   1448,
+   1224
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "20%",
+  "role": "label",
+  "bbox": [
+   1763,
+   1147,
+   1873,
+   1221
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SOCIAL SERVICES",
+  "role": "label",
+  "bbox": [
+   999,
+   1281,
+   1434,
+   1359
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "15%",
+  "role": "label",
+  "bbox": [
+   1758,
+   1283,
+   1873,
+   1364
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "or delegate this",
+  "role": "label",
+  "bbox": [
+   72,
+   1378,
+   382,
+   1427
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "don't want to allocate yourself? delegate to: – your party's analyst – a trusted neighbour – anyone you choose — and revoke any time.",
+  "role": "body",
+  "bbox": [
+   69,
+   1440,
+   449,
+   1695
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "this looks like today's world. it is — only the slider is now in your hand. no revolution. just better incentives.",
+  "role": "label",
+  "bbox": [
+   2184,
+   1409,
+   2472,
+   1655
+  ],
+  "angle": 6.5,
+  "joined": false
+ },
+ {
+  "text": "From 5% today to 40% in a decade. You decide.",
+  "role": "tagline",
+  "bbox": [
+   494,
+   1483,
+   2155,
+   1581
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the records are open. the analysis is yours. so is the slider.",
+  "role": "tagline",
+  "bbox": [
+   550,
+   1583,
+   2084,
+   1662
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

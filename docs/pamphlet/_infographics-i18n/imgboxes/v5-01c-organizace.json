@@ -1,0 +1,98 @@
+[
+ {
+  "text": "PREREQUISITE 2 OF 5: ORGANIZATION",
+  "role": "title",
+  "bbox": [
+   321,
+   8,
+   2183,
+   158
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "EXEMPLARY PUNISHMENT.",
+  "role": "caption",
+  "bbox": [
+   878,
+   254,
+   1187,
+   392
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "GUILTY",
+  "role": "label",
+  "bbox": [
+   497,
+   1019,
+   595,
+   1067
+  ],
+  "angle": -22.3,
+  "joined": false
+ },
+ {
+  "text": "Alone, you are easy prey.",
+  "role": "caption",
+  "bbox": [
+   741,
+   1456,
+   1223,
+   1526
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Together, you are untouchable.",
+  "role": "caption",
+  "bbox": [
+   1312,
+   1463,
+   1887,
+   1526
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Not one of us stands alone.",
+  "role": "caption",
+  "bbox": [
+   2108,
+   218,
+   2388,
+   334
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The baton swings at one. It hesitates in the middle of many.",
+  "role": "caption",
+  "bbox": [
+   1790,
+   1255,
+   2121,
+   1442
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "An individual cannot break the system. A community can.",
+  "role": "tagline",
+  "bbox": [
+   38,
+   1543,
+   2480,
+   1680
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

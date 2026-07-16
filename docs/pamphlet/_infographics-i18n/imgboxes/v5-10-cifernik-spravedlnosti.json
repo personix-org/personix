@@ -1,0 +1,554 @@
+[
+ {
+  "text": "ONE TRAP. ONE WAY OUT.",
+  "role": "title",
+  "bbox": [
+   57,
+   40,
+   1290,
+   139
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE INSIDER ALWAYS WINS THE CONTRACT — UNTIL THE NETWORK LETS PEOPLE BUY DIRECTLY, NO PERMISSION NEEDED.",
+  "role": "caption",
+  "bbox": [
+   65,
+   150,
+   2470,
+   205
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MODERN GOVERNMENT",
+  "role": "label",
+  "bbox": [
+   86,
+   242,
+   212,
+   301
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "IT FOR EVERYONE",
+  "role": "label",
+  "bbox": [
+   93,
+   356,
+   203,
+   404
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Invest in the future!",
+  "role": "caption",
+  "bbox": [
+   330,
+   244,
+   555,
+   280
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "you have no required certificate. you do not fit the rules.",
+  "role": "caption",
+  "bbox": [
+   1261,
+   232,
+   1503,
+   323
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "tools are just a means. the money is what matters — that battle I have already won.",
+  "role": "caption",
+  "bbox": [
+   1634,
+   232,
+   1969,
+   334
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "build it for one tenth of the price. take it or leave it.",
+  "role": "caption",
+  "bbox": [
+   2034,
+   236,
+   2232,
+   323
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "what?! my own work — at a tenth of the price?!",
+  "role": "caption",
+  "bbox": [
+   2260,
+   239,
+   2457,
+   327
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The public agrees a new public IT system is needed, paid from the budget, paid from taxes.",
+  "role": "body",
+  "bbox": [
+   101,
+   602,
+   638,
+   676
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Behind closed doors, the procurement clerk and the insider design the tender to fit one company. An envelope changes hands.",
+  "role": "body",
+  "bbox": [
+   676,
+   600,
+   1187,
+   691
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The clerk shrugs. His pocket bulges with bribes.",
+  "role": "body",
+  "bbox": [
+   1219,
+   597,
+   1587,
+   676
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The contract is awarded. The insider has the licence — but no skill, and no respect for the work.",
+  "role": "body",
+  "bbox": [
+   1605,
+   598,
+   2009,
+   690
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The insider visits the neighbor. The 'kind offer' is the smallest crumb.",
+  "role": "body",
+  "bbox": [
+   2028,
+   600,
+   2459,
+   669
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "1. TRADITIONAL",
+  "role": "label",
+  "bbox": [
+   -85,
+   872,
+   228,
+   931
+  ],
+  "angle": -89.3,
+  "joined": false
+ },
+ {
+  "text": "the complaint",
+  "role": "label",
+  "bbox": [
+   229,
+   707,
+   454,
+   750
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "silence",
+  "role": "label",
+  "bbox": [
+   765,
+   710,
+   887,
+   748
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the closed door",
+  "role": "label",
+  "bbox": [
+   1175,
+   707,
+   1434,
+   748
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "at the lawyer",
+  "role": "label",
+  "bbox": [
+   1735,
+   702,
+   1952,
+   748
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "we will look into it, please leave it with us.",
+  "role": "caption",
+  "bbox": [
+   371,
+   758,
+   564,
+   838
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DEADLINES PASSED",
+  "role": "label",
+  "bbox": [
+   963,
+   779,
+   1061,
+   831
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "office hours over",
+  "role": "label",
+  "bbox": [
+   1410,
+   820,
+   1476,
+   882
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "principles are admirable. justice you will not get — and it will cost you a fortune.",
+  "role": "caption",
+  "bbox": [
+   1551,
+   753,
+   1864,
+   848
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the office WILL BE certainly fined — paid from the public budget",
+  "role": "caption",
+  "bbox": [
+   1904,
+   752,
+   2129,
+   822
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the fine funds the next rigged tender",
+  "role": "caption",
+  "bbox": [
+   1931,
+   832,
+   2119,
+   882
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "corruption keeps its job, and gets a raise",
+  "role": "caption",
+  "bbox": [
+   1962,
+   886,
+   2132,
+   963
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Complaint, silence, deadlines, lawyer.",
+  "role": "body",
+  "bbox": [
+   2174,
+   703,
+   2408,
+   783
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "The trap is built into the rules themselves.",
+  "role": "body",
+  "bbox": [
+   2175,
+   783,
+   2437,
+   847
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Where regulation is a moat network is a bridge.",
+  "role": "caption",
+  "bbox": [
+   2172,
+   888,
+   2315,
+   988
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "— this is where the new world begins —",
+  "role": "caption",
+  "bbox": [
+   913,
+   1120,
+   1536,
+   1155
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION NETWORK",
+  "role": "label",
+  "bbox": [
+   908,
+   1060,
+   1520,
+   1115
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "2. REPUTATION NETWORK",
+  "role": "label",
+  "bbox": [
+   -133,
+   1336,
+   286,
+   1380
+  ],
+  "angle": -90,
+  "joined": false
+ },
+ {
+  "text": "delivery first",
+  "role": "label",
+  "bbox": [
+   236,
+   1158,
+   452,
+   1217
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "publishing my app",
+  "role": "label",
+  "bbox": [
+   404,
+   1414,
+   514,
+   1476
+  ],
+  "angle": -6.4,
+  "joined": false
+ },
+ {
+  "text": "demand finds it",
+  "role": "label",
+  "bbox": [
+   972,
+   1170,
+   1223,
+   1210
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TOMÁŠ'S APP",
+  "role": "label",
+  "bbox": [
+   786,
+   1366,
+   880,
+   1430
+  ],
+  "angle": 13.7,
+  "joined": false
+ },
+ {
+  "text": "tap here to support the maker",
+  "role": "label",
+  "bbox": [
+   760,
+   1425,
+   856,
+   1501
+  ],
+  "angle": 12.1,
+  "joined": false
+ },
+ {
+  "text": "they're using it!",
+  "role": "caption",
+  "bbox": [
+   1374,
+   1212,
+   1472,
+   1272
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "a decent living",
+  "role": "label",
+  "bbox": [
+   1756,
+   1163,
+   1991,
+   1208
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DIRECT SERVICE — NO PERMISSION NEEDED",
+  "role": "label",
+  "bbox": [
+   1954,
+   1206,
+   2112,
+   1304
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "MAKER TIPS",
+  "role": "label",
+  "bbox": [
+   2022,
+   1414,
+   2079,
+   1459
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "He delivers first. People find the app and use it.",
+  "role": "body",
+  "bbox": [
+   2172,
+   1160,
+   2473,
+   1236
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Each grateful user pays a little. A decent living. No central authority to bribe.",
+  "role": "body",
+  "bbox": [
+   2169,
+   1236,
+   2504,
+   1330
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Reputation is the new Delivery is the proof.",
+  "role": "caption",
+  "bbox": [
+   2174,
+   1490,
+   2294,
+   1609
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Two paths. The trap is in the rules. The way out is to bypass the rules altogether.",
+  "role": "tagline",
+  "bbox": [
+   151,
+   1557,
+   2102,
+   1631
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "* When the rules are written by the insider, complaining inside the rules is the trap — even the fines feed back into the next rigged tender. The reputation network is the way out: citizens find the product, pay the maker directly, and the community confers the only licence that matters — trust earned by delivery.",
+  "role": "body",
+  "bbox": [
+   153,
+   1628,
+   2005,
+   1688
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]

@@ -1,0 +1,314 @@
+[
+ {
+  "text": "IF AI DOES THE THINKING — WHAT IS LEFT FOR YOU?",
+  "role": "title",
+  "bbox": [
+   31,
+   24,
+   1233,
+   76
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AI AGENTS TAKE OVER THE REPETITIVE WORK",
+  "role": "label",
+  "bbox": [
+   33,
+   101,
+   417,
+   130
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "DRAFTING",
+  "role": "label",
+  "bbox": [
+   57,
+   595,
+   148,
+   623
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BOOKKEEPING",
+  "role": "label",
+  "bbox": [
+   210,
+   568,
+   329,
+   592
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STANDARD FLOW",
+  "role": "label",
+  "bbox": [
+   367,
+   545,
+   509,
+   577
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STANDARDISED COMPANY FLOWS",
+  "role": "label",
+  "bbox": [
+   77,
+   184,
+   370,
+   228
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "one by one, the repetitive cognitive work is being handed over to agents.",
+  "role": "caption",
+  "bbox": [
+   52,
+   651,
+   390,
+   702
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "SO WHAT REMAINS FOR A HUMAN?",
+  "role": "label",
+  "bbox": [
+   485,
+   100,
+   785,
+   133
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "THE IDEA",
+  "role": "label",
+  "bbox": [
+   595,
+   307,
+   671,
+   329
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "BAKER",
+  "role": "label",
+  "bbox": [
+   493,
+   293,
+   551,
+   318
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "CARPENTER",
+  "role": "label",
+  "bbox": [
+   696,
+   296,
+   795,
+   322
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "RUNS AN AI WORKSHOP",
+  "role": "label",
+  "bbox": [
+   711,
+   490,
+   809,
+   530
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "anyone can pick the same idea.",
+  "role": "caption",
+  "bbox": [
+   453,
+   607,
+   782,
+   638
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "what makes one baker, one carpenter, one AI workshop different from the next?",
+  "role": "caption",
+  "bbox": [
+   455,
+   638,
+   799,
+   687
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "REPUTATION — WHAT TELLS TWO APART",
+  "role": "label",
+  "bbox": [
+   873,
+   97,
+   1221,
+   127
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "KEEPS HIS WORD",
+  "role": "label",
+  "bbox": [
+   909,
+   177,
+   981,
+   214
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "TALKS TO THE CUSTOMER",
+  "role": "label",
+  "bbox": [
+   1103,
+   175,
+   1194,
+   213
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "STANDS BEHIND HIS AI",
+  "role": "label",
+  "bbox": [
+   869,
+   279,
+   963,
+   315
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "10 YEARS, NO COMPLAINTS",
+  "role": "label",
+  "bbox": [
+   1128,
+   279,
+   1224,
+   316
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "the human touch still closes the deal.",
+  "role": "caption",
+  "bbox": [
+   854,
+   413,
+   986,
+   457
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "someone must answer for what the agent does — and that responsibility cannot be handed off.",
+  "role": "caption",
+  "bbox": [
+   852,
+   649,
+   1233,
+   703
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "Even I cannot build this for you — it has to be you.",
+  "role": "body",
+  "bbox": [
+   1114,
+   365,
+   1231,
+   420
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "without reputation, every baker looks the same — and the biggest brand eats them all.",
+  "role": "caption",
+  "bbox": [
+   275,
+   714,
+   994,
+   746
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "could this be the decentralised path that keeps AI on a leash — the thing that stops any one player from owning the whole market?",
+  "role": "caption",
+  "bbox": [
+   88,
+   752,
+   1177,
+   782
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "AI AUTOMATES THE WORK — REPUTATION KEEPS YOU HUMAN.",
+  "role": "title",
+  "bbox": [
+   24,
+   794,
+   1241,
+   842
+  ],
+  "angle": 0,
+  "joined": false
+ },
+ {
+  "text": "?",
+  "role": "custom",
+  "bbox": [
+   1194,
+   721,
+   1220,
+   748
+  ],
+  "angle": 0,
+  "joined": false
+ }
+]
