@@ -9,6 +9,9 @@ set -uo pipefail
 
 lang="${1:-}"
 [ -n "$lang" ] || { echo "použití: build-one.sh <lang>"; exit 2; }
+# Skript dělá `rm -rf "$BOXTOOL/out/$lang"` — bez validace by `build-one.sh ..`
+# smazal celý boxtool. Povol jen tvar kódu kultury (de, pt-br, es-419, zh-cn).
+echo "$lang" | grep -qE '^[a-z]{2}(-[a-z0-9]+)?$' || { echo "CHYBA: neplatný kód jazyka: $lang"; exit 2; }
 
 BOXTOOL="${BOXTOOL:-$HOME/Downloads/personix-boxtool}"
 PAMPHLET="$(cd "$(dirname "$0")" && pwd)"
