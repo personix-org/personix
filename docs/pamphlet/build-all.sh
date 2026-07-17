@@ -1,101 +1,85 @@
 #!/bin/bash
 # Postaví pamflet (PDF + EPUB) ve všech jazycích, které mají lokalizované infografiky.
 #
-# Na jazyk:  check.py → render.py → expand.py → build.sh (PDF) → build-epub.sh (EPUB)
-# EPUB musí běžet AŽ PO build.sh — bere si obrázky z figures/, které build.sh vyrobí.
+# Paralelně: render, tectonic i pandoc jsou jednovláknové, takže jeden jazyk vytíží
+# jedno jádro a zbytek stroje se válí. Jazyky jsou na sobě nezávislé (vlastní
+# out/<lang> i build/<lang>), takže se pouští po dávkách — viz JOBS.
 #
 # Hotové soubory jdou do STAGE_DIR mimo git: veřejné repo personix je schválně
-# malé (181 MB) a 45 jazyků × ~70 MB by ho nafouklo přes 3 GB, navíc při každém
+# malé (181 MB) a 46 jazyků × ~70 MB by ho nafouklo přes 3 GB, navíc při každém
 # přesázení znovu — historie se v gitu nikdy nezmenšuje. Na server se odsud
-# posílá zvlášť.
+# posílá zvlášť (deploy/sync-pamphlets.sh v personix-web).
 #
-# Mezivýsledky (out/<lang>, figures/) se po každém jazyce mažou — jinak by běh
-# sežral ~3 GB navíc. Jsou plně regenerovatelné z imgboxes + trans.
-#
-# Použití:  ./build-all.sh [lang ...]     (bez argumentů = všechny přeložené jazyky)
+# Použití:
+#   ./build-all.sh                 # všechny jazyky, co ještě nejsou ve stage
+#   ./build-all.sh de fr ja        # jen vyjmenované (staví se vždy, i hotové)
+#   JOBS=8 ./build-all.sh          # jiný počet souběžných jazyků
+#   FORCE=1 ./build-all.sh         # přestavět i to, co už ve stage je
 set -uo pipefail
 
-BOXTOOL="$HOME/Downloads/personix-boxtool"
+BOXTOOL="${BOXTOOL:-$HOME/Downloads/personix-boxtool}"
 PAMPHLET="$(cd "$(dirname "$0")" && pwd)"
 STAGE_DIR="${STAGE_DIR:-$HOME/Downloads/personix-pamflety}"
 PY="$BOXTOOL/venv/bin/python"
 
+# Necháváme pár jader systému — plné obsazení jen zpomalí všechno ostatní.
+JOBS="${JOBS:-$(( $(sysctl -n hw.ncpu 2>/dev/null || echo 4) - 5 ))}"
+[ "$JOBS" -lt 1 ] && JOBS=1
+
 [ -x "$PY" ] || { echo "CHYBA: chybí $PY — boxtool venv"; exit 1; }
+[ -x "$PAMPHLET/build-one.sh" ] || { echo "CHYBA: chybí build-one.sh"; exit 1; }
 command -v pandoc >/dev/null || { echo "CHYBA: chybí pandoc (EPUB)"; exit 1; }
 mkdir -p "$STAGE_DIR"
 
 if [ $# -gt 0 ]; then
-  LANGS=("$@")
+    LANGS=("$@")
 else
-  LANGS=()
-  while IFS= read -r f; do
-    l=$(basename "$f" .json)
-    # jen jazyky, které mají i zdrojové MD pamfletu
-    [ -d "$PAMPHLET/$l/build" ] && LANGS+=("$l")
-  done < <(find "$BOXTOOL/trans" -maxdepth 1 -name '*.json' | sort)
+    LANGS=()
+    while IFS= read -r f; do
+        l=$(basename "$f" .json)
+        # jen jazyky, které mají i zdrojové MD pamfletu
+        [ -d "$PAMPHLET/$l/build" ] || continue
+        # hotové přeskoč, ať se dvouhodinová práce neopakuje
+        if [ -z "${FORCE:-}" ] && [ -f "$STAGE_DIR/pamphlet-v6-$l.pdf" ] && [ -f "$STAGE_DIR/pamphlet-v6-$l.epub" ]; then
+            continue
+        fi
+        LANGS+=("$l")
+    done < <(find "$BOXTOOL/trans" -maxdepth 1 -name '*.json' | sort)
 fi
 
-echo "Jazyků k sestavení: ${#LANGS[@]}"
+if [ ${#LANGS[@]} -eq 0 ]; then
+    echo "Není co stavět — vše už je ve $STAGE_DIR (FORCE=1 přestaví)."
+    exit 0
+fi
+
+echo "Jazyků k sestavení: ${#LANGS[@]}  (souběžně: $JOBS)"
 echo "Cíl: $STAGE_DIR"
 echo "Volno na disku: $(df -h / | awk 'NR==2{print $4}')"
+# Na baterii macOS strká výpočet na úsporná jádra — sazba pak trvá 30 min místo 5.
+pmset -g batt 2>/dev/null | head -1
 echo
 
-ok=(); failed=()
 started=$(date +%s)
-
-for lang in "${LANGS[@]}"; do
-  echo "═══════════ $lang ═══════════"
-  cd "$BOXTOOL" || exit 1
-
-  if ! "$PY" check.py "$lang" >/dev/null 2>&1; then
-    echo "[$lang] SELHAL: check.py (chybí překlady nebo glyfy)"; failed+=("$lang:check"); continue
-  fi
-  if ! "$PY" render.py "$lang" >/dev/null 2>&1; then
-    echo "[$lang] SELHAL: render.py"; failed+=("$lang:render"); continue
-  fi
-  if ! "$PY" expand.py "$lang" >/dev/null 2>&1; then
-    echo "[$lang] SELHAL: expand.py"; failed+=("$lang:expand"); continue
-  fi
-
-  cd "$PAMPHLET/$lang/build" || { failed+=("$lang:nodir"); continue; }
-
-  if ! INFOGRAPHICS_DIR="$BOXTOOL/out/$lang" ./build.sh >"/tmp/build-$lang.log" 2>&1; then
-    echo "[$lang] SELHAL: build.sh — log /tmp/build-$lang.log"; failed+=("$lang:pdf")
-    rm -rf "$BOXTOOL/out/$lang"; continue
-  fi
-
-  pdf="pamphlet-v6-$lang.pdf"
-  if [ -f "$pdf" ]; then
-    cp "$pdf" "$STAGE_DIR/"
-    echo "[$lang] PDF  $(ls -l "$pdf" | awk '{printf "%.0f MB", $5/1048576}'), $(pdfinfo "$pdf" 2>/dev/null | awk '/^Pages/{print $2}') stran"
-  else
-    echo "[$lang] SELHAL: build prošel, ale PDF nikde"; failed+=("$lang:nopdf")
-    rm -rf "$BOXTOOL/out/$lang"; continue
-  fi
-
-  if ./build-epub.sh >"/tmp/epub-$lang.log" 2>&1; then
-    epub="pamphlet-v6-$lang.epub"
-    if [ -f "$epub" ]; then
-      cp "$epub" "$STAGE_DIR/"
-      echo "[$lang] EPUB $(ls -l "$epub" | awk '{printf "%.0f MB", $5/1048576}')"
-      ok+=("$lang")
-    else
-      echo "[$lang] EPUB nevznikl"; failed+=("$lang:noepub")
-    fi
-  else
-    echo "[$lang] SELHAL: build-epub.sh — log /tmp/epub-$lang.log"; failed+=("$lang:epub")
-  fi
-
-  # uklidit — vše regenerovatelné, jinak ~200 MB na jazyk navíc
-  rm -rf "$BOXTOOL/out/$lang"
-  rm -f "$PAMPHLET/$lang/build/"*.pdf "$PAMPHLET/$lang/build/"*.epub
-  rm -rf "$PAMPHLET/$lang/build/figures"
-done
-
+printf '%s\n' "${LANGS[@]}" | xargs -P "$JOBS" -I{} "$PAMPHLET/build-one.sh" {}
 elapsed=$(( ($(date +%s) - started) / 60 ))
+
 echo
 echo "════════════════════════════════════════"
-echo "HOTOVO za ${elapsed} min: ${#ok[@]} OK, ${#failed[@]} selhalo"
-if [ ${#failed[@]} -gt 0 ]; then echo "Selhaly:"; printf "  %s\n" "${failed[@]}"; fi
-echo "Ve stage: $(ls "$STAGE_DIR"/*.pdf 2>/dev/null | wc -l | tr -d ' ') PDF, $(ls "$STAGE_DIR"/*.epub 2>/dev/null | wc -l | tr -d ' ') EPUB, $(du -sh "$STAGE_DIR" 2>/dev/null | cut -f1)"
+pdfs=$(ls "$STAGE_DIR"/pamphlet-v6-*.pdf 2>/dev/null | wc -l | tr -d ' ')
+epubs=$(ls "$STAGE_DIR"/pamphlet-v6-*.epub 2>/dev/null | wc -l | tr -d ' ')
+echo "HOTOVO za ${elapsed} min"
+echo "Ve stage: $pdfs PDF, $epubs EPUB, $(du -sh "$STAGE_DIR" 2>/dev/null | cut -f1)"
+
+# Co chybí — ať se na tichý výpadek nepřijde až na webu
+missing=()
+for l in "${LANGS[@]}"; do
+    [ -f "$STAGE_DIR/pamphlet-v6-$l.pdf" ] || missing+=("$l:pdf")
+    [ -f "$STAGE_DIR/pamphlet-v6-$l.epub" ] || missing+=("$l:epub")
+done
+if [ ${#missing[@]} -gt 0 ]; then
+    echo "CHYBÍ (${#missing[@]}): ${missing[*]}"
+    echo "Logy: /tmp/pamphlet-<lang>.log"
+else
+    echo "Všechny požadované jazyky mají PDF i EPUB."
+fi
 echo "Volno na disku: $(df -h / | awk 'NR==2{print $4}')"
