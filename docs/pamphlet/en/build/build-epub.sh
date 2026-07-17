@@ -2,7 +2,7 @@
 # build-epub.sh — produces a reflowable EPUB of the pamphlet, alongside the
 # fixed-layout PDF. Same markdown sources, different output target.
 #
-# Output: pamphlet-v6-en.epub
+# Output: pamphlet-v6-<LANG_CODE>.epub
 #
 # Strategy:
 #   1. Run main build first to ensure figures/*.png and post-processed
@@ -17,6 +17,9 @@ set -euo pipefail
 BUILD_DIR="$(cd "$(dirname "$0")" && pwd)"
 PAMPHLET_DIR="$(cd "$BUILD_DIR/.." && pwd)"
 EPUB_DIR="$BUILD_DIR/epub"
+# Jazyk se odvodí z názvu adresáře, stejně jako v build.sh. Dřív tu nebyl a všech
+# 47 jazyků zapisovalo do pamphlet-v6-en.epub — proto EPUB nikdy nikdo nepustil.
+LANG_CODE="$(basename "$PAMPHLET_DIR")"
 
 cd "$BUILD_DIR"
 
@@ -103,19 +106,24 @@ print(text)
 PY
 done
 
-echo "[2/3] pandoc -> epub3"
+# metadata.yaml je ve všech jazycích anglická kopie (včetně language: en), takže
+# titul/podtitul/jazyk se doplní z existujících překladů v repu. Nic se nepřekládá.
+META="$TMP/metadata.yaml"
+python3 "$PAMPHLET_DIR/../epub-meta.py" "$LANG_CODE" --yaml "$EPUB_DIR/metadata.yaml" > "$META"
+
+echo "[2/3] pandoc -> epub3 ($LANG_CODE)"
 pandoc \
   --from=markdown+pipe_tables+yaml_metadata_block+raw_html+raw_tex \
   --to=epub3 \
-  --metadata-file="$EPUB_DIR/metadata.yaml" \
+  --metadata-file="$META" \
   --css="$EPUB_DIR/style.css" \
   --toc --toc-depth=2 \
   --split-level=1 \
   --resource-path="$BUILD_DIR" \
-  -o pamphlet-v6-en.epub \
+  -o "pamphlet-v6-$LANG_CODE.epub" \
   "$COMBINED"
 
 echo "[3/3] done"
 echo
-echo "BUILD OK: $BUILD_DIR/pamphlet-v6-en.epub"
-ls -lh pamphlet-v6-en.epub
+echo "BUILD OK: $BUILD_DIR/pamphlet-v6-$LANG_CODE.epub"
+ls -lh "pamphlet-v6-$LANG_CODE.epub"
