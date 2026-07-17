@@ -10,7 +10,7 @@ Zakryje originál tmavým titulkovým boxem/pásem a vysadí překlad:
  · cesta:    tmavý pás podél křivky, písmena vysazená po křivce (natočená dle tečny)
 """
 import sys, os, json, math, glob
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, features
 from fontTools.ttLib import TTFont, TTCollection
 
 BK = os.path.dirname(os.path.abspath(__file__))
@@ -154,6 +154,10 @@ FONTS = {
 DEFAULT_FONT = f"{SYS}/Supplemental/Arial Bold.ttf"
 RTL = {"ar", "he"}
 
+# Raqm = HarfBuzz + FriBidi uvnitř Pillow. Když je k dispozici, řeší si tvarování
+# i směr sazby sám a ruční bidi by text obrátil zpátky (viz shape()).
+HAS_RAQM = features.check("raqm")
+
 _fc = {}
 def font(lang, size):
     key = (lang, size)
@@ -230,9 +234,20 @@ def draw_line(d, xy, s, f, lang, fill):
         d.text((x, y), t, font=ff, fill=fill)
         x += d.textlength(t, font=ff)
 
-def shape(text, lang):
-    """RTL: přeskládat písmena (arabština potřebuje i tvarování)."""
+def shape(text, lang, per_char=False):
+    """RTL: přeskládat písmena (arabština potřebuje i tvarování).
+
+    Pillow s raqm (HarfBuzz + FriBidi) dělá tvarování i obousměrné pořadí SÁM
+    při každém d.text(). Ruční get_display() ho pak aplikoval podruhé a text
+    vyšel zrcadlově — `أرفض القبول بهذا` se vysázelo jako `اذهب لوبقلا ضفرأ`.
+    Postihlo to každý arabský i hebrejský titulek a prošlo to kontrolou glyfů
+    (ta ověřuje, že písmeno ve fontu je, ne kde stojí) i vizuální kontrolou.
+
+    Výjimka je sazba znak po znaku po křivce: tam raqm kontext celého řádku
+    nevidí, takže se text musí přeskládat ručně jako dřív.
+    """
     if lang not in RTL: return text
+    if HAS_RAQM and not per_char: return text
     try:
         from bidi.algorithm import get_display
         if lang == "ar":
@@ -376,7 +391,9 @@ def draw_path(base, b, txt, lang, phase, colors=(DARK, LIGHT)):
 
     # 2) text po křivce — velikost tak, aby délkou sedl na cestu a výškou do pásu
     d0 = ImageDraw.Draw(base)
-    s = shape(txt, lang)
+    # Po křivce se sází znak po znaku, takže raqm kontext řádku nevidí a pořadí
+    # musí přijít hotové (per_char=True), pak se obrátí do směru cesty.
+    s = shape(txt, lang, per_char=True)
     if lang in RTL: s = s[::-1]  # po křivce sázíme zleva doprava
     size = max(8, int(th * 0.72))
     for _ in range(40):
