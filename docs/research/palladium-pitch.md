@@ -34,43 +34,43 @@ Pitch: Irresponsibility Is Free — governance, reputation, and why no alternati
 ```
 Dear editors,
 
-A tenant discovers that the flat he rents has no legally required electrical
-safety certificate, a condition that is an immediate danger to life. His right
-to terminate the lease is unambiguous. The cost of enforcing it exceeds the
-deposit and damages combined. He absorbs the loss and leaves. This is the
-rational choice, not a cowardly one. The landlord pays nothing, and will do the
-same thing next month.
+I'd like to pitch an essay for Palladium, around 4,000 words. Working title:
+"Irresponsibility Is Free."
 
-I could have opened with a different story and the argument would be unchanged.
-A parent against a school. An insured party against an insurer. A citizen
-against a clerk who has worked out that delay costs him nothing. I picked one
-case, but the pattern is general: socially recognised redress arrives only
-sometimes, and mostly by accident.
+The thesis is that irresponsibility is not a character trait but a rational
+response to a system in which it carries no price. That diagnosis is old; the
+essay's contribution is to answer the question that usually goes unasked — why,
+if this has been obvious for fifty years, no working alternative has ever been
+built, and what has changed to make one possible now.
 
-I would like to write about why irresponsibility is not a character trait but a
-rational response to a system in which irresponsibility is free. Below a certain
-threshold, institutions are so expensive to invoke that impunity carries no
-price at all. This is not an argument for abolishing them. It is an argument for
-building a second one alongside, which anyone is free to decline.
+It would open on a concrete case. A tenant discovers that the flat he rents has
+no legally required electrical safety certificate, a condition that is an
+immediate danger to life. His right to terminate the lease is unambiguous. The
+cost of enforcing it exceeds the deposit and damages combined. He absorbs the
+loss and leaves — the rational choice, not a cowardly one. The landlord pays
+nothing, and will do the same thing next month. A parent against a school, an
+insured party against an insurer, a citizen against a clerk who has worked out
+that delay costs him nothing — the case is interchangeable, the pattern general.
+Socially recognised redress arrives only sometimes, and mostly by accident.
 
-That diagnosis is not new. Libertarian writers have made it for generations. The
-question almost nobody answers is why, if it has been obvious for fifty years,
-no working alternative has emerged. My answer is that reputation systems have
-always existed and demonstrably work — ratings, credit scores, referrals. But
-every one of them has an administrator, and therefore an off switch. What was
-missing was never the idea. It was a mechanism that keeps reputation resistant
-to suppression from outside and capture from within at the same time. That is an
-engineering problem, not a philosophical one, and it is now tractable.
+The argument is not for abolishing institutions but for building a second one
+alongside the first, which anyone is free to decline. Libertarian writers have
+diagnosed the disease for generations; what they never supplied was the
+mechanism. Reputation systems have always existed and demonstrably work —
+ratings, credit scores, referrals — but every one of them has an administrator,
+and therefore an off switch. The missing piece was never the idea. It was a way
+to keep reputation resistant to suppression from outside and capture from within
+at the same time. That is an engineering problem, not a philosophical one, and
+it is now tractable.
 
 The essay also re-reads familiar evidence. Fromm's 1929–31 survey of German
 workers is usually cited as proof that people cannot bear freedom. Fromm, a
 Marxist, argued the opposite: character is a product of structure. His numbers
 measure what a system does to people, not what people are.
 
-I have spent the past year designing such a system and publishing the
-specification openly. The argument stands entirely without it.
-
-Around 4,000 words.
+In the interest of disclosure: I have spent the past year designing such a
+system and publishing the specification openly. The essay's argument stands
+entirely without it. I'm happy to send a fuller outline or the draft on request.
 
 Best regards,
 Pavel Kudrna
@@ -78,10 +78,14 @@ Pavel Kudrna
 
 ## Proč je postavený takhle
 
+Pořadí je pitch, ne článek. Redaktor musí z prvních dvou vět vědět, co drží
+v ruce, teprve pak se mu vypráví.
+
 | Prvek | Důvod |
 |---|---|
-| Otevírá konkrétním člověkem | Palladium žádá příběhy s postavami, ne abstrakce |
-| Teze ve druhém odstavci | Trvají na tom, aby autor přímo řekl svůj názor |
+| **1. věta uvede, co posílám** | Cold pitch se rámuje. Redaktor dostane denně desítky mailů, musí hned vědět, že jde o návrh článku a jak je dlouhý. |
+| **2. odstavec = teze + čím je nová** | Trvají na přímém názoru. Rovnou odliším starou diagnózu od našeho příspěvku. |
+| Scéna až ve třetím odstavci | Příběh je ukázka, jak by článek otevřel, ne otvírák mailu |
 | **Přiznání, že diagnóza není nová** | Jejich čtenářstvo tuhle literaturu zná. Přiznání buduje důvěru. |
 | Otázka „proč nic nevzniklo" | Tohle je to, co redakce nezná. Jádro pitche. |
 | Frommův obrat | Ukazuje, že text nabídne i nové čtení známého materiálu |
