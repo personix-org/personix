@@ -43,10 +43,11 @@ essay's contribution is to answer the question that usually goes unasked — why
 if this has been obvious for fifty years, no working alternative has ever been
 built, and what has changed to make one possible now.
 
-It would open on a concrete case. A tenant discovers that the flat he rents has
-no legally required electrical safety certificate, a condition that is an
-immediate danger to life. His right to terminate the lease is unambiguous. The
-cost of enforcing it exceeds the deposit and damages combined. He absorbs the
+It would open on a real case. A tenant discovers that the flat he rents has no
+legally required electrical safety certificate — a condition that is an
+immediate danger to life, and in this instance someone was hurt. His right to
+terminate the lease is unambiguous. The cost of enforcing it exceeds the deposit
+and damages combined. He absorbs the
 loss and leaves — the rational choice, not a cowardly one. The landlord pays
 nothing, and will do the same thing next month. A parent against a school, an
 insured party against an insurer, a citizen against a clerk who has worked out
