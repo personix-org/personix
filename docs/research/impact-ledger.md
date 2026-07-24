@@ -93,6 +93,7 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 | Datum | Typ | Popis | Zdroj / odkaz | Signál (1–3) | Poznámka |
 |---|---|---|---|---|---|
 | 2026-07-24 | založení | Ledger vznikl | — | — | Výchozí stav |
+| 2026-07-24 | publikace | Pitch odeslán redakci Palladia | editors@palladiummag.com | 1 | Čeká odpověď. Kontrola naplánována na 2026-08-07. Bez odpovědi jeden follow-up, pak jinam. |
 
 ### Legenda typů
 
