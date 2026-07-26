@@ -94,6 +94,7 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 |---|---|---|---|---|---|
 | 2026-07-24 | založení | Ledger vznikl | — | — | Výchozí stav |
 | 2026-07-24 | publikace | Pitch odeslán redakci Palladia | editors@palladiummag.com | 1 | Čeká odpověď. Kontrola naplánována na 2026-08-07. Bez odpovědi jeden follow-up, pak jinam. |
+| 2026-07-25 | kontakt | Palladium má zájem, chce draft 2000–3000 slov do 8. 8. | editors@palladiummag.com | 3 | ⚠️ Redakce NEPUBLIKUJE AI text ani AI editaci. Chce autorskou bio (1–2 věty). Kontrolní task na 7. 8. zrušen. |
 
 ### Legenda typů
 
