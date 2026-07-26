@@ -103,7 +103,65 @@ Ověřeno v jejich [Writer's Guide](https://www.palladiummag.com/writers-guide/)
 | **Přímo uvést názor**, žádné vytáčky | Tezi říct do prvních 800 slov |
 | **Čtenář je chytřejší než ty** | Žádné poučování |
 
-## Struktura a rozpočet slov
+## ✅ FINÁLNÍ ZADÁNÍ (po odpovědi redakce 2026-07-25)
+
+Redakce má zájem a chce **draft 2000–3000 slov do 8. 8. 2026**. To je skoro
+polovina původního rozpočtu, takže platí zkrácená pětisekční kostra níže,
+**ne** osmisekční struktura pod ní (ta zůstává jako sklad materiálu).
+
+⚠️ **Píše Pavel, ne AI.** Redakce nepublikuje AI text ani AI editaci. Claude
+dodává jen podklady, kostru a věcnou/gramatickou kontrolu. Próza je Pavlova.
+
+### Zkrácená kostra — cíl ~2500 slov, pět sekcí
+
+**1. Reálný případ a co odhaluje (~500 slov)**
+Otevřít tím skutečným případem (nájemce, revizní zpráva, došlo ke zranění).
+Spočítat, že vymáhání stojí víc než škoda. Odejde a spolkne to — racionálně.
+Pointa: viník nezaplatil nic. Hned zobecnit — rodič a škola, pojištěný
+a pojišťovna, občan a úředník. Uzavřít větou, že beztrestnost je pod určitou
+hranicí zadarmo, a proto je nezodpovědnost správná odpověď na ceny, ne vada
+charakteru.
+
+**2. Diagnóza není nová — a otázka, kterou nikdo neklade (~500 slov)**
+Přiznat rodokmen: tohle říká libertariánská tradice generace, plus historický
+precedens lex mercatoria (kupci měli staletí vlastní právo vymáhané reputací).
+Pak otočka: když je to tak staré, proč žádný funkční systém není? Odpověď má
+dvě části — reputační systémy existují a fungují (hodnocení, skóre), ale
+všechny mají správce, tedy vypínač. Kdo spravuje seznam, určuje pravdu.
+
+**3. Řešení: cena zdola a čtyři podmínky (~650 slov)**
+Nejdelší, nese konstruktivní jádro. Rozdíl zákon versus reputace: zákon trestá
+shora a je drahý, reputace vzniká zdola a nepotřebuje rozpočet. Pak čtyři
+vlastnosti, co by taková síť musela mít: drahý zápis a levné čtení, ověřovatel
+v sázce, žádný vypínač, dobrovolnost a vratnost. Zdůraznit vratnost — most
+vedle přívozu, přívoz se nezakazuje.
+
+**4. Námitka: nedopadne to jako pranýř? (~450 slov)**
+Uvést námitku co nejsilněji (davová justice, sociální kredit). Odpovědět třemi
+už zavedenými body: cena zápisu, ověřovatel v sázce, žádný centrální seznam.
+Klíčové odlišení od sociálního kreditu — ten má jednoho hodnotitele (stát)
+a účast je povinná, tady je hodnotitelů mnoho a účast dobrovolná.
+
+**5. Krátký protiúder a závěr (~400 slov)**
+Sem vpustit Fromma zhuštěně jako odpověď na námitku „ale lidi jsou ovce, tohle
+nechtějí": jeho čísla neměří, jací lidé jsou, měří, co s nimi dělá systém.
+Zavřít návratem k nájemci — neptat se, jestli je dobrý člověk, ptát se, kolik
+ho stálo mít pravdu. Poslední myšlenka: odpovědnější lidi nedostaneme výzvou,
+ale tím, že nezodpovědnost začne něco stát.
+
+**Kde je Personix:** jedna věta v sekci 3 + autorská bio pod článkem. Nikde
+jinde.
+
+**Co oproti dlouhé verzi padá:** samostatná sekce o špatně čtených datech
+(Fromm se smrskne do sekce 5), samostatná sekce „proč to nevzniklo" (splyne
+do sekce 2). Detaily těch sekcí zůstávají níže jako sklad, kdybys některý
+argument chtěl rozvést.
+
+---
+
+## Dlouhá verze (sklad materiálu, ~3950 slov — NEPOUŽÍT jako strukturu)
+
+Struktura a rozpočet slov
 
 ### 1. Hook — případ, kde právo existuje a je k ničemu (≈400 slov)
 
