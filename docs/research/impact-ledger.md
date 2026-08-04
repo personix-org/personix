@@ -57,6 +57,39 @@ což je nejlepší měřicí infrastruktura v tomhle prostoru a je zdarma.
 Ta váha 3 u dokumentů o veřejné politice je pro nás nejdůležitější číslo
 v celém Altmetricu, protože policy je cílový terén projektu.
 
+#### Indexace whitepaperu — stav k 1. 8. 2026
+
+Audit všech agregátorů, které pro tenhle typ textu dávají smysl. Zenodo rozešle
+záznam samo jen do části z nich, zbytek chce ruční krok.
+
+| Kde | Stav | Poznámka |
+|---|---|---|
+| DataCite | je | automaticky přes Zenodo |
+| OpenAIRE | je | dva záznamy, deduplikace ze dvou zdrojů, ne duplicita |
+| OpenAlex | je | práce `W7162246792` |
+| ORCID | doplněno ručně | profil byl do té doby úplně prázdný |
+| Zenodo komunity | podáno | `dd4ed` a `pe`, čeká na kurátory |
+| ScienceOpen | podáno | účet přes ORCID, request přes DOI |
+| Semantic Scholar | draft emailu | jejich kontaktní stránka vrací 404, jede se na feedback@semanticscholar.org |
+| CORE, BASE, IA Scholar | není | harvestují repozitáře samy, autorský submit nemají |
+| Google Scholar | neověřeno | Google z domácí IP hází kontrolu na robota |
+| Sci-Hub | nelze a nedává smysl | viz níže |
+
+**Nejdůležitější zjištění: DataCite versus Crossref.** Zenodo přiděluje DOI přes
+DataCite, ne přes Crossref. Řada agregátorů ale bere open-access obsah přes
+Unpaywall, a ten čerpá z Crossrefu. Proto whitepaper nedorazil do Semantic
+Scholaru sám a proto ho ScienceOpen nemusí přijmout, ten v podmínkách chce
+Crossref DOI, PMC nebo arXiv ID. Pro každý další text platí, že Zenodo samo
+o sobě viditelnost v citačních službách nezajistí.
+
+**Sci-Hub je slepá ulička, ne opomenutí.** Nemá žádné rozhraní pro autory.
+Obsah získává obcházením paywallů u vydavatelů, typicky přes darované
+institucionální přístupy, a ukládá to, co si někdo vyžádá a co je jinak placené.
+Otevřený text pod licencí CC BY nemá co obcházet, takže tam nemá jak ani proč
+být. Od prosince 2020 navíc kvůli soudnímu sporu v Indii pozastavil přidávání
+nového obsahu a jeho databáze zůstává hlavně na článcích do roku 2021. Pro nás
+je to bez užitku i bez rizika, prostě mimo hru.
+
 ### Vrstva 3 — to, co žádný nástroj neumí
 
 Tady leží skutečný dopad. Vede se ručně v tabulce níže.
@@ -95,6 +128,11 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 | 2026-07-24 | založení | Ledger vznikl | — | — | Výchozí stav |
 | 2026-07-24 | publikace | Pitch odeslán redakci Palladia | editors@palladiummag.com | 1 | Čeká odpověď. Kontrola naplánována na 2026-08-07. Bez odpovědi jeden follow-up, pak jinam. |
 | 2026-07-25 | kontakt | Palladium má zájem, chce draft 2000–3000 slov do 8. 8. | editors@palladiummag.com | 3 | ⚠️ Redakce NEPUBLIKUJE AI text ani AI editaci. Chce autorskou bio (1–2 věty). Kontrolní task na 7. 8. zrušen. |
+| 2026-08-01 | indexace | Audit agregátorů, whitepaper byl jen v DataCite, OpenAIRE a OpenAlex | — | 2 | Zenodo hlásilo 40 zobrazení a 16 stažení. Podrobný stav v tabulce výše. |
+| 2026-08-01 | indexace | Whitepaper doplněn do ORCID profilu jako preprint, veřejný, vytažený jako Featured | [ORCID 0009-0004-9179-8261](https://orcid.org/0009-0004-9179-8261) | 2 | Profil neměl do té doby ani jednu práci. ORCID feeduje další služby, takže to byla největší mezera. |
+| 2026-08-01 | indexace | Podány žádosti do dvou Zenodo komunit | `dd4ed`, `pe` | 1 | Čeká na kurátory. Komunity jsou malé, přínos spíš marginální. |
+| 2026-08-01 | indexace | Založen účet na ScienceOpen přes ORCID, podán request přes DOI | scienceopen.com | 1 | Jejich server během registrace spadl na chybu 524, registrace přesto prošla. Výsledek requestu přijde mailem. |
+| 2026-08-01 | indexace | Připraven draft pro Semantic Scholar | feedback@semanticscholar.org | 1 | Čeká na odeslání. Vysvětluje, proč je DataCite DOI minulo přes Unpaywall. |
 
 ### Legenda typů
 
@@ -107,6 +145,7 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 | `odpor` | Kvalifikovaná kritika |
 | `policy` | Zmínka v dokumentu o veřejné politice — nejvyšší hodnota |
 | `média` | Novinový nebo magazínový článek |
+| `indexace` | Záznam přibyl do agregátoru nebo katalogu, případně tam byla podána žádost |
 
 ### Stupnice signálu
 
@@ -121,8 +160,10 @@ Pondělí, zhruba pět minut:
 1. Zkontrolovat statistiky na Zenodu
 2. Projít alerty na sledované fráze
 3. Zkontrolovat schránku personix@personix.org na kvalifikované kontakty
-4. Doplnit nové řádky do deníku
-5. Cokoli se signálem 3 přesunout do úkolů
+4. Zkontrolovat, jestli se pohnuly podané žádosti o zařazení (Zenodo komunity,
+   ScienceOpen, Semantic Scholar) a doplnit stav do tabulky indexace
+5. Doplnit nové řádky do deníku
+6. Cokoli se signálem 3 přesunout do úkolů
 
 ## Cílový funnel
 
