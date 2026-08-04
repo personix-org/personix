@@ -71,9 +71,17 @@ záznam samo jen do části z nich, zbytek chce ruční krok.
 | Zenodo komunity | podáno | `dd4ed` a `pe`, čeká na kurátory |
 | ScienceOpen | podáno | účet přes ORCID, request přes DOI |
 | Semantic Scholar | draft emailu | jejich kontaktní stránka vrací 404, jede se na feedback@semanticscholar.org |
+| SocArXiv | podáno | `bx3ud_v1`, čeká na moderátora, po schválení přidělí Crossref DOI |
 | CORE, BASE, IA Scholar | není | harvestují repozitáře samy, autorský submit nemají |
 | Google Scholar | neověřeno | Google z domácí IP hází kontrolu na robota |
 | Sci-Hub | nelze a nedává smysl | viz níže |
+
+**Systémové řešení: druhý depozit na SocArXivu.** Prefix `10.31235`, pod kterým
+SocArXiv vydává identifikátory, je registrovaný u Crossrefu. Uložení textu tam
+tedy obchází celý problém popsaný níže, protože Crossref DOI se dostane do
+Unpaywallu a odtud si záznam natáhnou Semantic Scholar, CORE i další samy.
+Vznikají dvě DOI pro tentýž text, což je u preprintů běžné. Vazbu doplnit do
+Zenodo záznamu jako související identifikátor, až SocArXiv to své přidělí.
 
 **Nejdůležitější zjištění: DataCite versus Crossref.** Zenodo přiděluje DOI přes
 DataCite, ne přes Crossref. Řada agregátorů ale bere open-access obsah přes
@@ -133,6 +141,7 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 | 2026-08-01 | indexace | Podány žádosti do dvou Zenodo komunit | `dd4ed`, `pe` | 1 | Čeká na kurátory. Komunity jsou malé, přínos spíš marginální. |
 | 2026-08-01 | indexace | Založen účet na ScienceOpen přes ORCID, podán request přes DOI | scienceopen.com | 1 | Jejich server během registrace spadl na chybu 524, registrace přesto prošla. Výsledek requestu přijde mailem. |
 | 2026-08-01 | indexace | Připraven draft pro Semantic Scholar | feedback@semanticscholar.org | 1 | Čeká na odeslání. Vysvětluje, proč je DataCite DOI minulo přes Unpaywall. |
+| 2026-08-04 | indexace | Whitepaper podán na SocArXiv jako preprint | [osf.io/preprints/socarxiv/bx3ud_v1](https://osf.io/preprints/socarxiv/bx3ud_v1) | 2 | Moderace 4–5 pracovních dnů. Po schválení Crossref DOI, což otevírá cestu do Unpaywallu. Abstrakt bez věty o projektu, střet zájmů přiznán. |
 
 ### Legenda typů
 
