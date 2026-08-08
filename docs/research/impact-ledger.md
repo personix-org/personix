@@ -68,7 +68,7 @@ záznam samo jen do části z nich, zbytek chce ruční krok.
 | OpenAIRE | je | dva záznamy, deduplikace ze dvou zdrojů, ne duplicita |
 | OpenAlex | je | práce `W7162246792` |
 | ORCID | doplněno ručně | profil byl do té doby úplně prázdný |
-| Zenodo komunity | podáno | `dd4ed` a `pe`, čeká na kurátory |
+| Zenodo komunity | částečně | `pe` schválena 4. 8., `dd4ed` stále čeká na kurátory |
 | ScienceOpen | podáno | účet přes ORCID, request přes DOI |
 | Semantic Scholar | draft emailu | jejich kontaktní stránka vrací 404, jede se na feedback@semanticscholar.org |
 | SocArXiv | podáno | `bx3ud_v1`, čeká na moderátora, po schválení přidělí Crossref DOI |
@@ -141,7 +141,9 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 | 2026-08-01 | indexace | Podány žádosti do dvou Zenodo komunit | `dd4ed`, `pe` | 1 | Čeká na kurátory. Komunity jsou malé, přínos spíš marginální. |
 | 2026-08-01 | indexace | Založen účet na ScienceOpen přes ORCID, podán request přes DOI | scienceopen.com | 1 | Jejich server během registrace spadl na chybu 524, registrace přesto prošla. Výsledek requestu přijde mailem. |
 | 2026-08-01 | indexace | Připraven draft pro Semantic Scholar | feedback@semanticscholar.org | 1 | Čeká na odeslání. Vysvětluje, proč je DataCite DOI minulo přes Unpaywall. |
+| 2026-08-04 | indexace | Zenodo komunita `pe` (political economy) žádost schválila, záznam je v jejím výpisu | [zenodo.org/communities/pe](https://zenodo.org/communities/pe/) | 1 | Komunita má 38 záznamů, přínos je spíš symbolický. Žádost do `dd4ed` pořád leží u kurátorů. |
 | 2026-08-04 | indexace | Whitepaper podán na SocArXiv jako preprint | [osf.io/preprints/socarxiv/bx3ud_v1](https://osf.io/preprints/socarxiv/bx3ud_v1) | 2 | Moderace 4–5 pracovních dnů. Po schválení Crossref DOI, což otevírá cestu do Unpaywallu. Abstrakt bez věty o projektu, střet zájmů přiznán. |
+| 2026-08-08 | publikace | Draft článku „Irresponsibility Is Free of Charge" (~2900 slov) odeslán redakci Palladia | Google Doc (komentování) + .md příloha | 3 | Reaguje na výzvu editora z 25.7., odesláno v termínu. Text psal Pavel (redakce zakázala AI text i editaci). Čeká na editorial review. Finální text zařazen v [[palladium-clanek-final-en]]. |
 
 ### Legenda typů
 
