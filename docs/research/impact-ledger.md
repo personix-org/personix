@@ -57,7 +57,7 @@ což je nejlepší měřicí infrastruktura v tomhle prostoru a je zdarma.
 Ta váha 3 u dokumentů o veřejné politice je pro nás nejdůležitější číslo
 v celém Altmetricu, protože policy je cílový terén projektu.
 
-#### Indexace whitepaperu — stav k 1. 8. 2026
+#### Indexace whitepaperu — stav k 9. 8. 2026
 
 Audit všech agregátorů, které pro tenhle typ textu dávají smysl. Zenodo rozešle
 záznam samo jen do části z nich, zbytek chce ruční krok.
@@ -71,17 +71,46 @@ záznam samo jen do části z nich, zbytek chce ruční krok.
 | Zenodo komunity | částečně | `pe` schválena 4. 8., `dd4ed` stále čeká na kurátory |
 | ScienceOpen | podáno | účet přes ORCID, request přes DOI |
 | Semantic Scholar | draft emailu | jejich kontaktní stránka vrací 404, jede se na feedback@semanticscholar.org |
-| SocArXiv | podáno | `bx3ud_v1`, čeká na moderátora, po schválení přidělí Crossref DOI |
+| SocArXiv | zamítnuto | `bx3ud` neprošel moderací 5. 8., Crossref DOI odtud nebude |
 | CORE, BASE, IA Scholar | není | harvestují repozitáře samy, autorský submit nemají |
 | Google Scholar | neověřeno | Google z domácí IP hází kontrolu na robota |
 | Sci-Hub | nelze a nedává smysl | viz níže |
 
-**Systémové řešení: druhý depozit na SocArXivu.** Prefix `10.31235`, pod kterým
-SocArXiv vydává identifikátory, je registrovaný u Crossrefu. Uložení textu tam
-tedy obchází celý problém popsaný níže, protože Crossref DOI se dostane do
-Unpaywallu a odtud si záznam natáhnou Semantic Scholar, CORE i další samy.
-Vznikají dvě DOI pro tentýž text, což je u preprintů běžné. Vazbu doplnit do
-Zenodo záznamu jako související identifikátor, až SocArXiv to své přidělí.
+**Systémové řešení: druhý depozit s Crossref DOI.** Mechanika je pořád platná.
+Když text dostane identifikátor od Crossrefu, propadne se do Unpaywallu a odtud
+si ho Semantic Scholar, CORE i další natáhnou samy. Vznikají dvě DOI pro tentýž
+text, což je u preprintů běžné, a vazbu stačí doplnit do Zenodo záznamu jako
+související identifikátor.
+
+První pokus přes SocArXiv ale nevyšel. Prefix `10.31235` u Crossrefu
+registrovaný je, jenže moderace preprint 5. 8. zamítla s tím, že text nesplňuje
+kritéria odborného společenskovědního výzkumu, protože navrhuje nový rámec, aniž
+by se opíral o literaturu v oboru.
+
+Ověřeno proti zdroji, doslova vzato to neplatí. Whitepaper má 25 citací
+v textu, sekci Related Work a v úvodu vymezení vůči existujícím systémům, a
+všech 18 položek seznamu je někde použitých. Skutečná námitka bude oborová.
+Text debatuje s kryptografickou a libertariánskou literaturou, kdežto ze
+společenskovědní klasiky bere Durkheima, Rawlse, Haidta a Younga jen jako
+opěrné body. Pro sociologický repozitář to čte jako rozhovor vedený jinde.
+
+Z toho plyne, že resubmit na SocArXiv by znamenal přepsat text do jiného žánru,
+ne doplnit chybějící část. To se nevyplatí, protože Crossref DOI jde získat
+jinde beze změny textu.
+
+**Celá platforma OSF je mimo hru, ne jen SocArXiv.** Obecný server OSF
+Preprints, prefix `10.31219`, nová podání vůbec nepřijímá, a všech čtrnáct
+otevřených oborových serverů pod OSF jede na předběžné moderaci téhož typu,
+na které text neprošel. Ověřeno přes `api.osf.io/v2/providers/preprints/`.
+
+Zbylé alternativy, oba prefixy u Crossrefu registrované:
+
+| Server | Prefix | Registrátor | Screening | Riziko |
+|---|---|---|---|---|
+| SSRN | `10.2139` | Elsevier | Rozsah, formát, integrita. Věcnou správnost výslovně neposuzuje, autory bez afiliace bere | Nízké |
+| Preprints.org | `10.20944` | MDPI | Do 24 hodin, kontroluje angličtinu, etiku, pravost autorů a přiznané AI | Střední, podmínky vylučují obsah označený jako provokativní nebo kontroverzní |
+
+První volba je SSRN, protože jako jediný explicitně netvrdí, že hodnotí obsah.
 
 **Nejdůležitější zjištění: DataCite versus Crossref.** Zenodo přiděluje DOI přes
 DataCite, ne přes Crossref. Řada agregátorů ale bere open-access obsah přes
@@ -143,6 +172,7 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 | 2026-08-01 | indexace | Připraven draft pro Semantic Scholar | feedback@semanticscholar.org | 1 | Čeká na odeslání. Vysvětluje, proč je DataCite DOI minulo přes Unpaywall. |
 | 2026-08-04 | indexace | Zenodo komunita `pe` (political economy) žádost schválila, záznam je v jejím výpisu | [zenodo.org/communities/pe](https://zenodo.org/communities/pe/) | 1 | Komunita má 38 záznamů, přínos je spíš symbolický. Žádost do `dd4ed` pořád leží u kurátorů. |
 | 2026-08-04 | indexace | Whitepaper podán na SocArXiv jako preprint | [osf.io/preprints/socarxiv/bx3ud_v1](https://osf.io/preprints/socarxiv/bx3ud_v1) | 2 | Moderace 4–5 pracovních dnů. Po schválení Crossref DOI, což otevírá cestu do Unpaywallu. Abstrakt bez věty o projektu, střet zájmů přiznán. |
+| 2026-08-05 | indexace | SocArXiv preprint `bx3ud` neprošel moderací | [socopen.org/moderation-policy](https://socopen.org/moderation-policy/) | 2 | Moderace napsala, že text nesplňuje kritéria odborného společenskovědního výzkumu, protože navrhuje nový rámec bez opory v literatuře oboru. Doslova to neplatí, whitepaper má 25 citací a sekci Related Work. Námitka je oborová, text debatuje s kryptografií a libertariánskou teorií, ne se sociologií. Zjištěno až 9. 8. z digest mailu, protože API u zamítnutých hlásí totéž co u čekajících. Crossref DOI tudy nevede, alternativy v tabulce výše. |
 | 2026-08-08 | publikace | Draft článku „Irresponsibility Is Free of Charge" (~2900 slov) odeslán redakci Palladia | Google Doc (komentování) + .md příloha | 3 | Reaguje na výzvu editora z 25.7., odesláno v termínu. Text psal Pavel (redakce zakázala AI text i editaci). Čeká na editorial review. Finální text zařazen v [[palladium-clanek-final-en]]. |
 
 ### Legenda typů
