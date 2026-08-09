@@ -61,14 +61,7 @@
 % v6: DRAFT watermark — diagonal pale gray "DRAFT" stamp on every page
 % (including full-bleed figure pages). Removed before final/print build by
 % commenting this block out.
-\usepackage{eso-pic}
-\AddToShipoutPictureFG{%
-  \begin{tikzpicture}[remember picture, overlay]
-    \node[rotate=55, font=\sffamily\bfseries\fontsize{144pt}{144pt}\selectfont,
-          text=black, opacity=0.10]
-      at (current page.center) {DRAFT};
-  \end{tikzpicture}%
-}
+% v6: DRAFT watermark vypnut pro finální vydání (ISBN, 2026-08).
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
@@ -220,8 +213,7 @@
   \begin{tikzpicture}[remember picture, overlay]
     \node[anchor=center, inner sep=0pt] at (current page.center)
       {\includegraphics[width=\paperwidth,height=\paperheight]{#1}};
-    \node[rotate=55, font=\sffamily\bfseries\fontsize{144pt}{144pt}\selectfont,
-          text=black, opacity=0.20] at (current page.center) {DRAFT};
+    % DRAFT razítko přes celostránkové obrázky vypnuto pro finální vydání.
   \end{tikzpicture}%
   \mbox{}%
   \clearpage

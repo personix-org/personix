@@ -4,6 +4,9 @@ subtitle: "Necenzurovatelná a nezkorumpovatelná decentralizovaná reputační 
 author: "Pavel Kudrna"
 date: "2026-05-14"
 language: cs
+identifier:
+  - scheme: ISBN
+    text: 978-80-88573-03-6
 publisher: "Personix"
 rights: "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). Název Personix a slovní značka, kresby na obálce a donační kanály (QR kódy, adresy) si vyhrazuje autor a nejsou licencovány pod CC BY-SA."
 description: "Stát fungoval, dokud byla komunikace pomalá, rozhodnutí lokální a autorita žila ve stejném městě, kterému vládla. Dnešní sítě obracejí všechny tři předpoklady — a instituce na nich postavené už neodpovídají světu, který spravují. Tato kniha popisuje nástroj, který odpovídá: decentralizovanou reputační síť, ve které vám identita zůstává, pravda je veřejně auditovatelná a úplatkářství je reputační sebevražda."

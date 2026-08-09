@@ -25,6 +25,14 @@ import sys
 EN_TITLE = "Personix — Uncompromising Change"
 EN_SUBTITLE = "An Uncensorable and Incorruptible Decentralized Reputation Network"
 
+# ISBN pro EPUB — každý formát nese vlastní číslo (PDF má svoje v tiráži).
+# Zdroj přidělení: personix-kampan/pamflet-metadata-48jazyku.csv (sloupec isbn_epub).
+# Doplňuje se, jak NKP uvolňuje zbytek bloku 978-80-88573.
+ISBN_EPUB = {
+    "en": "978-80-88573-01-2",
+    "cs": "978-80-88573-03-6",
+}
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # Písma sázená zprava doleva — čtečka jinak listuje knihu obráceně.
@@ -108,6 +116,11 @@ def render_yaml(lang, template_path):
                 out.append("page-progression-direction: rtl")
         else:
             out.append(line)
+    isbn = ISBN_EPUB.get(lang)
+    if isbn:
+        out.append("identifier:")
+        out.append("  - scheme: ISBN")
+        out.append(f"    text: {isbn}")
     return "\n".join(out) + "\n"
 
 
