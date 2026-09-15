@@ -72,6 +72,7 @@ záznam samo jen do části z nich, zbytek chce ruční krok.
 | ScienceOpen | podáno | účet přes ORCID, request přes DOI |
 | Semantic Scholar | draft emailu | jejich kontaktní stránka vrací 404, jede se na feedback@semanticscholar.org |
 | SocArXiv | zamítnuto | `bx3ud` neprošel moderací 5. 8., Crossref DOI odtud nebude |
+| SSRN | podáno 15. 9. | Abstract ID `7465041`, licence CC BY, čeká na kontrolu redakcí. Po přijetí přidělí Crossref DOI |
 | CORE, BASE, IA Scholar | není | harvestují repozitáře samy, autorský submit nemají |
 | Google Scholar | je, ale pod názvem | Záznam existuje i s abstraktem, zdroj personix.org. Pod slovem Personix nevyskočí, k tomu viz deník 15. 9. |
 | Sci-Hub | nelze a nedává smysl | viz níže |
@@ -177,6 +178,7 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 | 2026-09-15 | indexace | Diagnóza po 49 dnech marného denního hlídání Scholaru | — | 3 | Scholar paper zná a má ho i s abstraktem, indexace nikdy nebyla problém. Pod slovem Personix nevyskočí proto, že slovo bylo v dokumentu jen jednou, a to v afiliaci na titulní straně. Tu Scholar parsuje jako metadata o autorovi, ne jako tělo textu, a pdfkeywords z metadat souboru do fulltextu nebere vůbec. Oprava z 28. 7. tedy mířila do dvou míst, která se do fulltextu nepromítají. |
 | 2026-09-15 | indexace | Whitepaper přebuildován na Draft v3, jméno projektu v abstraktu a závěru | `docs(whitepaper)` v repu personix | 2 | Osm výskytů místo jednoho, z toho dva v abstraktu, který Scholar zobrazuje i indexuje. Obsah návrhu beze změny, otimestampovaná v1 nedotčena. Čeká se na recrawl. |
 | 2026-09-15 | indexace | Rešerše ochranné známky PERSONIX v rejstřících | USPTO TSDR, TMview | 1 | V EU stojí jediná živá známka, Sodexo pro stravovací služby, překryv nulový. V USA Fiserv pro ražbu platebních karet, což je zápis z roku 1997, kdy třída 42 byla zbytková, a michiganská firma pro platformu ke komunikaci s pacienty. Jediná citlivá zóna je reputační skóre ve zdravotnictví na americkém trhu. Evropské třídy 9 a 42 jsou pro jméno volné. |
+| 2026-09-15 | indexace | Whitepaper v3 podán na SSRN | [abstract 7465041](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7465041) | 3 | Účet založen, ORCID propojen, podáno jako preprint pod CC BY, zařazeno do Political Economy, Smart Contracts & Legal Aspects of Blockchain a Negotiation & Dispute Resolution. Střet zájmů přiznán. Zenodo DOI záměrně nezadán, aby SSRN vytvořilo vlastní Crossref DOI, což je celý účel podání. Zbývá vada, kdy se do podání nepropsal ORCID, i když v profilu je, doplní se po přijetí. |
 
 ### Legenda typů
 
