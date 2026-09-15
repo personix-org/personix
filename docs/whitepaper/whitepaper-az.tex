@@ -1,0 +1,615 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+% === Core Packages ===
+\usepackage[margin=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds}
+
+% === Citation (IEEE style) ===
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{IEEEtranN}
+
+% === Hyperref ===
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+% === Settings ===
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.3em}
+
+% === Title ===
+\title{\textbf{Mərkəzləşdirilməmiş Reputasiya Şəbəkəsi:\\Təbii İctimai Təşkilatlanma üçün Çərçivə}}
+\author{Pavel Kudrna\\Prague, Czechia\\Qaralama v1 --- Mart 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+% ABSTRACT
+% ============================================================
+\begin{abstract}
+Ədalət hissi---haqsızlıqların düzəldilməsi və layiqin mükafatlandırılması inamı---cəmiyyətin ən güclü birləşdirici qüvvəsidir. Mərkəzləşdirilmiş idarəetmə institutları bu hissi təmin edə bilmədikdə, çünki bir hüququn tətbiqinin dəyəri hüququn öz dəyərini üstələyir, ictimai birlik aşınır. Mövcud institusional strukturlar mübahisələrin əhəmiyyətli bir sinfini sistemli şəkildə mərkəzi planlaşdırmanın resursları bölüşdürməkdə uğursuzluğa uğradığı kimi həll edə bilmir: informasiya asimmetriyası, çatışmayan geribildirim dövrələri və qərar verənlərin öz qərarlarının nəticələrindən ayrılması vasitəsilə. Bu məqalə Reputasiya Sosial Şəbəkəsini (RSN) təqdim edir: Mərkəzləşdirilməmiş İdentifikatorlar (DID) üzərində qurulmuş, mərkəzləşdirilməmiş, korrupsiyaya davamlı, senzuraya davamlı rabitə qatı, bu, psevdonim iştirakçılara real dünya davranışı haqqında reputasiya məlumatını dərc etməyə, yoxlamağa və istehlak etməyə imkan verir. Əsas mexanizm üç dizayn prinsipinə əsaslanır: (1)~reputasiya məlumatını oxumağın ucuz, lakin yazmağın yoxlana bilən səy tələb etdiyi asimmetrik dəyər strukturu; (2)~radikal iddiaların qiymətini artan iterasiya dəyərləri vasitəsilə müəyyən edən ardıcıl heşləməyə əsaslanan qeyri-deterministik yoxlayıcı seçim protokolu; və (3)~özəl yoxlayıcıların dəstəklədikləri iddiaların dəqiqliyinə toplanmış reputasiyalarını qoyduqları bazar əsaslı reputasiya səlahiyyəti modeli. Nəticə etibarilə yaranan arxitektura mərkəzi koordinasiya olmadan meydana çıxan meritokratiya yaradır və mövcud dövlət tərəfindən idarə olunan sistemlərdən tədricən, geri qaytarıla bilən miqrasiya yolunu təmin edir.
+\end{abstract}
+
+% ============================================================
+% 1. INTRODUCTION
+% ============================================================
+\section{Giriş}
+
+\subsection{Mərkəzləşdirilmiş Etibarın Problemi}
+
+Müasir idarəetmə fundamental bir fərziyyəyə əsaslanır: mərkəzləşdirilmiş institutlar geniş miqyasda yad adamlar arasında etibarı vasitəçilik edə bilər. Məhkəmələr mübahisələri həll edir. Reyestrlər mülkiyyəti təsdiqləyir. Tənzimləyici orqanlar standartları tətbiq edir. Bu institutlar informasiyanın az olduğu, rabitənin yavaş olduğu və səlahiyyətin mərkəzi orqana həvalə edilməsinin yeganə mümkün koordinasiya mexanizmi olduğu bir dövrdə yaradılmışdır. Bununla belə, mərkəzləşdirilmiş idarəetmə mərkəzi planlaşdırma ilə eyni struktur səbəblərə görə uğursuzluğa uğrayır: informasiya asimmetriyası, çatışmayan geribildirim dövrələri və qərar verənlərin öz qərarlarının nəticələrindən ayrılması.
+
+Fərziyyə, məsələn, institusional vasitəçiliyin dəyəri mübahisənin dəyərini üstələdikdə uğursuzluğa uğrayır. Kirayələdiyi mənzilin qanuni tələb olunan elektrik təhlükəsizliyi sertifikatının olmadığını aşkar edən bir kirayəçini nəzərdən keçirin---bu, həyat üçün dərhal təhlükə yaradan bir vəziyyətdir. Kirayəçinin müqavilədən imtina etmək hüququ birmənalıdır. Buna baxmayaraq, həmin hüququ məhkəmə sistemi vasitəsilə tətbiq etmənin dəyəri, potensial qanuni kompensasiyanı da daxil etməklə, depozitin və borclu zərərin pul dəyərini üstələyir~\cite{czcourtfees}. Rasional cavab zərəri qəbul edib çıxmaqdır.
+
+Bu patoloji istisna hal deyil. Bu, zərərin real olduğu, lakin pul mərcinin institusional tətbiqin iqtisadi cəhətdən rasional olduğu həddin altına düşdüyü mübahisələrin əhəmiyyətli bir sinfi üçün standart təcrübədir. Nəticə struktur olaraq pis aktyorlara üstünlük verən sistemdir: bu həddin altındakı həcmdə başqalarına zərər verənlər cəzasız davrana bilər, çünki ədalət axtarışının dəyəri zərər çəkmiş tərəfin üzərinə düşür.
+
+Yuxarıdakı nümunə müəllifin hüquqi mühitindən---Çexiya mülki hüquq sistemindən---götürülmüşdür. Digər hüquqi ənənələrdə---presedentə əsaslanan ümumi hüquq, adət hüququ, qarışıq sistemlər---ədalət yurisdiksiyanın mədəni və prosessual xüsusiyyətlərindən asılı olaraq müxtəlif şəkildə və müxtəlif dərəcədə uğursuzluğa uğrayır. Oxucular çox güman ki, öz kontekstlərindən ekvivalent nümunələri tanıyacaqlar. Struktur olaraq universal olan şey nümunədir: dəyəri iqtisadi cəhətdən rasional tətbiq həddinin altına düşən mübahisələr zərərin zərər çəkmiş tərəf tərəfindən qəbul edilməsi ilə bitir. RSN mükəmməl ədalət vəd etmir---o, yalnız institusional tətbiq qeyri-iqtisadi olduqda pis aktyorların malik olduğu struktur üstünlüyünü azaldır.
+
+\subsection{Mövcud Həllər Niyə Kifayət Etmir}
+
+\textbf{Mərkəzləşdirilməmiş İdentifikasiya (DID) çərçivələri}~\cite{did2022} öz-özünə suveren identifikasiya idarəetməsi üçün kriptoqrafik mexanizmlər təmin edir, lakin əsasən davranış reputasiyasının daha geniş məsələsini həll etmədən identifikasiya yoxlanışına diqqət yetirir.
+
+\textbf{Soulbound Tokenlər (SBT)}~\cite{weyl2022} reputasiyanın köçürülə bilməyən olduğu anlayışını əks etdirir, lakin miqyaslana bilmə məhdudiyyətləri olan blokçeyn infrastrukturuna əsaslanır və informasiya girişini idarə edən iqtisadi stimulları həll etmir. Layiq tokenləri (məsələn, Liberland) kimi əlaqəli konsepsiyalar oxşar fəlsəfəni bölüşür, lakin konkret yurisdiksiya çərçivələrinə bağlı qalır.
+
+\textbf{Mərkəzləşdirilməmiş Avtonom Təşkilatlar (DAO)}~\cite{buterin2014} idarəetməni ağıllı müqavilələr vasitəsilə həyata keçirir, lakin təsirin kapitala mütənasib olduğu plutokratik dinamikaları təkrarlayır. Kvadratik səsvermə~\cite{buterin2019} bunu qismən yumşaldır, lakin praktik qəbulu məhdudlaşdırır. DAO-lar həmçinin fundamental \emph{orakul problemi} ilə üzləşir: ağıllı müqavilələr etibarlı xarici mənbə olmadan real dünya vəziyyətlərini etibarlı şəkildə yoxlaya bilmir və bu problemin blokçeyn arxitekturası daxilində ümumi həlli yoxdur.
+
+Heç bir mövcud sistem mərkəzləşdirilməməni, senzuraya davamlılığı, psevdonimliyi, yoxlana bilən giriş dəyərini və meydana çıxan konsensusu birləşdirmir.
+
+\subsection{Töhfələr}
+
+Bu məqalə aşağıdakı töhfələri verir:
+\begin{enumerate}[nosep]
+\item İkitərəfli reputasiya mübadiləsini dəstəkləmək üçün DID çərçivəsini genişləndirən mərkəzləşdirilməmiş protokol olan \textbf{Reputasiya Sosial Şəbəkəsinin (RSN)} tərifi.
+\item Ardıcıl heşləməyə əsaslanan \textbf{qeyri-deterministik yoxlayıcı seçim protokolu}~\cite{karger1997}.
+\item İddiaların qiymətini üç mürəkkəbləşən dəyər kanalı vasitəsilə şəbəkə konsensusundan olan məsafələrinə görə müəyyən edən \textbf{Baha Radikalizm Prinsipi}.
+\item Yalan təsdiqin qanuni haqlardan kataklizmatik şəkildə daha baha başa gəldiyi asimmetrik stimullar olan \textbf{Etibarlı Səlahiyyət modeli}.
+\item Paralel fiskal infrastruktur vasitəsilə \textbf{tədrici miqrasiya yolu}.
+\end{enumerate}
+
+% ============================================================
+% 2. DESIGN PRINCIPLES
+% ============================================================
+\section{Dizayn Prinsipləri}
+
+RSN arxitekturası beş danışılmaz dizayn prinsipi ilə məhdudlaşdırılır.
+
+\textbf{Davamlılıq və Təkamül.} Sistem qeyri-müəyyən uzunluqda keçid dövrü ərzində mövcud institutlarla birgə mövcud olur. Keçid hər mərhələdə geri qaytarıla bilən olmalıdır.
+
+\textbf{Könüllülük və Məsuliyyət.} İştirak könüllüdür, lakin könüllülük məsuliyyətlə birləşir: institusional funksiya üzərində nəzarəti üzərinə götürən iştirakçı eyni zamanda müşayiət olunan öhdəlikləri də üzərinə götürür.
+
+\textbf{Müxtəliflik və Mədəni Neytrallıq.} Konsensus sistem dizaynerləri tərəfindən qoyulan əvvəlcədən müəyyən edilmiş qaydalardan deyil, ikitərəfli qarşılıqlı əlaqələrdən yaranır.
+
+\textbf{Dayanıqlıq və Senzuraya Davamlılıq.} Şəbəkəni senzura etmənin dəyəri ona dözmənin dəyərini üstələməlidir. Yalnız tam totalitarizm---dağıdıcı siyasi və iqtisadi qiymətə---sistemi boğa bilər.
+
+\textbf{Konsensus və Tətbiq.} Sistem insan meyllərini---xırdaçılığa, kinə və qisas verməkdən doğan məmnunluğa---yük daşıyan xüsusiyyətlər kimi özündə birləşdirir. Səhv davranış qadağan edilmir; onun qiyməti müəyyən edilir.
+
+% ============================================================
+% 3. SYSTEM OVERVIEW
+% ============================================================
+\section{Sistemə Baxış}
+
+\subsection{Reputasiya Sosial Şəbəkəsi}
+
+RSN iştirakçıların real dünya davranışı haqqında yoxlana bilən məlumat mübadiləsi etdikləri mərkəzləşdirilməmiş, ötürücüdən-ötürücüyə rabitə qatıdır. Onun müəyyənedici xüsusiyyətləri bunlardır: mərkəzləşdirilməmiş və senzura edilə bilməyən infrastruktur; DID-lər vasitəsilə psevdonim iştirak; asimmetrik dəyər strukturu (oxumaq ucuz, yazmaq bahadır); kriptoqrafik yoxlana bilmə; və \textbf{standartların dəstəklənməsi}---şəbəkə vasitəsilə yayılan informasiya üçün maşınla oxuna bilən formatlar, səlahiyyətlilərin təklif etdiyi xidmətlər (iddia tərtibi, təsdiq, şahid xidməti) üçün, həmçinin qarşı tərəfin reputasiyasının qiymətləndirilməsi qaydaları və siyasət uyğunsuzluğu riskinin (bəyan edilmiş və faktiki davranış arasında) qiymətləndirilməsi daxil olmaqla siyasət formatı üçün.
+
+\subsection{Arxitektura Komponentləri}
+
+RSN dörd əsas komponentdən ibarətdir (Şəkil~\ref{fig:architecture}):
+\begin{enumerate}[nosep]
+\item \textbf{DID Qatı.} Bəyan edilmiş qaydalar, reputasiya metaməlumatları və şəbəkə marşrutlaması ilə iştirakçı identifikasiyaları.
+\item \textbf{İddia Protokolu.} Real dünya hadisələri haqqında təsdiqlərin dərc edilməsi üçün struktur formatı.
+\item \textbf{Yoxlama Şəbəkəsi.} Ardıcıl heşləmə istifadə edərək yoxlayıcıların təyin edilməsi üçün mərkəzləşdirilməmiş protokol.
+\item \textbf{Reputasiya Aqreqasiya Qatı.} İnsan tərəfindən oxuna bilən reputasiya xülasələri yaradan xidmətlər.
+\end{enumerate}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    layer/.style={draw, minimum height=0.7cm, align=center, font=\scriptsize, fill=black!8},
+    arr/.style={<->, thick, gray!60}
+]
+\node[layer, minimum width=5cm] (agg) at (0,2.8) {\textbf{Aqreqasiya}\\Şərh $\cdot$ Risk};
+\node[layer, minimum width=2.2cm] (claim) at (-1.55,1.4) {\textbf{İddialar}\\Tərtib};
+\node[layer, minimum width=2.2cm] (verif) at (1.55,1.4) {\textbf{Yoxlama}\\Seçim};
+\node[layer, minimum width=5cm] (did) at (0,0) {\textbf{DID Qatı}\\İdentifikasiya $\cdot$ Qaydalar $\cdot$ Ballar};
+
+\draw[arr] (agg.south west) -- (claim.north);
+\draw[arr] (agg.south east) -- (verif.north);
+\draw[arr] (claim.east) -- (verif.west);
+\draw[arr] (claim.south) -- (did.north west);
+\draw[arr] (verif.south) -- (did.north east);
+\end{tikzpicture}
+\caption{RSN dörd qatlı arxitektura.}
+\label{fig:architecture}
+\end{figure}
+
+\subsection{İştirakçı Rolları}
+
+Yoxlama əməliyyatı altı fərqli DID roluna qədər əhatə edir (Şəkil~\ref{fig:roles}): \textbf{Emitent} ($DID_I$, iddianı yaradır və təqdim edir), \textbf{Subyekt} ($DID_S$, iddianın haqqında olduğu DID---Emitentlə üst-üstə düşə bilər), \textbf{Səlahiyyətli} ($DID_A$, iddianı haqq müqabilində təsdiqləyir; şahid xidmətləri də təklif edə bilər---\emph{ixtiyari}), \textbf{Şahid} ($DID_{W_{1..n}}$, çağırış kodları vasitəsilə yoxlayıcının dürüstlüyünü gizli izləyən---\emph{ixtiyari}), \textbf{Yoxlayıcı} ($DID_V$, iddianı dərc etmək üçün alqoritmik olaraq seçilir) və \textbf{RSN} (yoxlanılmış iddiaların dərc edildiyi şəbəkə). İstənilən rol başqa DID-ə həvalə edilə bilər (Bölmə~7.4). Səlahiyyətli adətən təsdiqi şahid xidmətləri ilə birləşdirir, lakin iki funksiya məntiqi cəhətdən müstəqildir.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    role/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8},
+    opt/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8, dashed},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    oarr/.style={-{Stealth[length=3pt]}, thick, dashed, gray},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[role] (I) at (0,2.4) {\textbf{Emitent}};
+\node[role] (S) at (-2.5,2.4) {\textbf{Subyekt}};
+\node[opt] (A) at (2.5,1.2) {\textbf{Səlahiyyətli}};
+\node[opt] (W) at (-2.5,0) {\textbf{Şahid}};
+\node[role] (V) at (2.5,-0.6) {\textbf{Yoxlayıcı}};
+\node[role, fill=black!5, draw=gray] (N) at (0,-1.8) {RSN};
+
+\draw[arr] (I) -- node[lbl] {haqqında} (S);
+\draw[oarr] (I) -- node[lbl,sloped] {təsdiqləyir} (A);
+\draw[oarr] (I) -- node[lbl,sloped] {çağırış} (W);
+\draw[arr] (I) -- node[lbl,sloped] {sorğu} (V);
+\draw[oarr] (W) -- node[lbl] {izləyir} (V);
+\draw[arr] (V) -- node[lbl] {dərc edir} (N);
+\end{tikzpicture}
+\caption{Yoxlama əməliyyatında DID rolları. Kəsik xətt = ixtiyari (Səlahiyyətli, Şahid).}
+\label{fig:roles}
+\end{figure}
+
+\subsection{Korrupsiyaya Davamlılıq: Dörd Qüvvə}
+
+RSN-in korrupsiyaya davamlılığı tək bir mexanizmdən deyil, dörd eyni vaxtlı qüvvədən yaranır. Heç biri təkbaşına kifayət etmir; yalnız onların birləşməsi korrupsiya cəhdini iqtisadi cəhətdən irrasional edir.
+
+\textbf{Proqnozlaşdırıla bilməyən hədəf.} Hər iddia üçün yoxlayıcı ardıcıl heşləmə vasitəsilə qeyri-deterministik şəkildə seçilir (Bölmə~5.3). Hücumçu rüşvət üçün konkret bir yoxlayıcını əvvəlcədən hədəfləyə bilməz, çünki yoxlayıcının şəxsiyyəti emitentin seçimindən deyil, iddianın məzmununun və əvvəlki iterasiyaların funksiyasıdır.
+
+\textbf{Reputasiya təsiri---yavaş yuxarı, sürətli aşağı.} Reputasiya yalnız tədricən, davamlı ardıcıl davranış vasitəsilə qazanıla bilər. Bununla belə, tək bir saxta təsdiqdə kataklizmatik şəkildə itirilə bilər (Bölmə~6.2). Bu asimmetriya o deməkdir ki, illərlə toplanmış reputasiya bir dürüst olmayan təsdiqlə məhv edilə bilər; optimal strategiya şübhəli iddiaları rədd etmək olaraq qalır.
+
+\textbf{İctimai vəd.} Hər DID Sahibi öz siyasətini---riayət etməyə söz verdiyi maşınla oxuna bilən qaydalar toplusunu---ictimai olaraq bəyan edir. Bəyanat ilə faktiki davranış arasındakı fərq aşkarlana bilər və əsas pozuntudan daha ağır reputasiya cinayəti kimi qiymətləndirilir (Bölmə~7.3). Buna görə də riyakarlıq birbaşa dürüst olmamaqdan daha bahadır.
+
+\textbf{Mesh hücum-dəyər asimmetriyası.} Şəbəkəni senzura etmənin və ya sabitliyini pozmanın dəyəri şəbəkənin ölçüsü və sıxlığı ilə qeyri-xətti artır, halbuki ona dözmənin dəyəri sabit qalır. Senzuranın özünü doğrultması üçün mərkəzləşdirilmiş aktyorun onu bütün şəbəkəyə tətbiq etməsi lazım gələrdi---hər hansı təsəvvür edilə bilən fayda ilə mütənasib olmayan tədbirlər tələb edir (Bölmə~10).
+
+% ============================================================
+% 4. DECENTRALIZED IDENTITY MODEL
+% ============================================================
+\section{Mərkəzləşdirilməmiş İdentifikasiya Modeli}
+
+\subsection{Xüsusi Xassələri olan DID}
+
+RSN W3C DID Core spesifikasiyasını~\cite{did2022} bunlarla genişləndirir: \textbf{Bəyan Edilmiş Qaydalar} (maşınla oxuna bilən davranış öhdəlikləri), \textbf{Reputasiya Metaməlumatları} (birləşdirilmiş davranış balı) və \textbf{Şəbəkə Marşrutlaması} (sabit halqa mövqeyindən ayrı, dəyişkən onion şlüzü).
+
+\subsection{İddianın Həyat Dövrü}
+
+İddia altı mərhələdən keçir (Şəkil~\ref{fig:lifecycle}): tərtib, ixtiyari səlahiyyət təsdiqi, ardıcıl heşləmə vasitəsilə yoxlayıcı seçimi, yoxlama qərarı (qəbul və ya iterasiya ilə rədd), dərc və bütün tərəflər üçün reputasiya yeniləməsi.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    stp/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\tiny, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[stp] (comp) at (0,0) {İddianı\\tərtib et};
+\node[stp, dashed] (auth) at (2.0,0) {Səlahiyyət\\təsdiqi};
+\node[stp] (hash) at (4.0,0) {Heş \&\\halqa};
+\node[stp] (ver) at (2.0,-1.6) {Yoxlayıcı\\yoxlama};
+\node[stp, double] (pub) at (0,-1.6) {Dərc edildi};
+\node[stp] (rej) at (4.0,-1.6) {Rədd edildi\\dəyər $\uparrow$};
+
+\draw[arr] (comp) -- (auth);
+\draw[arr] (auth) -- (hash);
+\draw[arr] (hash) -- (ver);
+\draw[arr] (ver) -- node[lbl] {\checkmark} (pub);
+\draw[arr] (ver) -- node[lbl] {$\times$} (rej);
+\draw[arr] (rej) -- ++(0,0.8) -| (hash);
+\end{tikzpicture}
+\caption{İterasiya dövrü ilə iddianın həyat dövrü.}
+\label{fig:lifecycle}
+\end{figure}
+
+\subsection{W3C DID Core ilə Əlaqə}
+
+RSN-in identifikasiya modeli W3C DID Core spesifikasiyasının~\cite{did2022} düzgün üstçoxluğudur. Bütün RSN DID-ləri etibarlı W3C DID-lərdir. RSN-ə xas genişləndirmələr ION~\cite{buchner2021} və Ceramic~\cite{ceramic2023} kimi mövcud infrastrukturla uyğun olan xüsusi DID metod spesifikasiyasında müəyyən edilmiş DID sənəd xassələri kimi kodlaşdırılır.
+
+% ============================================================
+% 5. VERIFICATION AND PROPAGATION
+% ============================================================
+\section{İnformasiyanın Yoxlanması və Yayılması}
+
+\subsection{İnformasiya Girişinin Dəyəri}
+
+RSN-in əsas iqtisadi prinsipi oxumaq və yazmaq arasındakı asimmetriyadır. Reputasiya məlumatını oxumaq DID şəbəkəsinin bir hissəsi olan və reputasiyasına uyğun girişi olan iştirakçılar üçün sıfır marjinal dəyərə yaxınlaşır---yeni gələnlər tədricən daha geniş giriş qazanmalıdırlar (bax: anti-parazitlik). Yazmaq---bir dəfəlik texniki akt kimi deyil, reputasiyanın şəbəkəyə davamlı maddiləşməsi kimi anlaşılır---üç ölçüdə yoxlana bilən kumulyativ investisiya tələb edir: \textbf{vaxt} (ardıcıl davranışa, yerinə yetirilmiş öhdəliklərə və inkişaf etdirilmiş münasibətlərə sərf olunan həyat illəri), \textbf{enerji} (dürüst davranışa, tərəfdaşlıqlara qayğıya və uzunmüddətli etibarlılığa yatırılan səy) və \textbf{pul} (öz adına investisiya---peşəkar inkişaf, işinin keyfiyyəti, vurulmuş zərərlərin bərpası). Reputasiya dərhal satın alına bilməz---o, sistemin yalnız görünən və kontekstlər arasında köçürülə bilən etdiyi ömürlük toplanmanın nəticəsidir. Protokolun bir dəfəlik texniki dəyərləri (kriptoqrafik imzalar, yoxlayıcı haqları) bu əsas investisiya ilə müqayisədə əhəmiyyətsizdir.
+
+\subsection{Sosial Qraf və Kontakt Dərinliyi}
+
+RSN fundamental olaraq sosial şəbəkədir: hər DID əlaqəyə icazə verən kontaktlar (digər DID-lər) əlavə edir. Bu kontaktların öz kontaktları var və s. Alqoritmik yoxlayıcı axtarışı əlaqəli kontaktların konfiqurasiya edilə bilən $h$ dərinliyi daxilində işləyir (məsələn, $h=3$: birbaşa kontaktlar, onların kontaktları və kontaktların kontaktları). Bu arxitektura tək bir qlobal blokçeyn tələb etmir---o, təbii olaraq digər icmalara keçidləri olan icmaların/klasterlərin meydana çıxmasına üstünlük verir. Hər DID iştirakçısının dərc edilmiş \textbf{siyasəti} olmalıdır---daxil olan sorğuların necə qiymətləndirildiyini idarə edən maşınla oxuna bilən qaydalar toplusu. Siyasət pozuntuları şəbəkədə mənfi artefaktlar kimi qeyd edilir.
+
+\subsection{Alqoritmik Yoxlayıcı Seçimi}
+
+Yoxlama protokolu ardıcıl heşləmədən istifadə edir~\cite{karger1997} (Şəkil~\ref{fig:verifier}). Yoxlama ödənişli xidmətdir: yoxlayıcılar haqq müqabilində işləyir, rəqabətin qiymətqoymanı, sürəti və etibarlılığı idarə etdiyi bazar yaradır.
+
+\textbf{Addım 1.} İddia sənədi əvvəlki iterasiyanın heş nəticəsi ilə (və ya ilk iterasiyada $\varnothing$) birləşdirilir və heşlənir:
+\begin{equation}
+\text{pos} = f_h(\text{claim} \| \text{prev\_hash})
+\label{eq:hash}
+\end{equation}
+
+Alqoritm bütün əvvəlki sorğuların və cavabların \emph{tam yolunu} daxil etməlidir---sadəcə əvvəlki iterasiyanın heşini deyil. Hər yoxlayıcının tam cavabı (qəbul, rədd, təklif edilən qiymət, səbəb) böyüyən sənədə əlavə edilir, hər addımda kriptoqrafik imzalar vasitəsilə yoxlana bilir.
+
+\textbf{Addım 2.} Heş ardıcıl heş halqasında $N$ mövqeyə xəritələnir, bərabər paylanır (məsələn, $N=4$ üçün: $+0^{\circ}, +90^{\circ}, +180^{\circ}, +270^{\circ}$). Hər mövqedən saat əqrəbi istiqamətində axtarış ən yaxın DID-i yoxlayıcı namizədi kimi seçir (Şəkil~\ref{fig:multipoint}). $N$ hazırda aktiv DID-lərin faizindən, günün vaxtından və ya şəbəkənin tarixi cavabvermə qabiliyyətindən asılı ola bilən dəyişən parametrdir.
+
+\textbf{Addım 3.} Yoxlayıcı qəbul edir (dərc edir, reputasiyanı qoyur) və ya rədd edir (rədd heşi ilə Addım~1-ə qayıdır). Bir node online statusu bəyan etməsinə baxmayaraq cavab vermədikdə, növbəti sorğu bütün $N$ əvvəlki yoxlayıcı namizədindən olan bütün cavabları daxil etməlidir.
+
+\textbf{Anti-parazitlik.} Hədəf DID-lər az reputasiyalı yeni DID-lərdən gələn sorğular üçün haqlar və ya giriş məhdudiyyətləri təyin edə bilər. Bu pilləli mexanizm (ikilik deyil) yeni gələnləri başqalarının məlumatını sərbəst istehlak etməzdən əvvəl həqiqi fəaliyyət vasitəsilə reputasiya qurmağa məcbur edir.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!5},
+    dec/.style={draw, diamond, aspect=2.2, minimum width=0.9cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[box] (iss) at (0,0) {Emitent};
+\node[box] (hash) at (0,-1.1) {$f_h$(iddia $\|$\\prev\_hash)};
+\node[box] (ring) at (0,-2.2) {Halqa xəritəsi\\saat əqrəbi};
+\node[box, dashed] (spam) at (0,-3.2) {Anti-spam\\depozit};
+\node[dec] (check) at (0,-4.4) {Siyasət\\yoxlaması};
+\node[box] (rej) at (2,-5.6) {Növbəti\\iterasiya};
+\node[box] (fee) at (0,-5.6) {Yekun haqq =\\$f$(data, rep., pol.)};
+\node[box, double] (pub) at (0,-6.8) {Dərc edildi};
+
+\draw[arr] (iss) -- (hash);
+\draw[arr] (hash) -- (ring);
+\draw[arr] (ring) -- (spam);
+\draw[arr] (spam) -- (check);
+\draw[arr] (check) -- node[lbl] {$\times$} (rej);
+\draw[arr] (check) -- node[lbl] {\checkmark} (fee);
+\draw[arr] (fee) -- (pub);
+\draw[arr] (rej.east) -- ++(0.5,0) |- (hash.east);
+\end{tikzpicture}
+\caption{Yoxlayıcı seçim protokolu. Anti-spam depoziti ixtiyaridir və geri qaytarıla bilər. Yekun haqq yalnız qəbul zamanı ödənilir.}
+\label{fig:verifier}
+\end{figure}
+
+Hər rədd yoxlayıcının tam cavabını (səbəblər və şərtlər daxil olmaqla) iddia sənədinə əlavə edərək onun məzmununu genişləndirir. Genişləndirilmiş sənəddən qeyri-deterministik şəkildə yeni heş hesablanır, fərqli halqa mövqeyinə xəritələnir və fərqli yoxlayıcı seçir. Tam yolun sənədləşdirilməsi məcburidir---emitent növbəti yoxlayıcını proqnozlaşdıra və ya ona təsir edə bilməz. Bir yoxlayıcı uyğun bəyan edilmiş siyasətə baxmayaraq sorğunu iqnor edərsə, şahidlər (varsa) bunu qeyd edir və emitent yekun dərc zamanı şahid dəlilini əlavə edə bilər.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.65]
+% Ring
+\draw[thick] (0,0) circle (2.2cm);
+% DID nodes on ring
+\foreach \a in {10,55,80,120,150,195,230,260,305,340} {
+  \fill[black!40] (\a:2.2) circle (1.5pt);
+}
+% Hash offset arrow pointing to initial position
+\draw[-{Stealth[length=3pt]}, thick, black!60] (0,0) -- node[font=\tiny,above,sloped,pos=0.6] {$f_h$} (37:2.2);
+\fill[black] (37:2.2) circle (2pt);
+\node[font=\tiny,anchor=south west] at (37:2.35) {$h_0$};
+% N=4 points offset from h0 by +0, +90, +180, +270
+\foreach \offset/\l in {0/P1,90/P2,180/P3,270/P4} {
+  \pgfmathsetmacro{\ang}{37+\offset}
+  \node[fill=black, circle, inner sep=1.5pt] (p\offset) at (\ang:2.2) {};
+  \node[font=\tiny,font=\bfseries] at (\ang:2.75) {\l};
+  % clockwise search arc
+  \draw[-{Stealth[length=2.5pt]}, thick, gray] (\ang:2.2) arc (\ang:\ang+30:2.2);
+}
+\node[font=\scriptsize, align=center] at (0,0) {Heş\\Halqası};
+\node[font=\tiny, align=center] at (0,-3.2) {$h_0 = f_h(\text{iddia})$, sonra $+0^{\circ},+90^{\circ},+180^{\circ},+270^{\circ}$\\Hər nöqtə $\rightarrow$ saat əqrəbi axtarışı};
+\end{tikzpicture}
+\caption{Çoxnöqtəli seçim ($N{=}4$). Heş $h_0$ ofseti təyin edir; $h_0$-dan bərabər paylanmış 4 nöqtə.}
+\label{fig:multipoint}
+\end{figure}
+
+\subsection{Şahid Protokolu}
+
+\textbf{Şahid} rolu kriptoqrafik çağırış-kodu protokolu vasitəsilə yoxlayıcının dürüstlüyü üçün gizli hesabatlılıq təmin edir:
+
+\textbf{Addım W1.} Sorğu edən yoxlama sorğusunu imzalayır və onu $N_w$ şahidə göndərir---sorğu edənin sosial şəbəkəsindən olan kontaktlar və ya haqq müqabilində işləyən ixtisaslaşmış şahid xidməti təchizatçıları.
+
+\textbf{Addım W2.} Hər şahid $w_i$ bütün imzalanmış sorğunu imzalayır, orijinal imza $\sigma_i$-ni saxlayır və çağırış kodu $c_i = h(\sigma_i)$ hesablayır. Çağırış kodu sorğuya əlavə edilir.
+
+\textbf{Addım W3.} İndi $N_w$ çağırış kodu daşıyan sorğu yoxlayıcıya göndərilir. Yoxlayıcı kodları müşahidə edir, lakin şahidlərin kim olduğunu və ya kodların real imzalara uyğun olub-olmadığını \emph{müəyyən edə bilmir}.
+
+\textbf{Addım W4 (dürüst yoxlayıcı).} Yoxlayıcı bəyan edilmiş siyasətinə uyğun cavab verərsə, çağırış kodları qapalı qalır. Şahidlər heç vaxt açıqlanmır. Heç bir əlavə məlumat dərc edilmir.
+
+\textbf{Addım W5 (siyasət pozuntusu).} Yoxlayıcı öz siyasətini pozarsa (sorğunu iqnor edir, ardıcıl olmayan cavab verir), sorğu edən şahidlərin orijinal imzaları $\sigma_i$-ni saxlayır. Bunlar müşayiətedici məlumat kimi dərc edilə bilər: hər kəs $c_i = h(\sigma_i)$-ni yoxlaya bilər, şahidin mövcud olduğunu sübut edir. Sorğu edən müstəqil olaraq dərc edə bilər---yoxlayıcı artıq cavabında çağırış kodlarını imzalamışdır.
+
+\textbf{Blef xassəsi.} Sorğu edən bəzi və ya bütün çağırış kodları üçün təsadüfi dəyərlər əvəz edə bilər. Yoxlayıcı həqiqi kodları (yüksək reputasiyalı səlahiyyətlilər tərəfindən dəstəklənən) küydən ayıra bilməz. Bu \emph{qeyri-müəyyənlik} tətbiq mexanizmidir: hər sorğu hörmətli bir səlahiyyətlinin gizli olaraq izlədiyi riskini daşıyır. Bu təzyiqi saxlamağın dəyəri sıfıra yaxındır (təsadüfi ədədlər generasiya etmək), halbuki dürüst olmamağın yoxlayıcı üçün potensial dəyəri kataklizmatikdir. Faktiki şahidlərin olmadığı halda belə dürüst davranış stimullaşdırılır.
+
+\textbf{Səlahiyyətli şahid kimi.} İddianı təsdiqləyən Səlahiyyətli şahid xidmətlərini birləşdirə bilər: ``Mən iddianızı təsdiqləyirəm və yoxlama zamanı gizli şahid kimi çıxış edirəm.'' Bu təbii biznes modelidir---Səlahiyyətlinin artıq konteksti var. Bununla belə, iki rol məntiqi cəhətdən müstəqildir.
+
+\subsection{Baha Radikalizm Prinsipi}
+
+Üç dəyər kanalı eyni vaxtda mürəkkəbləşir (Şəkil~\ref{fig:radicalism}):
+
+\textbf{Kanal 1: İterasiya Dəyəri.} Hər rədd vaxt və resurs sərf edən yeni iterasiyaya məcbur edir. Xətti artım.
+
+\textbf{Kanal 2: Sənəd Şişməsi.} Hər iterasiya tam yoxlayıcı cavabını iddia sənədinə əlavə edir. Artım xəttidir, lakin baza ofseti ilə: ilkin yük (iddia məzmunu, səlahiyyət təsdiqi, kriptoqrafik imzalar) artıq qeyri-trivial $B_0$ ölçüsünə malikdir. $k$ iterasiyadan sonra ümumi ölçü: $S(k) = B_0 + k \cdot \Delta$, burada $\Delta$ orta cavab ölçüsüdür.
+
+\textbf{Kanal 3: Yoxlayıcı Risk Mükafatı.} Risk subyektivdir. Yoxlayıcı sorğu edən DID-in bəyan edilmiş siyasətlərinin yoxlayıcının öz kommersiya, sosial və ya siyasi maraqları ilə ziddiyyət təşkil edib-etmədiyini qiymətləndirir. Mükafat yoxlayıcının ``idealından'' qəbul edilən məsafə ilə eksponensial olaraq arta bilər: $P(d) = \alpha \cdot e^{\beta d}$, burada $d$ yoxlayıcının subyektiv məsafə metrikasıdır. Şəxsi qadağan sərhədindən kənarda yoxlayıcı tamamilə imtina edə bilər.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\columnwidth,
+    height=4.5cm,
+    xlabel={\footnotesize Radikalizm},
+    ylabel={\footnotesize Nisbi dəyər (log)},
+    ymode=log,
+    xmin=0, xmax=100,
+    ymin=1, ymax=10000,
+    grid=major,
+    grid style={gray!20},
+    legend style={at={(0.03,0.97)},anchor=north west,font=\tiny,draw=gray!50},
+    tick label style={font=\tiny},
+    label style={font=\footnotesize},
+]
+\addplot[black, thick, domain=0:100, samples=50] {1 + 0.3*x};
+\addlegendentry{İterasiya dəyəri (xətti)}
+\addplot[black, thick, dashed, domain=0:100, samples=50] {1 + 0.15*x};
+\addlegendentry{Sənəd şişməsi (xətti)}
+\addplot[black, thick, dotted, line width=1.2pt, domain=0:100, samples=100] {exp(0.08*x)};
+\addlegendentry{Risk mükafatı (eksponensial)}
+\end{axis}
+\end{tikzpicture}
+\caption{Üç kanal üzrə dəyər artımı. Risk mükafatı yüksək radikalizmdə üstünlük təşkil edir.}
+\label{fig:radicalism}
+\end{figure}
+
+Kritik olaraq, bu senzura deyil. Heç bir iddia qadağan edilmir. Sistem riskin qiymətini müəyyən edir (Cədvəl~\ref{tab:costs}).
+
+\begin{table}[ht]
+\centering
+\caption{İddia növləri üzrə dəyər müqayisəsi.}
+\label{tab:costs}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Növ} & \textbf{İter.} & \textbf{Sənəd} & \textbf{Haqq} & \textbf{Cəmi} \\
+\midrule
+Etibarlı & $k_{\min}$ & $B_0$ & $P_{\min}$ & Aşağı \\
+Mübahisəli & $k_{\text{med}}$ & $B_0{+}k\Delta$ & $\alpha e^{\beta d}$ & Orta \\
+Radikal & $k_{\max}$ & $\gg B_0$ & $\gg P_{\min}$ & Çox yüksək \\
+Saxta & $\to\infty$ & --- & --- & Dərc edilə bilməz \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% 6. REPUTATION AND RISK
+% ============================================================
+\section{Reputasiya və Risk Qiymətləndirməsi}
+
+\subsection{Reputasiya Toplama Modeli}
+
+Reputasiya üç xassə nümayiş etdirir: \textbf{yavaş toplanma} (ardıcıl davranış vasitəsilə tədrici artım), \textbf{sürətli məhv olma} (tək bir saxtakarlıq balı kataklizmatik şəkildə azalda bilər) və \textbf{fərdi qiymətləndirmə} (hər istehlak edən tərəf öz aqreqasiya funksiyasını tətbiq edə bilər).
+
+\subsection{Etibarlı Səlahiyyətlilər}
+
+Etibarlı Səlahiyyətli iddiaları nəzərdən keçirir və razı qalarsa, onları birgə imzalayır---öz reputasiyasını qoyaraq (Şəkil~\ref{fig:authority}). Asimmetriya dizayn baxımından belədir: reputasiya qazanmaq yavaşdır (hər dürüst təsdiq üçün tədrici $+\delta$), halbuki onu itirmək kataklizmatikdir (hər saxta təsdiq üçün $-\Delta \gg \delta$; nümunə olaraq, məsələn, $+2\%$-ə qarşı $-70\%$). Optimal strategiya həmişə şübhəli iddiaları rədd etməkdir. $\delta$ və $\Delta$-nın konkret dəyərləri sistem parametrləridir.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=2cm, minimum height=0.6cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[box] (exam) at (0,0) {Səlahiyyətli yoxlayır\\Reputasiya: $R$};
+\node[box] (true) at (-2,-1.3) {Doğru: $R{\to}R{+}\delta$\\Daha çox müştəri};
+\node[box] (false) at (2,-1.3) {Yalan: $R{\to}R{-}\Delta$\\Müştərilər gedir};
+\node[box] (insight) at (0,-2.6) {Qazanc: yavaş ($+\delta$)\\İtki: ani ($-\Delta$)};
+
+\draw[arr] (exam) -- node[left,font=\tiny] {doğru} (true);
+\draw[arr] (exam) -- node[right,font=\tiny] {yalan} (false);
+\draw[arr] (true) -- (insight);
+\draw[arr] (false) -- (insight);
+\end{tikzpicture}
+\caption{Etibarlı Səlahiyyətli---asimmetrik stimullar.}
+\label{fig:authority}
+\end{figure}
+
+\subsection{Çoxölçülü Reputasiya}
+
+Reputasiya skalyar deyil, çoxsaylı ölçülər üzrə vektordur: maliyyə etibarlılığı, şəxsi bütövlük, peşəkar səriştə, vətəndaş fəallığı və digərləri (Şəkil~\ref{fig:reputation-radar}). Müxtəlif qiymətləndirmə təchizatçıları bu vektoru kontekstdən asılı olaraq fərqli şəkildə proyeksiya edir---kreditor maliyyə etibarlılığına üstünlük verir, işəgötürən peşəkar səriştəyə, qonşu vətəndaş davranışına. Tək bir ``düzgün'' reputasiya balı yoxdur; yalnız perspektivlər var.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.55]
+\foreach \a/\l in {90/Maliyyə,162/Bütövlük,234/Peşəkar,306/Vətəndaş,18/Sosial} {
+  \draw[gray!40] (0,0) -- (\a:2.5);
+  \node[font=\tiny, align=center] at (\a:3.1) {\l};
+  \foreach \r in {0.8,1.6,2.4} {
+    \fill[black!15] (\a:\r) circle (0.5pt);
+  }
+}
+\draw[thick, fill=black!10] (90:2.0) -- (162:1.2) -- (234:1.8) -- (306:0.9) -- (18:1.5) -- cycle;
+\draw[thick, dashed] (90:1.4) -- (162:2.1) -- (234:0.8) -- (306:2.0) -- (18:1.1) -- cycle;
+\node[font=\tiny] at (0,-3.3) {Bütöv: DID A \quad Kəsik: DID B};
+\end{tikzpicture}
+\caption{Çoxölçülü reputasiya vektorları. Müxtəlif DID-lər ölçülər üzrə fərqli profillər nümayiş etdirir.}
+\label{fig:reputation-radar}
+\end{figure}
+
+\subsection{Demokratikləşdirilmiş Risk Qiymətləndirməsi}
+
+RSN sistemli risk qiymətləndirməsini demokratikləşdirir---hazırda maliyyə institutlarında cəmlənmiş, lakin bankçılıqdan çox kənarda tətbiq edilə bilən bir qabiliyyət. Təchizatçı etibarlılığını qiymətləndirən sənaye konqlomeratları, davranış riskini qiymətləndirən sığorta şirkətləri, birləşmə və satınalmalar üçün due diligence, istehsalatda avadanlıq ömrünün qiymətləndirilməsi---qarşı tərəf riskinin qiymətləndirilməsinin tələb olunduğu hər yerdə RSN mərkəzləşdirilməmiş, bazar əsaslı alternativ təmin edir. Şərh xidmətləri bazarı xam çoxölçülü reputasiya məlumatını əməli xülasələrə çevirir, qarşı tərəfin qiymətləndirilməsini istənilən iştirakçı üçün marjinal dəyərlə əlçatan edir.
+
+% ============================================================
+% 7. CONSENSUS AND DISPUTE RESOLUTION
+% ============================================================
+\section{Konsensus və Mübahisələrin Həlli}
+
+\subsection{Mərkəzləşdirilməmiş Ədalət Modeli}
+
+RSN ədaləti ikitərəfli danışıqlar problemi kimi yenidən çərçivələyir. Daimi, yoxlana bilən reputasiya zərərinin təhdidi zərər çəkmiş tərəfin ödəyə bilmədiyi məhkəmə prosesindən daha effektiv çəkindiricidir.
+
+\subsection{Meydana Çıxan Konsensus}
+
+Hər iştirakçı şəxsi məmnunluq həddini saxlayır. Şəbəkənin ümumi konsensusu minlərlə ikitərəfli danışığın statistik ortası kimi meydana çıxır (Şəkil~\ref{fig:consensus}). Konsensusdan xeyli yuxarı olan cavab (barbar) dərc etmək bahadır. Konsensusa yaxın cavab (mütənasib) ucuzdur. Konsensus qayda deyil---o, qiymət siqnalıdır.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    person/.style={draw, rounded corners=2pt, minimum width=1.5cm, minimum height=0.5cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[person] (a) at (-2,0) {Sərt\\(yüksək)};
+\node[person] (b) at (0,0) {Praqmatik\\(orta)};
+\node[person] (c) at (2,0) {Bağışlayan\\(aşağı)};
+\node[person, fill=black!10, minimum width=3cm] (cons) at (0,-1.2) {Şəbəkə Konsensusu\\= stat.\ orta};
+\node[person] (exp) at (-2,-2.4) {Barbar\\bahalı};
+\node[person, double] (prop) at (0,-2.4) {Mütənasib\\ucuz};
+\node[person] (neg) at (2,-2.4) {Səhlənkar\\bahalı};
+
+\draw[arr] (a) -- (cons);
+\draw[arr] (b) -- (cons);
+\draw[arr] (c) -- (cons);
+\draw[arr] (cons) -- (exp);
+\draw[arr] (cons) -- (prop);
+\draw[arr] (cons) -- (neg);
+\end{tikzpicture}
+\caption{Fərdi məmnunluq həddlərindən meydana çıxan konsensus.}
+\label{fig:consensus}
+\end{figure}
+
+\subsection{Cəzanın Kalibrlənməsi}
+
+Hər DID Sahibi konkret səhv davranış kateqoriyalarına cavabları ictimai olaraq bəyan edir. Qeyri-mütənasib sərt və ya yumşaq bəyanatlar mənfi reputasiya siqnalları cəlb edir. Mütənasib bəyanatlar sürtünmə olmadan qəbul edilir---öz-özünü kalibrləyən cəza sistemi.
+
+Konsensus bəyanatları özləri riyakarlıq aşkarlanmasına tabedir: konsensus mövqeyinə deklarativ olaraq söz verib ardıcıl olmayan davranış nümayiş etdirmək əsas kənarlaşmadan daha ağır reputasiya cinayəti təşkil edir, çünki bu, qəsdən aldatmanı nümayiş etdirir.
+
+\subsection{Həvalə}
+
+Bir DID daxilindəki bütün fəaliyyətlər---bir istisna ilə---başqa DID-ə həvalə edilə bilər. \textbf{Subyekt rolu---iddianın davranışı haqqında olduğu DID---həvalə edilə bilməz; o, iddianın istinad etdiyi identifikasiya sahibinə köçürülə bilməyən şəkildə bağlıdır.} Digər aktiv rollar---Emitent, Səlahiyyətli, Şahid, Yoxlayıcı---istər yoxlama, iddia təqdimatı, konsensus iştirakı, istərsə də mübahisə həlli üçün təyin edilmiş həvalə DID-ə köçürülə bilər. Həvalə istənilən vaxt geri götürülə bilər. Bu, Sahibin son nəzarəti və məsuliyyəti saxladığı halda ixtisaslaşmanı (məsələn, peşəkar yoxlama xidmətləri) mümkün edir. Həvalə bütün sistem üzrə tətbiq edilir və miqyaslana bilmə üçün vacibdir.
+
+\subsection{Fərdi Əxlaqdan Meydana Çıxan İctimai Müqaviləyə}
+
+Hər DID-in bəyan edilmiş siyasəti fərdi əxlaqın formalizasiyasını təmsil edir: Sahibin nəyi məqbul saydığını, konkret davranışlara necə cavab verdiyini, qarşı tərəflərdən nə tələb etdiyini. Bu siyasətlər sistem dizayneri tərəfindən qoyulmur---onlar hər iştirakçı tərəfindən seçilir və maşınla oxuna bilən formada ifadə edilir.
+
+Bu formalizasiya üçmərhələli meydana çıxmanı mümkün edir. Birincisi, fərdi əxlaq \textbf{siyasət} kimi kodlaşdırılır---DID-in riayət etməyə söz verdiyi bəyan edilmiş qaydalar, həddlər və cavab funksiyaları toplusu. İkincisi, şəbəkə üzrə bütün siyasətlərin cəmi \textbf{meydana çıxan etikanı} yaradır---heç bir tək iştirakçının dizayn etmədiyi, lakin minlərlə fərdi əxlaqi mövqenin qarşılıqlı əlaqəsindən yaranan statistik olaraq müşahidə edilə bilən normalar~\cite{durkheim1893}. Üçüncüsü, ikitərəfli qiymət siqnalları vasitəsilə tətbiq edilən ortaq davranış normaları kimi ifadə edilən bu meydana çıxan etika \textbf{ölçülə bilən ictimai müqavilə} təşkil edir---heç kəsin imzalamadığı nəzəri konstruksiya~\cite{rawls1971} deyil, faktiki davranışla dəstəklənən empirik olaraq müşahidə edilə bilən qaydalar toplusu.
+
+Bu proses əxlaqi əsaslar nəzəriyyəsinin~\cite{haidt2012} tapıntılarını əks etdirir: insan əxlaqı intuitiv, plüralist və mədəni olaraq dəyişkəndir. RSN girdi kimi əxlaqi konsensus tələb etmir; o, çıxış kimi davranış konsensusu istehsal edir. Nəticə etibarilə yaranan ictimai müqavilə statik deyil---iştirakçılar qoşuldukca, ayrıldıqca və şəbəkə geribildiriminə cavab olaraq siyasətlərini tənzimlədikcə təkamül edir. Klassik ictimai müqavilə nəzəriyyəsindən fərqli olaraq, bu müqavilə geri götürülə bilən, müşahidə edilə bilən və suveren olmadan tətbiq edilə biləndir.
+
+% ============================================================
+% 8. ECONOMIC MODEL
+% ============================================================
+\section{İqtisadi Model}
+
+Əvvəlki bölmələr bir aləti---RSN-in yoxlama mexanizmlərini, dəyər strukturunu və meydana çıxan konsensusunu---təsvir etdi. Bu bölmə həmin aləti fiskal və idarəetmə keçidinə tətbiq etmək üçün metodologiyanı təsvir edir. Alət ümumi təyinatlıdır; aşağıdakı metodologiya isə mümkün tətbiqlərdən biridir.
+
+\subsection{Stimul Strukturu}
+
+Kapital kimi reputasiya dürüst davranış üçün birbaşa stimullar yaradır. Normal fəaliyyətdə iştirakçılar gündəlik əməliyyatlar və yerinə yetirilmiş öhdəliklər vasitəsilə təbii olaraq reputasiya qururlar. Əsas xərc \emph{mənfi} iddialara---başqalarının vurduğu zərərin qeyd edilməsinə---sərf olunur. Bu asimmetriya faydalı, etibarlı davranışı stimullaşdırır: dürüst olmaq əlavə heç nəyə başa gəlmir, halbuki zərərli olmaq başqalarının qorumaq üçün ödəyəcəyi sənədləşdirilmiş bir iz yaradır. Riyakarlıq---qaydaları bəyan edib onlara riayət etməmək---ən bahalı uğursuzluq rejimidir, çünki qəsdən aldatmanı nümayiş etdirir.
+
+\subsection{Paralel Fiskal Sistem}
+
+Üç komponent rəqabət təzyiqini mümkün edir: (1)~\textbf{Sadə Vergi}---istisnası olmayan, əvvəlcə mövcud effektiv dərəcədən marjinal olaraq aşağı olan tək mütənasib dərəcə; (2)~\textbf{Elektron Xərc Qeydiyyatı (ESR)}---Çexiya EET modelini tərsinə çevirərək vətəndaşların dövlət xərclərini nəzarətdə saxlaması; (3)~\textbf{Vətəndaş Tərəfindən İdarə Olunan Vergi Bölgüsü}---ilk ildə bir neçə faizdən başlayaraq, on ildən sonra qəbul dərəcəsindən asılı olaraq aşağı iki rəqəmli faizdən vətəndaş tərəfindən idarə olunan sistemə tam miqrasiyaya qədər çatır. Faktiki templə dövlət xidmətlərinə sərbəst bazar alternativlərinin yaranma sürətindən və dövlətin keçidə əməkdaşlıq etmək istəyindən asılıdır; vaxt funksiyası xətti olmaq məcburiyyətində deyil və qəbulun nəticədə çatacağı yerə yuxarı hədd təyin etmək üçün heç bir səbəb yoxdur.
+
+% ============================================================
+% 9. MIGRATION PATH
+% ============================================================
+\section{Miqrasiya Yolu}
+
+Miqrasiya üç mərhələdən keçir (Şəkil~\ref{fig:migration}): \textbf{Mərhələ~1: Örtük} (RSN informasiya qatı kimi, dövlət yeganə təchizatçıdır), \textbf{Mərhələ~2: Rəqabət} (RSN funksional alternativlər təmin edir, ikili sistemdən istifadə) və \textbf{Mərhələ~3: Keçid} (RSN dövlət ekvivalentlərini üstələyir, könüllü miqrasiya). Keçid hər mərhələdə geri qaytarıla biləndir.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    phase/.style={draw, rounded corners=3pt, minimum width=1.8cm, minimum height=0.8cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=5pt]}, thick}
+]
+\node[phase] (p1) at (0,0) {\textbf{Mərhələ 1}\\Örtük};
+\node[phase] (p2) at (2.2,0) {\textbf{Mərhələ 2}\\Rəqabət};
+\node[phase] (p3) at (4.4,0) {\textbf{Mərhələ 3}\\Keçid};
+
+\draw[arr] (p1) -- (p2);
+\draw[arr] (p2) -- (p3);
+\draw[arr, dashed, gray] (p3.south) -- ++(0,-0.6) -| node[below,font=\tiny,pos=0.25] {geri dönüş} (p2.south);
+\end{tikzpicture}
+\caption{Üçmərhələli miqrasiya---hər mərhələdə geri qaytarıla bilən.}
+\label{fig:migration}
+\end{figure}
+
+Əsas təzyiq mexanizmi fiskaldır: şərti vergi ödəyiciləri ``iqtisadi cəhətdən əhəmiyyətli azlıq $X$''-ə çatdıqda---ona qarşı repressiyanın qeyri-trivial iqtisadi zərər törətdiyi və vətəndaş itaətsizliyinin inandırıcı təhdidə çevrildiyi qədər böyük qrup---dövlət danışıqlara girir. Nümunə üçün ÜDM-in $X \approx 15\%$-ni istifadə edirik, lakin faktiki hədd konkret iqtisadiyyatdan asılıdır.
+
+% ============================================================
+% 10. SECURITY ANALYSIS
+% ============================================================
+\section{Təhlükəsizlik Analizi}
+
+Beş rəqib kateqoriyasını nəzərdən keçiririk: fərdi pis aktyorlar, mütəşəkkil qruplar, korporativ rəqiblər, dövlət səviyyəsində rəqiblər və protokol səviyyəsində rəqiblər.
+
+\textbf{Sybil müqaviməti}~\cite{douceur2002}. Reputasiya qurmaq davamlı, yoxlana bilən qarşılıqlı əlaqə tələb edir. Uğurlu Sybil hücumunun dəyəri saxta identifikasiyalarla xətti və hədəf reputasiya səviyyəsi ilə kvadratik olaraq artır. Paralel olaraq çoxsaylı DID-lərlə işləmək mümkündür, lakin dizayn baxımından bahadır---hər identifikasiya həqiqi fəaliyyət vasitəsilə müstəqil olaraq reputasiya toplamalıdır. Azad cəmiyyətlərdə bu dəyər təsadüfi sui-istifadəni çəkindirir; diktaturalarda isə paralel DID-lər bölmələnmiş müqaviməti, gizli koordinasiyanı və daha təhlükəsiz qara bazar naviqasiyasını mümkün edən sağ qalma vasitəsinə çevrilir.
+
+\textbf{Sui-qəsd müdafiəsi.} Qapalı qruplar arasında qarşılıqlı təsdiq nümunələri sosial qraf analizi vasitəsilə aşkarlana bilir. Reputasiya aqreqasiya funksiyaları sıx klasterləşmiş mənbələrdən gələn iddiaları endirimlə qiymətləndirir.
+
+\textbf{Dövlət səviyyəsində rəqib.} Onion marşrutlaması, mərkəzləşdirilmiş infrastrukturun olmaması və Yoxlayıcı rolunun iştirakçı bazası üzrə paylanması təzyiqin hər hansı fayda ilə mütənasib olmayan tədbirlər tələb etməsini təmin edir.
+
+\textbf{Məxfilik vs.\ hesabatlılıq.} Psevdonimlik---anonimlik və identifikasiya açıqlaması arasında orta yol---DID-lərə Sahibin real dünya identifikasiyasını açıqlamadan mənalı reputasiya toplamağa imkan verir.
+
+% ============================================================
+% 11. PRIVACY
+% ============================================================
+\section{Məxfilik Mülahizələri}
+
+RSN-in məxfilik modeli psevdonimlik üzərində qurulub. Sahib identifikasiya açıqlamasına nəzarət edir: minimal (təmiz psevdonim), seçmə (konkret etimadnamələr əlaqələndirilir) və ya tam (hüquqi identifikasiya əlaqələndirilir). Dərc edilmiş iddialar daimidir---sistem kontekstual düzəlişi dəstəkləyir, lakin silinməni deyil. Sahib kompromis edilmiş DID-i tərk edib toplanmış reputasiyadan imtina edərək yenidən başlaya bilər.
+
+% ============================================================
+% 12. RELATED WORK
+% ============================================================
+\section{Əlaqəli İşlər}
+
+W3C DID Core spesifikasiyası~\cite{did2022} və Ceramic Network~\cite{ceramic2023} identifikasiya təməlini təmin edir. EigenTrust~\cite{kamvar2003} mərkəzi səlahiyyət olmadan paylanmış reputasiya aqreqasiyasını nümayiş etdirdi. SBT-lər~\cite{weyl2022} köçürülə bilməyən sosial tokenləri təqdim etdi. RSN keyfiyyət filtri kimi iqtisadi dəyərə vurğusu və radikalizmin qiymətləndirilməsi mexanizmi ilə fərqlənir.
+
+DAO-lar~\cite{buterin2014} və kvadratik səsvermə~\cite{buterin2019} mərkəzləşdirilməmiş idarəetmənin mümkünlüyünü nümayiş etdirdi. RSN konsensusu səsvermədən deyil, ikitərəfli qiymət danışıqlarından çıxarır.
+
+Təklif özəl xidmət təminatı üçün anarxo-kapitalist nəzəriyyəyə~\cite{rothbard1973,hoppe2001} istinad edir, lakin iki mühüm cəhətdən ayrılır: o, rasionallıq fərz etmək əvəzinə kin və qisas impulsları üçün dizayn edir və inqilab əvəzinə tədrici keçid təklif edir. Meydana çıxan ictimai müqavilələr konsepsiyası Hayekin kortəbii nizam nəzəriyyəsində~\cite{hayek1973} sələfləri var.
+
+\textbf{Anarxo-aqorizm.} RSN aqorist əks-iqtisadiyyatla~\cite{konkin2006} əhəmiyyətli ümumi zəmin bölüşür---xüsusilə paralel institutların qurulmasına və könüllü mübadiləyə vurğu. Bununla belə, aqorizm rasional öz maraqını kifayət qədər koordinasiya mexanizmi kimi fərz etməyə meyllidir və çox vaxt mövcud dövlət strukturlarından konkret miqrasiya yolundan məhrumdur. RSN qeyri-rasional davranış meyllərini açıq şəkildə özündə birləşdirir və tədrici keçid üçün fiskal təzyiq mexanizmi təmin edir.
+
+\textbf{Meritokratiya.} RSN meritokratiyanın~\cite{young1958} bir şüar deyil, sistemli xassə kimi necə meydana çıxa biləcəyinin ilk funksional təsviri ola bilər. Ənənəvi meritokratik sistemlər uğursuzluğa uğrayır, çünki ``layiqi'' müəyyən edib tətbiq etmək üçün mərkəzi səlahiyyət tələb edirlər. RSN-də layiq ikitərəfli qiymətləndirmələrdən yaranır: dəyər verənlər reputasiya toplayır; heç bir komitə kimin layiq olduğuna qərar vermir.
+
+\textbf{İmtiyaz kimi mülkiyyət.} RSN mülkiyyət hüquqlarına təbii və mütləq kimi baxan anarxo-kapitalist və Avstriya məktəbi yanaşmalarından fundamental olaraq ayrılır. RSN çərçivəsində mülkiyyət bir \emph{imtiyazdır}---sosial tanınma, bu, ekstremal hallarda iştirakçı ortaq normaları fundamental olaraq pozduqda (xəyanət, ekzistensial böhranda icmanı müdafiə etməkdən imtina, sistematik istismar) icma tərəfindən geri götürülə bilər. Bu dövlət müsadirəsi deyil, ikitərəfli münasibətlər şəbəkəsi tərəfindən sosial tanınmanın geri götürülməsidir.
+
+% ============================================================
+% 13. LIMITATIONS
+% ============================================================
+\section{Müzakirə və Məhdudiyyətlər}
+
+\textbf{Soyuq başlanğıc.} RSN-in dəyəri şəbəkə effektlərindən asılıdır; erkən qəbul edənlər iştirak həddə çatana qədər məhdud dəyərlə üzləşir. Bununla belə, hətta erkən mərhələlərdən DID şəbəkəsi faydalı əlavə informasiya mənbəyi kimi xidmət edir. Erkən reputasiya qiymətləndirməsi və səlahiyyət qiymətləndirməsinin artan mürəkkəbliklə tədricən inkişaf edəcəyi gözlənilir.
+
+\textbf{Anti-parazitlik və giriş nəzarəti.} Hədəf DID-lər aşağı reputasiyalı DID-lərdən gələn sorğulara pilləli haqlar və giriş məhdudiyyətləri qoya bilər. Bu ikilik deyil, davamlı miqyasdır: sorğu edən DID-in nə qədər az reputasiyası varsa, o qədər az məlumat alır, o qədər çox gözləyir və o qədər çox ödəyir. Bu mexanizm passiv istehlak əvəzinə həqiqi iştirakı stimullaşdırır.
+
+\textbf{Girişdə bərabərsizlik.} İddiaların dərc edilmə dəyəri iqtisadi cəhətdən əlverişsiz iştirakçıların qanuni şikayətlərini süzgəcdən keçirə bilər. Yumşaltma: hər iştirakçı eyni zamanda potensial yoxlayıcı kimi xidmət edir (və ya bu rolu həvalə edir) və yoxlama haqları qazanır. Kifayət qədər vaxt üfüqündə radikal olmayan iştirakçı maliyyə neytrallığına yaxınlaşmalıdır---yoxlama gəliri təxminən dərc dəyərlərini kompensasiya edir. Bu zəmanət deyil, statistik gözləntidir.
+
+\textbf{Reputasiya bərabərsizliyi.} Erkən qəbul edənlər gec gələnlər üçün maneələr yarada bilən üstünlüklər toplayır. Bununla belə, reputasiya qiymətləndirməsi öz aqreqasiya alqoritmləri vasitəsilə ilk hərəkət edənlərin üstünlüyünü yumşaltmağı seçə bilən üçüncü tərəf təchizatçıları tərəfindən həyata keçirilir. Yaxşı reputasiya ilə ilk olmaq qanuni müqayisəli iqtisadi üstünlükdür---və bu dizayn baxımından belədir.
+
+\textbf{Açıq suallar.} Optimal dəyər funksiyaları, aqreqasiya standartları, protokol idarəetməsi və AI tərəfindən yaradılmış sintetik reputasiya məlumatı ilə qarşılıqlı əlaqə gələcək iş sahələri olaraq qalır.
+
+Bu məqalə RSN-in bütün hallarda optimal nəticələr istehsal edəcəyini iddia etmir. O iddia edir ki, RSN \emph{mümkün} alternativi təmsil edir---texniki cəhətdən tətbiq edilə bilən, iqtisadi cəhətdən öz-özünə davamlı və insan davranış meylləri ilə olduğu kimi sosial cəhətdən uyğun.
+
+% ============================================================
+% 14. CONCLUSION
+% ============================================================
+\section{Nəticə}
+
+Bu məqalə psevdonim, yoxlana bilən reputasiya mübadiləsini mümkün edən mərkəzləşdirilməmiş protokol olan Reputasiya Sosial Şəbəkəsini təqdim etdi. Baha Radikalizm Prinsipi saxta iddiaların senzura olmadan qiymət baxımından kənarlaşdırılmasını təmin edir. Təklif edilən miqrasiya yolu mövcud institutlardan tədrici, geri qaytarıla bilən keçidi mümkün edir. Dizayn insan təbiətini olduğu kimi---xırdaçılıq, kin və qisas verməkdən doğan məmnunluq arzusu daxil olmaqla---özündə birləşdirir, ideoloji transformasiya tələb etmək əvəzinə. Nəticə utopiya deyil, ədalətin əlçatan olduğu, reputasiyanın qazanıldığı və səhv davranışın dəyərinin onu törədən tərəf tərəfindən daşındığı bir sistemdir.
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\bibliography{references}
+
+\end{document}

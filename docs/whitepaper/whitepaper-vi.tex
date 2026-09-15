@@ -1,0 +1,615 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+% === Core Packages ===
+\usepackage[margin=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds}
+
+% === Citation (IEEE style) ===
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{IEEEtranN}
+
+% === Hyperref ===
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+% === Settings ===
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.3em}
+
+% === Title ===
+\title{\textbf{Mạng Danh Tiếng Phi Tập Trung:\\Một Khung Khổ cho Tổ Chức Xã Hội Tự Nhiên}}
+\author{Pavel Kudrna\\Prague, Czechia\\Bản thảo v1 --- Tháng Ba 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+% ABSTRACT
+% ============================================================
+\begin{abstract}
+Cảm thức về công lý---niềm tin rằng những điều sai trái sẽ được sửa chữa và công trạng sẽ được tưởng thưởng---là lực gắn kết mạnh nhất của xã hội. Khi các thể chế quản trị tập trung không thể mang lại cảm thức này bởi vì chi phí thực thi một quyền vượt quá giá trị của chính quyền đó, sự cố kết xã hội bị xói mòn. Các cấu trúc thể chế hiện hành thất bại trong việc giải quyết một lớp tranh chấp đáng kể theo cùng một cách có hệ thống mà kế hoạch hóa tập trung thất bại trong việc phân bổ nguồn lực: thông qua bất đối xứng thông tin, thiếu vắng các vòng phản hồi, và sự tách rời giữa người ra quyết định với hậu quả của các quyết định của họ. Bài viết này trình bày một Mạng Xã Hội Danh Tiếng (RSN): một lớp truyền thông phi tập trung, không thể bị mua chuộc, kháng kiểm duyệt, được xây dựng trên các Định Danh Phi Tập Trung (DID) cho phép những người tham gia dưới bút danh công bố, xác minh và tiêu thụ thông tin danh tiếng về hành vi trong thế giới thực. Cơ chế cốt lõi dựa trên ba nguyên tắc thiết kế: (1)~một cấu trúc chi phí bất đối xứng trong đó việc đọc dữ liệu danh tiếng thì rẻ nhưng việc ghi đòi hỏi nỗ lực có thể kiểm chứng; (2)~một giao thức lựa chọn người xác minh phi tất định dựa trên băm nhất quán, định giá các tuyên bố cực đoan thông qua chi phí lặp leo thang; và (3)~một mô hình thẩm quyền danh tiếng do thị trường điều tiết, trong đó những người xác minh tư nhân đặt cược danh tiếng tích lũy của họ vào độ chính xác của các tuyên bố mà họ chứng thực. Kiến trúc thu được tạo ra chế độ trọng dụng nhân tài mang tính nổi trội mà không cần điều phối tập trung và cho phép một lộ trình di trú tiệm tiến, có thể đảo ngược từ các hệ thống hiện hành do nhà nước quản lý.
+\end{abstract}
+
+% ============================================================
+% 1. INTRODUCTION
+% ============================================================
+\section{Giới thiệu}
+
+\subsection{Vấn Đề của Niềm Tin Tập Trung}
+
+Quản trị hiện đại dựa trên một giả định cơ bản: rằng các thể chế tập trung có thể làm trung gian cho niềm tin giữa những người xa lạ ở quy mô lớn. Tòa án phân xử tranh chấp. Sổ đăng ký chứng nhận quyền sở hữu. Các cơ quan quản lý thực thi các tiêu chuẩn. Những thể chế này được thiết kế trong một kỷ nguyên khi thông tin khan hiếm, truyền thông chậm chạp, và việc ủy quyền cho một cơ quan trung ương là cơ chế điều phối khả thi duy nhất. Tuy nhiên, quản trị tập trung thất bại vì cùng những lý do cấu trúc như kế hoạch hóa tập trung: bất đối xứng thông tin, thiếu vắng các vòng phản hồi, và sự tách rời giữa người ra quyết định với hậu quả của các quyết định của họ.
+
+Giả định này thất bại, chẳng hạn, khi chi phí trung gian thể chế vượt quá giá trị của tranh chấp. Hãy xem xét một người thuê nhà phát hiện rằng căn hộ họ thuê thiếu chứng chỉ an toàn điện theo luật định---một tình trạng gây nguy hiểm tức thời đến tính mạng. Quyền pháp lý của người thuê để rút khỏi hợp đồng là rõ ràng không thể chối cãi. Tuy nhiên chi phí thực thi quyền đó qua hệ thống tòa án vượt quá giá trị tiền bạc của khoản đặt cọc và thiệt hại phải bồi thường, ngay cả khi tính đến khoản bồi thường theo luật định tiềm năng~\cite{czcourtfees}. Phản ứng hợp lý là chấp nhận tổn thất và rút lui.
+
+Đây không phải là một trường hợp biên bệnh lý. Nó là trải nghiệm mặc định cho một lớp tranh chấp đáng kể trong đó tổn hại là thật nhưng mức tiền bạc đặt cược nằm dưới ngưỡng mà việc thực thi thể chế trở nên hợp lý về mặt kinh tế. Kết quả là một hệ thống mang tính cấu trúc ưu ái cho những kẻ xấu: những kẻ gây hại cho người khác ở khối lượng dưới ngưỡng này có thể hành động mà không bị trừng phạt, bởi vì chi phí tìm kiếm công lý đổ lên bên bị hại.
+
+Ví dụ trên được rút ra từ môi trường pháp lý của tác giả---hệ thống dân luật Séc. Trong các truyền thống pháp lý khác---thông luật dựa trên tiền lệ, luật tập quán, các hệ thống hỗn hợp---công lý thất bại theo những cách khác nhau và ở những mức độ khác nhau, tùy thuộc vào các đặc thù văn hóa và thủ tục của thẩm quyền tài phán. Người đọc có lẽ sẽ nhận ra những ví dụ tương đương từ bối cảnh của chính họ. Điều mang tính phổ quát về cấu trúc là khuôn mẫu: những tranh chấp có giá trị nằm dưới ngưỡng thực thi hợp lý về kinh tế kết thúc với việc tổn thất bị bên bị hại gánh chịu. RSN không hứa hẹn công lý hoàn hảo---nó chỉ đơn thuần làm giảm lợi thế cấu trúc mà những kẻ xấu được hưởng khi việc thực thi thể chế không kinh tế.
+
+\subsection{Vì Sao Các Giải Pháp Hiện Có Chưa Đủ}
+
+\textbf{Các khung Định Danh Phi Tập Trung (DID)}~\cite{did2022} cung cấp các cơ chế mật mã cho việc quản lý danh tính tự chủ nhưng chủ yếu tập trung vào xác minh danh tính mà không đề cập đến câu hỏi rộng lớn hơn về danh tiếng hành vi.
+
+\textbf{Các Token Gắn Với Linh Hồn (SBT)}~\cite{weyl2022} nắm bắt được nhận thức rằng danh tiếng là không thể chuyển nhượng nhưng dựa vào hạ tầng blockchain với những ràng buộc về khả năng mở rộng và không giải quyết các động lực kinh tế chi phối việc nhập thông tin. Các khái niệm liên quan như token công trạng (ví dụ, Liberland) chia sẻ một triết lý tương tự nhưng vẫn bị ràng buộc vào các khung khổ thẩm quyền tài phán cụ thể.
+
+\textbf{Các Tổ Chức Tự Trị Phi Tập Trung (DAO)}~\cite{buterin2014} triển khai quản trị thông qua hợp đồng thông minh nhưng tái tạo các động lực quả đầu tài phiệt trong đó ảnh hưởng tỷ lệ với vốn. Bỏ phiếu bậc hai~\cite{buterin2019} phần nào giảm nhẹ điều này nhưng lại hạn chế việc áp dụng thực tế. Các DAO cũng đối mặt với \emph{vấn đề tiên tri} cơ bản: hợp đồng thông minh không thể xác minh một cách đáng tin cậy các trạng thái trong thế giới thực mà không có một nguồn bên ngoài đáng tin, và vấn đề này không có lời giải tổng quát trong kiến trúc blockchain.
+
+Không hệ thống hiện có nào kết hợp được sự phi tập trung, khả năng kháng kiểm duyệt, tính bút danh, chi phí gia nhập có thể kiểm chứng, và đồng thuận mang tính nổi trội.
+
+\subsection{Đóng góp}
+
+Bài viết này đưa ra các đóng góp sau:
+\begin{enumerate}[nosep]
+\item Định nghĩa về \textbf{Mạng Xã Hội Danh Tiếng (RSN)}, một giao thức phi tập trung mở rộng khung DID để hỗ trợ trao đổi danh tiếng song phương.
+\item Một \textbf{giao thức lựa chọn người xác minh phi tất định} dựa trên băm nhất quán~\cite{karger1997}.
+\item \textbf{Nguyên Tắc Cực Đoan Đắt Đỏ}, định giá các tuyên bố theo khoảng cách của chúng so với đồng thuận mạng lưới thông qua ba kênh chi phí cộng gộp.
+\item Một \textbf{mô hình Thẩm Quyền Có Danh Tiếng} với các khuyến khích bất đối xứng trong đó chứng thực sai lệch tốn kém một cách thảm khốc hơn nhiều so với phí hợp pháp.
+\item Một \textbf{lộ trình di trú tiệm tiến} thông qua hạ tầng tài khóa song song.
+\end{enumerate}
+
+% ============================================================
+% 2. DESIGN PRINCIPLES
+% ============================================================
+\section{Nguyên Tắc Thiết Kế}
+
+Kiến trúc RSN bị ràng buộc bởi năm nguyên tắc thiết kế không thể thương lượng.
+
+\textbf{Tính Liên Tục và Tiến Hóa.} Hệ thống cùng tồn tại với các thể chế hiện hành trong một giai đoạn chuyển tiếp có độ dài không xác định. Sự chuyển tiếp phải có thể đảo ngược ở mọi giai đoạn.
+
+\textbf{Tính Tự Nguyện và Trách Nhiệm.} Sự tham gia là tự nguyện, nhưng tính tự nguyện đi kèm với trách nhiệm: một người tham gia đảm nhận quyền kiểm soát đối với một chức năng thể chế đồng thời cũng đảm nhận các nghĩa vụ kèm theo.
+
+\textbf{Tính Đa Dạng và Trung Lập Văn Hóa.} Đồng thuận nổi lên từ các tương tác song phương, chứ không phải từ những quy tắc định sẵn do nhà thiết kế hệ thống áp đặt.
+
+\textbf{Tính Bền Bỉ và Kháng Kiểm Duyệt.} Chi phí kiểm duyệt mạng lưới phải vượt quá chi phí dung nạp nó. Chỉ có chế độ toàn trị đầy đủ---với cái giá chính trị và kinh tế tàn khốc---mới có thể đàn áp hệ thống.
+
+\textbf{Đồng Thuận và Thực Thi.} Hệ thống tích hợp các khuynh hướng của con người về sự nhỏ nhen, hằn học, và thỏa mãn báo thù như những đặc tính chịu lực. Hành vi sai trái không bị cấm; nó bị định giá.
+
+% ============================================================
+% 3. SYSTEM OVERVIEW
+% ============================================================
+\section{Tổng Quan Hệ Thống}
+
+\subsection{Mạng Xã Hội Danh Tiếng}
+
+RSN là một lớp truyền thông phi tập trung, ngang hàng, trong đó những người tham gia trao đổi thông tin có thể kiểm chứng về hành vi trong thế giới thực. Các thuộc tính định danh của nó là: hạ tầng phi tập trung và không thể bị kiểm duyệt; sự tham gia dưới bút danh thông qua DID; cấu trúc chi phí bất đối xứng (đọc thì rẻ, ghi thì đắt); khả năng kiểm chứng bằng mật mã; và \textbf{hỗ trợ tiêu chuẩn}---các định dạng máy đọc được cho thông tin lan truyền qua mạng lưới, cho các dịch vụ do các thẩm quyền cung cấp (soạn thảo tuyên bố, chứng thực, dịch vụ làm chứng), và cho định dạng chính sách bao gồm các quy tắc đánh giá danh tiếng của bên đối tác cũng như đánh giá rủi ro không khớp chính sách (giữa hành vi được khai báo và hành vi thực tế).
+
+\subsection{Các Thành Phần Kiến Trúc}
+
+RSN bao gồm bốn thành phần chính (Hình.~\ref{fig:architecture}):
+\begin{enumerate}[nosep]
+\item \textbf{Lớp DID.} Danh tính người tham gia với các quy tắc được khai báo, siêu dữ liệu danh tiếng, và định tuyến mạng.
+\item \textbf{Giao Thức Tuyên Bố.} Định dạng có cấu trúc để công bố các khẳng định về các sự kiện trong thế giới thực.
+\item \textbf{Mạng Xác Minh.} Giao thức phi tập trung để chỉ định người xác minh bằng cách sử dụng băm nhất quán.
+\item \textbf{Lớp Tổng Hợp Danh Tiếng.} Các dịch vụ tạo ra các bản tóm tắt danh tiếng mà con người có thể đọc được.
+\end{enumerate}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    layer/.style={draw, minimum height=0.7cm, align=center, font=\scriptsize, fill=black!8},
+    arr/.style={<->, thick, gray!60}
+]
+\node[layer, minimum width=5cm] (agg) at (0,2.8) {\textbf{Tổng hợp}\\Diễn giải\ $\cdot$ Rủi ro};
+\node[layer, minimum width=2.2cm] (claim) at (-1.55,1.4) {\textbf{Tuyên bố}\\Soạn thảo};
+\node[layer, minimum width=2.2cm] (verif) at (1.55,1.4) {\textbf{Xác minh}\\Lựa chọn};
+\node[layer, minimum width=5cm] (did) at (0,0) {\textbf{Lớp DID}\\Danh tính $\cdot$ Quy tắc $\cdot$ Điểm};
+
+\draw[arr] (agg.south west) -- (claim.north);
+\draw[arr] (agg.south east) -- (verif.north);
+\draw[arr] (claim.east) -- (verif.west);
+\draw[arr] (claim.south) -- (did.north west);
+\draw[arr] (verif.south) -- (did.north east);
+\end{tikzpicture}
+\caption{Kiến trúc bốn lớp của RSN.}
+\label{fig:architecture}
+\end{figure}
+
+\subsection{Các Vai Trò Người Tham Gia}
+
+Một giao dịch xác minh liên quan đến tối đa sáu vai trò DID riêng biệt (Hình.~\ref{fig:roles}): \textbf{Người Phát Hành} ($DID_I$, tạo và gửi tuyên bố), \textbf{Chủ Thể} ($DID_S$, DID mà tuyên bố nói về---có thể trùng với Người Phát Hành), \textbf{Thẩm Quyền} ($DID_A$, chứng thực tuyên bố để lấy phí; cũng có thể cung cấp dịch vụ làm chứng---\emph{tùy chọn}), \textbf{Người Làm Chứng} ($DID_{W_{1..n}}$, người giám sát ẩn danh tính trung thực của người xác minh thông qua các mã thách thức---\emph{tùy chọn}), \textbf{Người Xác Minh} ($DID_V$, được lựa chọn theo thuật toán để công bố tuyên bố), và \textbf{RSN} (mạng lưới nơi các tuyên bố đã xác minh được công bố). Bất kỳ vai trò nào cũng có thể được ủy thác cho một DID khác (Mục~7.4). Một Thẩm Quyền thường gộp việc chứng thực với các dịch vụ làm chứng, nhưng hai chức năng này về mặt logic là độc lập.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    role/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8},
+    opt/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8, dashed},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    oarr/.style={-{Stealth[length=3pt]}, thick, dashed, gray},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[role] (I) at (0,2.4) {\textbf{Phát hành}};
+\node[role] (S) at (-2.5,2.4) {\textbf{Chủ thể}};
+\node[opt] (A) at (2.5,1.2) {\textbf{Thẩm quyền}};
+\node[opt] (W) at (-2.5,0) {\textbf{Làm chứng}};
+\node[role] (V) at (2.5,-0.6) {\textbf{Xác minh}};
+\node[role, fill=black!5, draw=gray] (N) at (0,-1.8) {RSN};
+
+\draw[arr] (I) -- node[lbl] {về} (S);
+\draw[oarr] (I) -- node[lbl,sloped] {chứng thực} (A);
+\draw[oarr] (I) -- node[lbl,sloped] {thách thức} (W);
+\draw[arr] (I) -- node[lbl,sloped] {yêu cầu} (V);
+\draw[oarr] (W) -- node[lbl] {giám sát} (V);
+\draw[arr] (V) -- node[lbl] {công bố} (N);
+\end{tikzpicture}
+\caption{Các vai trò DID trong một giao dịch xác minh. Nét đứt = tùy chọn (Thẩm quyền, Làm chứng).}
+\label{fig:roles}
+\end{figure}
+
+\subsection{Tính Không Thể Mua Chuộc: Bốn Lực}
+
+Tính không thể mua chuộc của RSN không phát sinh từ một cơ chế đơn lẻ mà từ bốn lực đồng thời. Không lực nào là đủ khi đứng riêng; chỉ có sự kết hợp của chúng mới khiến một nỗ lực mua chuộc trở nên phi lý về kinh tế.
+
+\textbf{Mục tiêu không thể đoán trước.} Người xác minh cho mỗi tuyên bố được lựa chọn một cách phi tất định thông qua băm nhất quán (Mục~5.3). Kẻ tấn công không thể nhắm sẵn vào một người xác minh cụ thể để hối lộ, bởi vì danh tính của người xác minh là một hàm của nội dung tuyên bố và các lần lặp trước đó, chứ không phải của lựa chọn của người phát hành.
+
+\textbf{Đòn bẩy danh tiếng---lên chậm, xuống nhanh.} Danh tiếng chỉ có thể đạt được một cách tăng dần, thông qua hành vi nhất quán bền vững. Tuy nhiên, nó có thể mất đi một cách thảm khốc chỉ trong một lần chứng thực gian dối (Mục~6.2). Sự bất đối xứng này có nghĩa là nhiều năm danh tiếng tích lũy có thể bị hủy hoại chỉ bởi một lần chứng thực bất lương; chiến lược tối ưu vẫn là từ chối các tuyên bố khả nghi.
+
+\textbf{Lời hứa công khai.} Mỗi Chủ Sở Hữu DID công khai khai báo chính sách của mình---một tập hợp quy tắc máy đọc được mà họ cam kết tuân theo. Sự khác biệt giữa lời khai báo và hành vi thực tế là có thể phát hiện được và bị định giá như một hành vi vi phạm danh tiếng nghiêm trọng hơn cả sự vi phạm nền tảng (Mục~7.3). Do đó thói đạo đức giả tốn kém hơn sự bất lương trực tiếp.
+
+\textbf{Bất đối xứng chi phí tấn công lưới.} Chi phí kiểm duyệt hoặc gây mất ổn định mạng lưới tăng phi tuyến tính theo kích thước và mật độ của mạng lưới, trong khi chi phí dung nạp nó vẫn không đổi. Để việc kiểm duyệt có lợi, một chủ thể tập trung sẽ phải áp dụng nó trên toàn bộ mạng lưới---đòi hỏi những biện pháp không tương xứng với bất kỳ lợi ích nào có thể hình dung được (Mục~10).
+
+% ============================================================
+% 4. DECENTRALIZED IDENTITY MODEL
+% ============================================================
+\section{Mô Hình Định Danh Phi Tập Trung}
+
+\subsection{DID với Các Thuộc Tính Đặc Biệt}
+
+RSN mở rộng đặc tả W3C DID Core~\cite{did2022} với: \textbf{Quy Tắc Được Khai Báo} (các cam kết hành vi máy đọc được), \textbf{Siêu Dữ Liệu Danh Tiếng} (điểm hành vi được tổng hợp), và \textbf{Định Tuyến Mạng} (cổng onion có thể thay đổi, tách biệt khỏi vị trí vòng ổn định).
+
+\subsection{Vòng Đời của Tuyên Bố}
+
+Một Tuyên Bố diễn tiến qua sáu giai đoạn (Hình.~\ref{fig:lifecycle}): soạn thảo, chứng thực tùy chọn bởi thẩm quyền, lựa chọn người xác minh qua băm nhất quán, quyết định xác minh (chấp nhận hoặc từ chối kèm lặp lại), công bố, và cập nhật danh tiếng cho tất cả các bên.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    stp/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\tiny, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[stp] (comp) at (0,0) {Soạn\\tuyên bố};
+\node[stp, dashed] (auth) at (2.0,0) {Thẩm quyền\\chứng thực};
+\node[stp] (hash) at (4.0,0) {Băm \&\\ánh xạ vòng};
+\node[stp] (ver) at (2.0,-1.6) {Xác minh\\kiểm tra};
+\node[stp, double] (pub) at (0,-1.6) {Đã công bố};
+\node[stp] (rej) at (4.0,-1.6) {Bị từ chối\\chi phí $\uparrow$};
+
+\draw[arr] (comp) -- (auth);
+\draw[arr] (auth) -- (hash);
+\draw[arr] (hash) -- (ver);
+\draw[arr] (ver) -- node[lbl] {\checkmark} (pub);
+\draw[arr] (ver) -- node[lbl] {$\times$} (rej);
+\draw[arr] (rej) -- ++(0,0.8) -| (hash);
+\end{tikzpicture}
+\caption{Vòng đời tuyên bố với vòng lặp lại.}
+\label{fig:lifecycle}
+\end{figure}
+
+\subsection{Quan Hệ với W3C DID Core}
+
+Mô hình định danh của RSN là một tập hợp cha thực sự của đặc tả W3C DID Core~\cite{did2022}. Tất cả các DID của RSN đều là các DID W3C hợp lệ. Các phần mở rộng đặc thù của RSN được mã hóa dưới dạng các thuộc tính tài liệu DID được định nghĩa trong một đặc tả phương thức DID chuyên biệt, tương thích với hạ tầng hiện có như ION~\cite{buchner2021} và Ceramic~\cite{ceramic2023}.
+
+% ============================================================
+% 5. VERIFICATION AND PROPAGATION
+% ============================================================
+\section{Xác Minh và Lan Truyền Thông Tin}
+
+\subsection{Chi Phí Nhập Thông Tin}
+
+Nguyên tắc kinh tế cốt lõi của RSN là sự bất đối xứng giữa đọc và ghi. Việc đọc dữ liệu danh tiếng tiến gần đến chi phí biên bằng không đối với những người tham gia là một phần của mạng DID và có quyền truy cập tương xứng với danh tiếng của họ---người mới phải dần dần kiếm được quyền truy cập rộng hơn (xem phần chống ăn bám). Việc ghi---được hiểu là sự vật chất hóa bền vững danh tiếng vào mạng lưới, chứ không phải là một hành động kỹ thuật một lần---đòi hỏi khoản đầu tư tích lũy có thể kiểm chứng trên ba chiều: \textbf{thời gian} (những năm tháng của cuộc đời dành cho hành vi nhất quán, những cam kết đã hoàn thành, và những mối quan hệ đã vun đắp), \textbf{năng lượng} (nỗ lực đầu tư vào việc giao dịch trung thực, chăm sóc các mối quan hệ đối tác, và sự đáng tin cậy dài hạn), và \textbf{tiền bạc} (đầu tư vào chính danh tiếng của mình---phát triển chuyên môn, chất lượng công việc, khắc phục cho những tổn hại đã gây ra). Danh tiếng không thể được mua tức thời---nó là kết quả của sự tích lũy suốt đời mà hệ thống chỉ đơn thuần làm cho hữu hình và có thể chuyển giao qua các bối cảnh. Các chi phí kỹ thuật một lần của giao thức (chữ ký mật mã, phí người xác minh) là không đáng kể so với khoản đầu tư nền tảng này.
+
+\subsection{Đồ Thị Xã Hội và Độ Sâu Liên Hệ}
+
+RSN về cơ bản là một mạng xã hội: mỗi DID thêm vào các liên hệ (các DID khác) cho phép kết nối. Những liên hệ này lại có các liên hệ của riêng họ, và cứ thế tiếp tục. Việc tìm kiếm người xác minh theo thuật toán hoạt động trong một độ sâu $h$ có thể cấu hình được của các liên hệ được liên kết (ví dụ, $h=3$: các liên hệ trực tiếp của một người, các liên hệ của họ, và các liên hệ của những liên hệ đó). Kiến trúc này không đòi hỏi một blockchain toàn cầu đơn nhất---nó tự nhiên ưu ái sự nổi lên của các cộng đồng/cụm với những chỗ chồng lấn sang các cộng đồng khác. Mỗi người tham gia DID phải có một \textbf{chính sách} được công bố---một tập hợp quy tắc máy đọc được chi phối cách thức đánh giá các yêu cầu đến. Các vi phạm chính sách được ghi lại trong mạng lưới dưới dạng các hiện vật tiêu cực.
+
+\subsection{Lựa Chọn Người Xác Minh Theo Thuật Toán}
+
+Giao thức xác minh sử dụng băm nhất quán~\cite{karger1997} (Hình.~\ref{fig:verifier}). Xác minh là một dịch vụ có trả phí: những người xác minh hoạt động để lấy phí, tạo ra một thị trường nơi sự cạnh tranh thúc đẩy giá cả, tốc độ, và độ tin cậy.
+
+\textbf{Bước 1.} Tài liệu tuyên bố được ghép nối với kết quả băm của lần lặp trước (hoặc $\varnothing$ ở lần lặp đầu tiên) và được băm:
+\begin{equation}
+\text{pos} = f_h(\text{claim} \| \text{prev\_hash})
+\label{eq:hash}
+\end{equation}
+
+Thuật toán phải bao gồm \emph{toàn bộ đường dẫn} của tất cả các yêu cầu và phản hồi trước đó---chứ không chỉ đơn thuần là một băm của lần lặp trước. Toàn bộ phản hồi của mỗi người xác minh (chấp nhận, từ chối, giá được báo, lý do) được nối vào tài liệu đang mở rộng, có thể kiểm chứng thông qua chữ ký mật mã ở mỗi bước.
+
+\textbf{Bước 2.} Băm được ánh xạ tới $N$ vị trí trên vòng băm nhất quán, phân bố đều (ví dụ, với $N=4$: $+0^{\circ}, +90^{\circ}, +180^{\circ}, +270^{\circ}$). Từ mỗi vị trí, một tìm kiếm theo chiều kim đồng hồ chọn DID gần nhất làm ứng viên người xác minh (Hình.~\ref{fig:multipoint}). $N$ là một tham số biến đổi có thể phụ thuộc vào tỷ lệ phần trăm các DID đang hoạt động hiện thời, thời điểm trong ngày, hoặc mức độ phản hồi lịch sử của mạng lưới.
+
+\textbf{Bước 3.} Người Xác Minh chấp nhận (công bố, đặt cược danh tiếng) hoặc từ chối (quay lại Bước~1 với băm từ chối). Khi một nút không phản hồi mặc dù đã khai báo trạng thái trực tuyến, yêu cầu tiếp theo phải bao gồm tất cả các phản hồi từ toàn bộ $N$ ứng viên người xác minh trước đó.
+
+\textbf{Chống ăn bám.} Các DID mục tiêu có thể đặt phí hoặc hạn chế truy cập đối với các truy vấn từ các DID mới có ít danh tiếng. Cơ chế phân bậc này (chứ không phải nhị phân) buộc người mới phải xây dựng danh tiếng thông qua hoạt động thực sự trước khi tự do tiêu thụ dữ liệu của người khác.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!5},
+    dec/.style={draw, diamond, aspect=2.2, minimum width=0.9cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[box] (iss) at (0,0) {Người phát hành};
+\node[box] (hash) at (0,-1.1) {$f_h$(claim $\|$\\prev\_hash)};
+\node[box] (ring) at (0,-2.2) {Ánh xạ vòng\\theo chiều kim};
+\node[box, dashed] (spam) at (0,-3.2) {Đặt cọc\\chống spam};
+\node[dec] (check) at (0,-4.4) {Kiểm tra\\chính sách};
+\node[box] (rej) at (2,-5.6) {Lần lặp\\tiếp theo};
+\node[box] (fee) at (0,-5.6) {Phí cuối =\\$f$(dữ liệu, danh tiếng, chính sách)};
+\node[box, double] (pub) at (0,-6.8) {Đã công bố};
+
+\draw[arr] (iss) -- (hash);
+\draw[arr] (hash) -- (ring);
+\draw[arr] (ring) -- (spam);
+\draw[arr] (spam) -- (check);
+\draw[arr] (check) -- node[lbl] {$\times$} (rej);
+\draw[arr] (check) -- node[lbl] {\checkmark} (fee);
+\draw[arr] (fee) -- (pub);
+\draw[arr] (rej.east) -- ++(0.5,0) |- (hash.east);
+\end{tikzpicture}
+\caption{Giao thức lựa chọn người xác minh. Đặt cọc chống spam là tùy chọn và có thể hoàn lại. Phí cuối chỉ được trả khi chấp nhận.}
+\label{fig:verifier}
+\end{figure}
+
+Mỗi lần từ chối nối toàn bộ phản hồi của người xác minh (bao gồm lý do và điều kiện) vào tài liệu tuyên bố, mở rộng nội dung của nó. Từ tài liệu đã mở rộng, một băm mới được tính toán một cách phi tất định, ánh xạ tới một vị trí vòng khác và chọn một người xác minh khác. Việc ghi chép toàn bộ đường dẫn là bắt buộc---người phát hành không thể dự đoán hay ảnh hưởng đến người xác minh tiếp theo. Nếu một người xác minh phớt lờ một yêu cầu mặc dù có chính sách được khai báo tương thích, những người làm chứng (nếu hiện diện) ghi lại điều này, và người phát hành có thể đính kèm bằng chứng của người làm chứng khi công bố cuối cùng.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.65]
+% Ring
+\draw[thick] (0,0) circle (2.2cm);
+% DID nodes on ring
+\foreach \a in {10,55,80,120,150,195,230,260,305,340} {
+  \fill[black!40] (\a:2.2) circle (1.5pt);
+}
+% Hash offset arrow pointing to initial position
+\draw[-{Stealth[length=3pt]}, thick, black!60] (0,0) -- node[font=\tiny,above,sloped,pos=0.6] {$f_h$} (37:2.2);
+\fill[black] (37:2.2) circle (2pt);
+\node[font=\tiny,anchor=south west] at (37:2.35) {$h_0$};
+% N=4 points offset from h0 by +0, +90, +180, +270
+\foreach \offset/\l in {0/P1,90/P2,180/P3,270/P4} {
+  \pgfmathsetmacro{\ang}{37+\offset}
+  \node[fill=black, circle, inner sep=1.5pt] (p\offset) at (\ang:2.2) {};
+  \node[font=\tiny,font=\bfseries] at (\ang:2.75) {\l};
+  % clockwise search arc
+  \draw[-{Stealth[length=2.5pt]}, thick, gray] (\ang:2.2) arc (\ang:\ang+30:2.2);
+}
+\node[font=\scriptsize, align=center] at (0,0) {Vòng\\Băm};
+\node[font=\tiny, align=center] at (0,-3.2) {$h_0 = f_h(\text{claim})$, rồi $+0^{\circ},+90^{\circ},+180^{\circ},+270^{\circ}$\\Mỗi điểm $\rightarrow$ tìm theo chiều kim};
+\end{tikzpicture}
+\caption{Lựa chọn đa điểm ($N{=}4$). Băm $h_0$ đặt độ lệch; 4 điểm phân bố đều từ $h_0$.}
+\label{fig:multipoint}
+\end{figure}
+
+\subsection{Giao Thức Làm Chứng}
+
+Vai trò \textbf{Người Làm Chứng} cung cấp trách nhiệm giải trình ẩn danh cho tính trung thực của người xác minh thông qua một giao thức mã thách thức bằng mật mã:
+
+\textbf{Bước W1.} Người yêu cầu ký vào yêu cầu xác minh và gửi nó tới $N_w$ người làm chứng---các liên hệ từ mạng xã hội của người yêu cầu, hoặc các nhà cung cấp dịch vụ làm chứng chuyên biệt hoạt động để lấy phí.
+
+\textbf{Bước W2.} Mỗi người làm chứng $w_i$ ký vào toàn bộ yêu cầu đã ký, giữ lại chữ ký gốc $\sigma_i$, và tính toán một mã thách thức $c_i = h(\sigma_i)$. Mã thách thức được nối vào yêu cầu.
+
+\textbf{Bước W3.} Yêu cầu, giờ đây mang theo $N_w$ mã thách thức, được gửi tới người xác minh. Người xác minh quan sát các mã nhưng \emph{không thể xác định} ai là những người làm chứng hay liệu các mã có tương ứng với các chữ ký thật hay không.
+
+\textbf{Bước W4 (người xác minh trung thực).} Nếu người xác minh phản hồi theo chính sách được khai báo của mình, các mã thách thức vẫn mờ đục. Những người làm chứng không bao giờ bị lộ. Không có dữ liệu bổ sung nào được công bố.
+
+\textbf{Bước W5 (vi phạm chính sách).} Nếu người xác minh vi phạm chính sách của mình (phớt lờ yêu cầu, phản hồi không nhất quán), người yêu cầu đang nắm giữ các chữ ký gốc $\sigma_i$ của những người làm chứng. Các chữ ký này có thể được công bố dưới dạng dữ liệu đồng hành: bất kỳ ai cũng có thể xác minh $c_i = h(\sigma_i)$, chứng minh rằng người làm chứng đã hiện diện. Người yêu cầu có thể công bố một cách độc lập---người xác minh đã ký vào các mã thách thức trong phản hồi của mình.
+
+\textbf{Thuộc tính tháu cáy.} Người yêu cầu có thể thay thế các giá trị ngẫu nhiên cho một số hoặc tất cả các mã thách thức. Người xác minh không thể phân biệt các mã chính hiệu (được hậu thuẫn bởi các thẩm quyền có danh tiếng cao) với nhiễu. \emph{Sự bất định} này chính là cơ chế thực thi: mỗi yêu cầu mang theo rủi ro rằng một thẩm quyền được tôn trọng đang theo dõi một cách ẩn danh. Chi phí duy trì áp lực này gần bằng không (tạo ra các con số ngẫu nhiên), trong khi chi phí tiềm tàng của sự bất lương đối với người xác minh là thảm khốc. Hành vi trung thực được khuyến khích ngay cả khi vắng mặt những người làm chứng thực sự.
+
+\textbf{Thẩm quyền với tư cách người làm chứng.} Một Thẩm Quyền chứng thực một tuyên bố có thể gộp thêm các dịch vụ làm chứng: ``Tôi chứng thực tuyên bố của bạn và làm người làm chứng ẩn danh trong quá trình xác minh.'' Đây là một mô hình kinh doanh tự nhiên---Thẩm Quyền vốn đã có bối cảnh. Tuy nhiên, hai vai trò này về mặt logic là độc lập.
+
+\subsection{Nguyên Tắc Cực Đoan Đắt Đỏ}
+
+Ba kênh chi phí cộng gộp đồng thời (Hình.~\ref{fig:radicalism}):
+
+\textbf{Kênh 1: Chi Phí Lặp.} Mỗi lần từ chối buộc phải có một lần lặp mới tiêu tốn thời gian và nguồn lực. Tăng trưởng tuyến tính.
+
+\textbf{Kênh 2: Sự Phình To Tài Liệu.} Mỗi lần lặp thêm toàn bộ phản hồi của người xác minh vào tài liệu tuyên bố. Sự tăng trưởng là tuyến tính, nhưng có một độ lệch cơ sở: tải trọng ban đầu (nội dung tuyên bố, chứng thực của thẩm quyền, chữ ký mật mã) vốn đã có kích thước không tầm thường $B_0$. Tổng kích thước sau $k$ lần lặp: $S(k) = B_0 + k \cdot \Delta$, trong đó $\Delta$ là kích thước phản hồi trung bình.
+
+\textbf{Kênh 3: Phần Bù Rủi Ro của Người Xác Minh.} Rủi ro mang tính chủ quan. Người xác minh đánh giá liệu các chính sách được khai báo của DID yêu cầu có xung đột với các lợi ích thương mại, xã hội hay chính trị của chính người xác minh hay không. Phần bù có thể leo thang theo hàm mũ với khoảng cách được cảm nhận so với ``lý tưởng'' của người xác minh: $P(d) = \alpha \cdot e^{\beta d}$, trong đó $d$ là thước đo khoảng cách chủ quan của người xác minh. Vượt qua một ranh giới cấm cá nhân, người xác minh có thể từ chối hoàn toàn.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\columnwidth,
+    height=4.5cm,
+    xlabel={\footnotesize Mức độ cực đoan},
+    ylabel={\footnotesize Chi phí tương đối (log)},
+    ymode=log,
+    xmin=0, xmax=100,
+    ymin=1, ymax=10000,
+    grid=major,
+    grid style={gray!20},
+    legend style={at={(0.03,0.97)},anchor=north west,font=\tiny,draw=gray!50},
+    tick label style={font=\tiny},
+    label style={font=\footnotesize},
+]
+\addplot[black, thick, domain=0:100, samples=50] {1 + 0.3*x};
+\addlegendentry{Chi phí lặp (tuyến tính)}
+\addplot[black, thick, dashed, domain=0:100, samples=50] {1 + 0.15*x};
+\addlegendentry{Phình to tài liệu (tuyến tính)}
+\addplot[black, thick, dotted, line width=1.2pt, domain=0:100, samples=100] {exp(0.08*x)};
+\addlegendentry{Phần bù rủi ro (hàm mũ)}
+\end{axis}
+\end{tikzpicture}
+\caption{Sự leo thang chi phí qua ba kênh. Phần bù rủi ro chiếm ưu thế ở mức độ cực đoan cao.}
+\label{fig:radicalism}
+\end{figure}
+
+Điều then chốt là, đây không phải là kiểm duyệt. Không có tuyên bố nào bị cấm. Hệ thống định giá rủi ro (Bảng~\ref{tab:costs}).
+
+\begin{table}[ht]
+\centering
+\caption{So sánh chi phí giữa các loại tuyên bố.}
+\label{tab:costs}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Loại} & \textbf{Lặp} & \textbf{TL} & \textbf{Phí} & \textbf{Tổng} \\
+\midrule
+Đáng tin & $k_{\min}$ & $B_0$ & $P_{\min}$ & Thấp \\
+Gây tranh cãi & $k_{\text{med}}$ & $B_0{+}k\Delta$ & $\alpha e^{\beta d}$ & Trung bình \\
+Cực đoan & $k_{\max}$ & $\gg B_0$ & $\gg P_{\min}$ & Rất cao \\
+Gian dối & $\to\infty$ & --- & --- & Không thể công bố \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% 6. REPUTATION AND RISK
+% ============================================================
+\section{Đánh Giá Danh Tiếng và Rủi Ro}
+
+\subsection{Mô Hình Tích Lũy Danh Tiếng}
+
+Danh tiếng thể hiện ba thuộc tính: \textbf{tích lũy chậm} (tăng trưởng tăng dần thông qua hành vi nhất quán), \textbf{hủy hoại nhanh} (một hành vi gian dối có thể làm giảm điểm số một cách thảm khốc), và \textbf{đánh giá cá nhân} (mỗi bên tiêu thụ có thể áp dụng hàm tổng hợp của riêng mình).
+
+\subsection{Các Thẩm Quyền Có Danh Tiếng}
+
+Một Thẩm Quyền Có Danh Tiếng xem xét các tuyên bố và, nếu hài lòng, đồng ký chúng---đặt cược danh tiếng của chính mình (Hình.~\ref{fig:authority}). Sự bất đối xứng là có chủ đích: đạt được danh tiếng thì chậm (tăng dần $+\delta$ cho mỗi lần chứng thực trung thực), trong khi mất nó thì thảm khốc ($-\Delta \gg \delta$ cho mỗi lần chứng thực sai lệch; minh họa, ví dụ, $+2\%$ so với $-70\%$). Chiến lược tối ưu luôn là từ chối các tuyên bố khả nghi. Các giá trị cụ thể của $\delta$ và $\Delta$ là các tham số hệ thống.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=2cm, minimum height=0.6cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[box] (exam) at (0,0) {Thẩm quyền xem xét\\Danh tiếng: $R$};
+\node[box] (true) at (-2,-1.3) {Thật: $R{\to}R{+}\delta$\\Thêm khách hàng};
+\node[box] (false) at (2,-1.3) {Giả: $R{\to}R{-}\Delta$\\Khách hàng rời bỏ};
+\node[box] (insight) at (0,-2.6) {Được: chậm ($+\delta$)\\Mất: tức thì ($-\Delta$)};
+
+\draw[arr] (exam) -- node[left,font=\tiny] {sự thật} (true);
+\draw[arr] (exam) -- node[right,font=\tiny] {dối trá} (false);
+\draw[arr] (true) -- (insight);
+\draw[arr] (false) -- (insight);
+\end{tikzpicture}
+\caption{Thẩm Quyền Có Danh Tiếng---các khuyến khích bất đối xứng.}
+\label{fig:authority}
+\end{figure}
+
+\subsection{Danh Tiếng Đa Chiều}
+
+Danh tiếng không phải là một đại lượng vô hướng mà là một vectơ trải trên nhiều chiều: độ tin cậy tài chính, chính trực cá nhân, năng lực chuyên môn, sự tham gia công dân, và những chiều khác (Hình.~\ref{fig:reputation-radar}). Các nhà cung cấp đánh giá khác nhau chiếu vectơ này theo những cách khác nhau tùy thuộc vào bối cảnh---người cho vay ưu tiên độ tin cậy tài chính, người sử dụng lao động ưu tiên năng lực chuyên môn, người hàng xóm ưu tiên hành vi công dân. Không có một điểm số danh tiếng ``đúng'' duy nhất; chỉ có các góc nhìn.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.55]
+\foreach \a/\l in {90/Tài chính,162/Chính trực,234/Chuyên môn,306/Công dân,18/Xã hội} {
+  \draw[gray!40] (0,0) -- (\a:2.5);
+  \node[font=\tiny, align=center] at (\a:3.1) {\l};
+  \foreach \r in {0.8,1.6,2.4} {
+    \fill[black!15] (\a:\r) circle (0.5pt);
+  }
+}
+\draw[thick, fill=black!10] (90:2.0) -- (162:1.2) -- (234:1.8) -- (306:0.9) -- (18:1.5) -- cycle;
+\draw[thick, dashed] (90:1.4) -- (162:2.1) -- (234:0.8) -- (306:2.0) -- (18:1.1) -- cycle;
+\node[font=\tiny] at (0,-3.3) {Nét liền: DID A \quad Nét đứt: DID B};
+\end{tikzpicture}
+\caption{Các vectơ danh tiếng đa chiều. Các DID khác nhau thể hiện những hồ sơ khác nhau qua các chiều.}
+\label{fig:reputation-radar}
+\end{figure}
+
+\subsection{Đánh Giá Rủi Ro Được Dân Chủ Hóa}
+
+RSN dân chủ hóa việc đánh giá rủi ro có hệ thống---một năng lực hiện đang tập trung ở các định chế tài chính nhưng có thể áp dụng vượt xa lĩnh vực ngân hàng. Các tập đoàn công nghiệp đánh giá độ tin cậy của nhà cung cấp, các công ty bảo hiểm định giá rủi ro hành vi, thẩm định cho các thương vụ sáp nhập và mua lại, ước tính tuổi thọ thiết bị trong sản xuất---bất cứ nơi nào rủi ro bên đối tác cần được đánh giá, RSN cung cấp một giải pháp thay thế phi tập trung, do thị trường điều tiết. Một thị trường các dịch vụ diễn giải chuyển dịch dữ liệu danh tiếng đa chiều thô thành các bản tóm tắt có thể hành động được, làm cho việc đánh giá bên đối tác trở nên khả dụng đối với bất kỳ người tham gia nào ở mức chi phí biên.
+
+% ============================================================
+% 7. CONSENSUS AND DISPUTE RESOLUTION
+% ============================================================
+\section{Đồng Thuận và Giải Quyết Tranh Chấp}
+
+\subsection{Mô Hình Công Lý Phi Tập Trung}
+
+RSN tái định khung công lý như một vấn đề thương lượng song phương. Mối đe dọa về thiệt hại danh tiếng vĩnh viễn, có thể kiểm chứng là một sự răn đe hiệu quả hơn so với các thủ tục pháp lý mà bên bị hại không đủ khả năng chi trả.
+
+\subsection{Đồng Thuận Nổi Trội}
+
+Mỗi người tham gia duy trì một ngưỡng thỏa mãn cá nhân. Đồng thuận tổng hợp của mạng lưới nổi lên như trung bình thống kê của hàng ngàn cuộc thương lượng song phương (Hình.~\ref{fig:consensus}). Một phản ứng cao hơn nhiều so với đồng thuận (dã man) thì đắt đỏ để công bố. Một phản ứng gần với đồng thuận (tương xứng) thì rẻ. Đồng thuận không phải là một quy tắc---nó là một tín hiệu giá.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    person/.style={draw, rounded corners=2pt, minimum width=1.5cm, minimum height=0.5cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[person] (a) at (-2,0) {Nghiêm khắc\\(cao)};
+\node[person] (b) at (0,0) {Thực dụng\\(vừa)};
+\node[person] (c) at (2,0) {Khoan dung\\(thấp)};
+\node[person, fill=black!10, minimum width=3cm] (cons) at (0,-1.2) {Đồng thuận Mạng lưới\\= trung bình thống kê};
+\node[person] (exp) at (-2,-2.4) {Dã man\\đắt};
+\node[person, double] (prop) at (0,-2.4) {Tương xứng\\rẻ};
+\node[person] (neg) at (2,-2.4) {Lơ là\\đắt};
+
+\draw[arr] (a) -- (cons);
+\draw[arr] (b) -- (cons);
+\draw[arr] (c) -- (cons);
+\draw[arr] (cons) -- (exp);
+\draw[arr] (cons) -- (prop);
+\draw[arr] (cons) -- (neg);
+\end{tikzpicture}
+\caption{Đồng thuận nổi trội từ các ngưỡng thỏa mãn cá nhân.}
+\label{fig:consensus}
+\end{figure}
+
+\subsection{Hiệu Chỉnh Hình Phạt}
+
+Mỗi Chủ Sở Hữu DID công khai khai báo các phản ứng đối với những phạm trù hành vi sai trái cụ thể. Những khai báo khắc nghiệt hoặc nhân nhượng một cách không tương xứng thu hút các tín hiệu danh tiếng tiêu cực. Những khai báo tương xứng được chấp nhận mà không có ma sát---một hệ thống trừng phạt tự hiệu chỉnh.
+
+Bản thân các khai báo đồng thuận cũng chịu sự phát hiện đạo đức giả: cam kết một cách khai báo với một lập trường đồng thuận trong khi hành xử không nhất quán cấu thành một hành vi vi phạm danh tiếng nghiêm trọng hơn sự lệch chuẩn nền tảng, vì nó chứng tỏ sự lừa dối có chủ ý.
+
+\subsection{Ủy Thác}
+
+Tất cả các hoạt động trong một DID---với một ngoại lệ---đều có thể được ủy thác cho một DID khác. \textbf{Vai trò Chủ Thể---DID mà hành vi của nó là đối tượng của tuyên bố---không thể được ủy thác; nó bị ràng buộc một cách không thể chuyển nhượng vào chủ sở hữu danh tính mà tuyên bố đề cập đến.} Các vai trò hoạt động khác---Người Phát Hành, Thẩm Quyền, Người Làm Chứng, Người Xác Minh---có thể được chuyển giao cho một DID được ủy thác chỉ định, dù là để xác minh, gửi tuyên bố, tham gia đồng thuận, hay giải quyết tranh chấp. Ủy thác có thể bị thu hồi bất cứ lúc nào. Điều này cho phép chuyên môn hóa (ví dụ, các dịch vụ xác minh chuyên nghiệp) trong khi Chủ Sở Hữu vẫn giữ quyền kiểm soát và trách nhiệm tối hậu. Ủy thác áp dụng trên toàn bộ hệ thống và là thiết yếu cho khả năng mở rộng.
+
+\subsection{Từ Đạo Đức Cá Nhân đến Khế Ước Xã Hội Nổi Trội}
+
+Chính sách được khai báo của mỗi DID đại diện cho sự hình thức hóa đạo đức cá nhân: điều gì Chủ Sở Hữu coi là chấp nhận được, họ phản ứng thế nào với những hành vi cụ thể, họ đòi hỏi gì từ các bên đối tác. Những chính sách này không phải do một nhà thiết kế hệ thống áp đặt---chúng được mỗi người tham gia lựa chọn và thể hiện dưới dạng máy đọc được.
+
+Sự hình thức hóa này cho phép một quá trình nổi lên ba giai đoạn. Thứ nhất, đạo đức cá nhân được mã hóa thành \textbf{chính sách}---một tập hợp các quy tắc, ngưỡng, và hàm phản ứng được khai báo mà DID cam kết tuân theo. Thứ hai, tổng thể của tất cả các chính sách trên toàn mạng lưới tạo ra \textbf{đạo đức nổi trội}---những chuẩn mực có thể quan sát được về mặt thống kê mà không một người tham gia đơn lẻ nào thiết kế nhưng lại nảy sinh từ sự tương tác của hàng ngàn lập trường đạo đức cá nhân~\cite{durkheim1893}. Thứ ba, những đạo đức nổi trội này, được thể hiện dưới dạng các chuẩn mực hành vi chung được thực thi thông qua các tín hiệu giá song phương, cấu thành một \textbf{khế ước xã hội có thể đo lường được}---không phải là một cấu trúc lý thuyết mà chẳng ai ký kết~\cite{rawls1971}, mà là một tập hợp quy tắc có thể quan sát được về mặt thực nghiệm, được hậu thuẫn bởi hành vi thực tế.
+
+Quá trình này phản ánh những phát hiện từ lý thuyết nền tảng đạo đức~\cite{haidt2012}: đạo đức của con người mang tính trực giác, đa nguyên, và biến đổi theo văn hóa. RSN không đòi hỏi đồng thuận đạo đức làm đầu vào; nó tạo ra đồng thuận hành vi làm đầu ra. Khế ước xã hội thu được không phải là tĩnh---nó tiến hóa khi những người tham gia gia nhập, rời đi, và điều chỉnh chính sách của họ để đáp lại phản hồi của mạng lưới. Khác với lý thuyết khế ước xã hội cổ điển, khế ước này có thể thu hồi, có thể quan sát, và có thể thực thi mà không cần một đấng tối cao.
+
+% ============================================================
+% 8. ECONOMIC MODEL
+% ============================================================
+\section{Mô Hình Kinh Tế}
+
+Các mục trước đã mô tả một công cụ---các cơ chế xác minh, cấu trúc chi phí, và đồng thuận nổi trội của RSN. Mục này mô tả một phương pháp luận để áp dụng công cụ này vào quá trình chuyển tiếp tài khóa và quản trị. Công cụ này mang tính đa dụng; phương pháp luận dưới đây là một ứng dụng khả thi.
+
+\subsection{Cấu Trúc Khuyến Khích}
+
+Danh tiếng như vốn tạo ra các khuyến khích trực tiếp cho hành vi trung thực. Trong vận hành bình thường, những người tham gia xây dựng danh tiếng một cách tự nhiên thông qua các giao dịch hằng ngày và các cam kết đã hoàn thành. Khoản chi tiêu chính là dành cho các tuyên bố \emph{tiêu cực}---ghi lại tổn hại do người khác gây ra. Sự bất đối xứng này khuyến khích hành vi hữu ích, đáng tin cậy: trung thực không tốn thêm gì, trong khi gây hại tạo ra một dấu vết được ghi chép mà người khác sẽ trả tiền để lưu giữ. Thói đạo đức giả---khai báo các quy tắc mà không tuân theo chúng---là chế độ thất bại đắt đỏ nhất, vì nó chứng tỏ sự lừa dối có chủ ý.
+
+\subsection{Hệ Thống Tài Khóa Song Song}
+
+Ba thành phần cho phép áp lực cạnh tranh: (1)~\textbf{Thuế Đơn Giản}---một mức tỷ lệ duy nhất không có ngoại lệ, ban đầu chỉ thấp hơn biên độ nhỏ so với mức hiệu dụng hiện hành; (2)~\textbf{Đăng Ký Chi Tiêu Điện Tử (ESR)}---đảo ngược mô hình EET của Séc để công dân giám sát chi tiêu của nhà nước; (3)~\textbf{Phân Bổ Thuế Do Công Dân Định Hướng}---bắt đầu từ vài phần trăm trong năm đầu tiên và đạt tới, sau một thập kỷ, bất cứ đâu từ mức hai chữ số thấp cho đến sự di trú hoàn toàn sang một hệ thống do công dân định hướng, tùy thuộc vào tốc độ áp dụng. Nhịp độ thực tế phụ thuộc vào tốc độ nổi lên của các giải pháp thị trường tự do thay thế cho dịch vụ nhà nước và vào thiện chí hợp tác của nhà nước với quá trình chuyển tiếp; hàm số của thời gian không nhất thiết phải tuyến tính, và không có lý do gì để đặt một giới hạn trên cho nơi mà việc áp dụng cuối cùng có thể đạt tới.
+
+% ============================================================
+% 9. MIGRATION PATH
+% ============================================================
+\section{Lộ Trình Di Trú}
+
+Quá trình di trú diễn tiến qua ba pha (Hình.~\ref{fig:migration}): \textbf{Pha~1: Lớp Phủ} (RSN như một lớp thông tin, nhà nước là nhà cung cấp duy nhất), \textbf{Pha~2: Cạnh Tranh} (RSN cung cấp các giải pháp thay thế có chức năng, sử dụng hệ thống kép), và \textbf{Pha~3: Chuyển Tiếp} (RSN vượt trội hơn các dịch vụ tương đương của nhà nước, di trú tự nguyện). Sự chuyển tiếp có thể đảo ngược ở mọi giai đoạn.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    phase/.style={draw, rounded corners=3pt, minimum width=1.8cm, minimum height=0.8cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=5pt]}, thick}
+]
+\node[phase] (p1) at (0,0) {\textbf{Pha 1}\\Lớp phủ};
+\node[phase] (p2) at (2.2,0) {\textbf{Pha 2}\\Cạnh tranh};
+\node[phase] (p3) at (4.4,0) {\textbf{Pha 3}\\Chuyển tiếp};
+
+\draw[arr] (p1) -- (p2);
+\draw[arr] (p2) -- (p3);
+\draw[arr, dashed, gray] (p3.south) -- ++(0,-0.6) -| node[below,font=\tiny,pos=0.25] {dự phòng} (p2.south);
+\end{tikzpicture}
+\caption{Di trú ba pha---có thể đảo ngược ở mọi giai đoạn.}
+\label{fig:migration}
+\end{figure}
+
+Cơ chế áp lực chính là tài khóa: khi những người nộp thuế có điều kiện đạt tới một ``thiểu số có ý nghĩa kinh tế $X$''---một nhóm đủ lớn đến mức sự đàn áp chống lại nó gây ra thiệt hại kinh tế không tầm thường và bất tuân dân sự trở thành một mối đe dọa đáng tin cậy---thì nhà nước bước vào thương lượng. Để minh họa, chúng tôi sử dụng $X \approx 15\%$ của GDP, nhưng ngưỡng thực tế phụ thuộc vào nền kinh tế cụ thể.
+
+% ============================================================
+% 10. SECURITY ANALYSIS
+% ============================================================
+\section{Phân Tích An Ninh}
+
+Chúng tôi xem xét năm phạm trù đối thủ: các kẻ xấu cá nhân, các nhóm có tổ chức, các đối thủ doanh nghiệp, các đối thủ cấp nhà nước, và các đối thủ cấp giao thức.
+
+\textbf{Kháng Sybil}~\cite{douceur2002}. Xây dựng danh tiếng đòi hỏi tương tác bền vững, có thể kiểm chứng. Chi phí của một cuộc tấn công Sybil thành công tăng tuyến tính theo số danh tính giả và bậc hai theo mức danh tiếng mục tiêu. Vận hành nhiều DID song song là khả thi nhưng đắt đỏ theo thiết kế---mỗi danh tính phải tích lũy danh tiếng một cách độc lập thông qua hoạt động thực sự. Trong các xã hội tự do, chi phí này răn đe sự lạm dụng tùy tiện; trong các chế độ độc tài, các DID song song trở thành một công cụ sinh tồn cho phép sự kháng cự được ngăn ngăn cách, sự phối hợp bí mật, và sự điều hướng chợ đen an toàn hơn.
+
+\textbf{Phòng vệ chống thông đồng.} Các khuôn mẫu chứng thực lẫn nhau giữa các nhóm khép kín là có thể phát hiện được thông qua phân tích đồ thị xã hội. Các hàm tổng hợp danh tiếng chiết khấu các tuyên bố từ các nguồn tụ cụm chặt chẽ.
+
+\textbf{Đối thủ cấp nhà nước.} Định tuyến onion, sự vắng mặt của hạ tầng tập trung, và sự phân bố vai trò Người Xác Minh trên toàn bộ cơ sở người tham gia đảm bảo rằng việc đàn áp đòi hỏi những biện pháp không tương xứng với bất kỳ lợi ích nào.
+
+\textbf{Riêng tư và trách nhiệm giải trình.} Tính bút danh---một điểm trung dung giữa ẩn danh và tiết lộ danh tính---cho phép các DID tích lũy danh tiếng có ý nghĩa mà không tiết lộ danh tính trong thế giới thực của Chủ Sở Hữu.
+
+% ============================================================
+% 11. PRIVACY
+% ============================================================
+\section{Các Cân Nhắc về Quyền Riêng Tư}
+
+Mô hình quyền riêng tư của RSN được xây dựng trên tính bút danh. Chủ Sở Hữu kiểm soát việc tiết lộ danh tính: tối thiểu (bút danh thuần túy), có chọn lọc (các chứng chỉ cụ thể được liên kết), hoặc đầy đủ (danh tính pháp lý được gắn kết). Các tuyên bố đã công bố là vĩnh viễn---hệ thống hỗ trợ việc đính chính theo ngữ cảnh nhưng không hỗ trợ việc xóa bỏ. Một Chủ Sở Hữu có thể từ bỏ một DID đã bị xâm phạm và bắt đầu lại từ đầu, mất đi danh tiếng đã tích lũy.
+
+% ============================================================
+% 12. RELATED WORK
+% ============================================================
+\section{Các Công Trình Liên Quan}
+
+Đặc tả W3C DID Core~\cite{did2022} và Mạng Ceramic~\cite{ceramic2023} cung cấp nền tảng danh tính. EigenTrust~\cite{kamvar2003} đã trình diễn việc tổng hợp danh tiếng phân tán mà không cần thẩm quyền trung ương. Các SBT~\cite{weyl2022} đã giới thiệu các token xã hội không thể chuyển nhượng. RSN khác biệt ở chỗ nó nhấn mạnh chi phí kinh tế như một bộ lọc chất lượng và cơ chế định giá mức độ cực đoan.
+
+Các DAO~\cite{buterin2014} và bỏ phiếu bậc hai~\cite{buterin2019} đã trình diễn tính khả thi của quản trị phi tập trung. RSN rút ra đồng thuận từ các cuộc thương lượng giá song phương thay vì bỏ phiếu.
+
+Đề xuất này dựa trên lý thuyết vô chính phủ tư bản~\cite{rothbard1973,hoppe2001} về việc cung cấp dịch vụ tư nhân nhưng khác biệt ở hai khía cạnh then chốt: nó thiết kế cho sự hằn học và các xung động báo thù thay vì giả định tính duy lý, và nó đề xuất sự chuyển tiếp tiệm tiến thay vì cách mạng. Khái niệm về các khế ước xã hội nổi trội có tiền lệ trong lý thuyết trật tự tự phát của Hayek~\cite{hayek1973}.
+
+\textbf{Vô chính phủ agorism.} RSN chia sẻ điểm chung đáng kể với phản-kinh-tế agorist~\cite{konkin2006}---đặc biệt là sự nhấn mạnh vào việc xây dựng các thể chế song song và trao đổi tự nguyện. Tuy nhiên, agorism có xu hướng giả định tư lợi duy lý như một cơ chế điều phối đầy đủ và thường thiếu một lộ trình di trú cụ thể từ các cấu trúc nhà nước hiện hành. RSN tích hợp một cách rõ ràng các khuynh hướng hành vi phi duy lý và cung cấp một cơ chế áp lực tài khóa cho sự chuyển tiếp tiệm tiến.
+
+\textbf{Chế độ trọng dụng nhân tài.} RSN có thể đại diện cho một mô tả có chức năng đầu tiên về cách thức chế độ trọng dụng nhân tài~\cite{young1958} có thể nổi lên như một thuộc tính hệ thống thay vì một khẩu hiệu. Các hệ thống trọng dụng nhân tài truyền thống thất bại vì chúng đòi hỏi một thẩm quyền trung ương để định nghĩa và thực thi ``công trạng''. Trong RSN, công trạng nổi lên từ các đánh giá song phương: những ai mang lại giá trị sẽ tích lũy danh tiếng; không có ủy ban nào quyết định ai có công trạng.
+
+\textbf{Tài sản như một đặc quyền.} RSN khác biệt căn bản với các cách xử lý của vô chính phủ tư bản và trường phái Áo về quyền tài sản như một điều tự nhiên và tuyệt đối. Trong khung khổ RSN, tài sản là một \emph{đặc quyền}---một sự công nhận xã hội mà, trong những trường hợp cực đoan, có thể bị cộng đồng rút lại khi một người tham gia vi phạm căn bản các chuẩn mực chung (phản bội, từ chối bảo vệ cộng đồng trong khủng hoảng sinh tồn, bóc lột có hệ thống). Đây không phải là sự tước đoạt của nhà nước mà là một sự rút lại công nhận xã hội bởi mạng lưới các quan hệ song phương.
+
+% ============================================================
+% 13. LIMITATIONS
+% ============================================================
+\section{Thảo Luận và Hạn Chế}
+
+\textbf{Khởi động lạnh.} Giá trị của RSN phụ thuộc vào hiệu ứng mạng lưới; những người áp dụng sớm đối mặt với giá trị hạn chế cho đến khi sự tham gia đạt tới một ngưỡng. Tuy nhiên, ngay cả từ những giai đoạn đầu, mạng DID vẫn phục vụ như một nguồn thông tin bổ trợ hữu ích. Việc đánh giá danh tiếng và đánh giá thẩm quyền ban đầu được kỳ vọng sẽ phát triển dần dần với sự tinh vi ngày càng tăng.
+
+\textbf{Chống ăn bám và kiểm soát truy cập.} Các DID mục tiêu có thể áp đặt phí phân bậc và hạn chế truy cập đối với các truy vấn từ các DID danh tiếng thấp. Đây không phải là nhị phân mà là một thang liên tục: một DID truy vấn càng ít danh tiếng, nó càng nhận được ít thông tin, chờ đợi càng lâu, và trả càng nhiều. Cơ chế này khuyến khích sự tham gia thực sự thay vì tiêu thụ thụ động.
+
+\textbf{Bất bình đẳng về truy cập.} Chi phí công bố tuyên bố có thể lọc bỏ những khiếu nại chính đáng từ những người tham gia yếu thế về kinh tế. Giảm nhẹ: mỗi người tham gia đồng thời phục vụ như một người xác minh tiềm năng (hoặc ủy thác vai trò này) và kiếm được phí xác minh. Trong một chân trời thời gian đủ dài, một người tham gia không cực đoan nên tiến gần đến trung tính tài chính---thu nhập từ xác minh xấp xỉ bù đắp cho chi phí công bố. Đây là một kỳ vọng thống kê, không phải một sự đảm bảo.
+
+\textbf{Bất bình đẳng danh tiếng.} Những người áp dụng sớm tích lũy các lợi thế có thể tạo ra rào cản cho những người đến sau. Tuy nhiên, việc đánh giá danh tiếng được thực hiện bởi các nhà cung cấp bên thứ ba, những người có thể chọn giảm nhẹ lợi thế của người đi trước thông qua các thuật toán tổng hợp của họ. Là người đầu tiên với một danh tiếng tốt là một lợi thế kinh tế so sánh hợp pháp---và điều đó là theo thiết kế.
+
+\textbf{Các câu hỏi để ngỏ.} Các hàm chi phí tối ưu, các tiêu chuẩn tổng hợp, việc quản trị giao thức, và sự tương tác với dữ liệu danh tiếng tổng hợp do AI tạo ra vẫn là những lĩnh vực cho công trình tương lai.
+
+Bài viết này không tuyên bố rằng RSN sẽ tạo ra những kết quả tối ưu trong mọi hoàn cảnh. Nó tuyên bố rằng RSN đại diện cho một giải pháp thay thế \emph{khả thi}---có thể triển khai về mặt kỹ thuật, tự duy trì về mặt kinh tế, và tương thích về mặt xã hội với các khuynh hướng hành vi của con người như chúng thực sự tồn tại.
+
+% ============================================================
+% 14. CONCLUSION
+% ============================================================
+\section{Kết Luận}
+
+Bài viết này đã trình bày Mạng Xã Hội Danh Tiếng, một giao thức phi tập trung cho phép trao đổi danh tiếng dưới bút danh, có thể kiểm chứng. Nguyên Tắc Cực Đoan Đắt Đỏ đảm bảo rằng các tuyên bố gian dối bị định giá loại ra khỏi cuộc chơi mà không cần kiểm duyệt. Lộ trình di trú được đề xuất cho phép một sự chuyển tiếp tiệm tiến, có thể đảo ngược từ các thể chế hiện hành. Thiết kế tích hợp bản chất con người như nó vốn có---bao gồm sự nhỏ nhen, hằn học, và khát vọng thỏa mãn báo thù---thay vì đòi hỏi một sự biến đổi ý thức hệ. Kết quả không phải là điều không tưởng mà là một hệ thống nơi công lý là có thể tiếp cận, danh tiếng được kiếm được, và chi phí của hành vi sai trái được gánh chịu bởi bên đã gây ra nó.
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,615 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+% === Core Packages ===
+\usepackage[margin=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds}
+
+% === Citation (IEEE style) ===
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{IEEEtranN}
+
+% === Hyperref ===
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+% === Settings ===
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.3em}
+
+% === Title ===
+\title{\textbf{Réseau de réputation décentralisé\,:\\Un cadre pour l'organisation naturelle de la société}}
+\author{Pavel Kudrna\\Prague, Tchéquie\\Ébauche v1 --- mars 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+% ABSTRACT
+% ============================================================
+\begin{abstract}
+Le sens de la justice---la conviction que les torts sont réparés et que le mérite est récompensé---est la plus forte force de cohésion de la société. Lorsque les institutions centralisées de gouvernance ne peuvent procurer ce sens parce que le coût de faire valoir un droit dépasse la valeur du droit lui-même, la cohésion sociale s'effrite. Les structures institutionnelles actuelles échouent à résoudre une catégorie importante de différends de la même façon systématique que la planification centrale échoue à répartir les ressources\,: par l'asymétrie d'information, l'absence de boucles de rétroaction et la déconnexion des décideurs des conséquences de leurs décisions. Cet article présente un réseau social de réputation (RSN)\,: une couche de communication décentralisée, incorruptible et résistante à la censure, bâtie sur des identifiants décentralisés (DID) qui permet à des participants pseudonymes de publier, de vérifier et de consulter de l'information de réputation sur des comportements du monde réel. Le mécanisme central repose sur trois principes de conception\,: (1)~une structure de coûts asymétrique où la lecture des données de réputation est peu coûteuse mais l'écriture exige un effort vérifiable\,; (2)~un protocole de sélection non déterministe des vérificateurs fondé sur le hachage cohérent qui tarife les affirmations radicales par des coûts d'itération croissants\,; et (3)~un modèle d'autorité de réputation piloté par le marché où des vérificateurs privés misent leur réputation accumulée sur l'exactitude des affirmations qu'ils cautionnent. L'architecture qui en résulte produit une méritocratie émergente sans coordination centrale et permet un cheminement de migration graduel et réversible à partir des systèmes existants administrés par l'État.
+\end{abstract}
+
+% ============================================================
+% 1. INTRODUCTION
+% ============================================================
+\section{Introduction}
+
+\subsection{Le problème de la confiance centralisée}
+
+La gouvernance moderne repose sur une hypothèse fondamentale\,: que des institutions centralisées peuvent servir d'intermédiaires de confiance entre étrangers à grande échelle. Les tribunaux tranchent les différends. Les registres attestent la propriété. Les organismes de réglementation font respecter les normes. Ces institutions ont été conçues à une époque où l'information était rare, la communication lente, et où la délégation de l'autorité à un organe central était le seul mécanisme de coordination réalisable. La gouvernance centralisée, cependant, échoue pour les mêmes raisons structurelles que la planification centrale\,: l'asymétrie d'information, l'absence de boucles de rétroaction et la déconnexion des décideurs des conséquences de leurs décisions.
+
+L'hypothèse échoue, par exemple, lorsque le coût de la médiation institutionnelle dépasse la valeur du différend. Considérons un locataire qui découvre que son logement loué ne possède pas de certificat de sécurité électrique exigé par la loi---une condition qui présente un danger immédiat pour la vie. Le droit légal du locataire de résilier le contrat est sans équivoque. Pourtant, le coût de faire valoir ce droit devant les tribunaux dépasse la valeur monétaire du dépôt et des dommages dus, même en incluant une éventuelle indemnisation légale~\cite{czcourtfees}. La réponse rationnelle consiste à absorber la perte et à se retirer.
+
+Il ne s'agit pas d'un cas limite pathologique. C'est l'expérience courante d'une catégorie importante de différends dans lesquels le préjudice est réel mais les enjeux monétaires tombent sous le seuil à partir duquel l'application institutionnelle devient économiquement rationnelle. Le résultat est un système qui favorise structurellement les mauvais acteurs\,: ceux qui nuisent à autrui dans des volumes inférieurs à ce seuil peuvent agir en toute impunité, parce que le coût de la recherche de justice retombe sur la partie lésée.
+
+L'exemple ci-dessus est tiré de l'environnement juridique de l'auteur---le système de droit civil tchèque. Dans d'autres traditions juridiques---la common law fondée sur le précédent, le droit coutumier, les systèmes mixtes---la justice échoue de différentes manières et à différents degrés, selon les particularités culturelles et procédurales de la juridiction. Les lecteurs reconnaîtront vraisemblablement des exemples équivalents dans leur propre contexte. Ce qui est structurellement universel, c'est le schéma\,: les différends dont la valeur tombe sous le seuil de l'application économiquement rationnelle se terminent par l'absorption de la perte par la partie lésée. Le RSN ne promet pas une justice parfaite---il réduit simplement l'avantage structurel dont jouissent les mauvais acteurs lorsque l'application institutionnelle est non rentable.
+
+\subsection{Pourquoi les solutions existantes sont insuffisantes}
+
+Les \textbf{cadres d'identité décentralisée (DID)}~\cite{did2022} fournissent des mécanismes cryptographiques pour la gestion d'une identité auto-souveraine mais se concentrent surtout sur la vérification de l'identité sans aborder la question plus large de la réputation comportementale.
+
+Les \textbf{jetons non transférables (SBT, «\,Soulbound Tokens\,»)}~\cite{weyl2022} saisissent l'idée que la réputation n'est pas transférable mais reposent sur une infrastructure de chaîne de blocs présentant des contraintes de mise à l'échelle et n'abordent pas les incitations économiques qui régissent l'entrée de l'information. Des concepts apparentés comme les jetons de mérite (p.~ex. Liberland) partagent une philosophie semblable mais demeurent liés à des cadres juridictionnels précis.
+
+Les \textbf{organisations autonomes décentralisées (DAO)}~\cite{buterin2014} mettent en \oe uvre la gouvernance au moyen de contrats intelligents mais reproduisent des dynamiques ploutocratiques où l'influence est proportionnelle au capital. Le vote quadratique~\cite{buterin2019} atténue partiellement ce phénomène mais limite l'adoption pratique. Les DAO se heurtent aussi au fondamental \emph{problème de l'oracle}\,: les contrats intelligents ne peuvent vérifier de façon fiable les états du monde réel sans une source externe de confiance, et ce problème n'a aucune solution générale au sein de l'architecture des chaînes de blocs.
+
+Aucun système existant ne combine décentralisation, résistance à la censure, pseudonymat, coût d'entrée vérifiable et consensus émergent.
+
+\subsection{Contributions}
+
+Cet article apporte les contributions suivantes\,:
+\begin{enumerate}[nosep]
+\item La définition du \textbf{réseau social de réputation (RSN)}, un protocole décentralisé qui étend le cadre DID pour prendre en charge l'échange bilatéral de réputation.
+\item Un \textbf{protocole de sélection non déterministe des vérificateurs} fondé sur le hachage cohérent~\cite{karger1997}.
+\item Le \textbf{principe du radicalisme coûteux}, qui tarife les affirmations selon leur distance par rapport au consensus du réseau au moyen de trois canaux de coûts cumulatifs.
+\item Un \textbf{modèle d'autorité réputée} à incitations asymétriques où un cautionnement mensonger coûte catastrophiquement plus cher que des honoraires légitimes.
+\item Un \textbf{cheminement de migration graduel} par le biais d'une infrastructure fiscale parallèle.
+\end{enumerate}
+
+% ============================================================
+% 2. DESIGN PRINCIPLES
+% ============================================================
+\section{Principes de conception}
+
+L'architecture du RSN est encadrée par cinq principes de conception non négociables.
+
+\textbf{Continuité et évolution.} Le système coexiste avec les institutions existantes pendant une période de transition d'une durée indéterminée. La transition doit être réversible à chaque étape.
+
+\textbf{Volontariat et responsabilité.} La participation est volontaire, mais le volontariat s'accompagne de responsabilité\,: un participant qui assume le contrôle d'une fonction institutionnelle assume simultanément les obligations qui l'accompagnent.
+
+\textbf{Diversité et neutralité culturelle.} Le consensus émerge d'interactions bilatérales, et non de règles préétablies imposées par les concepteurs du système.
+
+\textbf{Résilience et résistance à la censure.} Le coût de censurer le réseau doit dépasser le coût de le tolérer. Seul un totalitarisme complet---à un coût politique et économique ruineux---peut réprimer le système.
+
+\textbf{Consensus et application.} Le système intègre les tendances humaines à la mesquinerie, à la rancune et à la satisfaction rétributive comme des caractéristiques porteuses. L'inconduite n'est pas interdite\,; elle est tarifée.
+
+% ============================================================
+% 3. SYSTEM OVERVIEW
+% ============================================================
+\section{Vue d'ensemble du système}
+
+\subsection{Réseau social de réputation}
+
+Le RSN est une couche de communication décentralisée, pair à pair, dans laquelle les participants échangent de l'information vérifiable sur des comportements du monde réel. Ses propriétés déterminantes sont\,: une infrastructure décentralisée et incensurable\,; une participation pseudonyme au moyen des DID\,; une structure de coûts asymétrique (la lecture est bon marché, l'écriture est coûteuse)\,; une vérifiabilité cryptographique\,; et le \textbf{soutien de normes}---des formats lisibles par la machine pour l'information propagée dans le réseau, pour les services offerts par les autorités (composition d'affirmations, cautionnement, service de témoin) et pour le format des politiques, y compris les règles d'évaluation de la réputation d'une contrepartie et d'appréciation du risque d'écart de politique (entre le comportement déclaré et le comportement réel).
+
+\subsection{Composants architecturaux}
+
+Le RSN se compose de quatre composants principaux (fig.~\ref{fig:architecture})\,:
+\begin{enumerate}[nosep]
+\item \textbf{Couche DID.} Les identités des participants avec règles déclarées, métadonnées de réputation et routage réseau.
+\item \textbf{Protocole d'affirmation.} Un format structuré pour publier des assertions au sujet d'événements du monde réel.
+\item \textbf{Réseau de vérification.} Un protocole décentralisé pour l'attribution des vérificateurs au moyen du hachage cohérent.
+\item \textbf{Couche d'agrégation de réputation.} Des services qui produisent des synthèses de réputation lisibles par l'humain.
+\end{enumerate}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    layer/.style={draw, minimum height=0.7cm, align=center, font=\scriptsize, fill=black!8},
+    arr/.style={<->, thick, gray!60}
+]
+\node[layer, minimum width=5cm] (agg) at (0,2.8) {\textbf{Agrégation}\\Interprét.\ $\cdot$ Risque};
+\node[layer, minimum width=2.2cm] (claim) at (-1.55,1.4) {\textbf{Affirmations}\\Composer};
+\node[layer, minimum width=2.2cm] (verif) at (1.55,1.4) {\textbf{Vérification}\\Sélection};
+\node[layer, minimum width=5cm] (did) at (0,0) {\textbf{Couche DID}\\Identité $\cdot$ Règles $\cdot$ Scores};
+
+\draw[arr] (agg.south west) -- (claim.north);
+\draw[arr] (agg.south east) -- (verif.north);
+\draw[arr] (claim.east) -- (verif.west);
+\draw[arr] (claim.south) -- (did.north west);
+\draw[arr] (verif.south) -- (did.north east);
+\end{tikzpicture}
+\caption{Architecture à quatre couches du RSN.}
+\label{fig:architecture}
+\end{figure}
+
+\subsection{Rôles des participants}
+
+Une transaction de vérification met en jeu jusqu'à six rôles DID distincts (fig.~\ref{fig:roles})\,: l'\textbf{Émetteur} ($DID_I$, crée et soumet l'affirmation), le \textbf{Sujet} ($DID_S$, le DID que concerne l'affirmation---peut coïncider avec l'Émetteur), l'\textbf{Autorité} ($DID_A$, cautionne l'affirmation contre des honoraires\,; peut aussi offrir des services de témoin---\emph{facultatif}), le \textbf{Témoin} ($DID_{W_{1..n}}$, moniteur incognito de l'honnêteté du vérificateur au moyen de codes de défi---\emph{facultatif}), le \textbf{Vérificateur} ($DID_V$, sélectionné par algorithme pour publier l'affirmation) et le \textbf{RSN} (le réseau où sont publiées les affirmations vérifiées). Tout rôle peut être délégué à un autre DID (section~7.4). Une Autorité groupe couramment le cautionnement avec des services de témoin, mais les deux fonctions sont logiquement indépendantes.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    role/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8},
+    opt/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8, dashed},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    oarr/.style={-{Stealth[length=3pt]}, thick, dashed, gray},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[role] (I) at (0,2.4) {\textbf{Émetteur}};
+\node[role] (S) at (-2.5,2.4) {\textbf{Sujet}};
+\node[opt] (A) at (2.5,1.2) {\textbf{Autorité}};
+\node[opt] (W) at (-2.5,0) {\textbf{Témoin}};
+\node[role] (V) at (2.5,-0.6) {\textbf{Vérificateur}};
+\node[role, fill=black!5, draw=gray] (N) at (0,-1.8) {RSN};
+
+\draw[arr] (I) -- node[lbl] {au sujet de} (S);
+\draw[oarr] (I) -- node[lbl,sloped] {cautionne} (A);
+\draw[oarr] (I) -- node[lbl,sloped] {défi} (W);
+\draw[arr] (I) -- node[lbl,sloped] {demande} (V);
+\draw[oarr] (W) -- node[lbl] {surveille} (V);
+\draw[arr] (V) -- node[lbl] {publie} (N);
+\end{tikzpicture}
+\caption{Rôles DID dans une transaction de vérification. Pointillés = facultatif (Autorité, Témoin).}
+\label{fig:roles}
+\end{figure}
+
+\subsection{Incorruptibilité\,: quatre forces}
+
+L'incorruptibilité du RSN ne découle pas d'un mécanisme unique mais de quatre forces concurrentes. Aucune n'est suffisante à elle seule\,; seule leur combinaison rend une tentative de corruption économiquement irrationnelle.
+
+\textbf{Cible imprévisible.} Le vérificateur de chaque affirmation est sélectionné de façon non déterministe par le hachage cohérent (section~5.3). Un attaquant ne peut cibler à l'avance un vérificateur précis pour le corrompre, car l'identité du vérificateur est une fonction du contenu de l'affirmation et des itérations précédentes, et non du choix de l'émetteur.
+
+\textbf{Levier réputationnel---montée lente, chute rapide.} La réputation ne peut se gagner que de façon incrémentale, par un comportement constant et soutenu. Elle peut, en revanche, se perdre de façon catastrophique par un seul cautionnement frauduleux (section~6.2). Cette asymétrie signifie que des années de réputation accumulée peuvent être anéanties par un seul cautionnement malhonnête\,; la stratégie optimale demeure de rejeter les affirmations suspectes.
+
+\textbf{Promesse publique.} Chaque titulaire de DID déclare publiquement sa politique---un ensemble de règles lisibles par la machine qu'il s'engage à suivre. L'écart entre la déclaration et le comportement réel est détectable et tarifé comme un manquement réputationnel plus grave que la violation sous-jacente (section~7.3). L'hypocrisie est donc plus coûteuse que la malhonnêteté directe.
+
+\textbf{Asymétrie du coût d'attaque en maillage.} Le coût de censurer ou de déstabiliser le réseau croît de façon non linéaire avec la taille et la densité du réseau, tandis que le coût de le tolérer demeure constant. Pour que la censure soit rentable, un acteur centralisé devrait l'appliquer à l'ensemble du réseau---exigeant des mesures disproportionnées par rapport à tout bénéfice concevable (section~10).
+
+% ============================================================
+% 4. DECENTRALIZED IDENTITY MODEL
+% ============================================================
+\section{Modèle d'identité décentralisée}
+
+\subsection{DID aux propriétés particulières}
+
+Le RSN étend la spécification W3C DID Core~\cite{did2022} avec\,: des \textbf{règles déclarées} (engagements comportementaux lisibles par la machine), des \textbf{métadonnées de réputation} (score comportemental agrégé) et un \textbf{routage réseau} (passerelle onion mutable, distincte de la position stable sur l'anneau).
+
+\subsection{Cycle de vie d'une affirmation}
+
+Une affirmation traverse six étapes (fig.~\ref{fig:lifecycle})\,: composition, cautionnement facultatif par une autorité, sélection du vérificateur par hachage cohérent, décision de vérification (accepter ou rejeter avec itération), publication et mise à jour de la réputation de toutes les parties.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    stp/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\tiny, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[stp] (comp) at (0,0) {Composer\\affirmation};
+\node[stp, dashed] (auth) at (2.0,0) {Autorité\\cautionne};
+\node[stp] (hash) at (4.0,0) {Hachage \&\\mappage anneau};
+\node[stp] (ver) at (2.0,-1.6) {Vérificateur\\vérifie};
+\node[stp, double] (pub) at (0,-1.6) {Publiée};
+\node[stp] (rej) at (4.0,-1.6) {Rejetée\\coût $\uparrow$};
+
+\draw[arr] (comp) -- (auth);
+\draw[arr] (auth) -- (hash);
+\draw[arr] (hash) -- (ver);
+\draw[arr] (ver) -- node[lbl] {\checkmark} (pub);
+\draw[arr] (ver) -- node[lbl] {$\times$} (rej);
+\draw[arr] (rej) -- ++(0,0.8) -| (hash);
+\end{tikzpicture}
+\caption{Cycle de vie d'une affirmation avec boucle d'itération.}
+\label{fig:lifecycle}
+\end{figure}
+
+\subsection{Relation avec W3C DID Core}
+
+Le modèle d'identité du RSN est un sur-ensemble propre de la spécification W3C DID Core~\cite{did2022}. Tous les DID du RSN sont des DID W3C valides. Les extensions propres au RSN sont encodées comme des propriétés de document DID définies dans une spécification de méthode DID dédiée, compatible avec l'infrastructure existante comme ION~\cite{buchner2021} et Ceramic~\cite{ceramic2023}.
+
+% ============================================================
+% 5. VERIFICATION AND PROPAGATION
+% ============================================================
+\section{Vérification et propagation de l'information}
+
+\subsection{Coût d'entrée de l'information}
+
+Le principe économique central du RSN est l'asymétrie entre la lecture et l'écriture. La lecture des données de réputation tend vers un coût marginal nul pour les participants qui font partie du réseau DID et qui ont un accès proportionnel à leur réputation---les nouveaux venus doivent gagner graduellement un accès plus large (voir anti-parasitage). L'écriture---comprise comme la matérialisation durable de la réputation dans le réseau, et non comme un acte technique ponctuel---exige un investissement cumulatif vérifiable selon trois dimensions\,: le \textbf{temps} (des années de vie consacrées à un comportement constant, à des engagements tenus et à des relations cultivées), l'\textbf{énergie} (l'effort investi dans des rapports honnêtes, le soin des partenariats et une fiabilité à long terme) et l'\textbf{argent} (l'investissement dans son propre nom---perfectionnement professionnel, qualité de son travail, réparation des préjudices causés). La réputation ne peut s'acheter instantanément---elle est le résultat d'une accumulation de toute une vie que le système se contente de rendre visible et transférable d'un contexte à l'autre. Les coûts techniques ponctuels du protocole (signatures cryptographiques, honoraires des vérificateurs) sont négligeables par rapport à cet investissement sous-jacent.
+
+\subsection{Graphe social et profondeur des contacts}
+
+Le RSN est fondamentalement un réseau social\,: chaque DID ajoute des contacts (d'autres DID) qui autorisent la connexion. Ces contacts ont leurs propres contacts, et ainsi de suite. La recherche algorithmique de vérificateurs opère à l'intérieur d'une profondeur configurable $h$ de contacts liés (p.~ex. $h=3$\,: ses contacts directs, leurs contacts et les contacts de leurs contacts). Cette architecture n'exige pas une seule chaîne de blocs mondiale---elle favorise naturellement l'émergence de communautés ou de grappes avec des recoupements vers d'autres communautés. Chaque participant DID doit avoir une \textbf{politique} publiée---un ensemble de règles lisibles par la machine qui régissent l'évaluation des demandes entrantes. Les violations de politique sont consignées dans le réseau comme des artefacts négatifs.
+
+\subsection{Sélection algorithmique des vérificateurs}
+
+Le protocole de vérification recourt au hachage cohérent~\cite{karger1997} (fig.~\ref{fig:verifier}). La vérification est un service payant\,: les vérificateurs opèrent contre des honoraires, créant un marché où la concurrence détermine le prix, la vitesse et la fiabilité.
+
+\textbf{Étape 1.} Le document d'affirmation est concaténé avec le résultat de hachage de l'itération précédente (ou $\varnothing$ à la première itération) puis haché\,:
+\begin{equation}
+\text{pos} = f_h(\text{claim} \| \text{prev\_hash})
+\label{eq:hash}
+\end{equation}
+
+L'algorithme doit inclure le \emph{chemin complet} de toutes les demandes et réponses précédentes---et non simplement un hachage de l'itération précédente. La réponse complète de chaque vérificateur (acceptation, rejet, prix indiqué, motif) est ajoutée au document qui s'allonge, vérifiable au moyen de signatures cryptographiques à chaque étape.
+
+\textbf{Étape 2.} Le hachage est mappé sur $N$ positions de l'anneau de hachage cohérent, réparties uniformément (p.~ex. pour $N=4$\,: $+0^{\circ}, +90^{\circ}, +180^{\circ}, +270^{\circ}$). À partir de chaque position, une recherche dans le sens horaire sélectionne le DID le plus proche comme candidat vérificateur (fig.~\ref{fig:multipoint}). $N$ est un paramètre variable qui peut dépendre du pourcentage de DID actuellement actifs, de l'heure de la journée ou de la réactivité historique du réseau.
+
+\textbf{Étape 3.} Le Vérificateur accepte (publie, en misant sa réputation) ou rejette (retour à l'étape~1 avec le hachage de rejet). Lorsqu'un n\oe ud ne répond pas malgré une déclaration de statut en ligne, la demande suivante doit inclure toutes les réponses de l'ensemble des $N$ candidats vérificateurs précédents.
+
+\textbf{Anti-parasitage.} Les DID ciblés peuvent fixer des honoraires ou des restrictions d'accès pour les requêtes provenant de nouveaux DID à faible réputation. Ce mécanisme gradué (non binaire) oblige les nouveaux venus à bâtir une réputation par une activité authentique avant de consommer librement les données d'autrui.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!5},
+    dec/.style={draw, diamond, aspect=2.2, minimum width=0.9cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[box] (iss) at (0,0) {Émetteur};
+\node[box] (hash) at (0,-1.1) {$f_h$(claim $\|$\\prev\_hash)};
+\node[box] (ring) at (0,-2.2) {Mappage anneau\\sens horaire};
+\node[box, dashed] (spam) at (0,-3.2) {Dépôt\\anti-pourriel};
+\node[dec] (check) at (0,-4.4) {Vérif.\\politique};
+\node[box] (rej) at (2,-5.6) {Itération\\suivante};
+\node[box] (fee) at (0,-5.6) {Honoraires =\\$f$(données, rép., pol.)};
+\node[box, double] (pub) at (0,-6.8) {Publiée};
+
+\draw[arr] (iss) -- (hash);
+\draw[arr] (hash) -- (ring);
+\draw[arr] (ring) -- (spam);
+\draw[arr] (spam) -- (check);
+\draw[arr] (check) -- node[lbl] {$\times$} (rej);
+\draw[arr] (check) -- node[lbl] {\checkmark} (fee);
+\draw[arr] (fee) -- (pub);
+\draw[arr] (rej.east) -- ++(0.5,0) |- (hash.east);
+\end{tikzpicture}
+\caption{Protocole de sélection des vérificateurs. Le dépôt anti-pourriel est facultatif et peut être remboursable. Les honoraires finaux ne sont payés qu'à l'acceptation.}
+\label{fig:verifier}
+\end{figure}
+
+Chaque rejet ajoute la réponse complète du vérificateur (y compris les motifs et conditions) au document d'affirmation, en élargissant son contenu. À partir du document élargi, un nouveau hachage est calculé de façon non déterministe, mappant vers une position différente sur l'anneau et sélectionnant un vérificateur différent. La documentation du chemin complet est obligatoire---l'émetteur ne peut prédire ni influencer le prochain vérificateur. Si un vérificateur ignore une demande malgré une politique déclarée compatible, les témoins (s'il y en a) le consignent, et l'émetteur peut joindre la preuve des témoins au moment de la publication finale.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.65]
+% Ring
+\draw[thick] (0,0) circle (2.2cm);
+% DID nodes on ring
+\foreach \a in {10,55,80,120,150,195,230,260,305,340} {
+  \fill[black!40] (\a:2.2) circle (1.5pt);
+}
+% Hash offset arrow pointing to initial position
+\draw[-{Stealth[length=3pt]}, thick, black!60] (0,0) -- node[font=\tiny,above,sloped,pos=0.6] {$f_h$} (37:2.2);
+\fill[black] (37:2.2) circle (2pt);
+\node[font=\tiny,anchor=south west] at (37:2.35) {$h_0$};
+% N=4 points offset from h0 by +0, +90, +180, +270
+\foreach \offset/\l in {0/P1,90/P2,180/P3,270/P4} {
+  \pgfmathsetmacro{\ang}{37+\offset}
+  \node[fill=black, circle, inner sep=1.5pt] (p\offset) at (\ang:2.2) {};
+  \node[font=\tiny,font=\bfseries] at (\ang:2.75) {\l};
+  % clockwise search arc
+  \draw[-{Stealth[length=2.5pt]}, thick, gray] (\ang:2.2) arc (\ang:\ang+30:2.2);
+}
+\node[font=\scriptsize, align=center] at (0,0) {Anneau\\de hachage};
+\node[font=\tiny, align=center] at (0,-3.2) {$h_0 = f_h(\text{claim})$, puis $+0^{\circ},+90^{\circ},+180^{\circ},+270^{\circ}$\\Chaque point $\rightarrow$ recherche sens horaire};
+\end{tikzpicture}
+\caption{Sélection multipoint ($N{=}4$). Le hachage $h_0$ fixe le décalage\,; 4 points répartis uniformément à partir de $h_0$.}
+\label{fig:multipoint}
+\end{figure}
+
+\subsection{Protocole de témoin}
+
+Le rôle de \textbf{Témoin} procure une reddition de compte incognito de l'honnêteté du vérificateur au moyen d'un protocole cryptographique de code de défi\,:
+
+\textbf{Étape T1.} Le demandeur signe la demande de vérification et l'envoie à $N_w$ témoins---des contacts de son réseau social, ou des fournisseurs spécialisés de service de témoin opérant contre des honoraires.
+
+\textbf{Étape T2.} Chaque témoin $w_i$ signe l'intégralité de la demande signée, conserve la signature originale $\sigma_i$ et calcule un code de défi $c_i = h(\sigma_i)$. Le code de défi est ajouté à la demande.
+
+\textbf{Étape T3.} La demande, portant désormais $N_w$ codes de défi, est envoyée au vérificateur. Le vérificateur observe les codes mais \emph{ne peut déterminer} qui sont les témoins ni si les codes correspondent à de vraies signatures.
+
+\textbf{Étape T4 (vérificateur honnête).} Si le vérificateur répond conformément à sa politique déclarée, les codes de défi demeurent opaques. Les témoins ne sont jamais révélés. Aucune donnée additionnelle n'est publiée.
+
+\textbf{Étape T5 (violation de politique).} Si le vérificateur enfreint sa politique (ignore la demande, répond de façon incohérente), le demandeur détient les signatures originales $\sigma_i$ des témoins. Celles-ci peuvent être publiées comme données d'accompagnement\,: quiconque peut vérifier $c_i = h(\sigma_i)$, prouvant que le témoin était présent. Le demandeur peut publier de façon indépendante---le vérificateur a déjà signé les codes de défi dans sa réponse.
+
+\textbf{La propriété de bluff.} Le demandeur peut substituer des valeurs aléatoires à certains ou à tous les codes de défi. Le vérificateur ne peut distinguer les codes authentiques (adossés à des autorités de haute réputation) du bruit. Cette \emph{incertitude} est le mécanisme d'application\,: chaque demande comporte le risque qu'une autorité respectée surveille incognito. Le coût de maintenir cette pression est quasi nul (générer des nombres aléatoires), tandis que le coût potentiel de la malhonnêteté pour le vérificateur est catastrophique. Le comportement honnête est incité même en l'absence de témoins réels.
+
+\textbf{L'Autorité comme témoin.} Une Autorité qui cautionne une affirmation peut y grouper des services de témoin\,: «\,Je cautionne votre affirmation et je sers de témoin incognito pendant la vérification.\,» C'est un modèle d'affaires naturel---l'Autorité possède déjà le contexte. Cependant, les deux rôles sont logiquement indépendants.
+
+\subsection{Principe du radicalisme coûteux}
+
+Trois canaux de coûts se cumulent simultanément (fig.~\ref{fig:radicalism})\,:
+
+\textbf{Canal 1\,: coût d'itération.} Chaque rejet force une nouvelle itération qui consomme du temps et des ressources. Croissance linéaire.
+
+\textbf{Canal 2\,: gonflement du document.} Chaque itération ajoute la réponse complète du vérificateur au document d'affirmation. La croissance est linéaire, mais avec un décalage de base\,: la charge utile initiale (contenu de l'affirmation, cautionnement de l'autorité, signatures cryptographiques) possède déjà une taille non triviale $B_0$. Taille totale après $k$ itérations\,: $S(k) = B_0 + k \cdot \Delta$, où $\Delta$ est la taille moyenne d'une réponse.
+
+\textbf{Canal 3\,: prime de risque du vérificateur.} Le risque est subjectif. Le vérificateur évalue si les politiques déclarées du DID demandeur entrent en conflit avec ses propres intérêts commerciaux, sociaux ou politiques. La prime peut croître de façon exponentielle avec la distance perçue par rapport à l'«\,idéal\,» du vérificateur\,: $P(d) = \alpha \cdot e^{\beta d}$, où $d$ est la mesure de distance subjective du vérificateur. Au-delà d'une limite personnelle infranchissable, le vérificateur peut refuser entièrement.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\columnwidth,
+    height=4.5cm,
+    xlabel={\footnotesize Radicalisme},
+    ylabel={\footnotesize Coût relatif (log)},
+    ymode=log,
+    xmin=0, xmax=100,
+    ymin=1, ymax=10000,
+    grid=major,
+    grid style={gray!20},
+    legend style={at={(0.03,0.97)},anchor=north west,font=\tiny,draw=gray!50},
+    tick label style={font=\tiny},
+    label style={font=\footnotesize},
+]
+\addplot[black, thick, domain=0:100, samples=50] {1 + 0.3*x};
+\addlegendentry{Coût d'itération (linéaire)}
+\addplot[black, thick, dashed, domain=0:100, samples=50] {1 + 0.15*x};
+\addlegendentry{Gonflement du doc. (linéaire)}
+\addplot[black, thick, dotted, line width=1.2pt, domain=0:100, samples=100] {exp(0.08*x)};
+\addlegendentry{Prime de risque (exponentielle)}
+\end{axis}
+\end{tikzpicture}
+\caption{Escalade des coûts selon trois canaux. La prime de risque domine à haut radicalisme.}
+\label{fig:radicalism}
+\end{figure}
+
+Fait crucial, il ne s'agit pas de censure. Aucune affirmation n'est interdite. Le système tarife le risque (tableau~\ref{tab:costs}).
+
+\begin{table}[ht]
+\centering
+\caption{Comparaison des coûts selon les types d'affirmation.}
+\label{tab:costs}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Type} & \textbf{Itér.} & \textbf{Doc} & \textbf{Honor.} & \textbf{Total} \\
+\midrule
+Crédible & $k_{\min}$ & $B_0$ & $P_{\min}$ & Faible \\
+Controversée & $k_{\text{med}}$ & $B_0{+}k\Delta$ & $\alpha e^{\beta d}$ & Modéré \\
+Radicale & $k_{\max}$ & $\gg B_0$ & $\gg P_{\min}$ & Très élevé \\
+Frauduleuse & $\to\infty$ & --- & --- & Impubliable \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% 6. REPUTATION AND RISK
+% ============================================================
+\section{Réputation et évaluation du risque}
+
+\subsection{Modèle d'accumulation de la réputation}
+
+La réputation présente trois propriétés\,: l'\textbf{accumulation lente} (croissance incrémentale par un comportement constant), la \textbf{destruction rapide} (une seule fraude peut réduire le score de façon catastrophique) et l'\textbf{évaluation individuelle} (chaque partie consommatrice peut appliquer sa propre fonction d'agrégation).
+
+\subsection{Autorités réputées}
+
+Une Autorité réputée examine les affirmations et, si elle est satisfaite, les cosigne---en misant sa propre réputation (fig.~\ref{fig:authority}). L'asymétrie est voulue\,: gagner de la réputation est lent (incrément $+\delta$ par cautionnement honnête), tandis que la perdre est catastrophique ($-\Delta \gg \delta$ par cautionnement mensonger\,; à titre illustratif, p.~ex. $+2\,\%$ contre $-70\,\%$). La stratégie optimale est toujours de rejeter les affirmations suspectes. Les valeurs précises de $\delta$ et $\Delta$ sont des paramètres du système.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=2cm, minimum height=0.6cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[box] (exam) at (0,0) {L'Autorité examine\\Réputation\,: $R$};
+\node[box] (true) at (-2,-1.3) {Vrai\,: $R{\to}R{+}\delta$\\Plus de clients};
+\node[box] (false) at (2,-1.3) {Faux\,: $R{\to}R{-}\Delta$\\Les clients partent};
+\node[box] (insight) at (0,-2.6) {Gain\,: lent ($+\delta$)\\Perte\,: instantanée ($-\Delta$)};
+
+\draw[arr] (exam) -- node[left,font=\tiny] {vérité} (true);
+\draw[arr] (exam) -- node[right,font=\tiny] {mensonge} (false);
+\draw[arr] (true) -- (insight);
+\draw[arr] (false) -- (insight);
+\end{tikzpicture}
+\caption{Autorité réputée---incitations asymétriques.}
+\label{fig:authority}
+\end{figure}
+
+\subsection{Réputation multidimensionnelle}
+
+La réputation n'est pas un scalaire mais un vecteur à plusieurs dimensions\,: fiabilité financière, intégrité personnelle, compétence professionnelle, engagement civique, et d'autres (fig.~\ref{fig:reputation-radar}). Différents fournisseurs d'évaluation projettent ce vecteur différemment selon le contexte---un prêteur privilégie la fiabilité financière, un employeur la compétence professionnelle, un voisin le comportement civique. Il n'y a pas de score de réputation «\,correct\,» unique\,; seulement des perspectives.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.55]
+\foreach \a/\l in {90/Financière,162/Intégrité,234/Professionnelle,306/Civique,18/Sociale} {
+  \draw[gray!40] (0,0) -- (\a:2.5);
+  \node[font=\tiny, align=center] at (\a:3.1) {\l};
+  \foreach \r in {0.8,1.6,2.4} {
+    \fill[black!15] (\a:\r) circle (0.5pt);
+  }
+}
+\draw[thick, fill=black!10] (90:2.0) -- (162:1.2) -- (234:1.8) -- (306:0.9) -- (18:1.5) -- cycle;
+\draw[thick, dashed] (90:1.4) -- (162:2.1) -- (234:0.8) -- (306:2.0) -- (18:1.1) -- cycle;
+\node[font=\tiny] at (0,-3.3) {Plein\,: DID A \quad Pointillés\,: DID B};
+\end{tikzpicture}
+\caption{Vecteurs de réputation multidimensionnels. Différents DID présentent des profils différents selon les dimensions.}
+\label{fig:reputation-radar}
+\end{figure}
+
+\subsection{Évaluation démocratisée du risque}
+
+Le RSN démocratise l'évaluation systématique du risque---une capacité aujourd'hui concentrée dans les institutions financières mais applicable bien au-delà du secteur bancaire. Les conglomérats industriels évaluant la fiabilité de leurs fournisseurs, les compagnies d'assurance tarifant le risque comportemental, la vérification diligente pour les fusions et acquisitions, l'estimation de la durée de vie des équipements en fabrication---partout où le risque de contrepartie doit être évalué, le RSN offre une solution de rechange décentralisée et pilotée par le marché. Un marché de services d'interprétation traduit les données brutes de réputation multidimensionnelle en synthèses exploitables, rendant l'évaluation d'une contrepartie accessible à tout participant à un coût marginal.
+
+% ============================================================
+% 7. CONSENSUS AND DISPUTE RESOLUTION
+% ============================================================
+\section{Consensus et résolution des différends}
+
+\subsection{Modèle de justice décentralisée}
+
+Le RSN reformule la justice comme un problème de négociation bilatérale. La menace d'un dommage de réputation permanent et vérifiable est un moyen de dissuasion plus efficace que des procédures judiciaires que la partie lésée n'a pas les moyens de se payer.
+
+\subsection{Consensus émergent}
+
+Chaque participant maintient un seuil de satisfaction personnel. Le consensus agrégé du réseau émerge comme la moyenne statistique de milliers de négociations bilatérales (fig.~\ref{fig:consensus}). Une réponse très supérieure au consensus (barbare) est coûteuse à publier. Une réponse proche du consensus (proportionnée) est bon marché. Le consensus n'est pas une règle---c'est un signal de prix.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    person/.style={draw, rounded corners=2pt, minimum width=1.5cm, minimum height=0.5cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[person] (a) at (-2,0) {Sévère\\(haut)};
+\node[person] (b) at (0,0) {Pragmatique\\(moyen)};
+\node[person] (c) at (2,0) {Indulgent\\(bas)};
+\node[person, fill=black!10, minimum width=3cm] (cons) at (0,-1.2) {Consensus du réseau\\= moyenne stat.};
+\node[person] (exp) at (-2,-2.4) {Barbare\\coûteux};
+\node[person, double] (prop) at (0,-2.4) {Proportionné\\bon marché};
+\node[person] (neg) at (2,-2.4) {Négligent\\coûteux};
+
+\draw[arr] (a) -- (cons);
+\draw[arr] (b) -- (cons);
+\draw[arr] (c) -- (cons);
+\draw[arr] (cons) -- (exp);
+\draw[arr] (cons) -- (prop);
+\draw[arr] (cons) -- (neg);
+\end{tikzpicture}
+\caption{Consensus émergent à partir des seuils de satisfaction individuels.}
+\label{fig:consensus}
+\end{figure}
+
+\subsection{Calibrage de la sanction}
+
+Chaque titulaire de DID déclare publiquement ses réponses à des catégories précises d'inconduite. Les déclarations démesurément sévères ou indulgentes attirent des signaux de réputation négatifs. Les déclarations proportionnées sont acceptées sans friction---un système de sanction qui s'autocalibre.
+
+Les déclarations de consensus sont elles-mêmes soumises à la détection de l'hypocrisie\,: s'engager déclarativement envers une position de consensus tout en se comportant de façon incohérente constitue un manquement réputationnel plus grave que l'écart sous-jacent, car cela démontre une tromperie intentionnelle.
+
+\subsection{Délégation}
+
+Toutes les activités au sein d'un DID---à une exception près---peuvent être déléguées à un autre DID. \textbf{Le rôle de Sujet---le DID dont l'affirmation concerne le comportement---ne peut être délégué\,; il est lié de façon non transférable au titulaire de l'identité à qui l'affirmation se rapporte.} Les autres rôles actifs---Émetteur, Autorité, Témoin, Vérificateur---peuvent être transférés à un DID délégué désigné, que ce soit pour la vérification, la soumission d'affirmations, la participation au consensus ou la résolution de différends. La délégation est révocable à tout moment. Cela permet la spécialisation (p.~ex. des services de vérification professionnels) pendant que le titulaire conserve le contrôle et la responsabilité ultimes. La délégation s'applique à l'ensemble du système et est essentielle à la mise à l'échelle.
+
+\subsection{De la morale individuelle au contrat social émergent}
+
+La politique déclarée de chaque DID représente une formalisation de la morale individuelle\,: ce que le titulaire considère comme acceptable, comment il réagit à des comportements précis, ce qu'il exige de ses contreparties. Ces politiques ne sont pas imposées par un concepteur de système---elles sont choisies par chaque participant et exprimées sous une forme lisible par la machine.
+
+Cette formalisation permet une émergence en trois étapes. Premièrement, la morale individuelle est encodée sous forme de \textbf{politique}---un ensemble de règles déclarées, de seuils et de fonctions de réponse que le DID s'engage à suivre. Deuxièmement, l'agrégat de toutes les politiques du réseau produit une \textbf{éthique émergente}---des normes statistiquement observables qu'aucun participant n'a conçues mais qui découlent de l'interaction de milliers de positions morales individuelles~\cite{durkheim1893}. Troisièmement, cette éthique émergente, exprimée sous forme de normes comportementales partagées appliquées par des signaux de prix bilatéraux, constitue un \textbf{contrat social mesurable}---non pas une construction théorique que personne n'a signée~\cite{rawls1971}, mais un ensemble de règles empiriquement observable, adossé à un comportement réel.
+
+Ce processus reflète les constats de la théorie des fondements moraux~\cite{haidt2012}\,: la morale humaine est intuitive, pluraliste et culturellement variable. Le RSN n'exige pas un consensus moral comme intrant\,; il produit un consensus comportemental comme extrant. Le contrat social qui en résulte n'est pas statique---il évolue à mesure que les participants adhèrent, se retirent et ajustent leurs politiques en réaction à la rétroaction du réseau. Contrairement à la théorie classique du contrat social, ce contrat est révocable, observable et applicable sans souverain.
+
+% ============================================================
+% 8. ECONOMIC MODEL
+% ============================================================
+\section{Modèle économique}
+
+Les sections précédentes ont décrit un outil---les mécanismes de vérification, la structure de coûts et le consensus émergent du RSN. Cette section décrit une méthodologie pour appliquer cet outil à la transition fiscale et de gouvernance. L'outil est à usage général\,; la méthodologie ci-dessous n'en est qu'une application possible.
+
+\subsection{Structure d'incitation}
+
+La réputation comme capital crée des incitations directes au comportement honnête. En fonctionnement normal, les participants bâtissent leur réputation naturellement par leurs transactions quotidiennes et leurs engagements tenus. La dépense principale porte sur les affirmations \emph{négatives}---consigner le préjudice causé par autrui. Cette asymétrie incite à un comportement utile et fiable\,: être honnête ne coûte rien de plus, tandis que causer du tort crée une trace documentée que d'autres paieront pour préserver. L'hypocrisie---déclarer des règles sans les suivre---est le mode d'échec le plus coûteux, car elle démontre une tromperie intentionnelle.
+
+\subsection{Système fiscal parallèle}
+
+Trois composantes permettent une pression concurrentielle\,: (1)~l'\textbf{impôt simple}---un taux proportionnel unique sans exception, initialement marginalement inférieur au taux effectif existant\,; (2)~l'\textbf{enregistrement électronique des dépenses (EED)}---inversant le modèle tchèque EET de sorte que les citoyens surveillent les dépenses de l'État\,; (3)~l'\textbf{affectation de l'impôt dirigée par le citoyen}---débutant à quelques pour cent la première année et atteignant, après une décennie, de la dizaine de pour cent à une migration complète vers un système dirigé par le citoyen, selon le rythme d'adoption. Le tempo réel dépend de la vitesse à laquelle des solutions de rechange de libre marché aux services de l'État émergent et de la volonté de l'État de coopérer à la transition\,; la fonction du temps n'a pas à être linéaire, et il n'y a aucune raison de fixer une borne supérieure à l'endroit où l'adoption pourrait finalement parvenir.
+
+% ============================================================
+% 9. MIGRATION PATH
+% ============================================================
+\section{Cheminement de migration}
+
+La migration se déroule en trois phases (fig.~\ref{fig:migration})\,: \textbf{Phase~1\,: superposition} (le RSN comme couche d'information, l'État est le seul fournisseur), \textbf{Phase~2\,: concurrence} (le RSN offre des solutions de rechange fonctionnelles, usage à double système) et \textbf{Phase~3\,: transition} (le RSN surpasse les équivalents de l'État, migration volontaire). La transition est réversible à chaque étape.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    phase/.style={draw, rounded corners=3pt, minimum width=1.8cm, minimum height=0.8cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=5pt]}, thick}
+]
+\node[phase] (p1) at (0,0) {\textbf{Phase 1}\\Superposition};
+\node[phase] (p2) at (2.2,0) {\textbf{Phase 2}\\Concurrence};
+\node[phase] (p3) at (4.4,0) {\textbf{Phase 3}\\Transition};
+
+\draw[arr] (p1) -- (p2);
+\draw[arr] (p2) -- (p3);
+\draw[arr, dashed, gray] (p3.south) -- ++(0,-0.6) -| node[below,font=\tiny,pos=0.25] {repli} (p2.south);
+\end{tikzpicture}
+\caption{Migration en trois phases---réversible à chaque étape.}
+\label{fig:migration}
+\end{figure}
+
+Le principal mécanisme de pression est fiscal\,: lorsque les contribuables conditionnels atteignent une «\,minorité économiquement significative $X$\,»---un groupe assez grand pour que la répression contre lui cause un dommage économique non négligeable et que la désobéissance civile devienne une menace crédible---l'État entre en négociation. À titre d'illustration, nous utilisons $X \approx 15\,\%$ du PIB, mais le seuil réel dépend de l'économie particulière.
+
+% ============================================================
+% 10. SECURITY ANALYSIS
+% ============================================================
+\section{Analyse de sécurité}
+
+Nous considérons cinq catégories d'adversaires\,: les mauvais acteurs individuels, les groupes organisés, les adversaires corporatifs, les adversaires de niveau étatique et les adversaires au niveau du protocole.
+
+\textbf{Résistance à Sybil}~\cite{douceur2002}. Bâtir une réputation exige une interaction soutenue et vérifiable. Le coût d'une attaque Sybil réussie croît linéairement avec le nombre de fausses identités et de façon quadratique avec le niveau de réputation ciblé. Exploiter plusieurs DID en parallèle est possible mais coûteux par conception---chaque identité doit accumuler indépendamment sa réputation par une activité authentique. Dans les sociétés libres, ce coût décourage l'abus occasionnel\,; dans les dictatures, les DID parallèles deviennent un outil de survie permettant une résistance compartimentée, une coordination clandestine et une navigation plus sûre du marché noir.
+
+\textbf{Défense contre la collusion.} Les schémas de cautionnement mutuel au sein de groupes fermés sont détectables par l'analyse du graphe social. Les fonctions d'agrégation de réputation escomptent les affirmations provenant de sources fortement regroupées.
+
+\textbf{Adversaire de niveau étatique.} Le routage onion, l'absence d'infrastructure centralisée et la répartition du rôle de Vérificateur sur l'ensemble des participants font en sorte que la répression exige des mesures disproportionnées par rapport à tout bénéfice.
+
+\textbf{Vie privée contre reddition de compte.} Le pseudonymat---un juste milieu entre l'anonymat et la divulgation de l'identité---permet aux DID d'accumuler une réputation significative sans révéler l'identité réelle du titulaire.
+
+% ============================================================
+% 11. PRIVACY
+% ============================================================
+\section{Considérations relatives à la vie privée}
+
+Le modèle de vie privée du RSN repose sur le pseudonymat. Le titulaire contrôle la divulgation de son identité\,: minimale (pseudonyme pur), sélective (des attestations précises liées) ou complète (identité légale associée). Les affirmations publiées sont permanentes---le système prend en charge la correction contextuelle mais non l'effacement. Un titulaire peut abandonner un DID compromis et repartir à neuf, en renonçant à la réputation accumulée.
+
+% ============================================================
+% 12. RELATED WORK
+% ============================================================
+\section{Travaux connexes}
+
+La spécification W3C DID Core~\cite{did2022} et le réseau Ceramic~\cite{ceramic2023} fournissent le socle d'identité. EigenTrust~\cite{kamvar2003} a démontré l'agrégation distribuée de réputation sans autorité centrale. Les SBT~\cite{weyl2022} ont introduit des jetons sociaux non transférables. Le RSN s'en distingue par l'accent qu'il met sur le coût économique comme filtre de qualité et par son mécanisme de tarification du radicalisme.
+
+Les DAO~\cite{buterin2014} et le vote quadratique~\cite{buterin2019} ont démontré la faisabilité d'une gouvernance décentralisée. Le RSN tire son consensus de négociations bilatérales de prix plutôt que du vote.
+
+La proposition s'appuie sur la théorie anarcho-capitaliste~\cite{rothbard1973,hoppe2001} pour la fourniture privée de services, mais s'en écarte sur deux points essentiels\,: elle est conçue pour la rancune et les pulsions rétributives plutôt que de supposer la rationalité, et elle propose une transition graduelle plutôt qu'une révolution. Le concept de contrats sociaux émergents a des antécédents dans la théorie de l'ordre spontané de Hayek~\cite{hayek1973}.
+
+\textbf{Anarcho-agorisme.} Le RSN partage un terrain d'entente important avec la contre-économie agoriste~\cite{konkin2006}---en particulier l'accent mis sur la construction d'institutions parallèles et l'échange volontaire. Cependant, l'agorisme tend à supposer l'intérêt personnel rationnel comme mécanisme de coordination suffisant et manque souvent d'un cheminement de migration concret à partir des structures étatiques existantes. Le RSN intègre explicitement les tendances comportementales non rationnelles et fournit un mécanisme de pression fiscale pour une transition graduelle.
+
+\textbf{Méritocratie.} Le RSN pourrait représenter une première description fonctionnelle de la manière dont la méritocratie~\cite{young1958} peut émerger comme une propriété systémique plutôt que comme un slogan. Les systèmes méritocratiques traditionnels échouent parce qu'ils exigent une autorité centrale pour définir et faire respecter le «\,mérite\,». Dans le RSN, le mérite émerge d'évaluations bilatérales\,: ceux qui livrent de la valeur accumulent de la réputation\,; aucun comité ne décide qui a du mérite.
+
+\textbf{La propriété comme privilège.} Le RSN s'écarte fondamentalement des traitements anarcho-capitalistes et de l'école autrichienne qui présentent les droits de propriété comme naturels et absolus. Dans le cadre du RSN, la propriété est un \emph{privilège}---une reconnaissance sociale qui peut, dans des cas extrêmes, être retirée par la communauté lorsqu'un participant viole fondamentalement les normes partagées (trahison, refus de défendre la communauté en cas de crise existentielle, exploitation systématique). Il ne s'agit pas d'une expropriation par l'État mais d'un retrait de la reconnaissance sociale par le réseau des relations bilatérales.
+
+% ============================================================
+% 13. LIMITATIONS
+% ============================================================
+\section{Discussion et limites}
+
+\textbf{Démarrage à froid.} La valeur du RSN dépend des effets de réseau\,; les premiers adoptants font face à une valeur limitée tant que la participation n'atteint pas un seuil. Toutefois, même dès les premières étapes, le réseau DID sert de source d'information complémentaire utile. L'évaluation de la réputation et l'appréciation des autorités devraient se développer graduellement, avec une sophistication croissante.
+
+\textbf{Anti-parasitage et contrôle d'accès.} Les DID ciblés peuvent imposer des honoraires gradués et des restrictions d'accès aux requêtes provenant de DID à faible réputation. Ce n'est pas binaire mais une échelle continue\,: moins un DID demandeur a de réputation, moins il reçoit d'information, plus il attend, et plus il paie. Ce mécanisme incite à une participation authentique plutôt qu'à une consommation passive.
+
+\textbf{Inégalité d'accès.} Le coût de publier des affirmations pourrait filtrer les griefs légitimes des participants économiquement défavorisés. Atténuation\,: chaque participant sert simultanément de vérificateur potentiel (ou délègue ce rôle) et gagne des honoraires de vérification. Sur un horizon temporel suffisant, un participant non radical devrait s'approcher d'une neutralité financière---les revenus de vérification compensant approximativement les coûts de publication. Il s'agit d'une espérance statistique, non d'une garantie.
+
+\textbf{Inégalité de réputation.} Les premiers adoptants accumulent des avantages qui peuvent créer des barrières pour les retardataires. Cependant, l'évaluation de la réputation est effectuée par des fournisseurs tiers qui peuvent choisir d'atténuer l'avantage du premier arrivé au moyen de leurs algorithmes d'agrégation. Être le premier avec une bonne réputation est un avantage économique comparatif légitime---et cela est voulu.
+
+\textbf{Questions ouvertes.} Les fonctions de coût optimales, les normes d'agrégation, la gouvernance du protocole et l'interaction avec les données de réputation synthétiques générées par l'IA demeurent des domaines à explorer.
+
+Cet article ne prétend pas que le RSN produira des résultats optimaux en toutes circonstances. Il affirme que le RSN représente une solution de rechange \emph{réalisable}---techniquement implémentable, économiquement autosuffisante et socialement compatible avec les tendances comportementales humaines telles qu'elles sont réellement.
+
+% ============================================================
+% 14. CONCLUSION
+% ============================================================
+\section{Conclusion}
+
+Cet article a présenté le réseau social de réputation, un protocole décentralisé permettant un échange de réputation pseudonyme et vérifiable. Le principe du radicalisme coûteux fait en sorte que les affirmations frauduleuses sont écartées par le prix, sans censure. Le cheminement de migration proposé permet une transition graduelle et réversible à partir des institutions existantes. La conception intègre la nature humaine telle qu'elle est---y compris la mesquinerie, la rancune et le désir de satisfaction rétributive---plutôt que d'exiger une transformation idéologique. Le résultat n'est pas une utopie mais un système où la justice est accessible, la réputation se mérite, et le coût de l'inconduite est assumé par la partie qui l'a causé.
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\bibliography{references}
+
+\end{document}

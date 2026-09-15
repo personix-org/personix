@@ -1,0 +1,615 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+% === Core Packages ===
+\usepackage[margin=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,decorations.markings,fit,backgrounds}
+
+% === Citation (IEEE style) ===
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{IEEEtranN}
+
+% === Hyperref ===
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+% === Settings ===
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.3em}
+
+% === Title ===
+\title{\textbf{去中心化聲譽網絡：\\自然社會組織的框架}}
+\author{Pavel Kudrna\\Prague, Czechia\\Draft v1 --- March 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+% ABSTRACT
+% ============================================================
+\begin{abstract}
+公義感——即相信錯誤會被糾正、功績會得到回報的信念——是社會最強大的凝聚力量。當中央化的治理機構因為強制執行一項權利的成本超過該權利本身的價值而無法提供這種公義感時，社會凝聚力便會侵蝕。現行的制度結構在系統性上未能解決相當一大類的糾紛，其失敗方式與中央計劃經濟未能有效配置資源的方式如出一轍：透過資訊不對稱、缺失的回饋循環，以及決策者與其決策後果之間的脫節。本文提出一個聲譽社交網絡（Reputation Social Network，RSN）：一個建基於去中心化識別碼（Decentralized Identifiers，DID）之上、去中心化、不可腐化、抗審查的通訊層，使化名參與者能夠發佈、驗證及取用關於現實世界行為的聲譽資訊。其核心機制建立於三項設計原則之上：（1）一種不對稱的成本結構，其中讀取聲譽資料成本低廉，而寫入則需要可驗證的付出；（2）一種基於一致性雜湊（consistent hashing）的非確定性驗證者選擇協議，透過不斷升級的迭代成本為激進主張定價；以及（3）一種市場驅動的聲譽權威模型，當中私營驗證者以其累積的聲譽為其所背書主張的準確性作押注。由此產生的架構在沒有中央協調的情況下催生出湧現式的精英制度（meritocracy），並使得從現行國家管理系統出發、循序漸進且可逆轉的遷移路徑成為可能。
+\end{abstract}
+
+% ============================================================
+% 1. INTRODUCTION
+% ============================================================
+\section{引言}
+
+\subsection{中央化信任的問題}
+
+現代治理建基於一項根本假設：中央化機構能夠大規模地在陌生人之間居間調解信任。法院裁決糾紛。登記處證明所有權。監管機構執行標準。這些機構設計於一個資訊稀缺、通訊緩慢、而將權力委託予中央機關是唯一可行的協調機制的年代。然而，中央化治理失敗的結構性原因與中央計劃經濟相同：資訊不對稱、缺失的回饋循環，以及決策者與其決策後果之間的脫節。
+
+舉例而言，當機構調解的成本超過糾紛的價值時，這項假設便會失效。試想一位租客發現其租住的公寓缺乏法律要求的電力安全證明——這是一種對生命構成即時危險的狀況。租客在法律上撤銷合約的權利毫不含糊。然而，透過法院系統強制執行該項權利的成本，卻超過押金及應償還損失的金錢價值，即使計入潛在的法定賠償亦然~\cite{czcourtfees}。理性的回應是承受損失並離開。
+
+這並非一個病態的邊緣個案。它是相當一大類糾紛的預設經驗——這些糾紛中的損害是真實的，但金錢利害關係卻低於制度性強制執行在經濟上變得理性的門檻。其結果是一個在結構上偏袒惡意行為者的系統：那些以低於此門檻的規模傷害他人的人，可以肆無忌憚地行事，因為尋求公義的成本落在受害一方身上。
+
+上述例子取材自作者的法律環境——捷克的民法系統。在其他法律傳統中——以判例為本的普通法、習慣法、混合系統——公義會以不同的方式及不同的程度失效，視乎該司法管轄區的文化及程序特性而定。讀者很可能會從自己的處境中認出相應的例子。在結構上具普遍性的是這一模式：價值低於經濟理性強制執行門檻的糾紛，最終以受害一方承受損失告終。RSN並不承諾完美的公義——它只是減少當制度性強制執行不符經濟效益時、惡意行為者所享有的結構性優勢。
+
+\subsection{為何現有方案有所不足}
+
+\textbf{去中心化身份（DID）框架}~\cite{did2022} 為自我主權身份管理提供了密碼學機制，但主要聚焦於身份驗證，而未有處理行為聲譽這一更廣泛的問題。
+
+\textbf{靈魂綁定代幣（Soulbound Tokens，SBT）}~\cite{weyl2022} 掌握了聲譽不可轉讓這一洞見，但依賴具有可擴展性限制的區塊鏈基礎設施，並且未有處理支配資訊錄入的經濟誘因。諸如功績代幣（例如Liberland）等相關概念共享類似的理念，但仍受制於特定司法管轄區的框架。
+
+\textbf{去中心化自治組織（DAO）}~\cite{buterin2014} 透過智能合約實行治理，但複製了金權政治的動態，其中影響力與資本成正比。二次方投票（Quadratic voting）~\cite{buterin2019} 部分緩解了這一點，但限制了實際採用。DAO亦面臨根本的\emph{預言機問題（oracle problem）}：智能合約在沒有可信外部來源的情況下無法可靠地驗證現實世界的狀態，而這個問題在區塊鏈架構內並無通用的解決方案。
+
+沒有任何現有系統能夠將去中心化、抗審查、化名性、可驗證的錄入成本，以及湧現式共識結合於一身。
+
+\subsection{貢獻}
+
+本文作出以下貢獻：
+\begin{enumerate}[nosep]
+\item 定義\textbf{聲譽社交網絡（RSN）}，一個擴展DID框架以支援雙邊聲譽交換的去中心化協議。
+\item 一種基於一致性雜湊的\textbf{非確定性驗證者選擇協議}~\cite{karger1997}。
+\item \textbf{昂貴激進主義原則（Expensive Radicalism Principle）}，透過三條複合的成本渠道，按主張與網絡共識的距離為其定價。
+\item 一種具不對稱誘因的\textbf{可信權威（Reputable Authority）模型}，其中虛假背書的代價災難性地遠高於合法收費。
+\item 一條透過並行財政基礎設施實現的\textbf{漸進遷移路徑}。
+\end{enumerate}
+
+% ============================================================
+% 2. DESIGN PRINCIPLES
+% ============================================================
+\section{設計原則}
+
+RSN架構受五項不可妥協的設計原則所約束。
+
+\textbf{延續性與演化。} 系統在一段不定長度的過渡時期內與現行機構共存。過渡在每一階段都必須是可逆轉的。
+
+\textbf{自願性與責任。} 參與是自願的，但自願性與責任相輔相成：一位承擔起某項制度職能控制權的參與者，同時承擔起隨之而來的義務。
+
+\textbf{多元性與文化中立。} 共識由雙邊互動湧現而生，而非由系統設計者強加的預設規則所產生。
+
+\textbf{韌性與抗審查。} 審查網絡的成本必須超過容忍它的成本。唯有徹底的極權主義——付出毀滅性的政治及經濟代價——才能壓制這個系統。
+
+\textbf{共識與執行。} 系統將人類趨向於小器、怨恨及報復性滿足的傾向納入，作為承重的特性。不當行為並非被禁止，而是被定價。
+
+% ============================================================
+% 3. SYSTEM OVERVIEW
+% ============================================================
+\section{系統概覽}
+
+\subsection{聲譽社交網絡}
+
+RSN是一個去中心化的點對點通訊層，參與者於其中交換關於現實世界行為的可驗證資訊。其界定特性包括：去中心化且不可審查的基礎設施；透過DID進行的化名參與；不對稱的成本結構（讀取成本低廉，寫入成本高昂）；密碼學可驗證性；以及\textbf{標準支援}——為透過網絡傳播的資訊、為權威所提供的服務（主張組成、背書、見證服務）、以及為政策格式（包括評估交易對手聲譽及評估政策不符風險——即申報行為與實際行為之間差異——的規則）而設的機器可讀格式。
+
+\subsection{架構組件}
+
+RSN由四個主要組件組成（圖~\ref{fig:architecture}）：
+\begin{enumerate}[nosep]
+\item \textbf{DID層。} 帶有申報規則、聲譽元數據及網絡路由的參與者身份。
+\item \textbf{主張協議。} 用於發佈關於現實世界事件斷言的結構化格式。
+\item \textbf{驗證網絡。} 使用一致性雜湊指派驗證者的去中心化協議。
+\item \textbf{聲譽聚合層。} 產生人類可讀聲譽摘要的服務。
+\end{enumerate}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    layer/.style={draw, minimum height=0.7cm, align=center, font=\scriptsize, fill=black!8},
+    arr/.style={<->, thick, gray!60}
+]
+\node[layer, minimum width=5cm] (agg) at (0,2.8) {\textbf{聚合層}\\詮釋 $\cdot$ 風險};
+\node[layer, minimum width=2.2cm] (claim) at (-1.55,1.4) {\textbf{主張}\\組成};
+\node[layer, minimum width=2.2cm] (verif) at (1.55,1.4) {\textbf{驗證}\\選擇};
+\node[layer, minimum width=5cm] (did) at (0,0) {\textbf{DID層}\\身份 $\cdot$ 規則 $\cdot$ 分數};
+
+\draw[arr] (agg.south west) -- (claim.north);
+\draw[arr] (agg.south east) -- (verif.north);
+\draw[arr] (claim.east) -- (verif.west);
+\draw[arr] (claim.south) -- (did.north west);
+\draw[arr] (verif.south) -- (did.north east);
+\end{tikzpicture}
+\caption{RSN四層架構。}
+\label{fig:architecture}
+\end{figure}
+
+\subsection{參與者角色}
+
+一宗驗證交易牽涉多達六種不同的DID角色（圖~\ref{fig:roles}）：\textbf{發行者（Issuer）}（$DID_I$，創建並提交主張）、\textbf{對象（Subject）}（$DID_S$，主張所關於的DID——可與發行者重疊）、\textbf{權威（Authority）}（$DID_A$，收費為主張背書；亦可提供見證服務——\emph{可選}）、\textbf{見證者（Witness）}（$DID_{W_{1..n}}$，透過挑戰碼隱身監察驗證者誠信——\emph{可選}）、\textbf{驗證者（Verifier）}（$DID_V$，經演算法選定以發佈主張），以及\textbf{RSN}（已驗證主張獲發佈之網絡）。任何角色均可委託予另一DID（第7.4節）。權威通常會將背書與見證服務捆綁在一起，但這兩項職能在邏輯上互相獨立。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    role/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8},
+    opt/.style={draw, rounded corners, minimum width=1.1cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!8, dashed},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    oarr/.style={-{Stealth[length=3pt]}, thick, dashed, gray},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[role] (I) at (0,2.4) {\textbf{發行者}};
+\node[role] (S) at (-2.5,2.4) {\textbf{對象}};
+\node[opt] (A) at (2.5,1.2) {\textbf{權威}};
+\node[opt] (W) at (-2.5,0) {\textbf{見證者}};
+\node[role] (V) at (2.5,-0.6) {\textbf{驗證者}};
+\node[role, fill=black!5, draw=gray] (N) at (0,-1.8) {RSN};
+
+\draw[arr] (I) -- node[lbl] {關於} (S);
+\draw[oarr] (I) -- node[lbl,sloped] {背書} (A);
+\draw[oarr] (I) -- node[lbl,sloped] {挑戰} (W);
+\draw[arr] (I) -- node[lbl,sloped] {請求} (V);
+\draw[oarr] (W) -- node[lbl] {監察} (V);
+\draw[arr] (V) -- node[lbl] {發佈} (N);
+\end{tikzpicture}
+\caption{驗證交易中的DID角色。虛線 = 可選（權威、見證者）。}
+\label{fig:roles}
+\end{figure}
+
+\subsection{不可腐化性：四種力量}
+
+RSN的不可腐化性並非源自單一機制，而是源自四種同時運作的力量。任何一種單獨都不足夠；唯有它們的結合，才使腐化的嘗試在經濟上變得不理性。
+
+\textbf{不可預測的目標。} 每宗主張的驗證者透過一致性雜湊非確定性地選定（第5.3節）。攻擊者無法為賄賂而預先鎖定特定的驗證者，因為驗證者的身份是主張內容及先前迭代的函數，而非發行者選擇的函數。
+
+\textbf{聲譽槓桿——上升慢，下降快。} 聲譽只能透過持續一致的行為循序漸進地獲得。然而，它卻可以因一次欺詐性的背書而災難性地喪失（第6.2節）。這種不對稱意味著多年累積的聲譽可被一次不誠實的背書所摧毀；最優策略始終是拒絕可疑的主張。
+
+\textbf{公開承諾。} 每位DID持有者都公開申報其政策——一套他們承諾遵守的機器可讀規則。申報與實際行為之間的分歧是可偵測的，並被定價為一種比底層違規更嚴重的聲譽罪過（第7.3節）。因此，偽善比直接的不誠實代價更高。
+
+\textbf{網狀攻擊成本不對稱。} 審查或破壞網絡穩定的成本隨網絡的規模及密度非線性增長，而容忍它的成本則維持不變。要令審查有利可圖，一個中央化的行為者必須在整個網絡範圍內施加審查——所需的措施與任何可設想的收益完全不成比例（第10節）。
+
+% ============================================================
+% 4. DECENTRALIZED IDENTITY MODEL
+% ============================================================
+\section{去中心化身份模型}
+
+\subsection{具特殊屬性的DID}
+
+RSN擴展了W3C DID Core規範~\cite{did2022}，加入：\textbf{申報規則}（機器可讀的行為承諾）、\textbf{聲譽元數據}（聚合的行為分數），以及\textbf{網絡路由}（與穩定的環形位置分開的可變洋蔥網關）。
+
+\subsection{主張生命週期}
+
+一宗主張經歷六個階段（圖~\ref{fig:lifecycle}）：組成、可選的權威背書、透過一致性雜湊進行驗證者選擇、驗證裁決（接受，或拒絕並迭代）、發佈，以及對所有各方的聲譽更新。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    stp/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\tiny, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[stp] (comp) at (0,0) {組成\\主張};
+\node[stp, dashed] (auth) at (2.0,0) {權威\\背書};
+\node[stp] (hash) at (4.0,0) {雜湊並\\映射環};
+\node[stp] (ver) at (2.0,-1.6) {驗證者\\查核};
+\node[stp, double] (pub) at (0,-1.6) {已發佈};
+\node[stp] (rej) at (4.0,-1.6) {已拒絕\\成本 $\uparrow$};
+
+\draw[arr] (comp) -- (auth);
+\draw[arr] (auth) -- (hash);
+\draw[arr] (hash) -- (ver);
+\draw[arr] (ver) -- node[lbl] {\checkmark} (pub);
+\draw[arr] (ver) -- node[lbl] {$\times$} (rej);
+\draw[arr] (rej) -- ++(0,0.8) -| (hash);
+\end{tikzpicture}
+\caption{帶迭代循環的主張生命週期。}
+\label{fig:lifecycle}
+\end{figure}
+
+\subsection{與W3C DID Core的關係}
+
+RSN的身份模型是W3C DID Core規範~\cite{did2022} 的一個真超集。所有RSN DID都是有效的W3C DID。RSN特有的擴展被編碼為在專屬DID方法規範中所定義的DID文檔屬性，與諸如ION~\cite{buchner2021} 及Ceramic~\cite{ceramic2023} 等現有基礎設施兼容。
+
+% ============================================================
+% 5. VERIFICATION AND PROPAGATION
+% ============================================================
+\section{資訊驗證與傳播}
+
+\subsection{資訊錄入的成本}
+
+RSN的核心經濟原則是讀取與寫入之間的不對稱。對於身處DID網絡之內、且擁有與其聲譽相稱之取用權的參與者而言，讀取聲譽資料的邊際成本趨近於零——新加入者必須逐步賺取更廣泛的取用權（見反吸血）。寫入——理解為聲譽持久地物化進入網絡，而非一次性的技術行為——需要跨越三個維度的可驗證累積投資：\textbf{時間}（花費於一致行為、履行承諾及培育關係的人生歲月）、\textbf{精力}（投入於誠實交易、關顧夥伴關係及長遠可信賴度的付出），以及\textbf{金錢}（對自己名譽的投資——專業發展、自身工作的質素、對所造成損害的賠償）。聲譽無法即時購得——它是終生累積的成果，而系統只是將其變得可見，並可跨情境轉移。相比這項底層投資，協議的一次性技術成本（密碼學簽名、驗證者費用）微不足道。
+
+\subsection{社交圖譜與聯絡深度}
+
+RSN從根本上是一個社交網絡：每個DID增添聯絡人（其他允許此連接的DID）。這些聯絡人有他們自己的聯絡人，如此類推。演算法的驗證者搜尋在可配置深度 $h$ 的鏈接聯絡人範圍內運作（例如 $h=3$：一個人的直接聯絡人、他們的聯絡人，以及聯絡人的聯絡人）。此架構並不需要單一的全球區塊鏈——它自然而然地有利於社群／叢集的湧現，並與其他社群有所重疊。每位DID參與者都必須有一份已發佈的\textbf{政策}——一套管治如何評估傳入請求的機器可讀規則。違反政策會作為負面的產物記錄於網絡之中。
+
+\subsection{演算法驗證者選擇}
+
+驗證協議採用一致性雜湊~\cite{karger1997}（圖~\ref{fig:verifier}）。驗證是一項收費服務：驗證者收費運作，締造一個由競爭驅動定價、速度及可靠性的市場。
+
+\textbf{步驟1。} 主張文檔與上一次迭代的雜湊結果（或首次迭代時的 $\varnothing$）連接並進行雜湊：
+\begin{equation}
+\text{pos} = f_h(\text{claim} \| \text{prev\_hash})
+\label{eq:hash}
+\end{equation}
+
+演算法必須包含所有先前請求及回應的\emph{完整路徑}——而不僅僅是上一次迭代的雜湊。每位驗證者的完整回應（接受、拒絕、報價、理由）都會附加到不斷增長的文檔中，並在每一步透過密碼學簽名可供驗證。
+
+\textbf{步驟2。} 雜湊被映射到一致性雜湊環上的 $N$ 個均勻分佈的位置（例如，當 $N=4$：$+0^{\circ}, +90^{\circ}, +180^{\circ}, +270^{\circ}$）。從每個位置起，順時針搜尋選出最接近的DID作為驗證者候選人（圖~\ref{fig:multipoint}）。$N$ 是一個可變參數，可取決於當前活躍DID的百分比、一天中的時間，或網絡歷史上的回應速度。
+
+\textbf{步驟3。} 驗證者接受（發佈，並押注聲譽）或拒絕（帶著拒絕雜湊返回步驟1）。當某節點聲稱在線卻不作回應時，下一次請求必須包含所有 $N$ 個先前驗證者候選人的所有回應。
+
+\textbf{反吸血。} 目標DID可為來自聲譽甚少的新DID的查詢設定費用或取用限制。此分級機制（而非二元）迫使新加入者在能自由取用他人資料之前，先透過真實活動建立聲譽。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=1.3cm, minimum height=0.45cm, align=center, font=\scriptsize, fill=black!5},
+    dec/.style={draw, diamond, aspect=2.2, minimum width=0.9cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=3pt]}, thick},
+    lbl/.style={font=\tiny, fill=white, inner sep=1pt}
+]
+\node[box] (iss) at (0,0) {發行者};
+\node[box] (hash) at (0,-1.1) {$f_h$(claim $\|$\\prev\_hash)};
+\node[box] (ring) at (0,-2.2) {環形映射\\順時針};
+\node[box, dashed] (spam) at (0,-3.2) {反垃圾\\按金};
+\node[dec] (check) at (0,-4.4) {政策\\查核};
+\node[box] (rej) at (2,-5.6) {下一次\\迭代};
+\node[box] (fee) at (0,-5.6) {最終費用 =\\$f$(資料, 聲譽, 政策)};
+\node[box, double] (pub) at (0,-6.8) {已發佈};
+
+\draw[arr] (iss) -- (hash);
+\draw[arr] (hash) -- (ring);
+\draw[arr] (ring) -- (spam);
+\draw[arr] (spam) -- (check);
+\draw[arr] (check) -- node[lbl] {$\times$} (rej);
+\draw[arr] (check) -- node[lbl] {\checkmark} (fee);
+\draw[arr] (fee) -- (pub);
+\draw[arr] (rej.east) -- ++(0.5,0) |- (hash.east);
+\end{tikzpicture}
+\caption{驗證者選擇協議。反垃圾按金為可選，並可退還。最終費用僅在接受時支付。}
+\label{fig:verifier}
+\end{figure}
+
+每次拒絕都會將驗證者的完整回應（包括理由及條件）附加到主張文檔中，擴充其內容。從擴充後的文檔，非確定性地計算出一個新雜湊，映射到一個不同的環形位置並選出一位不同的驗證者。記錄完整路徑是強制性的——發行者無法預測或影響下一位驗證者。若某驗證者儘管有兼容的申報政策卻無視請求，見證者（如在場）會記錄此事，而發行者可在最終發佈時附上見證證據。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.65]
+% Ring
+\draw[thick] (0,0) circle (2.2cm);
+% DID nodes on ring
+\foreach \a in {10,55,80,120,150,195,230,260,305,340} {
+  \fill[black!40] (\a:2.2) circle (1.5pt);
+}
+% Hash offset arrow pointing to initial position
+\draw[-{Stealth[length=3pt]}, thick, black!60] (0,0) -- node[font=\tiny,above,sloped,pos=0.6] {$f_h$} (37:2.2);
+\fill[black] (37:2.2) circle (2pt);
+\node[font=\tiny,anchor=south west] at (37:2.35) {$h_0$};
+% N=4 points offset from h0 by +0, +90, +180, +270
+\foreach \offset/\l in {0/P1,90/P2,180/P3,270/P4} {
+  \pgfmathsetmacro{\ang}{37+\offset}
+  \node[fill=black, circle, inner sep=1.5pt] (p\offset) at (\ang:2.2) {};
+  \node[font=\tiny,font=\bfseries] at (\ang:2.75) {\l};
+  % clockwise search arc
+  \draw[-{Stealth[length=2.5pt]}, thick, gray] (\ang:2.2) arc (\ang:\ang+30:2.2);
+}
+\node[font=\scriptsize, align=center] at (0,0) {雜湊\\環};
+\node[font=\tiny, align=center] at (0,-3.2) {$h_0 = f_h(\text{claim})$，然後 $+0^{\circ},+90^{\circ},+180^{\circ},+270^{\circ}$\\每點 $\rightarrow$ 順時針搜尋};
+\end{tikzpicture}
+\caption{多點選擇（$N{=}4$）。雜湊 $h_0$ 設定偏移；由 $h_0$ 均勻分佈4個點。}
+\label{fig:multipoint}
+\end{figure}
+
+\subsection{見證者協議}
+
+\textbf{見證者}角色透過一種密碼學挑戰碼協議，為驗證者的誠信提供隱身的問責：
+
+\textbf{步驟W1。} 請求者簽署驗證請求，並將其發送予 $N_w$ 位見證者——來自請求者社交網絡的聯絡人，或收費運作的專門見證服務供應商。
+
+\textbf{步驟W2。} 每位見證者 $w_i$ 簽署整份已簽署的請求，保留原始簽名 $\sigma_i$，並計算一個挑戰碼 $c_i = h(\sigma_i)$。挑戰碼被附加到請求上。
+
+\textbf{步驟W3。} 現在攜帶 $N_w$ 個挑戰碼的請求被發送予驗證者。驗證者觀察到這些碼，但\emph{無法確定}見證者是誰，或這些碼是否對應真實的簽名。
+
+\textbf{步驟W4（誠實的驗證者）。} 若驗證者按照其申報的政策作出回應，挑戰碼便維持不透明。見證者永不被揭露。不會發佈任何額外資料。
+
+\textbf{步驟W5（違反政策）。} 若驗證者違反其政策（無視請求、回應前後不一），請求者持有見證者的原始簽名 $\sigma_i$。這些可作為佐證資料發佈：任何人都可驗證 $c_i = h(\sigma_i)$，證明見證者曾在場。請求者可獨立發佈——驗證者已在其回應中簽署了挑戰碼。
+
+\textbf{虛張聲勢屬性。} 請求者可以隨機值替換部分或全部挑戰碼。驗證者無法區分真正的碼（由高聲譽權威支持）與雜訊。這種\emph{不確定性}正是執行機制：每宗請求都帶有一位受尊敬的權威正在隱身觀察的風險。維持這種壓力的成本趨近於零（生成隨機數），而不誠實對驗證者而言的潛在代價卻是災難性的。即使在沒有實際見證者的情況下，誠實行為亦受到激勵。
+
+\textbf{權威作為見證者。} 為主張背書的權威可捆綁見證服務：「我為你的主張背書，並在驗證期間充當隱身見證者。」這是一種自然的商業模式——權威早已掌握情境。然而，這兩種角色在邏輯上互相獨立。
+
+\subsection{昂貴激進主義原則}
+
+三條成本渠道同時複合（圖~\ref{fig:radicalism}）：
+
+\textbf{渠道1：迭代成本。} 每次拒絕都迫使一次消耗時間及資源的新迭代。線性增長。
+
+\textbf{渠道2：文檔膨脹。} 每次迭代都將完整的驗證者回應加入主張文檔。增長是線性的，但帶有一個基底偏移：初始負載（主張內容、權威背書、密碼學簽名）已具有不容忽視的大小 $B_0$。$k$ 次迭代後的總大小：$S(k) = B_0 + k \cdot \Delta$，其中 $\Delta$ 是平均回應大小。
+
+\textbf{渠道3：驗證者風險溢價。} 風險是主觀的。驗證者評估請求方DID的申報政策是否與驗證者自身的商業、社會或政治利益相衝突。溢價可隨著與驗證者「理想」的感知距離而指數式升級：$P(d) = \alpha \cdot e^{\beta d}$，其中 $d$ 是驗證者的主觀距離度量。超越個人的禁區邊界，驗證者可完全拒絕。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\columnwidth,
+    height=4.5cm,
+    xlabel={\footnotesize 激進程度},
+    ylabel={\footnotesize 相對成本（對數）},
+    ymode=log,
+    xmin=0, xmax=100,
+    ymin=1, ymax=10000,
+    grid=major,
+    grid style={gray!20},
+    legend style={at={(0.03,0.97)},anchor=north west,font=\tiny,draw=gray!50},
+    tick label style={font=\tiny},
+    label style={font=\footnotesize},
+]
+\addplot[black, thick, domain=0:100, samples=50] {1 + 0.3*x};
+\addlegendentry{迭代成本（線性）}
+\addplot[black, thick, dashed, domain=0:100, samples=50] {1 + 0.15*x};
+\addlegendentry{文檔膨脹（線性）}
+\addplot[black, thick, dotted, line width=1.2pt, domain=0:100, samples=100] {exp(0.08*x)};
+\addlegendentry{風險溢價（指數）}
+\end{axis}
+\end{tikzpicture}
+\caption{三條渠道的成本升級。風險溢價在高激進程度下佔主導。}
+\label{fig:radicalism}
+\end{figure}
+
+關鍵在於，這並非審查。沒有任何主張被禁止。系統為風險定價（表~\ref{tab:costs}）。
+
+\begin{table}[ht]
+\centering
+\caption{各類主張類型的成本比較。}
+\label{tab:costs}
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{類型} & \textbf{迭代} & \textbf{文檔} & \textbf{費用} & \textbf{總計} \\
+\midrule
+可信 & $k_{\min}$ & $B_0$ & $P_{\min}$ & 低 \\
+具爭議 & $k_{\text{med}}$ & $B_0{+}k\Delta$ & $\alpha e^{\beta d}$ & 中等 \\
+激進 & $k_{\max}$ & $\gg B_0$ & $\gg P_{\min}$ & 極高 \\
+欺詐 & $\to\infty$ & --- & --- & 無法發佈 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% 6. REPUTATION AND RISK
+% ============================================================
+\section{聲譽與風險評估}
+
+\subsection{聲譽累積模型}
+
+聲譽呈現三種屬性：\textbf{緩慢累積}（透過一致行為循序漸進地增長）、\textbf{快速摧毀}（一次欺詐即可災難性地降低分數），以及\textbf{個別評估}（每個取用方可套用其自身的聚合函數）。
+
+\subsection{可信權威}
+
+一個可信權威審查主張，若感滿意則共同簽署——押注其自身的聲譽（圖~\ref{fig:authority}）。這種不對稱是刻意設計的：獲得聲譽緩慢（每次誠實背書遞增 $+\delta$），而喪失它卻是災難性的（每次虛假背書 $-\Delta \gg \delta$；舉例說明，例如 $+2\%$ 對 $-70\%$）。最優策略始終是拒絕可疑的主張。$\delta$ 及 $\Delta$ 的具體數值是系統參數。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, minimum width=2cm, minimum height=0.6cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[box] (exam) at (0,0) {權威審查\\聲譽：$R$};
+\node[box] (true) at (-2,-1.3) {真實：$R{\to}R{+}\delta$\\更多客戶};
+\node[box] (false) at (2,-1.3) {虛假：$R{\to}R{-}\Delta$\\客戶流失};
+\node[box] (insight) at (0,-2.6) {獲得：慢（$+\delta$）\\喪失：即時（$-\Delta$）};
+
+\draw[arr] (exam) -- node[left,font=\tiny] {真相} (true);
+\draw[arr] (exam) -- node[right,font=\tiny] {謊言} (false);
+\draw[arr] (true) -- (insight);
+\draw[arr] (false) -- (insight);
+\end{tikzpicture}
+\caption{可信權威——不對稱的誘因。}
+\label{fig:authority}
+\end{figure}
+
+\subsection{多維度聲譽}
+
+聲譽並非一個純量，而是一個跨越多個維度的向量：財務可靠性、個人操守、專業能力、公民參與，以及其他（圖~\ref{fig:reputation-radar}）。不同的評估供應商會因情境不同而以不同方式投射此向量——放貸者優先考慮財務可靠性，僱主優先考慮專業能力，鄰居優先考慮公民行為。並不存在單一「正確」的聲譽分數；只有視角。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.55]
+\foreach \a/\l in {90/財務,162/操守,234/專業,306/公民,18/社交} {
+  \draw[gray!40] (0,0) -- (\a:2.5);
+  \node[font=\tiny, align=center] at (\a:3.1) {\l};
+  \foreach \r in {0.8,1.6,2.4} {
+    \fill[black!15] (\a:\r) circle (0.5pt);
+  }
+}
+\draw[thick, fill=black!10] (90:2.0) -- (162:1.2) -- (234:1.8) -- (306:0.9) -- (18:1.5) -- cycle;
+\draw[thick, dashed] (90:1.4) -- (162:2.1) -- (234:0.8) -- (306:2.0) -- (18:1.1) -- cycle;
+\node[font=\tiny] at (0,-3.3) {實線：DID A \quad 虛線：DID B};
+\end{tikzpicture}
+\caption{多維度聲譽向量。不同的DID在各維度上呈現不同的輪廓。}
+\label{fig:reputation-radar}
+\end{figure}
+
+\subsection{民主化的風險評估}
+
+RSN將系統性風險評估民主化——這是一種目前集中於金融機構、但適用範圍遠超銀行業的能力。工業集團評估供應商可靠性、保險公司為行為風險定價、併購的盡職調查、製造業中的設備壽命估算——但凡交易對手風險需要評估之處，RSN都提供一個去中心化、市場驅動的替代方案。一個詮釋服務的市場將原始的多維度聲譽資料轉化為可操作的摘要，令交易對手評估對任何參與者而言都能以邊際成本取得。
+
+% ============================================================
+% 7. CONSENSUS AND DISPUTE RESOLUTION
+% ============================================================
+\section{共識與糾紛解決}
+
+\subsection{去中心化公義模型}
+
+RSN將公義重構為一個雙邊談判問題。永久、可驗證的聲譽損害所帶來的威脅，比受害一方負擔不起的法律程序更為有效的阻嚇。
+
+\subsection{湧現式共識}
+
+每位參與者維持一個個人的滿意門檻。網絡的總體共識作為數以千計雙邊談判的統計平均值而湧現（圖~\ref{fig:consensus}）。一個遠高於共識（野蠻）的回應，發佈起來成本高昂。一個接近共識（相稱）的回應，則成本低廉。共識並非一項規則——它是一個價格信號。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    person/.style={draw, rounded corners=2pt, minimum width=1.5cm, minimum height=0.5cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[person] (a) at (-2,0) {嚴苛\\（高）};
+\node[person] (b) at (0,0) {務實\\（中）};
+\node[person] (c) at (2,0) {寬容\\（低）};
+\node[person, fill=black!10, minimum width=3cm] (cons) at (0,-1.2) {網絡共識\\= 統計平均};
+\node[person] (exp) at (-2,-2.4) {野蠻\\昂貴};
+\node[person, double] (prop) at (0,-2.4) {相稱\\低廉};
+\node[person] (neg) at (2,-2.4) {疏忽\\昂貴};
+
+\draw[arr] (a) -- (cons);
+\draw[arr] (b) -- (cons);
+\draw[arr] (c) -- (cons);
+\draw[arr] (cons) -- (exp);
+\draw[arr] (cons) -- (prop);
+\draw[arr] (cons) -- (neg);
+\end{tikzpicture}
+\caption{由個人滿意門檻湧現而生的共識。}
+\label{fig:consensus}
+\end{figure}
+
+\subsection{懲罰校準}
+
+每位DID持有者公開申報對特定不當行為類別的回應。過度嚴苛或過度寬鬆的申報會招致負面的聲譽信號。相稱的申報則不帶摩擦地被接受——一個自我校準的懲罰系統。
+
+共識申報本身亦受偽善偵測所制約：宣示性地承諾一個共識立場，卻行為前後不一，這構成一種比底層偏差更嚴重的聲譽罪過，因為它展示了蓄意的欺騙。
+
+\subsection{委託}
+
+一個DID內的所有活動——除一項例外——均可委託予另一DID。\textbf{對象角色——即主張所關於其行為的DID——不能委託；它不可轉讓地綁定於主張所指涉的身份持有者。} 其他活躍角色——發行者、權威、見證者、驗證者——則可轉移予一個指定的受託DID，無論是為了驗證、主張提交、共識參與，抑或糾紛解決。委託在任何時候均可撤銷。這使得專業化成為可能（例如專業的驗證服務），同時持有者保留最終的控制權及責任。委託適用於整個系統，並且對可擴展性至關重要。
+
+\subsection{從個人道德到湧現式社會契約}
+
+每個DID的申報政策代表著個人道德的形式化：持有者認為甚麼可接受、他們如何回應特定行為、他們對交易對手有何要求。這些政策並非由系統設計者強加——它們由每位參與者選擇，並以機器可讀的形式表達。
+
+這種形式化促成一個三階段的湧現。首先，個人道德被編碼為\textbf{政策}——一套DID承諾遵守的申報規則、門檻及回應函數。其次，網絡內所有政策的總和產生出\textbf{湧現式倫理}——統計上可觀察的規範，沒有任何單一參與者設計它們，但它們卻由數以千計個人道德立場的互動而生~\cite{durkheim1893}。第三，這些湧現式倫理，作為透過雙邊價格信號執行的共享行為規範來表達，構成一份\textbf{可量度的社會契約}——並非一個無人簽署的理論構造~\cite{rawls1971}，而是一套由實際行為支持、可實證觀察的規則。
+
+這一過程與道德基礎理論~\cite{haidt2012} 的發現相呼應：人類的道德是直覺的、多元的，並因文化而異。RSN並不要求道德共識作為輸入；它產生行為共識作為輸出。由此產生的社會契約並非靜態——它隨著參與者加入、離開，並因應網絡回饋調整其政策而演化。與古典社會契約理論不同，這份契約是可撤銷、可觀察，並可在沒有主權者的情況下執行的。
+
+% ============================================================
+% 8. ECONOMIC MODEL
+% ============================================================
+\section{經濟模型}
+
+前面各節描述了一件工具——RSN的驗證機制、成本結構及湧現式共識。本節描述一套將此工具應用於財政及治理過渡的方法論。工具是通用的；以下的方法論是一種可能的應用。
+
+\subsection{誘因結構}
+
+聲譽作為資本，為誠實行為締造直接的誘因。在正常運作中，參與者透過日常交易及履行承諾自然而然地建立聲譽。主要的開支在於\emph{負面}主張——記錄他人所造成的傷害。這種不對稱激勵有用、可靠的行為：誠實不會帶來額外成本，而造成傷害卻會創造一條有記錄的軌跡，他人會付費將其保存。偽善——申報規則卻不遵守——是最昂貴的失敗模式，因為它展示了蓄意的欺騙。
+
+\subsection{並行財政系統}
+
+三個組件促成競爭壓力：（1）\textbf{簡單稅}——一個沒有任何例外的單一比例稅率，初期略低於現行的有效稅率；（2）\textbf{電子開支登記（ESR）}——反轉捷克的EET模式，使公民監察國家的開支；（3）\textbf{公民導向的稅款分配}——首年由數個百分點起步，並在十年後達到，視乎採用速度而定，由低雙位數百分比一直到全面遷移至一個公民導向的系統。實際的節奏取決於自由市場對國家服務的替代方案湧現的速度，以及國家配合過渡的意願；時間的函數毋須是線性的，而且沒有理由為採用最終可達之處設定一個上限。
+
+% ============================================================
+% 9. MIGRATION PATH
+% ============================================================
+\section{遷移路徑}
+
+遷移經歷三個階段（圖~\ref{fig:migration}）：\textbf{階段1：覆蓋層}（RSN作為資訊層，國家是唯一供應者）、\textbf{階段2：競爭}（RSN提供功能性替代方案，雙系統並用），以及\textbf{階段3：過渡}（RSN表現超越國家的對等物，自願遷移）。過渡在每一階段都是可逆轉的。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    phase/.style={draw, rounded corners=3pt, minimum width=1.8cm, minimum height=0.8cm, align=center, font=\scriptsize, fill=black!5},
+    arr/.style={-{Stealth[length=5pt]}, thick}
+]
+\node[phase] (p1) at (0,0) {\textbf{階段1}\\覆蓋層};
+\node[phase] (p2) at (2.2,0) {\textbf{階段2}\\競爭};
+\node[phase] (p3) at (4.4,0) {\textbf{階段3}\\過渡};
+
+\draw[arr] (p1) -- (p2);
+\draw[arr] (p2) -- (p3);
+\draw[arr, dashed, gray] (p3.south) -- ++(0,-0.6) -| node[below,font=\tiny,pos=0.25] {回退} (p2.south);
+\end{tikzpicture}
+\caption{三階段遷移——在每一階段都可逆轉。}
+\label{fig:migration}
+\end{figure}
+
+主要的壓力機制是財政上的：當有條件的納稅人達到一個「經濟上具重要性的少數 $X$」——一個大到足以令針對它的鎮壓造成不容忽視的經濟損害、並使公民抗命成為可信威脅的群體——國家便進入談判。為作說明，我們採用 $X \approx 15\%$ 的GDP，但實際的門檻取決於具體的經濟體。
+
+% ============================================================
+% 10. SECURITY ANALYSIS
+% ============================================================
+\section{安全分析}
+
+我們考慮五類對手：個別惡意行為者、有組織的群體、企業對手、國家層面的對手，以及協議層面的對手。
+
+\textbf{女巫攻擊抵抗（Sybil resistance）}~\cite{douceur2002}。建立聲譽需要持續、可驗證的互動。一次成功女巫攻擊的成本隨假身份數量線性增長，隨目標聲譽水平二次方增長。並行運作多個DID是可能的，但按設計是昂貴的——每個身份都必須透過真實活動獨立累積聲譽。在自由社會中，這一成本阻嚇隨意的濫用；在獨裁政權下，並行DID則成為一種求生工具，使區隔化的抵抗、地下協調及更安全的黑市周旋成為可能。
+
+\textbf{串謀防禦。} 封閉群體之間相互背書的模式，透過社交圖譜分析可以偵測。聲譽聚合函數會對來自緊密叢集來源的主張予以折讓。
+
+\textbf{國家層面的對手。} 洋蔥路由、中央化基礎設施的缺席，以及驗證者角色分散於參與者群體之中，確保壓制所需的措施與任何收益不成比例。
+
+\textbf{私隱對問責。} 化名性——介乎匿名與身份披露之間的一個中間地帶——使DID能夠累積有意義的聲譽，而毋須揭露持有者的現實世界身份。
+
+% ============================================================
+% 11. PRIVACY
+% ============================================================
+\section{私隱考量}
+
+RSN的私隱模型建基於化名性。持有者控制身份的披露：最少（純化名）、選擇性（連結特定憑證），或完全（關聯法律身份）。已發佈的主張是永久的——系統支援情境式更正，但不支援抹除。持有者可放棄一個已被攻陷的DID並從頭開始，放棄所累積的聲譽。
+
+% ============================================================
+% 12. RELATED WORK
+% ============================================================
+\section{相關工作}
+
+W3C DID Core規範~\cite{did2022} 及Ceramic Network~\cite{ceramic2023} 提供了身份的基礎。EigenTrust~\cite{kamvar2003} 展示了無需中央權威的分散式聲譽聚合。SBT~\cite{weyl2022} 引入了不可轉讓的社會代幣。RSN的不同之處在於其強調以經濟成本作為質素過濾器，以及其為激進主義定價的機制。
+
+DAO~\cite{buterin2014} 及二次方投票~\cite{buterin2019} 展示了去中心化治理的可行性。RSN由雙邊價格談判而非投票中導出共識。
+
+此提案借鑑無政府資本主義理論~\cite{rothbard1973,hoppe2001} 中的私營服務供應，但在兩個關鍵方面有所偏離：它為怨恨及報復性衝動而設計，而非假設理性；並且它提出漸進過渡而非革命。湧現式社會契約的概念在海耶克的自發秩序理論~\cite{hayek1973} 中有其先例。
+
+\textbf{無政府自由市場主義（Anarcho-agorism）。} RSN與自由市場主義的反經濟學（agorist counter-economics）~\cite{konkin2006} 有相當大的共同之處——尤其是對建立並行機構及自願交換的強調。然而，自由市場主義傾向於假設理性的自利足以作為協調機制，並且往往缺乏一條從現行國家結構出發的具體遷移路徑。RSN明確地將非理性的行為傾向納入，並提供一種為漸進過渡而設的財政壓力機制。
+
+\textbf{精英制度（Meritocracy）。} RSN或許代表了對精英制度~\cite{young1958} 如何能作為一種系統性屬性（而非一個口號）湧現而生的首個功能性描述。傳統的精英制度系統之所以失敗，是因為它們需要一個中央權威來定義及執行「功績」。在RSN中，功績由雙邊評估中湧現：那些交付價值的人累積聲譽；沒有委員會裁定誰有功績。
+
+\textbf{財產作為特權。} RSN從根本上偏離了無政府資本主義及奧地利學派將財產權視為自然且絕對的處理方式。在RSN框架中，財產是一種\emph{特權}——一種社會認可，在極端情況下，當一位參與者從根本上違反共享規範時（背叛、在存亡危機中拒絕捍衛社群、系統性剝削），可被社群收回。這並非國家徵用，而是由雙邊關係網絡收回社會認可。
+
+% ============================================================
+% 13. LIMITATIONS
+% ============================================================
+\section{討論與限制}
+
+\textbf{冷啟動。} RSN的價值取決於網絡效應；早期採用者在參與達到門檻之前面對有限的價值。然而，即使從早期階段起，DID網絡亦作為一個有用的補充資訊來源。預期早期的聲譽評估及權威評估會隨著日益精密而逐步發展。
+
+\textbf{反吸血與取用控制。} 目標DID可對來自低聲譽DID的查詢施加分級費用及取用限制。這並非二元，而是一個連續的尺度：一個查詢的DID聲譽越少，它收到的資訊越少，等待的時間越長，付出的越多。此機制激勵真實的參與，而非被動的取用。
+
+\textbf{取用的不平等。} 發佈主張的成本可能會將經濟上處於弱勢的參與者的合理申訴過濾掉。緩解措施：每位參與者同時充當一位潛在的驗證者（或委託此角色），並賺取驗證費用。在足夠長的時間跨度內，一位非激進的參與者應趨近財務中性——驗證收入大致抵銷發佈成本。這是一個統計上的預期，而非保證。
+
+\textbf{聲譽的不平等。} 早期採用者累積的優勢，可能為後來者製造障礙。然而，聲譽評估由第三方供應商執行，他們可透過其聚合演算法選擇緩解先行者優勢。以良好聲譽率先起步是一種合理的比較經濟優勢——而這是刻意設計的。
+
+\textbf{開放問題。} 最優的成本函數、聚合標準、協議治理，以及與AI生成的合成聲譽資料的互動，仍是未來工作的範疇。
+
+本文並不聲稱RSN會在所有情況下產生最優的結果。它聲稱的是，RSN代表一個\emph{可行的}替代方案——技術上可實行、經濟上能自我維持，並在社會上與人類本來的行為傾向相容。
+
+% ============================================================
+% 14. CONCLUSION
+% ============================================================
+\section{結論}
+
+本文提出了聲譽社交網絡，一個使化名、可驗證的聲譽交換成為可能的去中心化協議。昂貴激進主義原則確保欺詐性主張在不施加審查的情況下被定價排除。所提出的遷移路徑使從現行機構出發、漸進且可逆轉的過渡成為可能。此設計將人類本來的天性納入——包括小器、怨恨，以及對報復性滿足的渴求——而非要求意識形態的轉變。其結果並非烏托邦，而是一個公義可及、聲譽靠賺取、而不當行為的代價由造成它的一方承擔的系統。
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\bibliography{references}
+
+\end{document}
