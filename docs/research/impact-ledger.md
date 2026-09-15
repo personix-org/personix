@@ -73,7 +73,7 @@ záznam samo jen do části z nich, zbytek chce ruční krok.
 | Semantic Scholar | draft emailu | jejich kontaktní stránka vrací 404, jede se na feedback@semanticscholar.org |
 | SocArXiv | zamítnuto | `bx3ud` neprošel moderací 5. 8., Crossref DOI odtud nebude |
 | CORE, BASE, IA Scholar | není | harvestují repozitáře samy, autorský submit nemají |
-| Google Scholar | neověřeno | Google z domácí IP hází kontrolu na robota |
+| Google Scholar | je, ale pod názvem | Záznam existuje i s abstraktem, zdroj personix.org. Pod slovem Personix nevyskočí, k tomu viz deník 15. 9. |
 | Sci-Hub | nelze a nedává smysl | viz níže |
 
 **Systémové řešení: druhý depozit s Crossref DOI.** Mechanika je pořád platná.
@@ -174,6 +174,9 @@ Jeden řádek na událost. Doplňovat průběžně, revidovat v pondělí.
 | 2026-08-04 | indexace | Whitepaper podán na SocArXiv jako preprint | [osf.io/preprints/socarxiv/bx3ud_v1](https://osf.io/preprints/socarxiv/bx3ud_v1) | 2 | Moderace 4–5 pracovních dnů. Po schválení Crossref DOI, což otevírá cestu do Unpaywallu. Abstrakt bez věty o projektu, střet zájmů přiznán. |
 | 2026-08-05 | indexace | SocArXiv preprint `bx3ud` neprošel moderací | [socopen.org/moderation-policy](https://socopen.org/moderation-policy/) | 2 | Moderace napsala, že text nesplňuje kritéria odborného společenskovědního výzkumu, protože navrhuje nový rámec bez opory v literatuře oboru. Doslova to neplatí, whitepaper má 25 citací a sekci Related Work. Námitka je oborová, text debatuje s kryptografií a libertariánskou teorií, ne se sociologií. Zjištěno až 9. 8. z digest mailu, protože API u zamítnutých hlásí totéž co u čekajících. Crossref DOI tudy nevede, alternativy v tabulce výše. |
 | 2026-08-08 | publikace | Draft článku „Irresponsibility Is Free of Charge" (~2900 slov) odeslán redakci Palladia | Google Doc (komentování) + .md příloha | 3 | Reaguje na výzvu editora z 25.7., odesláno v termínu. Text psal Pavel (redakce zakázala AI text i editaci). Čeká na editorial review. Finální text zařazen v [[palladium-clanek-final-en]]. |
+| 2026-09-15 | indexace | Diagnóza po 49 dnech marného denního hlídání Scholaru | — | 3 | Scholar paper zná a má ho i s abstraktem, indexace nikdy nebyla problém. Pod slovem Personix nevyskočí proto, že slovo bylo v dokumentu jen jednou, a to v afiliaci na titulní straně. Tu Scholar parsuje jako metadata o autorovi, ne jako tělo textu, a pdfkeywords z metadat souboru do fulltextu nebere vůbec. Oprava z 28. 7. tedy mířila do dvou míst, která se do fulltextu nepromítají. |
+| 2026-09-15 | indexace | Whitepaper přebuildován na Draft v3, jméno projektu v abstraktu a závěru | `docs(whitepaper)` v repu personix | 2 | Osm výskytů místo jednoho, z toho dva v abstraktu, který Scholar zobrazuje i indexuje. Obsah návrhu beze změny, otimestampovaná v1 nedotčena. Čeká se na recrawl. |
+| 2026-09-15 | indexace | Rešerše ochranné známky PERSONIX v rejstřících | USPTO TSDR, TMview | 1 | V EU stojí jediná živá známka, Sodexo pro stravovací služby, překryv nulový. V USA Fiserv pro ražbu platebních karet, což je zápis z roku 1997, kdy třída 42 byla zbytková, a michiganská firma pro platformu ke komunikaci s pacienty. Jediná citlivá zóna je reputační skóre ve zdravotnictví na americkém trhu. Evropské třídy 9 a 42 jsou pro jméno volné. |
 
 ### Legenda typů
 
