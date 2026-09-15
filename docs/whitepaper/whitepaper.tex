@@ -36,7 +36,7 @@
 
 % === Title ===
 \title{\textbf{Decentralized Reputation Network:\\A Framework for Natural Societal Organization}}
-\author{Pavel Kudrna\\Personix Project --- \url{https://personix.org}\\Prague, Czechia\\Draft v2 --- July 2026}
+\author{Pavel Kudrna\\Personix Project --- \url{https://personix.org}\\Prague, Czechia\\Draft v3 --- September 2026}
 \date{}
 
 \begin{document}
@@ -46,7 +46,7 @@
 % ABSTRACT
 % ============================================================
 \begin{abstract}
-The sense of justice---the conviction that wrongs are made right and merit is rewarded---is the strongest cohesive force of society. When centralized institutions of governance cannot deliver this sense because the cost of enforcing a right exceeds the value of the right itself, social cohesion erodes. Current institutional structures fail to resolve a significant class of disputes in systematically the same way that central planning fails to allocate resources: through information asymmetry, missing feedback loops, and disconnection of decision-makers from the consequences of their decisions. This paper presents a Reputation Social Network (RSN): a decentralized, incorruptible, censorship-resistant communication layer built on Decentralized Identifiers (DIDs) that enables pseudonymous participants to publish, verify, and consume reputation information about real-world behavior. The core mechanism rests on three design principles: (1)~an asymmetric cost structure where reading reputation data is inexpensive but writing requires verifiable effort; (2)~a nondeterministic verifier selection protocol based on consistent hashing that prices radical claims through escalating iteration costs; and (3)~a market-driven reputation authority model where private verifiers stake their accumulated reputation on the accuracy of claims they endorse. The resulting architecture produces emergent meritocracy without central coordination and enables a gradual, reversible migration path from existing state-administered systems.
+The sense of justice---the conviction that wrongs are made right and merit is rewarded---is the strongest cohesive force of society. When centralized institutions of governance cannot deliver this sense because the cost of enforcing a right exceeds the value of the right itself, social cohesion erodes. Current institutional structures fail to resolve a significant class of disputes in systematically the same way that central planning fails to allocate resources: through information asymmetry, missing feedback loops, and disconnection of decision-makers from the consequences of their decisions. This paper presents the Personix Reputation Social Network (RSN): a decentralized, incorruptible, censorship-resistant communication layer built on Decentralized Identifiers (DIDs) that enables pseudonymous participants to publish, verify, and consume reputation information about real-world behavior. The core mechanism rests on three design principles: (1)~an asymmetric cost structure where reading reputation data is inexpensive but writing requires verifiable effort; (2)~a nondeterministic verifier selection protocol based on consistent hashing that prices radical claims through escalating iteration costs; and (3)~a market-driven reputation authority model where private verifiers stake their accumulated reputation on the accuracy of claims they endorse. The resulting architecture produces emergent meritocracy without central coordination and enables a gradual, reversible migration path from existing state-administered systems. The protocol is specified and maintained as an open, replicable reference by the Personix project.
 \end{abstract}
 
 % ============================================================
@@ -78,7 +78,7 @@ No existing system combines decentralization, censorship resistance, pseudonymit
 
 This paper makes the following contributions:
 \begin{enumerate}[nosep]
-\item Definition of the \textbf{Reputation Social Network (RSN)}, a decentralized protocol extending the DID framework to support bilateral reputation exchange.
+\item Definition of the \textbf{Reputation Social Network (RSN)}, the decentralized protocol specified by the Personix project, extending the DID framework to support bilateral reputation exchange.
 \item A \textbf{nondeterministic verifier selection protocol} based on consistent hashing~\cite{karger1997}.
 \item The \textbf{Expensive Radicalism Principle}, pricing claims according to their distance from network consensus through three compounding cost channels.
 \item A \textbf{Reputable Authority model} with asymmetric incentives where false endorsement costs catastrophically more than legitimate fees.
@@ -612,7 +612,7 @@ This paper does not claim that the RSN will produce optimal outcomes in all circ
 % ============================================================
 \section{Conclusion}
 
-This paper has presented the Reputation Social Network, a decentralized protocol enabling pseudonymous, verifiable reputation exchange. The Expensive Radicalism Principle ensures that fraudulent claims are priced out without censorship. The proposed migration path enables gradual, reversible transition from existing institutions. The design incorporates human nature as it is---including pettiness, spite, and the desire for retributive satisfaction---rather than requiring ideological transformation. The result is not utopia but a system where justice is accessible, reputation is earned, and the cost of misconduct is borne by the party who caused it.
+This paper has presented the Personix Reputation Social Network, a decentralized protocol enabling pseudonymous, verifiable reputation exchange. The Expensive Radicalism Principle ensures that fraudulent claims are priced out without censorship. The proposed migration path enables gradual, reversible transition from existing institutions. The design incorporates human nature as it is---including pettiness, spite, and the desire for retributive satisfaction---rather than requiring ideological transformation. The result is not utopia but a system where justice is accessible, reputation is earned, and the cost of misconduct is borne by the party who caused it. The specification and accompanying reference materials are published openly by the Personix project at \url{https://personix.org}.
 
 % ============================================================
 % REFERENCES
