@@ -163,8 +163,8 @@ fi  # end: GFX_DIR present
 # (v5-cover-landscape-<lang>.webp). It takes precedence over the generic cover
 # pulled from the Info Graphics archive above. The branding folder is located by
 # walking up from the pamphlet dir, so both the standalone and the submodule
-# layout find it. figures/.cover-lang records which language the current PNG
-# was built from, so a re-run converts only when that changes.
+# layout find it. The PNG is rewritten whenever its content differs, so this
+# cover always wins over one the generic loops above took from INFOGRAPHICS_DIR.
 COVER_LANG="$(basename "$PAMPHLET_DIR")"
 BRANDING_DIR=""
 _probe="$PAMPHLET_DIR"
@@ -175,12 +175,12 @@ done
 if [ -n "$BRANDING_DIR" ] && [ -f "$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp" ]; then
   _cover_src="$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp"
   _cover_out="figures/v5-cover-landscape.png"
-  _cover_stamp="figures/.cover-lang"
-  if [ ! -f "$_cover_out" ] || [ ! -f "$_cover_stamp" ] || \
-     [ "$(cat "$_cover_stamp" 2>/dev/null)" != "$COVER_LANG" ] || \
-     [ "$_cover_src" -nt "$_cover_out" ]; then
-    dwebp -quiet "$_cover_src" -o "$_cover_out"
-    printf '%s\n' "$COVER_LANG" > "$_cover_stamp"
+  _cover_tmp="$(mktemp "${TMPDIR:-/tmp}/cover.XXXXXX")"
+  dwebp -quiet "$_cover_src" -o "$_cover_tmp"
+  if ! cmp -s "$_cover_tmp" "$_cover_out" 2>/dev/null; then
+    mv -f "$_cover_tmp" "$_cover_out"
+  else
+    rm -f "$_cover_tmp"
   fi
 fi
 # Donation QR codes (Bitcoin on-chain + Lightning) — sourced from branding/figures
