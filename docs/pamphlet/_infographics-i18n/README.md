@@ -78,7 +78,7 @@ Arabic, Hebrew and Armenian each get a script-specific system font. A per-glyph
 fallback to Arial Unicode fills in symbols the main font lacks (✓ ∝ ₁ ₂). RTL
 (ar/he) is reshaped via arabic_reshaper + python-bidi.
 
-Image source: `~/RiderProjects/new-world-order/Prezentace/Info Graphics/v5`
+Image source: `../_figures/v5` (English infographics shipped in-repo)
 (2528×1696 and other resolutions; read dynamically per image).
 
 Translations are machine-generated.

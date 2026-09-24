@@ -14,7 +14,7 @@ Nechává se bez expanded, build pak sáhne po lokalizovaném originálu (poměr
 from PIL import Image
 import sys, os, glob
 
-V = "/Users/pavelkudrna/RiderProjects/new-world-order/Prezentace/Info Graphics/v5"
+V = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_figures", "v5")
 
 def main(lang, only=None):
     src = f"out/{lang}"

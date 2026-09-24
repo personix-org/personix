@@ -4,7 +4,7 @@ Co na výsledku zůstane čitelné = text BEZ rámečku (mezera v označení).""
 import os, json, glob, math
 from PIL import Image, ImageDraw
 BK = os.path.dirname(os.path.abspath(__file__))
-GFX = "/Users/pavelkudrna/RiderProjects/new-world-order/Prezentace/Info Graphics/v5"
+GFX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_figures", "v5")
 OUT = f"{BK}/mask"
 os.makedirs(OUT, exist_ok=True)
 MAG = (255, 0, 200, 255)  # křiklavá barva — jasně odliší zakryté oblasti

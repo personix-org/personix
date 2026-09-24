@@ -2,9 +2,8 @@
 # Build pamphlet-v6-cz.pdf — landscape A5 ebook from Czech markdown sources.
 # Mirrors docs/pamphlet/en/build/build.sh — CZ adjustments:
 #   * sources: ../<cz-chapter-dir>/<cz-name>.md
-#   * graphics: pre-built PNGs in figures/; optional regen from external
-#     Info Graphics/v5-cz/ via INFOGRAPHICS_DIR env var (defaults to the
-#     new-world-order checkout if it exists).
+#   * graphics: regenerated from ../_figures/v5-cz/ (override via
+#     INFOGRAPHICS_DIR); pre-built PNGs in figures/ are reused when present
 #   * strip_top_section: Czech chapter titles
 #   * pamphlet.tex: Czech metadata, babel czech, Czech chapter names
 #
@@ -22,10 +21,11 @@ set -euo pipefail
 
 BUILD_DIR="$(cd "$(dirname "$0")" && pwd)"
 PAMPHLET_DIR="$(cd "$BUILD_DIR/.." && pwd)"
-REPO_ROOT="$(cd "$PAMPHLET_DIR/../.." && pwd)"
-# v6: Info Graphics live outside personix repo. Allow override via env var,
-# otherwise probe the historical new-world-order checkout.
-: "${INFOGRAPHICS_DIR:=$HOME/RiderProjects/new-world-order/Prezentace/Info Graphics/v5-cz}"
+# Repo root is three levels up from docs/pamphlet/<lang>/ (branding/figures lives there).
+REPO_ROOT="$(cd "$PAMPHLET_DIR/../../.." && pwd)"
+# Infographics ship in-repo under docs/pamphlet/_figures/ (Czech set plus the
+# hand-filled A5 variants in expanded/). INFOGRAPHICS_DIR overrides the location.
+: "${INFOGRAPHICS_DIR:=$PAMPHLET_DIR/../_figures/v5-cz}"
 if [ -d "$INFOGRAPHICS_DIR" ]; then
   GFX_DIR="$(cd "$INFOGRAPHICS_DIR" && pwd)"
 else
@@ -125,6 +125,30 @@ if [ -n "$GFX_DIR" ]; then
       fi
     fi
   done
+fi
+# Localised cover: branding/figures carries one landscape cover per language
+# (v5-cover-landscape-<lang>.webp). It takes precedence over the generic cover
+# pulled from the Info Graphics archive above. The branding folder is located by
+# walking up from the pamphlet dir, so both the standalone and the submodule
+# layout find it. figures/.cover-lang records which language the current PNG
+# was built from, so a re-run converts only when that changes.
+COVER_LANG="$(basename "$PAMPHLET_DIR")"
+BRANDING_DIR=""
+_probe="$PAMPHLET_DIR"
+for _ in 1 2 3 4 5; do
+  _probe="$(cd "$_probe/.." && pwd)"
+  if [ -d "$_probe/branding/figures" ]; then BRANDING_DIR="$_probe/branding/figures"; break; fi
+done
+if [ -n "$BRANDING_DIR" ] && [ -f "$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp" ]; then
+  _cover_src="$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp"
+  _cover_out="figures/v5-cover-landscape.png"
+  _cover_stamp="figures/.cover-lang"
+  if [ ! -f "$_cover_out" ] || [ ! -f "$_cover_stamp" ] || \
+     [ "$(cat "$_cover_stamp" 2>/dev/null)" != "$COVER_LANG" ] || \
+     [ "$_cover_src" -nt "$_cover_out" ]; then
+    dwebp -quiet "$_cover_src" -o "$_cover_out"
+    printf '%s\n' "$COVER_LANG" > "$_cover_stamp"
+  fi
 fi
 # Donation QR codes (Bitcoin on-chain + Lightning) — sourced from branding/figures
 # (the public repo carries the WebP masters; src/Web lives only in personix-web).

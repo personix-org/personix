@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw, ImageFont, features
 from fontTools.ttLib import TTFont, TTCollection
 
 BK = os.path.dirname(os.path.abspath(__file__))
-GFX = "/Users/pavelkudrna/RiderProjects/new-world-order/Prezentace/Info Graphics/v5"
+GFX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_figures", "v5")
 BOXES, TRANS, OUT = f"{BK}/imgboxes", f"{BK}/trans", f"{BK}/out"
 
 DARK = (26, 20, 15, 255)      # titulkový podklad (plná krytí — originál musí zmizet)

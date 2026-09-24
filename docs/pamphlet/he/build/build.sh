@@ -59,10 +59,10 @@ if [ "$RTL_LANG" = "1" ] && ! grep -q 'usepackage{bidi}' "$BUILD_DIR/pamphlet.te
   perl -0pi -e 's/\\begin\{document\}/\\usepackage{bidi}\n\\begin{document}/' "$BUILD_DIR/pamphlet.tex"
   echo "[rtl] $LANG_CODE → bidi inserted before \\begin{document}"
 fi
-# v6: Info Graphics live outside the public personix repo. Override via the
-# INFOGRAPHICS_DIR env var; otherwise probe the new-world-order checkout. When
-# absent, fall back to the pre-built PNGs already in figures/ (seeded in-repo).
-: "${INFOGRAPHICS_DIR:=$HOME/RiderProjects/new-world-order/Prezentace/Info Graphics/v5}"
+# Infographics ship in-repo under docs/pamphlet/_figures/ (English masters plus
+# the hand-filled A5 variants in expanded/). INFOGRAPHICS_DIR overrides the
+# location; when it is missing, the build reuses whatever PNGs figures/ holds.
+: "${INFOGRAPHICS_DIR:=$PAMPHLET_DIR/../_figures/v5}"
 if [ -d "$INFOGRAPHICS_DIR" ]; then
   GFX_DIR="$(cd "$INFOGRAPHICS_DIR" && pwd)"
 else
@@ -159,6 +159,30 @@ for cand in "$GFX_DIR/v5-cover-landscape.webp" "$GFX_DIR/v5-cover-landscape.png"
   fi
 done
 fi  # end: GFX_DIR present
+# Localised cover: branding/figures carries one landscape cover per language
+# (v5-cover-landscape-<lang>.webp). It takes precedence over the generic cover
+# pulled from the Info Graphics archive above. The branding folder is located by
+# walking up from the pamphlet dir, so both the standalone and the submodule
+# layout find it. figures/.cover-lang records which language the current PNG
+# was built from, so a re-run converts only when that changes.
+COVER_LANG="$(basename "$PAMPHLET_DIR")"
+BRANDING_DIR=""
+_probe="$PAMPHLET_DIR"
+for _ in 1 2 3 4 5; do
+  _probe="$(cd "$_probe/.." && pwd)"
+  if [ -d "$_probe/branding/figures" ]; then BRANDING_DIR="$_probe/branding/figures"; break; fi
+done
+if [ -n "$BRANDING_DIR" ] && [ -f "$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp" ]; then
+  _cover_src="$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp"
+  _cover_out="figures/v5-cover-landscape.png"
+  _cover_stamp="figures/.cover-lang"
+  if [ ! -f "$_cover_out" ] || [ ! -f "$_cover_stamp" ] || \
+     [ "$(cat "$_cover_stamp" 2>/dev/null)" != "$COVER_LANG" ] || \
+     [ "$_cover_src" -nt "$_cover_out" ]; then
+    dwebp -quiet "$_cover_src" -o "$_cover_out"
+    printf '%s\n' "$COVER_LANG" > "$_cover_stamp"
+  fi
+fi
 # Donation QR codes (Bitcoin on-chain + Lightning) — sourced from branding/figures
 # (the public repo carries the WebP masters; src/Web lives only in personix-web).
 QR_DIR="$REPO_ROOT/branding/figures"
@@ -170,10 +194,6 @@ if [ -d "$QR_DIR" ]; then
       dwebp -quiet "$src" -o "$out"
     fi
   done
-fi
-# Portrait fallback for first-time builds before user regenerates
-if [ ! -f "figures/v5-cover-landscape.png" ] && [ -f "$GFX_DIR/v5-cover-prebal.webp" ]; then
-  dwebp -quiet "$GFX_DIR/v5-cover-prebal.webp" -o "figures/v5-cover-prebal.png" 2>/dev/null || true
 fi
 
 # v6: 08-follow-the-money/03-transition/ is broken into components.

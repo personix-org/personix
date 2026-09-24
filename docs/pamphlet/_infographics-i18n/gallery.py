@@ -7,7 +7,7 @@ Vedle sebe: ORIGINÁL | PŘELOŽENÝ — aby šlo srovnat na jeden pohled.
 import sys, os, glob, json
 
 BK = os.path.dirname(os.path.abspath(__file__))
-GFX = "/Users/pavelkudrna/RiderProjects/new-world-order/Prezentace/Info Graphics/v5"
+GFX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_figures", "v5")
 
 lang = sys.argv[1] if len(sys.argv) > 1 else "de"
 mask_mode = "--mask" in sys.argv

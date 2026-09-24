@@ -8,7 +8,7 @@ from urllib.parse import unquote
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-GFX = "/Users/pavelkudrna/RiderProjects/new-world-order/Prezentace/Info Graphics/v5"
+GFX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_figures", "v5")
 TEXTS = os.path.join(ROOT, "imgtexts")
 BOXES = os.path.join(ROOT, "imgboxes")
 os.makedirs(BOXES, exist_ok=True); os.makedirs(TEXTS, exist_ok=True)
