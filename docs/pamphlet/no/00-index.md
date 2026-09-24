@@ -15,7 +15,7 @@ lang: en
 > Fire ord bærer hele forslaget. **Sensurfritt** — verktøyene og nettverket kan ikke bringes til taushet av en stat, en internettleverandør eller noen ekstern autoritet; kostnaden ved å sensurere dem er astronomisk. **Ubestikkelig** — menneskene inne i nettverket kan heller ikke kjøpes ut i det stille; hver aktørs atferd er offentlig sammenlignbar med den erklærte politikken deres, så bestikkelse er en påviselig inkonsistens og dermed omdømmemessig selvmord. **Desentralisert** — ingen enkelt node, selskap eller jurisdiksjon kan kapres for å bringe det hele ned. **Omdømmenettverk** — verdien som strømmer gjennom det, er ikke penger, ikke stemmer, ikke tillatelser, men den langsomme, opptjente og tapbare kreditten som fellesskap gir hverandre for å fortelle sannheten. Til sammen beskriver disse fire egenskapene den minste levedyktige etterfølgeren til statens monopol på tillit.
 
 ## Omslag
-- [Bokomslag](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Bokomslag](../../../branding/figures/v5-cover-landscape-no.webp)
 
 ## Innledning
 - [[variant-a-v4|Innledning]]

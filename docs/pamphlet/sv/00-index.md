@@ -15,7 +15,7 @@ lang: en
 > Fyra ord bär hela förslaget. **Ocensurerbart** — verktygen och nätverket kan inte tystas av en stat, en internetleverantör eller någon extern auktoritet. Kostnaden för att censurera dem är astronomisk. **Omutbart** — människorna inuti nätverket kan inte heller köpas av i det tysta. Varje aktörs beteende är offentligt jämförbart med den policy hen deklarerat, så mutor blir en bevisbar inkonsekvens och därmed ett anseendemässigt självmord. **Decentraliserat** — ingen enskild nod, inget företag och ingen jurisdiktion kan kapas för att fälla det hela. **Anseendenätverk** — det värde som flödar genom det är inte pengar, inte röster, inte tillstånd, utan den långsamma, förtjänade och förlorbara kredit som gemenskaper ger varandra för att tala sanning. Tillsammans beskriver dessa fyra egenskaper den minsta livskraftiga efterträdaren till statens monopol på tillit.
 
 ## Omslag
-- [Bokomslag](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Bokomslag](../../../branding/figures/v5-cover-landscape-sv.webp)
 
 ## Inledning
 - [[variant-a-v4|Inledning]]

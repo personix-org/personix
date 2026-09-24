@@ -15,7 +15,7 @@ lang: en
 > Négy szó hordozza az egész javaslatot. **Cenzúrázhatatlan** — az eszközöket és a hálózatot nem tudja elnémítani sem állam, sem internetszolgáltató, sem semmilyen külső hatóság. A cenzúrázásuk költsége csillagászati. **Korrumpálhatatlan** — a hálózaton belüli embereket sem lehet csendben megvásárolni. Minden szereplő viselkedése nyilvánosan összevethető a saját deklarált elveivel, így a megvesztegetés bizonyítható ellentmondás, tehát reputációs öngyilkosság. **Decentralizált** — egyetlen csomópontot, céget vagy joghatóságot sem lehet megszerezni ahhoz, hogy az egészet ledöntsék. **Reputációs hálózat** — a rajta átáramló érték nem pénz, nem szavazat, nem engedély, hanem az a lassú, kiérdemelt és elveszíthető bizalom, amelyet a közösségek adnak egymásnak azért, mert igazat mondanak. Együtt ez a négy tulajdonság írja le az állam bizalmi monopóliumának minimálisan életképes utódját.
 
 ## Borító
-- [Könyvborító](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Könyvborító](../../../branding/figures/v5-cover-landscape-hu.webp)
 
 ## Bevezetés
 - [[variant-a-v4|Bevezetés]]

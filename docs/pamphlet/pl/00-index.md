@@ -15,7 +15,7 @@ lang: pl
 > Cztery słowa niosą całą propozycję. **Niecenzurowalna** — narzędzi i sieci nie da się uciszyć ani państwu, ani dostawcy internetu, ani żadnej zewnętrznej władzy; koszt ich ocenzurowania jest astronomiczny. **Nieprzekupna** — ludzi wewnątrz sieci również nie da się po cichu przekupić; zachowanie każdego uczestnika jest publicznie porównywalne z jego deklarowaną polityką, więc łapówka staje się dowodliwą niespójnością, a przez to reputacyjnym samobójstwem. **Zdecentralizowana** — żaden pojedynczy węzeł, firma czy jurysdykcja nie może zostać przejęty, by pociągnąć za sobą całą konstrukcję. **Sieć reputacji** — wartością, która przez nią płynie, nie są pieniądze, głosy ani uprawnienia, lecz powolny, wypracowany i możliwy do utraty kredyt zaufania, jaki wspólnoty przyznają sobie nawzajem za mówienie prawdy. Razem te cztery właściwości opisują minimalnego zdolnego do życia następcę państwowego monopolu na zaufanie.
 
 ## Okładka
-- [Okładka książki](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Okładka książki](../../../branding/figures/v5-cover-landscape-pl.webp)
 
 ## Wprowadzenie
 - [[variant-a-v4|Wprowadzenie]]

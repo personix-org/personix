@@ -15,7 +15,7 @@ lang: en
 > Vier Worte tragen den gesamten Vorschlag. **Unzensierbar** — die Werkzeuge und das Netzwerk können von keinem Staat, keinem Internetanbieter und keiner externen Autorität zum Schweigen gebracht werden. Die Kosten, sie zu zensieren, sind astronomisch. **Unbestechlich** — auch die Menschen innerhalb des Netzwerks können nicht heimlich gekauft werden. Das Verhalten jedes Akteurs ist öffentlich mit seiner erklärten Linie vergleichbar, sodass Bestechung eine beweisbare Inkonsistenz und damit reputationeller Selbstmord ist. **Dezentral** — kein einzelner Knoten, kein Unternehmen und keine Rechtsordnung kann übernommen werden, um das Ganze zu Fall zu bringen. **Reputationsnetzwerk** — der Wert, der hindurchfließt, ist weder Geld noch Stimmen noch Berechtigungen, sondern der langsame, verdiente und verlierbare Kredit, den Gemeinschaften einander dafür gewähren, dass sie die Wahrheit sagen. Zusammen beschreiben diese vier Eigenschaften den kleinstmöglichen tragfähigen Nachfolger für das Vertrauensmonopol des Staates.
 
 ## Umschlag
-- [Buchcover](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Buchcover](../../../branding/figures/v5-cover-landscape-de.webp)
 
 ## Einleitung
 - [[variant-a-v4|Einleitung]]

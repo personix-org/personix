@@ -15,7 +15,7 @@ lang: en
 > Dört sözcük önerinin tamamını taşıyor. **Sansürlenemez** — araçlar ve ağ ne bir devlet, ne bir internet servis sağlayıcısı, ne de herhangi bir dış otorite tarafından susturulabilir; onları sansürlemenin bedeli astronomiktir. **Yozlaştırılamaz** — ağın içindeki insanlar da sessizce satın alınamaz; her aktörün davranışı, ilan ettiği politikayla herkesin karşılaştırabileceği bir biçimde ortadadır, dolayısıyla rüşvet kanıtlanabilir bir tutarsızlıktır ve bu yüzden itibar açısından intihardır. **Merkeziyetsiz** — hiçbir tek düğüm, şirket ya da yargı bölgesi ele geçirilerek tüm yapı çökertilemez. **İtibar ağı** — içinden akan değer ne para, ne oy, ne de izinlerdir; toplulukların doğruyu söyledikleri için birbirlerine tanıdığı, yavaş biçimde kazanılan ve yitirilebilen kredidir. Bu dört özellik bir araya geldiğinde, devletin güven üzerindeki tekelinin asgari uygulanabilir ardılını tanımlar.
 
 ## Kapak
-- [Book Cover](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Book Cover](../../../branding/figures/v5-cover-landscape-tr.webp)
 
 ## Giriş
 - [[variant-a-v4|Giriş]]

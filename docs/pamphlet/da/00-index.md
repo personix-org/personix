@@ -15,7 +15,7 @@ lang: en
 > Fire ord bærer hele forslaget. **Ucensurerbart** — værktøjerne og netværket kan ikke bringes til tavshed af en stat, en internetudbyder eller nogen ekstern autoritet. Omkostningen ved at censurere dem er astronomisk. **Ubestikkeligt** — menneskene inde i netværket kan heller ikke i det stille købes. Enhver aktørs adfærd kan offentligt sammenlignes med den erklærede politik, så bestikkelse er en påviselig inkonsistens og dermed omdømmemæssigt selvmord. **Decentraliseret** — ingen enkelt node, virksomhed eller jurisdiktion kan overtages for at bringe det hele ned. **Omdømmenetværk** — den værdi, der strømmer gennem det, er ikke penge, ikke stemmer, ikke tilladelser, men den langsomme, fortjente, tabbare kredit, som fællesskaber giver hinanden for at fortælle sandheden. Tilsammen beskriver disse fire egenskaber den minimalt levedygtige efterfølger til statens monopol på tillid.
 
 ## Cover
-- [Bogomslag](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Bogomslag](../../../branding/figures/v5-cover-landscape-da.webp)
 
 ## Indledning
 - [[variant-a-v4|Indledning]]

@@ -15,7 +15,7 @@ lang: en
 > Quatre mots portent l’ensemble de la proposition. **Incensurable** — les outils et le réseau ne peuvent être réduits au silence par un État, un fournisseur d’accès ou une quelconque autorité extérieure ; le coût de leur censure est astronomique. **Incorruptible** — les humains à l’intérieur du réseau ne peuvent pas non plus être discrètement achetés : le comportement de chaque acteur est publiquement comparable à la politique qu’il a déclarée, si bien que la corruption devient une incohérence démontrable et donc un suicide réputationnel. **Décentralisé** — aucun nœud, aucune entreprise ni aucune juridiction ne peut être capturé pour faire tomber l’ensemble. **Réseau de réputation** — la valeur qui y circule n’est ni de l’argent, ni des votes, ni des permissions, mais ce crédit lent, mérité et perdable que les communautés s’accordent mutuellement pour avoir dit la vérité. Ensemble, ces quatre propriétés décrivent le successeur viable minimal du monopole de l’État sur la confiance.
 
 ## Couverture
-- [Book Cover](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Book Cover](../../../branding/figures/v5-cover-landscape-fr.webp)
 
 ## Introduction
 - [[variant-a-v4|Introduction]]

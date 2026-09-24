@@ -15,7 +15,7 @@ lang: en
 > Vier woorden dragen het hele voorstel. **Oncensureerbaar** — de instrumenten en het netwerk kunnen door geen staat, geen internetprovider en geen enkele externe autoriteit tot zwijgen worden gebracht. De kosten om ze te censureren zijn astronomisch. **Onomkoopbaar** — ook de mensen binnen het netwerk kunnen niet stilletjes worden afgekocht. Het gedrag van elke actor is publiek vergelijkbaar met zijn verklaarde beleid, waardoor omkoping een aantoonbare inconsistentie is en dus reputationele zelfmoord. **Gedecentraliseerd** — geen enkele node, geen enkel bedrijf en geen enkele jurisdictie kan worden overgenomen om het geheel ten val te brengen. **Reputatienetwerk** — de waarde die er doorheen stroomt is geen geld, geen stemmen, geen bevoegdheden, maar het trage, verdiende, verliesbare krediet dat gemeenschappen elkaar verlenen voor het spreken van de waarheid. Samen beschrijven deze vier eigenschappen de kleinst mogelijke levensvatbare opvolger van het vertrouwensmonopolie van de staat.
 
 ## Omslag
-- [Boekomslag](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Boekomslag](../../../branding/figures/v5-cover-landscape-nl.webp)
 
 ## Inleiding
 - [[variant-a-v4|Inleiding]]

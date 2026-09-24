@@ -15,7 +15,7 @@ lang: en
 > Four words carry the whole proposal. **Uncensorable** — the tools and the network cannot be silenced by a state, an ISP, or any external authority; the cost of censoring them is astronomical. **Incorruptible** — the humans inside the network cannot be quietly bought off either; every actor's behaviour is publicly comparable to their declared policy, so bribery is a provable inconsistency and therefore reputational suicide. **Decentralized** — no single node, company or jurisdiction can be captured to bring the whole thing down. **Reputation network** — the value that flows through it is not money, not votes, not permissions, but the slow, earned, loseable credit that communities grant each other for telling the truth. Together these four properties describe the minimum viable successor to the state's monopoly on trust.
 
 ## Cover
-- [Book Cover](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Book Cover](../../../branding/figures/v5-cover-landscape-en.webp)
 
 ## Introduction
 - [[variant-a-v4|Introduction]]

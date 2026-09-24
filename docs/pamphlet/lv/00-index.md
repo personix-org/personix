@@ -15,7 +15,7 @@ lang: en
 > Visu priekšlikumu nes četri vārdi. **Necenzējams** — rīkus un tīklu nevar apklusināt ne valsts, ne interneta pakalpojumu sniedzējs, ne kāda ārēja autoritāte; to cenzēšanas izmaksas ir astronomiskas. **Neuzpērkams** — arī cilvēkus tīkla iekšienē nevar klusi nopirkt; katra dalībnieka uzvedība ir publiski salīdzināma ar viņa deklarēto politiku, tāpēc kukuļošana ir pierādāma pretruna un līdz ar to reputācijas pašnāvība. **Decentralizēts** — nevienu atsevišķu mezglu, uzņēmumu vai jurisdikciju nav iespējams sagrābt tā, lai gāztu visu kopumu. **Reputācijas tīkls** — vērtība, kas caur to plūst, nav ne nauda, ne balsis, ne atļaujas, bet lēnais, nopelnītais un zaudējamais kredīts, ko kopienas viena otrai piešķir par patiesības teikšanu. Kopā šīs četras īpašības apraksta minimālo dzīvotspējīgo pēcteci valsts uzticēšanās monopolam.
 
 ## Vāks
-- [Grāmatas vāks](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Grāmatas vāks](../../../branding/figures/v5-cover-landscape-lv.webp)
 
 ## Ievads
 - [[variant-a-v4|Ievads]]

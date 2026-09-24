@@ -14,11 +14,6 @@
     \node[anchor=center, inner sep=0pt] at (current page.center)
       {\includegraphics[width=\covergfxwidth,height=\paperheight,keepaspectratio]{figures/v5-cover-landscape.png}};
   \end{tikzpicture}\mbox{}%
-}{\IfFileExists{figures/v5-cover-prebal.png}{%
-  \begin{tikzpicture}[remember picture, overlay]
-    \node[anchor=center, inner sep=0pt] at (current page.center)
-      {\includegraphics[width=\covergfxwidth,height=\paperheight,keepaspectratio]{figures/v5-cover-prebal.png}};
-  \end{tikzpicture}\mbox{}%
 }{%
   \vspace*{\fill}\centering
   {\Huge\bfseries 당신의 신원\par 당신의 규칙\par}
@@ -27,5 +22,5 @@
   \vspace*{\fill}
   {\large Pavel Kudrna\par}
   {\small 프라하, 2026\par}
-}}
+}
 \clearpage

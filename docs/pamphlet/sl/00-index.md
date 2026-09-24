@@ -15,7 +15,7 @@ lang: en
 > Štiri besede nosijo celoten predlog. **Necenzurljivo** — orodij in omrežja ne more utišati niti država, niti ponudnik internetnih storitev, niti katera koli zunanja avtoriteta; strošek njihove cenzure je astronomski. **Nepodkupljivo** — tudi ljudi znotraj omrežja ni mogoče tiho podkupiti; ravnanje vsakega akterja je javno primerljivo z njegovo deklarirano politiko, zato je podkupovanje dokazljiva nedoslednost in s tem reputacijski samomor. **Decentralizirano** — nobenega posameznega vozlišča, podjetja ali jurisdikcije ni mogoče zavzeti in tako zrušiti celote. **Reputacijsko omrežje** — vrednost, ki teče skozenj, niso ne denar, ne glasovi, ne dovoljenja, temveč počasen, prislužen in izgubljiv kredit, ki si ga skupnosti podeljujejo za govorjenje resnice. Skupaj te štiri lastnosti opisujejo minimalno delujočega naslednika državnega monopola nad zaupanjem.
 
 ## Naslovnica
-- [Naslovnica knjige](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Naslovnica knjige](../../../branding/figures/v5-cover-landscape-sl.webp)
 
 ## Uvod
 - [[variant-a-v4|Uvod]]

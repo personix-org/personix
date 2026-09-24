@@ -15,7 +15,7 @@ lang: en
 > Empat perkataan menanggung keseluruhan cadangan ini. **Tidak boleh ditapis** — alat dan rangkaian tidak boleh dibungkam oleh sesebuah negara, ISP, atau mana-mana pihak berkuasa luaran; kos untuk menapisnya adalah astronomi. **Tidak boleh dirasuah** — manusia di dalam rangkaian juga tidak boleh dibeli secara senyap; tingkah laku setiap pelaku boleh dibandingkan secara terbuka dengan dasar yang mereka isytiharkan, jadi rasuah ialah ketidakkonsistenan yang boleh dibuktikan dan oleh itu satu bunuh diri reputasi. **Terdesentralisasi** — tiada satu nod, syarikat atau bidang kuasa pun yang boleh dirampas untuk meruntuhkan keseluruhannya. **Rangkaian reputasi** — nilai yang mengalir melaluinya bukanlah wang, bukan undi, bukan kebenaran, tetapi kredit yang perlahan, diperoleh dengan usaha dan boleh hilang, yang saling dianugerahkan oleh komuniti kerana bercakap benar. Bersama-sama, empat sifat ini menggambarkan pengganti minimum yang berdaya maju bagi monopoli negara ke atas kepercayaan.
 
 ## Kulit
-- [Kulit Buku](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Kulit Buku](../../../branding/figures/v5-cover-landscape-ms.webp)
 
 ## Pengenalan
 - [[variant-a-v4|Pengenalan]]

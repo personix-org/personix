@@ -15,7 +15,7 @@ lang: en
 > Četiri riječi nose cijeli prijedlog. **Necenzurabilna** — alate i mrežu ne mogu ušutkati država, pružatelj internetskih usluga ni bilo koja vanjska vlast; trošak njihove cenzure je astronomski. **Nepotkupljiva** — ni ljude unutar mreže nije moguće tiho podmititi; ponašanje svakog aktera javno je usporedivo s njegovom deklariranom politikom, pa je podmićivanje dokaziva nedosljednost i time reputacijsko samoubojstvo. **Decentralizirana** — nijedan pojedinačni čvor, tvrtka ni jurisdikcija ne mogu biti preoteti kako bi se cijela stvar srušila. **Reputacijska mreža** — vrijednost koja kroz nju teče nije novac, nisu glasovi ni dopuštenja, nego spora, zaslužena i gubljiva zasluga koju zajednice jedna drugoj dodjeljuju za govorenje istine. Zajedno ta četiri svojstva opisuju minimalnog održivog nasljednika državnog monopola na povjerenje.
 
 ## Cover
-- [Book Cover](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Book Cover](../../../branding/figures/v5-cover-landscape-hr.webp)
 
 ## Introduction
 - [[variant-a-v4|Uvod]]

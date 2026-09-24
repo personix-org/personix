@@ -15,7 +15,7 @@ lang: en
 > Fjögur orð bera uppi alla tillöguna. **Óritskoðanlegt** — verkfærin og netið verða ekki þögguð niður af ríki, netþjónustuaðila eða neinu utanaðkomandi valdi. Kostnaðurinn við að ritskoða þau er stjarnfræðilegur. **Óspillanlegt** — fólkið innan netsins verður heldur ekki keypt í kyrrþey. Hegðun hvers aðila er opinberlega samanburðarhæf við yfirlýsta stefnu hans, þannig að mútur eru sannanlegt ósamræmi og þar með sjálfsvíg fyrir orðsporið. **Dreifstýrt** — enginn einstakur hnútur, fyrirtæki eða lögsaga verður tekin yfir til að fella allt kerfið. **Orðsporsnet** — verðmætin sem um það flæða eru hvorki peningar, atkvæði né heimildir, heldur sú hæga, áunna og glatanlega inneign sem samfélög veita hvert öðru fyrir að segja satt. Saman lýsa þessir fjórir eiginleikar lágmarks lífvænlegum arftaka einokunar ríkisins á trausti.
 
 ## Kápa
-- [Bókarkápa](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Bókarkápa](../../../branding/figures/v5-cover-landscape-is.webp)
 
 ## Inngangur
 - [[variant-a-v4|Inngangur]]

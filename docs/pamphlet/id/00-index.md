@@ -15,7 +15,7 @@ lang: en
 > Empat kata mengusung seluruh gagasan ini. **Tidak dapat disensor** — perkakas dan jaringannya tidak dapat dibungkam oleh negara, penyedia layanan internet, atau otoritas eksternal mana pun; biaya untuk menyensornya sangatlah astronomis. **Tidak dapat dikorupsi** — manusia di dalam jaringan pun tidak dapat diam-diam disuap; perilaku setiap pelaku dapat dibandingkan secara publik dengan kebijakan yang mereka deklarasikan, sehingga penyuapan menjadi ketidakkonsistenan yang dapat dibuktikan dan karena itu merupakan bunuh diri reputasi. **Terdesentralisasi** — tidak ada satu simpul, perusahaan, atau yurisdiksi pun yang dapat direbut untuk meruntuhkan keseluruhannya. **Jaringan reputasi** — nilai yang mengalir di dalamnya bukanlah uang, bukan suara, bukan izin, melainkan kredit yang lambat, diperoleh dengan susah payah, dan dapat hilang, yang saling diberikan komunitas satu sama lain karena mengatakan kebenaran. Bersama-sama, keempat sifat ini menggambarkan penerus paling minimal yang layak bagi monopoli negara atas kepercayaan.
 
 ## Sampul
-- [Sampul Buku](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Sampul Buku](../../../branding/figures/v5-cover-landscape-id.webp)
 
 ## Pendahuluan
 - [[variant-a-v4|Pendahuluan]]

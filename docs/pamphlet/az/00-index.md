@@ -15,7 +15,7 @@ lang: en
 > Dörd söz bütün təklifi öz üzərində daşıyır. **Senzura edilə bilməyən** — alətləri və şəbəkəni nə dövlət, nə internet provayderi, nə də hər hansı xarici avtoritet susdura bilər; onları senzura etməyin qiyməti astronomikdir. **Korrupsiyaya uğramayan** — şəbəkənin daxilindəki insanları da sakitcə satın almaq mümkün deyil; hər iştirakçının davranışı onun bəyan etdiyi siyasətlə açıq şəkildə müqayisə edilə bilir, ona görə də rüşvət isbat edilə bilən uyğunsuzluqdur və beləliklə reputasiya baxımından intihardır. **Mərkəzsizləşdirilmiş** — bütün quruluşu dağıtmaq üçün nə bir tək qovşaq, nə bir şirkət, nə də bir yurisdiksiya ələ keçirilə bilməz. **Reputasiya şəbəkəsi** — onun içindən axan dəyər nə pul, nə səs, nə də icazələrdir, əksinə həqiqəti danışmaq müqabilində icmaların bir-birinə verdiyi yavaş, qazanılan və itirilə bilən etibardır. Bu dörd xüsusiyyət birlikdə dövlətin etibar üzərindəki inhisarının minimum həyat qabiliyyətli varisini təsvir edir.
 
 ## Üz Qabığı
-- [Kitabın Üz Qabığı](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Kitabın Üz Qabığı](../../../branding/figures/v5-cover-landscape-az.webp)
 
 ## Giriş
 - [[variant-a-v4|Giriş]]

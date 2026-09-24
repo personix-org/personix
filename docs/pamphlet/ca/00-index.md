@@ -15,7 +15,7 @@ lang: en
 > Quatre paraules carreguen tota la proposta. **Incensurable** — les eines i la xarxa no poden ser silenciades per un estat, un proveïdor d'internet ni cap autoritat externa; el cost de censurar-les és astronòmic. **Incorruptible** — les persones que hi ha dins la xarxa tampoc no poden ser comprades en silenci: el comportament de cada actor és públicament comparable amb la política que ha declarat, de manera que el suborn és una incoherència demostrable i, per tant, un suïcidi reputacional. **Descentralitzada** — cap node, empresa ni jurisdicció individual no pot ser capturat per fer caure tot el conjunt. **Xarxa de reputació** — el valor que hi circula no són diners, ni vots, ni permisos, sinó el crèdit lent, guanyat i perdedor que les comunitats es concedeixen les unes a les altres per dir la veritat. Juntes, aquestes quatre propietats descriuen el successor mínim viable del monopoli de la confiança que té l'estat.
 
 ## Cover
-- [Book Cover](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Book Cover](../../../branding/figures/v5-cover-landscape-ca.webp)
 
 ## Introduction
 - [[variant-a-v4|Introducció]]

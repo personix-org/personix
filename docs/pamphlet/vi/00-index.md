@@ -15,7 +15,7 @@ lang: en
 > Bốn từ mang trọn cả đề xuất này. **Không thể kiểm duyệt** — các công cụ và mạng lưới không thể bị bịt miệng bởi một nhà nước, một nhà cung cấp dịch vụ internet, hay bất kỳ thẩm quyền bên ngoài nào. Chi phí để kiểm duyệt chúng là thiên văn. **Không thể mua chuộc** — con người bên trong mạng lưới cũng không thể bị âm thầm mua chuộc. Hành vi của mỗi tác nhân đều có thể được so sánh công khai với chính sách mà họ tuyên bố, nên hối lộ trở thành một sự bất nhất có thể chứng minh và do đó là hành vi tự sát về danh tiếng. **Phi tập trung** — không một nút mạng, công ty hay khu vực tài phán riêng lẻ nào có thể bị chiếm giữ để đánh sập toàn bộ. **Mạng lưới danh tiếng** — thứ giá trị chảy qua nó không phải tiền bạc, không phải phiếu bầu, không phải quyền hạn, mà là thứ tín nhiệm chậm rãi, phải kiếm được và có thể mất đi, thứ mà các cộng đồng trao cho nhau vì đã nói ra sự thật. Cùng nhau, bốn thuộc tính này mô tả kẻ kế tục khả thi tối thiểu cho thế độc quyền của nhà nước về lòng tin.
 
 ## Bìa
-- [Bìa sách](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Bìa sách](../../../branding/figures/v5-cover-landscape-vi.webp)
 
 ## Giới thiệu
 - [[variant-a-v4|Giới thiệu]]

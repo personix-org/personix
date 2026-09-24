@@ -8,13 +8,6 @@
     \node[rotate=55, font=\sffamily\bfseries\fontsize{144pt}{144pt}\selectfont,
           text=black, opacity=0.20] at (current page.center) {DRAFT};
   \end{tikzpicture}\mbox{}%
-}{\IfFileExists{figures/v5-cover-prebal.png}{%
-  \begin{tikzpicture}[remember picture, overlay]
-    \node[anchor=center, inner sep=0pt] at (current page.center)
-      {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{figures/v5-cover-prebal.png}};
-    \node[rotate=55, font=\sffamily\bfseries\fontsize{144pt}{144pt}\selectfont,
-          text=black, opacity=0.20] at (current page.center) {DRAFT};
-  \end{tikzpicture}\mbox{}%
 }{%
   \vspace*{\fill}\centering
   {\Huge\bfseries TVÁ IDENTITA\par TVÁ PRAVIDLA\par}
@@ -23,5 +16,5 @@
   \vspace*{\fill}
   {\large Pavel Kudrna\par}
   {\small Praha, 2026\par}
-}}
+}
 \clearpage

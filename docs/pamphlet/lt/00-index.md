@@ -15,7 +15,7 @@ lang: en
 > Keturi žodžiai talpina visą pasiūlymą. **Necenzūruojamas** — įrankių ir tinklo negali nutildyti nei valstybė, nei interneto tiekėjas, nei jokia išorinė valdžia. Jų cenzūravimo kaina yra astronominė. **Nepaperkamas** — ir tinklo viduje esančių žmonių taip pat negalima tyliai papirkti. Kiekvieno dalyvio elgesys yra viešai palyginamas su jo deklaruota linija, tad kyšininkavimas yra įrodomas nenuoseklumas ir dėl to reputacinė savižudybė. **Decentralizuotas** — jokio vieno mazgo, įmonės ar jurisdikcijos negalima perimti, kad būtų sugriauta visuma. **Reputacijos tinklas** — per jį tekanti vertė nėra nei pinigai, nei balsai, nei leidimai, o lėtas, užsitarnautas ir prarandamas kreditas, kurį bendruomenės viena kitai suteikia už tiesos sakymą. Kartu šios keturios savybės apibūdina minimalų gyvybingą valstybės pasitikėjimo monopolio įpėdinį.
 
 ## Viršelis
-- [Knygos viršelis](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Knygos viršelis](../../../branding/figures/v5-cover-landscape-lt.webp)
 
 ## Įvadas
 - [[variant-a-v4|Įvadas]]

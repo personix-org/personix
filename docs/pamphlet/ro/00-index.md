@@ -15,7 +15,7 @@ lang: en
 > Patru cuvinte poartă întreaga propunere. **Necenzurabilă** — instrumentele și rețeaua nu pot fi reduse la tăcere de un stat, de un furnizor de internet sau de vreo autoritate externă; costul cenzurării lor este astronomic. **Incoruptibilă** — nici oamenii din interiorul rețelei nu pot fi cumpărați pe tăcute; comportamentul fiecărui actor este public comparabil cu politica pe care a declarat-o, așa că mituirea este o inconsecvență demonstrabilă și, prin urmare, o sinucidere reputațională. **Descentralizată** — niciun nod, nicio companie și nicio jurisdicție nu pot fi capturate pentru a doborî întregul ansamblu. **Rețea de reputație** — valoarea care circulă prin ea nu este banul, nu sunt voturile, nu sunt permisiunile, ci creditul lent, câștigat și pierzibil pe care comunitățile și-l acordă reciproc pentru că spun adevărul. Împreună, aceste patru proprietăți descriu succesorul minim viabil al monopolului statului asupra încrederii.
 
 ## Cover
-- [Book Cover](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Book Cover](../../../branding/figures/v5-cover-landscape-ro.webp)
 
 ## Introducere
 - [[variant-a-v4|Introducere]]

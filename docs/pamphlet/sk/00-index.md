@@ -15,7 +15,7 @@ lang: en
 > Štyri slová nesú celý návrh. **Necenzurovateľná** — nástroje a sieť nedokáže umlčať štát, poskytovateľ pripojenia ani žiadna vonkajšia autorita. Cena ich cenzurovania je astronomická. **Neskorumpovateľná** — ani ľudí vnútri siete nemožno potichu podplatiť. Správanie každého aktéra je verejne porovnateľné s jeho deklarovanou politikou, takže úplatok je dokázateľnou nekonzistentnosťou, a teda reputačnou samovraždou. **Decentralizovaná** — žiadny jednotlivý uzol, firma ani jurisdikcia sa nedá ovládnuť tak, aby zrútila celok. **Reputačná sieť** — hodnota, ktorá ňou prúdi, nie sú peniaze, hlasy ani povolenia, ale pomalý, zaslúžený a stratiteľný kredit, ktorý si komunity navzájom udeľujú za to, že hovoria pravdu. Spolu tieto štyri vlastnosti opisujú minimálneho životaschopného nástupcu štátneho monopolu na dôveru.
 
 ## Obálka
-- [Book Cover](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Book Cover](../../../branding/figures/v5-cover-landscape-sk.webp)
 
 ## Úvod
 - [[variant-a-v4|Úvod]]

@@ -15,7 +15,7 @@ lang: en
 > Katër fjalë e mbajnë tërë propozimin. **I pacensurueshëm** — mjetet dhe rrjeti nuk mund të heshten nga një shtet, një ofrues interneti apo ndonjë autoritet i jashtëm; kostoja e censurimit të tyre është astronomike. **I pakorruptueshëm** — as njerëzit brenda rrjetit nuk mund të blihen në heshtje; sjellja e çdo aktori është publikisht e krahasueshme me politikën që ai ka shpallur, kështu që ryshfeti është një mospërputhje e provueshme dhe rrjedhimisht vetëvrasje reputacioni. **I decentralizuar** — asnjë nyje, kompani apo juridiksion i vetëm nuk mund të kapet për ta rrëzuar gjithë sistemin. **Rrjet reputacioni** — vlera që rrjedh nëpër të nuk janë para, as vota, as leje, por krediti i ngadaltë, i fituar dhe i humbshëm që komunitetet ia japin njëri-tjetrit për thënien e së vërtetës. Së bashku këto katër veti përshkruajnë pasardhësin minimal të zbatueshëm të monopolit të shtetit mbi besimin.
 
 ## Kopertina
-- [Kopertina e librit](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Kopertina e librit](../../../branding/figures/v5-cover-landscape-sq.webp)
 
 ## Hyrje
 - [[variant-a-v4|Hyrje]]

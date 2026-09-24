@@ -15,7 +15,7 @@ lang: en
 > Cuatro palabras cargan con toda la propuesta. **Incensurable** — las herramientas y la red no pueden ser silenciadas por un Estado, un proveedor de acceso a internet ni ninguna autoridad externa; el coste de censurarlas es astronómico. **Incorruptible** — las personas dentro de la red tampoco pueden ser compradas en silencio; el comportamiento de cada actor es públicamente comparable con su política declarada, de modo que el soborno es una incoherencia demostrable y, por tanto, un suicidio reputacional. **Descentralizada** — ningún nodo, empresa o jurisdicción por sí solo puede ser capturado para derribar el conjunto. **Red de reputación** — el valor que fluye por ella no es dinero, ni votos, ni permisos, sino el crédito lento, ganado y perdible que las comunidades se conceden entre sí por decir la verdad. Juntas, estas cuatro propiedades describen el sucesor mínimo viable del monopolio del Estado sobre la confianza.
 
 ## Portada
-- [Portada del libro](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Portada del libro](../../../branding/figures/v5-cover-landscape-es.webp)
 
 ## Introducción
 - [[variant-a-v4|Introducción]]

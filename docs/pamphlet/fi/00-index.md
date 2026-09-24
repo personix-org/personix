@@ -15,7 +15,7 @@ lang: en
 > Neljä sanaa kantaa koko ehdotusta. **Sensuroimaton** — työkaluja ja verkostoa ei voi vaientaa mikään valtio, internetpalveluntarjoaja eikä ulkopuolinen auktoriteetti. Niiden sensurointi maksaa tähtitieteellisen paljon. **Lahjomaton** — myöskään verkoston sisällä olevia ihmisiä ei voi hiljaa ostaa. Jokaisen toimijan käyttäytymistä voidaan julkisesti verrata hänen julistamaansa toimintalinjaan, joten lahjonta on todistettavissa oleva epäjohdonmukaisuus ja siten maineellinen itsemurha. **Hajautettu** — mikään yksittäinen solmu, yritys tai oikeudenkäyttöalue ei voi joutua kaapatuksi niin, että koko järjestelmä kaatuisi. **Maineverkosto** — sen läpi virtaava arvo ei ole rahaa, ei ääniä eikä käyttöoikeuksia, vaan sitä hidasta, ansaittua ja menetettävissä olevaa luottoa, jonka yhteisöt myöntävät toisilleen totuuden kertomisesta. Yhdessä nämä neljä ominaisuutta kuvaavat pienintä toimivaa seuraajaa valtion luottamusmonopolille.
 
 ## Kansi
-- [Kirjan kansi](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Kirjan kansi](../../../branding/figures/v5-cover-landscape-fi.webp)
 
 ## Johdanto
 - [[variant-a-v4|Johdanto]]

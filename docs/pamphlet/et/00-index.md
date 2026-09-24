@@ -15,7 +15,7 @@ lang: en
 > Neli sõna kannavad kogu ettepanekut. **Tsenseerimatu** — tööriistu ega võrku ei saa vaigistada ükski riik, internetiteenuse pakkuja ega väline võim. Nende tsenseerimise hind on astronoomiline. **Äraostmatu** — ka võrgu sees olevaid inimesi ei saa vaikselt ära osta. Iga osaleja käitumine on avalikult võrreldav tema deklareeritud poliitikaga, mistõttu altkäemaks on tõestatav vastuolu ja seega reputatsiooniline enesetapp. **Detsentraliseeritud** — ühtki üksikut sõlme, ettevõtet ega jurisdiktsiooni ei saa üle võtta, et kogu asja kokku kukutada. **Reputatsioonivõrk** — selle kaudu liikuv väärtus ei ole raha, hääled ega load, vaid aeglane, välja teenitud ja kaotatav usaldus, mida kogukonnad üksteisele tõe rääkimise eest annavad. Koos kirjeldavad need neli omadust minimaalset elujõulist järglast riigi usaldusmonopolile.
 
 ## Kaas
-- [Raamatukaas](../../Info%20Graphics/v5/v5-cover-prebal.md)
+- [Raamatukaas](../../../branding/figures/v5-cover-landscape-et.webp)
 
 ## Sissejuhatus
 - [[variant-a-v4|Sissejuhatus]]
