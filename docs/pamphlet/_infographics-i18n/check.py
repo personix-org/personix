@@ -57,6 +57,16 @@ def en_keys():
             if t: seen[t] = 1
     return set(seen.keys())
 
+def archived_keys():
+    """Texts of boxes parked in imgboxes/_archiv/ (e.g. the cover, now sourced from
+    branding/figures). Their translations stay in trans/*.json and are not 'extra'."""
+    seen = set()
+    for p in sorted(glob.glob(f"{BK}/imgboxes/_archiv/*.json")):
+        for b in json.load(open(p)):
+            t = b["text"].strip()
+            if t: seen.add(t)
+    return seen
+
 def check(lang, keys):
     tf = f"{BK}/trans/{lang}.json"
     if not os.path.exists(tf):
@@ -67,7 +77,7 @@ def check(lang, keys):
         print(f"[{lang}] JSON nejde načíst: {e}"); return False
     tk = set(d.keys())
     miss = keys - tk
-    extra = tk - keys
+    extra = tk - keys - archived_keys()
     ok = True
     if miss:
         print(f"[{lang}] CHYBÍ {len(miss)} klíčů, např.: {list(miss)[:3]}"); ok = False
