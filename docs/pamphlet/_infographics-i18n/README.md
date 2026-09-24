@@ -35,6 +35,8 @@ rebuilt from the sources above.
 ```
 ./venv/bin/python render.py de          # → out/de/*.webp
 ./venv/bin/python check.py de            # validate first
+# venv: python3 -m venv venv && ./venv/bin/pip install -r requirements.txt (+ brew install fribidi,
+# see requirements.txt — without raqm Arabic/Hebrew text renders with scrambled word order)
 ./venv/bin/python gallery.py de          # → gallery-de.html
 ```
 

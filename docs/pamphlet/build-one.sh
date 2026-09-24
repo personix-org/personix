@@ -17,6 +17,13 @@ BOXTOOL="${BOXTOOL:-$HOME/Downloads/personix-boxtool}"
 PAMPHLET="$(cd "$(dirname "$0")" && pwd)"
 STAGE_DIR="${STAGE_DIR:-$HOME/Downloads/personix-pamflety}"
 PY="$BOXTOOL/venv/bin/python"
+# Pillow loads libfribidi at runtime for raqm (HarfBuzz + FriBidi shaping of Arabic and
+# Hebrew). Homebrew keeps it outside the default dyld search path, so point Pillow at it.
+# Without raqm render.py falls back to arabic_reshaper + python-bidi and RTL bubbles come
+# out with scrambled word order.
+if command -v brew >/dev/null 2>&1; then
+    export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib${DYLD_FALLBACK_LIBRARY_PATH:+:$DYLD_FALLBACK_LIBRARY_PATH}"
+fi
 LOG="/tmp/pamphlet-$lang.log"
 
 mkdir -p "$STAGE_DIR"

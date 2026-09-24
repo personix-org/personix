@@ -1,0 +1,8 @@
+# Boxtool runtime: python3 -m venv venv && ./venv/bin/pip install -r requirements.txt
+# Pillow must expose raqm (features.check("raqm") == True). The official wheel bundles
+# HarfBuzz and raqm but loads libfribidi from the system: `brew install fribidi`, and
+# build-one.sh adds $(brew --prefix)/lib to DYLD_FALLBACK_LIBRARY_PATH so Pillow finds it.
+pillow>=10.4
+fonttools>=4.50
+arabic-reshaper>=3.0
+python-bidi>=0.6
