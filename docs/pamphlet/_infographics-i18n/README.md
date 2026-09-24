@@ -83,9 +83,9 @@ fallback to Arial Unicode fills in symbols the main font lacks (✓ ∝ ₁ ₂)
 Image source: `../_figures/v5` (English infographics shipped in-repo)
 (2528×1696 and other resolutions; read dynamically per image).
 
-The cover is **not** rendered here. Its boxes are parked in `imgboxes/_archiv/`.
-The pamphlet build takes the per-language cover from `branding/figures/`
-`v5-cover-landscape-<lang>.webp`, the same files the website serves, and that is
-the single source of truth for covers.
+The cover is rendered here like any other image (adaptive plate sampled from the
+artwork). `branding/figures/v5-cover-landscape-<lang>.webp` holds the same renders for
+the website and as a fallback when the build runs without `out/<lang>`; English keeps
+its own artwork (`branding/figures/v5-cover-landscape.png`, the README cover).
 
 Translations are machine-generated.

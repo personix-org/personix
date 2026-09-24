@@ -110,12 +110,12 @@ for cand in "$GFX_DIR/v5-cover-landscape.webp" "$GFX_DIR/v5-cover-landscape.png"
   fi
 done
 fi  # end: GFX_DIR present
-# Localised cover: branding/figures carries one landscape cover per language
-# (v5-cover-landscape-<lang>.webp). It takes precedence over the generic cover
-# pulled from the Info Graphics archive above. The branding folder is located by
-# walking up from the pamphlet dir, so both the standalone and the submodule
-# layout find it. The PNG is rewritten whenever its content differs, so this
-# cover always wins over one the generic loops above took from INFOGRAPHICS_DIR.
+# Cover. The i18n pipeline renders a localised cover into INFOGRAPHICS_DIR (out/<lang>)
+# and the loops above already turned it into figures/v5-cover-landscape.png. When the
+# build runs without it, branding/figures/v5-cover-landscape-<lang>.webp (the same
+# renders, kept for the website) fills in. English is the exception: its cover is
+# the original artwork branding/figures/v5-cover-landscape.png (the README cover) and
+# always wins. The branding folder is found by walking up from the pamphlet dir.
 COVER_LANG="$(basename "$PAMPHLET_DIR")"
 BRANDING_DIR=""
 _probe="$PAMPHLET_DIR"
@@ -123,11 +123,21 @@ for _ in 1 2 3 4 5; do
   _probe="$(cd "$_probe/.." && pwd)"
   if [ -d "$_probe/branding/figures" ]; then BRANDING_DIR="$_probe/branding/figures"; break; fi
 done
-if [ -n "$BRANDING_DIR" ] && [ -f "$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp" ]; then
-  _cover_src="$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp"
+_cover_src=""
+if [ -n "$BRANDING_DIR" ]; then
+  if [ "$COVER_LANG" = en ] && [ -f "$BRANDING_DIR/v5-cover-landscape.png" ]; then
+    _cover_src="$BRANDING_DIR/v5-cover-landscape.png"
+  elif [ ! -f "figures/v5-cover-landscape.png" ] && [ -f "$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp" ]; then
+    _cover_src="$BRANDING_DIR/v5-cover-landscape-$COVER_LANG.webp"
+  fi
+fi
+if [ -n "$_cover_src" ]; then
   _cover_out="figures/v5-cover-landscape.png"
   _cover_tmp="$(mktemp "${TMPDIR:-/tmp}/cover.XXXXXX")"
-  dwebp -quiet "$_cover_src" -o "$_cover_tmp"
+  case "$_cover_src" in
+    *.webp) dwebp -quiet "$_cover_src" -o "$_cover_tmp" ;;
+    *)      cp -f "$_cover_src" "$_cover_tmp" ;;
+  esac
   if ! cmp -s "$_cover_tmp" "$_cover_out" 2>/dev/null; then
     mv -f "$_cover_tmp" "$_cover_out"
   else
