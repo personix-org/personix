@@ -111,6 +111,10 @@ done
 META="$TMP/metadata.yaml"
 python3 "$PAMPHLET_DIR/../epub-meta.py" "$LANG_CODE" --yaml "$EPUB_DIR/metadata.yaml" > "$META"
 
+# Obsidian callouty (> [!note] Titulek) -> fenced divy se třídami pro style.css.
+python3 "$EPUB_DIR/callouts.py" < "$COMBINED" > "$TMP/callouts.md"
+mv "$TMP/callouts.md" "$COMBINED"
+
 echo "[2/3] pandoc -> epub3 ($LANG_CODE)"
 pandoc \
   --from=markdown+pipe_tables+yaml_metadata_block+raw_html+raw_tex \

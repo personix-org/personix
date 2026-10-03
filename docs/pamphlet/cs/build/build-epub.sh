@@ -123,6 +123,10 @@ print(text)
 PY
 done
 
+# Obsidian callouty (> [!note] Titulek) -> fenced divy se třídami pro style.css.
+python3 "$EPUB_DIR/callouts.py" < "$COMBINED" > "$TMP/callouts.md"
+mv "$TMP/callouts.md" "$COMBINED"
+
 echo "[2/3] pandoc -> epub3"
 
 if [ "$WATERMARK" = "1" ]; then

@@ -33,25 +33,39 @@ img {
   display: block;
 }
 
-/* Callouts (pandoc converts > [!type] Title \n body to nested blockquote) */
-blockquote {
+/* Callouty (build-epub.sh je převádí na div.callout.<typ> s div.callout-title) */
+blockquote, .callout {
   border-left: 4px solid #C97A1F;
   background: #fff8e8;
   margin: 1em 0;
   padding: 0.8em 1em;
   border-radius: 4px;
 }
-blockquote p:first-child { margin-top: 0; }
-blockquote p:last-child  { margin-bottom: 0; }
+blockquote p:first-child, .callout p:first-child { margin-top: 0; }
+blockquote p:last-child, .callout p:last-child   { margin-bottom: 0; }
+.callout-title {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  margin: 0 0 0.4em 0;
+}
 
-/* Type-specific tints (set by pandoc-callout filter or kept generic) */
-blockquote.note      { border-color: #3B82C4; background: #f0f6fc; }
-blockquote.important { border-color: #C97A1F; background: #fdf6ea; }
-blockquote.warning   { border-color: #A85F1F; background: #fbf1e3; }
-blockquote.danger    { border-color: #B83838; background: #fcefef; }
-blockquote.quote     { border-color: #736B5E; background: #f7f5f1; }
-blockquote.example   { border-color: #2F8F6A; background: #ecf6f1; }
-blockquote.idea      { border-color: #B58A1F; background: #fbf6e6; }
+/* Jazyky psané zprava doleva — barevný pruh calloutu a citátu vpravo */
+:lang(ar) blockquote, :lang(ar) .callout,
+:lang(he) blockquote, :lang(he) .callout,
+:lang(fa) blockquote, :lang(fa) .callout,
+:lang(ur) blockquote, :lang(ur) .callout {
+  border-left-width: 0;
+  border-right: 4px solid;
+}
+
+/* Barvy podle typu calloutu */
+.callout.note      { border-color: #3B82C4; background: #f0f6fc; }
+.callout.important { border-color: #C97A1F; background: #fdf6ea; }
+.callout.warning   { border-color: #A85F1F; background: #fbf1e3; }
+.callout.danger    { border-color: #B83838; background: #fcefef; }
+.callout.quote     { border-color: #736B5E; background: #f7f5f1; }
+.callout.example   { border-color: #2F8F6A; background: #ecf6f1; }
+.callout.idea      { border-color: #B58A1F; background: #fbf6e6; }
 
 /* Code / monospace — for QR addresses */
 code, pre, tt {
