@@ -17,8 +17,8 @@ Malheureusement, cela signifie accepter que le volontariat d’équilibre ne ser
 > [!idea] Auges vides — ne jouez pas selon des règles truquées pour vous faire perdre
 > Les tentatives de réformer l’État de l’intérieur reposent sur les mécanismes internes du pouvoir, dans l’espoir que les fonctionnaires imposeront des changements contre leurs propres incitations. Cela n’arrivera pas.
 >
-> Pourquoi nourrir le système au lieu d’assécher les canaux qui lui apportent la vie ? Au lieu de changer l’ancien système et de jouer selon ses règles, bâtissons une nouvelle couche au-dessus de lui — une couche qui transforme progressivement l’ancien système en un sous-ensemble du nouveau. Au départ, ce sous-ensemble remplit presque le sur-ensemble. Avec le temps, les acteurs migrent.
+> Pourquoi nourrir le système au lieu d’assécher les canaux qui lui apportent la vie ? Au lieu de changer l’ancien système et de jouer selon ses règles, bâtissons une nouvelle couche au-dessus de lui — une couche qui transforme progressivement l’ancien système en un sous-ensemble du nouveau. Au départ, ce sous-ensemble remplit presque le sur-ensemble. Avec le temps, les acteurs passent de l’un à l’autre.
 >
-> Les entreprises le savent : quand un ancien système est trop enchevêtré pour être remplacé, on en bâtit un parallèle et l’on y migre progressivement les utilisateurs.
+> Les entreprises le savent : quand un ancien système est trop enchevêtré pour être remplacé, on en bâtit un parallèle et l’on y transfère progressivement les utilisateurs.
 >
 > Le fait que l’État finisse avec un décalage entre ce qu’il livre réellement et ce que ses statuts exigent, et qu’il soit enclin à invoquer ce décalage, est purement un problème de ses représentants et de ses participants — inutile de s’y attarder. La seule chose qui vaille la peine d’être surveillée est celle-ci : ne pas provoquer de révolution violente.

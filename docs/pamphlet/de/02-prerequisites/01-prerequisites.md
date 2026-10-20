@@ -9,7 +9,7 @@ source: v1
 
 # Wesentliche Voraussetzungen für den Wandel
 
-Die grundlegende Voraussetzung für einen Wandel zum Besseren ist, dass der Untergebene zum Übergeordneten wird — oder zumindest zum gleichberechtigten Partner. Das bedeutet, die kritischsten Agenden zu übernehmen, die das Verhältnis von Über- und Unterordnung definieren. Diese Agenden beruhen auf Nachweisen der Zugehörigkeit zu den Gemeinschaften, die die Bürger des Staates ausmachen. Sie sind Information und deren Überprüfbarkeit durch eine Autorität mit erheblicher Reputation innerhalb dieser Gemeinschaften.
+Die grundlegende Voraussetzung für einen Wandel zum Besseren ist, dass der Untergebene zum Übergeordneten wird — oder zumindest zum gleichberechtigten Partner. Das bedeutet, die kritischsten Agenden zu übernehmen, die das Verhältnis von Über- und Unterordnung definieren. Diese Agenden beruhen auf Nachweisen der Zugehörigkeit zu den Gemeinschaften, die die Bürger des Staates ausmachen. Sie sind Information und deren Überprüfbarkeit durch eine vertrauenswürdige Instanz mit erheblicher Reputation innerhalb dieser Gemeinschaften.
 
 Um das gegenwärtige System zu überwinden, bin ich zu fünf Voraussetzungen gelangt, die ich anschließend so erläutere, wie ich sie verstehe. Wir können uns diese Voraussetzungen als die Pfeiler vorstellen, die die Konstruktion des im Rest des Buches beschriebenen Systems tragen. Die Pfeiler habe ich zunächst nach eigener Präferenz gewählt und, während ich mit ihnen argumentierte, mein Verständnis jedes einzelnen nach und nach zur untenstehenden Form verfeinert.
 
@@ -41,7 +41,7 @@ Gehen wir diese fünf Pfeiler einen nach dem anderen durch.
 ![VORAUSSETZUNG 4: KONSENS](../../Info%20Graphics/v5-cz/v5-01e-konsenzus.webp)
 
 > [!important] Unbestechlichkeit
-> Die Unzensierbarkeit verteidigt das System von außen. Doch ein Netzwerk von Menschen kann auch von innen verrotten — eine Autorität wird übernommen, eine erklärte Regel wird stillschweigend aufgegeben, Teilnehmer werden im Stillen gekauft. Die Unzensierbarkeit wäre ein hohler Sieg, wenn die Menschen im Inneren folgenlos korrumpiert werden könnten.
+> Die Unzensierbarkeit verteidigt das System von außen. Doch ein Netzwerk von Menschen kann auch von innen verrotten — eine vertrauenswürdige Instanz wird übernommen, eine erklärte Regel wird stillschweigend aufgegeben, Teilnehmer werden im Stillen gekauft. Die Unzensierbarkeit wäre ein hohler Sieg, wenn die Menschen im Inneren folgenlos korrumpiert werden könnten.
 >
 > Unbestechlichkeit ist nicht das Ergebnis eines einzigen cleveren Kniffs. Sie entsteht daraus, dass **mehrere Prinzipien des vorgeschlagenen Designs zusammenwirken** — der Druck gegen Korruption ist über die Architektur verteilt, und die einzelnen Teile verstärken einander. Wie genau das erreicht wird, zeigen wir nach und nach — bei der Beschreibung des Werkzeugs, bei der Verifizierung und im Kapitel über die Strafe. Am Ende fassen wir alles zusammen, was aufgebaut wurde.
 >

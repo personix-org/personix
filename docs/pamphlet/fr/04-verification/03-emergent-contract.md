@@ -9,7 +9,7 @@ source: "v1 [!note] + v4 extension"
 
 # Le contrat social émergent — la politique
 
-Jusqu’ici, nous avons décrit comment les assertions sont vérifiées, et quel rôle joue chacun. Nous nous tournons maintenant vers la manière dont des milliers de politiques individuelles deviennent quelque chose qui fonctionne comme un véritable contrat social. Rien qui ressemble aux rêves de gauche d’un contrat social et d’une solidarité imposée.
+Jusqu’ici, nous avons décrit comment les déclarations sont vérifiées, et quel rôle joue chacun. Nous nous tournons maintenant vers la manière dont des milliers de politiques individuelles deviennent quelque chose qui fonctionne comme un véritable contrat social. Rien qui ressemble aux rêves de gauche d’un contrat social et d’une solidarité imposée.
 
 Chaque participant déclare sa propre politique fondée sur sa morale (policy) — ce qu’il considère comme acceptable, et comment il réagit à des comportements spécifiques des autres. L’agrégat de toutes les politiques du réseau connues d’une DID donnée (la communauté) produit une éthique émergente — des normes observables que personne n’a conçues. Ces normes émergentes, sous-tendues par des signaux de prix bilatéraux, forment un contrat social mesurable : non pas une construction théorique que personne n’a signée à la naissance, mais des règles empiriquement observables, adossées à un comportement réel.
 

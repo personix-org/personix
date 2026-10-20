@@ -32,7 +32,7 @@ lang: en
 
 ## Parte III: Cómo funciona la verificación
 - [[01-consensus|El consenso y el proceso de verificación]]
-- [[02-roles-and-authorities|Roles en una transacción de verificación y autoridades]]
+- [[02-roles-and-authorities|Roles en una transacción de verificación y autoridades de confianza]]
 - [[03-emergent-contract|El contrato social emergente]]
 - [[04-observer-trick|El truco del observador]]
 

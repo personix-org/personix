@@ -9,7 +9,7 @@ source: v1
 
 # Conditions préalables essentielles au changement
 
-La condition fondamentale d’un changement pour le mieux, c’est que le subordonné devienne le supérieur — ou du moins un partenaire à égalité. Cela signifie reprendre les agendas les plus critiques qui définissent la relation de supériorité et de subordination. Ces agendas reposent sur des preuves d’appartenance aux communautés qui constituent les citoyens de l’État. Ce sont l’information et sa vérifiabilité par une autorité disposant d’une réputation substantielle au sein de ces communautés.
+La condition fondamentale d’un changement pour le mieux, c’est que le subordonné devienne le supérieur — ou du moins un partenaire à égalité. Cela signifie reprendre les dossiers les plus critiques qui définissent la relation de supériorité et de subordination. Ces dossiers reposent sur des preuves d’appartenance aux communautés qui constituent les citoyens de l’État. Ce sont l’information et sa vérifiabilité par une autorité de confiance disposant d’une réputation substantielle au sein de ces communautés.
 
 Pour dépasser le système actuel, je suis arrivé à cinq conditions préalables que j’explique ensuite de la manière dont je les comprends. On peut se représenter ces conditions comme les piliers qui portent la construction du système décrit dans le reste du livre. J’ai d’abord choisi les piliers selon ma propre préférence puis, en raisonnant avec eux, j’ai peu à peu affiné ma compréhension de chacun jusqu’à la forme ci-dessous.
 

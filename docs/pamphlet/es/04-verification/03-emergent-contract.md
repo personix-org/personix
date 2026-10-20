@@ -9,7 +9,7 @@ source: "v1 [!note] + v4 extension"
 
 # El contrato social emergente — la política
 
-Hasta ahora hemos descrito cómo se verifican las afirmaciones y qué papel juega cada rol. Ahora nos volvemos hacia cómo miles de políticas individuales se convierten en algo que funciona como un verdadero contrato social. Nada que se parezca a los sueños izquierdistas de un contrato social y una solidaridad impuesta.
+Hasta ahora hemos descrito cómo se verifican las declaraciones y qué papel juega cada rol. Ahora nos volvemos hacia cómo miles de políticas individuales se convierten en algo que funciona como un verdadero contrato social. Nada que se parezca a los sueños izquierdistas de un contrato social y una solidaridad impuesta.
 
 Cada participante declara su propia política basada en su moral (política): lo que considera aceptable y cómo reacciona ante comportamientos concretos de los demás. El agregado de todas las políticas de la red conocidas por una DID dada (la comunidad) produce una ética emergente: normas observables que nadie diseñó. Estas normas emergentes, sostenidas por señales de precio bilaterales, forman un contrato social medible: no un constructo teórico que nadie firmó al nacer, sino reglas empíricamente observables respaldadas por el comportamiento real.
 

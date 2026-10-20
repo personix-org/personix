@@ -15,9 +15,9 @@ Einige dieser Rollen haben wir im Kapitel über das Netzwerk und seine grundlege
 
 | Rolle | Beschreibung |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Aussteller** | Die Person, die Informationen im Netzwerk veröffentlicht — behauptet, dass etwas geschehen ist (eine DID wurde erstellt, bearbeitet oder aufgelöst, eine Behauptung, die Richtlinie einer gegebenen DID usw.) |
-| **Subjekt** | Die Person, über die die Information handelt — der Adressat der Behauptung |
-| **Autorität** | Eine vertrauenswürdige Entität, die ihren Namen für die Qualität der Behauptung einsetzt, indem sie sie untersucht und entweder die vorgelegten Beweise prüft oder sie aktiv sammelt |
-| **Beobachter** | Ein unabhängiger Dritter, der festhält, wie der Verifizierer mit der Behauptung umgeht — und sicherstellt, dass der Verifizierer weder schweigt noch von der von ihm erklärten Richtlinie abweicht |
+| **Aussteller** | Die Person, die Informationen im Netzwerk veröffentlicht — behauptet, dass etwas geschehen ist (eine DID wurde erstellt, bearbeitet oder aufgelöst, eine Aussage, die Richtlinie einer gegebenen DID usw.) |
+| **Subjekt** | Die Person, um die es in der Information geht — der Adressat der Aussage |
+| **Vertrauenswürdige Instanz** | Eine vertrauenswürdige Entität, die ihren Namen für die Qualität der Aussage einsetzt, indem sie sie untersucht und entweder die vorgelegten Beweise prüft oder sie aktiv sammelt |
+| **Beobachter** | Ein unabhängiger Dritter, der festhält, wie der Verifizierer mit der Aussage umgeht — und sicherstellt, dass der Verifizierer weder schweigt noch von der von ihm erklärten Richtlinie abweicht |
 | **Verifizierer** | Ein algorithmisch ausgewählter Teilnehmer, der die Transaktion verarbeitet |
-| **Delegierter** | Eine Person, die im Namen eines anderen Teilnehmers handelt |
+| **Stellvertreter** | Eine Person, die im Namen eines anderen Teilnehmers handelt |

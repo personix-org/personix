@@ -15,11 +15,11 @@ Le rôle d’observateur supprime l’incitation du vérificateur à contourner 
 
 ## Le mécanisme : horodatage et code de défi
 
-Avant d’envoyer une assertion au vérificateur, vous la faites transiter par des observateurs — des personnes en qui vous avez confiance, ou des prestataires spécialisés de services d’observation qui facturent de modestes frais. Chaque observateur reçoit votre soumission, l’horodate, signe qu’il l’a vue partir, et génère un code de défi — un hash cryptographique de sa signature. Les codes sont annexés à votre demande. Le vérificateur les voit, mais n’a aucune idée de qui sont les observateurs, ni même si les codes sont réels. Les observateurs agissent ainsi comme des mandataires entre l’émetteur et le vérificateur, détenant un registre indépendant attestant que l’assertion a été soumise et ce qu’elle contenait. Il peut y en avoir de zéro à N.
+Avant d’envoyer une déclaration au vérificateur, vous la faites transiter par des observateurs — des personnes en qui vous avez confiance, ou des prestataires spécialisés de services d’observation qui facturent de modestes frais. Chaque observateur reçoit votre soumission, l’horodate, signe qu’il l’a vue partir, et génère un code de défi — un hash cryptographique de sa signature. Les codes sont annexés à votre demande. Le vérificateur les voit, mais n’a aucune idée de qui sont les observateurs, ni même si les codes sont réels. Les observateurs agissent ainsi comme des intermédiaires entre l’émetteur et le vérificateur, détenant un registre indépendant attestant que la déclaration a été soumise et ce qu’elle contenait. Il peut y en avoir de zéro à N.
 
 Lorsque le vérificateur se comporte honnêtement — en acceptant ou en rejetant conformément à sa politique déclarée — les codes restent opaques. Personne n’est exposé.
 
-Mais si le vérificateur reste silencieux malgré une politique accommodante, ou répond d’une manière qui contredit ce qu’il a publié, vous détenez les signatures originales des observateurs. Vous pouvez les publier comme un témoignage par mandataire attestant que l’assertion a été soumise et que le vérificateur n’a pas suivi le protocole. Quiconque peut vérifier que les signatures correspondent aux codes de défi.
+Mais si le vérificateur reste silencieux malgré une politique accommodante, ou répond d’une manière qui contredit ce qu’il a publié, vous détenez les signatures originales des observateurs. Vous pouvez les publier comme un témoignage par procuration attestant que la déclaration a été soumise et que le vérificateur n’a pas suivi le protocole. Quiconque peut vérifier que les signatures correspondent aux codes de défi.
 
 ## La chute : vous n’avez pas besoin de vrais observateurs
 

@@ -66,7 +66,7 @@ Wir legen dir gerade keine leichte Last auf die Schultern. Du trägst bereits di
 
 ![HAST DU DEN MUT?](../../Info%20Graphics/v5-cz/v5-00c-vyzva.webp)
 
-Dennoch bitte ich dich: Lasst uns unseren Kindern endlich eine bessere Welt übergeben und ein Vermächtnis hinterlassen, das besagt, dass wir diesen Wandel geschafft haben. Wirtschaftliches Wachstum zu entfesseln könnte eine Teillösung für die am Horizont drohende Zwangslage sein. Wir können unseren Nachkommen dann sagen, es war ein Höllenritt und er war nicht umsonst.
+Dennoch bitte ich dich: Lass uns unseren Kindern endlich eine bessere Welt übergeben und ein Vermächtnis hinterlassen, das besagt, dass wir diesen Wandel geschafft haben. Wirtschaftliches Wachstum zu entfesseln könnte eine Teillösung für die am Horizont drohende Zwangslage sein. Wir können unseren Nachkommen dann sagen, es war ein Höllenritt und er war nicht umsonst.
 
 > [!danger] Das Problem
 > Nur eine durch unmittelbare Verantwortung ausbalancierte Freiheit kann ein gewaltiges Potenzial freisetzen, das die Welt nie zuvor gesehen hat.

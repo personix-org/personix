@@ -9,7 +9,7 @@ source: v1
 
 # Requisitos esenciales para el cambio
 
-El requisito fundamental para un cambio a mejor es que el subordinado se convierta en superior, o al menos en socio en igualdad de condiciones. Esto significa asumir las agendas más críticas que definen la relación de superioridad y subordinación. Esas agendas descansan sobre pruebas de pertenencia a las comunidades que constituyen a los ciudadanos del Estado. Son la información y su verificabilidad por una autoridad con una reputación sustancial dentro de esas comunidades.
+El requisito fundamental para un cambio a mejor es que el subordinado se convierta en superior, o al menos en socio en igualdad de condiciones. Esto significa asumir las agendas más críticas que definen la relación de superioridad y subordinación. Esas agendas descansan sobre pruebas de pertenencia a las comunidades que constituyen a los ciudadanos del Estado. Son la información y su verificabilidad por una autoridad de confianza con una reputación sustancial dentro de esas comunidades.
 
 Para superar el sistema actual, he llegado a cinco requisitos que luego explico tal como los entiendo. Podemos pensar en estos requisitos como los pilares que sostienen la construcción del sistema descrito en el resto del libro. Escogí los pilares inicialmente según mi propia preferencia y, razonando con ellos, fui refinando poco a poco cómo entiendo cada uno hasta darle la forma que sigue.
 
@@ -41,7 +41,7 @@ Recorramos estos cinco pilares uno por uno.
 ![PREREQUISITE 4: CONSENSUS](../../Info%20Graphics/v5-cz/v5-01e-konsenzus.webp)
 
 > [!important] Incorruptibilidad
-> La incensurabilidad defiende el sistema desde fuera. Pero una red de personas también puede pudrirse desde dentro: una autoridad es capturada, una regla declarada se abandona en silencio, los participantes son comprados sin ruido. La incensurabilidad sería una victoria hueca si las personas de dentro pudieran ser corrompidas sin consecuencias.
+> La incensurabilidad defiende el sistema desde fuera. Pero una red de personas también puede pudrirse desde dentro: una autoridad de confianza es capturada, una regla declarada se abandona en silencio, los participantes son comprados sin ruido. La incensurabilidad sería una victoria hueca si las personas de dentro pudieran ser corrompidas sin consecuencias.
 >
 > La incorruptibilidad no es el resultado de un único truco ingenioso. Emerge de **varios principios del diseño propuesto que actúan de forma concertada**: la presión contra la corrupción se reparte por toda la arquitectura, y las partes individuales se refuerzan entre sí. Cómo se logra exactamente lo iremos mostrando poco a poco: en la descripción de la herramienta, en la verificación y en el capítulo sobre el castigo. Al final recapitularemos todo lo que se haya construido.
 >

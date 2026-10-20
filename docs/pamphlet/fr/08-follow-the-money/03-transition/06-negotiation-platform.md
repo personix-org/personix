@@ -8,7 +8,7 @@ version: v6
 
 # Plateforme de négociation avec l’État — le levier
 
-Le quatrième outil est le levier qui relie tout le reste et ne fait que maintenant du réseau une véritable menace. Le principal conflit portera sur la question de savoir si l’État accepte l’ESR comme norme contraignante — d’abord au niveau national — et sur l’ampleur que doivent atteindre les menaces des participants au réseau de réputation avant que cela ne se produise.
+Le quatrième outil est le levier qui relie tout le reste et ne transforme qu’à ce stade le réseau en véritable menace. Le principal conflit portera sur la question de savoir si l’État accepte l’ESR comme norme contraignante — d’abord au niveau national — et sur l’ampleur que doivent atteindre les menaces des participants au réseau de réputation avant que cela ne se produise.
 
 Le levier est le financement de l’État en juste-à-temps, conditionné à ce que les paiements soient appariés à l’ESR. L’argent ne coule qu’au moment où l’État a satisfait aux conditions de transparence. Une liste d’attente de participants se forme à l’intérieur du réseau de réputation. L’activation s’enclenche lorsque le groupe atteint une taille économiquement significative — suffisamment grande pour menacer la croissance du PIB. À ce moment, la désobéissance civile devient une menace crédible plutôt qu’un geste.
 

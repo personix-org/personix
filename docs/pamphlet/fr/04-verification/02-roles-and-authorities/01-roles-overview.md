@@ -15,9 +15,9 @@ Nous avons déjà brièvement abordé certains de ces rôles dans le chapitre su
 
 | Rôle | Description |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Émetteur** | La personne qui publie l’information dans le réseau — affirme que quelque chose s’est produit (une DID a été créée, modifiée ou dissoute, une assertion, la politique d’une DID donnée, etc.) |
-| **Sujet** | La personne dont parle l’information — le destinataire de l’assertion |
-| **Autorité** | Une entité de confiance qui engage son nom sur la qualité de l’assertion, en l’examinant et en passant en revue les preuves présentées ou en les recueillant activement |
-| **Observateur** | Un tiers indépendant qui tient un registre de la manière dont le vérificateur traite l’assertion — s’assurant que le vérificateur ne reste ni silencieux ni ne s’écarte de la politique qu’il a déclarée |
+| **Émetteur** | La personne qui publie l’information dans le réseau — affirme que quelque chose s’est produit (une DID a été créée, modifiée ou dissoute, une déclaration, la politique d’une DID donnée, etc.) |
+| **Sujet** | La personne dont parle l’information — le destinataire de la déclaration |
+| **Autorité de confiance** | Une entité de confiance qui engage son nom sur la qualité de la déclaration, en l’examinant et en passant en revue les preuves présentées ou en les recueillant activement |
+| **Observateur** | Un tiers indépendant qui tient un registre de la manière dont le vérificateur traite la déclaration — s’assurant que le vérificateur ne reste ni silencieux ni ne s’écarte de la politique qu’il a déclarée |
 | **Vérificateur** | Un participant sélectionné algorithmiquement qui traite la transaction |
-| **Délégué** | Une personne agissant au nom d’un autre participant |
+| **Mandataire** | Une personne agissant au nom d’un autre participant |

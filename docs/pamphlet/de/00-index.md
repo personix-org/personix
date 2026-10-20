@@ -32,7 +32,7 @@ lang: en
 
 ## Teil III: Wie die Verifizierung funktioniert
 - [[01-consensus|Konsens und der Verifizierungsprozess]]
-- [[02-roles-and-authorities|Rollen in einer Verifizierungstransaktion und Autoritäten]]
+- [[02-roles-and-authorities|Rollen in einer Verifizierungstransaktion und vertrauenswürdige Instanzen]]
 - [[03-emergent-contract|Der emergente Gesellschaftsvertrag]]
 - [[04-observer-trick|Der Beobachter-Trick]]
 

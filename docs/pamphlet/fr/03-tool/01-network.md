@@ -9,7 +9,7 @@ source: v1
 
 # Réseau social fondé sur la réputation
 
-Pour provoquer le changement, il nous faut un outil soigneusement conçu. Nous allons d’abord l’esquisser brièvement ; dans les chapitres suivants, nous examinerons chaque pièce plus en détail et en ajouterons d’autres. Imaginez un réseau social incensurable, mondial et décentralisé, dans lequel vous pourriez créer et gérer en toute sécurité votre identité mandataire — une identité dite décentralisée (DID). Une DID est une identité numérique que vous créez et contrôlez vous-même, sans dépendre d’aucune autorité centrale. Personne ne peut vous la retirer ni la falsifier, car elle est signée cryptographiquement avec votre clé privée (ou vos clés, via multisig).
+Pour provoquer le changement, il nous faut un outil soigneusement conçu. Nous allons d’abord l’esquisser brièvement ; dans les chapitres suivants, nous examinerons chaque pièce plus en détail et en ajouterons d’autres. Imaginez un réseau social incensurable, mondial et décentralisé, dans lequel vous pourriez créer et gérer en toute sécurité votre identité de substitution — une identité dite décentralisée (DID). Une DID est une identité numérique que vous créez et contrôlez vous-même, sans dépendre d’aucune autorité centrale. Personne ne peut vous la retirer ni la falsifier, car elle est signée cryptographiquement avec votre clé privée (ou vos clés, via multisig).
 
 > [!note] Note
 > Une implication est qu’une telle identité pourrait progressivement remplacer les documents d’identification émis par l’État — mais nous y reviendrons dans le chapitre sur la transition.
@@ -38,7 +38,7 @@ Voyons comment l’algorithme sélectionne un vérificateur.
 
 ![COMMENT L’ALGORITHME SÉLECTIONNE VOTRE VÉRIFICATEUR](../../Info%20Graphics/v5/v5-02e-hash-ring.webp)
 
-Avec le premier vérificateur que l’algorithme sélectionne, vous, en tant qu’émetteur, pouvez ne pas aboutir — votre réputation ou vos paramètres déclarés peuvent ne pas satisfaire ses exigences. Vous poursuivriez algorithmiquement la recherche du suivant en effectuant une nouvelle itération récursive, qui vous attribue un vérificateur supplémentaire. À chaque étape, la « distance » jusqu’au vérificateur cible croît, tout comme les métadonnées d’accompagnement qui doivent être publiées. À mesure que les données croissent, les coûts augmentent naturellement (non seulement à cause de la taille initiale de l’assertion, mais aussi à cause des métadonnées qui s’accumulent à chaque rejet). Une information crédible passe bien plus aisément que des lubies dénuées de sens. Il appartient à chacun de décider quel prix il est prêt à supporter et à quel point l’enregistrement lui importe — le radicalisme finit à coup sûr par coûter cher.
+Avec le premier vérificateur que l’algorithme sélectionne, vous, en tant qu’émetteur, pouvez ne pas aboutir — votre réputation ou vos paramètres déclarés peuvent ne pas satisfaire ses exigences. Vous poursuivriez algorithmiquement la recherche du suivant en effectuant une nouvelle itération récursive, qui vous attribue un vérificateur supplémentaire. À chaque étape, la « distance » jusqu’au vérificateur cible croît, tout comme les métadonnées d’accompagnement qui doivent être publiées. À mesure que les données croissent, les coûts augmentent naturellement (non seulement à cause de la taille initiale de la déclaration, mais aussi à cause des métadonnées qui s’accumulent à chaque rejet). Une information crédible passe bien plus aisément que des lubies dénuées de sens. Il appartient à chacun de décider quel prix il est prêt à supporter et à quel point l’enregistrement lui importe — le radicalisme finit à coup sûr par coûter cher.
 
 ![COMMENT LE VÉRIFICATEUR RÉPOND](../../Info%20Graphics/v5/v5-02e2-odpoved-verifikatora.webp)
 
@@ -46,7 +46,7 @@ Quoi que le vérificateur décide en réponse à votre demande de vérification,
 
 ![LE CHOIX DE L’ÉMETTEUR](../../Info%20Graphics/v5/v5-02e3-rozhodnuti-issuera.webp)
 
-Pour donner à votre information un poids accru et une meilleure chance d’acceptation auprès des vérificateurs, vous — en tant qu’émetteur ayant un intérêt dans l’information à émettre — pourriez recourir aux services d’une **autorité de confiance**. L’autorité soit rejette l’information soumise, soit l’accepte et engage sa bonne réputation dessus. L’autorité demande généralement des preuves du monde réel, les vérifie et les classe. Le produit est un protocole de son évaluation du cas donné à l’instant donné. Voyez une autorité comme un spécialiste d’un certain type de service, dans le monde réel comme numérique — par exemple un enquêteur, un auditeur, un assureur, un fournisseur d’une certaine classe de biens (en somme, n’importe quel acteur économique du marché).
+Pour donner à votre information un poids accru et une meilleure chance d’acceptation auprès des vérificateurs, vous — en tant qu’émetteur ayant un intérêt dans l’information à émettre — pourriez recourir aux services d’une **autorité de confiance**. L’autorité soit rejette l’information soumise, soit l’accepte et engage sa bonne réputation dessus. L’autorité demande généralement des preuves du monde réel, les vérifie et les classe. Le produit est un procès-verbal de son évaluation du cas donné à l’instant donné. Voyez une autorité comme un spécialiste d’un certain type de service, dans le monde réel comme numérique — par exemple un enquêteur, un auditeur, un assureur, un fournisseur d’une certaine classe de biens (en somme, n’importe quel acteur économique du marché).
 
 ![COMMENT NAÎT UN ENREGISTREMENT DANS LE RÉSEAU](../../Info%20Graphics/v5/v5-02a-jak-vznika-zaznam.webp)
 
@@ -65,7 +65,7 @@ Au moment où vous tenterez de publier une information dans le réseau, celui-ci
 > Exemples positifs :
 > - préjudice réparé (volontairement ou sous la pression de la communauté à titre de sanction)
 > - acceptation et exécution d’une peine proposée par l’autorité X
-> - l’autorité X a révoqué la reconnaissance des droits de propriété de l’auteur dans une certaine mesure
+> - l’autorité X a révoqué la reconnaissance des droits de propriété de l’auteur des faits dans une certaine mesure
 >
 > Il appartient à chacun de rassembler les informations disponibles sur la contrepartie et d’en évaluer les risques selon ses préférences.
 

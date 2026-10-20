@@ -9,7 +9,7 @@ source: v1
 
 # Red social basada en la reputación
 
-Para provocar el cambio necesitamos una herramienta cuidadosamente diseñada. Primero la esbozaremos brevemente; en capítulos posteriores examinaremos cada pieza con mayor detalle y añadiremos más. Imagina una red social incensurable, global y descentralizada donde pudieras crear y gestionar con seguridad tu identidad delegada, una llamada identidad descentralizada (DID). Una DID es una identidad digital que creas y controlas tú mismo, sin depender de ninguna autoridad central. Nadie puede quitártela ni falsificarla, porque está firmada criptográficamente con tu clave privada (o claves, mediante multisig).
+Para provocar el cambio necesitamos una herramienta cuidadosamente diseñada. Primero la esbozaremos brevemente; en capítulos posteriores examinaremos cada pieza con mayor detalle y añadiremos más. Imagina una red social incensurable, global y descentralizada donde pudieras crear y gestionar con seguridad tu identidad sustituta, una llamada identidad descentralizada (DID). Una DID es una identidad digital que creas y controlas tú mismo, sin depender de ninguna autoridad central. Nadie puede quitártela ni falsificarla, porque está firmada criptográficamente con tu clave privada (o claves, mediante multisig).
 
 > [!note] Nota
 > Una de sus implicaciones es que semejante identidad podría reemplazar de forma gradual los documentos de identidad emitidos por el Estado, pero más sobre esto en el capítulo sobre la transición.
@@ -38,7 +38,7 @@ Veamos cómo selecciona el algoritmo a un verificador.
 
 ![HOW THE ALGORITHM SELECTS YOUR VERIFIER](../../Info%20Graphics/v5/v5-02e-hash-ring.webp)
 
-Con el primer verificador que el algoritmo selecciona, tú, como publicador, puedes no salir airoso: tu reputación o tus ajustes declarados quizá no cumplan sus requisitos. Continuarías algorítmicamente la búsqueda del siguiente realizando otra iteración recursiva, que te asigna un verificador más. Con cada paso crece la «distancia» al verificador de destino, y crecen también los metadatos que hay que publicar. A medida que los datos aumentan, los costes suben de forma natural (no solo por el tamaño inicial de la afirmación, sino también por los metadatos que se acumulan con cada rechazo). La información creíble pasa mucho más fácilmente que los caprichos sin sentido. Depende de cada persona qué precio está dispuesta a asumir y cuánto le importa el registro: el radicalismo, con toda seguridad, sale caro.
+Con el primer verificador que el algoritmo selecciona, tú, como publicador, puedes no salir airoso: tu reputación o tus ajustes declarados quizá no cumplan sus requisitos. Continuarías algorítmicamente la búsqueda del siguiente realizando otra iteración recursiva, que te asigna un verificador más. Con cada paso crece la «distancia» al verificador de destino, y crecen también los metadatos que hay que publicar. A medida que los datos aumentan, los costes suben de forma natural (no solo por el tamaño inicial de la declaración, sino también por los metadatos que se acumulan con cada rechazo). La información creíble pasa mucho más fácilmente que los caprichos sin sentido. Depende de cada persona qué precio está dispuesta a asumir y cuánto le importa el registro: el radicalismo, con toda seguridad, sale caro.
 
 ![HOW THE VERIFIER ANSWERS](../../Info%20Graphics/v5/v5-02e2-odpoved-verifikatora.webp)
 
@@ -46,11 +46,11 @@ Sea lo que sea que el verificador decida en respuesta a tu solicitud de verifica
 
 ![THE ISSUER'S CHOICE](../../Info%20Graphics/v5/v5-02e3-rozhodnuti-issuera.webp)
 
-Para dar mayor peso a tu información y una mejor probabilidad de que los verificadores la acepten, tú, como publicador con interés en que se emita la información, podrías recurrir a los servicios de una **autoridad de confianza**. La autoridad o bien rechaza la información presentada, o bien la acepta y pone en juego su buen nombre (su reputación) por ella. La autoridad suele solicitar pruebas del mundo real, las verifica y las clasifica. El producto resultante es un protocolo de su evaluación del caso dado en el momento dado. Piensa en una autoridad como en un especialista en cierto tipo de servicio, tanto en el mundo real como en el digital: por ejemplo, un investigador, un auditor, una aseguradora, un proveedor de cierta clase de bienes (en esencia, cualquier actor económico del mercado).
+Para dar mayor peso a tu información y una mejor probabilidad de que los verificadores la acepten, tú, como publicador con interés en que se emita la información, podrías recurrir a los servicios de una **autoridad de confianza**. La autoridad o bien rechaza la información presentada, o bien la acepta y pone en juego su buen nombre (su reputación) por ella. La autoridad suele solicitar pruebas del mundo real, las verifica y las clasifica. El producto resultante es un protocolo de su evaluación del caso dado en el momento dado. Piensa en una autoridad de confianza como en un especialista en cierto tipo de servicio, tanto en el mundo real como en el digital: por ejemplo, un investigador, un auditor, una aseguradora, un proveedor de cierta clase de bienes (en esencia, cualquier actor económico del mercado).
 
 ![HOW A RECORD IS CREATED IN THE NETWORK](../../Info%20Graphics/v5/v5-02a-jak-vznika-zaznam.webp)
 
-Para cuando intentes publicar información en la red, esta ya contendrá probablemente información sobre sus actores: son señales de reputación. Orientarse en cómo leer las señales de reputación, qué significan para ti en distintas situaciones y qué riesgos entrañan, puede no ser trivial. Cada participante puede mirar los registros de reputación de forma distinta a través de su DID, según la situación que esté afrontando respecto a la contraparte. ¿Es la contraparte un pagador fiable, o necesito exigir el dinero por adelantado en una transacción comercial? ¿El producto ofrecido carga con reseñas sobre fraudes o defectos ocultos? ¿Intenta escurrir el bulto de la responsabilidad contractual cuando algo sale mal? A veces viene bien una visión más compleja de la coherencia global de la contraparte: depende de las preferencias de quien solicite el panorama. El mercado podría ofrecer productos y servicios que simplifiquen, procesen y aclaren la lectura de la reputación en el contexto de la situación concreta. Diversas autoridades y los servicios que ofrecen también pueden servir a este fin.
+Para cuando intentes publicar información en la red, esta ya contendrá probablemente información sobre sus actores: son señales de reputación. Orientarse en cómo leer las señales de reputación, qué significan para ti en distintas situaciones y qué riesgos entrañan, puede no ser trivial. Cada participante puede mirar los registros de reputación de forma distinta a través de su DID, según la situación que esté afrontando respecto a la contraparte. ¿Es la contraparte un pagador fiable, o necesito exigir el dinero por adelantado en una transacción comercial? ¿El producto ofrecido carga con reseñas sobre fraudes o defectos ocultos? ¿Intenta escurrir el bulto de la responsabilidad contractual cuando algo sale mal? A veces viene bien una visión más compleja de la coherencia global de la contraparte: depende de las preferencias de quien solicite el panorama. El mercado podría ofrecer productos y servicios que simplifiquen, procesen y aclaren la lectura de la reputación en el contexto de la situación concreta. Diversas autoridades de confianza y los servicios que ofrecen también pueden servir a este fin.
 
 ![HOW TO READ REPUTATION](../../Info%20Graphics/v5/v5-02b-jak-se-cte-reputace.webp)
 
@@ -64,8 +64,8 @@ Para cuando intentes publicar información en la red, esta ya contendrá probabl
 >
 > Ejemplos positivos:
 > - daño reparado (voluntariamente o bajo la presión de la comunidad como castigo)
-> - aceptación y cumplimiento de una pena propuesta por la autoridad X
-> - la autoridad X revocó, en cierta medida, el reconocimiento de los derechos de propiedad del infractor
+> - aceptación y cumplimiento de una pena propuesta por la autoridad de confianza X
+> - la autoridad de confianza X revocó, en cierta medida, el reconocimiento de los derechos de propiedad del infractor
 >
 > Depende de cada persona reunir la información disponible sobre la contraparte y evaluar los riesgos según sus preferencias.
 

@@ -26,7 +26,7 @@ Und hier kommt die stille Steuer. Inflation ist alles andere als eine bloße buc
 
 In turbulenten Zeiten — Krieg, Pandemie, die „notwendige" Investition — schaltet der Staat einfach die Druckerpresse ein. Die Kaufkraft verantwortungsvoller Sparer und Arbeitender sinkt, während wir ihnen versprechen, dass sie gut belohnt werden. Jemand stiehlt ihnen still ihre Zeit und lobt sie dafür, wie glänzend sie verdienen.
 
-Das untergräbt das Vertrauen in den Staat ernsthaft. Und Vertrauen ist der einzige Klebstoff, der die ganze Maschinerie zusammenhält. Das ist der Hebel, gegen den anzustemmen sich lohnt.
+Das untergräbt das Vertrauen in den Staat ernsthaft. Und Vertrauen ist der einzige Klebstoff, der die ganze Maschinerie zusammenhält. Das ist der Hebel, an dem anzusetzen sich lohnt.
 
 > [!important] Warum das Geld und nicht andere Schwachpunkte?
 > Ein weiterer Schwachpunkt der Zivilisation ist zum Beispiel die Energieverteilung. Doch ihren Fluss zu stören ist kein Hebel — es wäre Aggression, Terrorismus. Freiwillige Nichtteilnahme ist nicht dasselbe wie das absichtliche Schädigen anderer. Das Geld ist darin außergewöhnlich, dass sich Druck freiwillig, transparent und ohne Gewalt ausüben lässt.

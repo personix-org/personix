@@ -15,9 +15,9 @@ Ya rozamos brevemente algunos de estos roles en el capítulo sobre la red y sus 
 
 | Rol | Descripción |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Emisor** | La persona que publica información en la red: afirma que algo ocurrió (se creó, editó o disolvió una DID, una afirmación, la política de una DID dada, etc.) |
-| **Sujeto** | La persona sobre la que trata la información: el destinatario de la afirmación |
-| **Autoridad** | Una entidad de confianza que pone su nombre en juego por la calidad de la afirmación investigándola y bien revisando las pruebas presentadas, bien reuniéndolas activamente |
-| **Observador** | Un tercero independiente que lleva registro de cómo el verificador gestiona la afirmación, asegurándose de que el verificador ni guarde silencio ni se desvíe de la política que declaró |
+| **Emisor** | La persona que publica información en la red: afirma que algo ocurrió (se creó, editó o disolvió una DID, una declaración, la política de una DID dada, etc.) |
+| **Sujeto** | La persona sobre la que trata la información: el destinatario de la declaración |
+| **Autoridad de confianza** | Una entidad de confianza que pone su nombre en juego por la calidad de la declaración investigándola y bien revisando las pruebas presentadas, bien reuniéndolas activamente |
+| **Observador** | Un tercero independiente que lleva registro de cómo el verificador gestiona la declaración, asegurándose de que el verificador ni guarde silencio ni se desvíe de la política que declaró |
 | **Verificador** | Un participante seleccionado algorítmicamente que procesa la transacción |
 | **Delegado** | Una persona que actúa en nombre de otro participante |

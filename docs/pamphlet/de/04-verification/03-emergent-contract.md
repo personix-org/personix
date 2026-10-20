@@ -9,7 +9,7 @@ source: "v1 [!note] + v4 extension"
 
 # Der emergente Gesellschaftsvertrag — Policy
 
-Bisher haben wir beschrieben, wie Behauptungen verifiziert werden und welche Rolle jede Rolle dabei spielt. Nun wenden wir uns der Frage zu, wie aus Tausenden einzelner Richtlinien etwas wird, das wie ein echter Gesellschaftsvertrag funktioniert. Nichts, was den linken Träumen von einem Gesellschaftsvertrag und erzwungener Solidarität gleicht.
+Bisher haben wir beschrieben, wie Aussagen verifiziert werden und welche Aufgabe jede Rolle dabei übernimmt. Nun wenden wir uns der Frage zu, wie aus Tausenden einzelner Richtlinien etwas wird, das wie ein echter Gesellschaftsvertrag funktioniert. Nichts, was den linken Träumen von einem Gesellschaftsvertrag und erzwungener Solidarität gleicht.
 
 Jeder Teilnehmer erklärt seine eigene Richtlinie auf Basis seiner Moral (Policy) — was er für akzeptabel hält und wie er auf konkretes Verhalten anderer reagiert. Die Gesamtheit aller einer gegebenen DID bekannten Richtlinien im Netzwerk (die Gemeinschaft) bringt eine emergente Ethik hervor — beobachtbare Normen, die niemand entworfen hat. Diese emergenten Normen, unterlegt mit bilateralen Preissignalen, bilden einen messbaren Gesellschaftsvertrag: kein theoretisches Konstrukt, das niemand bei der Geburt unterschrieben hat, sondern empirisch beobachtbare Regeln, die von tatsächlichem Verhalten gedeckt sind.
 
