@@ -1,5 +1,5 @@
 ---
-title: "Proč je síť necenzurovatelná"
+title: "Proč je síť nezcenzurovatelná"
 chapter: 2
 part: "Nástroj"
 lang: cs
@@ -7,7 +7,7 @@ version: v6
 source: v4
 ---
 
-# Proč je síť necenzurovatelná
+# Proč je síť nezcenzurovatelná
 
 Zatím jsme popsali, co síť umí. Teď se zaměříme na to, proč ji nelze vypnout ani cenzurovat.
 

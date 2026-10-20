@@ -31,7 +31,7 @@ Pojďme si těchto pět pilířů projít jeden po druhém.
 ![PŘEDPOKLAD 2: ORGANIZACE](../../Info%20Graphics/v5-cz/v5-01c-organizace.webp)
 
 > [!important] Odolnost
-> Zvolená cesta ke změně státu — nebo k přechodu k jeho nástupci — nesmí záviset na státním povolení. Nástroje a způsoby jejich použití musí být co nejvíce necenzurovatelné. V překladu to znamená, že náklady na jejich cenzuru musí být astronomické. Bez toho je celé úsilí jen pálením času a životní energie.
+> Zvolená cesta ke změně státu — nebo k přechodu k jeho nástupci — nesmí záviset na státním povolení. Nástroje a způsoby jejich použití musí být co nejvíce nezcenzurovatelné. V překladu to znamená, že náklady na jejich cenzuru musí být astronomické. Bez toho je celé úsilí jen pálením času a životní energie.
 
 ![PŘEDPOKLAD 3: ODOLNOST](../../Info%20Graphics/v5-cz/v5-01d-odolnost.webp)
 
@@ -41,7 +41,7 @@ Pojďme si těchto pět pilířů projít jeden po druhém.
 ![PŘEDPOKLAD 4: KONSENZUS](../../Info%20Graphics/v5-cz/v5-01e-konsenzus.webp)
 
 > [!important] Nezkorumpovatelnost
-> Nezcenzurovatelnost chrání systém zvenčí. Ale síť lidí může hnít i zevnitř — autorita se nechá ovládnout, deklarované pravidlo se potichu přestane dodržovat, účastníky někdo v tichosti podmázne. Necenzurovatelnost by byla jen prázdným vítězstvím, kdyby lidé uvnitř šli bez následků zkorumpovat.
+> Nezcenzurovatelnost chrání systém zvenčí. Ale síť lidí může hnít i zevnitř — autorita se nechá ovládnout, deklarované pravidlo se potichu přestane dodržovat, účastníky někdo v tichosti podmázne. Nezcenzurovatelnost by byla jen prázdným vítězstvím, kdyby lidé uvnitř šli bez následků zkorumpovat.
 >
 > Nezkorumpovatelnost není výsledkem jediného chytrého triku. Vzniká ze **souhry několika principů navrženého designu** — tlak proti korupci je rozložen napříč architekturou a jednotlivé části se navzájem posilují. Jak konkrétně se toho dosahuje, ukážeme postupně — v popisu nástroje, v ověřování a v kapitole o trestu. V závěru si pak shrneme, co všechno se dohromady postavilo.
 >

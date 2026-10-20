@@ -66,7 +66,7 @@ Každý nový záznam v DID síti upraví hodnocenou reputaci a riziko daného D
 ![KDO VYŠETŘUJE, KDO VYNUCUJE?](../../Info%20Graphics/v5-cz/v5-10d-vysetrovani-enforcement.webp)
 
 > [!important] Demokratizace řízení rizik (Risk Management)
-> Necenzurovatelná reputační síť by demokratizovala to, co banky nebo údržbáři větších průmyslových celků dělají jako svou klíčovou činnost — řízení rizik.
+> Nezcenzurovatelná reputační síť by demokratizovala to, co banky nebo údržbáři větších průmyslových celků dělají jako svou klíčovou činnost — řízení rizik.
 >
 > Pro bankéře, který stojí před klientem, je hodnocení rizik připraveno předem, aby se mohl soustředit na obchodní interakci v rámci předem nastavených limitů. Sofistikovaní údržbáři v pravidelných servisních intervalech sbírají indikátory rizik (známky trhlin konstrukcí a procesy narušování provozní infrastruktury atp.) a dovedou předpovědět životnost i to, kdy a jaký zásah bude potřeba.
 >

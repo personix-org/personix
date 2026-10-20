@@ -322,7 +322,7 @@ fi
 if [ -f "$BUILD_DIR/chapters/glossary.tex" ]; then
   perl -i -pe '
     s|\\textbf\{Compartmentalizace\}|\\textbf{Com\\-part\\-men\\-tal\\-i\\-za\\-ce}|g;
-    s|\\textbf\{Necenzurovatelnost\}|\\textbf{Ne\\-cen\\-zu\\-ro\\-va\\-tel\\-nost}|g;
+    s|\\textbf\{Nezcenzurovatelnost\}|\\textbf{Nez\\-cen\\-zu\\-ro\\-va\\-tel\\-nost}|g;
     s|\\textbf\{Nezkorumpovatelnost\}|\\textbf{Ne\\-zko\\-rum\\-po\\-va\\-tel\\-nost}|g;
     s|\\textbf\{Decentralizace\}|\\textbf{De\\-cen\\-tra\\-li\\-za\\-ce}|g;
   ' "$BUILD_DIR/chapters/glossary.tex"

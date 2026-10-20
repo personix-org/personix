@@ -9,7 +9,7 @@ source: v1
 
 # Reputační sociální síť (Reputation-Based Social Network)
 
-Ke změně potřebujeme pečlivě připravený nástroj. Nejdříve ho stručně prolétneme a v pozdějších kapitolách probereme každou jednotlivost detailněji a doplníme další. Představte si necenzurovatelnou globální decentralizovanou sociální síť, kde byste mohli bezpečně vytvořit a spravovat svou zástupnou identitu — takzvanou decentralizovanou identitu (Decentralized Identity, DID). DID je digitální identita, kterou si vytváříte a kontrolujete sami, bez závislosti na jakékoliv centrální autoritě. Nikdo vám ji nemůže odebrat ani zfalšovat, protože je kryptograficky podepsaná vaším soukromým klíčem/klíči (multisig).
+Ke změně potřebujeme pečlivě připravený nástroj. Nejdříve ho stručně prolétneme a v pozdějších kapitolách probereme každou jednotlivost detailněji a doplníme další. Představte si nezcenzurovatelnou globální decentralizovanou sociální síť, kde byste mohli bezpečně vytvořit a spravovat svou zástupnou identitu — takzvanou decentralizovanou identitu (Decentralized Identity, DID). DID je digitální identita, kterou si vytváříte a kontrolujete sami, bez závislosti na jakékoliv centrální autoritě. Nikdo vám ji nemůže odebrat ani zfalšovat, protože je kryptograficky podepsaná vaším soukromým klíčem/klíči (multisig).
 
 > [!note] Poznámka
 > Jednou z implikací je, že taková identita může postupně nahradit státem vydávané průkazy totožnosti — ale o tom až v kapitole o přechodu.
